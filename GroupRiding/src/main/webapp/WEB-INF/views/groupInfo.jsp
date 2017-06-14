@@ -10,7 +10,7 @@
 <html lang="en">
 <!--<![endif]-->
 <head>
-<title>Pricing | Unify - Responsive Website Template</title>
+<title>Pricing | Unify - Responsive Website Templateasdasd</title>
 
 <!-- Meta -->
 <meta charset="utf-8">
