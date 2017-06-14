@@ -11,5 +11,6 @@
 		<typeAlias type="yjc.wdb.gr.bean.GroupInfoBoard" alias="GroupInfoBoard"/>
 		<typeAlias alias="UserData" type="group.riding.bean.UserData"/>
 		<typeAlias alias="NoticeBean" type="group.riding.bean.NoticeBean"/>
+		<typeAlias alias="MapBean" type="group.riding.bean.MapBean"/>
 	</typeAliases>
 </configuration>
