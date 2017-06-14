@@ -320,11 +320,11 @@ b_container {
 		<div class="container content">
 			<!----------------------------------------------------------------------------------------- 그룹상세 -->
 
-			<div class="table-search-v2">
+			<div class="table-search-v2" style="padding: 0px 0px 0px 10px;">
 				<div class="table-responsive">
-					<table class="table table-bordered table-striped">
+					<table class="table table-bordered table-striped" style="text-align: center;">
 						<thead>
-							<tr>
+							<tr style="text-align:center;">
 								<th>Logo</th>
 								<th class="hidden-sm">그룹명</th>
 								<th>그룹장</th>
@@ -367,9 +367,9 @@ b_container {
 				</div>
 			</div>
 			<!--=== Blog Posts ===-->
-			<div class="bg-color-light">
-				<div class="container content-sm">
-					<div class="row">
+			<div class="">
+				<div class="container" style="padding-top: 30px; padding-bottom: 60px;padding-left: 0px;">
+					<div class>
 						<!-- Blog All Posts -->
 						<div class="col-md-9">
 							<!----- 그룹 캘린더 --------------------------------------------------------------------------->
@@ -462,90 +462,32 @@ b_container {
 
 						<!-- Blog Sidebar -->
 						<div class="col-md-3">
-							<div class="headline-v2">
-								<h2>가입</h2>
-							</div>
-							<!-- Trending -->
-							<ul class="list-unstyled blog-trending margin-bottom-50">
+					<!-- Contacts -->
+					<div class="headline"><h2>Profile</h2></div>
+					<ul class="list-unstyled who margin-bottom-30">
+						<li><a href="#"><i class="fa fa-home"></i>5B Streat, City 50987 New Town US</a></li>
+						<li><a href="#"><i class="fa fa-envelope"></i>info@example.com</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i>1(222) 5x86 x97x</a></li>
+						<li><a href="#"><i class="fa fa-globe"></i>http://www.example.com</a></li>
+					</ul>
 
-							</ul>
-							<!-- End Trending -->
+					<!-- Business Hours -->
+					<div class="headline"><h2>Member List</h2></div>
+					<ul class="list-unstyled margin-bottom-30">
+						<li><strong>Monday-Friday:</strong> 10am to 8pm</li>
+						<li><strong>Saturday:</strong> 11am to 3pm</li>
+						<li><strong>Sunday:</strong> Closed</li>
+					</ul>
 
-							<div class="headline-v2">
-								<h2>라이딩스타트</h2>
-							</div>
-							<!-- Latest Links -->
-							<ul class="list-unstyled blog-latest-posts margin-bottom-50">
-
-							</ul>
-							<!-- End Latest Links -->
-
-							<div class="headline-v2">
-								<h2>회원 리스트</h2>
-							</div>
-							<!-- Tags v2 -->
-							<ul class="list-inline tags-v2 margin-bottom-50">
-								<li><a href="#">Web Design</a></li>
-								<li><a href="#">Economy</a></li>
-								<li><a href="#">Sport</a></li>
-								<li><a href="#">Marketing</a></li>
-								<li><a href="#">Books</a></li>
-								<li><a href="#">Elections</a></li>
-								<li><a href="#">Flickr</a></li>
-								<li><a href="#">Politics</a></li>
-								<li><a href="#">Marketing</a></li>
-								<li><a href="#">Web Hosting</a></li>
-								<li><a href="#">Wrapbootstrap</a></li>
-								<li><a href="#">Art</a></li>
-							</ul>
-							<!-- End Tags v2 -->
-
-							<div class="headline-v2">
-								<h2>사진모아보기</h2>
-							</div>
-							<!-- Photostream -->
-							<ul class="list-inline blog-photostream margin-bottom-50">
-								<li><a href="assets/img/main/img22.jpg" rel="gallery"
-									class="fancybox img-hover-v2" title="Image 1"> <span><img
-											class="img-responsive" src="assets/img/main/img22.jpg" alt=""></span>
-								</a></li>
-								<li><a href="assets/img/main/img23.jpg" rel="gallery"
-									class="fancybox img-hover-v2" title="Image 2"> <span><img
-											class="img-responsive" src="assets/img/main/img23.jpg" alt=""></span>
-								</a></li>
-								<li><a href="assets/img/main/img4.jpg" rel="gallery"
-									class="fancybox img-hover-v2" title="Image 3"> <span><img
-											class="img-responsive" src="assets/img/main/img4.jpg" alt=""></span>
-								</a></li>
-								<li><a href="assets/img/main/img9.jpg" rel="gallery"
-									class="fancybox img-hover-v2" title="Image 4"> <span><img
-											class="img-responsive" src="assets/img/main/img9.jpg" alt=""></span>
-								</a></li>
-								<li><a href="assets/img/main/img25.jpg" rel="gallery"
-									class="fancybox img-hover-v2" title="Image 5"> <span><img
-											class="img-responsive" src="assets/img/main/img25.jpg" alt=""></span>
-								</a></li>
-								<li><a href="assets/img/main/img6.jpg" rel="gallery"
-									class="fancybox img-hover-v2" title="Image 6"> <span><img
-											class="img-responsive" src="assets/img/main/img6.jpg" alt=""></span>
-								</a></li>
-								<li><a href="assets/img/main/img20.jpg" rel="gallery"
-									class="fancybox img-hover-v2" title="Image 7"> <span><img
-											class="img-responsive" src="assets/img/main/img20.jpg" alt=""></span>
-								</a></li>
-								<li><a href="assets/img/main/img3.jpg" rel="gallery"
-									class="fancybox img-hover-v2" title="Image 8"> <span><img
-											class="img-responsive" src="assets/img/main/img3.jpg" alt=""></span>
-								</a></li>
-								<li><a href="assets/img/main/img7.jpg" rel="gallery"
-									class="fancybox img-hover-v2" title="Image 9"> <span><img
-											class="img-responsive" src="assets/img/main/img7.jpg" alt=""></span>
-								</a></li>
-							</ul>
-							<!-- End Photostream -->
-
-							<!-- End Blog Newsletter -->
-						</div>
+					<!-- Why we are? -->
+					<div class="headline"><h2>ETC</h2></div>
+					<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+					<ul class="list-unstyled">
+						<li><i class="fa fa-check color-green"></i> Odio dignissimos ducimus</li>
+						<li><i class="fa fa-check color-green"></i> Blanditiis praesentium volup</li>
+						<li><i class="fa fa-check color-green"></i> Eos et accusamus</li>
+					</ul>
+				</div><!--/col-md-3-->
 						<!-- End Blog Sidebar -->
 					</div>
 				</div>
@@ -609,7 +551,7 @@ b_container {
 		<!--=== Footer Version 1 ===-->
 		<div class="footer-v1">
 			<div class="footer">
-				<div class="container">
+				<div class="container" style="padding-left: 0px;">
 					<div class="row">
 						<!-- About -->
 						<div class="col-md-3 md-margin-bottom-40">
