@@ -75,19 +75,4 @@ public class HomeController {
 		model.addAttribute("list3", list3);
 	}
 	
-	@RequestMapping(value = "hotPlaceMap", method = RequestMethod.GET)
-	public void hotPlaceMap() {
-		
-	}
-	
-	@RequestMapping(value = "restaurantList", method = RequestMethod.GET)
-	public void restaurantList() {
-		
-	}
-	
-	@RequestMapping(value = "hotelList", method = RequestMethod.GET)
-	public void hotelList() {
-		
-	}
-	
 }
