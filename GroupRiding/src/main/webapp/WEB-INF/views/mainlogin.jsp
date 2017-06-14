@@ -89,7 +89,7 @@
 										<jsp:include page="user.jsp" flush="false" />
 									</i>
 									
-									<div class="shopping-cart-open"icon-user style="margin-top: -20px;">
+									<div class="shopping-cart-open"icon-user style="margin-top: 0px;">
 										<span class="shc-title">Group Riding</span>
 											<form action="logout" method="get">
 												<button type="submit" class="btn-u"><i class="icon-user"></i> Logout</button>
