@@ -105,12 +105,6 @@
 								<li class="dropdown-submenu"><a href="groupRank">Ranking</a>
 								</li>
 								<!-- End Service Pages -->
-
-								<!-- Contacts -->
-								<li class="dropdown-submenu"><a href="javascript:void(0);"
-									class="dropdown-toggle" data-toggle="dropdown"> Contact
-										Pages </a></li>
-								<!-- End Contacts -->
 							</ul></li>
 						<!-- End Pages -->
 
@@ -120,10 +114,8 @@
 							<ul class="dropdown-menu">
 								<li class="dropdown-submenu"><a href="calendar">Calendar</a>
 								</li>
-								<li class="dropdown-submenu"><a href="javascript:void(0);">Riding
+								<li class="dropdown-submenu"><a href="Ridingdata">Riding
 										Data</a></li>
-								<li class="dropdown-submenu"><a href="javascript:void(0);">Blog
-										Item Pages</a></li>
 							</ul></li>
 						<!-- End Blog -->
 

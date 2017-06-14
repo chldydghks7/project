@@ -39,9 +39,21 @@
 	<!-- CSS Customization -->
 	<link rel="stylesheet" href="./resources/assets/css/custom.css">
 
-
+	<style>
+		#close {
+			font-size: 2em;
+			color:white;
+			float: right;
+			margin-right: 15px;
+		}
+		#close:hover {
+			opacity: 0.5;
+			text-decoration: none;
+		}
+	</style>
 
 <body style="background-color: black;">
+	<a href = "/" id = "close">X</a>
 	<div class="container content-md">
 			<div class="margin-bottom-60 head">
 				<h1>Login or Register an Account</h1>

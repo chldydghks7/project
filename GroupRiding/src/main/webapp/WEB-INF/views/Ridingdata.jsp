@@ -106,14 +106,6 @@
                            <a href="groupRank">Ranking</a>
                         </li>
                         <!-- End Service Pages -->
-
-                        <!-- Contacts -->
-                        <li class="dropdown-submenu">
-                           <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                              Contact Pages
-                           </a>
-                        </li>
-                        <!-- End Contacts -->
                      </ul>
                   </li>
                   <!-- End Pages -->
@@ -125,13 +117,10 @@
                      </a>
                      <ul class="dropdown-menu">
                         <li class="dropdown-submenu">
-                           <a href="javascript:void(0);">Calendar</a>
+                           <a href="calendar">Calendar</a>
                         </li>
                         <li class="dropdown-submenu">
-                           <a href="javascript:void(0);">Riding Data</a>
-                        </li>
-                        <li class="dropdown-submenu">
-                           <a href="javascript:void(0);">Blog Item Pages</a>
+                           <a href="Ridingdata">Riding Data</a>
                         </li>
                      </ul>
                   </li>
@@ -144,13 +133,7 @@
                      </a>
                      <ul class="dropdown-menu">
                         <li class="dropdown-submenu">
-                           <a href="javascript:void(0);">Picture</a>
-                        </li>
-                        <li class="dropdown-submenu">
-                           <a href="javascript:void(0);">Route</a>
-                        </li>
-                        <li class="dropdown-submenu">
-                           <a href="javascript:void(0);">Grid Text Boxed</a>
+                           <a href="sharing">Sharing</a>
                         </li>
                      </ul>
                   </li>

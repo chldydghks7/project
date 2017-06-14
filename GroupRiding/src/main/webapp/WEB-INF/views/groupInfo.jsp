@@ -227,12 +227,6 @@ b_container {
 								<li class="dropdown-submenu"><a href="groupRank">Ranking</a>
 								</li>
 								<!-- End Service Pages -->
-
-								<!-- Contacts -->
-								<li class="dropdown-submenu"><a href="javascript:void(0);"
-									class="dropdown-toggle" data-toggle="dropdown"> Contact
-										Pages </a></li>
-								<!-- End Contacts -->
 							</ul></li>
 						<!-- End Pages -->
 
@@ -240,12 +234,10 @@ b_container {
 						<li class="dropdown"><a href="javascript:void(0);"
 							class="dropdown-toggle" data-toggle="dropdown"> Info </a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="javascript:void(0);">Calendar</a>
+								<li class="dropdown-submenu"><a href="calendar">Calendar</a>
 								</li>
-								<li class="dropdown-submenu"><a href="javascript:void(0);">Riding
+								<li class="dropdown-submenu"><a href="Ridingdata">Riding
 										Data</a></li>
-								<li class="dropdown-submenu"><a href="javascript:void(0);">Blog
-										Item Pages</a></li>
 							</ul></li>
 						<!-- End Blog -->
 
@@ -253,12 +245,8 @@ b_container {
 						<li class="dropdown"><a href="javascript:void(0);"
 							class="dropdown-toggle" data-toggle="dropdown"> Sharing </a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="javascript:void(0);">Picture</a>
+								<li class="dropdown-submenu"><a href="sharing">Sharing</a>
 								</li>
-								<li class="dropdown-submenu"><a href="javascript:void(0);">Route</a>
-								</li>
-								<li class="dropdown-submenu"><a href="javascript:void(0);">Grid
-										Text Boxed</a></li>
 							</ul></li>
 						<!-- End Portfolio -->
 
@@ -396,7 +384,7 @@ b_container {
 								<a href="javascript:ViewLayer();">등록</a>
 								<div id="Pop"
 									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none;
-									background:#3d3d3d; color:#fff; "><a href="javascript:ViewClose();"><img id="popLogo" src="./resources/cancelcel.png" "/></a>
+									background:#3d3d3d; color:#fff; "><a href="javascript:ViewClose();"><img id="popLogo" src="./resources/img/cancelcel.png" "/></a>
 									<form method="post" style="margin: 5% 5%">
 										작성자 - ${uid}</br></br>
 										<div class="form-group">
