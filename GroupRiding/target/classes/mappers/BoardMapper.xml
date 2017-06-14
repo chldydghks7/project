@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">   <!-- 규칙 -->
+  
+ <mapper namespace="group.riding.BoardMapper">
+    <insert id="newShar">
+       insert into bbs_writing(bbs_Id ,writing_title, writing_content)
+       values(#{bbs_Id}, #{writing_title}, #{writing_content})
+    </insert>
+    
+    <select id="sharList" resultType="BoardBean">
+       select a.writing_title, a.writing_content, a.writing_Id, b.bbs_FilePath
+      from bbs_writing a, bbs_File b
+      where a.writing_Id = b.writing_Id
+      order by writing_Id desc
+    </select>
+    
+    <select id="sharRead" resultType="BoardBean">
+       select a.writing_title, a.writing_content, a.writing_Id, b.bbs_FilePath
+      from bbs_writing a, bbs_File b
+      where a.writing_Id = b.writing_Id and a.writing_Id = #{writing_Id}
+    </select>
+    
+    <insert id="addFile">
+       insert into bbs_File(writing_Id, bbs_FilePath)
+       values(LAST_INSERT_ID(), #{bbs_FilePath})
+    </insert>
+    
+    <select id="getFile" resultType="String">
+       select a.bbs_FilePath, b.writing_id
+       from bbs_File a, bbs_writing b
+       where a.writing_Id = #{writing_Id}
+    </select>
+    
+    <select id="getFile2" resultType="BoardBean">
+       select bbs_FilePath, writing_Id
+       from bbs_File = bbs_writing
+    </select>
+ </mapper>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">	<!-- 규칙 -->
+  
+<mapper namespace="group.riding.NoticeMapper">
+	
+	<!-- 공지 생성 -->
+	<insert id="createNotice">	
+		insert into gr_notice(gr_name, notice_title, start_point, end_point, ridingDate, ridingTime, material)
+  		values (#{gr_name}, #{notice_title}, #{start_point}, #{end_point}, #{ridingDate}, #{ridingTime}, #{material})
+	</insert>
+	
+	<select id="listNotice" resultType="NoticeBean">
+		select * from gr_notice;
+	</select>
+	
+	<select id="infoNotice" resultType="NoticeBean">
+		select * from gr_notice
+ 		where noticeId= #{noticeId}
+	</select>
+	
+</mapper>

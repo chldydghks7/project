@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">	<!-- 규칙 -->
+  
+  <mapper namespace="group.riding.UserMapper">
+	
+	<insert id="create">	<!-- 회원가입 -->
+		insert into gr_user(uid, upw,  uname, uage)
+		values(#{uid}, #{upw},  #{uname}, #{uage})
+	</insert>
+	
+	<select id="ck" resultType="int">	<!-- 중복체크 -->
+ 		select count(uid) from gr_user
+ 		where uid=#{uid}
+	</select>
+	
+	<select id="login" resultType="UserBean">	<!-- 정보 조회 -->
+		select uid, upw, uname, uage from gr_user where uid = #{uid} and upw = #{upw}
+	</select>
+	
+	<insert id="addAttach">	<!-- 프로필 -->
+		insert into gr_attach(fullName, uid)
+		values(#{files}, #{uid})
+	</insert>
+
+	<select id="user" resultType="UserBean">
+		select *
+		from gr_user
+		where uid=#{uid}
+	</select>
+	
+	<select id="getAttach" resultType="string">
+		select a.fullName, b.uname
+		from gr_attach a,gr_user b
+		where a.uid=#{uid}
+	</select>
+	
+	<select id="Ridingdata" resultType="UserData">
+      select * from gr_data where uid=#{uid}
+   </select>
+	
+	<!-- 아이디 중복체크 -->
+	<select id="id_check" resultType="int">
+		select count(*)
+		from gr_user
+		where uid = #{uid}
+	</select>
+
+</mapper>

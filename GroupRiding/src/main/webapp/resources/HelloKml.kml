@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Placemark>
+        <open>1</open>
+        <LineString>
+            <coordinates>-112.2550785337791,36.07954952145647,2357.0 -112.2549277039738,36.08117083492122,2357.0 -112.2564540158376,36.08395660588506,2357.0 -112.2580238976449,36.08511401044813,2357.0 -112.2580238976449,36.08511401044813,2357.0</coordinates>
+        </LineString>
+    </Placemark>
+</kml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="UserBean" type="group.riding.bean.UserBean"/>
+		<typeAlias alias="GroupBean" type="group.riding.bean.GroupBean"/>
+		<typeAlias  alias="GroupRank" type="yjc.wdb.gr.bean.GroupRank" />
+		<typeAlias alias="BoardBean" type="group.riding.bean.BoardBean"/>
+		<typeAlias type="yjc.wdb.gr.bean.GroupInfoBoard" alias="GroupInfoBoard"/>
+		<typeAlias alias="UserData" type="group.riding.bean.UserData"/>
+		<typeAlias alias="NoticeBean" type="group.riding.bean.NoticeBean"/>
+	</typeAliases>
+</configuration>
