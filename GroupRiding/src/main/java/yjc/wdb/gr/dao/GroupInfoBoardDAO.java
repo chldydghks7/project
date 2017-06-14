@@ -12,7 +12,7 @@ public interface GroupInfoBoardDAO {
 	
 	public void delete(GroupInfoBoard vo)throws Exception;
 	
-	public GroupInfoBoard read(Integer GroupInfoBoardDAO) throws Exception;
+	public GroupInfoBoard read(int writing_id) throws Exception;
 	
 	public List<GroupInfoBoard> listAll(int groupid)throws Exception;
 	

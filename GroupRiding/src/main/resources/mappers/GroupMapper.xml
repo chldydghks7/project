@@ -7,14 +7,17 @@
 
 	<!-- 그룹 생성 -->
 	<insert id="create_gr">
-		insert into gr_group(gr_name, gr_leader, gr_content,gr_icon)
-		values (#{gr_name}, #{gr_leader}, #{gr_content},#{gr_icon})
+		insert into gr_group(gr_name, gr_leader,
+		gr_content,gr_icon)
+		values (#{gr_name}, #{gr_leader},
+		#{gr_content},#{gr_icon})
 	</insert>
 
 	<!-- 그룹 관계 -->
 	<insert id="gr_gr">
 		insert into gr_gr(gr_name, uid, introduce)
-		values (#{gr_name}, #{uid}, #{introduce})
+		values
+		(#{gr_name}, #{uid}, #{introduce})
 	</insert>
 
 	<!-- 그룹 아이콘 -->
@@ -26,7 +29,8 @@
 	<!-- 그룹 정보 -->
 	<select id="gr_info" resultType="GroupBean">
 		select * from gr_group
-		where gr_name= #{gr_name};
+		where
+		gr_name= #{gr_name};
 	</select>
 
 	<!-- 그룹 아이콘 -->
@@ -38,8 +42,10 @@
 
 	<!-- 그룹 리스트 (내그룹) -->
 	<select id="gr_list" resultType="GroupBean">
-		select b.gr_name,b.gr_content,b.gr_icon,b.gr_date,b.gr_leader,b.gr_id
-		from gr_gr a, gr_group b
+		select
+		b.gr_name,b.gr_content,b.gr_icon,b.gr_date,b.gr_leader,b.gr_id
+		from
+		gr_gr a, gr_group b
 		where a.gr_name=b.gr_name
 		and a.uid=#{uid};
 	</select>
@@ -51,7 +57,8 @@
 		from
 		gr_gr a , gr_group b
 		where a.gr_name=b.gr_name
-		and a.uid != #{uid};
+		and a.uid != #{uid}
+		and b.gr_leader!=#{uid};
 
 	</select>
 
@@ -73,7 +80,8 @@
 	<!-- 그룹 가입 -->
 	<insert id="gr_join">
 		insert into gr_gr(gr_name, uid, introduce)
-		values (#{gr_name}, #{uid}, #{introduce})
+		values
+		(#{gr_name}, #{uid}, #{introduce})
 	</insert>
 
 	<select id="gr_check" resultType="String">
@@ -114,7 +122,8 @@
 
 
 	<insert id="info_cr"> insert into
-		bbs_writing(bbs_id,writing_title, writing_content, member_id, group_id)
+		bbs_writing(bbs_id,writing_title,
+		writing_content, member_id, group_id)
 		values ('group',#{writing_title},
 		#{writing_content},#{member_id},#{group_id})
 	</insert>
@@ -124,12 +133,27 @@
 		group_id,member_id,bbs_id,writing_title,writing_content,view_Number,writing_id,regist_date
 		from bbs_writing where bbs_id='group' and group_id=#{groupid}
 	</select>
-	
+
 	<!-- 그룹명 중복체크 -->
 	<select id="n_check" resultType="int">
 		select count(*)
 		from gr_group
 		where gr_name = #{gr_name};
 	</select>
+	
+	<!-- 그룹장만 공지생성 -->
+	<select id="leaderNotice" resultType="String">
+		select introduce
+		from gr_gr
+		where uid=#{uid} and gr_name=#{gr_name}
+	</select>
+
+	<select id="info_re" resultType="GroupInfoBoard">
+		select
+		group_id,member_id,bbs_id,writing_title,writing_content,view_Number,writing_id,regist_date
+		from bbs_writing
+		where writing_id=#{writing_id}
+	</select>
+
 
 </mapper>

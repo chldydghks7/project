@@ -9,4 +9,7 @@ public interface GroupInfoBoardService {
 	public void create(GroupInfoBoard vo)throws Exception;
 	
 	public List<GroupInfoBoard> listAll(int groupid) throws Exception;
+	
+	public GroupInfoBoard read(int writing_id) throws Exception;
+	
 }

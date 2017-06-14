@@ -26,7 +26,10 @@ public class GroupInfoBoardServiceImpl implements GroupInfoBoardService {
 		// TODO Auto-generated method stub
 		return dao.listAll(groupid);
 	}
-	
 
-
+	@Override
+	public GroupInfoBoard read(int writing_id) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.read(writing_id);
+	}
 }

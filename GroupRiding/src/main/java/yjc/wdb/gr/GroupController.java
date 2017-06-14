@@ -4,7 +4,6 @@ import java.sql.Date;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import group.riding.bean.GroupBean;
-import group.riding.bean.UserBean;
 import group.riding.service.GroupService;
 import yjc.wdb.gr.bean.GroupInfoBoard;
 import yjc.wdb.gr.service.GroupInfoBoardService;
@@ -76,13 +73,33 @@ public class GroupController {
 	}
 	
 	
+	@RequestMapping(value = "groupInfo_re", method = RequestMethod.POST)
+	@ResponseBody
+	public GroupInfoBoard groupInfo_re(@RequestParam(value="id") int id) throws Exception{
+		
+		return infoboardservice.read(id);
+	};
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@RequestMapping(value = "groupInfo", method = RequestMethod.GET) // 그룹
 	
-	public String gr_info(@RequestParam(value ="gr_id") int group_id,@RequestParam(value = "gr_name") String gr_name, Model model, GroupBean gr, HttpSession session)
+	public String gr_info(@RequestParam(value ="gr_id") int group_id, @RequestParam(value ="uid") String uid, @RequestParam(value = "gr_name") String gr_name, Model model, GroupBean gr, HttpSession session)
 			throws Exception {
 		gr = service.gr_info(gr_name);
 		int people = service.gr_people(gr_name);
 
+		String leader = service.leaderNotice(uid, gr_name);	// 그룹장만 공지
+		model.addAttribute("leader", leader);	// 그룹장만 공지
+		
 		model.addAttribute("people", people);
 		model.addAttribute("group", gr);
 

@@ -10,7 +10,7 @@
 <html lang="en">
 <!--<![endif]-->
 <head>
-<title>Pricing | Unify - Responsive Website Template</title>
+<title>Pricing | Unify - Responsive Website Templateasdasd</title>
 
 <!-- Meta -->
 <meta charset="utf-8">
@@ -60,14 +60,15 @@
 <link rel="stylesheet" href="./resources/assets/css/custom.css">
 </head>
 <style>
-#popLogo{
-	z-index:99;
+#popLogo {
+	z-index: 99;
 	position: absolute;
 	height: 30px;
 	width: 30px;
-	right : 10px;
+	right: 10px;
 	margin-top: 10px;
 }
+
 ul.tabs {
 	margin: 0;
 	padding: 0;
@@ -139,14 +140,32 @@ b_container {
 				//열어주어라
 				document.getElementById("Pop").style.display = 'inline'
 				//그렇지 않은 모든 경우라면??
-			} 
+			}
 		}
-		function ViewClose(){
+		function ViewClose() {
 			if (document.getElementById("Pop").style.display == "inline") {
 				//열어주어라
 				document.getElementById("Pop").style.display = 'none'
 				//그렇지 않은 모든 경우라면??
-			} 
+			}
+		}
+	</script>
+
+	<script>
+		function ViewLayer2() {
+			//만일 Pop라는 녀석이 닫혀있다면??
+			if (document.getElementById("Pop_Re").style.display == "none") {
+				//열어주어라
+				document.getElementById("Pop_Re").style.display = 'inline'
+				//그렇지 않은 모든 경우라면??
+			}
+		}
+		function ViewClose2() {
+			if (document.getElementById("Pop_Re").style.display == "inline") {
+				//열어주어라
+				document.getElementById("Pop_Re").style.display = 'none'
+				//그렇지 않은 모든 경우라면??
+			}
 		}
 	</script>
 	<script>
@@ -168,13 +187,11 @@ b_container {
 				$(activeTab).fadeIn(); //Fade in the active ID content
 				return false;
 			});
-			
-			
 
 		});
 	</script>
 	<script>
-	
+		
 	</script>
 	<div class="wrapper">
 		<!--=== Header ===-->
@@ -338,8 +355,11 @@ b_container {
 
 									</form></td>
 								<td><form action="createNotice" method="get">
-										<button type="submit">공지등록</button>
+									
+									
+										<button type="submit" id="notice11">공지등록</button>
 								</form></td>
+
 							</tr>
 
 						</tbody>
@@ -373,7 +393,8 @@ b_container {
 									</tr>
 									<c:forEach items="${listAll}" var="GroupInfoBo">
 										<tr>
-											<td class="active">${GroupInfoBo.writing_title}</td>
+											<td class="active"><a href="javascript:ViewLayer2();"
+												id="a" class="${GroupInfoBo.writing_id}">${GroupInfoBo.writing_title}</a></td>
 											<td class="active">${GroupInfoBo.member_id}</td>
 											<td class="active">${GroupInfoBo.regist_date}</td>
 											<td class="active">${GroupInfoBo.view_Number}</td>
@@ -383,21 +404,44 @@ b_container {
 								</table>
 								<a href="javascript:ViewLayer();">등록</a>
 								<div id="Pop"
-									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none;
-									background:#3d3d3d; color:#fff; "><a href="javascript:ViewClose();"><img id="popLogo" src="./resources/img/cancelcel.png" "/></a>
+									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; background: #505457; color: #fff;">
+									<a href="javascript:ViewClose();"><img id="popLogo"
+										src="./resources/img/cancelcel.png" /></a>
 									<form method="post" style="margin: 5% 5%">
-										작성자 - ${uid}</br></br>
+										작성자 - ${uid}</br>
+										</br>
 										<div class="form-group">
-											제목 </br><input class="form-control" type="text" name="writing_title">
+											제목 </br>
+											<input class="form-control" type="text" name="writing_title">
 										</div>
 										<div class="form-group">
-											내용 </br><textarea rows="13" cols="125" style="color:black;resize: none;" name="writing_content"></textarea>
-										</div></br>
-										<input type="hidden" value="${uid}" name="member_id"/> <!-- 인풋 타입 히든으로 안보이게 처리 -->
-										<input type="hidden" value="${gr_id}" name="gr_id"/>
-										<input class="btn btn-default" type="submit" value="등록">
+											내용 </br>
+											<textarea rows="13" cols="131"
+												style="color: black; resize: none;" name="writing_content"></textarea>
+										</div>
+										</br> <input type="hidden" value="${uid}" name="member_id" />
+										<!-- 인풋 타입 히든으로 안보이게 처리 -->
+										<input type="hidden" value="${gr_id}" name="gr_id" /> <input
+											class="btn btn-default" type="submit" value="등록">
 										<button class="btn btn-default" id="list">삭제</button>
 									</form>
+								</div>
+
+								<div id="Pop_Re"
+									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; margin: 5% 5%; background: #101010; color: #fff;">
+									<a href="javascript:ViewClose2();"><img id="popLogo"
+										src="./resources/img/cancelcel.png" /></a>
+									<div style="margin: 5% 5%">
+										작성자 - <label id="re_id"></label></br>
+										제목 - <label id="re_title"></label></br>
+										내용   <div id="re_content" style="height:330px; background-color:#505457;"></div></br>
+										작성일 - 
+										<label id="re_date"></label>
+										
+										<!-- <input class="btn btn-default" type="submit" value="수정"> -->
+										<input class="btn btn-default" type="submit" value="수정" style="float: right">
+										<button class="btn btn-default" id="list"  style="float: right">삭제</button>
+									</div>
 								</div>
 							</div>
 							<!-- End Blog Posts -->
@@ -523,6 +567,26 @@ b_container {
 					formObj.attr("method", "get");
 					formObj.submit();
 				});
+
+				$("#read a").on("click", function() {
+					var writing_id = $(this).attr("class");
+					$.ajax({
+						url : 'groupInfo_re',
+						data : {
+							id : writing_id
+						},
+						type : 'post',
+						success : function(data) {
+							console.log(data);
+							$("#re_id").text(data.member_id);
+							$("#re_title").text(data.writing_title);
+							$("#re_content").text(data.writing_content);
+							$("#re_date").text(data.regist_date);
+
+						}
+					});
+				});
+
 			});
 		</script>
 
@@ -714,6 +778,18 @@ b_container {
 							: 'Error: Your browser doesn\'t support geolocation.');
 		}
 	</script>
+
+<script>
+	<!-- 그룹장 체크 -->
+		var leader = "${leader}";
+
+		if (leader == "") {
+			$("#notice11").hide();
+		} else {
+			$("#notice11").show();
+		}
+</script>
+
 
 
 	<script type="text/javascript" src="./resources/js/upload.js"></script>
