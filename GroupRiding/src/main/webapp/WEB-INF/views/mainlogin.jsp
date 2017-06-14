@@ -89,7 +89,7 @@
 										<jsp:include page="user.jsp" flush="false" />
 									</i>
 									
-									<div class="shopping-cart-open"icon-user style="margin-top: 0px;">
+									<div class="shopping-cart-open"icon-user style="margin-top:-30px;">
 										<span class="shc-title">Group Riding</span>
 											<form action="logout" method="get">
 												<button type="submit" class="btn-u"><i class="icon-user"></i> Logout</button>
@@ -162,8 +162,7 @@
 										<li><a href="hotPlaceMap">Map</a></li>
 										<li><a href="restaurantList">Restaurant</a></li>
 										<li><a href="hotelList">Hotel</a></li>
-										<li><a target="_blank" href="One-Pages/Classic/one_page_home2.html">- One Page Option 2</a></li>
-										<li><a target="_blank" href="One-Pages/Classic/one_page_home3.html">- One Page Option 3</a></li>
+										
 									</ul>
 								</li>
 
