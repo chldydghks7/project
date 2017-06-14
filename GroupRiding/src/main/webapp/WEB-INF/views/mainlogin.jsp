@@ -201,7 +201,7 @@
 					</span>
 				</h2>
 				<div class="animated fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="1s">
-					@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+				
 				</div>
 			</div>
 		</div>

@@ -53,6 +53,10 @@ public class HomeController {
 	public void main() {
 		
 	}
+	@RequestMapping(value = "mainlogin", method = RequestMethod.GET)
+	public void mainlogin() {
+		
+	}
 	
 	/*@RequestMapping(value = "groupList", method = RequestMethod.GET)
 	public void groupList() {

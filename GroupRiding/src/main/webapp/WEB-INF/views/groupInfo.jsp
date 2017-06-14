@@ -181,7 +181,7 @@ b_container {
 		<div class="header">
 			<div class="container">
 				<!-- Logo -->
-				<a class="logo" href="main"> <img
+				<a class="logo" href="mainlogin"> <img
 					src="./resources/assets/img/logo1-default.png" alt="Logo">
 				</a>
 				<!-- End Logo -->

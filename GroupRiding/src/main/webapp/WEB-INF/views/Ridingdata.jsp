@@ -56,7 +56,7 @@
       <div class="header">
          <div class="container">
             <!-- Logo -->
-            <a class="logo" href="main">
+            <a class="logo" href="mainlogin">
                <img src="./resources/assets/img/logo1-default.png" alt="Logo">
             </a>
             <!-- End Logo -->
@@ -276,7 +276,6 @@
             success:function(data){
                var data1;
                console.log(data);
-               console.log(1231333%60);
 
    
                data1 = new google.visualization.DataTable();
@@ -285,23 +284,22 @@
                data1.addColumn('number', '고도');
                data1.addRows(data.length);
                
-               for(var i = 0; i<data.length;i+10) {
-                  
-                  if(i<=59){
-                     data1.setCell(i, 0, i+1+"초");
-                     data1.setCell(i, 1, data[i].speed);
-                     data1.setCell(i, 2, data[i].altitude);
-                  }else if(i<=3599&i>=60){
-                     data1.setCell(i, 0, (parseInt((i+1)/60))+"분"+(parseInt((i+1)%60))+"초");
-                     data1.setCell(i, 1, data[i].speed);
-                     data1.setCell(i, 2, data[i].altitude);   
-                  }else if(i>3599){
-                     data1.setCell(i, 0, (parseInt((i+1)/3600))+"시간"+((parseInt((i+1)/60))-((parseInt((i+1)/3600)*60)))+"분"+(parseInt((i+1)%60))+"초");
-                     data1.setCell(i, 1, data[i].speed);
-                     data1.setCell(i, 2, data[i].altitude);   
-                  }
-               }
-               
+               for(var i = 0; i<data.length;i++) {
+                   
+                   if(i<=59){
+                      data1.setCell(i, 0, i+1+"초");
+                      data1.setCell(i, 1, data[i].speed);
+                      data1.setCell(i, 2, data[i].altitude);
+                   }else if(i<=3599&i>=60){
+                      data1.setCell(i, 0, (parseInt((i+1)/60))+"분"+(parseInt((i+1)%60))+"초");
+                      data1.setCell(i, 1, data[i].speed);
+                      data1.setCell(i, 2, data[i].altitude);   
+                   }else if(i>3599){
+                      data1.setCell(i, 0, parseInt((i+1)/3600))+"시간"+(parseInt((i+1)/60)-(parseInt((i+1)/3600)*60))+"분"+parseInt((i+1)%60))+"초";
+                      data1.setCell(i, 1, data[i].speed);
+                      data1.setCell(i, 2, data[i].altitude);   
+                   }
+                }
    
                var options = {
                      title : '${uid}',
