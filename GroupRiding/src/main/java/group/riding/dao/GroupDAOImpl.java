@@ -85,6 +85,16 @@ public class GroupDAOImpl implements GroupDAO {
 		return session.selectOne(namespace + ".n_check", gr_name);
 	}
 	
+	@Override
+	public String leaderNotice(String uid, String gr_name) throws Exception {
+		Map<String,Object> paramMap = new HashMap<>();
+		
+		paramMap.put("uid", uid);
+		paramMap.put("gr_name", gr_name);
+		
+		return session.selectOne(namespace + ".leaderNotice", paramMap);
+	}
+	
 	
 
 }

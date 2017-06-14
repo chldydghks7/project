@@ -213,7 +213,7 @@
 							
 							
 							<div class="pricing-footer">
-								<a class="btn-u" href="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}">INFO</a>
+								<a class="btn-u" href="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}">INFO</a>
 							</div>
 						</div>
 					

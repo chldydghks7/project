@@ -338,7 +338,7 @@ b_container {
 
 									</form></td>
 								<td><form action="createNotice" method="get">
-										<button type="submit">공지등록</button>
+										<button type="submit" id="notice11">공지등록</button>
 								</form></td>
 							</tr>
 
@@ -714,6 +714,18 @@ b_container {
 							: 'Error: Your browser doesn\'t support geolocation.');
 		}
 	</script>
+
+<script>
+	<!-- 그룹장 체크 -->
+		var leader = "${leader}";
+
+		if (leader == "") {
+			$("#notice11").hide();
+		} else {
+			$("#notice11").show();
+		}
+</script>
+
 
 
 	<script type="text/javascript" src="./resources/js/upload.js"></script>

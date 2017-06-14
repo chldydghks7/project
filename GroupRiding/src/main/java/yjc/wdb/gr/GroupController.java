@@ -78,11 +78,14 @@ public class GroupController {
 	
 	@RequestMapping(value = "groupInfo", method = RequestMethod.GET) // 그룹
 	
-	public String gr_info(@RequestParam(value ="gr_id") int group_id,@RequestParam(value = "gr_name") String gr_name, Model model, GroupBean gr, HttpSession session)
+	public String gr_info(@RequestParam(value ="gr_id") int group_id, @RequestParam(value ="uid") String uid, @RequestParam(value = "gr_name") String gr_name, Model model, GroupBean gr, HttpSession session)
 			throws Exception {
 		gr = service.gr_info(gr_name);
 		int people = service.gr_people(gr_name);
 
+		String leader = service.leaderNotice(uid, gr_name);	// 그룹장만 공지
+		model.addAttribute("leader", leader);	// 그룹장만 공지
+		
 		model.addAttribute("people", people);
 		model.addAttribute("group", gr);
 

@@ -51,7 +51,8 @@
 		from
 		gr_gr a , gr_group b
 		where a.gr_name=b.gr_name
-		and a.uid != #{uid};
+		and a.uid != #{uid}
+		and b.gr_leader!=#{uid};
 
 	</select>
 
@@ -130,6 +131,13 @@
 		select count(*)
 		from gr_group
 		where gr_name = #{gr_name};
+	</select>
+	
+	<!-- 그룹장만 공지생성 -->
+	<select id="leaderNotice" resultType="String">
+		select introduce
+		from gr_gr
+		where uid=#{uid} and gr_name=#{gr_name}
 	</select>
 
 </mapper>
