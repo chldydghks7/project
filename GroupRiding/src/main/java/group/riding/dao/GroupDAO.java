@@ -29,4 +29,6 @@ public interface GroupDAO {
 	public String gr_check(String uid, String gr_name) throws Exception; 	// 그룹 가입 체크
 	
 	public int n_check(String gr_name) throws Exception;	// 그룹명 중복체크
+
+	public String leaderNotice(String uid, String gr_name) throws Exception;	// 그룹장만 공지생성
 }

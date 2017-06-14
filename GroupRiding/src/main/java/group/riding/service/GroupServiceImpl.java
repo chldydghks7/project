@@ -69,6 +69,11 @@ public class GroupServiceImpl implements GroupService {
 	public int n_check(String gr_name) throws Exception {
 		return dao.n_check(gr_name);
 	}
+	
+	@Override
+	public String leaderNotice(String uid, String gr_name) throws Exception {
+		return dao.leaderNotice(uid, gr_name);
+	}
 
 
 }
