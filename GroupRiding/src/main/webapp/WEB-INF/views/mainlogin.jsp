@@ -123,9 +123,6 @@
 									<ul class="dropdown-menu">
 										<li><a href="groupList">Group List</a></li>
 										<li><a href="groupRank">Ranking</a></li>
-										<li><a target="_blank" href="One-Pages/Classic/one_page_home1.html">- One Page Option 1</a></li>
-										<li><a target="_blank" href="One-Pages/Classic/one_page_home2.html">- One Page Option 2</a></li>
-										<li><a target="_blank" href="One-Pages/Classic/one_page_home3.html">- One Page Option 3</a></li>
 									</ul>
 									
 								</li>
@@ -139,9 +136,6 @@
 									<ul class="dropdown-menu">
 										<li><a href="calendar">Calendar</a></li>
 										<li><a href="Ridingdata">Riding Data</a></li>
-										<li><a target="_blank" href="One-Pages/Classic/one_page_home1.html">- One Page Option 1</a></li>
-										<li><a target="_blank" href="One-Pages/Classic/one_page_home2.html">- One Page Option 2</a></li>
-										<li><a target="_blank" href="One-Pages/Classic/one_page_home3.html">- One Page Option 3</a></li>
 									</ul>
 									
 								</li>
@@ -153,11 +147,7 @@
 										Sharing
 									</a>
 									<ul class="dropdown-menu">
-										<li><a href="sharing">Picture</a></li>
-										<li><a href="One-Pages/Classic/one_page_dark.html">Route</a></li>
-										<li><a target="_blank" href="One-Pages/Classic/one_page_home1.html">- One Page Option 1</a></li>
-										<li><a target="_blank" href="One-Pages/Classic/one_page_home2.html">- One Page Option 2</a></li>
-										<li><a target="_blank" href="One-Pages/Classic/one_page_home3.html">- One Page Option 3</a></li>
+										<li><a href="sharing">Sharing</a></li>
 									</ul>
 									
 								</li>
