@@ -35,9 +35,8 @@ public class GroupInfoBoardDAOImpl implements GroupInfoBoardDAO {
 	}
 
 	@Override
-	public GroupInfoBoard read(Integer GroupInfoBoardDAO) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public GroupInfoBoard read(int writing_id) throws Exception {
+		return session.selectOne(namespace + ".info_re",writing_id);
 	}
 
 	@Override
