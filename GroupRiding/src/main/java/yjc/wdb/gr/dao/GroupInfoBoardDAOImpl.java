@@ -29,12 +29,6 @@ public class GroupInfoBoardDAOImpl implements GroupInfoBoardDAO {
 	}
 
 	@Override
-	public void delete(GroupInfoBoard vo) throws Exception {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public GroupInfoBoard read(int writing_id) throws Exception {
 		return session.selectOne(namespace + ".info_re",writing_id);
 	}
@@ -42,6 +36,12 @@ public class GroupInfoBoardDAOImpl implements GroupInfoBoardDAO {
 	@Override
 	public List<GroupInfoBoard> listAll(int groupid) throws Exception {
 		return session.selectList(namespace + ".info_bo",groupid);
+	}
+
+	@Override
+	public void delete(int writing_id) throws Exception {
+		session.delete(namespace +".info_del", writing_id);
+		
 	}
 
 }

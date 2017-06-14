@@ -32,4 +32,10 @@ public class GroupInfoBoardServiceImpl implements GroupInfoBoardService {
 		// TODO Auto-generated method stub
 		return dao.read(writing_id);
 	}
+
+	@Override
+	public void del(int writing_id) throws Exception {
+		// TODO Auto-generated method stub
+		dao.delete(writing_id);
+	}
 }

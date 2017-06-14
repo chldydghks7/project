@@ -12,4 +12,6 @@ public interface GroupInfoBoardService {
 	
 	public GroupInfoBoard read(int writing_id) throws Exception;
 	
+	public void del(int writing_id) throws Exception;
+	
 }

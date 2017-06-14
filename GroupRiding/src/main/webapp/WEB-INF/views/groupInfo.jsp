@@ -437,10 +437,10 @@ b_container {
 										내용   <div id="re_content" style="height:330px; background-color:#505457;"></div></br>
 										작성일 - 
 										<label id="re_date"></label>
-										
+										<input type="hidden" value="" id="re_writing_id"/>
 										<!-- <input class="btn btn-default" type="submit" value="수정"> -->
 										<input class="btn btn-default" type="submit" value="수정" style="float: right">
-										<button class="btn btn-default" id="list"  style="float: right">삭제</button>
+										<button class="btn btn-default" id="Pop_Re_del"  style="float: right">삭제</button>
 									</div>
 								</div>
 							</div>
@@ -582,9 +582,25 @@ b_container {
 							$("#re_title").text(data.writing_title);
 							$("#re_content").text(data.writing_content);
 							$("#re_date").text(data.regist_date);
+							$("#re_writing_id").text(data.writing_id);
 
 						}
 					});
+				});
+				$("#Pop_Re_del").on("click",function(){
+					var writing_id = $("#re_writing_id").text();
+					console.log(writing_id);
+					$.ajax({
+						url : 'groupInfo_del',
+						data :{
+							id : writing_id
+						},
+						type : 'post',
+						success : function(data){
+							location.reload();
+						}
+					});
+					
 				});
 
 			});
