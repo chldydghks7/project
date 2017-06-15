@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import group.riding.bean.GroupBean;
 import group.riding.service.GroupService;
@@ -98,58 +99,66 @@ public class GroupController {
 	
 	
 	@RequestMapping(value = "groupInfo", method = RequestMethod.GET) // 그룹
-	
-	public String gr_info(@RequestParam(value ="gr_id") int group_id, @RequestParam(value ="uid") String uid, @RequestParam(value = "gr_name") String gr_name, Model model, GroupBean gr, HttpSession session)
-			throws Exception {
+	public String gr_info(@RequestParam(value ="gr_id") String gr_id, @RequestParam(value ="uid") String uid, @RequestParam(value = "gr_name") String gr_name, 
+			RedirectAttributes rttr, Model model, GroupBean gr, HttpSession session) throws Exception {
+		
 		gr = service.gr_info(gr_name);
 		int people = service.gr_people(gr_name);
 
 		String leader = service.leaderNotice(uid, gr_name);	// 그룹장만 공지
 		model.addAttribute("leader", leader);	// 그룹장만 공지
-		
 		model.addAttribute("people", people);
 		model.addAttribute("group", gr);
-
-		System.out.println("�ο� : " + people);
 
 		String id = (String) session.getAttribute("uid");
 
 		model.addAttribute("mygroupJudge", service.gr_check(id, gr_name));
 		
-		
 		session.setAttribute("gr_name1", gr.getGr_name());
-	
-		List<GroupInfoBoard> list = infoboardservice.listAll(group_id);
+		
+		int pasor = Integer.parseInt(gr_id); 
+		
+		List<GroupInfoBoard> list = infoboardservice.listAll(pasor);
 		
 		model.addAttribute("listAll", list);
 		
+		rttr.addAttribute("gr_id",gr_id);
+		rttr.addAttribute("gr_id",gr_name);
 		
 		return "groupInfo";
+	
 	}
+	
+	 @RequestMapping(value = "groupInfo", method = RequestMethod.POST) // 그룹                                                // ?��?��
+	 public String groupInfo(@RequestParam(value ="gr_id") String gr_id, @RequestParam(value ="uid") String uid, @RequestParam(value = "gr_name") String gr_name, 
+			 GroupInfoBoard vo, RedirectAttributes rttr) throws Exception {
+		 
+		 System.out.println("post 호출");
+		 
+		  Calendar c = Calendar.getInstance();
+	      String year = c.get(Calendar.YEAR) + "";
+	      String month = c.get(Calendar.MONTH) + 1 + "";
+	      String date = c.get(Calendar.DATE) + "";
+	      
+	      Date rrr = Date.valueOf(year + "-" + month + "-" + date);
+	      vo.setRegist_date(rrr);
 
-	@RequestMapping(value = "groupInfo", method = RequestMethod.POST) // 그룹																// ?��?��
-	public String groupInfo(GroupInfoBoard vo, @RequestParam(value = "gr_id") int gr_id, @RequestParam(value = "gr_name") String gr_name, Model model) throws Exception {
-		Calendar c = Calendar.getInstance();
-		String year = c.get(Calendar.YEAR) + "";
-		String month = c.get(Calendar.MONTH) + 1 + "";
-		String date = c.get(Calendar.DATE) + "";
-		
-		Date rrr = Date.valueOf(year + "-" + month + "-" + date);
-		vo.setRegist_date(rrr);
-		
-		System.out.println("그룹아이디"+gr_id);
-		vo.setGroup_id(gr_id);
-		System.out.print(vo);
-		
-		infoboardservice.create(vo);
-		
-				
-		model.addAttribute("gr_name", gr_name);
-		model.addAttribute("gr_id", gr_id);
-		
-		return "redirect:groupInfo";
+	      System.out.println("post");
+	      System.out.println("그룹아이디"+gr_id);
+	      System.out.println("그룹네임"+gr_name);
+	      int pasor = Integer.parseInt(gr_id); 
+	      vo.setGroup_id(pasor);
+	      System.out.print(vo);
+	      
+	      infoboardservice.create(vo);
+	      
+	      rttr.addAttribute("gr_name",gr_name);
+	      rttr.addAttribute("gr_id",gr_id);
+	      rttr.addAttribute("uid",uid);
+	      
+	      return "redirect:groupInfo";
+	   }
 
-	}
     
 	
 	@RequestMapping("gr_iconl")	// 洹몃９ ?븘?씠肄? 由ъ뒪?듃

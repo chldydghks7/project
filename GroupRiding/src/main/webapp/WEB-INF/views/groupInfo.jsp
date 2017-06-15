@@ -322,9 +322,10 @@ b_container {
 
 			<div class="table-search-v2" style="padding: 0px 0px 0px 10px;">
 				<div class="table-responsive">
-					<table class="table table-bordered table-striped" style="text-align: center;">
+					<table class="table table-bordered table-striped"
+						style="text-align: center;">
 						<thead>
-							<tr style="text-align:center;">
+							<tr style="text-align: center;">
 								<th>Logo</th>
 								<th class="hidden-sm">그룹명</th>
 								<th>그룹장</th>
@@ -355,10 +356,10 @@ b_container {
 
 									</form></td>
 								<td><form action="createNotice" method="get">
-									
-									
+
+
 										<button type="submit" id="notice11">공지등록</button>
-								</form></td>
+									</form></td>
 
 							</tr>
 
@@ -368,8 +369,9 @@ b_container {
 			</div>
 			<!--=== Blog Posts ===-->
 			<div class="">
-				<div class="container" style="padding-top: 30px; padding-bottom: 60px;padding-left: 0px;">
-					<div class>
+				<div class="container"
+					style="padding-top: 30px; padding-bottom: 60px; padding-left: 0px;">
+					<div>
 						<!-- Blog All Posts -->
 						<div class="col-md-9">
 							<!----- 그룹 캘린더 --------------------------------------------------------------------------->
@@ -404,43 +406,45 @@ b_container {
 								</table>
 								<a href="javascript:ViewLayer();">등록</a>
 								<div id="Pop"
-									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; background: #505457; color: #fff;">
-									<a href="javascript:ViewClose();"><img id="popLogo"
-										src="./resources/img/cancelcel.png" /></a>
-									<form method="post" style="margin: 5% 5%">
-										작성자 - ${uid}</br>
-										</br>
+									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; background: #3d3d3d; color: #fff;">
+									<a href="javascript:ViewClose();">
+									<img id="popLogo" src="./resources/cancelcel.png" /></a>
+									<form method="post" action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}" style="margin: 5% 5%">
+		 								 <p>작성자 - ${uid}</p>
 										<div class="form-group">
-											제목 </br>
+											<p>제목</p>
 											<input class="form-control" type="text" name="writing_title">
 										</div>
 										<div class="form-group">
-											내용 </br>
-											<textarea rows="13" cols="131"
-												style="color: black; resize: none;" name="writing_content"></textarea>
+											<p>내용</p>
+											<textarea rows="13" cols="132" style="color: black; resize: none;" name="writing_content"></textarea>
 										</div>
-										</br> <input type="hidden" value="${uid}" name="member_id" />
+										
+										<input type="hidden" value="${uid}" name="member_id" />
+										<input type="hidden" value="group" name="bbs_id" />
+								
 										<!-- 인풋 타입 히든으로 안보이게 처리 -->
-										<input type="hidden" value="${gr_id}" name="gr_id" /> <input
-											class="btn btn-default" type="submit" value="등록">
-										<button class="btn btn-default" id="list">삭제</button>
+								
+										<input class="btn btn-default" type="submit" value="등록">
 									</form>
 								</div>
+
 
 								<div id="Pop_Re"
 									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; margin: 5% 5%; background: #101010; color: #fff;">
 									<a href="javascript:ViewClose2();"><img id="popLogo"
 										src="./resources/img/cancelcel.png" /></a>
 									<div style="margin: 5% 5%">
-										작성자 - <label id="re_id"></label></br>
-										제목 - <label id="re_title"></label></br>
-										내용   <div id="re_content" style="height:330px; background-color:#505457;"></div></br>
-										작성일 - 
-										<label id="re_date"></label>
-										<input type="hidden" value="" id="re_writing_id"/>
+										작성자 - <label id="re_id"></label><br/> 제목 - <label id="re_title"></label><br/>
+										내용
+										<div id="re_content" style="height: 330px; background-color: #505457;"></div>
+										<br/><label id="re_date">작성일 - </label> <input type="hidden"
+											value="" id="re_writing_id" />
 										<!-- <input class="btn btn-default" type="submit" value="수정"> -->
-										<input class="btn btn-default" type="submit" value="수정" style="float: right">
-										<button class="btn btn-default" id="Pop_Re_del"  style="float: right">삭제</button>
+										<input class="btn btn-default" type="submit" value="수정"
+											style="float: right">
+										<button class="btn btn-default" id="Pop_Re_del"
+											style="float: right">삭제</button>
 									</div>
 								</div>
 							</div>
@@ -462,32 +466,45 @@ b_container {
 
 						<!-- Blog Sidebar -->
 						<div class="col-md-3">
-					<!-- Contacts -->
-					<div class="headline"><h2>My Profile</h2></div>
-					<ul class="list-unstyled who margin-bottom-30">
-						<li><a href="#"><i class="fa fa-home"></i>5B Streat, City 50987 New Town US</a></li>
-						<li><a href="#"><i class="fa fa-envelope"></i>info@example.com</a></li>
-						<li><a href="#"><i class="fa fa-phone"></i>1(222) 5x86 x97x</a></li>
-						<li><a href="#"><i class="fa fa-globe"></i>http://www.example.com</a></li>
-					</ul>
+							<!-- Contacts -->
+							<div class="headline">
+								<h2>Profile</h2>
+							</div>
+							<ul class="list-unstyled who margin-bottom-30">
+								<li><a href="#"><i class="fa fa-home"></i>5B Streat,
+										City 50987 New Town US</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i>info@example.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i>1(222) 5x86
+										x97x</a></li>
+								<li><a href="#"><i class="fa fa-globe"></i>http://www.example.com</a></li>
+							</ul>
 
-					<!-- Business Hours -->
-					<div class="headline"><h2>Member List</h2></div>
-					<ul class="list-unstyled margin-bottom-30">
-						<li><strong>Monday-Friday:</strong> 10am to 8pm</li>
-						<li><strong>Saturday:</strong> 11am to 3pm</li>
-						<li><strong>Sunday:</strong> Closed</li>
-					</ul>
+							<!-- Business Hours -->
+							<div class="headline">
+								<h2>Member List</h2>
+							</div>
+							<ul class="list-unstyled margin-bottom-30">
+								<li><strong>Monday-Friday:</strong> 10am to 8pm</li>
+								<li><strong>Saturday:</strong> 11am to 3pm</li>
+								<li><strong>Sunday:</strong> Closed</li>
+							</ul>
 
-					<!-- Why we are? -->
-					<div class="headline"><h2>ETC</h2></div>
-					<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
-					<ul class="list-unstyled">
-						<li><i class="fa fa-check color-green"></i> Odio dignissimos ducimus</li>
-						<li><i class="fa fa-check color-green"></i> Blanditiis praesentium volup</li>
-						<li><i class="fa fa-check color-green"></i> Eos et accusamus</li>
-					</ul>
-				</div><!--/col-md-3-->
+							<!-- Why we are? -->
+							<div class="headline">
+								<h2>ETC</h2>
+							</div>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus
+								qui blanditiis praesentium voluptatum.</p>
+							<ul class="list-unstyled">
+								<li><i class="fa fa-check color-green"></i> Odio
+									dignissimos ducimus</li>
+								<li><i class="fa fa-check color-green"></i> Blanditiis
+									praesentium volup</li>
+								<li><i class="fa fa-check color-green"></i> Eos et
+									accusamus</li>
+							</ul>
+						</div>
+						<!--/col-md-3-->
 						<!-- End Blog Sidebar -->
 					</div>
 				</div>
@@ -529,20 +546,20 @@ b_container {
 						}
 					});
 				});
-				$("#Pop_Re_del").on("click",function(){
+				$("#Pop_Re_del").on("click", function() {
 					var writing_id = $("#re_writing_id").text();
 					console.log(writing_id);
 					$.ajax({
 						url : 'groupInfo_del',
-						data :{
+						data : {
 							id : writing_id
 						},
 						type : 'post',
-						success : function(data){
+						success : function(data) {
 							location.reload();
 						}
 					});
-					
+
 				});
 
 			});
@@ -737,7 +754,7 @@ b_container {
 		}
 	</script>
 
-<script>
+	<script>
 	<!-- 그룹장 체크 -->
 		var leader = "${leader}";
 
@@ -746,7 +763,7 @@ b_container {
 		} else {
 			$("#notice11").show();
 		}
-</script>
+	</script>
 
 
 
