@@ -121,10 +121,7 @@ public class GroupController {
 		List<GroupInfoBoard> list = infoboardservice.listAll(pasor);
 		
 		model.addAttribute("listAll", list);
-		
-		rttr.addAttribute("gr_id",gr_id);
-		rttr.addAttribute("gr_id",gr_name);
-		
+
 		return "groupInfo";
 	
 	}
@@ -133,7 +130,7 @@ public class GroupController {
 	 public String groupInfo(@RequestParam(value ="gr_id") String gr_id, @RequestParam(value ="uid") String uid, @RequestParam(value = "gr_name") String gr_name, 
 			 GroupInfoBoard vo, RedirectAttributes rttr) throws Exception {
 		 
-		 System.out.println("post 호출");
+		
 		 
 		  Calendar c = Calendar.getInstance();
 	      String year = c.get(Calendar.YEAR) + "";

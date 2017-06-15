@@ -421,7 +421,6 @@ b_container {
 										</div>
 										
 										<input type="hidden" value="${uid}" name="member_id" />
-										<input type="hidden" value="group" name="bbs_id" />
 								
 										<!-- 인풋 타입 히든으로 안보이게 처리 -->
 								
