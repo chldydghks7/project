@@ -80,6 +80,13 @@ public class GroupController {
 		return infoboardservice.read(id);
 	};
 	
+	@RequestMapping(value = "groupInfo_del", method = RequestMethod.POST)
+	@ResponseBody
+		public void groupInfo_del(@RequestParam(value="id") int id) throws Exception{
+			
+			 infoboardservice.del(id);
+	}
+	
 	
 	
 	

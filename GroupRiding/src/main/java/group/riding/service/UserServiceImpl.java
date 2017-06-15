@@ -58,6 +58,12 @@ public class UserServiceImpl implements UserService {
 	public int id_check(String uid) throws Exception {
 		return dao.id_check(uid);
 	}
+
+	@Override
+	public void insertkml(String kml) throws Exception {
+		// TODO Auto-generated method stub
+		dao.insertkml(kml);
+	}
 	
 	
 }

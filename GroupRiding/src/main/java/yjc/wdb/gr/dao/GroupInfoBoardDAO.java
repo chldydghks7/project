@@ -10,7 +10,7 @@ public interface GroupInfoBoardDAO {
 	
 	public void update(GroupInfoBoard vo)throws Exception;
 	
-	public void delete(GroupInfoBoard vo)throws Exception;
+	public void delete(int writing_id)throws Exception;
 	
 	public GroupInfoBoard read(int writing_id) throws Exception;
 	

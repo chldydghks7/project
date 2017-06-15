@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: bon
 Build-Jdk: 1.8.0_121
+=======
+Built-By: SungJAE
+Build-Jdk: 1.8.0_131
+>>>>>>> 09d60b081ebf11a90cd8582603269732d01f445a
 Created-By: Maven Integration for Eclipse
 
