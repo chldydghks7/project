@@ -110,12 +110,13 @@ public class UserController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value="createkml" ,method=RequestMethod.GET)
-	public String createkml(@RequestParam(value="userline[]")List<String> arrayParams,String callback)throws Exception{
+	@RequestMapping(value="insertkml" ,method=RequestMethod.GET)
+	public String createkml(@RequestParam(value="kml")String kml,String callback)throws Exception{
+		
+		service.insertkml(kml);
+	
 		
 		
-		Kml kml = new Kml();
-		 Coordinate temp;
 		
 		
 	
@@ -123,54 +124,9 @@ public class UserController {
 		 
 		 json.put("result", "success");
 		 
-		 
-		 ArrayList<Coordinate> list=new ArrayList<Coordinate>();
-			
-		int count=0;	
-		String lnglat="";
-			
-		 for(int i=0;i<arrayParams.size();i++)
-		 {
-			count+=1;
-			
-			 if(count%2==0&&i!=0)
-			 {
-				 lnglat+=","+arrayParams.get(i);
-			 }else{
-				 lnglat+=arrayParams.get(i);
-			 }
-			
-			
-			
-			
-			
-			 
-			 
-			 if(count%2==0&&i!=0)
-			 {
-				 
-				 
-			  temp=new Coordinate(lnglat);
-				
-			 System.out.println(lnglat);
-			 
-			 list.add(temp);
-				
-				lnglat="";
-			 }
-			
-			
-		 }
-		 
-		 kml.createAndSetPlacemark().withOpen(Boolean.TRUE).createAndSetLineString().withCoordinates(list);
-		 
-		 kml.marshal();
-			//marshals into file
-		 
-		 UUID uid=UUID.randomUUID();
-		 
-		kml.marshal(new File("e:\\kml\\"+uid.toString()+"HelloKml.kml"));
 		
+		 
+	
 		 
 		 return callback+"("+json+")";
 	}

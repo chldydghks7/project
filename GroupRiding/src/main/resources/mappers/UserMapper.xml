@@ -46,5 +46,12 @@
 		from gr_user
 		where uid = #{uid}
 	</select>
+	
+	
+	<!-- kml 파일명 삽입-->
+	<insert id="insert_kml">
+	 insert into gr_kml kml_name values(#{kml})	
+	
+	</insert>
 
 </mapper>

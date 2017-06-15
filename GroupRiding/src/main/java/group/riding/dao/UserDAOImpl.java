@@ -62,5 +62,11 @@ public class UserDAOImpl implements UserDAO {
 		return session.selectOne(namespace + ".id_check", uid);
 	}
 
+	@Override
+	public void insertkml(String kml) throws Exception {
+		// TODO Auto-generated method stub
+		session.insert(namespace+".insert_kml", kml);
+	}
+
 
 }

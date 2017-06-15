@@ -23,4 +23,6 @@ public interface UserService {
 	
 	public int id_check(String uid) throws Exception;	// 아이디 중복체크
 	
+	public void insertkml(String kml)throws Exception;  //kml 파일이름 삽입
+	
 }

@@ -463,7 +463,7 @@ b_container {
 						<!-- Blog Sidebar -->
 						<div class="col-md-3">
 					<!-- Contacts -->
-					<div class="headline"><h2>Profile</h2></div>
+					<div class="headline"><h2>My Profile</h2></div>
 					<ul class="list-unstyled who margin-bottom-30">
 						<li><a href="#"><i class="fa fa-home"></i>5B Streat, City 50987 New Town US</a></li>
 						<li><a href="#"><i class="fa fa-envelope"></i>info@example.com</a></li>
