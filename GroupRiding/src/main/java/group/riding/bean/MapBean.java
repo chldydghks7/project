@@ -5,7 +5,7 @@ public class MapBean {
 	private double longitude;
 	private String place_kind;
 	private String place_name;
-	private String visit;
+	private int visit;
 	
 	public double getLatitude() {
 		return latitude;
@@ -39,11 +39,11 @@ public class MapBean {
 		this.place_name = place_name;
 	}
 	
-	public String getVisit() {
+	public int getVisit() {
 		return visit;
 	}
 	
-	public void setVisit(String visit) {
+	public void setVisit(int visit) {
 		this.visit = visit;
 	}
 }

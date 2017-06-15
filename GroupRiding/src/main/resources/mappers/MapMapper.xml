@@ -6,6 +6,6 @@
 <mapper namespace="group.riding.MapMapper">
 	<select id = "makerList" resultType = "MapBean">
 		select *
-		from place
+		from hotplace
 	</select>
 </mapper>

@@ -1,4 +1,7 @@
 <%@ page language = "java" contentType = "text/html; charset = UTF-8" pageEncoding = "UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
@@ -194,7 +197,6 @@
                <div class="headline"><h3>Basic Map</h3></div>
                <div id="map" class="map margin-bottom-50"></div>
                <!-- End Basic Map -->
-
             </div>
             <!-- End Content -->
          </div>
@@ -337,15 +339,25 @@
    <script type="text/javascript" src="./resources/assets/js/app.js"></script>
    <script type="text/javascript" src="./resources/assets/js/plugins/style-switcher.js"></script>
    <script type="text/javascript">
-   	var contentArray = [];
-   	var iconArray = [];
-   	var makers = [];
-   	var iterator = 0;
-   	var makerArray = [];
- 	
-   	// infowindow contents 배열
-	
    	
+   	var contentArray = [];
+  	var iconArray = [];
+  	var makers = [];
+  	var iterator = 0;
+  	var makerArray = [];
+  	
+   	$.getJSON('ajaxMap', function(data) {
+   		console.log(data);
+   		
+   		for(i = 0; ; i++) {
+   			contentArray[i] = data.map[i].place_name;
+   			iconArray[i] = "http://maps.google.com/mapfiles/ms/micons/yellow-dot.png";
+   			makerArray[i] = new google.maps.LatLng(data.map[i].latitude, data.map[i].longitude);
+   			
+   			alert(contentArray[i] + " & " + makerArray[i]);
+   		}
+   	});
+	
 	function initMap() {
 		var map = new google.maps.Map(document.getElementById('map'), {
 			center: {lat: -34.397, lng: 150.644},
