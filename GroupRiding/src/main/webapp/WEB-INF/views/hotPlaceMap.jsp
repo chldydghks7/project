@@ -332,31 +332,14 @@
    <!-- JS Implementing Plugins -->
    <script type="text/javascript" src="./resources/assets/plugins/back-to-top.js"></script>
    <script type="text/javascript" src="./resources/assets/plugins/smoothScroll.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN--zcfp4teCptRjts9sB0EDpa98Kyiu0&callback=initMap" async defer></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN--zcfp4teCptRjts9sB0EDpa98Kyiu0&callback=initMap" async defer></script>
    <!-- JS Customization -->
    <script type="text/javascript" src="./resources/assets/js/custom.js"></script>
    <!-- JS Page Level -->
    <script type="text/javascript" src="./resources/assets/js/app.js"></script>
    <script type="text/javascript" src="./resources/assets/js/plugins/style-switcher.js"></script>
    <script type="text/javascript">
-   	
-   	var contentArray = [];
-  	var iconArray = [];
-  	var makers = [];
-  	var iterator = 0;
-  	var makerArray = [];
-  	
-   	$.getJSON('ajaxMap', function(data) {
-   		console.log(data);
-   		
-   		for(i = 0; ; i++) {
-   			contentArray[i] = data.map[i].place_name;
-   			iconArray[i] = "http://maps.google.com/mapfiles/ms/micons/yellow-dot.png";
-   			makerArray[i] = new google.maps.LatLng(data.map[i].latitude, data.map[i].longitude);
-   			
-   			alert(contentArray[i] + " & " + makerArray[i]);
-   		}
-   	});
+   
 	
 	function initMap() {
 		var map = new google.maps.Map(document.getElementById('map'), {
@@ -383,6 +366,39 @@
 			// Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
         }
+        
+        $.getJSON('ajaxMap', function(data) {
+       		console.log(data);
+       		
+       		var location = [];
+       		var makers = [];
+       		var label;
+       		
+       		for(i = 0; ; i++) {
+       			location[i] = new google.maps.LatLng(data.map[i].latitude, data.map[i].longitude);
+       			
+       			if(data.map[i].place_kind = "hotel") {
+       				label = "H";
+       			}
+       			else if(data.map[i].place_kind = "restaurant") {
+       				label = "R";
+       			}
+       			else {
+       				label = null;
+       			}
+       			
+       			makers[i] = new google.maps.Marker({
+       				position: location[i],
+       				title: data.map[i].place_name,
+       				label: label
+       			});
+       			
+       			alert(makers[i].position);
+       			alert(makers[i].title);
+       			
+       			makers[i].setMap(map);
+       		}
+       	});
 	}
    
 	function handleLocationError(browserHasGeolocation, infoWindow, pos) {

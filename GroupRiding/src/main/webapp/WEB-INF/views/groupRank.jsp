@@ -123,11 +123,8 @@
 						<li class="dropdown"><a href="javascript:void(0);"
 							class="dropdown-toggle" data-toggle="dropdown"> Sharing </a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="picture">Picture</a>
+								<li class="dropdown-submenu"><a href="sharing">Sharing</a>
 								</li>
-								<li class="dropdown-submenu"><a href="route">Route</a></li>
-								<li class="dropdown-submenu"><a href="javascript:void(0);">Grid
-										Text Boxed</a></li>
 							</ul></li>
 						<!-- End Portfolio -->
 

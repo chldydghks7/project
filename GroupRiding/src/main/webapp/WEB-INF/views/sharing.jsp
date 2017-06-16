@@ -46,6 +46,7 @@
          width: 30px;
       }
       #s-img {
+      	 width: 550px;
          height: 300px;
       }
       #s-reply {
