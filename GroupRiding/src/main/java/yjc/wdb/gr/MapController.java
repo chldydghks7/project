@@ -45,14 +45,4 @@ public class MapController {
 		}
 		return entity;
 	}
-	
-	@RequestMapping(value = "restaurantList", method = RequestMethod.GET)
-	public void restaurantList() {
-		
-	}
-	
-	@RequestMapping(value = "hotelList", method = RequestMethod.GET)
-	public void hotelList() {
-		
-	}
 }

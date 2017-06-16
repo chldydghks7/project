@@ -134,6 +134,13 @@
 		from bbs_writing where bbs_id='group' and group_id=#{groupid}
 	</select>
 
+	<select id="info_li" resultType="GroupInfoList">
+		select att.fullname, att.uid, gr.riding_no, gf.alldistance, gf.avgspeed
+		from gr_gr gr, gr_attach att, gr_ridinginfo gf
+		where gr.uid=att.uid and att.uid=gf.uid
+		and gr.uid=#{uid}
+		order by gf.riding_id desc;
+	</select>
 	<!-- 그룹명 중복체크 -->
 	<select id="n_check" resultType="int">
 		select count(*)

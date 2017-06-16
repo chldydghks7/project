@@ -272,11 +272,11 @@ b_container {
 						<li class="dropdown"><a href="javascript:void(0);"
 							class="dropdown-toggle" data-toggle="dropdown"> Hot Place </a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="hotPlaceMap">Map</a>
+								<li class="dropdown-submenu"><a href="hotPlaceMap">Hot Place</a>
 								</li>
-								<li class="dropdown-submenu"><a href="restaurantList">Restaurant</a>
+								<!-- <li class="dropdown-submenu"><a href="restaurantList">Restaurant</a>
 								</li>
-								<li><a href="hotelList">Hotel</a></li>
+								<li><a href="hotelList">Hotel</a></li> -->
 							</ul></li>
 						<!-- End Features -->
 
@@ -473,14 +473,21 @@ b_container {
 							<!-- Contacts -->
 							<div class="headline">
 								<h2>Profile</h2>
+<!-- 							private String fullName; //프로필 사진경로
+								private String uid; //아이디
+								private int riding_no; //라이딩한 횟수
+								private double alldistance; //총거리
+								private double avspeed; //평균속도  -->
 							</div>
+							
 							<ul class="list-unstyled who margin-bottom-30">
-								<li><a href="#"><i class="fa fa-home"></i>5B Streat,
-										City 50987 New Town US</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i>info@example.com</a></li>
-								<li><a href="#"><i class="fa fa-phone"></i>1(222) 5x86
-										x97x</a></li>
-								<li><a href="#"><i class="fa fa-globe"></i>http://www.example.com</a></li>
+							<c:forEach items="${listAll_li}" begin="1" end="1" var="info">
+								<li><a href="#"><i class="fa fa-home"></i>  <img src="/displayFile?fileName=${info.fullName}" /></a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i>  ${info.uid}</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> ${info.riding_no} </a></li>
+								<li><a href="#"><i class="fa fa-globe"></i>  ${info.alldistance} </a></li>
+								<li><a href="#"><i class="fa fa-globe"></i>  ${info.avgspeed} </a></li>
+						</c:forEach>
 							</ul>
 
 							<!-- Business Hours -->

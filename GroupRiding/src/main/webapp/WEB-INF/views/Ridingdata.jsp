@@ -146,12 +146,12 @@
                      </a>
                      <ul class="dropdown-menu">
                         <li class="dropdown-submenu">
-                           <a href="hotPlaceMap">Map</a>
+                           <a href="hotPlaceMap">Hot Place</a>
                         </li>
-                        <li class="dropdown-submenu">
+                        <!-- <li class="dropdown-submenu">
                            <a href="restaurantList">Restaurant</a>
                         </li>
-                        <li><a href="hotelList">Hotel</a></li>
+                        <li><a href="hotelList">Hotel</a></li> -->
                      </ul>
                   </li>
                   <!-- End Features -->

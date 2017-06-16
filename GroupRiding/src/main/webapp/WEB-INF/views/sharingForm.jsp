@@ -151,12 +151,12 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li class="dropdown-submenu">
-									<a href="hotPlaceMap">Map</a>
+									<a href="hotPlaceMap">Hot Place</a>
 								</li>
-								<li class="dropdown-submenu">
+								<!-- <li class="dropdown-submenu">
 									<a href="restaurantList">Restaurant</a>
 								</li>
-								<li><a href="hotelList">Hotel</a></li>
+								<li><a href="hotelList">Hotel</a></li> -->
 							</ul>
 						</li>
 						<!-- End Features -->
@@ -200,12 +200,11 @@
 				<form class = "sky-form" id="sharForm" action="sharingForm" method="post">
 					<fieldset>
 							<section style = "display: none;">
-								<label class="label" id = "bbs_Id">게시판</label>
 								<label class="input">
 									<input type="text" name = "bbs_Id" id = "bbs_Id" value = "rs">
+									<input type = "text" name = "member_Id" id = "member_Id" value = "${uid}">
 								</label>
 							</section>				
-							
 							<section>
 								<label class="label">제목</label>
 								<label class="input">

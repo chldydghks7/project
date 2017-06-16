@@ -22,7 +22,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import group.riding.bean.GroupBean;
 import group.riding.service.GroupService;
 import yjc.wdb.gr.bean.GroupInfoBoard;
+import yjc.wdb.gr.bean.GroupInfoList;
 import yjc.wdb.gr.service.GroupInfoBoardService;
+import yjc.wdb.gr.service.GroupInfoListService;
 
 
 @Controller
@@ -32,6 +34,8 @@ public class GroupController {
 	private GroupService service;
 	@Inject
 	private GroupInfoBoardService infoboardservice;
+	@Inject 
+	private GroupInfoListService infolistservice;
 	
 	@RequestMapping(value="create_gr", method=RequestMethod.GET)
 	public void create_gr() {
@@ -119,8 +123,10 @@ public class GroupController {
 		int pasor = Integer.parseInt(gr_id); 
 		
 		List<GroupInfoBoard> list = infoboardservice.listAll(pasor);
+		List<GroupInfoList> info_list = infolistservice.listAll_li(id);
 		
 		model.addAttribute("listAll", list);
+		model.addAttribute("listAll_li",info_list);
 
 		return "groupInfo";
 	
