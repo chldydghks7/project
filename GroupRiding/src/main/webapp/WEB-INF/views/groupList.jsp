@@ -192,6 +192,7 @@
 				
 						<div class="pricing hover-effect" style="float: left; margin-left: 20px;">
 							<div class="pricing-head">
+							
 								<h3>
 									<!-- <a href="gr_info?gr_name=${group.gr_name}">-->
 									${group.gr_name}
@@ -353,7 +354,7 @@
 			</div><!--/copyright-->
 		</div>
 		<!--=== End Footer Version 1 ===-->
-	</div><!--/wrapper-->
+	<!--/wrapper-->
 
 	<!-- JS Global Compulsory -->
 	<script type="text/javascript" src="./resources/assets/plugins/jquery/jquery.min.js"></script>
