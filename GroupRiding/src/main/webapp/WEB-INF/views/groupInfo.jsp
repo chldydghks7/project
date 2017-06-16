@@ -161,6 +161,7 @@ b_container {
 			}
 		}
 		function ViewClose2() {
+			$(".vbtn").remove();
 			if (document.getElementById("Pop_Re").style.display == "inline") {
 				//열어주어라
 				document.getElementById("Pop_Re").style.display = 'none'
@@ -395,9 +396,12 @@ b_container {
 									</tr>
 									<c:forEach items="${listAll}" var="GroupInfoBo">
 										<tr>
+										
 											<td class="active"><a href="javascript:ViewLayer2();"
 												id="a" class="${GroupInfoBo.writing_id}">${GroupInfoBo.writing_title}</a></td>
+												
 											<td class="active">${GroupInfoBo.member_id}</td>
+											
 											<td class="active">${GroupInfoBo.regist_date}</td>
 											<td class="active">${GroupInfoBo.view_Number}</td>
 										</tr>
@@ -408,8 +412,8 @@ b_container {
 								<div id="Pop"
 									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; background: #3d3d3d; color: #fff;">
 									<a href="javascript:ViewClose();">
-									<img id="popLogo" src="./resources/cancelcel.png" /></a>
-									<form method="post" action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}" style="margin: 5% 5%">
+									<img id="popLogo" src="./resources/img/cancelcel.png" /></a>
+									<form method="post" action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}" style="margin: 5% 5%;">
 		 								 <p>작성자 - ${uid}</p>
 										<div class="form-group">
 											<p>제목</p>
@@ -417,7 +421,7 @@ b_container {
 										</div>
 										<div class="form-group">
 											<p>내용</p>
-											<textarea rows="13" cols="132" style="color: black; resize: none;" name="writing_content"></textarea>
+											<textarea class="form-control" rows="13" cols="132" style="color: black; resize: none;" name="writing_content"></textarea>
 										</div>
 										
 										<input type="hidden" value="${uid}" name="member_id" />
@@ -431,19 +435,21 @@ b_container {
 
 								<div id="Pop_Re"
 									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; margin: 5% 5%; background: #101010; color: #fff;">
-									<a href="javascript:ViewClose2();"><img id="popLogo"
-										src="./resources/img/cancelcel.png" /></a>
+									<a href="javascript:ViewClose2();">
+									<img id="popLogo" src="./resources/img/cancelcel.png" /></a>
 									<div style="margin: 5% 5%">
+										<div class="uid" style="display:none;">${uid}</div>
 										작성자 - <label id="re_id"></label><br/> 제목 - <label id="re_title"></label><br/>
 										내용
 										<div id="re_content" style="height: 330px; background-color: #505457;"></div>
 										<br/><label id="re_date">작성일 - </label> <input type="hidden"
 											value="" id="re_writing_id" />
+										<div id="die"></div>
 										<!-- <input class="btn btn-default" type="submit" value="수정"> -->
-										<input class="btn btn-default" type="submit" value="수정"
-											style="float: right">
-										<button class="btn btn-default" id="Pop_Re_del"
-											style="float: right">삭제</button>
+										<!-- <input class="btn btn-default" type="submit" value="수정"
+											style="float: right"> -->	
+										<!-- <button class="btn btn-default" id="Pop_Re_del"
+											style="float: right">삭제</button> -->
 									</div>
 								</div>
 							</div>
@@ -517,7 +523,10 @@ b_container {
 
 		<script>
 			$(document).ready(function() {
-
+				var uid = $(".uid").text(); 
+				var ele = "<input class='btn btn-default vbtn' type='submit' value='수정' style='float: right'>"	 
+				        + "<button class='btn btn-default vbtn' id='Pop_Re_del' style='float: right'>삭제</button>";
+				
 				var formObj = $("form[role='form']");
 
 				$("#gr_list").on("click", function() {
@@ -541,7 +550,11 @@ b_container {
 							$("#re_content").text(data.writing_content);
 							$("#re_date").text(data.regist_date);
 							$("#re_writing_id").text(data.writing_id);
-
+							if(uid == data.member_id) {
+								$("#die").append(ele);
+							} else {
+								
+							}
 						}
 					});
 				});
