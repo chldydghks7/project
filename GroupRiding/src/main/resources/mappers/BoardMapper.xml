@@ -5,8 +5,8 @@
   
  <mapper namespace="group.riding.BoardMapper">
     <insert id="newShar">
-       insert into bbs_writing(bbs_Id ,writing_title, writing_content)
-       values(#{bbs_Id}, #{writing_title}, #{writing_content})
+       insert into bbs_writing(bbs_Id, member_Id ,writing_title, writing_content)
+       values(#{bbs_Id}, #{member_Id}, #{writing_title}, #{writing_content})
     </insert>
     
     <select id="sharList" resultType="BoardBean">

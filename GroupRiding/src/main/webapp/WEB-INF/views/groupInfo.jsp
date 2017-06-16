@@ -272,11 +272,11 @@ b_container {
 						<li class="dropdown"><a href="javascript:void(0);"
 							class="dropdown-toggle" data-toggle="dropdown"> Hot Place </a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="hotPlaceMap">Map</a>
+								<li class="dropdown-submenu"><a href="hotPlaceMap">Hot Place</a>
 								</li>
-								<li class="dropdown-submenu"><a href="restaurantList">Restaurant</a>
+								<!-- <li class="dropdown-submenu"><a href="restaurantList">Restaurant</a>
 								</li>
-								<li><a href="hotelList">Hotel</a></li>
+								<li><a href="hotelList">Hotel</a></li> -->
 							</ul></li>
 						<!-- End Features -->
 

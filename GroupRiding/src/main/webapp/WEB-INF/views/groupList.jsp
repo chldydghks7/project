@@ -112,7 +112,7 @@
 									<a href="javascript:void(0);">Calendar</a>
 								</li>
 								<li class="dropdown-submenu">
-									<a href="Ridngdata">Riding Data</a>
+									<a href="Ridingdata">Riding Data</a>
 								</li>
 							</ul>
 						</li>
@@ -138,12 +138,12 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li class="dropdown-submenu">
-									<a href="hotPlaceMap">Map</a>
+									<a href="hotPlaceMap">HotPlace</a>
 								</li>
-								<li class="dropdown-submenu">
+							<!-- 	<li class="dropdown-submenu">
 									<a href="restaurantList">Restaurant</a>
 								</li>
-								<li><a href="hotelList">Hotel</a></li>
+								<li><a href="hotelList">Hotel</a></li> -->
 							</ul>
 						</li>
 						<!-- End Features -->
