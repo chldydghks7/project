@@ -3,6 +3,7 @@ package yjc.wdb.gr.bean;
 public class GroupInfoList {
 
 
+
 	private String fullName; //프로필 사진경로
 	private String uid; //아이디
 	private int riding_no; //라이딩한 횟수
