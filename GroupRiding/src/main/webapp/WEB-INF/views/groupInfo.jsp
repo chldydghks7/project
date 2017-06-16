@@ -433,8 +433,7 @@ b_container {
 								</div>
 
 
-								<div id="Pop_Re"
-									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; margin: 5% 5%; background: #101010; color: #fff;">
+								<div id="Pop_Re"style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; margin: 5% 5%; background: #101010; color: #fff;">
 									<a href="javascript:ViewClose2();">
 									<img id="popLogo" src="./resources/img/cancelcel.png" /></a>
 									<div style="margin: 5% 5%">
@@ -558,7 +557,7 @@ b_container {
 						}
 					});
 				});
-				$("#Pop_Re_del").on("click", function() {
+				$("#Pop_Re").on("click", "#Pop_Re_del", function() {
 					var writing_id = $("#re_writing_id").text();
 					console.log(writing_id);
 					$.ajax({
