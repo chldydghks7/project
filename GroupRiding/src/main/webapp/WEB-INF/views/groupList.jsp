@@ -109,7 +109,7 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Calendar</a>
+									<a href="calendar">Calendar</a>
 								</li>
 								<li class="dropdown-submenu">
 									<a href="Ridingdata">Riding Data</a>
