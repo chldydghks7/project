@@ -23,13 +23,18 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 
 	@Override
-	public List<NoticeBean> listNotice() throws Exception {
-		return dao.listNotice();
+	public List<NoticeBean> listNotice(String gr_name) throws Exception {
+		return dao.listNotice(gr_name);
 	}
 
 	@Override
 	public NoticeBean infoNotice(int noticeId) throws Exception {
 		return dao.infoNotice(noticeId);
+	}
+
+	@Override
+	public List<NoticeBean> userNotice(String uid) throws Exception {
+		return dao.userNotice(uid);
 	}
 
 	

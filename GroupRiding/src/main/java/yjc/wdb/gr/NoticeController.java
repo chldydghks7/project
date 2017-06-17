@@ -23,20 +23,22 @@ public class NoticeController {
 	private NoticeService service;
 
 	@RequestMapping(value="createNotice", method=RequestMethod.GET)
-	public void createNotice(@ModelAttribute NoticeBean nb) {
+	public void createNotice(String gr_id, String gr_name, Model model) {
+		model.addAttribute("gr_id", gr_id);
 		
+		model.addAttribute("gr_name", gr_name);
 	}
 	
 	@RequestMapping(value="createNotice", method=RequestMethod.POST)
-	public String create(NoticeBean nb) throws Exception {
+	public String create(NoticeBean nb, String gr_id, String uid, String gr_name) throws Exception {
 		service.createNotice(nb);
 		
-		return "redirect:groupNotice";
+		return "redirect:groupInfo?gr_id=" + gr_id + "&uid=" + uid + "&gr_name=" + gr_name;
 	}
 	
 	@RequestMapping(value="groupNotice", method=RequestMethod.GET)
-	public void groupNotice(NoticeBean nb, Model model) throws Exception {
-		List<NoticeBean> list = service.listNotice();
+	public void groupNotice(@RequestParam(value="gr_name") String gr_name, NoticeBean nb, Model model) throws Exception {
+		List<NoticeBean> list = service.listNotice(gr_name);
 		model.addAttribute("list", list);
 	}
 	
@@ -45,6 +47,12 @@ public class NoticeController {
 		NoticeBean info = service.infoNotice(noticeId);
 		
 		model.addAttribute("info", info);
+	}
+	
+	@RequestMapping(value="calendar", method=RequestMethod.GET)	// °³ÀÎ Ä¶¸°´õ GET
+	public void  userNotice(@RequestParam(value="uid") String uid, Model model) throws Exception{
+		List<NoticeBean> list = service.userNotice(uid);
+		model.addAttribute("list", list);
 	}
 	
 }

@@ -4,11 +4,15 @@ public class GroupInfoList {
 
 
 
+	
+
+
 	private String fullName; //프로필 사진경로
 	private String uid; //아이디
 	private int riding_no; //라이딩한 횟수
 	private double alldistance; //총거리
 	private double avgspeed; //평균속도 
+
 
 	public String getFullName() {
 		return fullName;
@@ -51,6 +55,7 @@ public class GroupInfoList {
 	public void setAvgspeed(double avgspeed) {
 		this.avgspeed = avgspeed;
 	}
+
 
 
 }

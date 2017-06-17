@@ -12,12 +12,19 @@
 	</insert>
 	
 	<select id="listNotice" resultType="NoticeBean">
-		select * from gr_notice;
+		select * from gr_notice
+		where gr_name = #{gr_name}
 	</select>
 	
 	<select id="infoNotice" resultType="NoticeBean">
 		select * from gr_notice
  		where noticeId= #{noticeId}
+	</select>
+	
+	<select id="userNotice" resultType="NoticeBean">
+		select * from gr_notice, gr_gr
+		where gr_notice.gr_name = gr_gr.gr_name 
+		and gr_gr.uid=#{uid};
 	</select>
 	
 </mapper>

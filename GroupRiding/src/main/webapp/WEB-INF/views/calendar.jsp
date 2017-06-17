@@ -25,6 +25,10 @@
 		margin: 0 auto;
 		}
 		
+	.fc-header { 
+		width: 100px;
+	}
+
 </style>
 
 <div id='calendar'></div>
@@ -57,7 +61,7 @@
 		
 	});
 	
-	<c:forEach items="${list}" var="i">
-		${i.noticeId}
-	</c:forEach>
+	/* <c:forEach items="${list}" var="i">
+		"${i.noticeId}"
+	</c:forEach> */
 </script>
