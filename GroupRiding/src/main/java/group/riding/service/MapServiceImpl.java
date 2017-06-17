@@ -21,4 +21,10 @@ public class MapServiceImpl implements MapService {
 		return dao.makerList();
 	}
 
+	@Override
+	public MapBean makerRead(String place_name) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.makerRead(place_name);
+	}
+
 }

@@ -23,4 +23,10 @@ public class MapDAOImpl implements MapDAO {
 		return session.selectList(namespace + ".makerList");
 	}
 
+	@Override
+	public MapBean makerRead(String place_name) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace + ".makerRead", place_name);
+	}
+
 }
