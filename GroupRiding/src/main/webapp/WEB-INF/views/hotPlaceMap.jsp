@@ -46,6 +46,28 @@
       #map {
          height: 700px;
       }
+
+      #like {
+         margin-right: 20px;
+         width: 30px;
+      }
+      #s-img {
+      	 width: 550px;
+         height: 300px;
+      }
+      #s-reply {
+         width: 400px;
+         margin-right: 20px;
+      }
+      .modal-body {
+         height: 700px;
+      }
+      
+      .modal-dialog {
+      	display: none;
+      	z-index: 1050;
+      	position: absolute;
+      }
    </style>
 </head>
 
@@ -145,12 +167,12 @@
                      </a>
                      <ul class="dropdown-menu">
                         <li class="dropdown-submenu">
-                           <a href="hotPlaceMap">Map</a>
+                           <a href="hotPlaceMap">Hot Place</a>
                         </li>
-                        <li class="dropdown-submenu">
+                        <!-- <li class="dropdown-submenu">
                            <a href="restaurantList">Restaurant</a>
                         </li>
-                        <li><a href="hotelList">Hotel</a></li>
+                        <li><a href="hotelList">Hotel</a></li> -->
                      </ul>
                   </li>
                   <!-- End Features -->
@@ -180,8 +202,7 @@
             <h1 class="pull-left">HOT PLACE</h1>
             <ul class="pull-right breadcrumb">
                <li><a href="main">Home</a></li>
-               <li><a href="javascript:void(0);">HotPlace</a></li>
-               <li class="active">Map</li>
+               <li class="active">Hot Place</li>
             </ul>
          </div>
       </div><!--/breadcrumbs-->
@@ -197,6 +218,36 @@
                <div class="headline"><h3>Basic Map</h3></div>
                <div id="map" class="map margin-bottom-50"></div>
                <!-- End Basic Map -->
+               
+               <!-- Modal -->
+		    <!-- <div id = "myModal" class = "modal fade" role = "dialog"> -->
+		      <div class = "modal-dialog">
+		         <div class = "modal-content">
+		            <div class="modal-header">
+		               <button type="button" class="close" data-dismiss="modal">&times;</button>
+		            </div>
+		            <div class="modal-body">
+		               <%-- <p style="float: left">제목: ${read.writing_title}</p>
+		               <br>
+		               <hr>
+		               <div>
+		                  <img src="./displayFile?fileName=${read.bbs_FilePath}" id="s-img">
+		               </div>
+		               <hr>
+		               <div id="s-content">
+		                  <p>내용 : ${read.writing_content}</p>
+		                  <p>글번호 : ${read.writing_Id}</p>
+		               </div> --%>
+		            </div>
+		            <div class="modal-footer">
+		               <img src="./resources/img/hearts.png" id="like"> <input
+		                  type="text" id="s-reply" />
+		               <button id="addReply" class="btn btn-default">댓글등록</button>
+		            </div>
+		         </div>
+		      	</div>
+			 <!-- </div> -->
+ 
             </div>
             <!-- End Content -->
          </div>
@@ -344,7 +395,7 @@
 	function initMap() {
 		var map = new google.maps.Map(document.getElementById('map'), {
 			center: {lat: -34.397, lng: 150.644},
-			zoom: 15
+			zoom: 18
 		});
 		var infoWindow = new google.maps.InfoWindow({map: map});
    
@@ -397,8 +448,17 @@
        			alert(makers[i].title);
        			
        			makers[i].setMap(map);
+       			makerListener(makers[i]);
        		}
+      
+       		function makerListener(makers) {
+            	google.maps.event.addListener(makers, "click", function() {
+            		alert('click' + makers.position);
+            		$(".modal-dialog").show();
+            	});
+            }
        	});
+        
 	}
    
 	function handleLocationError(browserHasGeolocation, infoWindow, pos) {

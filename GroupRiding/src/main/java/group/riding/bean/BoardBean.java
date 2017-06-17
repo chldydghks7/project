@@ -21,6 +21,8 @@ public class BoardBean {
 	public void setBbs_FilePath(String bbs_FilePath) {
 		this.bbs_FilePath = bbs_FilePath;
 	}
+	
+	
 
 	public int getWriting_Id() {
 		return writing_Id;

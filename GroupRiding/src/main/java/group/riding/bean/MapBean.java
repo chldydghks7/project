@@ -1,12 +1,21 @@
 package group.riding.bean;
 
 public class MapBean {
+	private int hp_id;
 	private double latitude;
 	private double longitude;
 	private String place_kind;
 	private String place_name;
 	private int visit;
 	
+	public int getHp_id() {
+		return hp_id;
+	}
+
+	public void setHp_id(int hp_id) {
+		this.hp_id = hp_id;
+	}
+
 	public double getLatitude() {
 		return latitude;
 	}

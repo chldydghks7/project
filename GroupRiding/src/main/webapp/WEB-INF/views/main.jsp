@@ -139,9 +139,9 @@
                               Hot Place
                            </a>
                            <ul class="dropdown-menu">
-                              <li><a href="hotPlaceMap">Map</a></li>
-                              <li><a href="restaurantList">Restaurant</a></li>
-                              <li><a href="hotelList">Hotel</a></li>
+                              <li><a href="hotPlaceMap">Hot Place</a></li>
+                              <!-- <li><a href="restaurantList">Restaurant</a></li>
+                              <li><a href="hotelList">Hotel</a></li> -->
                            </ul>
                         </li>
 

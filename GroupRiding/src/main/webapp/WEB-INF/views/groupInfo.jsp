@@ -131,6 +131,11 @@ b_container {
 	padding: 20px;
 	font-size: 1.2em;
 }
+
+#calendar {
+		width: 800px;
+		margin: 0 auto;
+		}
 </style>
 <body>
 	<script>
@@ -272,11 +277,11 @@ b_container {
 						<li class="dropdown"><a href="javascript:void(0);"
 							class="dropdown-toggle" data-toggle="dropdown"> Hot Place </a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="hotPlaceMap">Map</a>
+								<li class="dropdown-submenu"><a href="hotPlaceMap">Hot Place</a>
 								</li>
-								<li class="dropdown-submenu"><a href="restaurantList">Restaurant</a>
+								<!-- <li class="dropdown-submenu"><a href="restaurantList">Restaurant</a>
 								</li>
-								<li><a href="hotelList">Hotel</a></li>
+								<li><a href="hotelList">Hotel</a></li> -->
 							</ul></li>
 						<!-- End Features -->
 
@@ -357,8 +362,9 @@ b_container {
 
 									</form></td>
 								<td><form action="createNotice" method="get">
-
-
+											<input type="hidden" name="gr_id" value="${group.gr_id}"/>
+											
+											<input type="hidden" name="gr_name" value="${gr_name1}"/>
 										<button type="submit" id="notice11">공지등록</button>
 									</form></td>
 
@@ -433,8 +439,7 @@ b_container {
 								</div>
 
 
-								<div id="Pop_Re"
-									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; margin: 5% 5%; background: #101010; color: #fff;">
+								<div id="Pop_Re"style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; margin: 5% 5%; background: #101010; color: #fff;">
 									<a href="javascript:ViewClose2();">
 									<img id="popLogo" src="./resources/img/cancelcel.png" /></a>
 									<div style="margin: 5% 5%">
@@ -456,11 +461,15 @@ b_container {
 							<!-- End Blog Posts -->
 
 							<!-- Blog Posts -->
-							<div class="news-v3 bg-color-white margin-bottom-60">sss</div>
+							<div class="news-v3 bg-color-white margin-bottom-60">
+								<div id='calendar'></div>
+							</div>
 							<!-- End Blog Posts -->
 
 							<!-- Blog Posts -->
-							<div class="news-v3 bg-color-white margin-bottom-60">sss</div>
+							<div class="news-v3 bg-color-white margin-bottom-60">
+									sss
+							</div>
 							<!-- End Blog Posts -->
 
 							<!-- Blog Posts -->
@@ -474,14 +483,21 @@ b_container {
 							<!-- Contacts -->
 							<div class="headline">
 								<h2>Profile</h2>
+<!-- 							private String fullName; //프로필 사진경로
+								private String uid; //아이디
+								private int riding_no; //라이딩한 횟수
+								private double alldistance; //총거리
+								private double avspeed; //평균속도  -->
 							</div>
+							
 							<ul class="list-unstyled who margin-bottom-30">
-								<li><a href="#"><i class="fa fa-home"></i>5B Streat,
-										City 50987 New Town US</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i>info@example.com</a></li>
-								<li><a href="#"><i class="fa fa-phone"></i>1(222) 5x86
-										x97x</a></li>
-								<li><a href="#"><i class="fa fa-globe"></i>http://www.example.com</a></li>
+							<c:forEach items="${listAll_li}" begin="1" end="1" var="info">
+								<li><a href="#"><i class="fa fa-home"></i>  <img src="/displayFile?fileName=${info.fullName}" /></a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i>  ${info.uid}</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> ${info.riding_no} </a></li>
+								<li><a href="#"><i class="fa fa-globe"></i>  ${info.alldistance} </a></li>
+								<li><a href="#"><i class="fa fa-globe"></i>  ${info.avgspeed} </a></li>
+						</c:forEach>
 							</ul>
 
 							<!-- Business Hours -->
@@ -558,7 +574,7 @@ b_container {
 						}
 					});
 				});
-				$("#Pop_Re_del").on("click", function() {
+				$("#Pop_Re").on("click", "#Pop_Re_del", function() {
 					var writing_id = $("#re_writing_id").text();
 					console.log(writing_id);
 					$.ajax({
@@ -777,7 +793,44 @@ b_container {
 		}
 	</script>
 
+<link rel='stylesheet' type='text/css' href='./resources/calendar/fullcalendar.css' />
+<script type='text/javascript' src='./resources/calendar/jquery/jquery.js'></script>
+<script type='text/javascript' src='./resources/calendar/jquery/jquery-ui-custom.js'></script>
+<script type='text/javascript' src='./resources/calendar/fullcalendar.min.js'></script>
 
+<!-- 캘린더 -->
+<script type='text/javascript'>
+	$(document).ready(function() {
+
+		
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay'
+			},
+			editable: true,
+			events: [
+				
+				<c:forEach items="${noticelist}" var="i">
+					
+					{
+						title: "${i.notice_title}",
+						start: "${i.ridingDate}",
+						url: "noticeInfo?noticeId=${i.noticeId}"
+					},
+					
+				</c:forEach>
+				
+			]	// events
+		});
+		
+	});
+	
+	<c:forEach items="${noticelist}" var="i">
+		${i.noticeId}
+	</c:forEach>
+</script>
 
 	<script type="text/javascript" src="./resources/js/upload.js"></script>
 	<script

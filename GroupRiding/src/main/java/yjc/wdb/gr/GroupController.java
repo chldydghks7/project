@@ -20,9 +20,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import group.riding.bean.GroupBean;
+import group.riding.bean.NoticeBean;
 import group.riding.service.GroupService;
+import group.riding.service.NoticeService;
 import yjc.wdb.gr.bean.GroupInfoBoard;
+import yjc.wdb.gr.bean.GroupInfoList;
 import yjc.wdb.gr.service.GroupInfoBoardService;
+import yjc.wdb.gr.service.GroupInfoListService;
 
 
 @Controller
@@ -32,6 +36,13 @@ public class GroupController {
 	private GroupService service;
 	@Inject
 	private GroupInfoBoardService infoboardservice;
+
+	@Inject
+	private NoticeService noticeservice;
+
+	@Inject 
+	private GroupInfoListService infolistservice;
+
 	
 	@RequestMapping(value="create_gr", method=RequestMethod.GET)
 	public void create_gr() {
@@ -101,13 +112,18 @@ public class GroupController {
 	@RequestMapping(value = "groupInfo", method = RequestMethod.GET) // 그룹
 	public String gr_info(@RequestParam(value ="gr_id") String gr_id, @RequestParam(value ="uid") String uid, @RequestParam(value = "gr_name") String gr_name, 
 			RedirectAttributes rttr, Model model, GroupBean gr, HttpSession session) throws Exception {
-		
+		int pasor = Integer.parseInt(gr_id); 
 		gr = service.gr_info(gr_name);
 		int people = service.gr_people(gr_name);
+		
+		List<NoticeBean> noticelist = noticeservice.listNotice(gr_name);
+		model.addAttribute("noticelist", noticelist);
 
 		String leader = service.leaderNotice(uid, gr_name);	// 그룹장만 공지
 		model.addAttribute("leader", leader);	// 그룹장만 공지
 		model.addAttribute("people", people);
+		gr.setGr_id(pasor);
+		
 		model.addAttribute("group", gr);
 
 		String id = (String) session.getAttribute("uid");
@@ -116,11 +132,13 @@ public class GroupController {
 		
 		session.setAttribute("gr_name1", gr.getGr_name());
 		
-		int pasor = Integer.parseInt(gr_id); 
+		
 		
 		List<GroupInfoBoard> list = infoboardservice.listAll(pasor);
+		List<GroupInfoList> info_list = infolistservice.listAll_li(id);
 		
 		model.addAttribute("listAll", list);
+		model.addAttribute("listAll_li",info_list);
 
 		return "groupInfo";
 	
