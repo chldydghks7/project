@@ -52,13 +52,5 @@ public class GroupInfoList {
 		this.avgspeed = avgspeed;
 	}
 
-	public String toString(){
-		return "이미지경로: "+fullName
-			 + " 회원아이디: "+uid
-			 + " 라이딩한 횟수: " +riding_no
-			 + " 거리: " +alldistance
-			 + " 평균속도: " +avgspeed;
-
-	}
 
 }
