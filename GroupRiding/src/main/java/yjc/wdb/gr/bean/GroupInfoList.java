@@ -3,11 +3,16 @@ package yjc.wdb.gr.bean;
 public class GroupInfoList {
 
 
-	private String fullName; //�봽濡쒗븘 �궗吏꾧꼍濡�
-	private String uid; //�븘�씠�뵒
-	private int riding_no; //�씪�씠�뵫�븳 �슏�닔
-	private double alldistance; //珥앷굅由�
-	private double avgspeed; //�룊洹좎냽�룄 
+
+	
+
+
+	private String fullName; //프로필 사진경로
+	private String uid; //아이디
+	private int riding_no; //라이딩한 횟수
+	private double alldistance; //총거리
+	private double avgspeed; //평균속도 
+
 
 	public String getFullName() {
 		return fullName;
@@ -51,5 +56,14 @@ public class GroupInfoList {
 		this.avgspeed = avgspeed;
 	}
 
-	
+
+	public String toString(){
+		return "이미지경로: "+fullName
+			 + " 회원아이디: "+uid
+			 + " 라이딩한 횟수: " +riding_no
+			 + " 거리: " +alldistance
+			 + " 평균속도: " +avgspeed;
+
+	}
+
 }

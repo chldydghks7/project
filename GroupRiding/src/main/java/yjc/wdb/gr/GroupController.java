@@ -37,11 +37,13 @@ public class GroupController {
 	@Inject
 	private GroupInfoBoardService infoboardservice;
 
+
 	@Inject
 	private NoticeService noticeservice;
 
 	@Inject 
 	private GroupInfoListService infolistservice;
+
 
 	
 	@RequestMapping(value="create_gr", method=RequestMethod.GET)
