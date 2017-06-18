@@ -131,6 +131,11 @@ b_container {
 	padding: 20px;
 	font-size: 1.2em;
 }
+
+#calendar {
+		width: 800px;
+		margin: 0 auto;
+		}
 </style>
 <body>
 	<script>
@@ -357,8 +362,9 @@ b_container {
 
 									</form></td>
 								<td><form action="createNotice" method="get">
-
-
+											<input type="hidden" name="gr_id" value="${group.gr_id}"/>
+											
+											<input type="hidden" name="gr_name" value="${gr_name1}"/>
 										<button type="submit" id="notice11">공지등록</button>
 									</form></td>
 
@@ -455,11 +461,15 @@ b_container {
 							<!-- End Blog Posts -->
 
 							<!-- Blog Posts -->
-							<div class="news-v3 bg-color-white margin-bottom-60">sss</div>
+							<div class="news-v3 bg-color-white margin-bottom-60">
+								<div id='calendar'></div>
+							</div>
 							<!-- End Blog Posts -->
 
 							<!-- Blog Posts -->
-							<div class="news-v3 bg-color-white margin-bottom-60">sss</div>
+							<div class="news-v3 bg-color-white margin-bottom-60">
+									sss
+							</div>
 							<!-- End Blog Posts -->
 
 							<!-- Blog Posts -->
@@ -783,7 +793,44 @@ b_container {
 		}
 	</script>
 
+<link rel='stylesheet' type='text/css' href='./resources/calendar/fullcalendar.css' />
+<script type='text/javascript' src='./resources/calendar/jquery/jquery.js'></script>
+<script type='text/javascript' src='./resources/calendar/jquery/jquery-ui-custom.js'></script>
+<script type='text/javascript' src='./resources/calendar/fullcalendar.min.js'></script>
 
+<!-- 캘린더 -->
+<script type='text/javascript'>
+	$(document).ready(function() {
+
+		
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay'
+			},
+			editable: true,
+			events: [
+				
+				<c:forEach items="${noticelist}" var="i">
+					
+					{
+						title: "${i.notice_title}",
+						start: "${i.ridingDate}",
+						url: "noticeInfo?noticeId=${i.noticeId}"
+					},
+					
+				</c:forEach>
+				
+			]	// events
+		});
+		
+	});
+	
+	<c:forEach items="${noticelist}" var="i">
+		${i.noticeId}
+	</c:forEach>
+</script>
 
 	<script type="text/javascript" src="./resources/js/upload.js"></script>
 	<script

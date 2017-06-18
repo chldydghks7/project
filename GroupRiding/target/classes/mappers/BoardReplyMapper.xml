@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace = "group.riding.BoardReplyMapper">
+	<select id = "replyList" resultType = "BoardReplyBean">
+		select *
+		from gr_reply
+		where writing_Id = #{writing_Id}
+		order by rno desc
+	</select>
+	
+	<insert id = "newReply">
+		insert into gr_reply (writing_Id, uid, replyText)
+		values (#{writing_Id}, #{uid}, #{replyText})
+	</insert>
+	
+	<update id = "editReply">
+		update gr_reply set replyText = #{replyText}
+		where rno = #{rno}
+	</update>
+	
+	<delete id = "delReply">
+		delete from gr_reply
+		where rno = #{rno}
+	</delete>
+</mapper>
