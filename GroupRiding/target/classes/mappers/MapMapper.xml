@@ -8,4 +8,10 @@
 		select *
 		from hotplace
 	</select>
+	
+	<select id = "makerRead" resultType = "MapBean">
+		select *
+		from hotplace
+		where place_name = #{place_name}
+	</select>
 </mapper>

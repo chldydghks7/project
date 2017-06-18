@@ -44,9 +44,16 @@
    
    <style>
       #map {
+      	 width: 1180px;
          height: 700px;
+         position: absolute;
       }
 
+      /* #myModal {
+		 display: none;
+		 position:absolute;  	
+      } */
+      
       #like {
          margin-right: 20px;
          width: 30px;
@@ -59,14 +66,12 @@
          width: 400px;
          margin-right: 20px;
       }
-      .modal-body {
-         height: 700px;
-      }
       
       .modal-dialog {
       	display: none;
-      	z-index: 1050;
-      	position: absolute;
+      }
+      .modal-body {
+         height: 600px;
       }
    </style>
 </head>
@@ -220,34 +225,31 @@
                <!-- End Basic Map -->
                
                <!-- Modal -->
-		    <!-- <div id = "myModal" class = "modal fade" role = "dialog"> -->
-		      <div class = "modal-dialog">
-		         <div class = "modal-content">
-		            <div class="modal-header">
-		               <button type="button" class="close" data-dismiss="modal">&times;</button>
-		            </div>
-		            <div class="modal-body">
-		               <%-- <p style="float: left">제목: ${read.writing_title}</p>
-		               <br>
-		               <hr>
-		               <div>
-		                  <img src="./displayFile?fileName=${read.bbs_FilePath}" id="s-img">
-		               </div>
-		               <hr>
-		               <div id="s-content">
-		                  <p>내용 : ${read.writing_content}</p>
-		                  <p>글번호 : ${read.writing_Id}</p>
-		               </div> --%>
-		            </div>
-		            <div class="modal-footer">
-		               <img src="./resources/img/hearts.png" id="like"> <input
-		                  type="text" id="s-reply" />
-		               <button id="addReply" class="btn btn-default">댓글등록</button>
-		            </div>
-		         </div>
-		      	</div>
-			 <!-- </div> -->
- 
+      <div class = "modal-dialog">
+         <div class = "modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+               <%-- <p style="float: left">제목: ${read.writing_title}</p>
+               <br>
+               <hr>
+               <div>
+                  <img src="./displayFile?fileName=${read.bbs_FilePath}" id="s-img">
+               </div>
+               <hr>
+               <div id="s-content">
+                  <p>내용 : ${read.writing_content}</p>
+                  <p>글번호 : ${read.writing_Id}</p>
+               </div> --%>
+            </div>
+            <div class="modal-footer">
+               <img src="./resources/img/hearts.png" id="like"> <input
+                  type="text" id="s-reply" />
+               <button id="addReply" class="btn btn-default">댓글등록</button>
+            </div>
+         </div>
+      </div>
             </div>
             <!-- End Content -->
          </div>
@@ -255,7 +257,7 @@
       <!--=== End Content Part ===-->
 
       <!--=== Footer Version 1 ===-->
-      <div class="footer-v1">
+      <div class="footer-v1" style = "margin-top: 750px;">
          <div class="footer">
             <div class="container">
                <div class="row">
@@ -418,48 +420,93 @@
             handleLocationError(false, infoWindow, map.getCenter());
         }
         
-        $.getJSON('ajaxMap', function(data) {
-       		console.log(data);
-       		
-       		var location = [];
-       		var makers = [];
-       		var label;
-       		
-       		for(i = 0; ; i++) {
-       			location[i] = new google.maps.LatLng(data.map[i].latitude, data.map[i].longitude);
-       			
-       			if(data.map[i].place_kind = "hotel") {
-       				label = "H";
-       			}
-       			else if(data.map[i].place_kind = "restaurant") {
-       				label = "R";
-       			}
-       			else {
-       				label = null;
-       			}
-       			
-       			makers[i] = new google.maps.Marker({
-       				position: location[i],
-       				title: data.map[i].place_name,
-       				label: label
-       			});
-       			
-       			alert(makers[i].position);
-       			alert(makers[i].title);
-       			
-       			makers[i].setMap(map);
-       			makerListener(makers[i]);
-       		}
-      
-       		function makerListener(makers) {
-            	google.maps.event.addListener(makers, "click", function() {
-            		alert('click' + makers.position);
-            		$(".modal-dialog").show();
-            	});
-            }
-       	});
+        $.ajax({
+        	url: 'ajaxMap',
+        	type: 'get',
+        	async: false,
+        	success: function(data) {
+        		if(data) {
+        			alert('호출');
+            		console.log(data);
+            		
+            		var location = [];
+            		var makers = [];
+            		var label;
+            		
+            		for(i = 0; ; i++) {
+            			location[i] = new google.maps.LatLng(data.map[i].latitude, data.map[i].longitude);
+            			
+            			if(data.map[i].place_kind = "hotel") {
+               				label = "H";
+               			}
+               			else if(data.map[i].place_kind = "restaurant") {
+               				label = "R";
+               			}
+               			else {
+               				label = null;
+               			}
+            			
+            			makers[i] = new google.maps.Marker({
+               				position: location[i],
+               				title: data.map[i].place_name,
+               				label: label
+               			});
+            			
+
+               			/* alert(makers[i].position);
+               			alert(makers[i].title); */
+            			
+            			makers[i].setMap(map);
+               			makerListener(makers[i]);
+            		}
+        		}
+        	},
+        	error: function() {
+        		alert('에러');
+        	}
+        })
+        
+        function makerListener(makers) {
+        	google.maps.event.addListener(makers, "click", function() {
+        		alert('click' + makers.position + makers.title);
+        		$(".modal-dialog").show();
+        		$(".footer-v1").css("margin-top", 0);
+        		
+        		$.ajax({
+        			url: 'readMaker',
+        			type: 'get',
+        			async: false,
+        			data: {
+        				place_name: makers.title
+        			},
+        			success: function(data) {
+        				if(data) {
+        					alert('전송');
+        					console.log(data);
+        					
+        					var html = "";
+        					html = "<h2 style = 'float: left'>종류 : " + data.place_kind + "</h2>"
+                            + "<br><hr><div>장소 : " + data.place_name + "</div>";
+                            
+                            $(".modal-body").append(html);
+                     
+        				}
+        			},
+        			error: function() {
+        				alert('에러');
+        			}
+        		});
+        		
+        	});
+        }
         
 	}
+	
+	$(".close").on("click", function() {
+		$(".modal-dialog").hide();
+		$(".footer-v1").css("margin-top", 750);
+		$(".modal-body").html("");
+	});
    
 	function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 		infoWindow.setPosition(pos);
