@@ -111,7 +111,9 @@ public class UserController {
 	
 	@ResponseBody
 	@RequestMapping(value="insertkml" ,method=RequestMethod.GET)
-	public String createkml(@RequestParam(value="kml")String kml,String callback)throws Exception{
+	public String createkml(String kml,String callback)throws Exception{
+		
+		System.out.println("ÆÄÀÏ"+kml);
 		
 		service.insertkml(kml);
 	
