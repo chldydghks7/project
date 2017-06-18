@@ -517,7 +517,9 @@ b_container {
 										<tr>
 											<td style="width:30px"><img style="width:30px;height:30px;"src="/displayFile?fileName=${mem.fullname}"/></td>
 											<td>${mem.uid}</td>
+							<!-- 강퇴아이콘 -------------------------------------------->
 											<td><a  href="javascript:void(0);"><img style="width: 15px;height: 15px;" src="./resources/img/cancel.png" /></a></td>
+							<!-- 강퇴아이콘 -------------------------------------------->
 										</tr>
 									</c:forEach>
 								</table>
