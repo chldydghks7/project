@@ -48,4 +48,10 @@ public class BoardServiceImpl implements BoardService {
 		return dao.sharRead(writing_Id);
 	}
 
+	@Override
+	public void likeUpdate(BoardBean vo) throws Exception {
+		// TODO Auto-generated method stub
+		dao.likeUpdate(vo);
+	}
+
 }

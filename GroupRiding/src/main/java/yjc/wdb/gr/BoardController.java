@@ -57,6 +57,13 @@ public class BoardController {
       return "redirect:sharing";
    }
    
+   @RequestMapping(value = "likeShar", method = RequestMethod.POST)
+   public String likeShar(BoardBean bb, RedirectAttributes rttr) throws Exception {
+	   service.likeUpdate(bb);
+	   
+	   return "redirect:sharing";
+   }
+   
    @RequestMapping(value = "getFile/{writing_Id}")
    @ResponseBody()
    public List<String> getFile(@PathVariable("writing_Id") int writing_Id) throws Exception {

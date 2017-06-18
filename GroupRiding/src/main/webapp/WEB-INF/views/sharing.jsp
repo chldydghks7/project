@@ -50,12 +50,59 @@
          height: 300px;
       }
       #s-reply {
-         width: 400px;
+         width: 450px;
+         margin-left: 0;
          margin-right: 20px;
       }
       .modal-body {
-         height: 700px;
+         height: 780px;
       }
+      .s-content {
+      	height: 400px;
+      }
+      
+      .likeCnt {
+      	width: 20px;
+      	height: 20px;
+      	cursor: pointer;
+      }
+      
+    /* #replyContainer {
+		position: relative;
+	} */
+
+	.reply {
+		display: inline-block;
+		float: left;
+	}
+	
+	.replyNum {
+		width: 3em;
+	}
+	
+	.replyWriter {
+		width: 10em;
+	}
+	
+	.date {
+		widows: 10em;
+	}
+	
+	.replyText {
+		width: 30em;
+		height: 3em;
+		overflow: auto;
+		margin-right: 10px;
+	}
+	
+	.replyLI {
+		margin-bottom: 2em;
+		list-style-type: none;
+		clear: both;
+	}
+	.rList {
+		list-style-type: none;
+	}
    </style>
 </head>
 
@@ -210,16 +257,17 @@
                   <c:forEach items = "${board}" var = "board">
                      <div class="col-md-4">
                         <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                        <p class = "w_id" style = "display:none;">${board.writing_Id}</p>
+                        <img src="./resources/img/hearts.png" class="likeCnt">&nbsp;&nbsp;&nbsp; ${board.view_Number}
+                        <p class = "cnt" style = "display:none;">${board.view_Number}</p>  
                            <div class="thumbnail-img">
-                              <p>글번호 : ${board.writing_Id}</p>
                               <div class="overflow-hidden">
                                  <img class="img-responsive" src="/displayFile?fileName=${board.bbs_FilePath}" alt="" />
                               </div>
                               <a class="test btn-more hover-effect" href="${board.writing_Id}" data-toggle = "modal" data-target = "#myModal" data-backdrop="static" data-keyboard="false">read more +</a>
                            </div>
                            <div class="caption">
-                              <h3><a class="hover-effect" href="#">${board.writing_title}</a></h3>
-                              <p>${board.writing_content}</p>
+                              <h3>${board.writing_title}</h3>
                            </div>
                         </div>
                      </div>   
@@ -376,8 +424,8 @@
                </div> --%>
             </div>
             <div class="modal-footer">
-               <img src="./resources/img/hearts.png" id="like"> <input
-                  type="text" id="s-reply" />
+               <!-- <img src="./resources/img/hearts.png" id="like"> -->
+               <input type="text" id="s-reply" />
                <button id="addReply" class="btn btn-default">댓글등록</button>
             </div>
          </div>
@@ -406,6 +454,33 @@
       });
       
       var form = $("#form");
+     
+      $(".likeCnt").on("click", function() {
+    	  event.preventDefault();
+    	  var id = $(this).prev().text();
+    	  var cnt = $(this).next().text();
+    	  
+    	  ++cnt;
+    	  
+    	  alert(cnt + ", " + id);
+    	  
+    	  $.ajax({
+    		  url: 'likeShar',
+    		  type: 'post',
+    		  data: {
+    			  writing_Id: id,
+    			  view_Number: cnt
+    		  },
+    		  success: function(data) {
+    			  if(data) {
+    				  alert('성공');
+    			  }
+    		  },
+    		  error: function() {
+    			  alert('실패');
+    		  }
+    	  });
+      });
       
       $("#newBtn").on("click", function() {
          form.attr('action', 'sharingForm');
@@ -435,8 +510,9 @@
                }
                var html = "";
                html = "<p style = 'float: left'>제목 : " + data.writing_title + "</p>"
-                     + "<br><hr><div><img id = 's-img' src = './displayFile?fileName=" + data.bbs_FilePath + "'></div>"
-                     + "<hr><div id = 's-content'><p>내용 : " + data.writing_content + "</p></div>";
+                     + "<hr><div><img id = 's-img' src = './displayFile?fileName=" + data.bbs_FilePath + "'></div>"
+                     + "<hr><div id = 's-content'>내용 : " + data.writing_content + "</div><hr>"
+                     + "<div><ul class = 'timeline'><li class = 'rList'>댓글 목록</li></ul></div>";
                      
                $(".modal-body").append(html);      
             },
