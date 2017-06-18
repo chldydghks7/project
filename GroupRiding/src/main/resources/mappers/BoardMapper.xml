@@ -10,7 +10,7 @@
     </insert>
     
     <select id="sharList" resultType="BoardBean">
-       select a.writing_title, a.writing_content, a.writing_Id, b.bbs_FilePath
+      select a.writing_title, a.writing_content, a.writing_Id, a.view_Number ,b.bbs_FilePath
       from bbs_writing a, bbs_File b
       where a.writing_Id = b.writing_Id
       order by writing_Id desc
@@ -21,6 +21,11 @@
       from bbs_writing a, bbs_File b
       where a.writing_Id = b.writing_Id and a.writing_Id = #{writing_Id}
     </select>
+    
+    <update id = "likeUpdate">
+    	update bbs_writing set view_Number = #{view_Number}
+    	where writing_Id = #{writing_Id}
+    </update>
     
     <insert id="addFile">
        insert into bbs_File(writing_Id, bbs_FilePath)

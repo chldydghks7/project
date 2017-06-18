@@ -10,8 +10,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import group.riding.bean.MapBean;
 import group.riding.service.MapService;
@@ -44,5 +47,16 @@ public class MapController {
 			entity = new ResponseEntity<Map<String, Object>>(HttpStatus.BAD_REQUEST);
 		}
 		return entity;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "readMaker", method = RequestMethod.GET)
+	public MapBean readMaker(Model model, @RequestParam(value = "place_name", defaultValue = "a") String place_name) throws Exception {
+		System.out.println(place_name);
+		
+		MapBean mb = service.makerRead(place_name);
+		model.addAttribute("map", mb);
+		
+		return mb;
 	}
 }

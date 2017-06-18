@@ -257,7 +257,7 @@ b_container {
 						<li class="dropdown"><a href="javascript:void(0);"
 							class="dropdown-toggle" data-toggle="dropdown"> Info </a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="calendar">Calendar</a>
+								<li class="dropdown-submenu"><a href="calendar?uid=${uid}">Calendar</a>
 								</li>
 								<li class="dropdown-submenu"><a href="Ridingdata">Riding
 										Data</a></li>
@@ -815,9 +815,9 @@ b_container {
 				<c:forEach items="${noticelist}" var="i">
 					
 					{
-						title: "${i.notice_title}",
+						title: "${i.notice_title} 그룹 : ${i.gr_name}",
 						start: "${i.ridingDate}",
-						url: "noticeInfo?noticeId=${i.noticeId}"
+						url: "noticeInfo?noticeId=${i.noticeId}&uid=${uid}"
 					},
 					
 				</c:forEach>

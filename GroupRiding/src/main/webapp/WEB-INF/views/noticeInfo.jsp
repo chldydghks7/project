@@ -14,8 +14,33 @@
 공지제목 : ${info.notice_title} <br><br>
 출발날짜 : ${info.ridingDate} <br><br>
 출발시간 : ${info.ridingTime} <br><br>
-준비물 : ${info.material}<br>
+준비물 : ${info.material}<br><br>
 
+
+<form action="joinNotice" method="post">
+	<input type="hidden" name="uid" value="${uid}">
+	<input type="hidden" name="noticeId" value="${info.noticeId}">
+	<input type="submit" id="o" name="joing" value="참여" />
+	<input type="submit" id="x" name="joing" value="불참" />
+</form>
+
+<h4 id="oo">참여됨</h4>
+<h4 id="xx">불참됨</h4>
+
+<script>
+	$("#oo").hide();
+	$("#xx").hide();
+
+	var joinCheck = "${joinCheck}"
+	if(joinCheck=="참여") {
+		$("#oo").show();
+	} else if(joinCheck=="불참"){
+		$("#xx").show();
+	}
+	
+	
+	
+</script>
 
 <script>
 		map = new Tmap.Map({div:'map_div',

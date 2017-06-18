@@ -53,4 +53,10 @@ public class BoardDAOImpl implements BoardDAO {
 		return session.selectOne(namespace + ".sharRead", writing_Id);
 	}
 
+	@Override
+	public void likeUpdate(BoardBean vo) throws Exception {
+		// TODO Auto-generated method stub
+		session.update(namespace + ".likeUpdate", vo);
+	}
+
 }
