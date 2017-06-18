@@ -27,4 +27,23 @@
 		and gr_gr.uid=#{uid};
 	</select>
 	
+	<!-- 공지 참여 -->
+	<insert id="joinNotice">
+		insert into gr_usernotijoin(uid, noticeId, joing)
+		values (#{uid}, #{noticeId}, #{joing})
+	</insert>
+	
+	<select id="joinCheck" resultType="String">
+		select joing 
+		from gr_usernotijoin
+		where noticeId=#{noticeId} and uid = #{uid}
+	</select>
+	
+	<select id="noticeCheck" resultType="NoticeBean">	<!-- 창조주님 !! 그룹명 + 참여여부 -->
+		select *
+		from gr_notice, gr_usernotijoin
+		where gr_notice.noticeId = gr_usernotijoin.noticeId
+		and gr_usernotijoin.uid=#{uid}
+	</select>
+	
 </mapper>
