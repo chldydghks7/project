@@ -12,7 +12,22 @@ public class NoticeBean {
 	String ridingTime;		// 라이딩 시간
 	String material;		// 준비물
 	
+	String joing;	// 공지참여 여부
+	String uid;
 	
+
+	public String getUid() {
+		return uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
+	public String getJoing() {
+		return joing;
+	}
+	public void setJoing(String joing) {
+		this.joing = joing;
+	}
 	public int getNoticeId() {
 		return noticeId;
 	}
