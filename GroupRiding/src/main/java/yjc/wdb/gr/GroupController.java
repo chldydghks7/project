@@ -97,13 +97,20 @@ public class GroupController {
 	public GroupInfoBoard groupInfo_re(@RequestParam(value="id") int id) throws Exception{
 		
 		return infoboardservice.read(id);
-	};
+	}
 	
 	@RequestMapping(value = "groupInfo_del", method = RequestMethod.POST)
 	@ResponseBody
 		public void groupInfo_del(@RequestParam(value="id") int id) throws Exception{
 			
 			 infoboardservice.del(id);
+	}
+	
+	@RequestMapping(value = "groupInfoMem_del", method = RequestMethod.POST)
+	@ResponseBody
+		public void groupInfoMem_del(@RequestParam(value="uid") String uid, @RequestParam(value="gname")String gname) throws Exception{
+			
+		infomemListservice.delete(uid, gname);
 	}
 	
 	
