@@ -133,9 +133,9 @@ b_container {
 }
 
 #calendar {
-		width: 800px;
-		margin: 0 auto;
-		}
+	width: 800px;
+	margin: 0 auto;
+}
 </style>
 <body>
 	<script>
@@ -257,7 +257,7 @@ b_container {
 						<li class="dropdown"><a href="javascript:void(0);"
 							class="dropdown-toggle" data-toggle="dropdown"> Info </a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="calendar">Calendar</a>
+								<li class="dropdown-submenu"><a href="calendar?uid=${uid}">Calendar</a>
 								</li>
 								<li class="dropdown-submenu"><a href="Ridingdata">Riding
 										Data</a></li>
@@ -277,8 +277,8 @@ b_container {
 						<li class="dropdown"><a href="javascript:void(0);"
 							class="dropdown-toggle" data-toggle="dropdown"> Hot Place </a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="hotPlaceMap">Hot Place</a>
-								</li>
+								<li class="dropdown-submenu"><a href="hotPlaceMap">Hot
+										Place</a></li>
 								<!-- <li class="dropdown-submenu"><a href="restaurantList">Restaurant</a>
 								</li>
 								<li><a href="hotelList">Hotel</a></li> -->
@@ -362,9 +362,8 @@ b_container {
 
 									</form></td>
 								<td><form action="createNotice" method="get">
-											<input type="hidden" name="gr_id" value="${group.gr_id}"/>
-											
-											<input type="hidden" name="gr_name" value="${gr_name1}"/>
+										<input type="hidden" name="gr_id" value="${group.gr_id}" /> <input
+											type="hidden" name="gr_name" value="${gr_name1}" />
 										<button type="submit" id="notice11">공지등록</button>
 									</form></td>
 
@@ -402,12 +401,12 @@ b_container {
 									</tr>
 									<c:forEach items="${listAll}" var="GroupInfoBo">
 										<tr>
-										
+
 											<td class="active"><a href="javascript:ViewLayer2();"
 												id="a" class="${GroupInfoBo.writing_id}">${GroupInfoBo.writing_title}</a></td>
-												
+
 											<td class="active">${GroupInfoBo.member_id}</td>
-											
+
 											<td class="active">${GroupInfoBo.regist_date}</td>
 											<td class="active">${GroupInfoBo.view_Number}</td>
 										</tr>
@@ -417,42 +416,48 @@ b_container {
 								<a href="javascript:ViewLayer();">등록</a>
 								<div id="Pop"
 									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; background: #3d3d3d; color: #fff;">
-									<a href="javascript:ViewClose();">
-									<img id="popLogo" src="./resources/img/cancelcel.png" /></a>
-									<form method="post" action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}" style="margin: 5% 5%;">
-		 								 <p>작성자 - ${uid}</p>
+									<a href="javascript:ViewClose();"> <img id="popLogo"
+										src="./resources/img/cancelcel.png" /></a>
+									<form method="post"
+										action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}"
+										style="margin: 5% 5%;">
+										<p>작성자 - ${uid}</p>
 										<div class="form-group">
 											<p>제목</p>
 											<input class="form-control" type="text" name="writing_title">
 										</div>
 										<div class="form-group">
 											<p>내용</p>
-											<textarea class="form-control" rows="13" cols="132" style="color: black; resize: none;" name="writing_content"></textarea>
+											<textarea class="form-control" rows="13" cols="132"
+												style="color: black; resize: none;" name="writing_content"></textarea>
 										</div>
-										
+
 										<input type="hidden" value="${uid}" name="member_id" />
-								
+
 										<!-- 인풋 타입 히든으로 안보이게 처리 -->
-								
+
 										<input class="btn btn-default" type="submit" value="등록">
 									</form>
 								</div>
 
 
-								<div id="Pop_Re"style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; margin: 5% 5%; background: #101010; color: #fff;">
-									<a href="javascript:ViewClose2();">
-									<img id="popLogo" src="./resources/img/cancelcel.png" /></a>
+								<div id="Pop_Re"
+									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; margin: 5% 5%; background: #101010; color: #fff;">
+									<a href="javascript:ViewClose2();"> <img id="popLogo"
+										src="./resources/img/cancelcel.png" /></a>
 									<div style="margin: 5% 5%">
-										<div class="uid" style="display:none;">${uid}</div>
-										작성자 - <label id="re_id"></label><br/> 제목 - <label id="re_title"></label><br/>
-										내용
-										<div id="re_content" style="height: 330px; background-color: #505457;"></div>
-										<br/><label id="re_date">작성일 - </label> <input type="hidden"
+										<div class="uid" style="display: none;">${uid}</div>
+										작성자 - <label id="re_id"></label><br /> 제목 - <label
+											id="re_title"></label><br /> 내용
+										<div id="re_content"
+											style="height: 330px; background-color: #505457;"></div>
+										<br />
+										<label id="re_date">작성일 - </label> <input type="hidden"
 											value="" id="re_writing_id" />
 										<div id="die"></div>
 										<!-- <input class="btn btn-default" type="submit" value="수정"> -->
 										<!-- <input class="btn btn-default" type="submit" value="수정"
-											style="float: right"> -->	
+											style="float: right"> -->
 										<!-- <button class="btn btn-default" id="Pop_Re_del"
 											style="float: right">삭제</button> -->
 									</div>
@@ -467,9 +472,7 @@ b_container {
 							<!-- End Blog Posts -->
 
 							<!-- Blog Posts -->
-							<div class="news-v3 bg-color-white margin-bottom-60">
-									sss
-							</div>
+							<div class="news-v3 bg-color-white margin-bottom-60">sss</div>
 							<!-- End Blog Posts -->
 
 							<!-- Blog Posts -->
@@ -483,21 +486,25 @@ b_container {
 							<!-- Contacts -->
 							<div class="headline">
 								<h2>Profile</h2>
-<!-- 							private String fullName; //프로필 사진경로
+								<!-- 							private String fullName; //프로필 사진경로
 								private String uid; //아이디
 								private int riding_no; //라이딩한 횟수
 								private double alldistance; //총거리
 								private double avspeed; //평균속도  -->
 							</div>
-							
+
 							<ul class="list-unstyled who margin-bottom-30">
-							<c:forEach items="${listAll_li}" begin="1" end="1" var="info">
-								<li><a href="#"><i class="fa fa-home"></i>  <img src="/displayFile?fileName=${info.fullName}" /></a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i>  ${info.uid}</a></li>
-								<li><a href="#"><i class="fa fa-phone"></i> ${info.riding_no} </a></li>
-								<li><a href="#"><i class="fa fa-globe"></i>  ${info.alldistance} </a></li>
-								<li><a href="#"><i class="fa fa-globe"></i>  ${info.avgspeed} </a></li>
-						</c:forEach>
+									<li><a href="#"><i class=""></i> <br />
+										<img style="width: 200px; height: 200px; margin-left: 30px;"
+											src="/displayFile?fileName=${listAll_li.fullName}" /></a></li>
+									<li><a href="#"><i class=""></i> <strong>아이디
+												- ${listAll_li.uid}</strong></a></li>
+									<li><a href="#"><i class=""></i> <strong>참여횟수
+												- ${listAll_li.riding_no}</strong> </a></li>
+									<li><a href="#"><i class=""></i> <strong>총거리
+												- ${listAll_li.alldistance}</strong> </a></li>
+									<li><a href="#"><i class=""></i> <strong>평균
+												속도 - ${listAll_li.avgspeed}</strong> </a></li>
 							</ul>
 
 							<!-- Business Hours -->
@@ -505,9 +512,20 @@ b_container {
 								<h2>Member List</h2>
 							</div>
 							<ul class="list-unstyled margin-bottom-30">
-								<li><strong>Monday-Friday:</strong> 10am to 8pm</li>
-								<li><strong>Saturday:</strong> 11am to 3pm</li>
-								<li><strong>Sunday:</strong> Closed</li>
+								<table class="table table-bordered">
+									<c:forEach items="${listAll_mem}" var="mem">
+										<tr>
+											<td style="width:30px"><img style="width:30px;height:30px;"src="/displayFile?fileName=${mem.fullname}"/></td>
+											<td>${mem.uid}</td>
+							<!-- 강퇴아이콘 -------------------------------------------->
+								
+										<c:if test="${uid == group.gr_leader}"> <!-- 세션의 uid가 그룹장이 아니라면 아래 문구 추가 -->
+											<td><a id="imgg" href="javascript:void(0);"><img  style="width: 15px;height: 15px;" src="./resources/img/cancel.png" /></a></td>
+										</c:if>
+							<!-- 강퇴아이콘 -------------------------------------------->
+										</tr>
+									</c:forEach>
+								</table>
 							</ul>
 
 							<!-- Why we are? -->
@@ -781,9 +799,8 @@ b_container {
 							: 'Error: Your browser doesn\'t support geolocation.');
 		}
 	</script>
-
 	<script>
-	<!-- 그룹장 체크 -->
+	<!-- 그룹장 체크2 -->
 		var leader = "${leader}";
 
 		if (leader == "") {
@@ -793,13 +810,18 @@ b_container {
 		}
 	</script>
 
-<link rel='stylesheet' type='text/css' href='./resources/calendar/fullcalendar.css' />
-<script type='text/javascript' src='./resources/calendar/jquery/jquery.js'></script>
-<script type='text/javascript' src='./resources/calendar/jquery/jquery-ui-custom.js'></script>
-<script type='text/javascript' src='./resources/calendar/fullcalendar.min.js'></script>
 
-<!-- 캘린더 -->
-<script type='text/javascript'>
+	<link rel='stylesheet' type='text/css'
+		href='./resources/calendar/fullcalendar.css' />
+	<script type='text/javascript'
+		src='./resources/calendar/jquery/jquery.js'></script>
+	<script type='text/javascript'
+		src='./resources/calendar/jquery/jquery-ui-custom.js'></script>
+	<script type='text/javascript'
+		src='./resources/calendar/fullcalendar.min.js'></script>
+
+	<!-- 캘린더 -->
+	<script type='text/javascript'>
 	$(document).ready(function() {
 
 		
@@ -815,9 +837,9 @@ b_container {
 				<c:forEach items="${noticelist}" var="i">
 					
 					{
-						title: "${i.notice_title}",
+						title: "${i.notice_title} 그룹 : ${i.gr_name}",
 						start: "${i.ridingDate}",
-						url: "noticeInfo?noticeId=${i.noticeId}"
+						url: "noticeInfo?noticeId=${i.noticeId}&uid=${uid}"
 					},
 					
 				</c:forEach>

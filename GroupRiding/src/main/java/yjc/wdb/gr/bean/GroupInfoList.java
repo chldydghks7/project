@@ -2,11 +2,6 @@ package yjc.wdb.gr.bean;
 
 public class GroupInfoList {
 
-
-
-	
-
-
 	private String fullName; //프로필 사진경로
 	private String uid; //아이디
 	private int riding_no; //라이딩한 횟수
@@ -46,8 +41,6 @@ public class GroupInfoList {
 		this.alldistance = alldistance;
 	}
 
-
-
 	public double getAvgspeed() {
 		return avgspeed;
 	}
@@ -56,6 +49,13 @@ public class GroupInfoList {
 		this.avgspeed = avgspeed;
 	}
 
+	public String toString(){
+		return "프로필: "+fullName
+			 + " 아이디: "+uid
+			 + " 라이딩: " +riding_no
+			 + " 총거리: " +alldistance
+			 + " 평균속도: " +avgspeed;
 
+	}
 
 }

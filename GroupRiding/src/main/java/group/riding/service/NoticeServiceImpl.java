@@ -37,6 +37,21 @@ public class NoticeServiceImpl implements NoticeService {
 		return dao.userNotice(uid);
 	}
 
+	@Override
+	public void joinNotice(NoticeBean nb) throws Exception {
+		dao.joinNotice(nb);
+	}
+
+	@Override
+	public String joinCheck(int noticeId, String uid) throws Exception {
+		return dao.joinCheck(noticeId, uid);
+	}
+
+	@Override
+	public List<NoticeBean> noticeCheck(String uid) throws Exception {
+		return dao.noticeCheck(uid);
+	}
+
 	
 
 }

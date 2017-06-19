@@ -43,8 +43,11 @@ public class NoticeController {
 	}
 	
 	@RequestMapping(value="noticeInfo", method=RequestMethod.GET)	// Í∑∏Î£π ?ÉÅ?Ñ∏
-	public void noticeInfo(@RequestParam(value="noticeId") int noticeId, Model model) throws Exception {
+	public void noticeInfo(@RequestParam(value="noticeId") int noticeId, @RequestParam(value="uid") String uid, Model model, HttpSession session) throws Exception {
 		NoticeBean info = service.infoNotice(noticeId);
+		
+		String joinCheck = service.joinCheck(noticeId, uid);
+		session.setAttribute("joinCheck", joinCheck);
 		
 		model.addAttribute("info", info);
 	}
@@ -52,7 +55,18 @@ public class NoticeController {
 	@RequestMapping(value="calendar", method=RequestMethod.GET)	// ∞≥¿Œ ƒ∂∏∞¥ı GET
 	public void  userNotice(@RequestParam(value="uid") String uid, Model model) throws Exception{
 		List<NoticeBean> list = service.userNotice(uid);
+		List<NoticeBean> llll = service.noticeCheck(uid);	// √¢¡∂¡÷¥‘§∑§±§∑
+		model.addAttribute("llll", llll);	// √¢¡∂¡÷¥‘§∑§±§∑
 		model.addAttribute("list", list);
 	}
+	
+	@RequestMapping(value="joinNotice", method=RequestMethod.POST)
+	public String joinNotice(NoticeBean nb, int noticeId, String uid) throws Exception {
+		service.joinNotice(nb);
+		
+		return "redirect:noticeInfo?noticeId=" + noticeId + "&uid=" + uid;
+	}
+	
+	
 	
 }

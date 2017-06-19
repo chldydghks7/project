@@ -454,7 +454,7 @@
       });
       
       var form = $("#form");
-     
+      
       $(".likeCnt").on("click", function() {
     	  event.preventDefault();
     	  var id = $(this).prev().text();
@@ -515,6 +515,18 @@
                      + "<div><ul class = 'timeline'><li class = 'rList'>댓글 목록</li></ul></div>";
                      
                $(".modal-body").append(html);      
+               
+               $.getJSON("replies/all/" + title, function(data) {
+              	 var str = ""; 
+              	 console.log(data);
+              	 $(data.list).each(function() {
+              		str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
+              			+ "<span class = 'reply replyNum'>" + this.rno + ":</span>"
+              			+ "<span class = 'reply replyText'>" + this.replyText + "</span>"
+              			+ "&nbsp;&nbsp;<span class='reply replyWriter'>작성자 : " + this.uid + "&nbsp;&nbsp;&nbsp;</span>"
+              	 });
+              	 $('.timeline').append(str);
+                });
             },
             error: function() {
                alert('에러');
