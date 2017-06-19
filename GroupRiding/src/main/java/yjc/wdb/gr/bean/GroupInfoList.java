@@ -41,8 +41,6 @@ public class GroupInfoList {
 		this.alldistance = alldistance;
 	}
 
-
-
 	public double getAvgspeed() {
 		return avgspeed;
 	}

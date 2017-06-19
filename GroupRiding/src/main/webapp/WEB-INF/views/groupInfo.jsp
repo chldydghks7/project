@@ -517,7 +517,12 @@ b_container {
 										<tr>
 											<td style="width:30px"><img style="width:30px;height:30px;"src="/displayFile?fileName=${mem.fullname}"/></td>
 											<td>${mem.uid}</td>
-											<td><a  href="javascript:void(0);"><img style="width: 15px;height: 15px;" src="./resources/img/cancel.png" /></a></td>
+							<!-- 강퇴아이콘 -------------------------------------------->
+								
+										<c:if test="${uid == group.gr_leader}"> <!-- 세션의 uid가 그룹장이 아니라면 아래 문구 추가 -->
+											<td><a id="imgg" href="javascript:void(0);"><img  style="width: 15px;height: 15px;" src="./resources/img/cancel.png" /></a></td>
+										</c:if>
+							<!-- 강퇴아이콘 -------------------------------------------->
 										</tr>
 									</c:forEach>
 								</table>
@@ -794,9 +799,8 @@ b_container {
 							: 'Error: Your browser doesn\'t support geolocation.');
 		}
 	</script>
-
 	<script>
-	<!-- 그룹장 체크 -->
+	<!-- 그룹장 체크2 -->
 		var leader = "${leader}";
 
 		if (leader == "") {
@@ -805,6 +809,7 @@ b_container {
 			$("#notice11").show();
 		}
 	</script>
+
 
 	<link rel='stylesheet' type='text/css'
 		href='./resources/calendar/fullcalendar.css' />
