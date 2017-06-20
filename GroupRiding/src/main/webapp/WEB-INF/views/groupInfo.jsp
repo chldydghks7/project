@@ -462,6 +462,32 @@ b_container {
 											style="float: right">삭제</button> -->
 									</div>
 								</div>
+								
+								<div id="Pop_Re_Modify"
+									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; background: #3d3d3d; color: #fff;">
+									<a href="javascript:ViewClose();"> <img id="popLogo"
+										src="./resources/img/cancelcel.png" /></a>
+									<form method="post"
+										action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}"
+										style="margin: 5% 5%;">
+										<p style="color:white;">작성자 - ${uid}</p>
+										<div class="form-group">
+											<p style="color:white;">제목</p>
+											<input class="form-control" type="text" name="writing_title">
+										</div>
+										<div class="form-group">
+											<p style="color:white;">내용</p>
+											<textarea class="form-control" rows="13" cols="132"
+												style="color: black; resize: none;" name="writing_content"></textarea>
+										</div>
+
+										<input type="hidden" value="${uid}" name="member_id" />
+
+										<!-- 인풋 타입 히든으로 안보이게 처리 -->
+
+										<input class="btn btn-default" type="submit" value="등록">
+									</form>
+								</div>
 							</div>
 							<!-- End Blog Posts -->
 
@@ -494,6 +520,12 @@ b_container {
 							</div>
 
 							<ul class="list-unstyled who margin-bottom-30">
+							
+									
+									
+								
+								
+								<c:if test="${listAll_li.riding_no !=null }">
 									<li><a href="#"><i class=""></i> <br />
 										<img style="width: 200px; height: 200px; margin-left: 30px;"
 											src="/displayFile?fileName=${listAll_li.fullName}" /></a></li>
@@ -505,6 +537,20 @@ b_container {
 												- ${listAll_li.alldistance}</strong> </a></li>
 									<li><a href="#"><i class=""></i> <strong>평균
 												속도 - ${listAll_li.avgspeed}</strong> </a></li>
+								</c:if>
+								<c:if test="${listAll_li.riding_no ==null }">
+									<li><a href="#"><i class=""></i> <br />
+										<img style="width: 200px; height: 200px; margin-left: 30px;"
+											src="/displayFile?fileName=${mem_li}" /></a></li>
+									<li><a href="#"><i class=""></i> <strong>아이디
+												- ${uid}</strong></a></li>
+									<li><a href="#"><i class=""></i> <strong>참여횟수
+												- 0</strong> </a></li>
+									<li><a href="#"><i class=""></i> <strong>총거리
+												- 0</strong> </a></li>
+									<li><a href="#"><i class=""></i> <strong>평균
+												속도 - 0</strong> </a></li>
+								</c:if>
 							</ul>
 
 							<!-- Business Hours -->
@@ -521,13 +567,20 @@ b_container {
 							
 										<c:if test="${uid == group.gr_leader}"> <!-- 세션의 uid가 그룹장이 아니라면 아래 문구 추가 -->
 											<td>
-												<a href="#">
-													<img  class="imgg" id="${mem.uid}" style="width: 15px;height: 15px;" src="./resources/img/cancel.png" />
-												
-												</a>
-												
+												<c:choose>
+													<c:when test="${mem.uid!=group.gr_leader}">
+														<a href="#">
+															<img  class="imgg" id="${mem.uid}" style="width: 15px;height: 15px;" src="./resources/img/cancel.png" />						
+														</a>
+													</c:when>
+												</c:choose>
 											</td>
 										</c:if>
+										
+										
+										
+										
+										
 										<input type="hidden" id="gname" value="${group.gr_name}"/> <!-- 삭제하기 위해서 그룹의 이름을 받아 gname에 저장함 -->
 							<!-- 강퇴아이콘 -------------------------------------------->
 										</tr>

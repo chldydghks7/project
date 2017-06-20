@@ -26,9 +26,11 @@ import group.riding.service.NoticeService;
 import yjc.wdb.gr.bean.GroupInfoBoard;
 import yjc.wdb.gr.bean.GroupInfoList;
 import yjc.wdb.gr.bean.GroupInfoMemList;
+import yjc.wdb.gr.bean.GroupMemPic;
 import yjc.wdb.gr.service.GroupInfoBoardService;
 import yjc.wdb.gr.service.GroupInfoListService;
 import yjc.wdb.gr.service.GroupInfoMemListService;
+import yjc.wdb.gr.service.GroupMemPicService;
 
 
 @Controller
@@ -48,6 +50,9 @@ public class GroupController {
 	
 	@Inject
 	private GroupInfoMemListService infomemListservice;
+	
+	@Inject 
+	private GroupMemPicService mempicservice;
 
 
 	
@@ -150,12 +155,16 @@ public class GroupController {
 		
 		List<GroupInfoBoard> list = infoboardservice.listAll(pasor);
 		GroupInfoList info_list = infolistservice.listAll_li(id);
+		GroupMemPic pic = mempicservice.pic_li(id);
+		
 		System.out.println("아이디는 ??"+id);
 		List<GroupInfoMemList> info_mem_list = infomemListservice.listAll_mem(gr_name);
 		
 		model.addAttribute("listAll_mem", info_mem_list);
 		model.addAttribute("listAll", list);
 		model.addAttribute("listAll_li",info_list);
+		model.addAttribute("mem_li", pic.getFullname());
+		System.out.println("사진은?? ??"+pic.getFullname());
 
 		return "groupInfo";
 	

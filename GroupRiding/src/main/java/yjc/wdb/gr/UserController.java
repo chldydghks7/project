@@ -72,7 +72,8 @@ public class UserController {
 		System.out.println("File : " + service.getAttach(bean.getUid()));
 		session.setAttribute("uid", bean.getUid());
 		session.setAttribute("uname", bean.getUname());
-		
+		session.setAttribute("icon", service.getAttach(bean.getUid()));
+
 		model.addAttribute("userBean", bean);
 		
 		return "success";
@@ -95,7 +96,7 @@ public class UserController {
 		UserBean bean = service.login(dto);
 		
 		if(bean == null) {
-			System.out.println("¾ÆÀÌµð or ºñ¹Ð¹øÈ£ Æ²¸²");
+			System.out.println("ï¿½ï¿½ï¿½Ìµï¿½ or ï¿½ï¿½Ð¹ï¿½È£ Æ²ï¿½ï¿½");
 			return "signIn";
 		}
 		
@@ -113,7 +114,7 @@ public class UserController {
 	@RequestMapping(value="insertkml" ,method=RequestMethod.GET)
 	public String createkml(String kml,String callback)throws Exception{
 		
-		System.out.println("ÆÄÀÏ"+kml);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½"+kml);
 		
 		service.insertkml(kml);
 	
@@ -153,7 +154,7 @@ public class UserController {
 	   }
 	
 	
-	   /**  ¾ÆÀÌµð Áßº¹ Ã¼Å© */
+	   /**  ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ Ã¼Å© */
 		 @RequestMapping("id_check")
 		 @ResponseBody
 		 public Map<String, String> id_check(@RequestParam(value="uid") String uid) throws Exception {
@@ -166,10 +167,10 @@ public class UserController {
 		  
 		  if ( resultCnt == 0 ){
 		   result = "success";
-		   resultMsg = "»ç¿ë°¡´É!!!";
+		   resultMsg = "ï¿½ï¿½ë°¡ï¿½ï¿½!!!";
 		  } else if (resultCnt == 1) {
 		   result = "failure";
-		   resultMsg = "ÀÌ¹Ì »ç¿ëÁß!!!!!!!!!!!!!";
+		   resultMsg = "ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½!!!!!!!!!!!!!";
 		  }
 		  
 		  resultMap.put("result", result);

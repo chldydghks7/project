@@ -180,6 +180,11 @@
 		and gr_name=#{gname}
 	</delete>
 	
+	<select id="info_pic" resultType="GroupMemPic">
+		select fullname
+		from gr_attach
+		where uid=#{uid}
+	</select>
 
 
 </mapper>
