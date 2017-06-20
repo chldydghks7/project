@@ -54,4 +54,10 @@ public class BoardServiceImpl implements BoardService {
 		dao.likeUpdate(vo);
 	}
 
+	@Override
+	public void insertimgfile(String imgName) throws Exception {
+		// TODO Auto-generated method stub
+		dao.insertimgfile(imgName);
+	}
+
 }

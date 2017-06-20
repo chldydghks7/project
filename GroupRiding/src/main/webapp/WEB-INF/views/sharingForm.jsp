@@ -124,7 +124,7 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li class="dropdown-submenu">
-									<a href="calendar">Calendar</a>
+									<a href="calendar?uid=${uid}">Calendar</a>
 								</li>
 								<li class="dropdown-submenu">
 									<a href="Ridingdata">Riding Data</a>

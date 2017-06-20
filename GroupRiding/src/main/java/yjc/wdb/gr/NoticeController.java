@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import group.riding.bean.NoticeBean;
 import group.riding.service.NoticeService;
@@ -58,6 +59,8 @@ public class NoticeController {
 		List<NoticeBean> llll = service.noticeCheck(uid);	// √¢¡∂¡÷¥‘§∑§±§∑
 		model.addAttribute("llll", llll);	// √¢¡∂¡÷¥‘§∑§±§∑
 		model.addAttribute("list", list);
+		
+		
 	}
 	
 	@RequestMapping(value="joinNotice", method=RequestMethod.POST)
@@ -66,6 +69,21 @@ public class NoticeController {
 		
 		return "redirect:noticeInfo?noticeId=" + noticeId + "&uid=" + uid;
 	}
+	
+	@RequestMapping(value="updateCheck", method=RequestMethod.GET)
+	public String updateCheck(NoticeBean nb, int noticeId, String uid) throws Exception {
+		service.updateCheck(nb);
+		
+		return "redirect:noticeInfo?noticeId=" + noticeId + "&uid=" + uid;
+	}
+	
+	@RequestMapping(value="aaa", method=RequestMethod.GET)
+	public void aaaaaaaaaa(@RequestParam(value="gr_name") String gr_name, NoticeBean nb, Model model) throws Exception {
+		List<NoticeBean> list = service.listNotice(gr_name);
+		model.addAttribute("list", list);
+	}
+	
+	
 	
 	
 	

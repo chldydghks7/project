@@ -11,4 +11,5 @@ public interface BoardService {
 	public List<String> getFile(int writing_Id) throws Exception;
 	public List<BoardBean> getFile2() throws Exception;
 	public BoardBean sharRead(int writing_Id) throws Exception;
+	public void insertimgfile(String imgName)throws Exception;
 }

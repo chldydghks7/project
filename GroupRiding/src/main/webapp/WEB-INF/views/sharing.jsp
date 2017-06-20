@@ -173,7 +173,7 @@
                      </a>
                      <ul class="dropdown-menu">
                         <li class="dropdown-submenu">
-                           <a href="calendar">Calendar</a>
+                           <a href="calendar?uid=${uid}">Calendar</a>
                         </li>
                         <li class="dropdown-submenu">
                            <a href="Ridingdata">Riding Data</a>
@@ -426,6 +426,7 @@
             <div class="modal-footer">
                <!-- <img src="./resources/img/hearts.png" id="like"> -->
                <input type="text" id="s-reply" />
+               <input type = "text" id = "uid" style = "display: none;" value = "${uid}"/>
                <button id="addReply" class="btn btn-default">댓글등록</button>
             </div>
          </div>
@@ -454,6 +455,34 @@
       });
       
       var form = $("#form");
+      
+      $("#addReply").on("click", function() {
+    	 var id = $("#w_id").text();
+    	 var replyer = $("#uid").val();
+    	 var replyText = $("#s-reply").val();
+    	 
+    	 alert(id + ", " + replyer + ", " + replyText);
+    	 
+    	 $.ajax({
+    		type: 'post',
+    		url: 'replies',
+    		headers: {
+    			"content-Type" : "application/json",
+				"X-HTTP-Method-Override" : "POST"
+    		},
+    		dataType: 'text',
+    		data: JSON.stringify({
+    			writing_Id: id,
+    			uid: replyer,
+    			replyText: replyText
+    		}),
+    		success: function(result, status) {
+    			if(result == "SUCCESS") {
+    				getAllReplies();
+    			}
+    		}
+    	 });
+      });
       
       $(".likeCnt").on("click", function() {
     	  event.preventDefault();
@@ -488,7 +517,7 @@
          form.submit();
       });
       
-      $(".test").on("click", function() {
+      $(".test").on("click", function () {
          event.preventDefault();
          var   title = $(this).attr("href");
          alert(title);
@@ -509,24 +538,29 @@
                   console.log(data);
                }
                var html = "";
-               html = "<p style = 'float: left'>제목 : " + data.writing_title + "</p>"
+               html = "<h3 style = 'float: left'>제목 : " + data.writing_title + "</h3>"
+               		 + "<p style = 'display: none;' id = 'w_id'>" + data.writing_Id + "</p>"
+               		 + "<p style = 'float: right;'>작성자 : " + data.member_Id + "</p><br>"
                      + "<hr><div><img id = 's-img' src = './displayFile?fileName=" + data.bbs_FilePath + "'></div>"
                      + "<hr><div id = 's-content'>내용 : " + data.writing_content + "</div><hr>"
-                     + "<div><ul class = 'timeline'><li class = 'rList'>댓글 목록</li></ul></div>";
+                     + "<div><ul class = 'timeline'></ul></div>";
                      
                $(".modal-body").append(html);      
                
-               $.getJSON("replies/all/" + title, function(data) {
-              	 var str = ""; 
-              	 console.log(data);
-              	 $(data.list).each(function() {
-              		str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
-              			+ "<span class = 'reply replyNum'>" + this.rno + ":</span>"
-              			+ "<span class = 'reply replyText'>" + this.replyText + "</span>"
-              			+ "&nbsp;&nbsp;<span class='reply replyWriter'>작성자 : " + this.uid + "&nbsp;&nbsp;&nbsp;</span>"
-              	 });
-              	 $('.timeline').append(str);
-                });
+               getAllReplies();
+               
+               function getAllReplies() {
+            	   $.getJSON("replies/all/" + title, function(data) {
+                    	 var str = ""; 
+                    	 console.log(data);
+                    	 $(data.list).each(function() {
+                    		str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
+                    			+ "<span class = 'reply replyNum'>" + this.uid + " : </span>"
+                    			+ "<span class = 'reply replyText'>" + this.replyText + "</span>";
+                    	 });
+                    	 $('.timeline').append(str);
+                      });
+               }
             },
             error: function() {
                alert('에러');

@@ -58,6 +58,10 @@
 
 <!-- CSS Customization -->
 <link rel="stylesheet" href="./resources/assets/css/custom.css">
+
+<!-- 슬라이드 -->
+<link href="./resources/slider/src/style11.css" rel="stylesheet" type="text/css">
+
 </head>
 <style>
 #popLogo {
@@ -384,7 +388,17 @@ b_container {
 							<div class="col-md-13">
 								<div class="news-v3 bg-color-white margin-bottom-60">
 									<h2>${group.gr_name}의최근라이딩</h2>
-									<div id="map" class="map margin-bottom-50"></div>
+									<!-- 슬라이드 -->
+									<div class="content" style="width:600px;height:450px;overflow:hidden; margin:50px auto;">
+											<div id="slider">
+												<a href="#"><div id="map" style="width:600px;height:450px;" class="map margin-bottom-50"></div></a>
+												<a href="#"><img src="./resources/slider/img/2.jpg"/></a>
+												<a href="#"><img src="./resources/slider/img/3.jpg"/></a>
+												<a href="#"><img src="./resources/slider/img/4.jpg"/></a>
+												<a href="#"><img src="./resources/slider/img/5.jpg"/></a>
+											</div>
+									</div>
+									<!-- 슬라이드 -->
 								</div>
 
 							</div>
@@ -493,7 +507,7 @@ b_container {
 
 							<!-- Blog Posts -->
 							<div class="news-v3 bg-color-white margin-bottom-60">
-								<div id='calendar'></div>
+								<a href="groupNotice?gr_name=${gr_name1}">그룹공지 확인</a>
 							</div>
 							<!-- End Blog Posts -->
 
@@ -894,8 +908,8 @@ b_container {
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <!--  <link rel='stylesheet' type='text/css'
 		href='./resources/calendar/fullcalendar.css' />
-	<script type='text/javascript'
-		src='./resources/calendar/jquery/jquery.js'></script>
+	<!-- <script type='text/javascript'
+		src='./resources/calendar/jquery.js'></script> -->
 	<script type='text/javascript'
 		src='./resources/calendar/jquery/jquery-ui-custom.js'></script>
 	<script type='text/javascript'
@@ -943,6 +957,29 @@ b_container {
 	<script src="assets/plugins/html5shiv.js"></script>
 	<script src="assets/plugins/placeholder-IE-fixes.js"></script>
 	<![endif]-->
+	
+<script src="./resources/slider/vmc.slider.full.js"></script>
+<script>
+$('#slider').vmcSlider({
+		width: 600,
+		height: 450,
+		gridCol: 10,
+		gridRow: 5,
+		gridVertical: 20, 
+		gridHorizontal: 10,
+		autoPlay: true,
+		ascending: true,
+		effects: [
+			'fade', 'fadeLeft', 'fadeRight', 'fadeTop', 'fadeBottom', 'fadeTopLeft', 'fadeBottomRight',
+			'blindsLeft', 'blindsRight', 'blindsTop', 'blindsBottom', 'blindsTopLeft', 'blindsBottomRight',
+			'curtainLeft', 'curtainRight', 'interlaceLeft', 'interlaceRight', 'mosaic', 'bomb', 'fumes'
+		],
+		ie6Tidy: false,
+		random: true,
+		duration: 2000,
+		speed: 900
+	});
+</script>
 
 
 </body>
