@@ -16,4 +16,6 @@ public interface GroupInfoBoardDAO {
 	
 	public List<GroupInfoBoard> listAll(int groupid)throws Exception;
 	
+	public List<GroupInfoBoard> listAll_Master(String gid, String gname)throws Exception;
+	
 }

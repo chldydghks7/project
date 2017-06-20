@@ -151,7 +151,7 @@ public class GroupController {
 		
 		session.setAttribute("gr_name1", gr.getGr_name());
 		
-		
+		List<GroupInfoBoard> list2 = infoboardservice.listAll_Master(gr_id, gr_name);
 		
 		List<GroupInfoBoard> list = infoboardservice.listAll(pasor);
 		GroupInfoList info_list = infolistservice.listAll_li(id);
@@ -161,6 +161,7 @@ public class GroupController {
 		System.out.println("아이디는 ??"+id);
 		List<GroupInfoMemList> info_mem_list = infomemListservice.listAll_mem(gr_name);
 		
+		model.addAttribute("list_master", list2);
 		model.addAttribute("listAll_mem", info_mem_list);
 		model.addAttribute("listAll", list);
 		model.addAttribute("listAll_li",info_list);

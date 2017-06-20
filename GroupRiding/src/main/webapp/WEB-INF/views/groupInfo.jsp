@@ -411,18 +411,33 @@ b_container {
 										<th>제목</th>
 										<th>작성자</th>
 										<th>날짜</th>
-										<th>조회수</th>
+										<th>조회수</th><!-- list_master -->
 									</tr>
+									
+									
+									<c:forEach items="${list_master}" var="GroupMaster">
+										<tr>
+
+											<td class="success"><h4><strong><a  style="color:red;" href="javascript:ViewLayer2();"
+												id="a" class="${GroupMaster.writing_id}">${GroupMaster.writing_title}</a></strong></h4></td>
+
+											<td class="success"><h4 style="color:red;"><strong>${GroupMaster.member_id}</h4></strong></td>
+
+											<td class="success"><h4 style="color:red;"><strong>${GroupMaster.regist_date}</h4></strong></td>
+											<td class="success"><h4 style="color:red;"><strong>${GroupMaster.view_Number}</h4></strong></td>
+										</tr>
+
+									</c:forEach>
 									<c:forEach items="${listAll}" var="GroupInfoBo">
 										<tr>
 
-											<td class="active"><a href="javascript:ViewLayer2();"
+											<td class=""><a href="javascript:ViewLayer2();"
 												id="a" class="${GroupInfoBo.writing_id}">${GroupInfoBo.writing_title}</a></td>
 
-											<td class="active">${GroupInfoBo.member_id}</td>
+											<td class="">${GroupInfoBo.member_id}</td>
 
-											<td class="active">${GroupInfoBo.regist_date}</td>
-											<td class="active">${GroupInfoBo.view_Number}</td>
+											<td class="">${GroupInfoBo.regist_date}</td>
+											<td class="">${GroupInfoBo.view_Number}</td>
 										</tr>
 
 									</c:forEach>
@@ -438,13 +453,13 @@ b_container {
 									<form method="post"
 										action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}"
 										style="margin: 5% 5%;">
-										<p style="color:white;">작성자 - ${uid}</p>
+										<label style="color:white;">작성자 - ${uid}</label>
 										<div class="form-group">
-											<p style="color:white;">제목</p>
+											<label style="color:white;">제목</label>
 											<input class="form-control" type="text" name="writing_title">
 										</div>
 										<div class="form-group">
-											<p style="color:white;">내용</p>
+											<label style="color:white;">내용</label>
 											<textarea class="form-control" rows="13" cols="132"
 												style="color: black; resize: none;" name="writing_content"></textarea>
 										</div>
