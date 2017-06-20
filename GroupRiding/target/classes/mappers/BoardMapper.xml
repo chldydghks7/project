@@ -42,4 +42,9 @@
        select bbs_FilePath, writing_Id
        from bbs_File = bbs_writing
     </select>
+    
+    <insert id="insertImgFile">
+    	insert into bbs_File(bbs_FilePath) values(#{imgName})
+    
+    </insert>
  </mapper>
