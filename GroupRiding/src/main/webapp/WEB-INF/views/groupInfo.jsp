@@ -435,13 +435,13 @@ b_container {
 									<form method="post"
 										action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}"
 										style="margin: 5% 5%;">
-										<p>작성자 - ${uid}</p>
+										<p style="color:white;">작성자 - ${uid}</p>
 										<div class="form-group">
-											<p>제목</p>
+											<p style="color:white;">제목</p>
 											<input class="form-control" type="text" name="writing_title">
 										</div>
 										<div class="form-group">
-											<p>내용</p>
+											<p style="color:white;">내용</p>
 											<textarea class="form-control" rows="13" cols="132"
 												style="color: black; resize: none;" name="writing_content"></textarea>
 										</div>
@@ -459,7 +459,7 @@ b_container {
 									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; margin: 5% 5%; background: #101010; color: #fff;">
 									<a href="javascript:ViewClose2();"> <img id="popLogo"
 										src="./resources/img/cancelcel.png" /></a>
-									<div style="margin: 5% 5%">
+									<div style="margin: 5% 5%; color:white;">
 										<div class="uid" style="display: none;">${uid}</div>
 										작성자 - <label id="re_id"></label><br /> 제목 - <label
 											id="re_title"></label><br /> 내용
@@ -532,10 +532,17 @@ b_container {
 											<td style="width:30px"><img style="width:30px;height:30px;"src="/displayFile?fileName=${mem.fullname}"/></td>
 											<td>${mem.uid}</td>
 							<!-- 강퇴아이콘 -------------------------------------------->
-								
+							
 										<c:if test="${uid == group.gr_leader}"> <!-- 세션의 uid가 그룹장이 아니라면 아래 문구 추가 -->
-											<td><a id="imgg" href="javascript:void(0);"><img  style="width: 15px;height: 15px;" src="./resources/img/cancel.png" /></a></td>
+											<td>
+												<a href="#">
+													<img  class="imgg" id="${mem.uid}" style="width: 15px;height: 15px;" src="./resources/img/cancel.png" />
+												
+												</a>
+												
+											</td>
 										</c:if>
+										<input type="hidden" id="gname" value="${group.gr_name}"/> <!-- 삭제하기 위해서 그룹의 이름을 받아 gname에 저장함 -->
 							<!-- 강퇴아이콘 -------------------------------------------->
 										</tr>
 									</c:forEach>
@@ -582,7 +589,27 @@ b_container {
 					formObj.attr("method", "get");
 					formObj.submit();
 				});
-
+			/* ----------------------------------삭제버튼---------------------------------------- */
+				$(".imgg").on("click",function(){
+					var uid = $(this).attr("id");
+					var gname = $("#gname").val();
+					console.log(uid);
+					console.log(gname);
+					$.ajax({
+						url : 'groupInfoMem_del',
+						data : {
+							uid : uid,
+							gname : gname
+						},
+						type : 'post',
+						success : function(data){
+							console.log(data);
+							location.reload();
+						}
+					});
+				});
+			/* ----------------------------------삭제버튼---------------------------------------- */
+				
 				$("#read a").on("click", function() {
 					var writing_id = $(this).attr("class");
 					$.ajax({
@@ -621,6 +648,7 @@ b_container {
 					});
 
 				});
+
 
 			});
 		</script>
@@ -824,15 +852,15 @@ b_container {
 		}
 	</script>
 
-
-	<link rel='stylesheet' type='text/css'
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<!--  <link rel='stylesheet' type='text/css'
 		href='./resources/calendar/fullcalendar.css' />
 	<!-- <script type='text/javascript'
 		src='./resources/calendar/jquery.js'></script> -->
 	<script type='text/javascript'
 		src='./resources/calendar/jquery/jquery-ui-custom.js'></script>
 	<script type='text/javascript'
-		src='./resources/calendar/fullcalendar.min.js'></script>
+		src='./resources/calendar/fullcalendar.min.js'></script> -->
 
 	<!-- 캘린더 -->
 	<script type='text/javascript'>

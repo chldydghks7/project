@@ -59,4 +59,10 @@ public class BoardDAOImpl implements BoardDAO {
 		session.update(namespace + ".likeUpdate", vo);
 	}
 
+	@Override
+	public void insertimgfile(String imgName) throws Exception {
+		// TODO Auto-generated method stub
+		session.insert(namespace+".insertImgFile", imgName);
+	}
+
 }

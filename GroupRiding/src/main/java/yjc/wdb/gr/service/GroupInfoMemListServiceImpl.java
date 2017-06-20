@@ -20,5 +20,10 @@ public class GroupInfoMemListServiceImpl implements GroupInfoMemListService {
 		// TODO Auto-generated method stub
 		return dao.listAll_mem(group_name);
 	}
+	@Override
+	public void delete(String uid,String gname)throws Exception{
+		dao.delete(uid, gname);
+	}
+
 
 }
