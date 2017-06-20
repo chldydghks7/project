@@ -447,7 +447,7 @@ b_container {
 								</c:if>
 								
 								<div id="Pop"
-									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; background: #3d3d3d; color: #fff;">
+									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 100 !important; display: none; background: #3d3d3d; color: #fff;">
 									<a href="javascript:ViewClose();"> <img id="popLogo"
 										src="./resources/img/cancelcel.png" /></a>
 									<form method="post"
@@ -474,7 +474,7 @@ b_container {
 
 
 								<div id="Pop_Re"
-									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; margin: 5% 5%; background: #101010; color: #fff;">
+									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 100 !important; display: none; margin: 5% 5%; background: #101010; color: #fff;">
 									<a href="javascript:ViewClose2();"> <img id="popLogo"
 										src="./resources/img/cancelcel.png" /></a>
 									<div style="margin: 5% 5%; color:white;">
