@@ -1,6 +1,8 @@
 package yjc.wdb.gr.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -19,6 +21,14 @@ public class GroupInfoMemListDAOImpl implements GroupInfoMemListDAO {
 	@Override
 	public List<GroupInfoMemList> listAll_mem(String group_name) throws Exception {
 		return session.selectList(namespace + ".info_mem",group_name);
+	}
+	@Override
+	public void delete(String uid,String gname)throws Exception{
+		Map<String,String> paramMap=new HashMap<>();
+		
+		paramMap.put("uid", uid);
+		paramMap.put("gname", gname);
+		session.delete(namespace +".info_mem_del",paramMap);
 	}
 
 }
