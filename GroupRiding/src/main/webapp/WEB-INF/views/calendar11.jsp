@@ -12,22 +12,29 @@
 
 
 <style type='text/css'>
-
-	body {
-		margin-top: 40px;
-		text-align: center;
-		font-size: 14px;
-		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-		}
-
 	#calendar {
 		width: 900px;
 		margin: 0 auto;
 		}
-		
 </style>
 
 <div id='calendar'></div>
+
+<table>
+	
+		<tr style="text-allgn: center; color:red;">
+			<th> 공지이름 </th>
+			<th> 참여여부 </th>
+		</tr>
+	
+	<c:forEach items="${llll}" var="i">
+		<tr>
+			<td>${i.notice_title}</td>
+			<td>${i.joing}</td>
+		</tr>
+	</c:forEach>
+	
+</table>
 
 <script type='text/javascript'>
 	$(document).ready(function() {
@@ -45,7 +52,7 @@
 				<c:forEach items="${list}" var="i">
 					
 					{
-						title: "${i.notice_title} 그룹 : ${i.gr_name}",
+						title: "${i.notice_title} 그룹 : ${i.gr_name} (${joinCheck})",
 						start: "${i.ridingDate}",
 						url: "noticeInfo?noticeId=${i.noticeId}&uid=${uid}"
 					},
@@ -57,7 +64,16 @@
 		
 	});
 	
-	<c:forEach items="${list}" var="i">
-		${i.noticeId}
-	</c:forEach>
+	/* <c:forEach items="${list}" var="i">
+		"${i.noticeId}"
+	</c:forEach> */
+</script>
+
+<script>
+	var joinCheck = "${joinCheck}";
+	if(joinCheck == "참여") {
+		
+	} else if(joinCheck == "불참"){
+		
+	}
 </script>

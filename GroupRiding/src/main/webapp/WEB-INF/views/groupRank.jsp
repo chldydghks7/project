@@ -112,7 +112,7 @@
 						<li class="dropdown"><a href="javascript:void(0);"
 							class="dropdown-toggle" data-toggle="dropdown"> Info </a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="calendar">Calendar</a>
+								<li class="dropdown-submenu"><a href="calendar?uid=${uid}">Calendar</a>
 								</li>
 								<li class="dropdown-submenu"><a href="Ridingdata">Riding
 										Data</a></li>

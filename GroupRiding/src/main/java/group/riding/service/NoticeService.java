@@ -19,4 +19,6 @@ public interface NoticeService {
 	public String joinCheck(int noticeId, String uid) throws Exception;	// 참여 체크
 	
 	public List<NoticeBean> noticeCheck(String uid) throws Exception;	// 창조주님 !! 그룹명 + 참여여부
+
+	public void updateCheck(NoticeBean nb) throws Exception;	// 참여 or 불참 업데이트
 }
