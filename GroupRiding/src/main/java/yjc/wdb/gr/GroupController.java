@@ -156,6 +156,7 @@ public class GroupController {
 		List<GroupInfoBoard> list = infoboardservice.listAll(pasor);
 		GroupInfoList info_list = infolistservice.listAll_li(id);
 		GroupMemPic pic = mempicservice.pic_li(id);
+		GroupInfoMemList memList = infomemListservice.read(uid, gr_name);
 		
 		System.out.println("아이디는 ??"+id);
 		List<GroupInfoMemList> info_mem_list = infomemListservice.listAll_mem(gr_name);
@@ -164,6 +165,7 @@ public class GroupController {
 		model.addAttribute("listAll", list);
 		model.addAttribute("listAll_li",info_list);
 		model.addAttribute("mem_li", pic.getFullname());
+		model.addAttribute("memList", memList);
 		System.out.println("사진은?? ??"+pic.getFullname());
 
 		return "groupInfo";

@@ -427,7 +427,10 @@ b_container {
 
 									</c:forEach>
 								</table>
+								<c:if test="${memList!=null}">
 								<a href="javascript:ViewLayer();">등록</a>
+								</c:if>
+								
 								<div id="Pop"
 									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; background: #3d3d3d; color: #fff;">
 									<a href="javascript:ViewClose();"> <img id="popLogo"

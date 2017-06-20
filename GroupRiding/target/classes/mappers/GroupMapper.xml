@@ -185,6 +185,13 @@
 		from gr_attach
 		where uid=#{uid}
 	</select>
+	
+	<select id="board_Add" resultType="GroupBoardAdd">
+		select uid
+		from gr_gr
+		where gr_name=#{gname}
+		and uid=#{uid}
+	</select>
 
 
 </mapper>
