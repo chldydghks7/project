@@ -3,6 +3,7 @@ package group.riding.service;
 import java.util.List;
 
 import group.riding.bean.NoticeBean;
+import group.riding.bean.RidingInfoBean;
 
 public interface NoticeService {
 	
@@ -21,4 +22,8 @@ public interface NoticeService {
 	public List<NoticeBean> noticeCheck(String uid) throws Exception;	// 창조주님 !! 그룹명 + 참여여부
 
 	public void updateCheck(NoticeBean nb) throws Exception;	// 참여 or 불참 업데이트
+	
+	public List<RidingInfoBean> ridingDate(String uid) throws Exception;	// RidingInfo
+	
+	public RidingInfoBean ridingInfo(int riding_id) throws Exception;	// RidingInfo
 }

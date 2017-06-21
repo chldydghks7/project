@@ -156,6 +156,7 @@ public class GroupController {
 		model.addAttribute("listAll_mem", info_mem_list);
 		model.addAttribute("listAll", list);
 		model.addAttribute("listAll_li",info_list);
+		
 
 		return "groupInfo";
 	

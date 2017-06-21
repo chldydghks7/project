@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import group.riding.bean.GroupBean;
 import group.riding.bean.NoticeBean;
+import group.riding.bean.RidingInfoBean;
 
 
 
@@ -65,6 +66,16 @@ public class NoticeDAOImpl implements NoticeDAO {
 	@Override
 	public void updateCheck(NoticeBean nb) throws Exception {
 		session.update(namespace + ".updateCheck", nb);
+	}
+
+	@Override
+	public List<RidingInfoBean> ridingDate(String uid) throws Exception {
+		return session.selectList(namespace + ".ridingDate", uid);
+	}
+
+	@Override
+	public RidingInfoBean ridingInfo(int riding_id) throws Exception {
+		return session.selectOne(namespace + ".ridingInfo", riding_id);
 	}
 
 
