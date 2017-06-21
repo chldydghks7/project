@@ -84,10 +84,6 @@
 		width: 10em;
 	}
 	
-	.date {
-		widows: 10em;
-	}
-	
 	.replyText {
 		width: 30em;
 		height: 3em;

@@ -73,6 +73,39 @@
       .modal-body {
          height: 600px;
       }
+      
+      .s-content {
+      	height: 400px;
+      }
+      
+      .reply {
+		display: inline-block;
+		float: left;
+	}
+	
+	.replyNum {
+		width: 3em;
+	}
+	
+	.replyWriter {
+		width: 10em;
+	}
+	
+	.replyText {
+		width: 30em;
+		height: 3em;
+		overflow: auto;
+		margin-right: 10px;
+	}
+	
+	.replyLI {
+		margin-bottom: 2em;
+		list-style-type: none;
+		clear: both;
+	}
+	.rList {
+		list-style-type: none;
+	}
    </style>
 </head>
 
@@ -244,8 +277,9 @@
                </div> --%>
             </div>
             <div class="modal-footer">
-               <img src="./resources/img/hearts.png" id="like"> <input
-                  type="text" id="s-reply" />
+               <img src="./resources/img/hearts.png" id="like">
+               <input type = "text" id = "uid" style = "display: none;" value = "${uid}"/>
+               <input type="text" id="s-reply" />
                <button id="addReply" class="btn btn-default">댓글등록</button>
             </div>
          </div>
@@ -420,6 +454,34 @@
             handleLocationError(false, infoWindow, map.getCenter());
         }
         
+        $("#addReply").on("click", function() {
+       	 var id = $("#hp_id").text();
+       	 var replyer = $("#uid").val();
+       	 var replyText = $("#s-reply").val();
+       	 
+       	 alert(id + ", " + replyer + ", " + replyText);
+       	 
+       	 $.ajax({
+       		type: 'post',
+       		url: 'replies',
+       		headers: {
+       			"content-Type" : "application/json",
+   				"X-HTTP-Method-Override" : "POST"
+       		},
+       		dataType: 'text',
+       		data: JSON.stringify({
+       			writing_Id: id,
+       			uid: replyer,
+       			replyText: replyText
+       		}),
+       		success: function(result, status) {
+       			if(result == "SUCCESS") {
+       				getAllReplies();
+       			}
+       		}
+       	 });
+         });
+        
         $.ajax({
         	url: 'ajaxMap',
         	type: 'get',
@@ -486,10 +548,29 @@
         					
         					var html = "";
         					html = "<h2 style = 'float: left'>종류 : " + data.place_kind + "</h2>"
-                            + "<br><hr><div>장소 : " + data.place_name + "</div>";
+        					+ "<p style = 'display: none;' id = 'hp_id'>" + data.hp_id + "</p>"
+                            + "<br><hr><div>장소 : " + data.place_name + "</div><hr>"
+                            + "<div><ul class = 'timeline'></ul></div>";
                             
                             $(".modal-body").append(html);
-                     
+                     		
+                            
+                            getAllReplies();
+                            
+                            function getAllReplies() {
+                            	var id = $("#hp_id").text();
+                            	
+                         	   $.getJSON("replies/all/" + id, function(data) {
+                                 	 var str = ""; 
+                                 	 console.log(data);
+                                 	 $(data.list).each(function() {
+                                 		str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
+                                 			+ "<span class = 'reply replyNum'>" + this.uid + " : </span>"
+                                 			+ "<span class = 'reply replyText'>" + this.replyText + "</span>";
+                                 	 });
+                                 	 $('.timeline').append(str);
+                                   });
+                            }
         				}
         			},
         			error: function() {
