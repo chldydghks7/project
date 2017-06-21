@@ -56,7 +56,7 @@
 	
 	<!-- 라이딩 인포 테이블 삽입-->
 	<insert id="insert_riding_info">
-	insert into gr_ridinginfo(uid,alltime,startDate,alldistance,avgspeed) values(#{uid},#{alltime},#{startDate},#{alldistance},#{avgspeed})
+	insert into gr_ridinginfo(uid,alltime,startDate,alldistance,avgspeed,kml_id) values(#{uid},#{alltime},#{startDate},#{alldistance},#{avgspeed},#{kml_id})
 	
 	</insert>
 	
@@ -65,4 +65,16 @@
 	select picture_id,picture_path from gr_picture where uid=#{uid}
 	</select>
 
+	<!-- kml id 삽입 위해 조회-->
+	<select id="selectkmlid" resultType="Integer">
+	select kml_id from gr_kml order by kml_id desc;
+	</select>
+	
+	<!-- 앱 화면중 운동내역을 보기위해서써야함-->
+	<select id="showhistory" resultType="RidingInfo">
+	select a.kml_name,b.riding_id,b.alltime,b.startDate,b.alldistance,b.avgspeed
+ 		from gr_kml a, gr_ridinginfo b
+		where a.kml_id=b.kml_id
+		and b.uid=#{uid}
+	</select>
 </mapper>

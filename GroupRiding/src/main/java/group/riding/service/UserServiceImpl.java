@@ -78,6 +78,18 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return dao.showMyPic(uid);
 	}
+
+	@Override
+	public List<Integer> selectkmlid() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.selectkmlid();
+	}
+
+	@Override
+	public List<RidingInfo> showhistory(String uid) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.showhistory(uid);
+	}
 	
-	
+
 }

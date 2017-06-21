@@ -10,6 +10,7 @@ import java.util.UUID;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -120,15 +121,15 @@ public class UserController {
 		
 		service.insertkml(kml);
 	
+		List<Integer> list=service.selectkmlid();
 		
-		
-		
+		int kmlid=list.get(0);
 		
 	
 		 JSONObject json= new JSONObject();
 		 
 		 json.put("result", "success");
-		 
+		 json.put("kmlid", kmlid);
 		
 		 
 	
@@ -229,6 +230,51 @@ public class UserController {
 		
 			 
 			 return json;
+			 
+		 }
+		 
+		 //운동내역 리스트 출력위해 필요 a.kml_name,b.riding_id,b.alltime,b.startDate,b.alldistance,b.avgspeed
+		 @RequestMapping(value="show_history", method=RequestMethod.GET)
+		 @ResponseBody
+		 public String showhistory(String uid,String callback)throws Exception{
+			
+			List<RidingInfo> list= service.showhistory(uid);
+
+			 
+			 JSONArray j= new JSONArray();
+			 JSONObject jsonresult= new JSONObject();
+			 
+			 for(int i=0;i<list.size();i++)
+			 {
+
+				 JSONObject json= new JSONObject();
+				 json.put("kml_name", list.get(i).getKml_name());
+
+				 json.put("riding_id", list.get(i).getRiding_id());
+				 
+             	 json.put("alltime", list.get(i).getAlltime());
+             	 
+             	 json.put("startDate", list.get(i).getStartDate());
+
+				 json.put("alldistance", list.get(i).getAlldistance());
+				 
+				 json.put("avgspeed", list.get(i).getAvgspeed());
+				
+				j.add(json);
+				
+				 
+				 
+				 
+			 }
+			 
+		
+			 jsonresult.put("history", j);
+			 
+			
+			 
+		
+			 
+			 return callback+"("+jsonresult+")";
 			 
 		 }
 

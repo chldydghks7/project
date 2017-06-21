@@ -33,4 +33,8 @@ public interface UserDAO {
 	public void insertRidingInfo(RidingInfo info)throws Exception; //riding info 테이블 총거리,총시간 및데이터 삽입
 	
 	public List<MyPicture> showMyPic(String uid)throws Exception;
+	
+	public List<Integer> selectkmlid()throws Exception;
+	
+	public List<RidingInfo> showhistory(String uid)throws Exception;
 }

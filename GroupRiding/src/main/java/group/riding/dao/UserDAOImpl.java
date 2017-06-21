@@ -82,5 +82,17 @@ public class UserDAOImpl implements UserDAO {
 		return session.selectList(namespace+".showMyPic", uid);
 	}
 
+	@Override
+	public List<Integer> selectkmlid() throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace+".selectkmlid");
+	}
+
+	@Override
+	public List<RidingInfo> showhistory(String uid) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace+".showhistory", uid);
+	}
+
 
 }
