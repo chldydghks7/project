@@ -7,6 +7,8 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import group.riding.bean.MyPicture;
+import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
 import group.riding.bean.UserData;
 import group.riding.dao.UserDAO;
@@ -63,6 +65,18 @@ public class UserServiceImpl implements UserService {
 	public void insertkml(String kml) throws Exception {
 		// TODO Auto-generated method stub
 		dao.insertkml(kml);
+	}
+
+	@Override
+	public void insertRidingInfo(RidingInfo info) throws Exception {
+		// TODO Auto-generated method stub
+		dao.insertRidingInfo(info);
+	}
+
+	@Override
+	public List<MyPicture> showMyPic(String uid) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.showMyPic(uid);
 	}
 	
 	

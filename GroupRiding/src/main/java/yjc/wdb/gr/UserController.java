@@ -29,6 +29,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import de.micromata.opengis.kml.v_2_2_0.Coordinate;
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 import group.riding.bean.GroupBean;
+import group.riding.bean.MyPicture;
+import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
 import group.riding.bean.UserData;
 import group.riding.dto.LoginDTO;
@@ -186,6 +188,48 @@ public class UserController {
 			 
 			 return "main";
 		 }
+		 //라이딩 인포 테이블에 총거리,총시간 삽입
+		 @RequestMapping(value="insert_riding_info", method=RequestMethod.GET)
+		 @ResponseBody
+		 public String insertRidinginfo(RidingInfo info,String callback)throws Exception{
+			 
+			 service.insertRidingInfo(info);
+
+			 JSONObject json= new JSONObject();
+			 
+			 json.put("result", "success");
+			 
+			
+			 
+		
+			 
+			 return callback+"("+json+")";
+			 
+		 }
 		 
+		 //라이딩중 찍은사진 보기 sharingform 에 내사진 에 띄우기위해
+		 @RequestMapping(value="showMyPicture", method=RequestMethod.GET)
+		 @ResponseBody
+		 public JSONObject showmypicture(HttpSession session)throws Exception{
+			 
+			 String uid=(String)session.getAttribute("uid");
+			 
+			 
+			List<MyPicture> list= service.showMyPic(uid);
+			 
+			
+			
+			 JSONObject json= new JSONObject();
+			 
+			 json.put("result", "success");
+			 
+			 json.put("list", list);
+			
+			 
+		
+			 
+			 return json;
+			 
+		 }
 
 }

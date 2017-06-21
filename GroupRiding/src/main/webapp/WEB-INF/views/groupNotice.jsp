@@ -25,6 +25,11 @@
 		margin: 0 auto;
 		}
 		
+		.logo, .footer-logo {
+			width: 200px;
+			heigth: 100px;
+		}
+		
 </style>
 
 <div id='calendar'></div>

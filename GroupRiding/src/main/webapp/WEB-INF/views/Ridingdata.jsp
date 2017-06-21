@@ -49,6 +49,13 @@
 
    <!-- CSS Customization -->
    <link rel="stylesheet" href="./resources/assets/css/custom.css">
+   
+   <style>
+   	.logo, .footer-logo {
+			width: 200px;
+			heigth: 100px;
+		}
+   </style>
 </head>
 <body>
    <div class="wrapper">
@@ -57,7 +64,7 @@
          <div class="container">
             <!-- Logo -->
             <a class="logo" href="mainlogin">
-               <img src="./resources/assets/img/logo1-default.png" alt="Logo">
+               <img src="./resources/img/logo(b).png" alt="Logo">
             </a>
             <!-- End Logo -->
 
@@ -233,12 +240,32 @@
       <!--=== End Content Part ===-->
 
 <!-- 시작  -->
+<center><div id="map" style="width:1000px; height:500px;"></div></center>
 
+
+
+<script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 11
+            
+        });
+        var ctaLayer = new google.maps.KmlLayer({
+            url: 'http://39.121.239.182:8080/can/resources/3ffd0418-d74c-4deb-a9fe-8b5b001376cc.kml',
+            map: map
+          });
+        
+      }
+    </script>
+    
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-W2mR3T2SKF_iOcKHK7lGp1Tzo-mnrSg&callback=initMap"
+    async defer></script>  
 
 
 <table width="50%">
 <tr>
-    <td>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</td>
+    <td>　　　　　　　　　　　　　　　　　</td>
    <td><div id="chart_div" style="width:800px; height: 400px;"></td>
 </tr>
 </table>
@@ -278,7 +305,7 @@
                       data1.setCell(i, 1, data[i].speed);
                       data1.setCell(i, 2, data[i].altitude);   
                    }else if(i>3599){
-                      data1.setCell(i, 0, parseInt((i+1)/3600))+"시간"+(parseInt((i+1)/60)-(parseInt((i+1)/3600)*60))+"분"+parseInt((i+1)%60))+"초";
+                      data1.setCell(i, 0, parseInt((i+1)/3600))+"시간"+(parseInt((i+1)/60)-(parseInt((i+1)/3600)*60))+"분"+parseInt((i+1)%60)+"초";
                       data1.setCell(i, 1, data[i].speed);
                       data1.setCell(i, 2, data[i].altitude);   
                    }
@@ -313,7 +340,7 @@
                <div class="row">
                   <!-- About -->
                   <div class="col-md-3 md-margin-bottom-40">
-                     <a href="main"><img id="logo-footer" class="footer-logo" src="./resources/assets/img/logo2-default.png" alt=""></a>
+                     <a href="main"><img id="logo-footer" class="footer-logo" src="./resources/img/logo(w).png" alt=""></a>
                      <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
                      <p>Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.</p>
                   </div><!--/col-md-3-->
