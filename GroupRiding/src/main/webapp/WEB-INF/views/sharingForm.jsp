@@ -54,6 +54,15 @@
 		.modal-body {
 			height: 700px;
 		}
+		
+		#myPic>img{
+		margin-right:10px;
+		}
+		
+		.logo, .footer-logo {
+			width: 200px;
+			heigth: 100px;
+		}
 	</style>
 </head>
 
@@ -64,7 +73,7 @@
 			<div class="container">
 				<!-- Logo -->
 				<a class="logo" href="mainlogin">
-					<img src="./resources/assets/img/logo1-default.png" alt="Logo">
+					<img src="./resources/img/logo(b).png" alt="Logo">
 				</a>
 				<!-- End Logo -->
 
@@ -226,6 +235,12 @@
 							</section>
 							
 							<section>
+								<label class="label">내 사진</label>
+								<div id="myPic"></div>
+							
+							</section>
+							
+							<section>
 								<label class="label">내용</label>
 								<label class="textarea textarea-resizable">
 									<textarea rows="3" id="content" name="writing_content"></textarea>
@@ -249,7 +264,7 @@
 					<div class="row">
 						<!-- About -->
 						<div class="col-md-3 md-margin-bottom-40">
-							<a href="main"><img id="logo-footer" class="footer-logo" src="./resources/assets/img/logo2-default.png" alt=""></a>
+							<a href="main"><img id="logo-footer" class="footer-logo" src="./resources/img/logo(w).png" alt=""></a>
 							<p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
 							<p>Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.</p>
 						</div><!--/col-md-3-->
@@ -421,6 +436,51 @@
 				  	  form.append(upload);
 				  }
 			});	
+		});
+		
+		
+		$("#myPic").on("click","img",function(){
+			
+			console.log($(this));
+			$(this).css('border','5px solid green');
+			
+		    var form = $("#sharForm");
+			var filepath=$(this).attr('src');
+			
+			var upload= "<input type='hidden' name='bbs_FilePath' value='"+ filepath +"'> ";
+			  form.append(upload);
+			
+		});
+		
+		
+		$(document).ready(function(){
+			
+			$.ajax({
+				url:'showMyPicture',
+				type:'get',
+				success:function(data){
+					if(data.result=="success")
+					{
+						console.log(data);
+						var picarray=data.list;
+						
+						for(var i=0;i<picarray.length;i++)
+						{	
+						
+						var src=picarray[i].picture_path;
+						var img=$('<img />').attr('src', 'http://localhost:8080/GroupRidingApp/image/' + src);
+						
+						
+						img.appendTo($("#myPic"));	
+						}
+						
+												
+						
+					}
+				}
+				
+			});
+			
 		});
 	</script>
 <!--[if lt IE 9]>

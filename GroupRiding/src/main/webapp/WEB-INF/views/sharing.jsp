@@ -84,10 +84,6 @@
 		width: 10em;
 	}
 	
-	.date {
-		widows: 10em;
-	}
-	
 	.replyText {
 		width: 30em;
 		height: 3em;
@@ -103,6 +99,11 @@
 	.rList {
 		list-style-type: none;
 	}
+	
+	.logo, .footer-logo {
+			width: 200px;
+			heigth: 100px;
+		}
    </style>
 </head>
 
@@ -113,7 +114,7 @@
          <div class="container">
             <!-- Logo -->
             <a class="logo" href="mainlogin">
-               <img src="./resources/assets/img/logo1-default.png" alt="Logo">
+               <img src="./resources/img/logo(b).png" alt="Logo">
             </a>
             <!-- End Logo -->
 
@@ -262,7 +263,7 @@
                         <p class = "cnt" style = "display:none;">${board.view_Number}</p>  
                            <div class="thumbnail-img">
                               <div class="overflow-hidden">
-                                 <img class="img-responsive" src="/displayFile?fileName=${board.bbs_FilePath}" alt="" />
+                                 <img class="img-responsive" src="${board.bbs_FilePath}" alt="" />
                               </div>
                               <a class="test btn-more hover-effect" href="${board.writing_Id}" data-toggle = "modal" data-target = "#myModal" data-backdrop="static" data-keyboard="false">read more +</a>
                            </div>
@@ -288,7 +289,7 @@
                <div class="row">
                   <!-- About -->
                   <div class="col-md-3 md-margin-bottom-40">
-                     <a href="/"><img id="logo-footer" class="footer-logo" src="./resources/assets/img/logo2-default.png" alt=""></a>
+                     <a href="/"><img id="logo-footer" class="footer-logo" src="./resources/img/logo(w).png" alt=""></a>
                      <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
                      <p>Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.</p>
                   </div><!--/col-md-3-->
@@ -541,7 +542,7 @@
                html = "<h3 style = 'float: left'>제목 : " + data.writing_title + "</h3>"
                		 + "<p style = 'display: none;' id = 'w_id'>" + data.writing_Id + "</p>"
                		 + "<p style = 'float: right;'>작성자 : " + data.member_Id + "</p><br>"
-                     + "<hr><div><img id = 's-img' src = './displayFile?fileName=" + data.bbs_FilePath + "'></div>"
+                     + "<hr><div><img id = 's-img' src = '"+ data.bbs_FilePath + "'></div>"
                      + "<hr><div id = 's-content'>내용 : " + data.writing_content + "</div><hr>"
                      + "<div><ul class = 'timeline'></ul></div>";
                      

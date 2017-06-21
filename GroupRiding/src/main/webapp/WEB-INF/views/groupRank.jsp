@@ -51,6 +51,13 @@
 
 <!-- CSS Customization -->
 <link rel="stylesheet" href="./resources/assets/css/custom.css">
+
+<style>
+	.logo, .footer-logo {
+			width: 200px;
+			heigth: 100px;
+		}
+</style>
 </head>
 
 <body>
@@ -60,7 +67,7 @@
 			<div class="container">
 				<!-- Logo -->
 				<a class="logo" href="mainlogin"> <img
-					src="./resources/assets/img/logo1-default.png" alt="Logo">
+					src="./resources/img/logo(b).png" alt="Logo">
 				</a>
 				<!-- End Logo -->
 
@@ -239,7 +246,7 @@
 						<!-- About -->
 						<div class="col-md-3 md-margin-bottom-40">
 							<a href="/"><img id="logo-footer" class="footer-logo"
-								src="./resources/assets/img/logo2-default.png" alt=""></a>
+								src="./resources/img/logo(w).png" alt=""></a>
 							<p>About Unify dolor sit amet, consectetur adipiscing elit.
 								Maecenas eget nisl id libero tincidunt sodales.</p>
 							<p>Duis eleifend fermentum ante ut aliquam. Cras mi risus,

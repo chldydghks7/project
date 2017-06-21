@@ -26,9 +26,11 @@ import group.riding.service.NoticeService;
 import yjc.wdb.gr.bean.GroupInfoBoard;
 import yjc.wdb.gr.bean.GroupInfoList;
 import yjc.wdb.gr.bean.GroupInfoMemList;
+import yjc.wdb.gr.bean.GroupMemPic;
 import yjc.wdb.gr.service.GroupInfoBoardService;
 import yjc.wdb.gr.service.GroupInfoListService;
 import yjc.wdb.gr.service.GroupInfoMemListService;
+import yjc.wdb.gr.service.GroupMemPicService;
 
 
 @Controller
@@ -48,6 +50,9 @@ public class GroupController {
 	
 	@Inject
 	private GroupInfoMemListService infomemListservice;
+	
+	@Inject 
+	private GroupMemPicService mempicservice;
 
 
 	
@@ -146,17 +151,27 @@ public class GroupController {
 		
 		session.setAttribute("gr_name1", gr.getGr_name());
 		
-		
+		List<GroupInfoBoard> list2 = infoboardservice.listAll_Master(gr_id, gr_name);
 		
 		List<GroupInfoBoard> list = infoboardservice.listAll(pasor);
 		GroupInfoList info_list = infolistservice.listAll_li(id);
+		GroupMemPic pic = mempicservice.pic_li(id);
+		GroupInfoMemList memList = infomemListservice.read(uid, gr_name);
+		
 		System.out.println("아이디는 ??"+id);
 		List<GroupInfoMemList> info_mem_list = infomemListservice.listAll_mem(gr_name);
 		
+		model.addAttribute("list_master", list2);
 		model.addAttribute("listAll_mem", info_mem_list);
 		model.addAttribute("listAll", list);
 		model.addAttribute("listAll_li",info_list);
+<<<<<<< HEAD
 		
+=======
+		model.addAttribute("mem_li", pic.getFullname());
+		model.addAttribute("memList", memList);
+		System.out.println("사진은?? ??"+pic.getFullname());
+>>>>>>> 7762db1a00160b1ab4c4edf19fa7e24b79b22cdb
 
 		return "groupInfo";
 	

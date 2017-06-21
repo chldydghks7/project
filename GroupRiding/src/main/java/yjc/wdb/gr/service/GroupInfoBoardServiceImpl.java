@@ -38,4 +38,11 @@ public class GroupInfoBoardServiceImpl implements GroupInfoBoardService {
 		// TODO Auto-generated method stub
 		dao.delete(writing_id);
 	}
+
+	@Override
+	public List<GroupInfoBoard> listAll_Master(String gid, String gname) throws Exception {
+		return dao.listAll_Master(gid, gname);
+	}
+
+
 }

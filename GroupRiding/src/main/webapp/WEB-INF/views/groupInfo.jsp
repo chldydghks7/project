@@ -72,6 +72,11 @@
 	margin-top: 10px;
 }
 
+.logo, .footer-logo {
+			width: 200px;
+			heigth: 100px;
+		}
+
 ul.tabs {
 	margin: 0;
 	padding: 0;
@@ -211,7 +216,7 @@ b_container {
 			<div class="container">
 				<!-- Logo -->
 				<a class="logo" href="mainlogin"> <img
-					src="./resources/assets/img/logo1-default.png" alt="Logo">
+					src="./resources/img/logo(b).png" alt="Logo">
 				</a>
 				<!-- End Logo -->
 
@@ -410,37 +415,64 @@ b_container {
 										<th>제목</th>
 										<th>작성자</th>
 										<th>날짜</th>
-										<th>조회수</th>
+										<th>조회수</th><!-- list_master -->
 									</tr>
+									
+									
+									<c:forEach items="${list_master}" var="GroupMaster">
+										<tr>
+
+											<td class="success"><h4><strong><a  style="color:red;" href="javascript:ViewLayer2();"
+												id="a" class="${GroupMaster.writing_id}">${GroupMaster.writing_title}</a></strong></h4></td>
+
+											<td class="success"><h4 style="color:red;"><strong>${GroupMaster.member_id}</h4></strong></td>
+
+											<td class="success"><h4 style="color:red;"><strong>${GroupMaster.regist_date}</h4></strong></td>
+											<td class="success"><h4 style="color:red;"><strong>${GroupMaster.view_Number}</h4></strong></td>
+										</tr>
+
+									</c:forEach>
 									<c:forEach items="${listAll}" var="GroupInfoBo">
 										<tr>
 
-											<td class="active"><a href="javascript:ViewLayer2();"
+											<td class=""><a href="javascript:ViewLayer2();"
 												id="a" class="${GroupInfoBo.writing_id}">${GroupInfoBo.writing_title}</a></td>
 
-											<td class="active">${GroupInfoBo.member_id}</td>
+											<td class="">${GroupInfoBo.member_id}</td>
 
-											<td class="active">${GroupInfoBo.regist_date}</td>
-											<td class="active">${GroupInfoBo.view_Number}</td>
+											<td class="">${GroupInfoBo.regist_date}</td>
+											<td class="">${GroupInfoBo.view_Number}</td>
 										</tr>
 
 									</c:forEach>
 								</table>
+								<c:if test="${memList!=null}">
 								<a href="javascript:ViewLayer();">등록</a>
+								</c:if>
+								
 								<div id="Pop"
+<<<<<<< HEAD
 									style="position: absolute; left: 100px; top: 520px; width: 1000px; height: 600px; z-index: 2; display: none; background: #3d3d3d; color: #fff;">
+=======
+									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 100 !important; display: none; background: #3d3d3d; color: #fff;">
+>>>>>>> 7762db1a00160b1ab4c4edf19fa7e24b79b22cdb
 									<a href="javascript:ViewClose();"> <img id="popLogo"
 										src="./resources/img/cancelcel.png" /></a>
 									<form method="post"
 										action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}"
+<<<<<<< HEAD
 										style="margin: 5% 5%; ">
 										<p style="color:white;">작성자 - ${uid}</p>
+=======
+										style="margin: 5% 5%;">
+										<label style="color:white;">작성자 - ${uid}</label>
+>>>>>>> 7762db1a00160b1ab4c4edf19fa7e24b79b22cdb
 										<div class="form-group">
-											<p style="color:white;">제목</p>
+											<label style="color:white;">제목</label>
 											<input class="form-control" type="text" name="writing_title">
 										</div>
 										<div class="form-group">
-											<p style="color:white;">내용</p>
+											<label style="color:white;">내용</label>
 											<textarea class="form-control" rows="13" cols="132"
 												style="color: black; resize: none;" name="writing_content"></textarea>
 										</div>
@@ -455,7 +487,11 @@ b_container {
 
 
 								<div id="Pop_Re"
+<<<<<<< HEAD
 									style="position: absolute; left: 100px; top: 520px; width: 1000px; height: 600px; z-index: 2; display: none; margin: 5% 5%; background: #101010; color: #fff;">
+=======
+									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 100 !important; display: none; margin: 5% 5%; background: #101010; color: #fff;">
+>>>>>>> 7762db1a00160b1ab4c4edf19fa7e24b79b22cdb
 									<a href="javascript:ViewClose2();"> <img id="popLogo"
 										src="./resources/img/cancelcel.png" /></a>
 									<div style="margin: 5% 5%; color:white;">
@@ -474,6 +510,32 @@ b_container {
 										<!-- <button class="btn btn-default" id="Pop_Re_del"
 											style="float: right">삭제</button> -->
 									</div>
+								</div>
+								
+								<div id="Pop_Re_Modify"
+									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; background: #3d3d3d; color: #fff;">
+									<a href="javascript:ViewClose();"> <img id="popLogo"
+										src="./resources/img/cancelcel.png" /></a>
+									<form method="post"
+										action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}"
+										style="margin: 5% 5%;">
+										<p style="color:white;">작성자 - ${uid}</p>
+										<div class="form-group">
+											<p style="color:white;">제목</p>
+											<input class="form-control" type="text" name="writing_title">
+										</div>
+										<div class="form-group">
+											<p style="color:white;">내용</p>
+											<textarea class="form-control" rows="13" cols="132"
+												style="color: black; resize: none;" name="writing_content"></textarea>
+										</div>
+
+										<input type="hidden" value="${uid}" name="member_id" />
+
+										<!-- 인풋 타입 히든으로 안보이게 처리 -->
+
+										<input class="btn btn-default" type="submit" value="등록">
+									</form>
 								</div>
 							</div>
 							<!-- End Blog Posts -->
@@ -507,6 +569,12 @@ b_container {
 							</div>
 
 							<ul class="list-unstyled who margin-bottom-30">
+							
+									
+									
+								
+								
+								<c:if test="${listAll_li.riding_no !=null }">
 									<li><a href="#"><i class=""></i> <br />
 										<img style="width: 200px; height: 200px; margin-left: 30px;"
 											src="/displayFile?fileName=${listAll_li.fullName}" /></a></li>
@@ -518,6 +586,20 @@ b_container {
 												- ${listAll_li.alldistance}</strong> </a></li>
 									<li><a href="#"><i class=""></i> <strong>평균
 												속도 - ${listAll_li.avgspeed}</strong> </a></li>
+								</c:if>
+								<c:if test="${listAll_li.riding_no ==null }">
+									<li><a href="#"><i class=""></i> <br />
+										<img style="width: 200px; height: 200px; margin-left: 30px;"
+											src="/displayFile?fileName=${mem_li}" /></a></li>
+									<li><a href="#"><i class=""></i> <strong>아이디
+												- ${uid}</strong></a></li>
+									<li><a href="#"><i class=""></i> <strong>참여횟수
+												- 0</strong> </a></li>
+									<li><a href="#"><i class=""></i> <strong>총거리
+												- 0</strong> </a></li>
+									<li><a href="#"><i class=""></i> <strong>평균
+												속도 - 0</strong> </a></li>
+								</c:if>
 							</ul>
 
 							<!-- Business Hours -->
@@ -534,13 +616,20 @@ b_container {
 							
 										<c:if test="${uid == group.gr_leader}"> <!-- 세션의 uid가 그룹장이 아니라면 아래 문구 추가 -->
 											<td>
-												<a href="#">
-													<img  class="imgg" id="${mem.uid}" style="width: 15px;height: 15px;" src="./resources/img/cancel.png" />
-												
-												</a>
-												
+												<c:choose>
+													<c:when test="${mem.uid!=group.gr_leader}">
+														<a href="#">
+															<img  class="imgg" id="${mem.uid}" style="width: 15px;height: 15px;" src="./resources/img/cancel.png" />						
+														</a>
+													</c:when>
+												</c:choose>
 											</td>
 										</c:if>
+										
+										
+										
+										
+										
 										<input type="hidden" id="gname" value="${group.gr_name}"/> <!-- 삭제하기 위해서 그룹의 이름을 받아 gname에 저장함 -->
 							<!-- 강퇴아이콘 -------------------------------------------->
 										</tr>
@@ -660,7 +749,7 @@ b_container {
 						<!-- About -->
 						<div class="col-md-3 md-margin-bottom-40">
 							<a href="main"><img id="logo-footer" class="footer-logo"
-								src="./resources/assets/img/logo2-default.png" alt=""></a>
+								src="./resources/img/logo(w).png" alt=""></a>
 							<p>About Unify dolor sit amet, consectetur adipiscing elit.
 								Maecenas eget nisl id libero tincidunt sodales.</p>
 							<p>Duis eleifend fermentum ante ut aliquam. Cras mi risus,

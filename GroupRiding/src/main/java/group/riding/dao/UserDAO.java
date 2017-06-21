@@ -3,6 +3,8 @@ package group.riding.dao;
 import java.util.List;
 
 import group.riding.bean.GroupBean;
+import group.riding.bean.MyPicture;
+import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
 import group.riding.bean.UserData;
 import group.riding.dto.LoginDTO;
@@ -10,21 +12,25 @@ import group.riding.dto.LoginDTO;
 
 public interface UserDAO {
 	
-	public void create(UserBean us) throws Exception;	// È¸¿ø °¡ÀÔ
+	public void create(UserBean us) throws Exception;	// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
-	public int ck(String id) throws Exception;	// Áßº¹ Ã¼Å©
+	public int ck(String id) throws Exception;	// ï¿½ßºï¿½ Ã¼Å©
 	
 	public UserBean login(LoginDTO dto) throws Exception;	
 	
-	public void addAttach(UserBean fullName) throws Exception; // ÇÁ·ÎÇÊ
+	public void addAttach(UserBean fullName) throws Exception; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	public List<String> getAttach(String uid) throws Exception;	// ÇÁ·ÎÇÊ
+	public List<String> getAttach(String uid) throws Exception;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	public UserBean user(int uno) throws Exception;	// »ç¿ëÀÚÀÇ Á¤º¸¸¦ Á¶È¸
+	public UserBean user(int uno) throws Exception;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 	
-	public List<UserData> userData(String uid) throws Exception;   // À¯Àú¶óÀÌµùµ¥ÀÌÅÍ
+	public List<UserData> userData(String uid) throws Exception;   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	public int id_check(String uid) throws Exception;	// ¾ÆÀÌµğ Áßº¹Ã¼Å©
+	public int id_check(String uid) throws Exception;	// ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½Ã¼Å©
 	
-	public void insertkml(String kml)throws Exception;  //kml ÆÄÀÏÀÌ¸§ »ğÀÔ
+	public void insertkml(String kml)throws Exception;  //kml ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+	
+	public void insertRidingInfo(RidingInfo info)throws Exception; //riding info í…Œì´ë¸” ì´ê±°ë¦¬,ì´ì‹œê°„ ë°ë°ì´í„° ì‚½ì…
+	
+	public List<MyPicture> showMyPic(String uid)throws Exception;
 }

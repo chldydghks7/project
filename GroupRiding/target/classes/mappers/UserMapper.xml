@@ -53,5 +53,16 @@
 	 insert into gr_kml(kml_name) values(#{kml})	
 	
 	</insert>
+	
+	<!-- 라이딩 인포 테이블 삽입-->
+	<insert id="insert_riding_info">
+	insert into gr_ridinginfo(uid,alltime,startDate,alldistance,avgspeed) values(#{uid},#{alltime},#{startDate},#{alldistance},#{avgspeed})
+	
+	</insert>
+	
+	<!-- 라이딩 중 찍은사진 보여주기-->
+	<select id="showMyPic" resultType="MyPicture">
+	select picture_id,picture_path from gr_picture where uid=#{uid}
+	</select>
 
 </mapper>
