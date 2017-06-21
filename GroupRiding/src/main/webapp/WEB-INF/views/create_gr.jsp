@@ -42,6 +42,13 @@
 
 	<!-- CSS Customization -->
 	<link rel="stylesheet" href="./resources/assets/css/custom.css">
+	
+	<style>
+		.logo, .footer-logo {
+			width: 200px;
+			heigth: 100px;
+		}
+	</style>
 </head>
 
 <body>
@@ -51,7 +58,7 @@
 			<div class="container">
 				<!-- Logo -->
 				<a class="logo" href="mainlogin">
-					<img src="./resources/assets/img/logo1-default.png" alt="Logo">
+					<img src="./resources/img/logo(b).png" alt="Logo">
 				</a>
 				<!-- End Logo -->
 
@@ -294,7 +301,7 @@ $(".fileDrop").on("drop", function(event){
 					<div class="row">
 						<!-- About -->
 						<div class="col-md-3 md-margin-bottom-40">
-							<a href="main"><img id="logo-footer" class="footer-logo" src="./resources/assets/img/logo2-default.png" alt=""></a>
+							<a href="main"><img id="logo-footer" class="footer-logo" src="./resources/img/logo(w).png" alt=""></a>
 							<p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
 							<p>Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.</p>
 						</div><!--/col-md-3-->

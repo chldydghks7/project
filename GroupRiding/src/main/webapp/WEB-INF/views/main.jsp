@@ -75,8 +75,8 @@
                   <!-- Navbar Brand -->
                   <div class="navbar-brand">
                      <a href="">
-                        <img class="default-logo" src="./resources/assets/img/logo3-light.png" alt="Logo">
-                        <img class="shrink-logo" src="./resources/assets/img/logo3-dark.png" alt="Logo">
+                        <img class="default-logo" src="./resources/img/logo(w).png" alt="Logo">
+                        <img class="shrink-logo" src="./resources/img/logo(b).png" alt="Logo">
                      </a>
                   </div>
                   <!-- ENd Navbar Brand -->
