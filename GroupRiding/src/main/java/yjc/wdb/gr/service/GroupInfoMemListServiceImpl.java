@@ -24,6 +24,8 @@ public class GroupInfoMemListServiceImpl implements GroupInfoMemListService {
 	public void delete(String uid,String gname)throws Exception{
 		dao.delete(uid, gname);
 	}
-
-
+	@Override
+	public GroupInfoMemList read(String uid, String gname) throws Exception {
+		return dao.read(uid, gname);
+	}
 }

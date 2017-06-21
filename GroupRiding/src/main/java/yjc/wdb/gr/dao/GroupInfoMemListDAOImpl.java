@@ -30,5 +30,14 @@ public class GroupInfoMemListDAOImpl implements GroupInfoMemListDAO {
 		paramMap.put("gname", gname);
 		session.delete(namespace +".info_mem_del",paramMap);
 	}
+	@Override
+	public GroupInfoMemList read(String uid, String gname) throws Exception {
+		// TODO Auto-generated method stub
+		Map<String,String> paramMap=new HashMap<>();
+		
+		paramMap.put("uid", uid);
+		paramMap.put("gname", gname);
+		return session.selectOne(namespace +".board_Add",paramMap); 
+	}
 
 }

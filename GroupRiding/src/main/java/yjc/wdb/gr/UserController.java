@@ -74,7 +74,8 @@ public class UserController {
 		System.out.println("File : " + service.getAttach(bean.getUid()));
 		session.setAttribute("uid", bean.getUid());
 		session.setAttribute("uname", bean.getUname());
-		
+		session.setAttribute("icon", service.getAttach(bean.getUid()));
+
 		model.addAttribute("userBean", bean);
 		
 		return "success";

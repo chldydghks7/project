@@ -58,6 +58,10 @@
 
 <!-- CSS Customization -->
 <link rel="stylesheet" href="./resources/assets/css/custom.css">
+
+<!-- 슬라이드 -->
+<link href="./resources/slider/src/style11.css" rel="stylesheet" type="text/css">
+
 </head>
 <style>
 #popLogo {
@@ -384,7 +388,17 @@ b_container {
 							<div class="col-md-13">
 								<div class="news-v3 bg-color-white margin-bottom-60">
 									<h2>${group.gr_name}의최근라이딩</h2>
-									<div id="map" class="map margin-bottom-50"></div>
+									<!-- 슬라이드 -->
+									<div class="content" style="width:600px;height:450px;overflow:hidden; margin:50px auto;">
+											<div id="slider">
+												<a href="#"><div id="map" style="width:600px;height:450px;" class="map margin-bottom-50"></div></a>
+												<a href="#"><img src="./resources/slider/img/2.jpg"/></a>
+												<a href="#"><img src="./resources/slider/img/3.jpg"/></a>
+												<a href="#"><img src="./resources/slider/img/4.jpg"/></a>
+												<a href="#"><img src="./resources/slider/img/5.jpg"/></a>
+											</div>
+									</div>
+									<!-- 슬라이드 -->
 								</div>
 
 							</div>
@@ -397,24 +411,91 @@ b_container {
 										<th>제목</th>
 										<th>작성자</th>
 										<th>날짜</th>
-										<th>조회수</th>
+										<th>조회수</th><!-- list_master -->
 									</tr>
+									
+									
+									<c:forEach items="${list_master}" var="GroupMaster">
+										<tr>
+
+											<td class="success"><h4><strong><a  style="color:red;" href="javascript:ViewLayer2();"
+												id="a" class="${GroupMaster.writing_id}">${GroupMaster.writing_title}</a></strong></h4></td>
+
+											<td class="success"><h4 style="color:red;"><strong>${GroupMaster.member_id}</h4></strong></td>
+
+											<td class="success"><h4 style="color:red;"><strong>${GroupMaster.regist_date}</h4></strong></td>
+											<td class="success"><h4 style="color:red;"><strong>${GroupMaster.view_Number}</h4></strong></td>
+										</tr>
+
+									</c:forEach>
 									<c:forEach items="${listAll}" var="GroupInfoBo">
 										<tr>
 
-											<td class="active"><a href="javascript:ViewLayer2();"
+											<td class=""><a href="javascript:ViewLayer2();"
 												id="a" class="${GroupInfoBo.writing_id}">${GroupInfoBo.writing_title}</a></td>
 
-											<td class="active">${GroupInfoBo.member_id}</td>
+											<td class="">${GroupInfoBo.member_id}</td>
 
-											<td class="active">${GroupInfoBo.regist_date}</td>
-											<td class="active">${GroupInfoBo.view_Number}</td>
+											<td class="">${GroupInfoBo.regist_date}</td>
+											<td class="">${GroupInfoBo.view_Number}</td>
 										</tr>
 
 									</c:forEach>
 								</table>
+								<c:if test="${memList!=null}">
 								<a href="javascript:ViewLayer();">등록</a>
+								</c:if>
+								
 								<div id="Pop"
+									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 100 !important; display: none; background: #3d3d3d; color: #fff;">
+									<a href="javascript:ViewClose();"> <img id="popLogo"
+										src="./resources/img/cancelcel.png" /></a>
+									<form method="post"
+										action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}"
+										style="margin: 5% 5%;">
+										<label style="color:white;">작성자 - ${uid}</label>
+										<div class="form-group">
+											<label style="color:white;">제목</label>
+											<input class="form-control" type="text" name="writing_title">
+										</div>
+										<div class="form-group">
+											<label style="color:white;">내용</label>
+											<textarea class="form-control" rows="13" cols="132"
+												style="color: black; resize: none;" name="writing_content"></textarea>
+										</div>
+
+										<input type="hidden" value="${uid}" name="member_id" />
+
+										<!-- 인풋 타입 히든으로 안보이게 처리 -->
+
+										<input class="btn btn-default" type="submit" value="등록">
+									</form>
+								</div>
+
+
+								<div id="Pop_Re"
+									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 100 !important; display: none; margin: 5% 5%; background: #101010; color: #fff;">
+									<a href="javascript:ViewClose2();"> <img id="popLogo"
+										src="./resources/img/cancelcel.png" /></a>
+									<div style="margin: 5% 5%; color:white;">
+										<div class="uid" style="display: none;">${uid}</div>
+										작성자 - <label id="re_id"></label><br /> 제목 - <label
+											id="re_title"></label><br /> 내용
+										<div id="re_content"
+											style="height: 330px; background-color: #505457;"></div>
+										<br />
+										<label id="re_date">작성일 - </label> <input type="hidden"
+											value="" id="re_writing_id" />
+										<div id="die"></div>
+										<!-- <input class="btn btn-default" type="submit" value="수정"> -->
+										<!-- <input class="btn btn-default" type="submit" value="수정"
+											style="float: right"> -->
+										<!-- <button class="btn btn-default" id="Pop_Re_del"
+											style="float: right">삭제</button> -->
+									</div>
+								</div>
+								
+								<div id="Pop_Re_Modify"
 									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; background: #3d3d3d; color: #fff;">
 									<a href="javascript:ViewClose();"> <img id="popLogo"
 										src="./resources/img/cancelcel.png" /></a>
@@ -439,35 +520,12 @@ b_container {
 										<input class="btn btn-default" type="submit" value="등록">
 									</form>
 								</div>
-
-
-								<div id="Pop_Re"
-									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; margin: 5% 5%; background: #101010; color: #fff;">
-									<a href="javascript:ViewClose2();"> <img id="popLogo"
-										src="./resources/img/cancelcel.png" /></a>
-									<div style="margin: 5% 5%; color:white;">
-										<div class="uid" style="display: none;">${uid}</div>
-										작성자 - <label id="re_id"></label><br /> 제목 - <label
-											id="re_title"></label><br /> 내용
-										<div id="re_content"
-											style="height: 330px; background-color: #505457;"></div>
-										<br />
-										<label id="re_date">작성일 - </label> <input type="hidden"
-											value="" id="re_writing_id" />
-										<div id="die"></div>
-										<!-- <input class="btn btn-default" type="submit" value="수정"> -->
-										<!-- <input class="btn btn-default" type="submit" value="수정"
-											style="float: right"> -->
-										<!-- <button class="btn btn-default" id="Pop_Re_del"
-											style="float: right">삭제</button> -->
-									</div>
-								</div>
 							</div>
 							<!-- End Blog Posts -->
 
 							<!-- Blog Posts -->
 							<div class="news-v3 bg-color-white margin-bottom-60">
-								<div id='calendar'></div>
+								<a href="groupNotice?gr_name=${gr_name1}">그룹공지 확인</a>
 							</div>
 							<!-- End Blog Posts -->
 
@@ -494,6 +552,12 @@ b_container {
 							</div>
 
 							<ul class="list-unstyled who margin-bottom-30">
+							
+									
+									
+								
+								
+								<c:if test="${listAll_li.riding_no !=null }">
 									<li><a href="#"><i class=""></i> <br />
 										<img style="width: 200px; height: 200px; margin-left: 30px;"
 											src="/displayFile?fileName=${listAll_li.fullName}" /></a></li>
@@ -505,6 +569,20 @@ b_container {
 												- ${listAll_li.alldistance}</strong> </a></li>
 									<li><a href="#"><i class=""></i> <strong>평균
 												속도 - ${listAll_li.avgspeed}</strong> </a></li>
+								</c:if>
+								<c:if test="${listAll_li.riding_no ==null }">
+									<li><a href="#"><i class=""></i> <br />
+										<img style="width: 200px; height: 200px; margin-left: 30px;"
+											src="/displayFile?fileName=${mem_li}" /></a></li>
+									<li><a href="#"><i class=""></i> <strong>아이디
+												- ${uid}</strong></a></li>
+									<li><a href="#"><i class=""></i> <strong>참여횟수
+												- 0</strong> </a></li>
+									<li><a href="#"><i class=""></i> <strong>총거리
+												- 0</strong> </a></li>
+									<li><a href="#"><i class=""></i> <strong>평균
+												속도 - 0</strong> </a></li>
+								</c:if>
 							</ul>
 
 							<!-- Business Hours -->
@@ -521,13 +599,20 @@ b_container {
 							
 										<c:if test="${uid == group.gr_leader}"> <!-- 세션의 uid가 그룹장이 아니라면 아래 문구 추가 -->
 											<td>
-												<a href="#">
-													<img  class="imgg" id="${mem.uid}" style="width: 15px;height: 15px;" src="./resources/img/cancel.png" />
-												
-												</a>
-												
+												<c:choose>
+													<c:when test="${mem.uid!=group.gr_leader}">
+														<a href="#">
+															<img  class="imgg" id="${mem.uid}" style="width: 15px;height: 15px;" src="./resources/img/cancel.png" />						
+														</a>
+													</c:when>
+												</c:choose>
 											</td>
 										</c:if>
+										
+										
+										
+										
+										
 										<input type="hidden" id="gname" value="${group.gr_name}"/> <!-- 삭제하기 위해서 그룹의 이름을 받아 gname에 저장함 -->
 							<!-- 강퇴아이콘 -------------------------------------------->
 										</tr>
@@ -841,8 +926,8 @@ b_container {
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <!--  <link rel='stylesheet' type='text/css'
 		href='./resources/calendar/fullcalendar.css' />
-	<script type='text/javascript'
-		src='./resources/calendar/jquery/jquery.js'></script>
+	<!-- <script type='text/javascript'
+		src='./resources/calendar/jquery.js'></script> -->
 	<script type='text/javascript'
 		src='./resources/calendar/jquery/jquery-ui-custom.js'></script>
 	<script type='text/javascript'
@@ -890,6 +975,29 @@ b_container {
 	<script src="assets/plugins/html5shiv.js"></script>
 	<script src="assets/plugins/placeholder-IE-fixes.js"></script>
 	<![endif]-->
+	
+<script src="./resources/slider/vmc.slider.full.js"></script>
+<script>
+$('#slider').vmcSlider({
+		width: 600,
+		height: 450,
+		gridCol: 10,
+		gridRow: 5,
+		gridVertical: 20, 
+		gridHorizontal: 10,
+		autoPlay: true,
+		ascending: true,
+		effects: [
+			'fade', 'fadeLeft', 'fadeRight', 'fadeTop', 'fadeBottom', 'fadeTopLeft', 'fadeBottomRight',
+			'blindsLeft', 'blindsRight', 'blindsTop', 'blindsBottom', 'blindsTopLeft', 'blindsBottomRight',
+			'curtainLeft', 'curtainRight', 'interlaceLeft', 'interlaceRight', 'mosaic', 'bomb', 'fumes'
+		],
+		ie6Tidy: false,
+		random: true,
+		duration: 2000,
+		speed: 900
+	});
+</script>
 
 
 </body>

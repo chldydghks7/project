@@ -15,6 +15,12 @@
 		<typeAlias alias="MapBean" type="group.riding.bean.MapBean"/>
 		<typeAlias alias="GroupInfoList" type="yjc.wdb.gr.bean.GroupInfoList"/>
 		<typeAlias alias="GroupInfoMemList" type="yjc.wdb.gr.bean.GroupInfoMemList"/>
+
 		<typeAlias alias="MyPicture"   type="group.riding.bean.MyPicture"/>
+
+		<typeAlias alias="GroupBoardAdd" type="yjc.wdb.gr.bean.GroupInfoMemList"/>
+		<typeAlias alias="GroupMemPic" type="yjc.wdb.gr.bean.GroupMemPic"/>
+		<typeAlias type="yjc.wdb.gr.bean.GroupInfoBoard" alias="GroupInfoListMaster"/>
+
 	</typeAliases>
 </configuration>
