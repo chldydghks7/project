@@ -12,4 +12,5 @@ public interface BoardDAO {
 	public void addFile(BoardBean vo) throws Exception;
 	public List<String> getFile(int writing_Id) throws Exception;
 	public List<BoardBean> getFile2();
+	public void insertimgfile(String imgName)throws Exception;
 }

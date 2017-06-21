@@ -29,6 +29,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import de.micromata.opengis.kml.v_2_2_0.Coordinate;
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 import group.riding.bean.GroupBean;
+import group.riding.bean.MyPicture;
+import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
 import group.riding.bean.UserData;
 import group.riding.dto.LoginDTO;
@@ -72,7 +74,8 @@ public class UserController {
 		System.out.println("File : " + service.getAttach(bean.getUid()));
 		session.setAttribute("uid", bean.getUid());
 		session.setAttribute("uname", bean.getUname());
-		
+		session.setAttribute("icon", service.getAttach(bean.getUid()));
+
 		model.addAttribute("userBean", bean);
 		
 		return "success";
@@ -95,7 +98,7 @@ public class UserController {
 		UserBean bean = service.login(dto);
 		
 		if(bean == null) {
-			System.out.println("¾ÆÀÌµğ or ºñ¹Ğ¹øÈ£ Æ²¸²");
+			System.out.println("ï¿½ï¿½ï¿½Ìµï¿½ or ï¿½ï¿½Ğ¹ï¿½È£ Æ²ï¿½ï¿½");
 			return "signIn";
 		}
 		
@@ -113,7 +116,7 @@ public class UserController {
 	@RequestMapping(value="insertkml" ,method=RequestMethod.GET)
 	public String createkml(String kml,String callback)throws Exception{
 		
-		System.out.println("ÆÄÀÏ"+kml);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½"+kml);
 		
 		service.insertkml(kml);
 	
@@ -153,7 +156,7 @@ public class UserController {
 	   }
 	
 	
-	   /**  ¾ÆÀÌµğ Áßº¹ Ã¼Å© */
+	   /**  ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ Ã¼Å© */
 		 @RequestMapping("id_check")
 		 @ResponseBody
 		 public Map<String, String> id_check(@RequestParam(value="uid") String uid) throws Exception {
@@ -166,10 +169,10 @@ public class UserController {
 		  
 		  if ( resultCnt == 0 ){
 		   result = "success";
-		   resultMsg = "»ç¿ë°¡´É!!!";
+		   resultMsg = "ï¿½ï¿½ë°¡ï¿½ï¿½!!!";
 		  } else if (resultCnt == 1) {
 		   result = "failure";
-		   resultMsg = "ÀÌ¹Ì »ç¿ëÁß!!!!!!!!!!!!!";
+		   resultMsg = "ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½!!!!!!!!!!!!!";
 		  }
 		  
 		  resultMap.put("result", result);
@@ -185,6 +188,48 @@ public class UserController {
 			 
 			 return "main";
 		 }
+		 //ë¼ì´ë”© ì¸í¬ í…Œì´ë¸”ì— ì´ê±°ë¦¬,ì´ì‹œê°„ ì‚½ì…
+		 @RequestMapping(value="insert_riding_info", method=RequestMethod.GET)
+		 @ResponseBody
+		 public String insertRidinginfo(RidingInfo info,String callback)throws Exception{
+			 
+			 service.insertRidingInfo(info);
+
+			 JSONObject json= new JSONObject();
+			 
+			 json.put("result", "success");
+			 
+			
+			 
+		
+			 
+			 return callback+"("+json+")";
+			 
+		 }
 		 
+		 //ë¼ì´ë”©ì¤‘ ì°ì€ì‚¬ì§„ ë³´ê¸° sharingform ì— ë‚´ì‚¬ì§„ ì— ë„ìš°ê¸°ìœ„í•´
+		 @RequestMapping(value="showMyPicture", method=RequestMethod.GET)
+		 @ResponseBody
+		 public JSONObject showmypicture(HttpSession session)throws Exception{
+			 
+			 String uid=(String)session.getAttribute("uid");
+			 
+			 
+			List<MyPicture> list= service.showMyPic(uid);
+			 
+			
+			
+			 JSONObject json= new JSONObject();
+			 
+			 json.put("result", "success");
+			 
+			 json.put("list", list);
+			
+			 
+		
+			 
+			 return json;
+			 
+		 }
 
 }

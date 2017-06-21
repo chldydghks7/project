@@ -1,6 +1,8 @@
 package yjc.wdb.gr.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -42,6 +44,14 @@ public class GroupInfoBoardDAOImpl implements GroupInfoBoardDAO {
 	public void delete(int writing_id) throws Exception {
 		session.delete(namespace +".info_del", writing_id);
 		
+	}
+
+	@Override
+	public List<GroupInfoBoard> listAll_Master(String gid, String gname) throws Exception {
+		Map<String,String> paramMap=new HashMap<>();
+		paramMap.put("gid", gid);
+		paramMap.put("gname", gname);
+		return session.selectList(namespace + ".info_Mater",paramMap);
 	}
 
 }

@@ -45,7 +45,7 @@
 				<c:forEach items="${list}" var="i">
 					
 					{
-						title: "${i.notice_title} 그룹 : ${i.gr_name} (${joinCheck})",
+						title: "${i.notice_title} 그룹 : ${i.gr_name}",
 						start: "${i.ridingDate}",
 						url: "noticeInfo?noticeId=${i.noticeId}&uid=${uid}"
 					},

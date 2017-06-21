@@ -52,6 +52,11 @@ public class NoticeServiceImpl implements NoticeService {
 		return dao.noticeCheck(uid);
 	}
 
+	@Override
+	public void updateCheck(NoticeBean nb) throws Exception {
+		dao.updateCheck(nb);
+	}
+
 	
 
 }

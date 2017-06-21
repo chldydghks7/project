@@ -14,4 +14,6 @@ public interface GroupInfoBoardService {
 	
 	public void del(int writing_id) throws Exception;
 	
+	public List<GroupInfoBoard> listAll_Master(String gid, String gname)throws Exception;
+	
 }

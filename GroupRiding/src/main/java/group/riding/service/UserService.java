@@ -2,6 +2,8 @@ package group.riding.service;
 
 import java.util.List;
 
+import group.riding.bean.MyPicture;
+import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
 import group.riding.bean.UserData;
 import group.riding.dto.LoginDTO;
@@ -17,12 +19,17 @@ public interface UserService {
 	
 	public UserBean user(int uno) throws Exception;
 	
-	public List<String> getAttach(String uid) throws Exception;	// ÇÁ·ÎÇÊ
+	public List<String> getAttach(String uid) throws Exception;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	public List<UserData> userData(String uid) throws Exception;   // À¯Àú¶óÀÌµùµ¥ÀÌÅÍ
+	public List<UserData> userData(String uid) throws Exception;   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	public int id_check(String uid) throws Exception;	// ¾ÆÀÌµğ Áßº¹Ã¼Å©
+	public int id_check(String uid) throws Exception;	// ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½Ã¼Å©
 	
-	public void insertkml(String kml)throws Exception;  //kml ÆÄÀÏÀÌ¸§ »ğÀÔ
+	public void insertkml(String kml)throws Exception;  //kml ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+	
+	public void insertRidingInfo(RidingInfo info)throws Exception; //riding info í…Œì´ë¸” ì´ê±°ë¦¬,ì´ì‹œê°„ ë°ë°ì´í„° ì‚½ì…
+	
+	public List<MyPicture> showMyPic(String uid)throws Exception;
+	
 	
 }

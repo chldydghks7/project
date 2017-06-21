@@ -169,7 +169,7 @@
                      </a>
                      <ul class="dropdown-menu">
                         <li class="dropdown-submenu">
-                           <a href="calendar">Calendar</a>
+                           <a href="calendar?uid=${uid}">Calendar</a>
                         </li>
                         <li class="dropdown-submenu">
                            <a href="Ridingdata">Riding Data</a>
@@ -258,7 +258,7 @@
                         <p class = "cnt" style = "display:none;">${board.view_Number}</p>  
                            <div class="thumbnail-img">
                               <div class="overflow-hidden">
-                                 <img class="img-responsive" src="/displayFile?fileName=${board.bbs_FilePath}" alt="" />
+                                 <img class="img-responsive" src="${board.bbs_FilePath}" alt="" />
                               </div>
                               <a class="test btn-more hover-effect" href="${board.writing_Id}" data-toggle = "modal" data-target = "#myModal" data-backdrop="static" data-keyboard="false">read more +</a>
                            </div>
@@ -537,7 +537,7 @@
                html = "<h3 style = 'float: left'>제목 : " + data.writing_title + "</h3>"
                		 + "<p style = 'display: none;' id = 'w_id'>" + data.writing_Id + "</p>"
                		 + "<p style = 'float: right;'>작성자 : " + data.member_Id + "</p><br>"
-                     + "<hr><div><img id = 's-img' src = './displayFile?fileName=" + data.bbs_FilePath + "'></div>"
+                     + "<hr><div><img id = 's-img' src = '"+ data.bbs_FilePath + "'></div>"
                      + "<hr><div id = 's-content'>내용 : " + data.writing_content + "</div><hr>"
                      + "<div><ul class = 'timeline'></ul></div>";
                      

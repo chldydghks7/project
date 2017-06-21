@@ -62,5 +62,10 @@ public class NoticeDAOImpl implements NoticeDAO {
 		return session.selectList(namespace + ".noticeCheck", uid);
 	}
 
+	@Override
+	public void updateCheck(NoticeBean nb) throws Exception {
+		session.update(namespace + ".updateCheck", nb);
+	}
+
 
 }

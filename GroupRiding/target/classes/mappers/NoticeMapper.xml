@@ -46,4 +46,9 @@
 		and gr_usernotijoin.uid=#{uid}
 	</select>
 	
+	<update id="updateCheck">
+		update gr_usernotijoin set joing=#{joing}
+		where noticeId=#{noticeId} and uid = #{uid}
+	</update>
+	
 </mapper>

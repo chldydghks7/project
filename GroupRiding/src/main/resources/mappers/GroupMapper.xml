@@ -142,6 +142,18 @@
 		and gr.uid=#{uid}
 		order by gf.riding_id desc limit 0,1;
 	</select>
+	
+	<select id="info_Mater" resultType="GroupInfoListMaster">
+		select group_id,member_id,bbs_id,writing_title,writing_content,view_Number,writing_id,regist_date
+		from bbs_writing 
+		where bbs_id='group' 
+		and group_id=#{gid}
+		and member_id = (select uid
+					    from gr_gr
+					    where introduce='그룹장'
+						 and gr_name=#{gname})
+		order by writing_id desc limit 0,2;
+	</select>
 	<!-- 그룹멤버리스트 -->
 	<select id="info_mem" resultType="GroupInfoMemList">
 		select gr.uid, gr.gr_name, att.fullname
@@ -180,6 +192,18 @@
 		and gr_name=#{gname}
 	</delete>
 	
+	<select id="info_pic" resultType="GroupMemPic">
+		select fullname
+		from gr_attach
+		where uid=#{uid}
+	</select>
+	
+	<select id="board_Add" resultType="GroupBoardAdd">
+		select uid
+		from gr_gr
+		where gr_name=#{gname}
+		and uid=#{uid}
+	</select>
 
 
 </mapper>
