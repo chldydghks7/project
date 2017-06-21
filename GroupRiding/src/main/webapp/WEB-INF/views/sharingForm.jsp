@@ -54,6 +54,10 @@
 		.modal-body {
 			height: 700px;
 		}
+		
+		#myPic>img{
+		margin-right:10px;
+		}
 	</style>
 </head>
 
@@ -223,6 +227,12 @@
 								<div>
 									<ul class="uploadedList"></ul>
 								</div>
+							</section>
+							
+							<section>
+								<label class="label">내 사진</label>
+								<div id="myPic"></div>
+							
 							</section>
 							
 							<section>
@@ -421,6 +431,51 @@
 				  	  form.append(upload);
 				  }
 			});	
+		});
+		
+		
+		$("#myPic").on("click","img",function(){
+			
+			console.log($(this));
+			$(this).css('border','5px solid green');
+			
+		    var form = $("#sharForm");
+			var filepath=$(this).attr('src');
+			
+			var upload= "<input type='hidden' name='bbs_FilePath' value='"+ filepath +"'> ";
+			  form.append(upload);
+			
+		});
+		
+		
+		$(document).ready(function(){
+			
+			$.ajax({
+				url:'showMyPicture',
+				type:'get',
+				success:function(data){
+					if(data.result=="success")
+					{
+						console.log(data);
+						var picarray=data.list;
+						
+						for(var i=0;i<picarray.length;i++)
+						{	
+						
+						var src=picarray[i].picture_path;
+						var img=$('<img />').attr('src', 'http://localhost:8080/GroupRidingApp/image/' + src);
+						
+						
+						img.appendTo($("#myPic"));	
+						}
+						
+												
+						
+					}
+				}
+				
+			});
+			
 		});
 	</script>
 <!--[if lt IE 9]>

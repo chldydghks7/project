@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import group.riding.bean.GroupBean;
+import group.riding.bean.MyPicture;
+import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
 import group.riding.bean.UserData;
 import group.riding.dto.LoginDTO;
@@ -32,7 +34,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public UserBean login(LoginDTO dto) throws Exception {	// »ç¿ëÀÚÀÇ Á¤º¸¸¦ Á¶È¸
+	public UserBean login(LoginDTO dto) throws Exception {	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 		return session.selectOne(namespace + ".login", dto);
 	}
 
@@ -66,6 +68,18 @@ public class UserDAOImpl implements UserDAO {
 	public void insertkml(String kml) throws Exception {
 		// TODO Auto-generated method stub
 		session.insert(namespace+".insert_kml", kml);
+	}
+
+	@Override
+	public void insertRidingInfo(RidingInfo info) throws Exception {
+		// TODO Auto-generated method stub
+		session.insert(namespace+".insert_riding_info",info);
+	}
+
+	@Override
+	public List<MyPicture> showMyPic(String uid) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace+".showMyPic", uid);
 	}
 
 

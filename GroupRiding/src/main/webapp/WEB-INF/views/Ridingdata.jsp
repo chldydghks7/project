@@ -233,12 +233,32 @@
       <!--=== End Content Part ===-->
 
 <!-- 시작  -->
+<center><div id="map" style="width:1000px; height:500px;"></div></center>
 
+
+
+<script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 11
+            
+        });
+        var ctaLayer = new google.maps.KmlLayer({
+            url: 'http://39.121.239.182:8080/can/resources/3ffd0418-d74c-4deb-a9fe-8b5b001376cc.kml',
+            map: map
+          });
+        
+      }
+    </script>
+    
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-W2mR3T2SKF_iOcKHK7lGp1Tzo-mnrSg&callback=initMap"
+    async defer></script>  
 
 
 <table width="50%">
 <tr>
-    <td>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</td>
+    <td>　　　　　　　　　　　　　　　　　</td>
    <td><div id="chart_div" style="width:800px; height: 400px;"></td>
 </tr>
 </table>
@@ -278,7 +298,7 @@
                       data1.setCell(i, 1, data[i].speed);
                       data1.setCell(i, 2, data[i].altitude);   
                    }else if(i>3599){
-                      data1.setCell(i, 0, parseInt((i+1)/3600))+"시간"+(parseInt((i+1)/60)-(parseInt((i+1)/3600)*60))+"분"+parseInt((i+1)%60))+"초";
+                      data1.setCell(i, 0, parseInt((i+1)/3600))+"시간"+(parseInt((i+1)/60)-(parseInt((i+1)/3600)*60))+"분"+parseInt((i+1)%60)+"초";
                       data1.setCell(i, 1, data[i].speed);
                       data1.setCell(i, 2, data[i].altitude);   
                    }
