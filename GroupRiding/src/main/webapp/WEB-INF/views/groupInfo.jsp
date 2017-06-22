@@ -183,6 +183,25 @@ b_container {
 			}
 		}
 	</script>
+		<script>
+		function ViewLayer3() {
+			ViewClose2();
+			//만일 Pop라는 녀석이 닫혀있다면??
+			if (document.getElementById("Pop_Re_Modify").style.display == "none") {
+				//열어주어라
+				document.getElementById("Pop_Re_Modify").style.display = 'inline'
+				//그렇지 않은 모든 경우라면??
+			}
+		}
+		function ViewClose3() {
+			$(".vbtn").remove();
+			if (document.getElementById("Pop_Re_Modify").style.display == "inline") {
+				//열어주어라
+				document.getElementById("Pop_Re_Modify").style.display = 'none'
+				//그렇지 않은 모든 경우라면??
+			}
+		}
+	</script>
 	<script>
 		$(document).ready(function() {
 
@@ -501,28 +520,31 @@ b_container {
 								</div>
 								
 								<div id="Pop_Re_Modify"
-									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 1; display: none; background: #3d3d3d; color: #fff;">
-									<a href="javascript:ViewClose();"> <img id="popLogo"
+									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index:100 !important; display: none; background: red; color: #fff;">
+									<a href="javascript:ViewClose3();"> <img id="popLogo"
 										src="./resources/img/cancelcel.png" /></a>
 									<form method="post"
-										action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}"
+										action="groupInfo2"
 										style="margin: 5% 5%;">
 										<p style="color:white;">작성자 - ${uid}</p>
+										
 										<div class="form-group">
 											<p style="color:white;">제목</p>
-											<input class="form-control" type="text" name="writing_title">
+											<input class="form-control" type="text" name="writing_title" id="mo_title" value="">
 										</div>
+										
 										<div class="form-group">
 											<p style="color:white;">내용</p>
 											<textarea class="form-control" rows="13" cols="132"
-												style="color: black; resize: none;" name="writing_content"></textarea>
+												style="color: black; resize: none;" name="writing_content" id="mo_content" value=""></textarea>
 										</div>
-
-										<input type="hidden" value="${uid}" name="member_id" />
-
+										<input type="hidden" value="${group.gr_name}" name="gr_name"/>
+										<input type="hidden" value="${group.gr_id}" name="gr_id"/>
+										<input type="hidden" value="${uid}" name="uid"/>
+										<input type="hidden" id="re_writing_id2" value="" name="writing_id"/>
 										<!-- 인풋 타입 히든으로 안보이게 처리 -->
 
-										<input class="btn btn-default" type="submit" value="등록">
+										<input class="btn btn-default" type="submit" value="수정" style="float: right">
 									</form>
 								</div>
 							</div>
@@ -655,7 +677,7 @@ b_container {
 		<script>
 			$(document).ready(function() {
 				var uid = $(".uid").text(); 
-				var ele = "<input class='btn btn-default vbtn' type='submit' value='수정' style='float: right'>"	 
+				var ele = "<button class='btn btn-default vbtn' id='Pop_Re_mo'  style='float: right'>수정</button>"	 
 				        + "<button class='btn btn-default vbtn' id='Pop_Re_del' style='float: right'>삭제</button>";
 				
 				var formObj = $("form[role='form']");
@@ -701,6 +723,8 @@ b_container {
 							$("#re_content").text(data.writing_content);
 							$("#re_date").text(data.regist_date);
 							$("#re_writing_id").text(data.writing_id);
+							$("#re_writing_id2").val(data.writing_id);
+							alert(data.writing_id);
 							if(uid == data.member_id) {
 								$("#die").append(ele);
 							} else {
@@ -723,6 +747,22 @@ b_container {
 						}
 					});
 
+				});
+				$("#Pop_Re").on("click", "#Pop_Re_mo",function() {
+					ViewLayer3();
+					var writing_id = $("#re_writing_id").text();
+					$.ajax({
+						url : 'groupInfo_re',
+						data : {
+							id : writing_id
+						},
+						type : 'post',
+						success : function(data) {
+							console.log(data);
+							$("#mo_title").val(data.writing_title);
+							$("#mo_content").val(data.writing_content);
+						}
+					});
 				});
 
 

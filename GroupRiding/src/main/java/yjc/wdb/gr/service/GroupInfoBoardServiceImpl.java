@@ -44,5 +44,11 @@ public class GroupInfoBoardServiceImpl implements GroupInfoBoardService {
 		return dao.listAll_Master(gid, gname);
 	}
 
+	@Override
+	public void update(GroupInfoBoard vo) throws Exception {
+		dao.update(vo);
+		
+	}
+
 
 }

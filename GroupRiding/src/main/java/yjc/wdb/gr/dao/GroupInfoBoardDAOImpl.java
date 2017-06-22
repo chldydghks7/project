@@ -26,7 +26,7 @@ public class GroupInfoBoardDAOImpl implements GroupInfoBoardDAO {
 
 	@Override
 	public void update(GroupInfoBoard vo) throws Exception {
-		// TODO Auto-generated method stub
+		session.update(namespace+".info_mo",vo);
 
 	}
 
