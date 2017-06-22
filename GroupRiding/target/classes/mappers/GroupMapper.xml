@@ -128,10 +128,11 @@
 		#{writing_content},#{member_id},#{group_id})
 	</insert>
 
-	<select id="info_bo" resultType="GroupInfoBoard">
-		select
-		group_id,member_id,bbs_id,writing_title,writing_content,view_Number,writing_id,regist_date
-		from bbs_writing where bbs_id='group' and group_id=#{groupid}
+	<select id="info_bo" resultType="GroupInfoBoard">    <!-- 게시판 리스트 큰순서대로 뜨게 -->
+		select group_id,member_id,bbs_id,writing_title,writing_content,view_Number,writing_id,regist_date
+		from bbs_writing 
+		where bbs_id='group' and group_id=#{groupid}
+		order by writing_id desc
 	</select>
 
 	<select id="info_li" resultType="GroupInfoList">
@@ -204,6 +205,11 @@
 		where gr_name=#{gname}
 		and uid=#{uid}
 	</select>
+	
+	<update id="info_mo">
+ 		update bbs_writing set writing_title=#{writing_title},writing_content=#{writing_content},regist_date=#{regist_date}
+ 		where writing_id=#{writing_id}
+	 </update>
 
 
 </mapper>

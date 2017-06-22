@@ -16,4 +16,6 @@ public interface GroupInfoBoardService {
 	
 	public List<GroupInfoBoard> listAll_Master(String gid, String gname)throws Exception;
 	
+	public void update(GroupInfoBoard vo)throws Exception;
+	
 }
