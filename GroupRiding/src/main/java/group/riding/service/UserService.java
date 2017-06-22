@@ -31,5 +31,10 @@ public interface UserService {
 	
 	public List<MyPicture> showMyPic(String uid)throws Exception;
 	
+	public List<Integer> selectkmlid()throws Exception;
+	
+	public List<RidingInfo> showhistory(String uid)throws Exception;
+	
+	
 	
 }
