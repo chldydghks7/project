@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+<<<<<<< HEAD
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">   <!-- 규칙 -->
   
  <mapper namespace="group.riding.RacePointMapper">
@@ -38,3 +39,18 @@
     
     
  </mapper>
+=======
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">	<!-- 규칙 -->
+  
+  <mapper namespace="group.riding.RacePointMapper">
+  
+  <insert id="insertRaceRecord">
+  insert into gr_race_record(racepoint_id,racepoint_time,gr_id) 
+  values(1,#{racepoint_time},16)
+  
+  
+  </insert>
+  
+  
+  </mapper>
+>>>>>>> b3ac35b50864ed567c6304435581ba345b730573

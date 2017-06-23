@@ -175,6 +175,7 @@ public class GroupController {
 	
 	}
 	
+	
 	 @RequestMapping(value = "groupInfo", method = RequestMethod.POST) // 그룹                                                // ?��?��
 	 public String groupInfo(@RequestParam(value ="gr_id") String gr_id, @RequestParam(value ="uid") String uid, @RequestParam(value = "gr_name") String gr_name, 
 			 GroupInfoBoard vo, RedirectAttributes rttr) throws Exception {
@@ -197,6 +198,39 @@ public class GroupController {
 	      System.out.print(vo);
 	      
 	      infoboardservice.create(vo);
+	      
+	     
+	      
+	      rttr.addAttribute("gr_name",gr_name);
+	      rttr.addAttribute("gr_id",gr_id);
+	      rttr.addAttribute("uid",uid);
+	      
+	      return "redirect:groupInfo";
+	   }
+	 @RequestMapping(value = "groupInfo2", method = RequestMethod.POST) // 그룹                                                // ?��?��
+	 public String groupInfo2(@RequestParam(value ="gr_id") String gr_id, @RequestParam(value ="uid") String uid, @RequestParam(value = "gr_name") String gr_name, 
+			 GroupInfoBoard vo, RedirectAttributes rttr) throws Exception {
+		 
+		
+		 
+		  Calendar c = Calendar.getInstance();
+	      String year = c.get(Calendar.YEAR) + "";
+	      String month = c.get(Calendar.MONTH) + 1 + "";
+	      String date = c.get(Calendar.DATE) + "";
+	      
+	      Date rrr = Date.valueOf(year + "-" + month + "-" + date);
+	      vo.setRegist_date(rrr);
+
+	      System.out.println("post");
+	      System.out.println("그룹아이디"+gr_id);
+	      System.out.println("그룹네임"+gr_name);
+	      int pasor = Integer.parseInt(gr_id); 
+	      vo.setGroup_id(pasor);
+	      System.out.print(vo);
+	      
+	      infoboardservice.update(vo);
+	      
+	     
 	      
 	      rttr.addAttribute("gr_name",gr_name);
 	      rttr.addAttribute("gr_id",gr_id);
