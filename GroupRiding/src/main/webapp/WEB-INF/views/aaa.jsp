@@ -10,7 +10,7 @@
 
 
 
-		<a href="#"><div id="map_div"></div></a>
+		<a id="mm" href="#"><div id="map_div"></div></a>
 		<button id="click1">1</button>
 		<button id="click2">2</button>
 		<button id="click3">3</button>
@@ -20,8 +20,13 @@
 
 
 <script>
+
 var startPoint=[];
 var endPoint=[];
+var notice_title=[];
+var ridingDate=[];
+
+
 		map = new Tmap.Map({div:'map_div',
 		                        width:'600px', 
 		                        height:'450px',
@@ -34,35 +39,118 @@ var endPoint=[];
 		
             
 		    
-		<c:forEach items="${list}" var="i">
+		<c:forEach items="${maplist}" var="i" varStatus="count">
 			startPoint.push("${i.start_point}");
 			endPoint.push("${i.end_point}");
+			notice_title.push("<h4 class='a${count.count}'>${i.notice_title}</h4>");
+			ridingDate.push("<h4 id='a${count.count}'>${i.ridingDate}</h4>");
 		</c:forEach>
 	
-	
-	var i = 0;
+		
 		
 	searchRoute(startPoint[0],endPoint[0]);	
 	
-	$("#click1").on("click", function(){
-		searchRoute(startPoint[0],endPoint[0]);
-	});
-	
-	$("#click2").on("click", function(){
-		searchRoute(startPoint[1],endPoint[1]);
-	});
-	
-	$("#click3").on("click", function(){
-		searchRoute(startPoint[2],endPoint[2]);
-	});
-	
-	$("#click4").on("click", function(){
-		searchRoute(startPoint[3],endPoint[3]);
-	});
-	
-	$("#click5").on("click", function(){
-		searchRoute(startPoint[4],endPoint[4]);
-	});
+
+		
+			$("#click1").on("click", function(){
+				if(startPoint[0] != null) {	
+					searchRoute(startPoint[0],endPoint[0]);
+					$("#mm").prepend(notice_title[0]);
+					$("#mm").prepend(ridingDate[0]);
+					
+					$(".a2").hide();
+					$(".a3").hide();
+					$(".a4").hide();
+					$(".a5").hide();
+					
+					$("#a2").hide();
+					$("#a3").hide();
+					$("#a4").hide();
+					$("#a5").hide();
+				} else {
+					alert("최근 없음!");
+				}
+			});
+		
+			$("#click2").on("click", function(){
+				if(startPoint[1] != null) {	
+					searchRoute(startPoint[1],endPoint[1]);
+					$("#mm").prepend(notice_title[1]);
+					$("#mm").prepend(ridingDate[1]);
+					
+					$(".a1").hide();
+					$(".a3").hide();
+					$(".a4").hide();
+					$(".a5").hide();
+					
+					$("#a1").hide();
+					$("#a3").hide();
+					$("#a4").hide();
+					$("#a5").hide();
+				} else {
+					alert("최근 없음!");
+				}
+			});
+			
+			$("#click3").on("click", function(){
+				if(startPoint[2] != null) {	
+					searchRoute(startPoint[2],endPoint[2]);
+					$("#mm").prepend(notice_title[2]);
+					$("#mm").prepend(ridingDate[2]);
+					
+					$(".a1").hide();
+					$(".a2").hide();
+					$(".a4").hide();
+					$(".a5").hide();
+					
+					$("#a1").hide();
+					$("#a2").hide();
+					$("#a4").hide();
+					$("#a5").hide();
+				} else {
+					alert("최근 없음!");
+				}
+			});
+			
+			$("#click4").on("click", function(){
+				if(startPoint[3] != null) {	
+					searchRoute(startPoint[3],endPoint[3]);
+					$("#mm").prepend(notice_title[3]);
+					$("#mm").prepend(ridingDate[3]);
+					
+					$(".a1").hide();
+					$(".a2").hide();
+					$(".a3").hide();
+					$(".a5").hide();
+					
+					$("#a1").hide();
+					$("#a2").hide();
+					$("#a3").hide();
+					$("#a5").hide();
+				} else {
+					alert("최근 없음!");
+				}
+			});
+			
+			$("#click5").on("click", function(){
+				if(startPoint[4] != null) {	
+					searchRoute(startPoint[4],endPoint[4]);
+					$("#mm").prepend(notice_title[4]);
+					$("#mm").prepend(ridingDate[4]);
+					
+					$(".a1").hide();
+					$(".a2").hide();
+					$(".a3").hide();
+					$(".a4").hide();
+					
+					$("#a1").hide();
+					$("#a2").hide();
+					$("#a3").hide();
+					$("#a4").hide();
+				} else {
+					alert("최근 없음!");
+				}
+			});
 	
 	
 		

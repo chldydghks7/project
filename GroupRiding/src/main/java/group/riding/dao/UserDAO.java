@@ -3,6 +3,7 @@ package group.riding.dao;
 import java.util.List;
 
 import group.riding.bean.GroupBean;
+import group.riding.bean.KmlBean;
 import group.riding.bean.MyPicture;
 import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
@@ -28,13 +29,13 @@ public interface UserDAO {
 
 	public int id_check(String uid) throws Exception;	// ���̵� �ߺ�üũ
 	
-	public void insertkml(String kml)throws Exception;  //kml �����̸� ����
+	public void insertkml(KmlBean kml)throws Exception;  //kml �����̸� ����
 	
 	public void insertRidingInfo(RidingInfo info)throws Exception; //riding info 테이블 총거리,총시간 및데이터 삽입
 	
 	public List<MyPicture> showMyPic(String uid)throws Exception;
 	
-	public List<Integer> selectkmlid()throws Exception;
+	public int selectkmlid()throws Exception;
 	
 	public List<RidingInfo> showhistory(String uid)throws Exception;
 }

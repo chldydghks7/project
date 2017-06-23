@@ -50,13 +50,13 @@
 	
 	<!-- kml 파일명 삽입-->
 	<insert id="insert_kml">
-	 insert into gr_kml(kml_name) values(#{kml})	
+	 insert into gr_kml(kml_name,kml_center) values(#{kml_name},#{kml_center})	
 	
 	</insert>
 	
 	<!-- 라이딩 인포 테이블 삽입-->
 	<insert id="insert_riding_info">
-	insert into gr_ridinginfo(uid,alltime,startDate,alldistance,avgspeed,kml_id) values(#{uid},#{alltime},#{startDate},#{alldistance},#{avgspeed},#{kml_id})
+	insert into gr_ridinginfo(uid,alltime,startDate,alldistance,avgspeed,kml_id,Kcal) values(#{uid},#{alltime},#{startDate},#{alldistance},#{avgspeed},#{kml_id},#{Kcal})
 	
 	</insert>
 	
@@ -67,12 +67,15 @@
 
 	<!-- kml id 삽입 위해 조회-->
 	<select id="selectkmlid" resultType="Integer">
-	select kml_id from gr_kml order by kml_id desc;
+	
+		select kml_id from gr_kml order by kml_id desc
+		limit 1
+
 	</select>
 	
 	<!-- 앱 화면중 운동내역을 보기위해서써야함-->
 	<select id="showhistory" resultType="RidingInfo">
-	select a.kml_name,b.riding_id,b.alltime,b.startDate,b.alldistance,b.avgspeed
+	select a.kml_name,b.riding_id,b.alltime,b.startDate,b.alldistance,b.avgspeed,b.Kcal,a.kml_center
  		from gr_kml a, gr_ridinginfo b
 		where a.kml_id=b.kml_id
 		and b.uid=#{uid}

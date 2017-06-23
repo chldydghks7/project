@@ -2,8 +2,8 @@ package group.riding.dao;
 
 import java.util.List;
 
-import group.riding.bean.GroupBean;
 import group.riding.bean.NoticeBean;
+import group.riding.bean.RidingInfoBean;
 
 public interface NoticeDAO {
 
@@ -23,4 +23,7 @@ public interface NoticeDAO {
 	
 	public void updateCheck(NoticeBean nb) throws Exception;	// 참여 or 불참 업데이트
 	
+	public List<RidingInfoBean> ridingDate(String uid) throws Exception;	// RidingInfo
+	
+	public RidingInfoBean ridingInfo(int riding_id) throws Exception;	// RidingInfo
 }

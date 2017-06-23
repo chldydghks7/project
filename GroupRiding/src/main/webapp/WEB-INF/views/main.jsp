@@ -103,6 +103,10 @@
                            <ul class="dropdown-menu">
                               <li><a href="groupList">Group List</a></li>
                               <li><a href="groupRank">Ranking</a></li>
+                              
+                              <li class="dropdown-submenu">
+                          	<a href="racePoint">RacePoint</a>
+                       	</li>
                            </ul>
                            
                         </li>
