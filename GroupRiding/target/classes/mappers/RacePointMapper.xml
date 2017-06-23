@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">   <!-- 규칙 -->
+  
+ <mapper namespace="group.riding.RacePointMapper">
+    
+    <!-- 거점 시작, 도착 경도 위도 -->
+    <select id="racePoint" resultType="RacePointBean">	
+    	select * from gr_racepoint
+    </select>
+    
+    <!-- 거점 상세 -->
+    <select id="pointInfo" resultType="RacePointBean">
+    	select * from gr_racepoint_board
+    	where racepoint_id=#{racepoint_id}
+    </select>
+    
+    <!-- 뷰 카운터 -->
+    <update id="ra_viewcnt">
+    	update gr_racepoint_board
+    	set ra_viewcnt = ra_viewcnt + 1
+    	where racepoint_id=#{racepoint_id}
+    </update>
+    
+    <insert id="insertRaceRecord">
+ 	 	insert into gr_race_record(racepoint_id,racepoint_time,gr_id) 
+  		values(1,#{racepoint_time},16)
+  	</insert>
+    
+    <!--     -->
+    <!-- 댓글 -->
+    <insert id="re_insert">
+    	insert into gr_racepoint_reply (uid, racepoint_id, ra_reply_comment)
+    							values (#{uid}, #{racepoint_id}, #{ra_reply_comment})
+    </insert>
+    
+    <select id="re_list" resultType="RacePointBean">
+    	select * from gr_racepoint_reply, gr_attach
+		where gr_racepoint_reply.uid = gr_attach.uid
+		and racepoint_id=#{racepoint_id}
+    </select>
+    
+    <delete id="re_delete">
+    	delete from gr_racepoint_reply
+		where ra_reply_id = #{ra_reply_id};
+    </delete>
+    
+  
+    
+
+  </mapper>
+
