@@ -5,6 +5,8 @@
 <script type="text/javascript" src="https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<script type="text/javascript" src="./resources/js/upload.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 
 	<div id="map_div"></div>
 	
@@ -15,9 +17,9 @@
 		
 		<br><br>
 		
-		<div>
-			<ul id="replies"></ul>
+			<ul id="replies" style="overflow:scroll; background-color: green; width:500px; height:500px; position: absolute;"></ul>
 		
+		<div style="position: relative; top:550px;">
 			<h4 id="re">댓글 등록</h4>
 			<input type="text" name="ra_reply_comment" id="ra_reply_comment" />
 			<input type="hidden" name="uid" id="uid" value="${uid}" />
@@ -83,7 +85,7 @@
 							getAllList();
 					}
 				});
-			}
+			}	// function onMaker(evt) {
 	
 	
 	<!-- 댓글 -->
@@ -122,13 +124,53 @@
 				var str = "";
 			
 				$(data).each(function(){
-					str += "<li> 작성자 : " + this.uid + " 댓글 : " + this.ra_reply_comment +"</li> <br>"
-						
+					
+					if("${uid}" == this.uid) {
+						str += "<img src='/displayFile?fileName=" + this.fullName + "' style='width:50px; height:50px; position: relative;'/>"
+							+ "<li class='rep' style='position: relative; left:70px; top:-50px; font-weight: bold; color:blue;'>" + this.uid + "님</li>"
+							+ "<li class='rep' style='position: relative; left:70px; top:-50px;'>" + this.ra_reply_comment +"<button id='replyDel'>x</button>"
+							+ "<input id='re_id' type='hidden' value='" + this.ra_reply_id + "' />"
+							+ "</li>"
+							
+					} else {
+						str += "<img src='/displayFile?fileName=" + this.fullName + "' style='width:50px; height:50px; position: relative;'/>"
+						+ "<li class='rep' style='position: relative; left:70px; top:-50px; font-weight: bold; color:blue;'>" + this.uid + "님</li>"
+						+ "<li class='rep' style='position: relative; left:70px; top:-50px;'>" + this.ra_reply_comment +"</li>"
+					}
+
 				});
 				$("#replies").html(str);
-			});
+			});	// $.getJSON("raceReply/re_list/${point.racepoint_id}", function(data){
 			
-		}
-	});
+		}	// function getAllList() {	 댓글리스트
+			
+		$("#replies").on("click", "#replyDel",function(){	// 댓글 삭제 버튼				
+			var ra_reply_id = $(this).next().val();
+			
+			$.ajax({
+				type:"delete",
+				url:"raceReply/" + ra_reply_id,
+				headers : {
+					"Content-Type" : "application/json",
+					"X-HTTP-Method-Override" : "DELETE"
+				},
+				dataType: "text",
+				success: function(result) {
+					if(result == "SUCCESS") {
+						getAllList();
+					}
+					
+				}	//	success: function(result) {
+				
+			
+			});	// ajax
+			
+		
+		}); // $("#replyDel").on("click", function(){
+		
+			
+			
+	});	/// $(document).ready(function() {
 	</script>
+	
 

@@ -18,4 +18,6 @@ public interface RacePointDAO {
 	public void re_insert(RacePointBean rp) throws Exception;	// ¥Ò±€ µÓ∑œ
 	
 	public List<RacePointBean> re_list(int racepoint_id) throws Exception;	// ¥Ò±€ ∏ÆΩ∫∆Æ
+	
+	public void re_delete(int ra_reply_id) throws Exception; // ¥Ò±€ ªË¡¶
 }

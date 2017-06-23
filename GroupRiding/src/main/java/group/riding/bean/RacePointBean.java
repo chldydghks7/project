@@ -16,6 +16,17 @@ public class RacePointBean {
 	private int ra_reply_id;
 	private String uid;
 	private String ra_reply_comment;
+	private String fullName;	// 프로필사진
+	
+	
+	
+	
+	public String getFullName() {
+		return fullName;
+	}
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
 	public int getRacepoint_id() {
 		return racepoint_id;
 	}

@@ -22,6 +22,7 @@ public class RacePointReplyController {
 	@Inject
 	private RacePointService service;
 	
+	// ¥Ò±€ µÓ∑œ
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public ResponseEntity<String> re_insert(@RequestBody RacePointBean rp) {
 		
@@ -37,6 +38,7 @@ public class RacePointReplyController {
 		return entity;
 	}
 	
+	// ¥Ò±€ ∏ÆΩ∫∆Æ
 	@RequestMapping(value="re_list/{racepoint_id}", method=RequestMethod.GET)
 	public ResponseEntity<List<RacePointBean>> re_list(@PathVariable("racepoint_id") int racepoint_id) {
 		
@@ -49,6 +51,25 @@ public class RacePointReplyController {
 		} catch(Exception e) {
 			e.printStackTrace();
 			entity = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		
+		return entity;
+	}
+	
+	// ¥Ò±€ ªË¡¶
+	@RequestMapping(value="{ra_reply_id}", method=RequestMethod.DELETE)
+	public ResponseEntity<String> re_delete(@PathVariable("ra_reply_id") int ra_reply_id) {
+		
+		ResponseEntity<String> entity = null;
+		
+		try {
+			
+			service.re_delete(ra_reply_id);
+			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 		
 		return entity;

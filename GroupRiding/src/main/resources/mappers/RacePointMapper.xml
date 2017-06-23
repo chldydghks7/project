@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-<<<<<<< HEAD
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">   <!-- 규칙 -->
   
  <mapper namespace="group.riding.RacePointMapper">
@@ -24,6 +23,11 @@
     	where racepoint_id=#{racepoint_id}
     </update>
     
+    <insert id="insertRaceRecord">
+ 	 	insert into gr_race_record(racepoint_id,racepoint_time,gr_id) 
+  		values(1,#{racepoint_time},16)
+  	</insert>
+    
     <!--     -->
     <!-- 댓글 -->
     <insert id="re_insert">
@@ -32,25 +36,18 @@
     </insert>
     
     <select id="re_list" resultType="RacePointBean">
-    	select * from gr_racepoint_reply
-    	where racepoint_id=#{racepoint_id}
+    	select * from gr_racepoint_reply, gr_attach
+		where gr_racepoint_reply.uid = gr_attach.uid
+		and racepoint_id=#{racepoint_id}
     </select>
     
+    <delete id="re_delete">
+    	delete from gr_racepoint_reply
+		where ra_reply_id = #{ra_reply_id};
+    </delete>
     
+  
     
- </mapper>
-=======
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">	<!-- 규칙 -->
-  
-  <mapper namespace="group.riding.RacePointMapper">
-  
-  <insert id="insertRaceRecord">
-  insert into gr_race_record(racepoint_id,racepoint_time,gr_id) 
-  values(1,#{racepoint_time},16)
-  
-  
-  </insert>
-  
-  
+
   </mapper>
->>>>>>> b3ac35b50864ed567c6304435581ba345b730573
+

@@ -162,6 +162,9 @@
                         <li class="dropdown-submenu">
                            <a href="groupRank">Ranking</a>
                         </li>
+                        <li class="dropdown-submenu">
+                          	<a href="racePoint">RacePoint</a>
+                       	</li>
                         <!-- End Service Pages -->
                      </ul>
                   </li>

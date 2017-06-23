@@ -23,6 +23,11 @@
     	where racepoint_id=#{racepoint_id}
     </update>
     
+    <insert id="insertRaceRecord">
+ 	 	insert into gr_race_record(racepoint_id,racepoint_time,gr_id) 
+  		values(1,#{racepoint_time},16)
+  	</insert>
+    
     <!--     -->
     <!-- 댓글 -->
     <insert id="re_insert">
@@ -31,10 +36,18 @@
     </insert>
     
     <select id="re_list" resultType="RacePointBean">
-    	select * from gr_racepoint_reply
-    	where racepoint_id=#{racepoint_id}
+    	select * from gr_racepoint_reply, gr_attach
+		where gr_racepoint_reply.uid = gr_attach.uid
+		and racepoint_id=#{racepoint_id}
     </select>
     
+    <delete id="re_delete">
+    	delete from gr_racepoint_reply
+		where ra_reply_id = #{ra_reply_id};
+    </delete>
     
+  
     
- </mapper>
+
+  </mapper>
+

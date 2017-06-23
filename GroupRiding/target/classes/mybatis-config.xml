@@ -15,24 +15,23 @@
 		<typeAlias alias="MapBean" type="group.riding.bean.MapBean"/>
 		<typeAlias alias="GroupInfoList" type="yjc.wdb.gr.bean.GroupInfoList"/>
 		<typeAlias alias="GroupInfoMemList" type="yjc.wdb.gr.bean.GroupInfoMemList"/>
-<<<<<<< HEAD
+
 
 		<typeAlias alias="RidingInfoBean" type="group.riding.bean.RidingInfoBean"/>
 
 
-=======
->>>>>>> b3ac35b50864ed567c6304435581ba345b730573
+
 		<typeAlias alias="MyPicture"   type="group.riding.bean.MyPicture"/>
 		<typeAlias alias="GroupBoardAdd" type="yjc.wdb.gr.bean.GroupInfoMemList"/>
 		<typeAlias alias="GroupMemPic" type="yjc.wdb.gr.bean.GroupMemPic"/>
 		<typeAlias type="yjc.wdb.gr.bean.GroupInfoBoard" alias="GroupInfoListMaster"/>
-<<<<<<< HEAD
+
 		
 		<typeAlias alias="RacePointBean" type="group.riding.bean.RacePointBean"/>
 
-=======
+
 		<typeAlias alias="RidingInfo" type="group.riding.bean.RidingInfo"/>
->>>>>>> b3ac35b50864ed567c6304435581ba345b730573
+
 
 	</typeAliases>
 </configuration>
