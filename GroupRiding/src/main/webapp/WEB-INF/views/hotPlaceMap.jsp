@@ -462,35 +462,7 @@
 			// Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
         }
-        
-        $("#addReply").on("click", function() {
-       	 var id = $("#hp_id").text();
-       	 var replyer = $("#uid").val();
-       	 var replyText = $("#s-reply").val();
-       	 
-       	 alert(id + ", " + replyer + ", " + replyText);
-       	 
-       	 $.ajax({
-       		type: 'post',
-       		url: 'replies',
-       		headers: {
-       			"content-Type" : "application/json",
-   				"X-HTTP-Method-Override" : "POST"
-       		},
-       		dataType: 'text',
-       		data: JSON.stringify({
-       			writing_Id: id,
-       			uid: replyer,
-       			replyText: replyText
-       		}),
-       		success: function(result, status) {
-       			if(result == "SUCCESS") {
-       				getAllReplies();
-       			}
-       		}
-       	 });
-         });
-        
+ 
         $.ajax({
         	url: 'ajaxMap',
         	type: 'get',
@@ -580,6 +552,36 @@
                                  	 $('.timeline').append(str);
                                    });
                             }
+                            
+                            $("#addReply").on("click", function() {
+                              	 var id = $("#hp_id").text();
+                              	 var replyer = $("#uid").val();
+                              	 var replyText = $("#s-reply").val();
+                              	 
+                              	 alert(id + ", " + replyer + ", " + replyText);
+                              	 
+                              	 $.ajax({
+                              		type: 'post',
+                              		url: 'replies',
+                              		headers: {
+                              			"content-Type" : "application/json",
+                          				"X-HTTP-Method-Override" : "POST"
+                              		},
+                              		dataType: 'text',
+                              		data: JSON.stringify({
+                              			writing_Id: id,
+                              			uid: replyer,
+                              			replyText: replyText
+                              		}),
+                              		success: function(result, status) {
+                              			if(result == "SUCCESS") {
+                              				$("#s-reply").val("");
+                              				$(".timeline").html("");
+                              				getAllReplies();
+                              			}
+                              		}
+                              	 });
+                                });
         				}
         			},
         			error: function() {
