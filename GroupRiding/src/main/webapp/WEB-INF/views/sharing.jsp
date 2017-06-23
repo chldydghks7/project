@@ -457,33 +457,7 @@
       
       var form = $("#form");
       
-      $("#addReply").on("click", function() {
-    	 var id = $("#w_id").text();
-    	 var replyer = $("#uid").val();
-    	 var replyText = $("#s-reply").val();
-    	 
-    	 alert(id + ", " + replyer + ", " + replyText);
-    	 
-    	 $.ajax({
-    		type: 'post',
-    		url: 'replies',
-    		headers: {
-    			"content-Type" : "application/json",
-				"X-HTTP-Method-Override" : "POST"
-    		},
-    		dataType: 'text',
-    		data: JSON.stringify({
-    			writing_Id: id,
-    			uid: replyer,
-    			replyText: replyText
-    		}),
-    		success: function(result, status) {
-    			if(result == "SUCCESS") {
-    				getAllReplies();
-    			}
-    		}
-    	 });
-      });
+      
       
       $(".likeCnt").on("click", function() {
     	  event.preventDefault();
@@ -504,6 +478,7 @@
     		  success: function(data) {
     			  if(data) {
     				  alert('성공');
+    				  location.reload();
     			  }
     		  },
     		  error: function() {
@@ -567,6 +542,34 @@
                alert('에러');
             }
          });
+         
+         $("#addReply").on("click", function() {
+        	 var id = $("#w_id").text();
+        	 var replyer = $("#uid").val();
+        	 var replyText = $("#s-reply").val();
+        	 
+        	 alert(id + ", " + replyer + ", " + replyText);
+        	 
+        	 $.ajax({
+        		type: 'post',
+        		url: 'replies',
+        		headers: {
+        			"content-Type" : "application/json",
+    				"X-HTTP-Method-Override" : "POST"
+        		},
+        		dataType: 'text',
+        		data: JSON.stringify({
+        			writing_Id: id,
+        			uid: replyer,
+        			replyText: replyText
+        		}),
+        		success: function(result, status) {
+        			if(result == "SUCCESS") {
+        				getAllReplies();
+        			}
+        		}
+        	 });
+          });
       });
       
       $(".close").on("click", function() {
