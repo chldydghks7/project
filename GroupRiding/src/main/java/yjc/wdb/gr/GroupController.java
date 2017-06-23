@@ -165,13 +165,11 @@ public class GroupController {
 		model.addAttribute("listAll_mem", info_mem_list);
 		model.addAttribute("listAll", list);
 		model.addAttribute("listAll_li",info_list);
-<<<<<<< HEAD
-		
-=======
+
 		model.addAttribute("mem_li", pic.getFullname());
 		model.addAttribute("memList", memList);
 		System.out.println("사진은?? ??"+pic.getFullname());
->>>>>>> 7762db1a00160b1ab4c4edf19fa7e24b79b22cdb
+
 
 		return "groupInfo";
 	

@@ -450,23 +450,13 @@ b_container {
 								<a href="javascript:ViewLayer();">등록</a>
 								</c:if>
 								
-								<div id="Pop"
-<<<<<<< HEAD
-									style="position: absolute; left: 100px; top: 520px; width: 1000px; height: 600px; z-index: 2; display: none; background: #3d3d3d; color: #fff;">
-=======
-									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 100 !important; display: none; background: #3d3d3d; color: #fff;">
->>>>>>> 7762db1a00160b1ab4c4edf19fa7e24b79b22cdb
+								<div id="Pop" style="position: absolute; left: 100px; top: 520px; width: 1000px; height: 600px; z-index: 2; display: none; background: #3d3d3d; color: #fff;">
+
 									<a href="javascript:ViewClose();"> <img id="popLogo"
 										src="./resources/img/cancelcel.png" /></a>
-									<form method="post"
-										action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}"
-<<<<<<< HEAD
-										style="margin: 5% 5%; ">
+									<form method="post" action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}" style="margin: 5% 5%; ">
 										<p style="color:white;">작성자 - ${uid}</p>
-=======
-										style="margin: 5% 5%;">
-										<label style="color:white;">작성자 - ${uid}</label>
->>>>>>> 7762db1a00160b1ab4c4edf19fa7e24b79b22cdb
+
 										<div class="form-group">
 											<label style="color:white;">제목</label>
 											<input class="form-control" type="text" name="writing_title">
@@ -486,12 +476,8 @@ b_container {
 								</div>
 
 
-								<div id="Pop_Re"
-<<<<<<< HEAD
-									style="position: absolute; left: 100px; top: 520px; width: 1000px; height: 600px; z-index: 2; display: none; margin: 5% 5%; background: #101010; color: #fff;">
-=======
-									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 100 !important; display: none; margin: 5% 5%; background: #101010; color: #fff;">
->>>>>>> 7762db1a00160b1ab4c4edf19fa7e24b79b22cdb
+								<div id="Pop_Re" style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 100 !important; display: none; margin: 5% 5%; background: #101010; color: #fff;">
+
 									<a href="javascript:ViewClose2();"> <img id="popLogo"
 										src="./resources/img/cancelcel.png" /></a>
 									<div style="margin: 5% 5%; color:white;">
