@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import group.riding.bean.GroupBean;
+import group.riding.bean.KmlBean;
 import group.riding.bean.MyPicture;
 import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
@@ -65,7 +66,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void insertkml(String kml) throws Exception {
+	public void insertkml(KmlBean kml) throws Exception {
 		// TODO Auto-generated method stub
 		session.insert(namespace+".insert_kml", kml);
 	}
@@ -83,9 +84,9 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public List<Integer> selectkmlid() throws Exception {
+	public int selectkmlid() throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList(namespace+".selectkmlid");
+		return session.selectOne(namespace+".selectkmlid");
 	}
 
 	@Override

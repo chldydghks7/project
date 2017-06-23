@@ -30,6 +30,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import de.micromata.opengis.kml.v_2_2_0.Coordinate;
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 import group.riding.bean.GroupBean;
+import group.riding.bean.KmlBean;
 import group.riding.bean.MyPicture;
 import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
@@ -115,15 +116,15 @@ public class UserController {
 	
 	@ResponseBody
 	@RequestMapping(value="insertkml" ,method=RequestMethod.GET)
-	public String createkml(String kml,String callback)throws Exception{
+	public String createkml(String callback,KmlBean kml)throws Exception{
 		
-		System.out.println("����"+kml);
+	
 		
 		service.insertkml(kml);
 	
-		List<Integer> list=service.selectkmlid();
+		int kmlid=service.selectkmlid();
 		
-		int kmlid=list.get(0);
+		
 		
 	
 		 JSONObject json= new JSONObject();
@@ -193,6 +194,8 @@ public class UserController {
 		 @RequestMapping(value="insert_riding_info", method=RequestMethod.GET)
 		 @ResponseBody
 		 public String insertRidinginfo(RidingInfo info,String callback)throws Exception{
+			 System.out.println("라이딩인포 삽입");
+			 
 			 
 			 service.insertRidingInfo(info);
 
@@ -259,6 +262,8 @@ public class UserController {
 				 json.put("alldistance", list.get(i).getAlldistance());
 				 
 				 json.put("avgspeed", list.get(i).getAvgspeed());
+				 
+				 json.put("Kcal", list.get(i).getKcal());
 				
 				j.add(json);
 				

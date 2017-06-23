@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import group.riding.bean.KmlBean;
 import group.riding.bean.MyPicture;
 import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
@@ -62,7 +63,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void insertkml(String kml) throws Exception {
+	public void insertkml(KmlBean kml) throws Exception {
 		// TODO Auto-generated method stub
 		dao.insertkml(kml);
 	}
@@ -80,7 +81,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<Integer> selectkmlid() throws Exception {
+	public int selectkmlid() throws Exception {
 		// TODO Auto-generated method stub
 		return dao.selectkmlid();
 	}
