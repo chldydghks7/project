@@ -51,4 +51,17 @@
 		where noticeId=#{noticeId} and uid = #{uid}
 	</update>
 	
+	<!-- 개인 라이딩 캘린더 -->
+	<select id="ridingDate" resultType="RidingInfoBean">
+		select * from gr_ridinginfo
+		where uid=#{uid}
+	</select>
+	
+	<select id="ridingInfo" resultType="RidingInfoBean">
+		select * from gr_ridinginfo
+		where riding_id=#{riding_id}
+	</select>
+	
+	
+	
 </mapper>

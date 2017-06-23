@@ -174,6 +174,10 @@
                         <li class="dropdown-submenu">
                            <a href="groupRank">Ranking</a>
                         </li>
+                        
+                        <li class="dropdown-submenu">
+                           <a href="racePoint">RacePoint</a>
+                        </li>
                         <!-- End Service Pages -->
                      </ul>
                   </li>
@@ -473,6 +477,17 @@
 					},
 					
 				</c:forEach>
+					
+				<c:forEach items="${iiii}" var="i">
+					
+					{
+						title: "Riding",
+						start: "${i.startDate}",
+						url: "ridingInfo?riding_id=${i.riding_id}&uid=${uid}"
+					},
+					
+				</c:forEach>
+				
 				
 			]	// events
 		});
@@ -482,6 +497,12 @@
 	/* <c:forEach items="${list}" var="i">
 		"${i.noticeId}"
 	</c:forEach> */
+
+/* 	<c:forEach items="${iiii}" var="i">
+		"${i.startDate}"
+	</c:forEach> */
+	
+	
 </script>
 
 <script>

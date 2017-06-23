@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 
 import group.riding.bean.NoticeBean;
+import group.riding.bean.RidingInfoBean;
 import group.riding.dao.NoticeDAO;
 
 
@@ -55,6 +56,16 @@ public class NoticeServiceImpl implements NoticeService {
 	@Override
 	public void updateCheck(NoticeBean nb) throws Exception {
 		dao.updateCheck(nb);
+	}
+
+	@Override
+	public List<RidingInfoBean> ridingDate(String uid) throws Exception {
+		return dao.ridingDate(uid);
+	}
+
+	@Override
+	public RidingInfoBean ridingInfo(int riding_id) throws Exception {
+		return dao.ridingInfo(riding_id);
 	}
 
 	

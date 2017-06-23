@@ -59,8 +59,7 @@
 <!-- CSS Customization -->
 <link rel="stylesheet" href="./resources/assets/css/custom.css">
 
-<!-- 슬라이드 -->
-<link href="./resources/slider/src/style11.css" rel="stylesheet" type="text/css">
+
 
 </head>
 <style>
@@ -141,10 +140,13 @@ b_container {
 	font-size: 1.2em;
 }
 
-#calendar {
-	width: 800px;
-	margin: 0 auto;
+#map11 {
+	z-index: 99;
 }
+
+
+
+
 </style>
 <body>
 	<script>
@@ -277,6 +279,10 @@ b_container {
 								<!-- Service Pages -->
 								<li class="dropdown-submenu"><a href="groupRank">Ranking</a>
 								</li>
+								
+								<li class="dropdown-submenu">
+                          	<a href="racePoint">RacePoint</a>
+                       	</li>
 								<!-- End Service Pages -->
 							</ul></li>
 						<!-- End Pages -->
@@ -409,19 +415,16 @@ b_container {
 						<!-- Blog All Posts -->
 						<div class="col-md-9">
 							<!----- 그룹 캘린더 --------------------------------------------------------------------------->
-							<div class="col-md-13">
+							<div id="map11" class="col-md-13" style="z-index:1;">
 								<div class="news-v3 bg-color-white margin-bottom-60">
 									<h2>${group.gr_name}의최근라이딩</h2>
 									<!-- 슬라이드 -->
-									<div class="content" style="width:600px;height:450px;overflow:hidden; margin:50px auto;">
-											<div id="slider">
-												<a href="#"><div id="map" style="width:600px;height:450px;" class="map margin-bottom-50"></div></a>
-												<a href="#"><img src="./resources/slider/img/2.jpg"/></a>
-												<a href="#"><img src="./resources/slider/img/3.jpg"/></a>
-												<a href="#"><img src="./resources/slider/img/4.jpg"/></a>
-												<a href="#"><img src="./resources/slider/img/5.jpg"/></a>
-											</div>
-									</div>
+									<a id="mm" href="#" ><div id="map_div"></div></a>
+									<button id="click1">1</button>
+									<button id="click2">2</button>
+									<button id="click3">3</button>
+									<button id="click4">4</button>
+									<button id="click5">5</button>
 									<!-- 슬라이드 -->
 								</div>
 
@@ -470,14 +473,13 @@ b_container {
 								<a href="javascript:ViewLayer();">등록</a>
 								</c:if>
 								
-								<div id="Pop"
-									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 100 !important; display: none; background: #3d3d3d; color: #fff;">
+								<div id="Pop" style="position: absolute; left: 100px; top: 520px; width: 1000px; height: 600px; z-index: 2; display: none; background: #3d3d3d; color: #fff;">
+
 									<a href="javascript:ViewClose();"> <img id="popLogo"
 										src="./resources/img/cancelcel.png" /></a>
-									<form method="post"
-										action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}"
-										style="margin: 5% 5%;">
-										<label style="color:white;">작성자 - ${uid}</label>
+									<form method="post" action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}" style="margin: 5% 5%; ">
+										<p style="color:white;">작성자 - ${uid}</p>
+
 										<div class="form-group">
 											<label style="color:white;">제목</label>
 											<input class="form-control" type="text" name="writing_title">
@@ -497,8 +499,8 @@ b_container {
 								</div>
 
 
-								<div id="Pop_Re"
-									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 100 !important; display: none; margin: 5% 5%; background: #101010; color: #fff;">
+								<div id="Pop_Re" style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 100 !important; display: none; margin: 5% 5%; background: #101010; color: #fff;">
+
 									<a href="javascript:ViewClose2();"> <img id="popLogo"
 										src="./resources/img/cancelcel.png" /></a>
 									<div style="margin: 5% 5%; color:white;">
@@ -900,9 +902,6 @@ b_container {
 	<script type="text/javascript"
 		src="./resources/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<!-- JS Implementing Plugins -->
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN--zcfp4teCptRjts9sB0EDpa98Kyiu0&callback=initMap"
-		async defer></script>
 	<script type="text/javascript"
 		src="./resources/assets/plugins/back-to-top.js"></script>
 	<script type="text/javascript"
@@ -968,49 +967,7 @@ b_container {
 		}
 	</script>
 
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-<!--  <link rel='stylesheet' type='text/css'
-		href='./resources/calendar/fullcalendar.css' />
-	<!-- <script type='text/javascript'
-		src='./resources/calendar/jquery.js'></script> -->
-	<script type='text/javascript'
-		src='./resources/calendar/jquery/jquery-ui-custom.js'></script>
-	<script type='text/javascript'
-		src='./resources/calendar/fullcalendar.min.js'></script> -->
 
-	<!-- 캘린더 -->
-	<script type='text/javascript'>
-	$(document).ready(function() {
-
-		
-		$('#calendar').fullCalendar({
-			header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month,agendaWeek,agendaDay'
-			},
-			editable: true,
-			events: [
-				
-				<c:forEach items="${noticelist}" var="i">
-					
-					{
-						title: "${i.notice_title} 그룹 : ${i.gr_name}",
-						start: "${i.ridingDate}",
-						url: "noticeInfo?noticeId=${i.noticeId}&uid=${uid}"
-					},
-					
-				</c:forEach>
-				
-			]	// events
-		});
-		
-	});
-	
-	<c:forEach items="${noticelist}" var="i">
-		${i.noticeId}
-	</c:forEach>
-</script>
 
 	<script type="text/javascript" src="./resources/js/upload.js"></script>
 	<script
@@ -1021,28 +978,178 @@ b_container {
 	<script src="assets/plugins/placeholder-IE-fixes.js"></script>
 	<![endif]-->
 	
-<script src="./resources/slider/vmc.slider.full.js"></script>
-<script>
-$('#slider').vmcSlider({
-		width: 600,
-		height: 450,
-		gridCol: 10,
-		gridRow: 5,
-		gridVertical: 20, 
-		gridHorizontal: 10,
-		autoPlay: true,
-		ascending: true,
-		effects: [
-			'fade', 'fadeLeft', 'fadeRight', 'fadeTop', 'fadeBottom', 'fadeTopLeft', 'fadeBottomRight',
-			'blindsLeft', 'blindsRight', 'blindsTop', 'blindsBottom', 'blindsTopLeft', 'blindsBottomRight',
-			'curtainLeft', 'curtainRight', 'interlaceLeft', 'interlaceRight', 'mosaic', 'bomb', 'fumes'
-		],
-		ie6Tidy: false,
-		random: true,
-		duration: 2000,
-		speed: 900
-	});
+	
+	<!-- 최근 라이딩 -->
+	<script type="text/javascript" src="https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b"></script>
+	<script>
+
+var startPoint=[];
+var endPoint=[];
+var notice_title=[];
+var ridingDate=[];
+
+
+		map = new Tmap.Map({div:'map_div',
+		                        width:'600px', 
+		                        height:'450px',
+		                        transitionEffect:"resize",
+		                        animation:true
+		                    }); 
+		    map.setCenter(new Tmap.LonLat(14315520.90430,4283115.74626), 11);
+		    map.addControl(new Tmap.Control.KeyboardDefaults());
+            map.addControl(new Tmap.Control.MousePosition());
+		
+            
+		    
+		<c:forEach items="${noticelist}" var="i" varStatus="count">
+			startPoint.push("${i.start_point}");
+			endPoint.push("${i.end_point}");
+			notice_title.push("<h4 class='a${count.count}'>공지명 : ${i.notice_title}</h4>");
+			ridingDate.push("<h4 id='a${count.count}'>라이딩 날짜 : ${i.ridingDate}</h4>");
+		</c:forEach>
+	
+		
+		
+			$("#click1").on("click", function(){
+				if(startPoint[0] != null) {	
+					searchRoute(startPoint[0],endPoint[0]);
+					$("#mm").prepend(notice_title[0]);
+					$("#mm").prepend(ridingDate[0]);
+					
+					$(".a2").hide();
+					$(".a3").hide();
+					$(".a4").hide();
+					$(".a5").hide();
+					
+					$("#a2").hide();
+					$("#a3").hide();
+					$("#a4").hide();
+					$("#a5").hide();
+				} else {
+					alert("최근 없음!");
+				}
+			});
+		
+			$("#click2").on("click", function(){
+				if(startPoint[1] != null) {	
+					searchRoute(startPoint[1],endPoint[1]);
+					$("#mm").prepend(notice_title[1]);
+					$("#mm").prepend(ridingDate[1]);
+					
+					$(".a1").hide();
+					$(".a3").hide();
+					$(".a4").hide();
+					$(".a5").hide();
+					
+					$("#a1").hide();
+					$("#a3").hide();
+					$("#a4").hide();
+					$("#a5").hide();
+				} else {
+					alert("최근 없음!");
+				}
+			});
+			
+			$("#click3").on("click", function(){
+				if(startPoint[2] != null) {	
+					searchRoute(startPoint[2],endPoint[2]);
+					$("#mm").prepend(notice_title[2]);
+					$("#mm").prepend(ridingDate[2]);
+					
+					$(".a1").hide();
+					$(".a2").hide();
+					$(".a4").hide();
+					$(".a5").hide();
+					
+					$("#a1").hide();
+					$("#a2").hide();
+					$("#a4").hide();
+					$("#a5").hide();
+				} else {
+					alert("최근 없음!");
+				}
+			});
+			
+			$("#click4").on("click", function(){
+				if(startPoint[3] != null) {	
+					searchRoute(startPoint[3],endPoint[3]);
+					$("#mm").prepend(notice_title[3]);
+					$("#mm").prepend(ridingDate[3]);
+					
+					$(".a1").hide();
+					$(".a2").hide();
+					$(".a3").hide();
+					$(".a5").hide();
+					
+					$("#a1").hide();
+					$("#a2").hide();
+					$("#a3").hide();
+					$("#a5").hide();
+				} else {
+					alert("최근 없음!");
+				}
+			});
+			
+			$("#click5").on("click", function(){
+				if(startPoint[4] != null) {	
+					searchRoute(startPoint[4],endPoint[4]);
+					$("#mm").prepend(notice_title[4]);
+					$("#mm").prepend(ridingDate[4]);
+					
+					$(".a1").hide();
+					$(".a2").hide();
+					$(".a3").hide();
+					$(".a4").hide();
+					
+					$("#a1").hide();
+					$("#a2").hide();
+					$("#a3").hide();
+					$("#a4").hide();
+				} else {
+					alert("최근 없음!");
+				}
+			});
+	
+	
+		
+	
+		
+		//경로 정보 로드
+		function searchRoute(startPoint,endPoint){
+			
+			var startx = new String(startPoint).substr(4, 15);   // 경도 자르기
+			var starty = new String(startPoint).substr(24);   // 경도 자르기
+              
+			var stopx = new String(endPoint).substr(4, 15);   // 경도 자르기
+            var stopy = new String(endPoint).substr(24);   // 경도 자르기
+                
+
+		    var routeFormat = new Tmap.Format.KML({extractStyles:true, extractAttributes:true});
+		    var startX = new Object(startx);
+		    var startY = new Object(starty);
+		    var endX = new Object(stopx)// 14136027.789587;
+		    var endY = new Object(stopy)// 4517572.4745242;
+		    var urlStr = "https://apis.skplanetx.com/tmap/routes?version=1&format=xml";
+		    urlStr += "&startX="+startX;
+		    urlStr += "&startY="+startY;
+		    urlStr += "&endX="+endX;
+		    urlStr += "&endY="+endY;
+		    urlStr += "&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b";
+		    var prtcl = new Tmap.Protocol.HTTP({
+		                                        url: urlStr,
+		                                        format:routeFormat
+		                                        });
+		    var routeLayer = new Tmap.Layer.Vector("route", {protocol:prtcl, strategies:[new Tmap.Strategy.Fixed()]});
+		    routeLayer.events.register("featuresadded", routeLayer, onDrawnFeatures);
+		    map.addLayer(routeLayer);
+		}
+		
+		//경로 그리기 후 해당영역으로 줌
+		function onDrawnFeatures(e){
+		    map.zoomToExtent(this.getDataExtent());
+		}	
 </script>
+
 
 
 </body>

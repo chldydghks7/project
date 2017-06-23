@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import group.riding.bean.NoticeBean;
+import group.riding.bean.RidingInfoBean;
 import group.riding.service.NoticeService;
 
 
@@ -57,8 +58,10 @@ public class NoticeController {
 	public void  userNotice(@RequestParam(value="uid") String uid, Model model) throws Exception{
 		List<NoticeBean> list = service.userNotice(uid);
 		List<NoticeBean> llll = service.noticeCheck(uid);	// 창조주님ㅇㅁㅇ
+		List<RidingInfoBean> iiii =service.ridingDate(uid);
 		model.addAttribute("llll", llll);	// 창조주님ㅇㅁㅇ
 		model.addAttribute("list", list);
+		model.addAttribute("iiii", iiii);	// 라이딩 인포
 		
 		
 	}
@@ -77,10 +80,18 @@ public class NoticeController {
 		return "redirect:noticeInfo?noticeId=" + noticeId + "&uid=" + uid;
 	}
 	
-	@RequestMapping(value="aaa", method=RequestMethod.GET)
+	@RequestMapping(value="aaa", method=RequestMethod.GET)	// 최근 라이딩
 	public void aaaaaaaaaa(@RequestParam(value="gr_name") String gr_name, NoticeBean nb, Model model) throws Exception {
 		List<NoticeBean> list = service.listNotice(gr_name);
 		model.addAttribute("list", list);
+	}
+	
+	@RequestMapping(value="ridingInfo", method=RequestMethod.GET)	// 洹몃９ ?긽?꽭
+	public void ridingInfo(@RequestParam(value="riding_id") int riding_id, @RequestParam(value="uid") String uid, Model model) throws Exception {
+		RidingInfoBean rInfo = service.ridingInfo(riding_id);
+		
+		model.addAttribute("rInfo", rInfo);
+		
 	}
 	
 	

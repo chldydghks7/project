@@ -3,17 +3,17 @@ package group.riding.bean;
 
 
 public class NoticeBean {
-	int noticeId;			//	공지ID
-	String gr_name;
-	String notice_title;	// 공지 제목
-	String start_point;		// 출발지
-	String end_point;		// 도착지
-	String ridingDate;		// 라이딩 날짜
-	String ridingTime;		// 라이딩 시간
-	String material;		// 준비물
+	private int noticeId;			//	공지ID
+	private String gr_name;
+	private String notice_title;	// 공지 제목
+	private String start_point;		// 출발지
+	private String end_point;		// 도착지
+	private String ridingDate;		// 라이딩 날짜
+	private String ridingTime;		// 라이딩 시간
+	private String material;		// 준비물
 	
-	String joing;	// 공지참여 여부
-	String uid;
+	private String joing;	// 공지참여 여부
+	private String uid;
 	
 
 	public String getUid() {
