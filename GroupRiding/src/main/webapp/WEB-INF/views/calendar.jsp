@@ -249,7 +249,7 @@
       <!--=== Breadcrumbs ===-->
       <div class="breadcrumbs">
          <div class="container">
-            <h1 class="pull-left">My calendar</h1>
+            <h1 class="pull-left">My Calendar</h1>
             <ul class="pull-right breadcrumb">
                <li><a href="/">Home</a></li>
                <li class="active">My calendar</li>

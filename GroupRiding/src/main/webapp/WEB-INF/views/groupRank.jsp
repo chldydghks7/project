@@ -170,7 +170,7 @@
 		</div>
 		<div class="breadcrumbs">
 			<div class="container">
-				<h1 class="pull-left">그룹 랭킹</h1>
+				<h1 class="pull-left">Group Ranking</h1>
 
 			</div>
 			<!--/container-->

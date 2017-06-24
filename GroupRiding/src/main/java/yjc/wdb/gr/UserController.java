@@ -1,6 +1,7 @@
 package yjc.wdb.gr;
 
 import java.io.File;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -53,6 +54,7 @@ public class UserController {
 	@RequestMapping(value="register", method=RequestMethod.POST)
 	public String create(UserBean user, RedirectAttributes rttr) throws Exception {
 		System.out.println("a :" + user.getFiles());
+		
 		service.register(user);
 		return "signIn";
 	}
@@ -100,7 +102,7 @@ public class UserController {
 		UserBean bean = service.login(dto);
 		
 		if(bean == null) {
-			System.out.println("���̵� or ��й�ȣ Ʋ��");
+			System.out.println("占쏙옙占싱듸옙 or 占쏙옙橘占싫� 틀占쏙옙");
 			return "signIn";
 		}
 		
@@ -158,7 +160,7 @@ public class UserController {
 	   }
 	
 	
-	   /**  ���̵� �ߺ� üũ */
+	   /**  占쏙옙占싱듸옙 占쌩븝옙 체크 */
 		 @RequestMapping("id_check")
 		 @ResponseBody
 		 public Map<String, String> id_check(@RequestParam(value="uid") String uid) throws Exception {
@@ -171,10 +173,10 @@ public class UserController {
 		  
 		  if ( resultCnt == 0 ){
 		   result = "success";
-		   resultMsg = "��밡��!!!";
+		   resultMsg = "占쏙옙諛∽옙占�!!!";
 		  } else if (resultCnt == 1) {
 		   result = "failure";
-		   resultMsg = "�̹� �����!!!!!!!!!!!!!";
+		   resultMsg = "占싱뱄옙 占쏙옙占쏙옙占�!!!!!!!!!!!!!";
 		  }
 		  
 		  resultMap.put("result", result);
@@ -190,11 +192,11 @@ public class UserController {
 			 
 			 return "main";
 		 }
-		 //라이딩 인포 테이블에 총거리,총시간 삽입
+		 //�씪�씠�뵫 �씤�룷 �뀒�씠釉붿뿉 珥앷굅由�,珥앹떆媛� �궫�엯
 		 @RequestMapping(value="insert_riding_info", method=RequestMethod.GET)
 		 @ResponseBody
 		 public String insertRidinginfo(RidingInfo info,String callback)throws Exception{
-			 System.out.println("라이딩인포 삽입");
+			 System.out.println("�씪�씠�뵫�씤�룷 �궫�엯");
 			 
 			 
 			 service.insertRidingInfo(info);
@@ -211,7 +213,7 @@ public class UserController {
 			 
 		 }
 		 
-		 //라이딩중 찍은사진 보기 sharingform 에 내사진 에 띄우기위해
+		 //�씪�씠�뵫以� 李띿��궗吏� 蹂닿린 sharingform �뿉 �궡�궗吏� �뿉 �쓣�슦湲곗쐞�빐
 		 @RequestMapping(value="showMyPicture", method=RequestMethod.GET)
 		 @ResponseBody
 		 public JSONObject showmypicture(HttpSession session)throws Exception{
@@ -236,7 +238,7 @@ public class UserController {
 			 
 		 }
 		 
-		 //운동내역 리스트 출력위해 필요 a.kml_name,b.riding_id,b.alltime,b.startDate,b.alldistance,b.avgspeed
+		 //�슫�룞�궡�뿭 由ъ뒪�듃 異쒕젰�쐞�빐 �븘�슂 a.kml_name,b.riding_id,b.alltime,b.startDate,b.alldistance,b.avgspeed
 		 @RequestMapping(value="show_history", method=RequestMethod.GET)
 		 @ResponseBody
 		 public String showhistory(String uid,String callback)throws Exception{

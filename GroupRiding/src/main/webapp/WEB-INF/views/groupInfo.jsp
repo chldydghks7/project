@@ -341,7 +341,7 @@ b_container {
 		<!--=== Breadcrumbs ===-->
 		<div class="breadcrumbs">
 			<div class="container">
-				<h1 class="pull-left">Group List</h1>
+				<h1 class="pull-left">Group Info</h1>
 				<ul class="pull-right breadcrumb">
 					<li class="active"><a href="#">내 그룹</a></li>
 					<li><a href="groupListOther">그룹 전체</a></li>

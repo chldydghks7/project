@@ -195,11 +195,10 @@
 		<!--=== Breadcrumbs ===-->
 		<div class="breadcrumbs">
 			<div class="container">
-				<h1 class="pull-left">Picture</h1>
+				<h1 class="pull-left">SHARING</h1>
 				<ul class="pull-right breadcrumb">
 					<li><a href="/">Home</a></li>
 					<li><a href="javascript:void(0);">Sharing</a></li>
-					<li class="active">Picture</li>
 				</ul>
 			</div>
 		</div><!--/breadcrumbs-->

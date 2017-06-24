@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import group.riding.bean.BoardBean;
 import group.riding.bean.MapBean;
 import group.riding.dao.MapDAO;
 
@@ -25,6 +26,12 @@ public class MapServiceImpl implements MapService {
 	public MapBean makerRead(String place_name) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.makerRead(place_name);
+	}
+
+	@Override
+	public void likeUpdate(MapBean map) throws Exception {
+		// TODO Auto-generated method stub
+		dao.likeUpdate(map);
 	}
 
 }

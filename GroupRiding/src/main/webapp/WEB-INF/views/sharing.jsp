@@ -76,6 +76,12 @@
 		float: left;
 	}
 	
+	.replyImg {
+		width: 20px;
+		height: 20px;
+		margin-right: 5px;
+	}
+	
 	.replyNum {
 		width: 3em;
 	}
@@ -236,7 +242,7 @@
       <!--=== Breadcrumbs ===-->
       <div class="breadcrumbs">
          <div class="container">
-            <h1 class="pull-left">Sharing</h1>
+            <h1 class="pull-left">SHARING</h1>
             <ul class="pull-right breadcrumb">
                <li><a href="/">Home</a></li>
                <li class="active">Sharing</li>
@@ -534,6 +540,7 @@
                     	 console.log(data);
                     	 $(data.list).each(function() {
                     		str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
+                    			+ "<img src = '/displayFile?fileName=" + this.fullName + "' class = 'reply replyImg'/>"
                     			+ "<span class = 'reply replyNum'>" + this.uid + " : </span>"
                     			+ "<span class = 'reply replyText'>" + this.replyText + "</span>";
                     	 });

@@ -41,4 +41,5 @@ public class BoardReplyDAOImpl implements BoardReplyDAO {
 		session.delete(namespace + ".delReply", rno);
 	}
 
+
 }

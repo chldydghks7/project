@@ -88,6 +88,12 @@
 		float: left;
 	}
 	
+	.replyImg {
+		width: 20px;
+		height: 20px;
+		margin-right: 5px;
+	}
+	
 	.replyNum {
 		width: 3em;
 	}
@@ -111,6 +117,10 @@
 	.rList {
 		list-style-type: none;
 	}
+	
+	#like {
+      	cursor: pointer;
+      }
    </style>
 </head>
 
@@ -529,6 +539,7 @@
         					
         					var html = "";
         					html = "<h2 style = 'float: left'>종류 : " + data.place_kind + "</h2>"
+        					+ "<p style = 'float: right;' id = 'cnt'>" + data.visit + "</p><br>"
         					+ "<p style = 'display: none;' id = 'hp_id'>" + data.hp_id + "</p>"
                             + "<br><hr><div>장소 : " + data.place_name + "</div><hr>"
                             + "<div><ul class = 'timeline'></ul></div>";
@@ -546,12 +557,43 @@
                                  	 console.log(data);
                                  	 $(data.list).each(function() {
                                  		str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
+                                 			+ "<img src = '/displayFile?fileName=" + this.fullName + "' class = 'reply replyImg'/>"
                                  			+ "<span class = 'reply replyNum'>" + this.uid + " : </span>"
                                  			+ "<span class = 'reply replyText'>" + this.replyText + "</span>";
                                  	 });
                                  	 $('.timeline').append(str);
                                    });
                             }
+                            
+                            $("#like").on("click", function() {
+                          	  event.preventDefault();
+                          	  var id = $("#hp_id").text();
+                          	  var cnt = $("#cnt").text();
+                          	  
+                          	  ++cnt;
+                          	  
+                          	  alert(cnt + ", " + id);
+                          	  
+                          	  $.ajax({
+                          		  url: 'likeMap',
+                          		  type: 'post',
+                          		  data: {
+                          			  hp_id: id,
+                          			  visit: cnt
+                          		  },
+                          		  success: function(data) {
+                          			  if(data) {
+                          				  alert('성공');
+                          				$(".modal-body").html("");
+                          				$(".modal-body").append(html);
+                          				getAllReplies();
+                          			  }
+                          		  },
+                          		  error: function() {
+                          			  alert('실패');
+                          		  }
+                          	  });
+                            });
                             
                             $("#addReply").on("click", function() {
                               	 var id = $("#hp_id").text();

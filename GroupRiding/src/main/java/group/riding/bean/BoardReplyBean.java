@@ -5,7 +5,16 @@ public class BoardReplyBean {
 	private int writing_Id;
 	private String uid;
 	private String replyText;
+	private String fullName;
 	
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+
 	public int getRno() {
 		return rno;
 	}
