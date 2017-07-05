@@ -1,12 +1,14 @@
 package group.riding.bean;
 
+import java.sql.Date;
+
 public class UserBean {
 	private Integer uno;
 	private String uid;
 	private String upw;
 	private String upw1;
 	private String uname;
-	private int uage;
+	private Date uage;
 	private int upoint;
 	
 	private String files;
@@ -51,10 +53,11 @@ public class UserBean {
 	public void setUname(String uname) {
 		this.uname = uname;
 	}
-	public int getUage() {
+
+	public Date getUage() {
 		return uage;
 	}
-	public void setUage(int uage) {
+	public void setUage(Date uage) {
 		this.uage = uage;
 	}
 	public int getUpoint() {

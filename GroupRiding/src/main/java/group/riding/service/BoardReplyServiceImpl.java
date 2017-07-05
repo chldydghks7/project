@@ -38,4 +38,5 @@ public class BoardReplyServiceImpl implements BoardReplyService {
 		// TODO Auto-generated method stub
 		dao.delReply(rno);
 	}
+
 }

@@ -84,6 +84,7 @@
       }
       
       .reply {
+
       display: inline-block;
       float: left;
    }
@@ -120,6 +121,44 @@
    
    #like {
          cursor: pointer;
+
+		display: inline-block;
+		float: left;
+	}
+	
+	.replyImg {
+		width: 20px;
+		height: 20px;
+		margin-right: 5px;
+	}
+	
+	.replyNum {
+		width: 3em;
+	}
+	
+	.replyWriter {
+		width: 10em;
+	}
+	
+	.replyText {
+		width: 30em;
+		height: 3em;
+		overflow: auto;
+		margin-right: 10px;
+	}
+	
+	.replyLI {
+		margin-bottom: 2em;
+		list-style-type: none;
+		clear: both;
+	}
+	.rList {
+		list-style-type: none;
+	}
+	
+	#like {
+      	cursor: pointer;
+
       }
    </style>
 </head>
@@ -513,6 +552,7 @@
         })
         
         function makerListener(makers) {
+
            google.maps.event.addListener(makers, "click", function() {
             
               $(".modal-dialog").show();
@@ -534,15 +574,10 @@
                        html = "<h2 style = 'float: left;'>종류 : " + data.place_kind + "</h2>"
                        + "<p style = 'float: right;' id = 'cnt'>"+"방문횟수: " + data.visit + "</p><br>"
                        + "<p style = 'display: none;' id = 'hp_id'>" + data.hp_id + "</p>"
-                            + "<br><hr><div>장소 : " + data.place_name + "</div><hr>"
-                            + "<div><ul class = 'timeline'></ul></div>";
-                            
-                            $(".modal-body").append(html);
-                           
-                            
-                            getAllReplies();
+
                             
                             function getAllReplies() {
+
                                var id = $("#hp_id").text();
                              
                                
@@ -556,10 +591,12 @@
                                           + "<span class = 'reply replyText'>" + this.replyText + "</span>";
                                      });
                                      $('.timeline').append(str);
-                                   });
+
+                            	
                             }
                             
-                            $("#like").on("click", function() {
+                            $("#like").on("click", function(){
+
                                event.preventDefault();
                                var id = $("#hp_id").text();
                                var cnt = $("#cnt").text();
@@ -618,14 +655,48 @@
                                     }
                                   });
                                 });
-                    }
-                 },
-                 error: function() {
-                    alert('에러');
-                 }
-              });
+           
               
-           });
+           
+                            
+                            $("#addReply").on("click", function() {
+                              	 var id = $("#hp_id").text();
+                              	 var replyer = $("#uid").val();
+                              	 var replyText = $("#s-reply").val();
+                              	 
+                              	 alert(id + ", " + replyer + ", " + replyText);
+                              	 
+                              	 $.ajax({
+                              		type: 'post',
+                              		url: 'replies',
+                              		headers: {
+                              			"content-Type" : "application/json",
+                          				"X-HTTP-Method-Override" : "POST"
+                              		},
+                              		dataType: 'text',
+                              		data: JSON.stringify({
+                              			writing_Id: id,
+                              			uid: replyer,
+                              			replyText: replyText
+                              		}),
+                              		success: function(result, status) {
+                              			if(result == "SUCCESS") {
+                              				$("#s-reply").val("");
+                              				$(".timeline").html("");
+                              				getAllReplies();
+                              			}
+                              		}
+                              	 });
+                                });
+        				}
+        			},
+        			error: function() {
+        				alert('에러');
+        			}
+        		});
+        		
+        	});
+
         }
         
    }

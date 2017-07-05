@@ -14,4 +14,9 @@
 		from hotplace
 		where place_name = #{place_name}
 	</select>
+	
+	<update id = "likeUpdate">
+    	update hotplace set visit = #{visit}
+    	where hp_id = #{hp_id}
+    </update>
 </mapper>

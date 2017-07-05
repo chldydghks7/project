@@ -214,7 +214,7 @@
       <!--=== Breadcrumbs ===-->
       <div class="breadcrumbs">
          <div class="container">
-            <h1 class="pull-left">Default Pricing Tabels</h1>
+            <h1 class="pull-left">Riding Data</h1>
             <ul class="pull-right breadcrumb">
 
             </ul>

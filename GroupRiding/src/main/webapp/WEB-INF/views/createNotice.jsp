@@ -182,7 +182,7 @@
                      </a>
                      <ul class="dropdown-menu">
                         <li class="dropdown-submenu">
-                           <a href="calendar">Calendar</a>
+                           <a href="calendar?uid=${uid}">Calendar</a>
                         </li>
                        
                      </ul>
@@ -239,10 +239,10 @@
       <!--=== Breadcrumbs ===-->
       <div class="breadcrumbs">
          <div class="container">
-            <h1 class="pull-left">My calendar</h1>
+            <h1 class="pull-left">Group Notice</h1>
             <ul class="pull-right breadcrumb">
                <li><a href="/">Home</a></li>
-               <li class="active">My calendar</li>
+               <li class="active">Group Notice</li>
             </ul>
          </div>
       </div><!--/breadcrumbs-->

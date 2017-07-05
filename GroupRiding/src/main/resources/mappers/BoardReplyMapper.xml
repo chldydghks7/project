@@ -6,9 +6,10 @@
 <mapper namespace = "group.riding.BoardReplyMapper">
 	<select id = "replyList" resultType = "BoardReplyBean">
 		select a.rno, a.writing_Id, a.uid, a.replyText, b.fullName
-      from gr_reply a, gr_attach b
-      where a.uid = b.uid and writing_Id = #{writing_Id}
-      order by rno desc
+		from gr_reply a, gr_attach b
+		where a.uid = b.uid and writing_Id = #{writing_Id}
+		order by rno desc
+
 	</select>
 	
 	<insert id = "newReply">
@@ -25,4 +26,9 @@
 		delete from gr_reply
 		where rno = #{rno}
 	</delete>
+	
+	<select id = "getImg" resultType = "String">
+		select *
+		from gr_attach
+	</select>
 </mapper>
