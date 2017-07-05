@@ -50,5 +50,11 @@ public class GroupInfoBoardServiceImpl implements GroupInfoBoardService {
 		
 	}
 
+	@Override
+	public void updateHit(int writing_id) throws Exception {
+		// TODO Auto-generated method stub
+	    dao.updateHit(writing_id);
+	}
+
 
 }

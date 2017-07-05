@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
+
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
@@ -243,7 +244,7 @@ b_container {
 				<div class="topbar">
 					<ul class="loginbar pull-right">
 						<li class="topbar-devider"></li>
-						<li><a href="page_login.html">Login</a></li>
+						<li><a href="logout">Logout</a></li>
 					</ul>
 				</div>
 				<!-- End Topbar -->
@@ -293,8 +294,7 @@ b_container {
 							<ul class="dropdown-menu">
 								<li class="dropdown-submenu"><a href="calendar?uid=${uid}">Calendar</a>
 								</li>
-								<li class="dropdown-submenu"><a href="Ridingdata">Riding
-										Data</a></li>
+								
 							</ul></li>
 						<!-- End Blog -->
 
@@ -373,7 +373,7 @@ b_container {
 								<th>그룹인원</th>
 								<th>그룹생성일</th>
 								<th>그룹가입</th>
-								<th>공지등록</th>
+								<th>라이딩일정</th>
 
 							</tr>
 						</thead>
@@ -398,7 +398,7 @@ b_container {
 								<td><form action="createNotice" method="get">
 										<input type="hidden" name="gr_id" value="${group.gr_id}" /> <input
 											type="hidden" name="gr_name" value="${gr_name1}" />
-										<button type="submit" id="notice11">공지등록</button>
+										<button type="submit" id="notice11">일정등록</button>
 									</form></td>
 
 							</tr>
@@ -1010,7 +1010,7 @@ var ridingDate=[];
 	
 		
 		
-			$("#click1").on("click", function(){
+			$(document).ready(function(){
 				if(startPoint[0] != null) {	
 					searchRoute(startPoint[0],endPoint[0]);
 					$("#mm").prepend(notice_title[0]);

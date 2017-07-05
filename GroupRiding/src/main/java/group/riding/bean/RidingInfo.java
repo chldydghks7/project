@@ -10,7 +10,7 @@ public class RidingInfo {
 	private int kml_id;
 	private int riding_id;
 	private int Kcal;
-	private String kml_center;
+	
 	
 	public String getUid() {
 		return uid;
@@ -67,12 +67,7 @@ public class RidingInfo {
 	public void setKcal(int kcal) {
 		Kcal = kcal;
 	}
-	public String getKml_center() {
-		return kml_center;
-	}
-	public void setKml_center(String kml_center) {
-		this.kml_center = kml_center;
-	}
+
 	
 	
 	

@@ -10,7 +10,8 @@ public class GroupInfoBoard {
 	private String writing_content;
 	private Date regist_date;
 	private int writing_id;
-	
+	private int view_number;
+	   
 	public Date getRegist_date() {
 		return regist_date;
 	}
@@ -69,6 +70,12 @@ public class GroupInfoBoard {
 	}
 	
 	
+	public int getView_number() {
+		return view_number;
+	}
+	public void setView_number(int view_number) {
+		this.view_number = view_number;
+	}
 	public String toString(){
 		return "그룹아이디: "+group_id
 			 + " 회원아이디: "+member_id

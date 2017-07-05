@@ -5,10 +5,10 @@
   
 <mapper namespace = "group.riding.BoardReplyMapper">
 	<select id = "replyList" resultType = "BoardReplyBean">
-		select *
-		from gr_reply
-		where writing_Id = #{writing_Id}
-		order by rno desc
+		select a.rno, a.writing_Id, a.uid, a.replyText, b.fullName
+      from gr_reply a, gr_attach b
+      where a.uid = b.uid and writing_Id = #{writing_Id}
+      order by rno desc
 	</select>
 	
 	<insert id = "newReply">

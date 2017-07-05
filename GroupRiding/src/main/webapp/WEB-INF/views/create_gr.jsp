@@ -66,7 +66,7 @@
 				<div class="topbar">
 					<ul class="loginbar pull-right">
 						<li class="topbar-devider"></li>
-						<li><a href="page_login.html">Login</a></li>
+						<li><a href="logout">Logout</a></li>
 					</ul>
 				</div>
 				<!-- End Topbar -->
@@ -124,9 +124,7 @@
 								<li class="dropdown-submenu">
 									<a href="calendar">Calendar</a>
 								</li>
-								<li class="dropdown-submenu">
-									<a href="Ridingdata">Riding Data</a>
-								</li>
+								
 							</ul>
 						</li>
 						<!-- End Blog -->

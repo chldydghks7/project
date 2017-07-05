@@ -14,6 +14,8 @@ public class BoardBean {
 	
 	private String bbs_FilePath;
 	
+	private String kml_name;
+	
 	public String getBbs_FilePath() {
 		return bbs_FilePath;
 	}
@@ -87,4 +89,14 @@ public class BoardBean {
 	public void setWriting_content(String writing_content) {
 		this.writing_content = writing_content;
 	}
+
+	public String getKml_name() {
+		return kml_name;
+	}
+
+	public void setKml_name(String kml_name) {
+		this.kml_name = kml_name;
+	}
+	
+	
 }

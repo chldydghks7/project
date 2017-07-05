@@ -68,6 +68,12 @@ public class NoticeServiceImpl implements NoticeService {
 		return dao.ridingInfo(riding_id);
 	}
 
+	@Override
+	public List<NoticeBean> getjoininfo(int noticeId, String gr_name) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.getjoininfo(noticeId, gr_name);
+	}
+
 	
 
 }

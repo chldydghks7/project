@@ -16,11 +16,34 @@ public class RacePointBean {
 	private int ra_reply_id;
 	private String uid;
 	private String ra_reply_comment;
-	private String fullName;	// ÇÁ·ÎÇÊ»çÁø
+	private String fullName;	// ï¿½ï¿½ï¿½ï¿½ï¿½Ê»ï¿½ï¿½ï¿½
+	
+	// gr_race_record
+	private int racepoint_time;
+	private int gr_id;
+	private String gr_name;
 	
 	
 	
 	
+	public String getGr_name() {
+		return gr_name;
+	}
+	public void setGr_name(String gr_name) {
+		this.gr_name = gr_name;
+	}
+	public int getRacepoint_time() {
+		return racepoint_time;
+	}
+	public void setRacepoint_time(int racepoint_time) {
+		this.racepoint_time = racepoint_time;
+	}
+	public int getGr_id() {
+		return gr_id;
+	}
+	public void setGr_id(int gr_id) {
+		this.gr_id = gr_id;
+	}
 	public String getFullName() {
 		return fullName;
 	}

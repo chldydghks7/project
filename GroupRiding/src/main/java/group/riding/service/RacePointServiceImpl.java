@@ -45,4 +45,9 @@ public class RacePointServiceImpl implements RacePointService {
 		dao.re_delete(ra_reply_id);
 	}
 
+	@Override
+	public List<RacePointBean> race_record(int racepoint_id) throws Exception {
+		return dao.race_record(racepoint_id);
+	}
+
 }

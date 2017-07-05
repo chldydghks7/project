@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">   <!-- 규칙 -->
+  
+ <mapper namespace="group.riding.RidingInfo11Mapper">
+   	
+   	<select id="grap" resultType="RidingInfoBean">
+	    select speed, uid, altitude, data_date, kml_id
+		from gr_data
+		where kml_id=#{kml_id}
+		order by data_date asc
+	</select>
+	
+ </mapper>
+ 

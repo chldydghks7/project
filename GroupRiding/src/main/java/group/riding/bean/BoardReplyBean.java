@@ -5,6 +5,7 @@ public class BoardReplyBean {
 	private int writing_Id;
 	private String uid;
 	private String replyText;
+	private String fullName;
 	
 	public int getRno() {
 		return rno;
@@ -37,4 +38,13 @@ public class BoardReplyBean {
 	public void setReplyText(String replyText) {
 		this.replyText = replyText;
 	}
+
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+	
 }

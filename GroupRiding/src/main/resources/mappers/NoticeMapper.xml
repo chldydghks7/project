@@ -53,15 +53,22 @@
 	
 	<!-- 개인 라이딩 캘린더 -->
 	<select id="ridingDate" resultType="RidingInfoBean">
-		select * from gr_ridinginfo
+		select * from gr_ridinginfo 
 		where uid=#{uid}
 	</select>
 	
 	<select id="ridingInfo" resultType="RidingInfoBean">
-		select * from gr_ridinginfo
-		where riding_id=#{riding_id}
+		select * from gr_ridinginfo a,gr_kml b
+		where a.kml_id=b.kml_id
+		and riding_id=#{riding_id}
+		
 	</select>
 	
+	<select id="joinInfo" resultType="NoticeBean">
+		select b.uid,b.joing from
+		gr_gr a, gr_usernotijoin b
+		where a.uid=b.uid and noticeId=#{noticeId} and gr_name =#{gr_name};
+	</select>
 	
 	
 </mapper>

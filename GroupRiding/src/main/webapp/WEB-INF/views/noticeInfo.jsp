@@ -130,7 +130,7 @@
             <div class="topbar">
                <ul class="loginbar pull-right">
                   <li class="topbar-devider"></li>
-                  <li><a href="page_login.html">Login</a></li>
+                 <li><a href="logout">Logout</a></li>
                </ul>
             </div>
             <!-- End Topbar -->
@@ -187,9 +187,7 @@
                         <li class="dropdown-submenu">
                            <a href="calendar?uid=${uid}">Calendar</a>
                         </li>
-                        <li class="dropdown-submenu">
-                           <a href="Ridingdata">Riding Data</a>
-                        </li>
+                     
                      </ul>
                   </li>
                   <!-- End Blog -->
@@ -261,7 +259,7 @@
 
 						<%-- 출발지점 : ${info.start_point} <br><br>
 						도착지점 : ${info.end_point} <br><br> --%>
-						
+					
 						그룹명 : ${info.gr_name}	<br><br>	
 						공지제목 : ${info.notice_title} <br><br>
 						출발날짜 : ${info.ridingDate} <br><br>
@@ -279,15 +277,37 @@
 						</form>
 						
 						<form action="updateCheck" method="get">
-							<input type="hidden" name="noticeId" value="${info.noticeId}">
-							<input type="hidden" name="uid" value="${uid}">
-							<input type="submit" style="color:red;" id="oo" name="joing" value="참여" />
-							<input type="submit" style="color:red;" id="xx" name="joing" value="불참" />
+								<input type="hidden" name="noticeId" value="${info.noticeId}">
+								<input type="hidden" name="uid" value="${uid}">
+								<input type="submit" style="color:red;" id="oo" name="joing" value="참여" />
+								<input type="submit" style="color:red;" id="xx" name="joing" value="불참" />
 						</form>
 						
+					
 						<h4 id="ooo">참여됨</h4>
 						<h4 id="xxx">불참됨</h4>
-            
+					
+					
+					<div style="margin-top: -200px; margin-left: 500px;">	
+						<table style="border: 1px solid #444444; width:200px;">
+							<thead>
+								<tr style="border: 1px solid #444444; text-align: center;">
+									<td style="border: 1px solid #444444;">아이디</td>
+									<td style="border: 1px solid #444444;">참여여부 </td>
+								</tr>
+							</thead>
+							
+							<c:forEach items="${memberjoininfo}" var="mem">
+								<tbody>
+									<tr style="border: 1px solid #444444; text-align: center;">
+										<td style="border: 1px solid #444444;">${mem.uid}</td>
+									    <td style="border: 1px solid #444444;">${mem.joing}</td>
+									</tr>
+								</tbody>
+							</c:forEach>
+						</table>
+					</div>
+            	<div style="height:350px;"></div>
          </div><!-- End Content -->
       </div><!--/container-->
       <!--=== End Content Part ===-->

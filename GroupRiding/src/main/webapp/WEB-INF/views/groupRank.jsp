@@ -75,7 +75,7 @@
 				<div class="topbar">
 					<ul class="loginbar pull-right">
 						<li class="topbar-devider"></li>
-						<li><a href="page_login.html">Login</a></li>
+						<li><a href="logout">Logout</a></li>
 					</ul>
 				</div>
 				<!-- End Topbar -->
@@ -96,11 +96,11 @@
 				<div class="container">
 					<ul class="nav navbar-nav">
 						<!-- Home -->
-						<li class="dropdown active"><a href="javascript:void(0);"
+						<li class="dropdown "><a href="javascript:void(0);"
 							class="dropdown-toggle" data-toggle="dropdown"> Home </a> <!-- End Home -->
 
 							<!-- Pages -->
-						<li class="dropdown"><a href="javascript:void(0);"
+						<li class="dropdown active"><a href="javascript:void(0);"
 							class="dropdown-toggle" data-toggle="dropdown"> Group </a>
 							<ul class="dropdown-menu">
 								<!-- About Pages -->
@@ -125,8 +125,7 @@
 							<ul class="dropdown-menu">
 								<li class="dropdown-submenu"><a href="calendar?uid=${uid}">Calendar</a>
 								</li>
-								<li class="dropdown-submenu"><a href="Ridingdata">Riding
-										Data</a></li>
+								
 							</ul></li>
 						<!-- End Blog -->
 

@@ -78,5 +78,15 @@ public class NoticeDAOImpl implements NoticeDAO {
 		return session.selectOne(namespace + ".ridingInfo", riding_id);
 	}
 
+	@Override
+	public List<NoticeBean> getjoininfo(int noticeId, String gr_name) throws Exception {
+		// TODO Auto-generated method stub
+		Map<String,Object> paramMap = new HashMap<>();
+		paramMap.put("noticeId", noticeId);
+		paramMap.put("gr_name", gr_name);
+		
+		return session.selectList(namespace+".joinInfo", paramMap);
+	}
+
 
 }

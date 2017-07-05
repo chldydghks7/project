@@ -18,4 +18,6 @@ public interface GroupInfoBoardService {
 	
 	public void update(GroupInfoBoard vo)throws Exception;
 	
+	public void updateHit(int writing_id)throws Exception;
+	
 }

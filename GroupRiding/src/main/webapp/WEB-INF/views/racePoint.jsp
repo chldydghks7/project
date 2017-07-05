@@ -1,34 +1,338 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<%@ page language = "java" contentType = "text/html; charset = UTF-8" pageEncoding = "UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+   <title>Pricing | Unify - Responsive Website Template</title>
+
+   <!-- Meta -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="">
+   <meta name="author" content="">
+
+   <!-- Favicon -->
+   <link rel="shortcut icon" href="./resources/favicon.ico">
+
+
+   <!-- CSS Global Compulsory -->
+   <link rel="stylesheet" href="./resources/assets/plugins/bootstrap/css/bootstrap.min.css">
+   <link rel="stylesheet" href="./resources/assets/css/style.css">
+
+   <!-- CSS Header and Footer -->
+   <link rel="stylesheet" href="./resources/assets/css/headers/header-default.css">
+   <link rel="stylesheet" href="./resources/assets/css/footers/footer-v1.css">
+
+   <!-- CSS Implementing Plugins -->
+   <link rel="stylesheet" href="./resources/assets/plugins/animate.css">
+   <link rel="stylesheet" href="./resources/assets/plugins/line-icons/line-icons.css">
+   <link rel="stylesheet" href="./resources/assets/plugins/font-awesome/css/font-awesome.min.css">
+   <link rel="stylesheet" href="./resources/assets/plugins/fancybox/source/jquery.fancybox.css">
+
+   <!-- CSS Theme -->
+   <link rel="stylesheet" href="./resources/assets/css/theme-colors/default.css" id="style_color">
+   <link rel="stylesheet" href="./resources/assets/css/theme-skins/dark.css">
+
+   <!-- CSS Customization -->
+   <link rel="stylesheet" href="./resources/assets/css/custom.css">
+   
+   <link rel='stylesheet' type='text/css' href='./resources/calendar/fullcalendar.css' />
+
+   
+   <style>
+         .logo, .footer-logo {
+         width: 200px;
+         heigth: 100px;
+      }
+   
+      #like {
+         margin-right: 20px;
+         width: 30px;
+      }
+      #s-img {
+          width: 550px;
+         height: 300px;
+      }
+      #s-reply {
+         width: 450px;
+         margin-left: 0;
+         margin-right: 20px;
+      }
+      .modal-body {
+         height: 780px;
+      }
+      .s-content {
+         height: 400px;
+      }
+      
+      .likeCnt {
+         width: 20px;
+         height: 20px;
+         cursor: pointer;
+      }
+      
+    /* #replyContainer {
+      position: relative;
+   } */
+
+   .reply {
+      display: inline-block;
+      float: left;
+   }
+   
+   .replyNum {
+      width: 3em;
+   }
+   
+   .replyWriter {
+      width: 10em;
+   }
+   
+   .date {
+      widows: 10em;
+   }
+   
+   .replyText {
+      width: 30em;
+      height: 3em;
+      overflow: auto;
+      margin-right: 10px;
+   }
+   
+   .replyLI {
+      margin-bottom: 2em;
+      list-style-type: none;
+      clear: both;
+   }
+   .rList {
+      list-style-type: none;
+   }
+   
+   #calendar {
+      width: 900px;
+      margin: 0 auto;
+      }
+      
+    #replies{
+     list-style-type: none;
+    
+    }  
+   </style>
+</head>
+
+<body>
+   <div class="wrapper">
+      <!--=== Header ===-->
+      <div class="header">
+         <div class="container">
+            <!-- Logo -->
+            <a class="logo" href="mainlogin">
+               <img src="./resources/img/logo(b).png" alt="Logo">
+            </a>
+            <!-- End Logo -->
+
+            <!-- Topbar -->
+            <div class="topbar">
+               <ul class="loginbar pull-right">
+                  <li class="topbar-devider"></li>
+                  <li><a href="logout">Logout</a></li>
+               </ul>
+            </div>
+            <!-- End Topbar -->
+
+            <!-- Toggle get grouped for better mobile display -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="fa fa-bars"></span>
+            </button>
+            <!-- End Toggle -->
+         </div><!--/end container-->
+
+         <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+            <div class="container">
+               <ul class="nav navbar-nav">
+                  <!-- Home -->
+                  <li class="dropdown active">
+                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                        Home
+                     </a>
+                  <!-- End Home -->
+
+                  <!-- Pages -->
+                  <li class="dropdown">
+                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                        Group
+                     </a>
+                     <ul class="dropdown-menu">
+                        <!-- About Pages -->
+                        <li class="dropdown-submenu">
+                           <a href="groupList">GroupList</a>
+                        </li>
+                        <!-- End About Pages -->
+
+                        <!-- Service Pages -->
+                        <li class="dropdown-submenu">
+                           <a href="groupRank">Ranking</a>
+                        </li>
+                        
+                        <li class="dropdown-submenu">
+                           <a href="racePoint">RacePoint</a>
+                        </li>
+                        <!-- End Service Pages -->
+                     </ul>
+                  </li>
+                  <!-- End Pages -->
+
+                  <!-- Blog -->
+                  <li class="dropdown">
+                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                        Info
+                     </a>
+                     <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                           <a href="calendar?uid=${uid}">Calendar</a>
+                        </li>
+                       
+                     </ul>
+                  </li>
+                  <!-- End Blog -->
+
+                  <!-- Portfolio -->
+                  <li class="dropdown">
+                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                        Sharing
+                     </a>
+                     <ul class="dropdown-menu">
+                        <li><a href="sharing">Sharing</a></li>
+                     </ul>
+                  </li>
+                  <!-- End Portfolio -->
+
+                  <!-- Features -->
+                  <li class="dropdown">
+                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                        Hot Place
+                     </a>
+                     <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                           <a href="hotPlaceMap">Hot Place</a>
+                        </li>
+                        <!-- <li class="dropdown-submenu">
+                           <a href="restaurantList">Restaurant</a>
+                        </li>
+                        <li><a href="hotelList">Hotel</a></li> -->
+                     </ul>
+                  </li>
+                  <!-- End Features -->
+
+                  <!-- Search Block -->
+                  <li>
+                     <i class="search fa fa-search search-btn"></i>
+                     <div class="search-open">
+                        <div class="input-group animated fadeInDown">
+                           <input type="text" class="form-control" placeholder="Search">
+                           <span class="input-group-btn">
+                              <button class="btn-u" type="button">Go</button>
+                           </span>
+                        </div>
+                     </div>
+                  </li>
+                  <!-- End Search Block -->
+               </ul>
+            </div><!--/end container-->
+         </div><!--/navbar-collapse-->
+      </div>
+      <!--=== End Header ===-->
+
+      <!--=== Breadcrumbs ===-->
+      <div class="breadcrumbs">
+         <div class="container">
+            <h1 class="pull-left">My calendar</h1>
+            <ul class="pull-right breadcrumb">
+               <li><a href="/">Home</a></li>
+               <li class="active">My calendar</li>
+            </ul>
+         </div>
+      </div><!--/breadcrumbs-->
+      <!--=== End Breadcrumbs ===-->
+
+      <!--=== Content Part ===-->
+      <div class="container content">
+         <div class="row">
+   <!-- 레이스 -->
+                    <div id="map_div" style="position: absolute;"></div>
+               
+               <div style="position: absolute; left: 800px;">	
+						<table style="border: 1px solid #444444; width:200px;">
+							<thead>
+								<tr style="border: 1px solid #444444; text-align: center;">
+									<td style="border: 1px solid #444444;">순위</td>
+									<td style="border: 1px solid #444444;">기록(초)</td>
+									<td style="border: 1px solid #444444;">그룹명 </td>
+								</tr>
+							</thead>
+							
+							<c:forEach items="${race_record}" var="race" varStatus="s">
+								<tbody>
+									<tr style="border: 1px solid #444444; text-align: center;">
+										<td style="border: 1px solid #444444;">${s.count}</td>
+									    <td style="border: 1px solid #444444;">${race.racepoint_time}</td>
+									    <td style="border: 1px solid #444444;">${race.gr_name}</td>
+									</tr>
+								</tbody>
+							</c:forEach>
+						</table>
+				</div>
+               
+               <div id="board" style="position: relative; top:400px;">
+                  	제목    :    <label id="ra_title"></label>   <br>
+                  	내용   :    <label id="ra_content"></label>   <br>
+                <!--   ra_viewcnt      :    <label id="ra_viewcnt" style="display:none;"></label>   <br> -->
+                  
+                  <br><br>
+                  
+                     <ul id="replies" style="overflow:scroll; background-color: white; width:500px; height:500px; position: relative;"></ul>
+                  
+                  <div style="position: relative; top:10px;">
+                     <h4 id="re">댓글 등록</h4>
+                     <input type="text" name="ra_reply_comment" id="ra_reply_comment" />
+                     <input type="hidden" name="uid" id="uid" value="${uid}" />
+                     <input type="hidden" name="racepoint_id" id="racepoint_id" value="${point.racepoint_id}" />
+                     <button id="raceReply">등록</button>
+                  </div>
+               </div>
+            	
+            
+         </div><!-- End Content -->
+      </div><!--/container-->
+      <!--=== End Content Part ===-->
+
+      
+   <!-- JS Global Compulsory -->
+   <script type="text/javascript" src="./resources/assets/plugins/jquery/jquery.min.js"></script>
+   <script type="text/javascript" src="./resources/assets/plugins/jquery/jquery-migrate.min.js"></script>
+   <script type="text/javascript" src="./resources/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+   <!-- JS Implementing Plugins -->
+   <script type="text/javascript" src="./resources/assets/plugins/back-to-top.js"></script>
+   <script type="text/javascript" src="./resources/assets/plugins/smoothScroll.js"></script>
+      <script type="text/javascript" src="./resources/assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
+   <!-- JS Customization -->
+   <script type="text/javascript" src="./resources/assets/js/custom.js"></script>
+   <!-- JS Page Level -->
+   <script type="text/javascript" src="./resources/assets/js/app.js"></script>
+   <script type="text/javascript" src="./resources/assets/js/plugins/style-switcher.js"></script>
+   <script type="text/javascript" src="./resources/assets/js/plugins/fancy-box.js"></script>
+   <script type="text/javascript" src="./resources/js/upload.js"></script>
+
 
 <script type="text/javascript" src="https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<script type="text/javascript" src="./resources/js/upload.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
-
-   <div id="map_div"></div>
-   
-   <div id="board">
-      ra_title    :    <label id="ra_title"></label>   <br>
-      ra_content   :    <label id="ra_content"></label>   <br>
-      ra_viewcnt      :    <label id="ra_viewcnt"></label>   <br>
-      
-      <br><br>
-      
-         <ul id="replies" style="overflow:scroll; background-color: green; width:500px; height:500px; position: absolute;"></ul>
-      
-      <div style="position: relative; top:550px;">
-         <h4 id="re">댓글 등록</h4>
-         <input type="text" name="ra_reply_comment" id="ra_reply_comment" />
-         <input type="hidden" name="uid" id="uid" value="${uid}" />
-         <input type="hidden" name="racepoint_id" id="racepoint_id" value="${point.racepoint_id}" />
-         <button id="raceReply">등록</button>
-      </div>
-   </div>
-   
-   <script>
+<script>
    $(document).ready(function() {
          $("#board").hide();
 
@@ -71,7 +375,7 @@
          function onMaker(evt) {
              $.ajax({
                url:"pointInfo",
-               type:"post",
+               type:"get",
                data: {
                   racepoint_id: ${point.racepoint_id}
                },
@@ -79,8 +383,8 @@
                success:function(data) {
                      var point = data.pointInfo;
                      $("#ra_title").text(point.ra_title);
-                     $("#ra_content").text(point.ra_content);
-                     $("#ra_viewcnt").text(point.ra_viewcnt);
+                      $("#ra_content").text(point.ra_content); 
+                   /*   $("#ra_viewcnt").text(point.ra_viewcnt); */
                      $("#board").show();
                      getAllList();
                }
@@ -111,7 +415,6 @@
             }),
             success : function(result) {
                if(result == "SUCCESS") {
-                  alert("댓글 등록 됨");
                   getAllList();
                }
             }
@@ -174,3 +477,12 @@
    });   /// $(document).ready(function() {
    </script>
    
+
+<!--[if lt IE 9]>
+   <script src="assets/plugins/respond.js"></script>
+   <script src="assets/plugins/html5shiv.js"></script>
+   <script src="assets/plugins/placeholder-IE-fixes.js"></script>
+   <![endif]-->
+
+</body>
+</html>

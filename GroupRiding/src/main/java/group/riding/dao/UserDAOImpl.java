@@ -1,5 +1,6 @@
 package group.riding.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -13,6 +14,7 @@ import group.riding.bean.MyPicture;
 import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
 import group.riding.bean.UserData;
+import group.riding.bean.UserData2;
 import group.riding.dto.LoginDTO;
 
 
@@ -55,10 +57,26 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public List<UserData> userData(String uid) throws Exception {
-		// TODO Auto-generated method stub
-		return session.selectList(namespace + ".Ridingdata", uid);
-	}
+	   public List<UserData> userData(String uid,String startDate,String stopDate) throws Exception {
+	      // TODO Auto-generated method stub
+		HashMap<String, String> map=new HashMap<>();
+		map.put("uid", uid);
+		map.put("startDate", startDate);
+		map.put("stopDate", stopDate);
+		
+	      return session.selectList(namespace + ".Ridingdata", map);
+	   }
+	   
+	   public List<UserData2> userData2(String uid) throws Exception {
+	      // TODO Auto-generated method stub
+	      return session.selectList(namespace + ".Ridingdata2", uid);
+	   }
+	   
+	   @Override
+	   public int Ridingdata3(String uid) throws Exception {
+	      // TODO Auto-generated method stub
+	      return session.selectOne(namespace + ".Ridingdata3", uid);
+	   }
 	
 	@Override
 	public int id_check(String uid) throws Exception {
@@ -93,6 +111,18 @@ public class UserDAOImpl implements UserDAO {
 	public List<RidingInfo> showhistory(String uid) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectList(namespace+".showhistory", uid);
+	}
+
+	@Override
+	public void updateGrData(String startDate, String stopDate,int kmlid,String uid) throws Exception {
+		// TODO Auto-generated method stub
+		HashMap< String, Object> input= new HashMap<>();
+		input.put("startDate", startDate);
+		input.put("stopDate", stopDate);
+		input.put("kmlid", kmlid);
+		input.put("uid", uid);
+		
+		session.update(namespace+".update_gr_data", input);
 	}
 
 

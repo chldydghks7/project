@@ -43,20 +43,20 @@
    <link rel="stylesheet" href="./resources/assets/css/custom.css">
    
    <style>
-   		.logo, .footer-logo {
-			width: 200px;
-			heigth: 100px;
-		}
+         .logo, .footer-logo {
+         width: 200px;
+         heigth: 100px;
+      }
    
       #map {
-      	 width: 1180px;
+          width: 1180px;
          height: 700px;
          position: absolute;
       }
 
       /* #myModal {
-		 display: none;
-		 position:absolute;  	
+       display: none;
+       position:absolute;     
       } */
       
       #like {
@@ -64,7 +64,7 @@
          width: 30px;
       }
       #s-img {
-      	 width: 550px;
+          width: 550px;
          height: 300px;
       }
       #s-reply {
@@ -73,44 +73,54 @@
       }
       
       .modal-dialog {
-      	display: none;
+         display: none;
       }
       .modal-body {
          height: 600px;
       }
       
       .s-content {
-      	height: 400px;
+         height: 400px;
       }
       
       .reply {
-		display: inline-block;
-		float: left;
-	}
-	
-	.replyNum {
-		width: 3em;
-	}
-	
-	.replyWriter {
-		width: 10em;
-	}
-	
-	.replyText {
-		width: 30em;
-		height: 3em;
-		overflow: auto;
-		margin-right: 10px;
-	}
-	
-	.replyLI {
-		margin-bottom: 2em;
-		list-style-type: none;
-		clear: both;
-	}
-	.rList {
-		list-style-type: none;
-	}
+      display: inline-block;
+      float: left;
+   }
+   
+   .replyImg {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+   }
+   
+   .replyNum {
+      width: 3em;
+   }
+   
+   .replyWriter {
+      width: 10em;
+   }
+   
+   .replyText {
+      width: 30em;
+      height: 3em;
+      overflow: auto;
+      margin-right: 10px;
+   }
+   
+   .replyLI {
+      margin-bottom: 2em;
+      list-style-type: none;
+      clear: both;
+   }
+   .rList {
+      list-style-type: none;
+   }
+   
+   #like {
+         cursor: pointer;
+      }
    </style>
 </head>
 
@@ -129,7 +139,7 @@
             <div class="topbar">
                <ul class="loginbar pull-right">
                   <li class="topbar-devider"></li>
-                  <li><a href="page_login.html">Login</a></li>
+                  <li><a href="logout">Logout</a></li>
                </ul>
             </div>
             <!-- End Topbar -->
@@ -146,14 +156,7 @@
          <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
             <div class="container">
                <ul class="nav navbar-nav">
-                  <!-- Home -->
-                  <li class="dropdown active">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Home
-                     </a>
-                  <!-- End Home -->
-
-                  <!-- Pages -->
+              <!-- Pages -->
                   <li class="dropdown">
                      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                         Group
@@ -171,8 +174,8 @@
                         </li>
                         
                         <li class="dropdown-submenu">
-                          	<a href="racePoint">RacePoint</a>
-                       	</li>
+                             <a href="racePoint">RacePoint</a>
+                          </li>
                         <!-- End Service Pages -->
                      </ul>
                   </li>
@@ -436,174 +439,209 @@
    <script type="text/javascript" src="./resources/assets/js/plugins/style-switcher.js"></script>
    <script type="text/javascript">
    
-	
-	function initMap() {
-		var map = new google.maps.Map(document.getElementById('map'), {
-			center: {lat: -34.397, lng: 150.644},
-			zoom: 18
-		});
-		var infoWindow = new google.maps.InfoWindow({map: map});
+   
+   function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+         center: {lat: -34.397, lng: 150.644},
+         zoom: 18
+      });
+      var infoWindow = new google.maps.InfoWindow({map: map});
    
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
-        	navigator.geolocation.getCurrentPosition(function(position) {
-         	var pos = {
-        		lat: position.coords.latitude,
+           navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
    
-			infoWindow.setPosition(pos);
-			infoWindow.setContent('내위치');
- 			map.setCenter(pos);
-			}, function() {
+         infoWindow.setPosition(pos);
+         infoWindow.setContent('내위치');
+          map.setCenter(pos);
+         }, function() {
                handleLocationError(true, infoWindow, map.getCenter());
             });
-		} else {
-			// Browser doesn't support Geolocation
+      } else {
+         // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
         }
-        
-        $("#addReply").on("click", function() {
-       	 var id = $("#hp_id").text();
-       	 var replyer = $("#uid").val();
-       	 var replyText = $("#s-reply").val();
-       	 
-       	 alert(id + ", " + replyer + ", " + replyText);
-       	 
-       	 $.ajax({
-       		type: 'post',
-       		url: 'replies',
-       		headers: {
-       			"content-Type" : "application/json",
-   				"X-HTTP-Method-Override" : "POST"
-       		},
-       		dataType: 'text',
-       		data: JSON.stringify({
-       			writing_Id: id,
-       			uid: replyer,
-       			replyText: replyText
-       		}),
-       		success: function(result, status) {
-       			if(result == "SUCCESS") {
-       				getAllReplies();
-       			}
-       		}
-       	 });
-         });
-        
+ 
         $.ajax({
-        	url: 'ajaxMap',
-        	type: 'get',
-        	async: false,
-        	success: function(data) {
-        		if(data) {
-        			alert('호출');
-            		console.log(data);
-            		
-            		var location = [];
-            		var makers = [];
-            		var label;
-            		
-            		for(i = 0; ; i++) {
-            			location[i] = new google.maps.LatLng(data.map[i].latitude, data.map[i].longitude);
-            			
-            			if(data.map[i].place_kind = "hotel") {
-               				label = "H";
-               			}
-               			else if(data.map[i].place_kind = "restaurant") {
-               				label = "R";
-               			}
-               			else {
-               				label = null;
-               			}
-            			
-            			makers[i] = new google.maps.Marker({
-               				position: location[i],
-               				title: data.map[i].place_name,
-               				label: label
-               			});
-            			
+           url: 'ajaxMap',
+           type: 'get',
+           async: false,
+           success: function(data) {
+              if(data) {
+                
+                  console.log(data);
+                  
+                  var location = [];
+                  var makers = [];
+                  var label;
+                  
+                  for(i = 0; ; i++) {
+                     location[i] = new google.maps.LatLng(data.map[i].latitude, data.map[i].longitude);
+                     
+                     if(data.map[i].place_kind = "hotel") {
+                           label = "H";
+                        }
+                        else if(data.map[i].place_kind = "restaurant") {
+                           label = "R";
+                        }
+                        else {
+                           label = null;
+                        }
+                     
+                     makers[i] = new google.maps.Marker({
+                           position: location[i],
+                           title: data.map[i].place_name,
+                           label: label
+                        });
+                     
 
-               			/* alert(makers[i].position);
-               			alert(makers[i].title); */
-            			
-            			makers[i].setMap(map);
-               			makerListener(makers[i]);
-            		}
-        		}
-        	},
-        	error: function() {
-        		alert('에러');
-        	}
+                        /* alert(makers[i].position);
+                        alert(makers[i].title); */
+                     
+                     makers[i].setMap(map);
+                        makerListener(makers[i]);
+                  }
+              }
+           },
+           error: function() {
+              alert('에러');
+           }
         })
         
         function makerListener(makers) {
-        	google.maps.event.addListener(makers, "click", function() {
-        		alert('click' + makers.position + makers.title);
-        		$(".modal-dialog").show();
-        		$(".footer-v1").css("margin-top", 0);
-        		
-        		$.ajax({
-        			url: 'readMaker',
-        			type: 'get',
-        			async: false,
-        			data: {
-        				place_name: makers.title
-        			},
-        			success: function(data) {
-        				if(data) {
-        					alert('전송');
-        					console.log(data);
-        					
-        					var html = "";
-        					html = "<h2 style = 'float: left'>종류 : " + data.place_kind + "</h2>"
-        					+ "<p style = 'display: none;' id = 'hp_id'>" + data.hp_id + "</p>"
+           google.maps.event.addListener(makers, "click", function() {
+            
+              $(".modal-dialog").show();
+              $(".footer-v1").css("margin-top", 0);
+              
+              $.ajax({
+                 url: 'readMaker',
+                 type: 'get',
+                 async: false,
+                 data: {
+                    place_name: makers.title
+                 },
+                 success: function(data) {
+                    if(data) {
+                    
+                       console.log(data);
+                       
+                       var html = "";
+                       html = "<h2 style = 'float: left;'>종류 : " + data.place_kind + "</h2>"
+                       + "<p style = 'float: right;' id = 'cnt'>"+"방문횟수: " + data.visit + "</p><br>"
+                       + "<p style = 'display: none;' id = 'hp_id'>" + data.hp_id + "</p>"
                             + "<br><hr><div>장소 : " + data.place_name + "</div><hr>"
                             + "<div><ul class = 'timeline'></ul></div>";
                             
                             $(".modal-body").append(html);
-                     		
+                           
                             
                             getAllReplies();
                             
                             function getAllReplies() {
-                            	var id = $("#hp_id").text();
-                            	
-                         	   $.getJSON("replies/all/" + id, function(data) {
-                                 	 var str = ""; 
-                                 	 console.log(data);
-                                 	 $(data.list).each(function() {
-                                 		str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
-                                 			+ "<span class = 'reply replyNum'>" + this.uid + " : </span>"
-                                 			+ "<span class = 'reply replyText'>" + this.replyText + "</span>";
-                                 	 });
-                                 	 $('.timeline').append(str);
+                               var id = $("#hp_id").text();
+                             
+                               
+                               $.getJSON("replies/all/" + id, function(data) {
+                                     var str = ""; 
+                                     console.log(data);
+                                     $(data.list).each(function() {
+                                       str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
+                                          + "<img src = '/displayFile?fileName=" + this.fullName + "' class = 'reply replyImg'/>"
+                                          + "<span class = 'reply replyNum'>" + this.uid + " : </span>"
+                                          + "<span class = 'reply replyText'>" + this.replyText + "</span>";
+                                     });
+                                     $('.timeline').append(str);
                                    });
                             }
-        				}
-        			},
-        			error: function() {
-        				alert('에러');
-        			}
-        		});
-        		
-        	});
+                            
+                            $("#like").on("click", function() {
+                               event.preventDefault();
+                               var id = $("#hp_id").text();
+                               var cnt = $("#cnt").text();
+                               
+                               ++cnt;
+                               
+                            
+                               
+                               $.ajax({
+                                  url: 'likeMap',
+                                  type: 'post',
+                                  data: {
+                                     hp_id: id,
+                                     visit: cnt
+                                  },
+                                  success: function(data) {
+                                     if(data) {
+                                      
+                                      $(".modal-body").html("");
+                                      $(".modal-body").append(html);
+                                      getAllReplies();
+                                     }
+                                  },
+                                  error: function() {
+                                     alert('실패');
+                                  }
+                               });
+                            });
+                            
+                            $("#addReply").on("click", function() {
+                                  var id = $("#hp_id").text();
+                                  var replyer = $("#uid").val();
+                                  var replyText = $("#s-reply").val();
+                                  
+                                
+                                  
+                                  $.ajax({
+                                    type: 'post',
+                                    url: 'replies',
+                                    headers: {
+                                       "content-Type" : "application/json",
+                                      "X-HTTP-Method-Override" : "POST"
+                                    },
+                                    dataType: 'text',
+                                    data: JSON.stringify({
+                                       writing_Id: id,
+                                       uid: replyer,
+                                       replyText: replyText
+                                    }),
+                                    success: function(result, status) {
+                                       if(result == "SUCCESS") {
+                                          $("#s-reply").val("");
+                                          $(".timeline").html("");
+                                          getAllReplies();
+                                       }
+                                    }
+                                  });
+                                });
+                    }
+                 },
+                 error: function() {
+                    alert('에러');
+                 }
+              });
+              
+           });
         }
         
-	}
-	
-	$(".close").on("click", function() {
-		$(".modal-dialog").hide();
-		$(".footer-v1").css("margin-top", 750);
-		$(".modal-body").html("");
-	});
+   }
    
-	function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-		infoWindow.setPosition(pos);
-		infoWindow.setContent(browserHasGeolocation ?
+   $(".close").on("click", function() {
+      $(".modal-dialog").hide();
+      $(".footer-v1").css("margin-top", 750);
+      $(".modal-body").html("");
+   });
+   
+   function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+      infoWindow.setPosition(pos);
+      infoWindow.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
-	}
+   }
    </script>
 <!--[if lt IE 9]>
    <script src="assets/plugins/respond.js"></script>
