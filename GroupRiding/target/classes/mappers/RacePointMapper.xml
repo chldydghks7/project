@@ -46,6 +46,14 @@
 		where ra_reply_id = #{ra_reply_id};
     </delete>
     
+    <!-- 레이스포인트 현황 -->
+    <select id="race_record" resultType="RacePointBean"> 
+    	select * from gr_race_record a, gr_group b
+		where a.gr_id=b.gr_id 
+		and racepoint_id = #{racepoint_id}
+		order by racepoint_time 
+		limit 5
+    </select>
   
     
 

@@ -210,6 +210,10 @@
  		update bbs_writing set writing_title=#{writing_title},writing_content=#{writing_content},regist_date=#{regist_date}
  		where writing_id=#{writing_id}
 	 </update>
+	 
+	 <update id="info_view">
+       update bbs_writing set view_number = view_number + 1 where writing_id =#{writing_id}
+    </update>
 
 
 </mapper>

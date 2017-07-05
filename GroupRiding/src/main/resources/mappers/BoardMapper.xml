@@ -17,7 +17,11 @@
     </select>
     
     <select id="sharRead" resultType="BoardBean">
+<<<<<<< HEAD
       select a.writing_title, a.writing_content, a.writing_Id, a.member_Id, b.bbs_FilePath, b.kml_name
+=======
+    select a.writing_title, a.writing_content, a.writing_Id, a.member_Id,b.bbs_FilePath,b.kml_name
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
       from bbs_writing a, bbs_File b
       where a.writing_Id = b.writing_Id and a.writing_Id = #{writing_Id}
     </select>
@@ -28,8 +32,8 @@
     </update>
     
     <insert id="addFile">
-       insert into bbs_File(writing_Id, bbs_FilePath)
-       values(LAST_INSERT_ID(), #{bbs_FilePath})
+       insert into bbs_File(writing_Id, bbs_FilePath,kml_name)
+       values(LAST_INSERT_ID(), #{bbs_FilePath},#{kml_name})
     </insert>
     
     <select id="getFile" resultType="String">

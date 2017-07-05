@@ -8,6 +8,7 @@ import group.riding.bean.MyPicture;
 import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
 import group.riding.bean.UserData;
+import group.riding.bean.UserData2;
 import group.riding.dto.LoginDTO;
 
 
@@ -25,7 +26,11 @@ public interface UserDAO {
 	
 	public UserBean user(int uno) throws Exception;	// ������� ������ ��ȸ
 	
-	public List<UserData> userData(String uid) throws Exception;   // �������̵�������
+	public List<UserData> userData(String uid,String startDate,String stopDate) throws Exception;   // 유저라이딩데이터
+	   
+	public List<UserData2> userData2(String uid) throws Exception; // 유저라이딩데이터2
+	   
+	public int Ridingdata3(String uid) throws Exception; // 유저라이딩 데이터3
 
 	public int id_check(String uid) throws Exception;	// ���̵� �ߺ�üũ
 	
@@ -38,4 +43,6 @@ public interface UserDAO {
 	public int selectkmlid()throws Exception;
 	
 	public List<RidingInfo> showhistory(String uid)throws Exception;
+	
+	public void updateGrData(String startDate,String stopDate,int kmlid,String uid)throws Exception;
 }

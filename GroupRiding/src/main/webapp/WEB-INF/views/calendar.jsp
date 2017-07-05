@@ -134,7 +134,11 @@
             <div class="topbar">
                <ul class="loginbar pull-right">
                   <li class="topbar-devider"></li>
+<<<<<<< HEAD
                   <li><a href="logout">Logout</a></li>
+=======
+                <li><a href="logout">Logout</a></li>
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
                </ul>
             </div>
             <!-- End Topbar -->
@@ -151,6 +155,15 @@
          <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
             <div class="container">
                <ul class="nav navbar-nav">
+<<<<<<< HEAD
+=======
+                  <!-- Home -->
+                  <li class="dropdown ">
+                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                        Home
+                     </a>
+                  <!-- End Home -->
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
 
                   <!-- Pages -->
                   <li class="dropdown">
@@ -178,7 +191,7 @@
                   <!-- End Pages -->
 
                   <!-- Blog -->
-                  <li class="dropdown">
+                  <li class="dropdown active">
                      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                         Info
                      </a>
@@ -186,9 +199,7 @@
                         <li class="dropdown-submenu">
                            <a href="calendar">Calendar</a>
                         </li>
-                        <li class="dropdown-submenu">
-                           <a href="Ridingdata">Riding Data</a>
-                        </li>
+                       
                      </ul>
                   </li>
                   <!-- End Blog -->

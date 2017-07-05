@@ -116,6 +116,11 @@
       width: 900px;
       margin: 0 auto;
       }
+      
+    #replies{
+     list-style-type: none;
+    
+    }  
    </style>
 </head>
 
@@ -185,9 +190,7 @@
                         <li class="dropdown-submenu">
                            <a href="calendar?uid=${uid}">Calendar</a>
                         </li>
-                        <li class="dropdown-submenu">
-                           <a href="Ridingdata">Riding Data</a>
-                        </li>
+                       
                      </ul>
                   </li>
                   <!-- End Blog -->
@@ -242,10 +245,10 @@
       <!--=== Breadcrumbs ===-->
       <div class="breadcrumbs">
          <div class="container">
-            <h1 class="pull-left">Race Point</h1>
+            <h1 class="pull-left">My calendar</h1>
             <ul class="pull-right breadcrumb">
                <li><a href="/">Home</a></li>
-               <li class="active">Race Point</li>
+               <li class="active">My calendar</li>
             </ul>
          </div>
       </div><!--/breadcrumbs-->
@@ -255,16 +258,38 @@
       <div class="container content">
          <div class="row">
    <!-- 레이스 -->
-                    <div id="map_div"></div>
+                    <div id="map_div" style="position: absolute;"></div>
                
-               <div id="board">
-                  ra_title    :    <label id="ra_title"></label>   <br>
-                  ra_content   :    <label id="ra_content"></label>   <br>
-                  ra_viewcnt      :    <label id="ra_viewcnt"></label>   <br>
+               <div style="position: absolute; left: 800px;">	
+						<table style="border: 1px solid #444444; width:200px;">
+							<thead>
+								<tr style="border: 1px solid #444444; text-align: center;">
+									<td style="border: 1px solid #444444;">순위</td>
+									<td style="border: 1px solid #444444;">기록(초)</td>
+									<td style="border: 1px solid #444444;">그룹명 </td>
+								</tr>
+							</thead>
+							
+							<c:forEach items="${race_record}" var="race" varStatus="s">
+								<tbody>
+									<tr style="border: 1px solid #444444; text-align: center;">
+										<td style="border: 1px solid #444444;">${s.count}</td>
+									    <td style="border: 1px solid #444444;">${race.racepoint_time}</td>
+									    <td style="border: 1px solid #444444;">${race.gr_name}</td>
+									</tr>
+								</tbody>
+							</c:forEach>
+						</table>
+				</div>
+               
+               <div id="board" style="position: relative; top:400px;">
+                  	제목    :    <label id="ra_title"></label>   <br>
+                  	내용   :    <label id="ra_content"></label>   <br>
+                <!--   ra_viewcnt      :    <label id="ra_viewcnt" style="display:none;"></label>   <br> -->
                   
                   <br><br>
                   
-                     <ul id="replies" style="overflow:scroll; background-color: green; width:500px; height:500px; position: relative;"></ul>
+                     <ul id="replies" style="overflow:scroll; background-color: white; width:500px; height:500px; position: relative;"></ul>
                   
                   <div style="position: relative; top:10px;">
                      <h4 id="re">댓글 등록</h4>
@@ -274,162 +299,13 @@
                      <button id="raceReply">등록</button>
                   </div>
                </div>
+            	
             
          </div><!-- End Content -->
       </div><!--/container-->
       <!--=== End Content Part ===-->
 
-      <!--=== Footer Version 1 ===-->
-      <div class="footer-v1">
-         <div class="footer">
-            <div class="container">
-               <div class="row">
-                  <!-- About -->
-                  <div class="col-md-3 md-margin-bottom-40">
-                     <a href="/"><img id="logo-footer" class="footer-logo" src="./resources/img/logo(w).png" alt=""></a>
-                     <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
-                     <p>Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.</p>
-                  </div><!--/col-md-3-->
-                  <!-- End About -->
-
-                  <!-- Latest -->
-                  <div class="col-md-3 md-margin-bottom-40">
-                     <div class="posts">
-                        <div class="headline"><h2>Latest Posts</h2></div>
-                        <ul class="list-unstyled latest-list">
-                           <li>
-                              <a href="#">Incredible content</a>
-                              <small>May 8, 2014</small>
-                           </li>
-                           <li>
-                              <a href="#">Best shoots</a>
-                              <small>June 23, 2014</small>
-                           </li>
-                           <li>
-                              <a href="#">New Terms and Conditions</a>
-                              <small>September 15, 2014</small>
-                           </li>
-                        </ul>
-                     </div>
-                  </div><!--/col-md-3-->
-                  <!-- End Latest -->
-
-                  <!-- Link List -->
-                  <div class="col-md-3 md-margin-bottom-40">
-                     <div class="headline"><h2>Useful Links</h2></div>
-                     <ul class="list-unstyled link-list">
-                        <li><a href="#">About us</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="#">Portfolio</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="#">Latest jobs</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="#">Community</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="#">Contact us</a><i class="fa fa-angle-right"></i></li>
-                     </ul>
-                  </div><!--/col-md-3-->
-                  <!-- End Link List -->
-
-                  <!-- Address -->
-                  <div class="col-md-3 map-img md-margin-bottom-40">
-                     <div class="headline"><h2>Contact Us</h2></div>
-                     <address class="md-margin-bottom-40">
-                        25, Lorem Lis Street, Orange <br />
-                        California, US <br />
-                        Phone: 800 123 3456 <br />
-                        Fax: 800 123 3456 <br />
-                        Email: <a href="mailto:info@anybiz.com" class="">info@anybiz.com</a>
-                     </address>
-                  </div><!--/col-md-3-->
-                  <!-- End Address -->
-               </div>
-            </div>
-         </div><!--/footer-->
-
-         <div class="copyright">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-6">
-                     <p>
-                        2015 &copy; All Rights Reserved.
-                        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-                     </p>
-                  </div>
-
-                  <!-- Social Links -->
-                  <div class="col-md-6">
-                     <ul class="footer-socials list-inline">
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
-                              <i class="fa fa-facebook"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype">
-                              <i class="fa fa-skype"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus">
-                              <i class="fa fa-google-plus"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Linkedin">
-                              <i class="fa fa-linkedin"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest">
-                              <i class="fa fa-pinterest"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
-                              <i class="fa fa-twitter"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Dribbble">
-                              <i class="fa fa-dribbble"></i>
-                           </a>
-                        </li>
-                     </ul>
-                  </div>
-                  <!-- End Social Links -->
-               </div>
-            </div>
-         </div><!--/copyright-->
-      </div>
-      <!--=== End Footer Version 1 ===-->
-   </div><!--/wrapper-->
-   
-    <!-- Modal -->
-    <div id = "myModal" class = "modal fade" role = "dialog">
-      <div class = "modal-dialog">
-         <div class = "modal-content">
-            <div class="modal-header">
-               <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-               <%-- <p style="float: left">제목: ${read.writing_title}</p>
-               <br>
-               <hr>
-               <div>
-                  <img src="./displayFile?fileName=${read.bbs_FilePath}" id="s-img">
-               </div>
-               <hr>
-               <div id="s-content">
-                  <p>내용 : ${read.writing_content}</p>
-                  <p>글번호 : ${read.writing_Id}</p>
-               </div> --%>
-            </div>
-            <div class="modal-footer">
-               <!-- <img src="./resources/img/hearts.png" id="like"> -->
-               <input type="text" id="s-reply" />
-               <button id="addReply" class="btn btn-default">댓글등록</button>
-            </div>
-         </div>
-      </div>
-   </div>
-
+      
    <!-- JS Global Compulsory -->
    <script type="text/javascript" src="./resources/assets/plugins/jquery/jquery.min.js"></script>
    <script type="text/javascript" src="./resources/assets/plugins/jquery/jquery-migrate.min.js"></script>
@@ -492,7 +368,7 @@
          function onMaker(evt) {
              $.ajax({
                url:"pointInfo",
-               type:"post",
+               type:"get",
                data: {
                   racepoint_id: ${point.racepoint_id}
                },
@@ -500,8 +376,8 @@
                success:function(data) {
                      var point = data.pointInfo;
                      $("#ra_title").text(point.ra_title);
-                     $("#ra_content").text(point.ra_content);
-                     $("#ra_viewcnt").text(point.ra_viewcnt);
+                      $("#ra_content").text(point.ra_content); 
+                   /*   $("#ra_viewcnt").text(point.ra_viewcnt); */
                      $("#board").show();
                      getAllList();
                }

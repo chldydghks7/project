@@ -9,6 +9,7 @@
 		from gr_reply a, gr_attach b
 		where a.uid = b.uid and writing_Id = #{writing_Id}
 		order by rno desc
+
 	</select>
 	
 	<insert id = "newReply">

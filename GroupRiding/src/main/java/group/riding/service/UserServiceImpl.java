@@ -12,6 +12,7 @@ import group.riding.bean.MyPicture;
 import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
 import group.riding.bean.UserData;
+import group.riding.bean.UserData2;
 import group.riding.dao.UserDAO;
 import group.riding.dto.LoginDTO;
 
@@ -52,10 +53,22 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<UserData> userData(String uid) throws Exception {
-		// TODO Auto-generated method stub
-		 return dao.userData(uid);
-	}
+	   public List<UserData> userData(String uid,String startDate,String stopDate) throws Exception {
+	      // TODO Auto-generated method stub
+	       return dao.userData(uid,startDate,stopDate);
+	   }
+
+	   @Override
+	   public List<UserData2> userData2(String uid) throws Exception {
+	      // TODO Auto-generated method stub
+	      return dao.userData2(uid);
+	   }
+	   
+	   @Override
+	   public int Ridingdata3(String uid) throws Exception {
+	      // TODO Auto-generated method stub
+	      return dao.Ridingdata3(uid);
+	   }
 
 	@Override
 	public int id_check(String uid) throws Exception {
@@ -90,6 +103,12 @@ public class UserServiceImpl implements UserService {
 	public List<RidingInfo> showhistory(String uid) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.showhistory(uid);
+	}
+
+	@Override
+	public void updateGrData(String startDate, String stopDate,int kmlid,String uid) throws Exception {
+		// TODO Auto-generated method stub
+		dao.updateGrData(startDate, stopDate, kmlid,uid);
 	}
 	
 

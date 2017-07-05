@@ -140,9 +140,13 @@
                         <li class="dropdown-submenu">
                            <a href="calendar?uid=${uid}">Calendar</a>
                         </li>
+<<<<<<< HEAD
                         <li class="dropdown-submenu">
                            <a href="Ridingdata">Riding Data</a>
                         </li>
+=======
+                     
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
                      </ul>
                   </li>
                   <!-- End Blog -->

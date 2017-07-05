@@ -49,4 +49,9 @@ public class RacePointDAOImpl implements RacePointDAO {
 		session.delete(namespace + ".re_delete", ra_reply_id);
 	}
 
+	@Override
+	public List<RacePointBean> race_record(int racepoint_id) throws Exception {
+		return session.selectList(namespace + ".race_record", racepoint_id);
+	}
+
 }

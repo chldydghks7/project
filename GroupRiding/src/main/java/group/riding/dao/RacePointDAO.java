@@ -6,18 +6,20 @@ import group.riding.bean.RacePointBean;
 
 public interface RacePointDAO {
 	
-	public RacePointBean racePoint() throws Exception;	// °ÅÁ¡ °æµµ À§µµ
+	public RacePointBean racePoint() throws Exception;	// ï¿½ï¿½ï¿½ï¿½ ï¿½æµµ ï¿½ï¿½ï¿½ï¿½
 	
-	public RacePointBean pointInfo(int racepoint_id) throws Exception;	// °ÅÁ¡ »ó¼¼
+	public RacePointBean pointInfo(int racepoint_id) throws Exception;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 	
-	public void ra_viewcnt(int racepoint_id) throws Exception;	// ºä Ä«¿îÅÍ
+	public void ra_viewcnt(int racepoint_id) throws Exception;	// ï¿½ï¿½ Ä«ï¿½ï¿½ï¿½ï¿½
 	
 	/////////
-	// ´ñ±Û //
+	// ï¿½ï¿½ï¿½ //
 	////////
-	public void re_insert(RacePointBean rp) throws Exception;	// ´ñ±Û µî·Ï
+	public void re_insert(RacePointBean rp) throws Exception;	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	
-	public List<RacePointBean> re_list(int racepoint_id) throws Exception;	// ´ñ±Û ¸®½ºÆ®
+	public List<RacePointBean> re_list(int racepoint_id) throws Exception;	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 	
-	public void re_delete(int ra_reply_id) throws Exception; // ´ñ±Û »èÁ¦
+	public void re_delete(int ra_reply_id) throws Exception; // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	
+	public List<RacePointBean> race_record(int racepoint_id) throws Exception; // í˜„í™©
 }

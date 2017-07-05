@@ -95,8 +95,17 @@
 				class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
 				<div class="container">
 					<ul class="nav navbar-nav">
+<<<<<<< HEAD
 					<!-- Pages -->
 						<li class="dropdown"><a href="javascript:void(0);"
+=======
+						<!-- Home -->
+						<li class="dropdown "><a href="javascript:void(0);"
+							class="dropdown-toggle" data-toggle="dropdown"> Home </a> <!-- End Home -->
+
+							<!-- Pages -->
+						<li class="dropdown active"><a href="javascript:void(0);"
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
 							class="dropdown-toggle" data-toggle="dropdown"> Group </a>
 							<ul class="dropdown-menu">
 								<!-- About Pages -->
@@ -121,8 +130,7 @@
 							<ul class="dropdown-menu">
 								<li class="dropdown-submenu"><a href="calendar?uid=${uid}">Calendar</a>
 								</li>
-								<li class="dropdown-submenu"><a href="Ridingdata">Riding
-										Data</a></li>
+								
 							</ul></li>
 						<!-- End Blog -->
 

@@ -117,9 +117,7 @@
 								<li class="dropdown-submenu">
 									<a href="calendar">Calendar</a>
 								</li>
-								<li class="dropdown-submenu">
-									<a href="Ridingdata">Riding Data</a>
-								</li>
+								
 							</ul>
 						</li>
 						<!-- End Blog -->

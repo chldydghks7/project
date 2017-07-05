@@ -3,9 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
 <head>
    <title>Pricing | Unify - Responsive Website Template</title>
 
@@ -128,7 +126,11 @@
             <div class="topbar">
                <ul class="loginbar pull-right">
                   <li class="topbar-devider"></li>
+<<<<<<< HEAD
                   <li><a href="logout">Logout</a></li>
+=======
+                 <li><a href="logout">Logout</a></li>
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
                </ul>
             </div>
             <!-- End Topbar -->
@@ -179,9 +181,7 @@
                         <li class="dropdown-submenu">
                            <a href="calendar?uid=${uid}">Calendar</a>
                         </li>
-                        <li class="dropdown-submenu">
-                           <a href="Ridingdata">Riding Data</a>
-                        </li>
+                       
                      </ul>
                   </li>
                   <!-- End Blog -->
@@ -446,7 +446,7 @@
 	        transitionEffect:"resize",
 	        animation:true
 	    }); 
-			map.setCenter(new Tmap.LonLat(14315520.90430,4283115.74626), 11);
+			map.setCenter(new Tmap.LonLat(14318328.536408,4286068.3403217), 15);
 			map.addControl(new Tmap.Control.KeyboardDefaults());
 			map.addControl(new Tmap.Control.MousePosition());
 			// searchRoute();

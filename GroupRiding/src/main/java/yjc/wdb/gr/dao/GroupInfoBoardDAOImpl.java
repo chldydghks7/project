@@ -54,4 +54,10 @@ public class GroupInfoBoardDAOImpl implements GroupInfoBoardDAO {
 		return session.selectList(namespace + ".info_Mater",paramMap);
 	}
 
+	@Override
+	public void updateHit(int writing_id) throws Exception {
+		// TODO Auto-generated method stub
+		 session.update(namespace+".info_view",writing_id);
+	}
+
 }

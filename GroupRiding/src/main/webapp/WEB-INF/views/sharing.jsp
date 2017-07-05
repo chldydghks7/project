@@ -72,6 +72,7 @@
    } */
 
    .reply {
+<<<<<<< HEAD
 		display: inline-block;
 		float: left;
 	}
@@ -81,6 +82,11 @@
 		height: 20px;
 		margin-right: 5px;
 	}
+=======
+      display: inline-block;
+      float: left;
+   }
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
    
    .replyNum {
       width: 3em;
@@ -118,6 +124,7 @@
    }   
    
    #imgDiv {
+<<<<<<< HEAD
    	display: inline-block;
    	margin-left: 10px;
    	width:250px;
@@ -128,6 +135,24 @@
    width:150px !important;
    height:150px  !important;
    
+=======
+      display: inline-block;
+      margin-left: 10px;
+      width:300px;
+      height:250px;
+   }
+   
+   .file{
+   width:300px !important;
+   height:250px  !important;
+   
+   }
+   
+   .replyImg {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
    }
    </style>
 </head>
@@ -510,7 +535,11 @@
          
          ++cnt;
          
+<<<<<<< HEAD
          alert(cnt + ", " + id);
+=======
+       
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
          
          $.ajax({
             url: 'likeShar',
@@ -521,7 +550,11 @@
             },
             success: function(data) {
                if(data) {
+<<<<<<< HEAD
                   alert('성공');
+=======
+                 
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
                }
             },
             error: function() {
@@ -569,7 +602,11 @@
                $(".bbs_id").text( data.writing_Id );
                $(".writer").text("작성자"+ data.member_Id);
                $(".file").attr('src',data.bbs_FilePath);
+<<<<<<< HEAD
                $(".content").attr('src',data.writing_content);
+=======
+               $(".content").text("내용" + data.writing_content);
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
                
                map = new google.maps.Map(document.getElementById('sharmap'));
             
@@ -597,9 +634,15 @@
                         console.log(data);
                         $(data.list).each(function() {
                         	str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
+<<<<<<< HEAD
                  			+ "<img src = '/displayFile?fileName=" + this.fullName + "' class = 'reply replyImg'/>"
                  			+ "<span class = 'reply replyNum'>" + this.uid + " : </span>"
                  			+ "<span class = 'reply replyText'>" + this.replyText + "</span>";
+=======
+                            + "<img src = '/displayFile?fileName=" + this.fullName + "' class = 'reply replyImg'/>"
+                            + "<span class = 'reply replyNum'>" + this.uid + " : </span>"
+                            + "<span class = 'reply replyText'>" + this.replyText + "</span>";
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
                         });
                         $('.timeline').append(str);
                       });
@@ -610,8 +653,12 @@
                    var replyer = $("#uid").val();
                    var replyText = $("#s-reply").val();
                    
+<<<<<<< HEAD
                    alert(id + ", " + replyer + ", " + replyText);
                    
+=======
+                       
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
                    $.ajax({
                      type: 'post',
                      url: 'replies',
@@ -627,8 +674,13 @@
                      }),
                      success: function(result, status) {
                         if(result == "SUCCESS") {
+<<<<<<< HEAD
                         	$('#s-reply').val("");
                         	$('.timeline').html("");
+=======
+                           $('#s-reply').val("");
+                           $('.timeline').html("");
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
                            getAllReplies();
                         }
                      }
@@ -644,6 +696,10 @@
       $(".close").on("click", function() {
          event.preventDefault();
         /*  $(".modal-body").html(""); */
+<<<<<<< HEAD
+=======
+        location.reload();
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
       });
       
       $('#myModal').on('shown.bs.modal', function () {

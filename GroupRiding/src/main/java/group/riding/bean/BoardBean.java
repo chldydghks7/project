@@ -15,6 +15,7 @@ public class BoardBean {
 	private String bbs_FilePath;
 	private String kml_name;
 	
+<<<<<<< HEAD
 	public String getKml_name() {
 		return kml_name;
 	}
@@ -23,6 +24,10 @@ public class BoardBean {
 		this.kml_name = kml_name;
 	}
 
+=======
+	private String kml_name;
+	
+>>>>>>> 47e7e061b9b5be396202aa10d3f3e8a3053c9952
 	public String getBbs_FilePath() {
 		return bbs_FilePath;
 	}
@@ -96,4 +101,14 @@ public class BoardBean {
 	public void setWriting_content(String writing_content) {
 		this.writing_content = writing_content;
 	}
+
+	public String getKml_name() {
+		return kml_name;
+	}
+
+	public void setKml_name(String kml_name) {
+		this.kml_name = kml_name;
+	}
+	
+	
 }

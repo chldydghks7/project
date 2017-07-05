@@ -36,7 +36,9 @@ import group.riding.bean.MyPicture;
 import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
 import group.riding.bean.UserData;
+import group.riding.bean.UserData2;
 import group.riding.dto.LoginDTO;
+import group.riding.service.GroupService;
 import group.riding.service.UserService;
 
 
@@ -45,6 +47,8 @@ public class UserController {
 	
 	@Inject
 	private UserService service;
+	
+
 	
 	@RequestMapping(value="register", method=RequestMethod.GET)	
 	public void getForm(@ModelAttribute UserBean user) {
@@ -80,6 +84,10 @@ public class UserController {
 		session.setAttribute("uname", bean.getUname());
 		session.setAttribute("icon", service.getAttach(bean.getUid()));
 
+		
+		
+		
+		
 		model.addAttribute("userBean", bean);
 		
 		return "success";
@@ -140,24 +148,41 @@ public class UserController {
 		 return callback+"("+json+")";
 	}
 	
-	  @RequestMapping(value = "Ridingdata", method = RequestMethod.GET)
-	   public String ridingdata(Model model,HttpSession session) throws Exception {
-	      
-	      return "Ridingdata";
-	   }
-	   
-	   @RequestMapping(value="Ridingdataget")
-	   @ResponseBody
-	   public List<UserData> ridingdataget(HttpSession session, Model model)throws Exception {
-	       String uid=(String)session.getAttribute("uid");
-	         List<UserData>UserData=service.userData(uid);
-	         
-	         model.addAttribute("size", UserData.size());
-	         model.addAttribute("UserData", UserData);
-	         
-	         return UserData;
-	      
-	   }
+    @RequestMapping(value = "Ridingdata", method = RequestMethod.GET)
+    public String ridingdata(Model model,HttpSession session) throws Exception {
+      String uid=(String)session.getAttribute("uid");
+      int time = service.Ridingdata3(uid);
+      model.addAttribute("time", time);
+
+      
+       return "Ridingdata";
+    }
+    
+    @RequestMapping(value="Ridingdataget")
+    @ResponseBody
+    public List<UserData> ridingdataget(HttpSession session, Model model,String startDate,String stopDate)throws Exception {
+        String uid=(String)session.getAttribute("uid");
+          List<UserData>UserData=service.userData(uid,startDate,stopDate);
+          
+          System.out.println("userdata"+UserData);
+          
+          
+        
+          
+          return UserData;
+    }
+    
+    @RequestMapping(value="Ridingdataget2")
+    @ResponseBody
+    public List<UserData2> ridingdataget2(HttpSession session, Model model)throws Exception {
+        String uid=(String)session.getAttribute("uid");
+          List<UserData2>UserData2=service.userData2(uid);
+          
+          model.addAttribute("size", UserData2.size());
+          model.addAttribute("UserData2", UserData2);
+          
+          return UserData2;
+    }
 	
 	
 	   /**  占쏙옙占싱듸옙 占쌩븝옙 체크 */
@@ -241,9 +266,13 @@ public class UserController {
 		 //�슫�룞�궡�뿭 由ъ뒪�듃 異쒕젰�쐞�빐 �븘�슂 a.kml_name,b.riding_id,b.alltime,b.startDate,b.alldistance,b.avgspeed
 		 @RequestMapping(value="show_history", method=RequestMethod.GET)
 		 @ResponseBody
-		 public String showhistory(String uid,String callback)throws Exception{
+		 public String showhistory(String uid,String callback,HttpSession session)throws Exception{
 			
-			List<RidingInfo> list= service.showhistory(uid);
+			 
+			 
+			 
+			 List<RidingInfo> list= service.showhistory(uid);
+			 
 
 			 
 			 JSONArray j= new JSONArray();
@@ -266,6 +295,8 @@ public class UserController {
 				 json.put("avgspeed", list.get(i).getAvgspeed());
 				 
 				 json.put("Kcal", list.get(i).getKcal());
+				 
+				
 				
 				j.add(json);
 				
@@ -284,7 +315,46 @@ public class UserController {
 			 return callback+"("+jsonresult+")";
 			 
 		 }
+		 @RequestMapping(value="show_history_web", method=RequestMethod.GET)
+		 @ResponseBody
+		 public JSONObject showhistoryweb(HttpSession session)throws Exception{
+			 
+			 String uid=(String)session.getAttribute("uid");
+			 
+			 List<RidingInfo> list= service.showhistory(uid);
+			 
+			 JSONObject json= new JSONObject();
+			 
+			 json.put("history", list);
+			 
+			 return json;
+		 }
 		 
+		 
+		 
+		 
+		 
+		 
+		 @RequestMapping(value="update_gr_data", method=RequestMethod.GET)
+		 @ResponseBody
+		 public String updatedata(String startDate,String stopDate,int kmlid, String callback,String curId)throws Exception{
+			 
+		
+			 service.updateGrData(startDate, stopDate,kmlid,curId);
+			
+			 JSONObject json= new JSONObject();
+			 
+			 json.put("result", "success");
+			 
+	
+			
+			 
+		
+			 
+			 
+			 return callback+"("+json+")";
+			 
+		 }
 		 
 		 
 

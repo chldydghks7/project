@@ -46,4 +46,6 @@ public class BoardReplyBean {
 	public void setReplyText(String replyText) {
 		this.replyText = replyText;
 	}
+
+	
 }
