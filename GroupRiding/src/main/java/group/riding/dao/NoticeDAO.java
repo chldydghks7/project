@@ -7,23 +7,25 @@ import group.riding.bean.RidingInfoBean;
 
 public interface NoticeDAO {
 
-	public void createNotice(NoticeBean nb) throws Exception;	// °øÁö »ý¼º
+	public void createNotice(NoticeBean nb) throws Exception;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
-	public List<NoticeBean> listNotice(String gr_name) throws Exception;	// °øÁö ¸®½ºÆ®
+	public List<NoticeBean> listNotice(String gr_name) throws Exception;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 	
-	public NoticeBean infoNotice(int noticeId) throws Exception;	// °øÁö ÀÎÆ÷
+	public NoticeBean infoNotice(int noticeId) throws Exception;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
-	public List<NoticeBean> userNotice(String uid) throws Exception;	// À¯Àú °øÁö ¸®½ºÆ®
+	public List<NoticeBean> userNotice(String uid) throws Exception;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 	
-	public void joinNotice(NoticeBean nb) throws Exception;	// °øÁö Âü¿©
+	public void joinNotice(NoticeBean nb) throws Exception;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
-	public String joinCheck(int noticeId, String uid) throws Exception;	// Âü¿© Ã¼Å©
+	public String joinCheck(int noticeId, String uid) throws Exception;	// ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 	
-	public List<NoticeBean> noticeCheck(String uid) throws Exception;	// Ã¢Á¶ÁÖ´Ô !! ±×·ì¸í + Âü¿©¿©ºÎ
+	public List<NoticeBean> noticeCheck(String uid) throws Exception;	// Ã¢ï¿½ï¿½ï¿½Ö´ï¿½ !! ï¿½×·ï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	public void updateCheck(NoticeBean nb) throws Exception;	// Âü¿© or ºÒÂü ¾÷µ¥ÀÌÆ®
+	public void updateCheck(NoticeBean nb) throws Exception;	// ï¿½ï¿½ï¿½ï¿½ or ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
 	
 	public List<RidingInfoBean> ridingDate(String uid) throws Exception;	// RidingInfo
 	
 	public RidingInfoBean ridingInfo(int riding_id) throws Exception;	// RidingInfo
+	
+	public List<NoticeBean> getjoininfo(int noticeId,String gr_name)throws Exception;
 }

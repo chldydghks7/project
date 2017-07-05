@@ -9,4 +9,5 @@ public interface BoardReplyDAO {
 	public void newReply(BoardReplyBean reply) throws Exception;
 	public void editReply(BoardReplyBean reply) throws Exception;
 	public void delReply(int rno) throws Exception;
+
 }

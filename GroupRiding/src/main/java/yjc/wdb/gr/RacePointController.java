@@ -1,6 +1,7 @@
 package yjc.wdb.gr;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -23,19 +24,21 @@ public class RacePointController {
 	
 	@RequestMapping(value="racePoint", method=RequestMethod.GET)
 	public void racePoint(Model model) throws Exception {
-		RacePointBean point = service.racePoint();	// °ÅÁ¡ °æµµ, À§µµ
+		RacePointBean point = service.racePoint();	// ï¿½ï¿½ï¿½ï¿½ ï¿½æµµ, ï¿½ï¿½ï¿½ï¿½
 		model.addAttribute("point", point);
 		
+		List<RacePointBean> race_record = service.race_record(point.getRacepoint_id());
+		model.addAttribute("race_record", race_record);
 	}
 	
-	/** °ÅÁ¡ »ó¼¼ */
+	/** ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ */
 	int click = 1;
-	@RequestMapping("pointInfo")
+	@RequestMapping(value="pointInfo", method=RequestMethod.GET)
 	 @ResponseBody
 	 public Map<String, Object> pointInfo(@RequestParam(value="racepoint_id") int racepoint_id, Model model) throws Exception {
-		  
+		  System.out.println(racepoint_id);
 			if(click==1) {
-				service.ra_viewcnt(racepoint_id);	// ºä Ä«¿îÆ®
+				service.ra_viewcnt(racepoint_id);	// ï¿½ï¿½ Ä«ï¿½ï¿½Æ®
 				click += 1;
 			} 
 		
@@ -45,7 +48,7 @@ public class RacePointController {
 		   	
 		  resultMap.put("pointInfo", pointInfo);
 		 
-		  System.out.println("asd : " + pointInfo.getRa_title());
+		  System.out.println("asd : " + racepoint_id);
 		  
 		  return resultMap;
 		 } 

@@ -11,6 +11,7 @@
 		<typeAlias alias="BoardReplyBean" type="group.riding.bean.BoardReplyBean"/>
 		<typeAlias type="yjc.wdb.gr.bean.GroupInfoBoard" alias="GroupInfoBoard"/>
 		<typeAlias alias="UserData" type="group.riding.bean.UserData"/>
+        <typeAlias alias="UserData2" type="group.riding.bean.UserData2"/>
 		<typeAlias alias="NoticeBean" type="group.riding.bean.NoticeBean"/>
 		<typeAlias alias="MapBean" type="group.riding.bean.MapBean"/>
 		<typeAlias alias="GroupInfoList" type="yjc.wdb.gr.bean.GroupInfoList"/>

@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import group.riding.bean.BoardBean;
 import group.riding.bean.MapBean;
 
 @Repository
@@ -27,6 +28,12 @@ public class MapDAOImpl implements MapDAO {
 	public MapBean makerRead(String place_name) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace + ".makerRead", place_name);
+	}
+
+	@Override
+	public void likeUpdate(MapBean map) throws Exception {
+		// TODO Auto-generated method stub
+		session.update(namespace + ".likeUpdate", map);
 	}
 
 }

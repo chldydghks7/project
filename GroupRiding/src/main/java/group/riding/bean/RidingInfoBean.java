@@ -10,6 +10,8 @@ public class RidingInfoBean {
 	private int kml_id;
 	private int kcal;
 	
+	private String kml_name;
+	
 	// gr_data
 	private double speed;
 	private double altitude;
@@ -80,7 +82,13 @@ public class RidingInfoBean {
 	public void setData_date(String data_date) {
 		this.data_date = data_date;
 	}
-
+	public String getKml_name() {
+		return kml_name;
+	}
+	public void setKml_name(String kml_name) {
+		this.kml_name = kml_name;
+	}
+	
 	
 	
 	

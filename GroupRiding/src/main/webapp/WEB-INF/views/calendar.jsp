@@ -134,7 +134,7 @@
             <div class="topbar">
                <ul class="loginbar pull-right">
                   <li class="topbar-devider"></li>
-                  <li><a href="page_login.html">Login</a></li>
+                <li><a href="logout">Logout</a></li>
                </ul>
             </div>
             <!-- End Topbar -->
@@ -152,7 +152,7 @@
             <div class="container">
                <ul class="nav navbar-nav">
                   <!-- Home -->
-                  <li class="dropdown active">
+                  <li class="dropdown ">
                      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                         Home
                      </a>
@@ -184,7 +184,7 @@
                   <!-- End Pages -->
 
                   <!-- Blog -->
-                  <li class="dropdown">
+                  <li class="dropdown active">
                      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                         Info
                      </a>
@@ -192,9 +192,7 @@
                         <li class="dropdown-submenu">
                            <a href="calendar">Calendar</a>
                         </li>
-                        <li class="dropdown-submenu">
-                           <a href="Ridingdata">Riding Data</a>
-                        </li>
+                       
                      </ul>
                   </li>
                   <!-- End Blog -->
@@ -471,7 +469,7 @@
 				<c:forEach items="${list}" var="i">
 					
 					{
-						title: "${i.notice_title} 그룹 : ${i.gr_name}",
+						title: "${i.notice_title} 그룹 : ${i.gr_name} (${joinCheck})",
 						start: "${i.ridingDate}",
 						url: "noticeInfo?noticeId=${i.noticeId}&uid=${uid}"
 					},
@@ -505,7 +503,14 @@
 	
 </script>
 
-
+<script>
+	var joinCheck = "${joinCheck}";
+	if(joinCheck == "참여") {
+		
+	} else if(joinCheck == "불참"){
+		
+	}
+</script>
 
 <!--[if lt IE 9]>
    <script src="assets/plugins/respond.js"></script>

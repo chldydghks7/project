@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -130,8 +131,17 @@ public class GroupController {
 	
 	@RequestMapping(value = "groupInfo", method = RequestMethod.GET) // 그룹
 	public String gr_info(@RequestParam(value ="gr_id") String gr_id, @RequestParam(value ="uid") String uid, @RequestParam(value = "gr_name") String gr_name, 
-			RedirectAttributes rttr, Model model, GroupBean gr, HttpSession session) throws Exception {
+			RedirectAttributes rttr, Model model, GroupBean gr, HttpSession session,HttpServletRequest request) throws Exception {
+		request.setCharacterEncoding("UTF-8");
+		
 		int pasor = Integer.parseInt(gr_id); 
+		
+		
+		
+		System.out.println("그룹아이디"+pasor);
+		System.out.println("그룹이름"+ gr_name);
+		System.out.println("내아이디"+  uid);
+		
 		gr = service.gr_info(gr_name);
 		int people = service.gr_people(gr_name);
 		
@@ -141,7 +151,8 @@ public class GroupController {
 		String leader = service.leaderNotice(uid, gr_name);	// 그룹장만 공지
 		model.addAttribute("leader", leader);	// 그룹장만 공지
 		model.addAttribute("people", people);
-		gr.setGr_id(pasor);
+		
+       gr.setGr_id(pasor);
 		
 		model.addAttribute("group", gr);
 
@@ -286,6 +297,16 @@ public class GroupController {
 	  resultMap.put("resultMsg", resultMsg);
 	  
 	  return resultMap;
-	 } 
+	 }
+	 
+	 @RequestMapping(value = "groupInfo_view", method = RequestMethod.POST)
+	   @ResponseBody
+	   public void groupInfo_view(@RequestParam(value="id") int id) throws Exception{
+	      
+	      infoboardservice.updateHit(id);
+	   }
+	 
+	 
+
 	
 }

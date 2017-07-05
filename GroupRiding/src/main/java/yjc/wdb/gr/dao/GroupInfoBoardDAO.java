@@ -18,4 +18,7 @@ public interface GroupInfoBoardDAO {
 	
 	public List<GroupInfoBoard> listAll_Master(String gid, String gname)throws Exception;
 	
+	public void updateHit(int writing_id)throws Exception;
+	
+	
 }

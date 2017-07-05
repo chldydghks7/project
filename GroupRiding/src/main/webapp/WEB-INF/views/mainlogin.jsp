@@ -94,7 +94,6 @@
 											<form action="logout" method="get">
 												<button type="submit" class="btn-u"><i class="icon-user"></i> Logout</button>
 											</form>
-										<span class="shc-total">Total: <strong>$0.00</strong></span>
 									</div>
 								</li>
 							</ul>
@@ -106,15 +105,7 @@
 					<div class="collapse navbar-collapse navbar-responsive-collapse">
 						<div class="menu-container">
 							<ul class="nav navbar-nav">
-								<!-- Home -->
-								<li class="dropdown active">
-									<a href="main" class="dropdown-toggle" data-toggle="dropdown">
-										Home
-									</a>
-								</li>
-								<!-- End Home -->
-
-								<!-- Pages -->
+							<!-- Pages -->
 								<li class="dropdown">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
 										Group
@@ -123,9 +114,7 @@
 									<ul class="dropdown-menu">
 										<li><a href="groupList">Group List</a></li>
 										<li><a href="groupRank">Ranking</a></li>
-										<li class="dropdown-submenu">
-                          	<a href="racePoint">RacePoint</a>
-                       	</li>
+										<li><a href="racePoint">RacePoint</a></li>
 									</ul>
 									
 								</li>
@@ -138,7 +127,7 @@
 									</a>
 									<ul class="dropdown-menu">
 										<li><a href="calendar?uid=${uid}">Calendar</a></li>
-										<li><a href="Ridingdata">Riding Data</a></li>
+										
 									</ul>
 									
 								</li>

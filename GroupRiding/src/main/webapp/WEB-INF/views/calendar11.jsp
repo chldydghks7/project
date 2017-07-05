@@ -52,7 +52,7 @@
 				<c:forEach items="${list}" var="i">
 					
 					{
-						title: "${i.notice_title} 그룹 : ${i.gr_name} (${i.joing})",
+						title: "${i.notice_title} 그룹 : ${i.gr_name} (${joinCheck})",
 						start: "${i.ridingDate}",
 						url: "noticeInfo?noticeId=${i.noticeId}&uid=${uid}"
 					},
@@ -69,4 +69,11 @@
 	</c:forEach> */
 </script>
 
-
+<script>
+	var joinCheck = "${joinCheck}";
+	if(joinCheck == "참여") {
+		
+	} else if(joinCheck == "불참"){
+		
+	}
+</script>

@@ -9,6 +9,7 @@ public class RidingInfo {
 	private Double avgspeed;
 	private int kml_id;
 	private int riding_id;
+	private int Kcal;
 	
 	
 	public String getUid() {
@@ -60,6 +61,13 @@ public class RidingInfo {
 	public void setRiding_id(int riding_id) {
 		this.riding_id = riding_id;
 	}
+	public int getKcal() {
+		return Kcal;
+	}
+	public void setKcal(int kcal) {
+		Kcal = kcal;
+	}
+
 	
 	
 	

@@ -36,8 +36,25 @@
 		where a.uid=#{uid}
 	</select>
 	
-	<select id="Ridingdata" resultType="UserData">
-      select * from gr_data where uid=#{uid}
+<select id="Ridingdata" resultType="UserData">
+<![CDATA[
+      select speed, uid, altitude from gr_data where uid=#{uid}
+      and data_date <= STR_TO_DATE(#{stopDate},'%Y-%m-%d %H:%i:%S')
+	and data_date >= STR_TO_DATE(#{startDate},'%Y-%m-%d %H:%i:%S')
+	]]>
+	
+   </select>
+
+   
+      <select id="Ridingdata2" resultType="UserData2">
+      select alltime, alldistance, Kcal  
+   		from gr_ridinginfo 
+   		where uid=#{uid}
+  		 LIMIT 1
+   </select>
+   
+   <select id="Ridingdata3" resultType="int">
+     select count(*) from gr_data where uid=#{uid}
    </select>
 	
 	<!-- 아이디 중복체크 -->
@@ -50,13 +67,13 @@
 	
 	<!-- kml 파일명 삽입-->
 	<insert id="insert_kml">
-	 insert into gr_kml(kml_name) values(#{kml})	
+	 insert into gr_kml(kml_name) values(#{kml_name})	
 	
 	</insert>
 	
 	<!-- 라이딩 인포 테이블 삽입-->
 	<insert id="insert_riding_info">
-	insert into gr_ridinginfo(uid,alltime,startDate,alldistance,avgspeed,kml_id) values(#{uid},#{alltime},#{startDate},#{alldistance},#{avgspeed},#{kml_id})
+	insert into gr_ridinginfo(uid,alltime,startDate,alldistance,avgspeed,kml_id,Kcal) values(#{uid},#{alltime},#{startDate},#{alldistance},#{avgspeed},#{kml_id},#{Kcal})
 	
 	</insert>
 	
@@ -67,14 +84,29 @@
 
 	<!-- kml id 삽입 위해 조회-->
 	<select id="selectkmlid" resultType="Integer">
-	select kml_id from gr_kml order by kml_id desc;
+	
+		select kml_id from gr_kml order by kml_id desc
+		limit 1
+
 	</select>
 	
 	<!-- 앱 화면중 운동내역을 보기위해서써야함-->
 	<select id="showhistory" resultType="RidingInfo">
-	select a.kml_name,b.riding_id,b.alltime,b.startDate,b.alldistance,b.avgspeed
+	select a.kml_name,b.riding_id,b.alltime,b.startDate,b.alldistance,b.avgspeed,b.Kcal
  		from gr_kml a, gr_ridinginfo b
 		where a.kml_id=b.kml_id
 		and b.uid=#{uid}
+		order by b.startDate desc
 	</select>
+	
+	<!-- 업데이트 gr_data-->
+	<update id="update_gr_data">
+	<![CDATA[
+	update gr_data set kml_id=#{kmlid} where data_date <= STR_TO_DATE(#{stopDate},'%Y-%m-%d %H:%i:%S')
+	and data_date >= STR_TO_DATE(#{startDate},'%Y-%m-%d %H:%i:%S') and uid=#{uid}
+	]]>
+	
+	</update>
+	
+	
 </mapper>

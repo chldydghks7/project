@@ -39,7 +39,10 @@ public class BoardController {
    @RequestMapping(value = "readShar", method = RequestMethod.GET)
    public BoardBean readShar(Model model, @RequestParam(value = "writing_Id", defaultValue = "-1") int writing_Id) throws Exception {
       System.out.println(writing_Id);
+      
       BoardBean bb = service.sharRead(writing_Id);
+      
+      System.out.println(bb.getKml_name());
       model.addAttribute("read", bb);
       
       return bb;
