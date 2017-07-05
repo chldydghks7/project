@@ -47,12 +47,5 @@ public class BoardReplyBean {
 		this.replyText = replyText;
 	}
 
-	public String getFullName() {
-		return fullName;
-	}
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
 	
 }
