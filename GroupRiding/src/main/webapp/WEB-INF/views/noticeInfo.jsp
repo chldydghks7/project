@@ -130,7 +130,7 @@
             <div class="topbar">
                <ul class="loginbar pull-right">
                   <li class="topbar-devider"></li>
-                  <li><a href="page_login.html">Login</a></li>
+                  <li><a href="logout">Logout</a></li>
                </ul>
             </div>
             <!-- End Topbar -->
@@ -147,14 +147,7 @@
          <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
             <div class="container">
                <ul class="nav navbar-nav">
-                  <!-- Home -->
-                  <li class="dropdown active">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Home
-                     </a>
-                  <!-- End Home -->
-
-                  <!-- Pages -->
+                 <!-- Pages -->
                   <li class="dropdown">
                      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                         Group

@@ -94,7 +94,6 @@
 											<form action="logout" method="get">
 												<button type="submit" class="btn-u"><i class="icon-user"></i> Logout</button>
 											</form>
-										<span class="shc-total">Total: <strong>$0.00</strong></span>
 									</div>
 								</li>
 							</ul>
@@ -106,15 +105,7 @@
 					<div class="collapse navbar-collapse navbar-responsive-collapse">
 						<div class="menu-container">
 							<ul class="nav navbar-nav">
-								<!-- Home -->
-								<li class="dropdown active">
-									<a href="main" class="dropdown-toggle" data-toggle="dropdown">
-										Home
-									</a>
-								</li>
-								<!-- End Home -->
-
-								<!-- Pages -->
+							<!-- Pages -->
 								<li class="dropdown">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
 										Group

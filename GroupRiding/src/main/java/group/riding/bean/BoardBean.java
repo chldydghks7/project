@@ -13,7 +13,16 @@ public class BoardBean {
 	private String writing_content;
 	
 	private String bbs_FilePath;
+	private String kml_name;
 	
+	public String getKml_name() {
+		return kml_name;
+	}
+
+	public void setKml_name(String kml_name) {
+		this.kml_name = kml_name;
+	}
+
 	public String getBbs_FilePath() {
 		return bbs_FilePath;
 	}

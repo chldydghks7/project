@@ -17,7 +17,7 @@
     </select>
     
     <select id="sharRead" resultType="BoardBean">
-       select a.writing_title, a.writing_content, a.writing_Id, a.member_Id, b.bbs_FilePath
+      select a.writing_title, a.writing_content, a.writing_Id, a.member_Id, b.bbs_FilePath, b.kml_name
       from bbs_writing a, bbs_File b
       where a.writing_Id = b.writing_Id and a.writing_Id = #{writing_Id}
     </select>

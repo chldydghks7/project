@@ -46,8 +46,8 @@
          width: 30px;
       }
       #s-img {
-      	 width: 550px;
-         height: 300px;
+          width: 250px;
+         height: 250px;
       }
       #s-reply {
          width: 450px;
@@ -58,20 +58,20 @@
          height: 780px;
       }
       .s-content {
-      	height: 400px;
+         height: 400px;
       }
       
       .likeCnt {
-      	width: 20px;
-      	height: 20px;
-      	cursor: pointer;
+         width: 20px;
+         height: 20px;
+         cursor: pointer;
       }
       
     /* #replyContainer {
-		position: relative;
-	} */
+      position: relative;
+   } */
 
-	.reply {
+   .reply {
 		display: inline-block;
 		float: left;
 	}
@@ -81,35 +81,54 @@
 		height: 20px;
 		margin-right: 5px;
 	}
-	
-	.replyNum {
-		width: 3em;
-	}
-	
-	.replyWriter {
-		width: 10em;
-	}
-	
-	.replyText {
-		width: 30em;
-		height: 3em;
-		overflow: auto;
-		margin-right: 10px;
-	}
-	
-	.replyLI {
-		margin-bottom: 2em;
-		list-style-type: none;
-		clear: both;
-	}
-	.rList {
-		list-style-type: none;
-	}
-	
-	.logo, .footer-logo {
-			width: 200px;
-			heigth: 100px;
-		}
+   
+   .replyNum {
+      width: 3em;
+   }
+   
+   .replyWriter {
+      width: 10em;
+   }
+   
+   .replyText {
+      width: 30em;
+      height: 3em;
+      overflow: auto;
+      margin-right: 10px;
+   }
+   
+   .replyLI {
+      margin-bottom: 2em;
+      list-style-type: none;
+      clear: both;
+   }
+   .rList {
+      list-style-type: none;
+   }
+   
+   .logo, .footer-logo {
+         width: 200px;
+         heigth: 100px;
+      }
+      
+   #sharmap{
+   width:250px;
+   height:250px;
+   float: left;
+   }   
+   
+   #imgDiv {
+   	display: inline-block;
+   	margin-left: 10px;
+   	width:250px;
+   	height:250px;
+   }
+   
+   .file{
+   width:150px !important;
+   height:150px  !important;
+   
+   }
    </style>
 </head>
 
@@ -128,7 +147,7 @@
             <div class="topbar">
                <ul class="loginbar pull-right">
                   <li class="topbar-devider"></li>
-                  <li><a href="page_login.html">Login</a></li>
+                  <li><a href="logout">Logout</a></li>
                </ul>
             </div>
             <!-- End Topbar -->
@@ -145,14 +164,7 @@
          <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
             <div class="container">
                <ul class="nav navbar-nav">
-                  <!-- Home -->
-                  <li class="dropdown active">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Home
-                     </a>
-                  <!-- End Home -->
-
-                  <!-- Pages -->
+                 <!-- Pages -->
                   <li class="dropdown">
                      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                         Group
@@ -169,8 +181,8 @@
                            <a href="groupRank">Ranking</a>
                         </li>
                         <li class="dropdown-submenu">
-                          	<a href="racePoint">RacePoint</a>
-                       	</li>
+                             <a href="racePoint">RacePoint</a>
+                          </li>
                         <!-- End Service Pages -->
                      </ul>
                   </li>
@@ -242,7 +254,7 @@
       <!--=== Breadcrumbs ===-->
       <div class="breadcrumbs">
          <div class="container">
-            <h1 class="pull-left">SHARING</h1>
+            <h1 class="pull-left">Sharing</h1>
             <ul class="pull-right breadcrumb">
                <li><a href="/">Home</a></li>
                <li class="active">Sharing</li>
@@ -417,10 +429,13 @@
     <div id = "myModal" class = "modal fade" role = "dialog">
       <div class = "modal-dialog">
          <div class = "modal-content">
+         
             <div class="modal-header">
                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                
             </div>
             <div class="modal-body">
+           
                <%-- <p style="float: left">제목: ${read.writing_title}</p>
                <br>
                <hr>
@@ -431,7 +446,26 @@
                <div id="s-content">
                   <p>내용 : ${read.writing_content}</p>
                   <p>글번호 : ${read.writing_Id}</p>
-               </div> --%>
+               </div> 
+                /* var html = "";
+               html = "<h3 style = 'float: left'>제목 : " + data.writing_title + "</h3>"
+                      + "<p style = 'display: none;' id = 'w_id'>" + data.writing_Id + "</p>"
+                      + "<p style = 'float: right;'>작성자 : " + data.member_Id + "</p><br>"
+                     + "<hr><div><img id = 's-img' src = '"+ data.bbs_FilePath + "'></div>"
+                     + "<hr><div id = 's-content'>내용 : " + data.writing_content + "</div><hr>"
+                     + "<div><ul class = 'timeline'></ul></div>";
+               
+               --%>
+               
+               <h3 style = 'float: left' class='title'>제목 : </h3>
+               <p style = 'display: none;' id = 'w_id' class='bbs_id'></p>
+               <p style = 'float: right;' class='writer'>작성자 : </p><br><hr>
+               <div id="sharmap"></div>
+               <div id = "imgDiv"><img class='file' id = 's-img' src = ''></div>
+               <hr><div class='content' id = 's-content'>내용 :</div><hr>
+               <div><ul class = 'timeline'></ul></div>
+                     
+              
             </div>
             <div class="modal-footer">
                <!-- <img src="./resources/img/hearts.png" id="like"> -->
@@ -458,42 +492,42 @@
    <script type="text/javascript" src="./resources/assets/js/plugins/style-switcher.js"></script>
    <script type="text/javascript" src="./resources/assets/js/plugins/fancy-box.js"></script>
    <script type="text/javascript" src="./resources/js/upload.js"></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyQjki7axvtCvqFULjxcicQimSUtg0tvk">
+    </script>   
    <script type="text/javascript">
       jQuery(document).ready(function() {
          App.init();
          StyleSwitcher.initStyleSwitcher();
       });
-      
+      var map;
       var form = $("#form");
       
-      
-      
+
       $(".likeCnt").on("click", function() {
-    	  event.preventDefault();
-    	  var id = $(this).prev().text();
-    	  var cnt = $(this).next().text();
-    	  
-    	  ++cnt;
-    	  
-    	  alert(cnt + ", " + id);
-    	  
-    	  $.ajax({
-    		  url: 'likeShar',
-    		  type: 'post',
-    		  data: {
-    			  writing_Id: id,
-    			  view_Number: cnt
-    		  },
-    		  success: function(data) {
-    			  if(data) {
-    				  alert('성공');
-    				  location.reload();
-    			  }
-    		  },
-    		  error: function() {
-    			  alert('실패');
-    		  }
-    	  });
+         event.preventDefault();
+         var id = $(this).prev().text();
+         var cnt = $(this).next().text();
+         
+         ++cnt;
+         
+         alert(cnt + ", " + id);
+         
+         $.ajax({
+            url: 'likeShar',
+            type: 'post',
+            data: {
+               writing_Id: id,
+               view_Number: cnt
+            },
+            success: function(data) {
+               if(data) {
+                  alert('성공');
+               }
+            },
+            error: function() {
+               alert('실패');
+            }
+         });
       });
       
       $("#newBtn").on("click", function() {
@@ -505,7 +539,7 @@
       $(".test").on("click", function () {
          event.preventDefault();
          var   title = $(this).attr("href");
-         alert(title);
+     
          /* form.attr("action", "sharing");
          form.attr("method", "get");
          $("<input type = 'text' name = 'writing_Id' value = '" + title + "'>").appendTo(form);
@@ -518,65 +552,88 @@
                writing_Id: title
             },
             success: function(data) {
-               if(data) {
-                  alert('전송');
+              
                   console.log(data);
-               }
-               var html = "";
+              
+               /* var html = "";
                html = "<h3 style = 'float: left'>제목 : " + data.writing_title + "</h3>"
-               		 + "<p style = 'display: none;' id = 'w_id'>" + data.writing_Id + "</p>"
-               		 + "<p style = 'float: right;'>작성자 : " + data.member_Id + "</p><br>"
+                      + "<p style = 'display: none;' id = 'w_id'>" + data.writing_Id + "</p>"
+                      + "<p style = 'float: right;'>작성자 : " + data.member_Id + "</p><br>"
                      + "<hr><div><img id = 's-img' src = '"+ data.bbs_FilePath + "'></div>"
                      + "<hr><div id = 's-content'>내용 : " + data.writing_content + "</div><hr>"
                      + "<div><ul class = 'timeline'></ul></div>";
                      
-               $(".modal-body").append(html);      
+               $(".modal-body").append(html);   */
+               
+               $(".title").text("제목"+data.writing_title);
+               $(".bbs_id").text( data.writing_Id );
+               $(".writer").text("작성자"+ data.member_Id);
+               $(".file").attr('src',data.bbs_FilePath);
+               $(".content").attr('src',data.writing_content);
+               
+               map = new google.maps.Map(document.getElementById('sharmap'));
+            
+            var ctaLayer = new google.maps.KmlLayer({
+                  url: 'http://39.121.239.182:8080/can/resources/'+data.kml_name,
+                  map: map
+                });
+           
+             var refresh = function() {
+                   var center = detailmap.getCenter();
+                       google.maps.event.trigger(detailmap, "resize");
+                       detailmap.setCenter(center);
+                      detailmap.setZoom(16);
+                   }
+                   setTimeout(refresh, 100);
+               
+               
+               
                
                getAllReplies();
                
                function getAllReplies() {
-            	   $.getJSON("replies/all/" + title, function(data) {
-                    	 var str = ""; 
-                    	 console.log(data);
-                    	 $(data.list).each(function() {
-                    		str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
-                    			+ "<img src = '/displayFile?fileName=" + this.fullName + "' class = 'reply replyImg'/>"
-                    			+ "<span class = 'reply replyNum'>" + this.uid + " : </span>"
-                    			+ "<span class = 'reply replyText'>" + this.replyText + "</span>";
-                    	 });
-                    	 $('.timeline').append(str);
+                  $.getJSON("replies/all/" + title, function(data) {
+                        var str = ""; 
+                        console.log(data);
+                        $(data.list).each(function() {
+                        	str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
+                 			+ "<img src = '/displayFile?fileName=" + this.fullName + "' class = 'reply replyImg'/>"
+                 			+ "<span class = 'reply replyNum'>" + this.uid + " : </span>"
+                 			+ "<span class = 'reply replyText'>" + this.replyText + "</span>";
+                        });
+                        $('.timeline').append(str);
                       });
                }
                
                $("#addReply").on("click", function() {
-              	 var id = $("#w_id").text();
-              	 var replyer = $("#uid").val();
-              	 var replyText = $("#s-reply").val();
-              	 
-              	 alert(id + ", " + replyer + ", " + replyText);
-              	 
-              	 $.ajax({
-              		type: 'post',
-              		url: 'replies',
-              		headers: {
-              			"content-Type" : "application/json",
-          				"X-HTTP-Method-Override" : "POST"
-              		},
-              		dataType: 'text',
-              		data: JSON.stringify({
-              			writing_Id: id,
-              			uid: replyer,
-              			replyText: replyText
-              		}),
-              		success: function(result, status) {
-              			if(result == "SUCCESS") {
-              				$("#s-reply").val("");
-              				$(".timeline").html("");
-              				getAllReplies();
-              			}
-              		}
-              	 });
-                });
+                   var id = $("#w_id").text();
+                   var replyer = $("#uid").val();
+                   var replyText = $("#s-reply").val();
+                   
+                   alert(id + ", " + replyer + ", " + replyText);
+                   
+                   $.ajax({
+                     type: 'post',
+                     url: 'replies',
+                     headers: {
+                        "content-Type" : "application/json",
+                       "X-HTTP-Method-Override" : "POST"
+                     },
+                     dataType: 'text',
+                     data: JSON.stringify({
+                        writing_Id: id,
+                        uid: replyer,
+                        replyText: replyText
+                     }),
+                     success: function(result, status) {
+                        if(result == "SUCCESS") {
+                        	$('#s-reply').val("");
+                        	$('.timeline').html("");
+                           getAllReplies();
+                        }
+                     }
+                   });
+                 });
             },
             error: function() {
                alert('에러');
@@ -586,8 +643,20 @@
       
       $(".close").on("click", function() {
          event.preventDefault();
-         $(".modal-body").html("");
+        /*  $(".modal-body").html(""); */
       });
+      
+      $('#myModal').on('shown.bs.modal', function () {
+         google.maps.event.trigger(map, 'resize'); 
+         var refresh = function() {
+              //var center = map.getCenter();
+                  map.setCenter(new google.maps.LatLng(35.896553, 128.622051));
+                 map.setZoom(17);
+              }
+              setTimeout(refresh, 500); 
+
+       })
+
    </script>
 <!--[if lt IE 9]>
    <script src="assets/plugins/respond.js"></script>

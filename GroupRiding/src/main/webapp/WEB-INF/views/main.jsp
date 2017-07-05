@@ -86,15 +86,7 @@
                <div class="collapse navbar-collapse navbar-responsive-collapse">
                   <div class="menu-container">
                      <ul class="nav navbar-nav">
-                        <!-- Home -->
-                        <li class="dropdown active">
-                           <a href="main" class="dropdown-toggle" data-toggle="dropdown">
-                              Home
-                           </a>
-                        </li>
-                        <!-- End Home -->
-
-                        <!-- Pages -->
+                      <!-- Pages -->
                         <li class="dropdown">
                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                               Group
