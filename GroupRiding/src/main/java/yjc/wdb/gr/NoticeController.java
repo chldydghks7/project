@@ -7,15 +7,14 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import group.riding.bean.NoticeBean;
 import group.riding.bean.RidingInfoBean;
 import group.riding.service.NoticeService;
+import group.riding.service.RidingInfoService11;
 
 
 @Controller
@@ -23,12 +22,16 @@ public class NoticeController {
 
 	@Inject
 	private NoticeService service;
+	
+	@Inject
+	private RidingInfoService11 ridingInfoservice;
 
 	@RequestMapping(value="createNotice", method=RequestMethod.GET)
 	public void createNotice(String gr_id, String gr_name, Model model) {
 		model.addAttribute("gr_id", gr_id);
 		
 		model.addAttribute("gr_name", gr_name);
+		System.out.println("grgrgr : " + gr_name);
 	}
 	
 	@RequestMapping(value="createNotice", method=RequestMethod.POST)
@@ -58,7 +61,7 @@ public class NoticeController {
 	public void  userNotice(@RequestParam(value="uid") String uid, Model model) throws Exception{
 		List<NoticeBean> list = service.userNotice(uid);
 		List<NoticeBean> llll = service.noticeCheck(uid);	// √¢¡∂¡÷¥‘§∑§±§∑
-		List<RidingInfoBean> iiii =service.ridingDate(uid);
+		List<RidingInfoBean> iiii =service.ridingDate(uid);	// ∞≥¿Œ ∂Û¿Ãµ˘
 		model.addAttribute("llll", llll);	// √¢¡∂¡÷¥‘§∑§±§∑
 		model.addAttribute("list", list);
 		model.addAttribute("iiii", iiii);	// ∂Û¿Ãµ˘ ¿Œ∆˜
@@ -89,12 +92,15 @@ public class NoticeController {
 	@RequestMapping(value="ridingInfo", method=RequestMethod.GET)	// Í∑∏Î£π ?ÉÅ?Ñ∏
 	public void ridingInfo(@RequestParam(value="riding_id") int riding_id, @RequestParam(value="uid") String uid, Model model) throws Exception {
 		RidingInfoBean rInfo = service.ridingInfo(riding_id);
-		
+
+		List<RidingInfoBean> grap = ridingInfoservice.grap(rInfo.getKml_id());
+		model.addAttribute("grap", grap);
+	
 		model.addAttribute("rInfo", rInfo);
 		
 	}
 	
-	
+
 	
 	
 	

@@ -21,10 +21,18 @@
  		where noticeId= #{noticeId}
 	</select>
 	
-	<select id="userNotice" resultType="NoticeBean">
+	<select id="userNotice" resultType="NoticeBean">	<!--  개인 캘린더 -->
 		select * from gr_notice, gr_gr
 		where gr_notice.gr_name = gr_gr.gr_name 
 		and gr_gr.uid=#{uid};
+		<!-- select *
+		from gr_notice n 
+		left join gr_usernotijoin u
+		on n.noticeId = u.noticeId
+		left join gr_gr g
+		on n.gr_name = g.gr_name
+		where g.uid=#{uid}
+		and u.uid=#{uid}; -->
 	</select>
 	
 	<!-- 공지 참여 -->

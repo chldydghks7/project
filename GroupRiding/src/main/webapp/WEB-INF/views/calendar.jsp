@@ -471,7 +471,7 @@
 				<c:forEach items="${list}" var="i">
 					
 					{
-						title: "${i.notice_title} 그룹 : ${i.gr_name} (${joinCheck})",
+						title: "${i.notice_title} 그룹 : ${i.gr_name}",
 						start: "${i.ridingDate}",
 						url: "noticeInfo?noticeId=${i.noticeId}&uid=${uid}"
 					},
@@ -505,14 +505,7 @@
 	
 </script>
 
-<script>
-	var joinCheck = "${joinCheck}";
-	if(joinCheck == "참여") {
-		
-	} else if(joinCheck == "불참"){
-		
-	}
-</script>
+
 
 <!--[if lt IE 9]>
    <script src="assets/plugins/respond.js"></script>

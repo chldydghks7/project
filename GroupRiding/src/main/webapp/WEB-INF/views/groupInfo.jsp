@@ -415,11 +415,11 @@ b_container {
 						<!-- Blog All Posts -->
 						<div class="col-md-9">
 							<!----- 그룹 캘린더 --------------------------------------------------------------------------->
-							<div id="map11" class="col-md-13" style="z-index:1;">
+							<div id="map11" class="col-md-13" >
 								<div class="news-v3 bg-color-white margin-bottom-60">
 									<h2>${group.gr_name}의최근라이딩</h2>
 									<!-- 슬라이드 -->
-									<a id="mm" href="#" ><div id="map_div"></div></a>
+									<a id="mm" href="#" style="z-index:1;"><div id="map_div"></div></a>
 									<button id="click1">1</button>
 									<button id="click2">2</button>
 									<button id="click3">3</button>
@@ -473,7 +473,7 @@ b_container {
 								<a href="javascript:ViewLayer();">등록</a>
 								</c:if>
 								
-								<div id="Pop" style="position: absolute; left: 100px; top: 520px; width: 1000px; height: 600px; z-index: 2; display: none; background: #3d3d3d; color: #fff;">
+								<div id="Pop" style="position: absolute; left: 100px; top: 520px; width: 1000px; height: 600px; z-index: 100 !important; display: none; background: #3d3d3d; color: #fff;">
 
 									<a href="javascript:ViewClose();"> <img id="popLogo"
 										src="./resources/img/cancelcel.png" /></a>
@@ -499,7 +499,7 @@ b_container {
 								</div>
 
 
-								<div id="Pop_Re" style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 100 !important; display: none; margin: 5% 5%; background: #101010; color: #fff;">
+								<div id="Pop_Re" style="position: absolute; left: 100px; top: 520px; width: 1000px; height: 600px; z-index: 100 !important; display: none; margin: 5% 5%; background: #101010; color: #fff;">
 
 									<a href="javascript:ViewClose2();"> <img id="popLogo"
 										src="./resources/img/cancelcel.png" /></a>
@@ -522,7 +522,7 @@ b_container {
 								</div>
 								
 								<div id="Pop_Re_Modify"
-									style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index:100 !important; display: none; background: red; color: #fff;">
+									style="position: absolute; left: 100px; top: 520px; width: 1000px; height: 600px; z-index:100 !important; display: none; background: red; color: #fff;">
 									<a href="javascript:ViewClose3();"> <img id="popLogo"
 										src="./resources/img/cancelcel.png" /></a>
 									<form method="post"
