@@ -22,17 +22,14 @@
 	</select>
 	
 	<select id="userNotice" resultType="NoticeBean">	<!--  개인 캘린더 -->
-		select * from gr_notice, gr_gr
+		select *
+		from gr_notice n, gr_usernotijoin u
+		where n.noticeId = u.noticeId
+		and u.uid=#{uid}
+		
+		<!-- select * from gr_notice, gr_gr
 		where gr_notice.gr_name = gr_gr.gr_name 
-		and gr_gr.uid=#{uid};
-		<!-- select *
-		from gr_notice n 
-		left join gr_usernotijoin u
-		on n.noticeId = u.noticeId
-		left join gr_gr g
-		on n.gr_name = g.gr_name
-		where g.uid=#{uid}
-		and u.uid=#{uid}; -->
+		and gr_gr.uid=#{uid} -->
 	</select>
 	
 	<!-- 공지 참여 -->
@@ -78,5 +75,39 @@
 		where a.uid=b.uid and noticeId=#{noticeId} and gr_name =#{gr_name};
 	</select>
 	
+	<select id="memlist1" resultType="String">
+		select uid
+		from gr_gr
+		where gr_name = #{gr_name}
+	</select>
+	
+	<insert id="joinjoin">
+		insert into gr_usernotijoin(uid, noticeId, joing)
+		values (#{uid}, LAST_INSERT_ID(), "불참")
+	</insert>
+	
+	 <!-- 가입했을때 공지 참불참 -->
+    <select id="joinMem1" resultType="String">
+    	select g.uid
+		from gr_gr g, gr_notice n
+		where g.gr_name = n.gr_name
+		and g.uid = #{uid}
+    </select>
+    
+    <!-- 가입했을때 공지 참불참 -->
+    <select id="joinMem2" resultType="String">
+    	select n.noticeId
+		from gr_gr g, gr_notice n
+		where g.gr_name = n.gr_name
+		and g.uid = #{uid}
+    </select>
+    
+    <!-- 참불참 인서트 -->
+    <insert id="joinjoin1">
+		insert into gr_usernotijoin(uid, noticeId, joing)
+		values (#{uid}, #{noticeId}, "불참")
+	</insert>
+	
+
 	
 </mapper>

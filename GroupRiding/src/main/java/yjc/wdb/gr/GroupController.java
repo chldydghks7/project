@@ -272,6 +272,7 @@ public class GroupController {
 			System.out.println("이미 가입됨");
 			return "redirect:groupList";
 		}
+		
 	}
 	
 	/**  그룹명 중복 체크 */

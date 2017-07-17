@@ -3,10 +3,12 @@ package group.riding.service;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-
+import group.riding.bean.GroupBean;
 import group.riding.bean.NoticeBean;
 import group.riding.bean.RidingInfoBean;
 import group.riding.dao.NoticeDAO;
@@ -18,9 +20,20 @@ public class NoticeServiceImpl implements NoticeService {
 	@Inject
 	private NoticeDAO dao;
 	
+	@Transactional
 	@Override
 	public void createNotice(NoticeBean nb) throws Exception {
 		dao.createNotice(nb);
+		
+		List<String> m = dao.memlist1(nb.getGr_name());
+		
+		for(int i=0; i<m.size(); i++){
+			dao.joinjoin(m.get(i));
+		}
+		System.out.println("nID : " + nb.getNoticeId());
+		System.out.println("nb : " + nb.getGr_name());
+		System.out.println("m : " + m);
+		
 	}
 
 	@Override
@@ -73,7 +86,6 @@ public class NoticeServiceImpl implements NoticeService {
 		// TODO Auto-generated method stub
 		return dao.getjoininfo(noticeId, gr_name);
 	}
-
 	
 
 }
