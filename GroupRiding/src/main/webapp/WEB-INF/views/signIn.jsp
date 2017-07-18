@@ -134,7 +134,7 @@
 
 					<div class="input-group margin-bottom-20">
 						<span class="input-group-addon rounded-left"><i class="icon-user"></i></span>
-						<input type="date" class="form-control rounded-right" placeholder="생년월일" id="uage" name="uage">
+						<input type="number" class="form-control rounded-right" placeholder="생년월일" id="uage" name="uage">
 					</div>
 
 					<div>	<!-- 파일 업로드 -->
@@ -184,7 +184,7 @@ $("#save").on("click", function(){
 	if($("#uname").val() == "") { alert("이름을 입력하세요"); return false;}
 	if($("#upw").val() == "") { alert("비밀번호를 입력하세요"); return false;}
 	if($("#upw1").val() == "") { alert("비밀번호 확인을 입력하세요"); return false;}
-	if($("#uage").val() == "") { alert("생년월일 입력하세요"); return false;}
+	if($("#uage").val() == "") { alert("나이를 입력하세요"); return false;}
 	if($("#upw").val() != $("#upw1").val()) { alert("비밀번호 일치 ㄴㄴ"); return false; }
 	window.alert("가입 됨");
 });

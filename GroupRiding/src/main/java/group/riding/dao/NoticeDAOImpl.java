@@ -9,7 +9,6 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import group.riding.bean.GroupBean;
 import group.riding.bean.NoticeBean;
 import group.riding.bean.RidingInfoBean;
 
@@ -86,6 +85,36 @@ public class NoticeDAOImpl implements NoticeDAO {
 		paramMap.put("gr_name", gr_name);
 		
 		return session.selectList(namespace+".joinInfo", paramMap);
+	}
+
+	@Override
+	public List<String> memlist1(String gr_name) throws Exception {
+		return session.selectList(namespace + ".memlist1", gr_name);
+		
+	}
+
+	@Override
+	public void joinjoin(String uid) throws Exception {
+		session.insert(namespace + ".joinjoin", uid);
+	}
+
+	@Override
+	public List<String> joinMem1(String uid) throws Exception {
+		return session.selectList(namespace + ".joinMem1", uid);
+	}
+
+	@Override
+	public List<String> joinMem2(String uid) throws Exception {
+		return session.selectList(namespace + ".joinMem2", uid);
+	}
+
+	@Override
+	public void joinjoin1(String uid, String noticeId) throws Exception {
+		Map<String,Object> paramMap = new HashMap<>();
+		paramMap.put("uid", uid);
+		paramMap.put("noticeId", noticeId);
+		
+		session.insert(namespace + ".joinjoin1", paramMap);
 	}
 
 

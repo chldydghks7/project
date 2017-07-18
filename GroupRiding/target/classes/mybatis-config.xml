@@ -6,7 +6,7 @@
 	<typeAliases>
 		<typeAlias alias="UserBean" type="group.riding.bean.UserBean"/>
 		<typeAlias alias="GroupBean" type="group.riding.bean.GroupBean"/>
-		<typeAlias  alias="GroupRank" type="yjc.wdb.gr.bean.GroupRank" />
+		<typeAlias alias="GroupRank" type="yjc.wdb.gr.bean.GroupRank" />
 		<typeAlias alias="BoardBean" type="group.riding.bean.BoardBean"/>
 		<typeAlias alias="BoardReplyBean" type="group.riding.bean.BoardReplyBean"/>
 		<typeAlias type="yjc.wdb.gr.bean.GroupInfoBoard" alias="GroupInfoBoard"/>

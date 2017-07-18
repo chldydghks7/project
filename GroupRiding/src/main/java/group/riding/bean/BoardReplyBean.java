@@ -7,14 +7,6 @@ public class BoardReplyBean {
 	private String replyText;
 	private String fullName;
 	
-	public String getFullName() {
-		return fullName;
-	}
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-
 	public int getRno() {
 		return rno;
 	}
@@ -47,5 +39,12 @@ public class BoardReplyBean {
 		this.replyText = replyText;
 	}
 
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
 	
 }

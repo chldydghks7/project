@@ -37,6 +37,7 @@
 </style>
 
 <body>
+<<<<<<< HEAD
 	 <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -232,6 +233,122 @@
 		
 		
 		
+=======
+	<div class="wrapper">
+		<!--=== Header ===-->
+		<div class="header">
+			<div class="container">
+				<!-- Logo -->
+				<a class="logo" href="mainlogin"> <img
+					src="./resources/img/logo(b).png" alt="Logo">
+				</a>
+				<!-- End Logo -->
+
+				<!-- Topbar -->
+				<div class="topbar">
+					<ul class="loginbar pull-right">
+						<li class="topbar-devider"></li>
+						<li><a href="logout">Logout</a></li>
+					</ul>
+				</div>
+				<!-- End Topbar -->
+
+				<!-- Toggle get grouped for better mobile display -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-responsive-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="fa fa-bars"></span>
+				</button>
+				<!-- End Toggle -->
+			</div>
+			<!--/end container-->
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div
+				class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+				<div class="container">
+					<ul class="nav navbar-nav">
+						<!-- Home -->
+						<li class="dropdown "><a href="javascript:void(0);"
+							class="dropdown-toggle" data-toggle="dropdown"> Home </a> <!-- End Home -->
+
+							<!-- Pages -->
+						<li class="dropdown active"><a href="javascript:void(0);"
+							class="dropdown-toggle" data-toggle="dropdown"> Group </a>
+							<ul class="dropdown-menu">
+								<!-- About Pages -->
+								<li class="dropdown-submenu"><a href="groupList">GroupList</a>
+								</li>
+								<!-- End About Pages -->
+
+								<!-- Service Pages -->
+								<li class="dropdown-submenu"><a href="groupRank">Ranking</a>
+								</li>
+								
+								<li class="dropdown-submenu">
+                          	<a href="racePoint">RacePoint</a>
+                       	</li>
+								<!-- End Service Pages -->
+							</ul></li>
+						<!-- End Pages -->
+
+						<!-- Blog -->
+						<li class="dropdown"><a href="javascript:void(0);"
+							class="dropdown-toggle" data-toggle="dropdown"> Info </a>
+							<ul class="dropdown-menu">
+								<li class="dropdown-submenu"><a href="calendar?uid=${uid}">Calendar</a>
+								</li>
+								
+							</ul></li>
+						<!-- End Blog -->
+
+						<!-- Portfolio -->
+						<li class="dropdown"><a href="javascript:void(0);"
+							class="dropdown-toggle" data-toggle="dropdown"> Sharing </a>
+							<ul class="dropdown-menu">
+								<li class="dropdown-submenu"><a href="sharing">Sharing</a>
+								</li>
+							</ul></li>
+						<!-- End Portfolio -->
+
+						<!-- Features -->
+						<li class="dropdown"><a href="javascript:void(0);"
+							class="dropdown-toggle" data-toggle="dropdown"> Hot Place </a>
+							<ul class="dropdown-menu">
+								<li class="dropdown-submenu"><a href="hotPlaceMap">Hot Place</a>
+								</li>
+								<!-- <li class="dropdown-submenu"><a href="restaurantList">Restaurant</a>
+								</li>
+								<li><a href="hotelList">Hotel</a></li> -->
+							</ul></li>
+						<!-- End Features -->
+
+						<!-- Search Block -->
+						<li><i class="search fa fa-search search-btn"></i>
+							<div class="search-open">
+								<div class="input-group animated fadeInDown">
+									<input type="text" class="form-control" placeholder="Search">
+									<span class="input-group-btn">
+										<button class="btn-u" type="button">Go</button>
+									</span>
+								</div>
+							</div></li>
+						<!-- End Search Block -->
+					</ul>
+				</div>
+				<!--/end container-->
+			</div>
+			<!--/navbar-collapse-->
+		</div>
+		<div class="breadcrumbs">
+			<div class="container">
+				<h1 class="pull-left">그룹 랭킹</h1>
+
+			</div>
+			<!--/container-->
+		</div>
+		<!--/breadcrumbs-->
+>>>>>>> 6d508135575f3e45e200609a9eefa36994ce5cc5
 		<!------------------------------------------------------------ code ------------------------------------------------------------------------------->
 	<%-- 
 		<table class="table table-bordered" id="read">

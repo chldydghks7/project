@@ -214,6 +214,7 @@
 	 <update id="info_view">
        update bbs_writing set view_number = view_number + 1 where writing_id =#{writing_id}
     </update>
-
+    
+   
 
 </mapper>

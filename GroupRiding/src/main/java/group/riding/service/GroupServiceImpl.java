@@ -8,14 +8,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import group.riding.bean.GroupBean;
+import group.riding.bean.NoticeBean;
 import group.riding.dao.GroupDAO;
-import group.riding.dao.UserDAO;
+import group.riding.dao.NoticeDAO;
 
 @Service
 public class GroupServiceImpl implements GroupService {
 
 	@Inject
 	private GroupDAO dao;
+	
+	@Inject
+	private NoticeDAO NoticeDao;
 	
 	@Transactional
 	@Override
@@ -52,6 +56,21 @@ public class GroupServiceImpl implements GroupService {
 	@Override
 	public void gr_join(GroupBean gr) throws Exception {
 		dao.gr_join(gr);
+		
+		List<String> m = NoticeDao.joinMem1(gr.getUid());
+		List<String> m1 = NoticeDao.joinMem2(gr.getUid());
+		
+		NoticeBean nb = new NoticeBean();
+		
+		for(int i=0; i<m.size(); i++){
+			NoticeDao.joinjoin1(m.get(i), m1.get(i));
+		}
+		
+		System.out.println("idid : " + gr.getUid());
+		System.out.println("mm : " + m);
+		System.out.println("mmm : " + m1);
+		
+		
 	}
 
 	@Override
