@@ -75,4 +75,9 @@ public class HomeController {
 		model.addAttribute("list3", list3);
 	}
 	
+	
+	@RequestMapping(value = "MyInfo", method = RequestMethod.GET)
+	public void MyInfo()throws Exception{
+	
+	}
 }

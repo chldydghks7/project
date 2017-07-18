@@ -78,4 +78,14 @@ public class BoardController {
    public List<BoardBean> getFile2() throws Exception {
       return service.getFile2();
    }
+   
+   @RequestMapping(value = "sharDel")
+   public String sharDel(@RequestParam(value = "writing_Id", defaultValue = "-1") int writing_Id) throws Exception {
+      System.out.println(writing_Id);
+      
+      service.sharDel(writing_Id);
+      
+      return "redirect:sharing";
+   }
+
 }

@@ -65,4 +65,18 @@ public class BoardDAOImpl implements BoardDAO {
 		session.insert(namespace+".insertImgFile", imgName);
 	}
 
+	@Override
+	public void sharDel(int writing_Id) throws Exception {
+		// TODO Auto-generated method stub
+		 session.delete(namespace + ".sharDel", writing_Id);
+
+	}
+
+	@Override
+	public void delFile(int writing_Id) throws Exception {
+		// TODO Auto-generated method stub
+		 session.delete(namespace + ".delFile", writing_Id);
+
+	}
+
 }

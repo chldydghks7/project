@@ -266,6 +266,7 @@
                   </fieldset>
                   <input type='hidden' class='file' name='bbs_FilePath' value=''>
                   <input type='hidden' class='kml' name='kml_name' value=''>
+                  <input type='hidden' class='picLocation' name='picture_location' value=''>
                   
                   <footer>
                      <button type="submit" class="btn-u">등록</button>
@@ -468,10 +469,11 @@
          
           var form = $("#sharForm");
          var filepath=$(this).attr('src');
-         
+         var pictureLocation=$(this).attr('class');
          
            
            $('.file').val(filepath);
+           $('.picLocation').val(pictureLocation);
          
       });
       
@@ -516,7 +518,7 @@
                   
                   var src=picarray[i].picture_path;
                   var img=$('<img />').attr('src', 'http://localhost:8080/GroupRidingApp/image/' + src);
-                  
+                  img.attr('class',picarray[i].picture_location);
                   
                   img.appendTo($("#myPic"));   
                   }

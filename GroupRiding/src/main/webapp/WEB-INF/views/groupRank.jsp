@@ -3,13 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en">
-<!--<![endif]-->
+
+<html>
+
 <head>
-<title>Invoice | Unify - Responsive Website Template</title>
+<title>Group Riding</title>
 
 <!-- Meta -->
 <meta charset="utf-8">
@@ -17,166 +15,225 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<!-- Favicon -->
-<link rel="shortcut icon" href="./resources/favicon.ico">
+
+<!-- Bootstrap Core CSS -->
+    <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="./resources/css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
-<!-- CSS Global Compulsory -->
-<link rel="stylesheet"
-	href="./resources/assets/plugins/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="./resources/assets/css/style.css">
 
-<!-- CSS Header and Footer -->
-<link rel="stylesheet"
-	href="./resources/assets/css/headers/header-default.css">
-<link rel="stylesheet"
-	href="./resources/assets/css/footers/footer-v1.css">
-
-<!-- CSS Implementing Plugins -->
-<link rel="stylesheet" href="./resources/assets/plugins/animate.css">
-<link rel="stylesheet"
-	href="./resources/assets/plugins/line-icons/line-icons.css">
-<link rel="stylesheet"
-	href="./resources/assets/plugins/font-awesome/css/font-awesome.min.css">
-
-<!-- CSS Page Style -->
-<link rel="stylesheet"
-	href="./resources/assets/css/pages/page_pricing.css">
-
-<!-- CSS Theme -->
-<link rel="stylesheet"
-	href="./resources/assets/css/theme-colors/default.css" id="style_color">
-<link rel="stylesheet"
-	href="./resources/assets/css/theme-skins/dark.css">
-
-<!-- CSS Customization -->
-<link rel="stylesheet" href="./resources/assets/css/custom.css">
-
-<style>
-	.logo, .footer-logo {
-			width: 200px;
-			heigth: 100px;
-		}
-</style>
 </head>
+<style>
+.text-vertical-center {
+
+    background-color: rgba( 0, 0, 0, 0.7 );
+     width: 100%; height:100%; 
+}
+</style>
 
 <body>
-	<div class="wrapper">
-		<!--=== Header ===-->
-		<div class="header">
-			<div class="container">
-				<!-- Logo -->
-				<a class="logo" href="mainlogin"> <img
-					src="./resources/img/logo(b).png" alt="Logo">
-				</a>
-				<!-- End Logo -->
+	 <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Group Riding</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Page <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="MyInfo">My Information</a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Group <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="groupList">Group List</a>
+                            </li>
+                            <li>
+                                <a href="racePoint">Race Point</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="groupRank">Rank</a>
+                    </li>
+                    <li>
+                        <a href="sharing">Sharing</a>
+                    </li>
+                    <li>
+                        <a href="hotPlaceMap">Hot Place</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+	    
+	     <header id="myCarousel" class="carousel slide" style="background-color: #282828; height: 30%">
 
-				<!-- Topbar -->
-				<div class="topbar">
-					<ul class="loginbar pull-right">
-						<li class="topbar-devider"></li>
-						<li><a href="logout">Logout</a></li>
-					</ul>
-				</div>
-				<!-- End Topbar -->
+	        <div class="carousel-inner">
+	            <div class="item active">
+	                <div class="carousel-caption" style="bottom:60px;">
+	                    <h1 style="font-size: 40px;position: absolute;margin-left: 450px;top: 20px">RANK</h1></br>
+	                    <marquee><h3 style="margin-top: 60px;">랭킹순위권에 들게 되면 해택이 지급됩니다. :)</h3></marquee>
+	                </div>
+	            </div>
+	        </div>
+	        
+    	</header>
+		
+		
+		<div style="background:url('./resources/img/bikeMain3.jpg') no-repeat; width: 100%; height:125%; ">
+        <div  class="text-vertical-center">
+            <div class="container">
+                 <div class="row">
+                 <div>
+                    &nbsp;
+                    </div>
+                    <h1 style="color: white;"><strong>Daily Ranking</strong></h1>
 
-				<!-- Toggle get grouped for better mobile display -->
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-responsive-collapse">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="fa fa-bars"></span>
-				</button>
-				<!-- End Toggle -->
-			</div>
-			<!--/end container-->
+                    <div class="col-lg-12">
+                        <table style="width: 100%;border:1px;border:1px solid white; color: white; text-align: center;" >
+                            <tr style="height: 50px;">
+                                <td style="width: 25%;border:1px solid white;"></td>
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>속도</strong></h3></td>
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>거리</strong></h3></td>
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>거점전</strong></h3></td>
+                            </tr>
+                            <tr style="height: 50px;">
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>1</strong></h3></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>비앙키</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>자이언트</em><h4></td>
+                            </tr>
+                            <tr style="height: 50px;">
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>2</strong></h3></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>비앙키</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                            </tr>
+                            <tr style="height: 50px;">
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>3</strong></h3></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>자이언트</em><h4></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                    &nbsp;
+                    </div>
+                    <h1 style="color: white;"><strong>Weekly Ranking</strong></h1>
+                    <div class="col-lg-12">
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div
-				class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
-				<div class="container">
-					<ul class="nav navbar-nav">
-						<!-- Home -->
-						<li class="dropdown "><a href="javascript:void(0);"
-							class="dropdown-toggle" data-toggle="dropdown"> Home </a> <!-- End Home -->
+                        <table style="width: 100%;border:1px;border:1px solid white; color: white; text-align: center;" >
+                            <tr style="height: 50px;">
+                                <td style="width: 25%;border:1px solid white;"></td>
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>속도</strong></h3></td>
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>거리</strong></h3></td>
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>거점전</strong></h3></td>
+                            </tr>
+                            <tr style="height: 50px;">
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>1</strong></h3></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>비앙키</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                            </tr>
+                            <tr style="height: 50px;">
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>2</strong></h3></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                            </tr>
+                            <tr style="height: 50px;">
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>3</strong></h3></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                    &nbsp;
+                    </div>
+                    <h1 style="color: white;"><strong>Monthly Ranking</strong></h1>
+                    <div class="col-lg-12">
 
-							<!-- Pages -->
-						<li class="dropdown active"><a href="javascript:void(0);"
-							class="dropdown-toggle" data-toggle="dropdown"> Group </a>
-							<ul class="dropdown-menu">
-								<!-- About Pages -->
-								<li class="dropdown-submenu"><a href="groupList">GroupList</a>
-								</li>
-								<!-- End About Pages -->
+                        <table style="width: 100%;border:1px;border:1px solid white; color: white; text-align: center;" >
+                            <tr style="height: 50px;">
+                               <td style="width: 25%;border:1px solid white;"></td>
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>속도</strong></h3></td>
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>거리</strong></h3></td>
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>거점전</strong></h3></td>
+                            </tr>
+                            <tr style="height: 50px;">
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>1</strong></h3></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                            </tr>
+                            <tr style="height: 50px;">
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>2</strong></h3></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                            </tr>
+                            <tr style="height: 50px;">
+                                <td style="width: 25%;border:1px solid white;"><h3><strong>3</strong></h3></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                            </tr>
+                        </table>
+                    </div>
 
-								<!-- Service Pages -->
-								<li class="dropdown-submenu"><a href="groupRank">Ranking</a>
-								</li>
-								
-								<li class="dropdown-submenu">
-                          	<a href="racePoint">RacePoint</a>
-                       	</li>
-								<!-- End Service Pages -->
-							</ul></li>
-						<!-- End Pages -->
+        
+<div>
+                    &nbsp;
+                    </div>
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p style="color: white;">Copyright &copy; Your Website 2017</p>
+                </div>
+            </div>
+        </footer>
 
-						<!-- Blog -->
-						<li class="dropdown"><a href="javascript:void(0);"
-							class="dropdown-toggle" data-toggle="dropdown"> Info </a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="calendar?uid=${uid}">Calendar</a>
-								</li>
-								
-							</ul></li>
-						<!-- End Blog -->
-
-						<!-- Portfolio -->
-						<li class="dropdown"><a href="javascript:void(0);"
-							class="dropdown-toggle" data-toggle="dropdown"> Sharing </a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="sharing">Sharing</a>
-								</li>
-							</ul></li>
-						<!-- End Portfolio -->
-
-						<!-- Features -->
-						<li class="dropdown"><a href="javascript:void(0);"
-							class="dropdown-toggle" data-toggle="dropdown"> Hot Place </a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="hotPlaceMap">Hot Place</a>
-								</li>
-								<!-- <li class="dropdown-submenu"><a href="restaurantList">Restaurant</a>
-								</li>
-								<li><a href="hotelList">Hotel</a></li> -->
-							</ul></li>
-						<!-- End Features -->
-
-						<!-- Search Block -->
-						<li><i class="search fa fa-search search-btn"></i>
-							<div class="search-open">
-								<div class="input-group animated fadeInDown">
-									<input type="text" class="form-control" placeholder="Search">
-									<span class="input-group-btn">
-										<button class="btn-u" type="button">Go</button>
-									</span>
-								</div>
-							</div></li>
-						<!-- End Search Block -->
-					</ul>
-				</div>
-				<!--/end container-->
-			</div>
-			<!--/navbar-collapse-->
-		</div>
-		<div class="breadcrumbs">
-			<div class="container">
-				<h1 class="pull-left">Group Ranking</h1>
-
-			</div>
-			<!--/container-->
-		</div>
-		<!--/breadcrumbs-->
+                </div>
+            </div> 
+        </div>
+    </div>
+		
+		
+		
+		
+		
 		<!------------------------------------------------------------ code ------------------------------------------------------------------------------->
-	
+	<%-- 
 		<table class="table table-bordered" id="read">
 			<tr>
 				<td colspan="3"><h2>라이딩 횟수</h2></td>
@@ -235,166 +292,14 @@
 
 			</c:forEach>
 
-		</table>
+		</table> --%>
 		<!------------------------------------------------------------ code ------------------------------------------------------------------------------->
+  <!-- jQuery -->
+    <script src="./resources/js2/jquery.js"></script>
 
-		<!--/breadcrumbs-->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./resources/js2/bootstrap.min.js"></script>
 
-
-		<!--=== Footer Version 1 ===-->
-		<div class="footer-v1">
-			<div class="footer">
-				<div class="container">
-					<div class="row">
-						<!-- About -->
-						<div class="col-md-3 md-margin-bottom-40">
-							<a href="/"><img id="logo-footer" class="footer-logo"
-								src="./resources/img/logo(w).png" alt=""></a>
-							<p>About Unify dolor sit amet, consectetur adipiscing elit.
-								Maecenas eget nisl id libero tincidunt sodales.</p>
-							<p>Duis eleifend fermentum ante ut aliquam. Cras mi risus,
-								dignissim sed adipiscing ut, placerat non arcu.</p>
-						</div>
-						<!--/col-md-3-->
-						<!-- End About -->
-
-						<!-- Latest -->
-						<div class="col-md-3 md-margin-bottom-40">
-							<div class="posts">
-								<div class="headline">
-									<h2>Latest Posts</h2>
-								</div>
-								<ul class="list-unstyled latest-list">
-									<li><a href="#">Incredible content</a> <small>May
-											8, 2014</small></li>
-									<li><a href="#">Best shoots</a> <small>June 23,
-											2014</small></li>
-									<li><a href="#">New Terms and Conditions</a> <small>September
-											15, 2014</small></li>
-								</ul>
-							</div>
-						</div>
-						<!--/col-md-3-->
-						<!-- End Latest -->
-
-						<!-- Link List -->
-						<div class="col-md-3 md-margin-bottom-40">
-							<div class="headline">
-								<h2>Useful Links</h2>
-							</div>
-							<ul class="list-unstyled link-list">
-								<li><a href="#">About us</a><i class="fa fa-angle-right"></i></li>
-								<li><a href="#">Portfolio</a><i class="fa fa-angle-right"></i></li>
-								<li><a href="#">Latest jobs</a><i class="fa fa-angle-right"></i></li>
-								<li><a href="#">Community</a><i class="fa fa-angle-right"></i></li>
-								<li><a href="#">Contact us</a><i class="fa fa-angle-right"></i></li>
-							</ul>
-						</div>
-						<!--/col-md-3-->
-						<!-- End Link List -->
-
-						<!-- Address -->
-						<div class="col-md-3 map-img md-margin-bottom-40">
-							<div class="headline">
-								<h2>Contact Us</h2>
-							</div>
-							<address class="md-margin-bottom-40">
-								25, Lorem Lis Street, Orange <br /> California, US <br />
-								Phone: 800 123 3456 <br /> Fax: 800 123 3456 <br /> Email: <a
-									href="mailto:info@anybiz.com" class="">info@anybiz.com</a>
-							</address>
-						</div>
-						<!--/col-md-3-->
-						<!-- End Address -->
-					</div>
-				</div>
-			</div>
-			<!--/footer-->
-
-			<div class="copyright">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6">
-							<p>
-								2015 &copy; All Rights Reserved. <a href="#">Privacy Policy</a>
-								| <a href="#">Terms of Service</a>
-							</p>
-						</div>
-
-						<!-- Social Links -->
-						<div class="col-md-6">
-							<ul class="footer-socials list-inline">
-								<li><a href="#" class="tooltips" data-toggle="tooltip"
-									data-placement="top" title="" data-original-title="Facebook">
-										<i class="fa fa-facebook"></i>
-								</a></li>
-								<li><a href="#" class="tooltips" data-toggle="tooltip"
-									data-placement="top" title="" data-original-title="Skype">
-										<i class="fa fa-skype"></i>
-								</a></li>
-								<li><a href="#" class="tooltips" data-toggle="tooltip"
-									data-placement="top" title="" data-original-title="Google Plus">
-										<i class="fa fa-google-plus"></i>
-								</a></li>
-								<li><a href="#" class="tooltips" data-toggle="tooltip"
-									data-placement="top" title="" data-original-title="Linkedin">
-										<i class="fa fa-linkedin"></i>
-								</a></li>
-								<li><a href="#" class="tooltips" data-toggle="tooltip"
-									data-placement="top" title="" data-original-title="Pinterest">
-										<i class="fa fa-pinterest"></i>
-								</a></li>
-								<li><a href="#" class="tooltips" data-toggle="tooltip"
-									data-placement="top" title="" data-original-title="Twitter">
-										<i class="fa fa-twitter"></i>
-								</a></li>
-								<li><a href="#" class="tooltips" data-toggle="tooltip"
-									data-placement="top" title="" data-original-title="Dribbble">
-										<i class="fa fa-dribbble"></i>
-								</a></li>
-							</ul>
-						</div>
-						<!-- End Social Links -->
-					</div>
-				</div>
-			</div>
-			<!--/copyright-->
-		</div>
-		<!--=== End Footer Version 1 ===-->
-	</div>
-	<!--/wrapper-->
-
-
-
-	<!-- JS Global Compulsory -->
-	<script type="text/javascript"
-		src="./resources/assets/plugins/jquery/jquery.min.js"></script>
-	<script type="text/javascript"
-		src="./resources/assets/plugins/jquery/jquery-migrate.min.js"></script>
-	<script type="text/javascript"
-		src="./resources/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-	<!-- JS Implementing Plugins -->
-	<script type="text/javascript"
-		src="./resources/assets/plugins/back-to-top.js"></script>
-	<script type="text/javascript"
-		src="./resources/assets/plugins/smoothScroll.js"></script>
-	<!-- JS Customization -->
-	<script type="text/javascript" src="./resources/assets/js/custom.js"></script>
-	<!-- JS Page Level -->
-	<script type="text/javascript" src="./resources/assets/js/app.js"></script>
-	<script type="text/javascript"
-		src="./resources/assets/js/plugins/style-switcher.js"></script>
-	<script type="text/javascript">
-		jQuery(document).ready(function() {
-			App.init();
-			StyleSwitcher.initStyleSwitcher();
-		});
-	</script>
-	<!--[if lt IE 9]>
-	<script src="./resources/assets/plugins/respond.js"></script>
-	<script src="./resources/assets/plugins/html5shiv.js"></script>
-	<script src="./resources/./resources/assets/plugins/placeholder-IE-fixes.js"></script>
-	<![endif]-->
-
+	
 </body>
 </html>

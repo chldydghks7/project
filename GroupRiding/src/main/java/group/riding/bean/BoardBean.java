@@ -16,6 +16,8 @@ public class BoardBean {
 	
 	private String kml_name;
 	
+	private String picture_location;
+	
 	public String getBbs_FilePath() {
 		return bbs_FilePath;
 	}
@@ -96,6 +98,14 @@ public class BoardBean {
 
 	public void setKml_name(String kml_name) {
 		this.kml_name = kml_name;
+	}
+
+	public String getPicture_location() {
+		return picture_location;
+	}
+
+	public void setPicture_location(String picture_location) {
+		this.picture_location = picture_location;
 	}
 	
 	

@@ -3,11 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+<html> 
 <head>
-   <title>Pricing | Unify - Responsive Website Template</title>
+   <title>Group Riding</title>
 
    <!-- Meta -->
    <meta charset="utf-8">
@@ -15,30 +14,17 @@
    <meta name="description" content="">
    <meta name="author" content="">
 
-   <!-- Favicon -->
-   <link rel="shortcut icon" href="./resources/favicon.ico">
+  
 
+    <!-- Bootstrap Core CSS -->
+    <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
 
-   <!-- CSS Global Compulsory -->
-   <link rel="stylesheet" href="./resources/assets/plugins/bootstrap/css/bootstrap.min.css">
-   <link rel="stylesheet" href="./resources/assets/css/style.css">
+    <!-- Custom CSS -->
+    <link href="./resources/css/modern-business.css" rel="stylesheet">
 
-   <!-- CSS Header and Footer -->
-   <link rel="stylesheet" href="./resources/assets/css/headers/header-default.css">
-   <link rel="stylesheet" href="./resources/assets/css/footers/footer-v1.css">
-
-   <!-- CSS Implementing Plugins -->
-   <link rel="stylesheet" href="./resources/assets/plugins/animate.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/line-icons/line-icons.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/font-awesome/css/font-awesome.min.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/fancybox/source/jquery.fancybox.css">
-
-   <!-- CSS Theme -->
-   <link rel="stylesheet" href="./resources/assets/css/theme-colors/default.css" id="style_color">
-   <link rel="stylesheet" href="./resources/assets/css/theme-skins/dark.css">
-
-   <!-- CSS Customization -->
-   <link rel="stylesheet" href="./resources/assets/css/custom.css">
+    <!-- Custom Fonts -->
+    <link href="./resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
    
    <style>
       #like {
@@ -58,13 +44,19 @@
          height: 780px;
       }
       .s-content {
-         height: 400px;
+          width: 560px;
+         height: 25px;
+         margin-top: 400px;
       }
       
       .likeCnt {
          width: 20px;
          height: 20px;
          cursor: pointer;
+      }
+      
+      #myPic>img{
+         margin-right:10px;
       }
       
     /* #replyContainer {
@@ -106,21 +98,31 @@
       }
       
    #sharmap{
-   width:250px;
-   height:250px;
+   margin-top: 7px;
+   width:350px;
+   height:350px;
    float: left;
    }   
+   
+   #editmap{
+   margin-top: 7px;
+   width:350px;
+   height:250px;
+   float: left;
+   }  
    
    #imgDiv {
       display: inline-block;
       margin-left: 10px;
-      width:300px;
-      height:250px;
+      width:100px;
+      height:100px;
+     
    }
    
    .file{
-   width:300px !important;
-   height:250px  !important;
+   width:150px !important;
+   height:150px  !important;
+   margin-top: 30px;
    
    }
    
@@ -129,142 +131,99 @@
       height: 20px;
       margin-right: 5px;
    }
+   
+   .del {
+      margin-bottom: 30px;
+      margin-right: 20px;
+   }
+   
+   .snsIcon {
+       width: 30px;
+       height: 30px;
+   }
    </style>
 </head>
 
 <body>
-   <div class="wrapper">
-      <!--=== Header ===-->
-      <div class="header">
-         <div class="container">
-            <!-- Logo -->
-            <a class="logo" href="mainlogin">
-               <img src="./resources/img/logo(b).png" alt="Logo">
-            </a>
-            <!-- End Logo -->
-
-            <!-- Topbar -->
-            <div class="topbar">
-               <ul class="loginbar pull-right">
-                  <li class="topbar-devider"></li>
-                  <li><a href="logout">Logout</a></li>
-               </ul>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Group Riding</a>
             </div>
-            <!-- End Topbar -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Page <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="MyInfo">My Information</a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Group <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="groupList">Group List</a>
+                            </li>
+                            <li>
+                                <a href="racePoint">Race Point</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="groupRank">Rank</a>
+                    </li>
+                    <li>
+                        <a href="sharing">Sharing</a>
+                    </li>
+                    <li>
+                        <a href="hotPlaceMap">Hot Place</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    
+     <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing.jpg') no-repeat center center scroll;">
 
-            <!-- Toggle get grouped for better mobile display -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-               <span class="sr-only">Toggle navigation</span>
-               <span class="fa fa-bars"></span>
-            </button>
-            <!-- End Toggle -->
-         </div><!--/end container-->
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="carousel-caption" style="bottom:60px;">
+                    <h1 style="font-size: 40px;">SHARING</h1></br>
+                </div>
+            </div>
+        </div>
+    </header>
+  
+      <div class="container">
+      	<div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Sharing
+                  
+                </h1>
 
-         <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
-            <div class="container">
-               <ul class="nav navbar-nav">
-                 <!-- Pages -->
-                  <li class="dropdown">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Group
-                     </a>
-                     <ul class="dropdown-menu">
-                        <!-- About Pages -->
-                        <li class="dropdown-submenu">
-                           <a href="groupList">GroupList</a>
-                        </li>
-                        <!-- End About Pages -->
-
-                        <!-- Service Pages -->
-                        <li class="dropdown-submenu">
-                           <a href="groupRank">Ranking</a>
-                        </li>
-                        <li class="dropdown-submenu">
-                             <a href="racePoint">RacePoint</a>
-                          </li>
-                        <!-- End Service Pages -->
-                     </ul>
-                  </li>
-                  <!-- End Pages -->
-
-                  <!-- Blog -->
-                  <li class="dropdown">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Info
-                     </a>
-                     <ul class="dropdown-menu">
-                        <li class="dropdown-submenu">
-                           <a href="calendar?uid=${uid}">Calendar</a>
-                        </li>
-                        <li class="dropdown-submenu">
-                           <a href="Ridingdata">Riding Data</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <!-- End Blog -->
-
-                  <!-- Portfolio -->
-                  <li class="dropdown">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Sharing
-                     </a>
-                     <ul class="dropdown-menu">
-                        <li><a href="sharing">Sharing</a></li>
-                     </ul>
-                  </li>
-                  <!-- End Portfolio -->
-
-                  <!-- Features -->
-                  <li class="dropdown">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Hot Place
-                     </a>
-                     <ul class="dropdown-menu">
-                        <li class="dropdown-submenu">
-                           <a href="hotPlaceMap">Hot Place</a>
-                        </li>
-                        <!-- <li class="dropdown-submenu">
-                           <a href="restaurantList">Restaurant</a>
-                        </li>
-                        <li><a href="hotelList">Hotel</a></li> -->
-                     </ul>
-                  </li>
-                  <!-- End Features -->
-
-                  <!-- Search Block -->
-                  <li>
-                     <i class="search fa fa-search search-btn"></i>
-                     <div class="search-open">
-                        <div class="input-group animated fadeInDown">
-                           <input type="text" class="form-control" placeholder="Search">
-                           <span class="input-group-btn">
-                              <button class="btn-u" type="button">Go</button>
-                           </span>
-                        </div>
-                     </div>
-                  </li>
-                  <!-- End Search Block -->
-               </ul>
-            </div><!--/end container-->
-         </div><!--/navbar-collapse-->
-      </div>
-      <!--=== End Header ===-->
-
-      <!--=== Breadcrumbs ===-->
-      <div class="breadcrumbs">
-         <div class="container">
-            <h1 class="pull-left">Sharing</h1>
-            <ul class="pull-right breadcrumb">
-               <li><a href="/">Home</a></li>
-               <li class="active">Sharing</li>
-            </ul>
-         </div>
-      </div><!--/breadcrumbs-->
-      <!--=== End Breadcrumbs ===-->
-
-      <!--=== Content Part ===-->
-      <div class="container content">
+            </div>
+        </div>
+      
+      
          <div class="row">
 
             <!-- Begin Content -->
@@ -276,8 +235,10 @@
             <div>
                <!-- Thumbnails v1 -->
                <div class = "row">
+               	 
+               
                   <c:forEach items = "${board}" var = "board">
-                     <div class="col-md-4">
+                    <%--  <div class="col-md-4">
                         <div class="thumbnails thumbnail-style thumbnail-kenburn">
                         <p class = "w_id" style = "display:none;">${board.writing_Id}</p>
                         <img src="./resources/img/hearts.png" class="likeCnt">&nbsp;&nbsp;&nbsp; ${board.view_Number}
@@ -290,9 +251,36 @@
                            </div>
                            <div class="caption">
                               <h3>${board.writing_title}</h3>
+                              <c:set var = "user" value = "${uid}"/>
+                              <c:set var = "writer" value = "${board.member_Id}"/>
+                              <c:if test = "${user eq writer}">
+                                 <a class="edit btn-more hover-effect" href="${board.writing_Id}" style = "margin-bottom: 30px; margin-right: 65px;"
+                                 data-toggle = "modal" data-target = "#editModal" data-backdrop="static" data-keyboard="false">수정</a>
+                                 <a class="del btn-more hover-effect" href="${board.writing_Id}">삭제</a>
+                              </c:if>
                            </div>
                         </div>
-                     </div>   
+                     </div>   --%>
+                     
+                   <div class="col-md-4 img-portfolio">
+                	
+		                    <img class="img-responsive img-hover" src="${board.bbs_FilePath}" alt="">
+		                    <p class = "w_id" style = "display:none;">${board.writing_Id}</p>
+		                     <img src="./resources/img/hearts.png" class="likeCnt">
+		                     <p class = "cnt" >${board.view_Number}</p>  
+		               
+		                <h3>${board.writing_title}</h3>
+		               
+		                 <a class="btn btn-info" href="${board.writing_Id}" data-toggle = "modal" data-target = "#myModal" data-backdrop="static" data-keyboard="false">read</a>
+		                  <c:set var = "user" value = "${uid}"/>
+                              <c:set var = "writer" value = "${board.member_Id}"/>
+                              <c:if test = "${user eq writer}">
+                                 <a class="btn btn-warning" href="${board.writing_Id}" style = ""
+                                 data-toggle = "modal" data-target = "#editModal" data-backdrop="static" data-keyboard="false">수정</a>
+                                 <a class="btn btn-danger" href="${board.writing_Id}">삭제</a>
+                              </c:if>
+           		     </div> 
+                      
                   </c:forEach>
                </div>
                
@@ -300,132 +288,22 @@
             </div>
             <!-- End Content -->
          </div>
+         
+         
+         <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2017</p>
+                </div>
+            </div>
+        </footer>
+         
       </div><!--/container-->
       <!--=== End Content Part ===-->
 
-      <!--=== Footer Version 1 ===-->
-      <div class="footer-v1">
-         <div class="footer">
-            <div class="container">
-               <div class="row">
-                  <!-- About -->
-                  <div class="col-md-3 md-margin-bottom-40">
-                     <a href="/"><img id="logo-footer" class="footer-logo" src="./resources/img/logo(w).png" alt=""></a>
-                     <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
-                     <p>Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.</p>
-                  </div><!--/col-md-3-->
-                  <!-- End About -->
-
-                  <!-- Latest -->
-                  <div class="col-md-3 md-margin-bottom-40">
-                     <div class="posts">
-                        <div class="headline"><h2>Latest Posts</h2></div>
-                        <ul class="list-unstyled latest-list">
-                           <li>
-                              <a href="#">Incredible content</a>
-                              <small>May 8, 2014</small>
-                           </li>
-                           <li>
-                              <a href="#">Best shoots</a>
-                              <small>June 23, 2014</small>
-                           </li>
-                           <li>
-                              <a href="#">New Terms and Conditions</a>
-                              <small>September 15, 2014</small>
-                           </li>
-                        </ul>
-                     </div>
-                  </div><!--/col-md-3-->
-                  <!-- End Latest -->
-
-                  <!-- Link List -->
-                  <div class="col-md-3 md-margin-bottom-40">
-                     <div class="headline"><h2>Useful Links</h2></div>
-                     <ul class="list-unstyled link-list">
-                        <li><a href="#">About us</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="#">Portfolio</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="#">Latest jobs</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="#">Community</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="#">Contact us</a><i class="fa fa-angle-right"></i></li>
-                     </ul>
-                  </div><!--/col-md-3-->
-                  <!-- End Link List -->
-
-                  <!-- Address -->
-                  <div class="col-md-3 map-img md-margin-bottom-40">
-                     <div class="headline"><h2>Contact Us</h2></div>
-                     <address class="md-margin-bottom-40">
-                        25, Lorem Lis Street, Orange <br />
-                        California, US <br />
-                        Phone: 800 123 3456 <br />
-                        Fax: 800 123 3456 <br />
-                        Email: <a href="mailto:info@anybiz.com" class="">info@anybiz.com</a>
-                     </address>
-                  </div><!--/col-md-3-->
-                  <!-- End Address -->
-               </div>
-            </div>
-         </div><!--/footer-->
-
-         <div class="copyright">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-6">
-                     <p>
-                        2015 &copy; All Rights Reserved.
-                        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-                     </p>
-                  </div>
-
-                  <!-- Social Links -->
-                  <div class="col-md-6">
-                     <ul class="footer-socials list-inline">
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
-                              <i class="fa fa-facebook"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype">
-                              <i class="fa fa-skype"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus">
-                              <i class="fa fa-google-plus"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Linkedin">
-                              <i class="fa fa-linkedin"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest">
-                              <i class="fa fa-pinterest"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
-                              <i class="fa fa-twitter"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Dribbble">
-                              <i class="fa fa-dribbble"></i>
-                           </a>
-                        </li>
-                     </ul>
-                  </div>
-                  <!-- End Social Links -->
-               </div>
-            </div>
-         </div><!--/copyright-->
-      </div>
-      <!--=== End Footer Version 1 ===-->
-   </div><!--/wrapper-->
+    
    
-    <!-- Modal -->
+    <!-- Read Modal Start -->
     <div id = "myModal" class = "modal fade" role = "dialog">
       <div class = "modal-dialog">
          <div class = "modal-content">
@@ -436,36 +314,30 @@
             </div>
             <div class="modal-body">
            
-               <%-- <p style="float: left">제목: ${read.writing_title}</p>
-               <br>
-               <hr>
-               <div>
-                  <img src="./displayFile?fileName=${read.bbs_FilePath}" id="s-img">
-               </div>
-               <hr>
-               <div id="s-content">
-                  <p>내용 : ${read.writing_content}</p>
-                  <p>글번호 : ${read.writing_Id}</p>
-               </div> 
-                /* var html = "";
-               html = "<h3 style = 'float: left'>제목 : " + data.writing_title + "</h3>"
-                      + "<p style = 'display: none;' id = 'w_id'>" + data.writing_Id + "</p>"
-                      + "<p style = 'float: right;'>작성자 : " + data.member_Id + "</p><br>"
-                     + "<hr><div><img id = 's-img' src = '"+ data.bbs_FilePath + "'></div>"
-                     + "<hr><div id = 's-content'>내용 : " + data.writing_content + "</div><hr>"
-                     + "<div><ul class = 'timeline'></ul></div>";
-               
-               --%>
-               
-               <h3 style = 'float: left' class='title'>제목 : </h3>
+               <h3 style = 'float: left' class='title'></h3>
                <p style = 'display: none;' id = 'w_id' class='bbs_id'></p>
                <p style = 'float: right;' class='writer'>작성자 : </p><br><hr>
+               <div id = "sns" style = "float: right; margin-top: -25px; margin-bottom: 5px;">
+                     <a href="#" onclick="javascript:window.open('https://twitter.com/intent/tweet?text=[%EA%B3%B5%EC%9C%A0]%20'
+               +encodeURIComponent(document.URL)+'%20-%20'+encodeURIComponent(document.title), 'twittersharedialog',
+                'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank"
+                alt="Share on Twitter" ><img src="./resources/img/twitter.png" class = "snsIcon"></a>
+                
+                <a href="#" onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u='
+               +encodeURIComponent(document.URL)+'&t='+encodeURIComponent(document.title), 'facebooksharedialog',
+                'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank"
+                alt="Share on Facebook" ><img src="./resources/img/facebook.png" class = "snsIcon"></a>
+               
+               
+               <a href="#" onclick="javascript:window.open('http://share.naver.com/web/shareView.nhn?url='+encodeURIComponent(document.URL)+'&title='+encodeURIComponent(document.title),
+                'naversharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" alt="Share on Naver" >
+               <img src="./resources/img/naver.png" class = "snsIcon"></a>
+             </div>
                <div id="sharmap"></div>
-               <div id = "imgDiv"><img class='file' id = 's-img' src = ''></div>
-               <hr><div class='content' id = 's-content'>내용 :</div><hr>
-               <div><ul class = 'timeline'></ul></div>
-                     
+               <div id = "imgDiv"> <img class='file' id = 's-img' src = ''></div> 
               
+              <div class = 's-content'></div><hr>
+               <div><ul class = 'timeline'></ul></div>
             </div>
             <div class="modal-footer">
                <!-- <img src="./resources/img/hearts.png" id="like"> -->
@@ -476,22 +348,60 @@
          </div>
       </div>
    </div>
+   <!-- Read Modal End -->
+   
+   <!-- Edit Modal Start -->
+    <div id = "editModal" class = "modal fade" role = "dialog">
+      <div class = "modal-dialog">
+         <div class = "modal-content">
+         
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>  
+            </div>
+            
+            <div class="modal-body">
+               <h3><input type = "text" value = "" class = "title" name = "writing_title"></h3>
+               <p style = 'display: none;' id = 'w_id' class='bbs_id'></p>
+               <div id="editmap"></div>
+               <div id = "imgDiv"><img class='file' id = 's-img' src = ''></div>
+               <section>
+                        <label class="label">내 사진</label>
+                        <div id="myPic"></div>
+               </section>
+               <section>
+                  <label>라이딩정보</label>
+                  <table id="myRoute" class="table table-hover">
+                    <tr>
+                      <td>라이딩날짜</td>
+                      <td>평균속도</td>
+                      <td>총시간</td>
+                      <td>칼로리</td>
+                    </tr>          
+                  </table>
+              </section>
+              <input type='hidden' class='file' name='bbs_FilePath' value=''>
+              <input type='hidden' class='kml' name='kml_name' value=''>
+         <textarea class="s-content" style = "height: 80px;" name="writing_content"></textarea><hr>
+            </div>
+            <div class="modal-footer">
+              <%--  <input type = "text" id = "uid" style = "display: none;" value = "${uid}"/> --%>
+               <button id="editBtn" class="btn btn-default">수정</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Edit Modal End -->
+   
+  
+    <!-- jQuery -->
+    <script src="./resources/js2/jquery.js"></script>
 
-   <!-- JS Global Compulsory -->
-   <script type="text/javascript" src="./resources/assets/plugins/jquery/jquery.min.js"></script>
-   <script type="text/javascript" src="./resources/assets/plugins/jquery/jquery-migrate.min.js"></script>
-   <script type="text/javascript" src="./resources/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-   <!-- JS Implementing Plugins -->
-   <script type="text/javascript" src="./resources/assets/plugins/back-to-top.js"></script>
-   <script type="text/javascript" src="./resources/assets/plugins/smoothScroll.js"></script>
-      <script type="text/javascript" src="./resources/assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
-   <!-- JS Customization -->
-   <script type="text/javascript" src="./resources/assets/js/custom.js"></script>
-   <!-- JS Page Level -->
-   <script type="text/javascript" src="./resources/assets/js/app.js"></script>
-   <script type="text/javascript" src="./resources/assets/js/plugins/style-switcher.js"></script>
-   <script type="text/javascript" src="./resources/assets/js/plugins/fancy-box.js"></script>
-   <script type="text/javascript" src="./resources/js/upload.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./resources/js2/bootstrap.min.js"></script>
+  
+  
+  
+  
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyQjki7axvtCvqFULjxcicQimSUtg0tvk">
     </script>   
    <script type="text/javascript">
@@ -521,7 +431,7 @@
             },
             success: function(data) {
                if(data) {
-                 
+            	   location.reload();
                }
             },
             error: function() {
@@ -534,6 +444,33 @@
          form.attr('action', 'sharingForm');
          form.attr('method', 'get');
          form.submit();
+      });
+      
+      $(".del").on("click", function() {
+         event.preventDefault();
+         
+         var id = $(this).attr("href");
+         var a = confirm("삭제하시겠습니까?");
+         
+         if(a) {
+            $.ajax({
+                  url: 'sharDel',
+                  data: {
+                     writing_Id: id
+                  },
+                  success: function(data) {
+                     alert('삭제되었습니다.');
+                     location.reload();
+                  },
+                  error: function() {
+                     alert('에러');
+                  }
+                });
+         }
+         else {
+            location.reload();
+         }
+         
       });
       
       $(".test").on("click", function () {
@@ -565,11 +502,11 @@
                      
                $(".modal-body").append(html);   */
                
-               $(".title").text("제목"+data.writing_title);
+               $(".title").text(data.writing_title);
                $(".bbs_id").text( data.writing_Id );
                $(".writer").text("작성자"+ data.member_Id);
                $(".file").attr('src',data.bbs_FilePath);
-               $(".content").text("내용" + data.writing_content);
+               $(".s-content").text(data.writing_content);
                
                map = new google.maps.Map(document.getElementById('sharmap'));
             
@@ -577,14 +514,38 @@
                   url: 'http://39.121.239.182:8080/can/resources/'+data.kml_name,
                   map: map
                 });
+            
+          
+            
+            var piclocation=data.picture_location.split(",");
+            
+            /* var picMarkerLocation={lat:parseFloat(piclocation[0]),lng:parseFloat(piclocation[1])};
+            {lat:35.8960,lng:128.6235}
+            4286407.4960900415,14317930.236282492*/
+            
+           var picMarkerLocation= {lat:parseFloat(piclocation[0]),lng:parseFloat(piclocation[1])};
+            console.log(picMarkerLocation);
+            var picIcon=new google.maps.MarkerImage(data.bbs_FilePath,null,null,null,new google.maps.Size(70,70));
            
-             var refresh = function() {
-                   var center = detailmap.getCenter();
-                       google.maps.event.trigger(detailmap, "resize");
-                       detailmap.setCenter(center);
-                      detailmap.setZoom(16);
+           
+           
+            var picMarker= new google.maps.Marker({
+         	   position:picMarkerLocation,  
+         	   map:map,
+         	   icon:picIcon
+            });
+            
+          
+    
+            
+            
+          /*    var refresh = function() {
+                   var center = map.getCenter();
+                       google.maps.event.trigger(map, "resize");
+                      map.setCenter(center);
+                      map.setZoom(16);
                    }
-                   setTimeout(refresh, 100);
+                   setTimeout(refresh, 100); */
                
                
                
@@ -596,7 +557,7 @@
                         var str = ""; 
                         console.log(data);
                         $(data.list).each(function() {
-                        	str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
+                           str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
                             + "<img src = '/displayFile?fileName=" + this.fullName + "' class = 'reply replyImg'/>"
                             + "<span class = 'reply replyNum'>" + this.uid + " : </span>"
                             + "<span class = 'reply replyText'>" + this.replyText + "</span>";
@@ -604,6 +565,9 @@
                         $('.timeline').append(str);
                       });
                }
+               
+               
+              
                
                $("#addReply").on("click", function() {
                    var id = $("#w_id").text();
@@ -640,6 +604,153 @@
          });
       });
       
+      $(".edit").on("click", function () {
+          event.preventDefault();
+          var   title = $(this).attr("href");
+      
+          /* form.attr("action", "sharing");
+          form.attr("method", "get");
+          $("<input type = 'text' name = 'writing_Id' value = '" + title + "'>").appendTo(form);
+          form.submit(); */
+          
+          $.ajax({
+             url: 'readShar',
+             type: 'get',
+             data: {
+                writing_Id: title
+             },
+             success: function(data) {
+               
+                   console.log(data);
+                   $("#myPic").on("click","img",function(){
+                       
+                       console.log($(this));
+                       $(this).css('border','2px solid green');
+                       $(this).siblings().css('border','');
+                       
+                        var form = $("#sharForm");
+                       var filepath=$(this).attr('src');
+                       
+                       $(".file").attr('src', filepath);
+                  $('.file').val(filepath);
+                       
+                    });
+                    
+                    
+                    $("#myRoute").on("click","tr",function(){
+                       
+                       $(this).css('border','2px solid green');
+                       $(this).siblings().css('border','');
+                       
+                         var form = $("#sharForm");
+                         var kmlname=$(this).attr("class");
+                         
+                         $(".kml").val(kmlname);
+                       
+                        var editmap = new google.maps.Map(document.getElementById('editmap'));
+                        
+                        var ctaLayer = new google.maps.KmlLayer({
+                              url: 'http://39.121.239.182:8080/can/resources/'+kmlname,
+                              map: editmap
+                            });
+                        
+                        google.maps.event.trigger(editmap, 'resize'); 
+                        var refresh = function() {
+                             //var center = map.getCenter();
+                                 editmap.setCenter(new google.maps.LatLng(35.896553, 128.622051));
+                                editmap.setZoom(17);
+                             }
+                             setTimeout(refresh, 500); 
+                       
+                    });
+                /* var html = "";
+                html = "<h3 style = 'float: left'>제목 : " + data.writing_title + "</h3>"
+                       + "<p style = 'display: none;' id = 'w_id'>" + data.writing_Id + "</p>"
+                       + "<p style = 'float: right;'>작성자 : " + data.member_Id + "</p><br>"
+                      + "<hr><div><img id = 's-img' src = '"+ data.bbs_FilePath + "'></div>"
+                      + "<hr><div id = 's-content'>내용 : " + data.writing_content + "</div><hr>"
+                      + "<div><ul class = 'timeline'></ul></div>";
+                      
+                $(".modal-body").append(html);   */
+                
+                $(".title").val(data.writing_title);
+                $(".bbs_id").text( data.writing_Id );
+                $(".writer").text("작성자"+ data.member_Id);
+                $(".file").attr('src',data.bbs_FilePath);
+                $(".s-content").text(data.writing_content);
+                
+              
+            
+             /*  var refresh = function() {
+                    var center = detailmap.getCenter();
+                        google.maps.event.trigger(detailmap, "resize");
+                        detailmap.setCenter(center);
+                       detailmap.setZoom(16);
+                    }
+                    setTimeout(refresh, 100); */
+             },
+             error: function() {
+                alert('에러');
+             }
+          });
+       });
+      
+          
+          $.ajax({
+             url:'showMyPicture',
+             type:'get',
+             success:function(data){
+                if(data.result=="success")
+                {
+                   console.log(data);
+                   var picarray=data.list;
+                   
+                   for(var i=0;i<picarray.length;i++)
+                   {   
+                   
+                   var src=picarray[i].picture_path;
+                   var img=$('<img />').attr('src', 'http://localhost:8080/GroupRidingApp/image/' + src);
+                   
+                   
+                   img.appendTo($("#myPic"));   
+                   }       
+                }
+             }
+             
+          });
+          
+          
+          
+          $.ajax({
+             url:'show_history_web',
+             type:'get',
+                 dataType:'json',
+                 success:function(data){
+                      console.log(data.history);
+                     var list=data.history; 
+                     
+                     var str="";
+                     
+                     for(var i=0;i<list.length;i++)
+                       {
+                    var time=list[i].alltime;
+                    var alltime;
+                    time=time.split("/");
+                    
+                    str+="<tr class='"+list[i].kml_name+"'><td>"+list[i].startDate+"</td>"+
+                    "<td>"+list[i].avgspeed+"</td>"+
+                    "<td>"+time[0]+"시간"+time[1]+"분"+time[2]+"초"+"</td>"+
+                    "<td>"+list[i].kcal+"</td></tr>";
+                        
+                        
+                       }
+                     
+                     $("#myRoute").append(str);
+                      
+                      
+                 }
+          });
+      
       $(".close").on("click", function() {
          event.preventDefault();
         /*  $(".modal-body").html(""); */
@@ -655,14 +766,22 @@
               }
               setTimeout(refresh, 500); 
 
-       })
+       });
+      
+      $('#editModal').on('shown.bs.modal', function () {
+          google.maps.event.trigger(map, 'resize'); 
+          var refresh = function() {
+               //var center = map.getCenter();
+                   map.setCenter(new google.maps.LatLng(35.896553, 128.622051));
+                  map.setZoom(17);
+               }
+               setTimeout(refresh, 500); 
+
+        });
 
    </script>
-<!--[if lt IE 9]>
-   <script src="assets/plugins/respond.js"></script>
-   <script src="assets/plugins/html5shiv.js"></script>
-   <script src="assets/plugins/placeholder-IE-fixes.js"></script>
-   <![endif]-->
+
 
 </body>
 </html>
+   

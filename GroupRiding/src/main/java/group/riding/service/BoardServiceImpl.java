@@ -60,4 +60,12 @@ public class BoardServiceImpl implements BoardService {
 		dao.insertimgfile(imgName);
 	}
 
+	@Override
+	public void sharDel(int writing_Id) throws Exception {
+		// TODO Auto-generated method stub
+		dao.delFile(writing_Id);
+	     dao.sharDel(writing_Id);
+
+	}
+
 }

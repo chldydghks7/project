@@ -31,9 +31,9 @@
 	</select>
 	
 	<select id="getAttach" resultType="string">
-		select a.fullName, b.uname
-		from gr_attach a,gr_user b
-		where a.uid=#{uid}
+		select fullName,uid
+		from gr_attach 
+		where uid=#{uid}
 	</select>
 	
 <select id="Ridingdata" resultType="UserData">
@@ -67,7 +67,7 @@
 	
 	<!-- kml 파일명 삽입-->
 	<insert id="insert_kml">
-	 insert into gr_kml(kml_name) values(#{kml_name})	
+	 insert into gr_kml(kml_name,kml_center) values(#{kml_name},#{kml_center)	
 	
 	</insert>
 	
@@ -79,7 +79,7 @@
 	
 	<!-- 라이딩 중 찍은사진 보여주기-->
 	<select id="showMyPic" resultType="MyPicture">
-	select picture_id,picture_path from gr_picture where uid=#{uid}
+	select picture_id,picture_path,picture_location from gr_picture where uid=#{uid}
 	</select>
 
 	<!-- kml id 삽입 위해 조회-->

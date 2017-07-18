@@ -30,7 +30,7 @@
 			
 			if(aaa=1){
 			 	$(".uploadedList").append(html);
-				a++;
+				aaa++;
 			}
 			
 		});

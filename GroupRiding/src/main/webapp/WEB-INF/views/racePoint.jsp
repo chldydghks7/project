@@ -5,9 +5,9 @@
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if !IE]><!--> <html > <!--<![endif]-->
 <head>
-   <title>Pricing | Unify - Responsive Website Template</title>
+   <title>Group Riding</title>
 
    <!-- Meta -->
    <meta charset="utf-8">
@@ -15,33 +15,14 @@
    <meta name="description" content="">
    <meta name="author" content="">
 
-   <!-- Favicon -->
-   <link rel="shortcut icon" href="./resources/favicon.ico">
+  <!-- Bootstrap Core CSS -->
+    <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom CSS -->
+    <link href="./resources/css/modern-business.css" rel="stylesheet">
 
-   <!-- CSS Global Compulsory -->
-   <link rel="stylesheet" href="./resources/assets/plugins/bootstrap/css/bootstrap.min.css">
-   <link rel="stylesheet" href="./resources/assets/css/style.css">
-
-   <!-- CSS Header and Footer -->
-   <link rel="stylesheet" href="./resources/assets/css/headers/header-default.css">
-   <link rel="stylesheet" href="./resources/assets/css/footers/footer-v1.css">
-
-   <!-- CSS Implementing Plugins -->
-   <link rel="stylesheet" href="./resources/assets/plugins/animate.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/line-icons/line-icons.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/font-awesome/css/font-awesome.min.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/fancybox/source/jquery.fancybox.css">
-
-   <!-- CSS Theme -->
-   <link rel="stylesheet" href="./resources/assets/css/theme-colors/default.css" id="style_color">
-   <link rel="stylesheet" href="./resources/assets/css/theme-skins/dark.css">
-
-   <!-- CSS Customization -->
-   <link rel="stylesheet" href="./resources/assets/css/custom.css">
-   
-   <link rel='stylesheet' type='text/css' href='./resources/calendar/fullcalendar.css' />
-
+    <!-- Custom Fonts -->
+    <link href="./resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
    
    <style>
          .logo, .footer-logo {
@@ -121,148 +102,108 @@
      list-style-type: none;
     
     }  
-   </style>
+
+#contents{
+    margin-top: 40px !important;
+}
+
+
+.fave{
+     float: left;
+     width: 60px;
+     height: 50px;
+     background: url(http://cfile27.uf.tistory.com/original/24223F3355E5864E1D4E26) no-repeat;
+     background-position: 0 0;
+    }
+    
+
+    .fave:hover {
+     transition: background 1s steps(55);
+ }
+
+ #replyreg{
+    margin-top: 350px;
+
+ }
+
+ #rp{
+     margin-top: 80px;
+ }
+
+</style>
 </head>
 
 <body>
-   <div class="wrapper">
-      <!--=== Header ===-->
-      <div class="header">
-         <div class="container">
-            <!-- Logo -->
-            <a class="logo" href="mainlogin">
-               <img src="./resources/img/logo(b).png" alt="Logo">
-            </a>
-            <!-- End Logo -->
-
-            <!-- Topbar -->
-            <div class="topbar">
-               <ul class="loginbar pull-right">
-                  <li class="topbar-devider"></li>
-                  <li><a href="logout">Logout</a></li>
-               </ul>
+     <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Group Riding</a>
             </div>
-            <!-- End Topbar -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Page <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="MyInfo">My Information</a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Group <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="groupList">Group List</a>
+                            </li>
+                            <li>
+                                <a href="racePoint">Race Point</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="groupRank">Rank</a>
+                    </li>
+                    <li>
+                        <a href="sharing">Sharing</a>
+                    </li>
+                    <li>
+                        <a href="hotPlaceMap">Hot Place</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-            <!-- Toggle get grouped for better mobile display -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-               <span class="sr-only">Toggle navigation</span>
-               <span class="fa fa-bars"></span>
-            </button>
-            <!-- End Toggle -->
-         </div><!--/end container-->
+      <header id="myCarousel" class="carousel slide" style="height: 30%;background: url('./resources/img/bike33.jpeg') no-repeat center center scroll;margin-top:50px;">
 
-         <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
-            <div class="container">
-               <ul class="nav navbar-nav">
-                  <!-- Home -->
-                  <li class="dropdown active">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Home
-                     </a>
-                  <!-- End Home -->
-
-                  <!-- Pages -->
-                  <li class="dropdown">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Group
-                     </a>
-                     <ul class="dropdown-menu">
-                        <!-- About Pages -->
-                        <li class="dropdown-submenu">
-                           <a href="groupList">GroupList</a>
-                        </li>
-                        <!-- End About Pages -->
-
-                        <!-- Service Pages -->
-                        <li class="dropdown-submenu">
-                           <a href="groupRank">Ranking</a>
-                        </li>
-                        
-                        <li class="dropdown-submenu">
-                           <a href="racePoint">RacePoint</a>
-                        </li>
-                        <!-- End Service Pages -->
-                     </ul>
-                  </li>
-                  <!-- End Pages -->
-
-                  <!-- Blog -->
-                  <li class="dropdown">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Info
-                     </a>
-                     <ul class="dropdown-menu">
-                        <li class="dropdown-submenu">
-                           <a href="calendar?uid=${uid}">Calendar</a>
-                        </li>
-                       
-                     </ul>
-                  </li>
-                  <!-- End Blog -->
-
-                  <!-- Portfolio -->
-                  <li class="dropdown">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Sharing
-                     </a>
-                     <ul class="dropdown-menu">
-                        <li><a href="sharing">Sharing</a></li>
-                     </ul>
-                  </li>
-                  <!-- End Portfolio -->
-
-                  <!-- Features -->
-                  <li class="dropdown">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Hot Place
-                     </a>
-                     <ul class="dropdown-menu">
-                        <li class="dropdown-submenu">
-                           <a href="hotPlaceMap">Hot Place</a>
-                        </li>
-                        <!-- <li class="dropdown-submenu">
-                           <a href="restaurantList">Restaurant</a>
-                        </li>
-                        <li><a href="hotelList">Hotel</a></li> -->
-                     </ul>
-                  </li>
-                  <!-- End Features -->
-
-                  <!-- Search Block -->
-                  <li>
-                     <i class="search fa fa-search search-btn"></i>
-                     <div class="search-open">
-                        <div class="input-group animated fadeInDown">
-                           <input type="text" class="form-control" placeholder="Search">
-                           <span class="input-group-btn">
-                              <button class="btn-u" type="button">Go</button>
-                           </span>
-                        </div>
-                     </div>
-                  </li>
-                  <!-- End Search Block -->
-               </ul>
-            </div><!--/end container-->
-         </div><!--/navbar-collapse-->
-      </div>
-      <!--=== End Header ===-->
-
-      <!--=== Breadcrumbs ===-->
-      <div class="breadcrumbs">
-         <div class="container">
-            <h1 class="pull-left">My calendar</h1>
-            <ul class="pull-right breadcrumb">
-               <li><a href="/">Home</a></li>
-               <li class="active">My calendar</li>
-            </ul>
-         </div>
-      </div><!--/breadcrumbs-->
-      <!--=== End Breadcrumbs ===-->
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="carousel-caption" style="bottom:60px;">
+                    <h1 style="font-size: 60px;">Race Point</h1></br>
+                </div>
+            </div>
+        </div>
+    </header>
 
       <!--=== Content Part ===-->
-      <div class="container content">
+      <div class="container content" style="margin-top:30px;">
          <div class="row">
    <!-- 레이스 -->
                     <div id="map_div" style="position: absolute;"></div>
@@ -312,22 +253,11 @@
       </div><!--/container-->
       <!--=== End Content Part ===-->
 
-      
-   <!-- JS Global Compulsory -->
-   <script type="text/javascript" src="./resources/assets/plugins/jquery/jquery.min.js"></script>
-   <script type="text/javascript" src="./resources/assets/plugins/jquery/jquery-migrate.min.js"></script>
-   <script type="text/javascript" src="./resources/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-   <!-- JS Implementing Plugins -->
-   <script type="text/javascript" src="./resources/assets/plugins/back-to-top.js"></script>
-   <script type="text/javascript" src="./resources/assets/plugins/smoothScroll.js"></script>
-      <script type="text/javascript" src="./resources/assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
-   <!-- JS Customization -->
-   <script type="text/javascript" src="./resources/assets/js/custom.js"></script>
-   <!-- JS Page Level -->
-   <script type="text/javascript" src="./resources/assets/js/app.js"></script>
-   <script type="text/javascript" src="./resources/assets/js/plugins/style-switcher.js"></script>
-   <script type="text/javascript" src="./resources/assets/js/plugins/fancy-box.js"></script>
-   <script type="text/javascript" src="./resources/js/upload.js"></script>
+   <!-- jQuery -->
+    <script src="./resources/js2/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./resources/js2/bootstrap.min.js"></script>
 
 
 <script type="text/javascript" src="https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b"></script>
@@ -364,7 +294,7 @@
                   var location = get3857LonLat(racepoint[i][0],racepoint[i][1]);
                   var size = new Tmap.Size(24,38);
                   var offset = new Tmap.Pixel(-(size.w/2), -(size.h/2));
-                  var icon = new Tmap.Icon('./resources/racepoint.png', size, offset);
+                  var icon = new Tmap.Icon('./resources/img/racepoint.png', size, offset);
                   
                   var marker = new Tmap.Markers(location, icon);
                   markerLayer.addMarker(marker);

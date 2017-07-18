@@ -1,463 +1,473 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language = "java" contentType = "text/html; charset = UTF-8" pageEncoding = "UTF-8"%>
-
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<html style="background-color: #222;">
+
 <head>
-   <title>Home Basic 4 | Unify - Responsive Website Template</title>
 
-   <!-- Meta -->
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="">
-   <meta name="author" content="">
-   
-   <!-- Favicon -->
-   <link rel="shortcut icon" href="./resources/favicon.ico">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-   <!-- Web Fonts -->
-<!--    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'> -->
+    <title>Group Riding</title>
 
-   <!-- CSS Global Compulsory -->
-   <link rel="stylesheet" href="./resources/assets/plugins/bootstrap/css/bootstrap.min.css">
-   <link rel="stylesheet" href="./resources/assets/css/style.css">
+    <!-- Bootstrap Core CSS -->
+    <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
 
-   <!-- CSS Header and Footer -->
-   <link rel="stylesheet" href="./resources/assets/css/headers/header-v6.css">
-   <link rel="stylesheet" href="./resources/assets/css/footers/footer-v1.css">
+    <!-- Custom CSS -->
+    <link href="./resources/css/modern-business.css" rel="stylesheet">
 
-   <!-- CSS Implementing Plugins -->
-   <link rel="stylesheet" href="./resources/assets/plugins/animate.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/line-icons/line-icons.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/font-awesome/css/font-awesome.min.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/animated-headline/css/animated-headline.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/parallax-slider/css/parallax-slider.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/fancybox/source/jquery.fancybox.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
-<!-- CSS Implementing Plugins -->
-   <link rel="stylesheet" href="./resources/assets/plugins/animate.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/line-icons/line-icons.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/font-awesome/css/font-awesome.min.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/animated-headline/css/animated-headline.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/parallax-slider/css/parallax-slider.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/fancybox/source/jquery.fancybox.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css">
-   <link rel="stylesheet" href="./resources/assets/plugins/animated-headline/css/animated-headline.css">
+    <!-- Custom Fonts -->
+    <link href="./resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-   <!-- CSS Theme -->
-   <link rel="stylesheet" href="./resources/assets/css/theme-colors/default.css" id="style_color">
-   <link rel="stylesheet" href="./resources/assets/css/theme-skins/dark.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-   <!-- CSS Customization -->
-   <link rel="stylesheet" href="./resources/assets/css/custom.css">
 </head>
+<style>
+.callout {
+    display: table;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    background: url('./resources/img/bike.jpg') no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 
-<body class="header-fixed">
-   <div class="wrapper">
-      <!--=== Header v6 ===-->
-      <div class="header-v6 header-transparent header-dark-dropdown header-sticky">
-         <!-- Navbar -->
-         <div class="navbar mega-menu" role="navigation">
-            <div class="container">
-               <!-- Brand and toggle get grouped for better mobile display -->
-               <div class="menu-container">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                     <span class="sr-only">Toggle navigation</span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                  </button>
+}
+.callout2 {
+    display: table;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    background: url('./resources/img/bike3.jpg') no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 
-                  <!-- Navbar Brand -->
-                  <div class="navbar-brand">
-                     <a href="">
-                        <img class="default-logo" src="./resources/img/logo(w).png" alt="Logo">
-                        <img class="shrink-logo" src="./resources/img/logo(b).png" alt="Logo">
-                     </a>
-                  </div>
-                  <!-- ENd Navbar Brand -->
-               </div>
+}
+.callout3 {
+    display: table;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    background: url('./resources/img/bike5.jpg') no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 
-               <!-- Collect the nav links, forms, and other content for toggling -->
-               <div class="collapse navbar-collapse navbar-responsive-collapse">
-                  <div class="menu-container">
-                     <ul class="nav navbar-nav">
-                      <!-- Pages -->
-                        <li class="dropdown">
-                           <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                              Group
-                           </a>
-                           <!-- 소메뉴 -->
-                           <ul class="dropdown-menu">
-                              <li><a href="groupList">Group List</a></li>
-                              <li><a href="groupRank">Ranking</a></li>
-                              <li><a href="racePoint">RacePoint</a></li>
-                           </ul>
+}
+.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgba( 0, 0, 0, 0.5 );
+}
+</style>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Group Riding</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Page <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="MyInfo">My Information</a>
+                            </li>
                            
-                        </li>
-                        <!-- End Pages -->
-
-                        <!-- Blog -->
-                        <li class="dropdown">
-                           <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                              Info
-                           </a>
-                           <ul class="dropdown-menu">
-                              <li><a href="calendar?uid=${uid}">Calendar</a></li>
-                             
-                           </ul>
-                           
-                        </li>
-                        <!-- End Blog -->
-
-                        <!-- Portfolio -->
-                        <li class="dropdown">
-                           <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                              Sharing
-                           </a>
-                           <ul class="dropdown-menu">
-                              <li><a href="sharing">Sharing</a></li>
-                           </ul>
-                           
-                        </li>
-                        <!-- End Portfolio -->
-
-                        <!-- Features -->
-                        <li class="dropdown ">
-                           <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                              Hot Place
-                           </a>
-                           <ul class="dropdown-menu">
-                              <li><a href="hotPlaceMap">Hot Place</a></li>
-                              <!-- <li><a href="restaurantList">Restaurant</a></li>
-                              <li><a href="hotelList">Hotel</a></li> -->
-                           </ul>
-                        </li>
-
-                     </ul>
-                  </div>
-               </div><!--/navbar-collapse-->
-            </div>
-         </div>
-         <!-- End Navbar -->
-      </div>
-      <!--=== End Header v6 ===-->
-
-      <!--=== Full Height Text Rotater ===-->
-      <div class="fullscreen-static-image1 fullheight bg-color-darker">
-         <div class="container valign__middle text-center">
-            <span class="promo-text-v1 color-light animated fadeInDown wow margin-bottom-10" data-wow-duration="1.5s" data-wow-delay=".5s">
-               2017 YEUNGJIN COLLEGE
-            </span>
-            <h2 class="promo-text-v2 color-light cd-headline letters type margin-bottom-20">
-               GROUP
-               <span class="cd-words-wrapper">
-                  <b class="is-visible">RIDING</b>
-                  <!-- <b>AWESOME</b> b태그 삽입시 타이핑 효과추가 
-                  <b>CREATIVE</b> -->
-               </span>
-            </h2>
-            <div class="animated fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="1s">
-               <!-- <a href="#" class="btn-u btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block rounded-4x margin-right-10">Start</a> -->
-               <form action="signIn" method="get">
-                  <button type="submit" class="btn-u btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block rounded-4x">Login</button>
-               </form>
-            </div>
-            
-         </div>
-      </div>
-      <!--=== End Full Height Text Rotater ===-->
-      <div class="container-fluid">
-         <div class="row no-gutter equal-height-columns">
-            <div class="col-sm-4">
-               <div class="service-block service-block-purple no-margin-bottom content equal-height-column">
-                  <i class="icon-custom icon-md rounded icon-color-light icon-line icon-badge"></i>
-                  <h2 class="font-light">GroupRiding</h2>
-                  <p class="no-margin-bottom font-light">여러명의 팀원을 모아서 자전거 라이딩을 즐겨보세요! 자전거 전용 도로만을
-                  안내하는 놀라운 경험을 하여 보세요.</p>
-               </div>
-            </div>
-            <div class="col-sm-4">
-               <div class="service-block service-block-red no-margin-bottom content equal-height-column">
-                  <i class="icon-custom icon-md rounded icon-color-light icon-line icon-layers"></i>
-                  <h2 class="font-light">Information</h2>
-                  <p class="no-margin-bottom font-light">속도, 거리, 시간 빈틈없이 관리 하여 체계적인 시스템을 확인 하세요. 또한
-                  여러분의 데이터는 그룹성장에 큰도움이 된답니다!</p>
-               </div>
-            </div>
-            <div class="col-sm-4">
-               <div class="service-block service-block-blue no-margin-bottom content equal-height-column">
-                  <i class="icon-custom icon-md rounded icon-color-light icon-line icon-support"></i>
-                  <h2 class="font-light">Hot Place</h2>
-                  <p class="no-margin-bottom font-light">자전거 라이딩을 하다가 배가 고프거나, 쉴수 있는 곳을 찾아 본적이 있습니까?
-                  저희는 라이더들의 입장에서 가장 많이 간곳을 지도에 표시하여 드립니다.</p>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!--=== Content Part ===-->
-      <!--=== Cube Portfolio ===-->
-      <div class="container content-md">
-         <div class="text-center margin-bottom-30">
-            <h2 class="title-v2 title-center">LATEST PROJECTS</h2>
-            <p class="space-lg-hor">If you are going to use a <span class="color-green">passage of Lorem Ipsum</span>, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making <span class="color-green">this the first</span> true generator on the Internet.</p>
-         </div>
-
-         <div class="cube-portfolio container margin-bottom-20">
-            <div class="margin-bottom-30">
-               <div id="filters-container" class="cbp-l-filters-text">
-                  <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All </div> |
-                  <div data-filter=".illustration" class="cbp-filter-item"> Illustration </div> |
-                  <div data-filter=".web-design" class="cbp-filter-item"> Web Design </div> |
-                  <div data-filter=".graphic" class="cbp-filter-item"> Graphic </div> |
-                  <div data-filter=".logo" class="cbp-filter-item"> Logo </div>
-               </div><!--/end Filters Container-->
-            </div>
-
-            <div id="grid-container" class="cbp-l-grid-gallery">
-               <div class="cbp-item illustration web-design">
-                  
-                  <div class="cbp-caption-defaultWrap">
-                     <img src="./resources/assets/img/portfolio/20.jpg" alt="">
-                  </div>
-               
-               
-            </div>
-         
-      
-
-
-
-   </div><!--/end Grid Container-->
-   </div>
-   </div>
-
-
-      <!--=== Parallax Counter v1 ===-->
-   <div class="parallax-counter-v1 parallaxBg">
-      <div class="container">
-         <h2 class="title-v2 title-light title-center">실시간 현황판</h2>
-         <p class="space-xlg-hor text-center color-light">실시간 현황판을 통하여, 여러분도 어서 그룹라이딩의 세계로 빠져 보세요</p>
-
-         <div class="margin-bottom-40"></div>
-
-         <div class="row">
-            <div class="col-sm-3 col-xs-6 md-margin-bottom-20">
-               <div class="counters">
-                  <span class="counter">234명</span>
-                  <h4>Users</h4>
-               </div>
-            </div>
-            <div class="col-sm-3 col-xs-6 md-margin-bottom-20">
-               <div class="counters">
-                  <span class="counter">32그룹</span>
-                  <h4>Group</h4>
-               </div>
-            </div>
-            <div class="col-sm-3 col-xs-6">
-               <div class="counters">
-                  <span class="counter">78회</span>
-                  <h4>Complete Riding</h4>
-               </div>
-            </div>
-            <div class="col-sm-3 col-xs-6">
-               <div class="counters">
-                  <span class="counter">4322km</span>
-                  <h4>Distancce</h4>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-
-   <!--=== End Parallax Counter v1 ===-->
-      <!--=== Footer Version 1 ===-->
-      <div class="footer-v1">
-         <div class="footer">
-            <div class="container">
-               <div class="row">
-                  <!-- About -->
-                  <div class="col-md-3 md-margin-bottom-40">
-                     <a href="main"><img id="logo-footer" class="footer-logo" src="./resources/assets/img/logo2-default.png" alt=""></a>
-                     <p>GroupRiding은 2017년 9월에 탄생하였습니다.</p>
-                     <p>그중 첫번째 프로젝트에 해당한다.</p>
-                  </div><!--/col-md-3-->
-                  <!-- End About -->
-
-                  <!-- Latest -->
-                  <div class="col-md-3 md-margin-bottom-40">
-                     <div class="posts">
-                        <div class="headline"><h2>Latest Posts</h2></div>
-                        <ul class="list-unstyled latest-list">
-                           <li>
-                              <a href="#">놀라운 콘텐츠</a>
-                              <small>2017년 5월 26일</small>
-                           </li>
-                           <li>
-                              <a href="#">최고의 촬영</a>
-                              <small>2017년 5월 26일</small>
-                           </li>
-                           <li>
-                              <a href="#">새로운 이용 약관</a>
-                              <small>September 15, 2014</small>
-                           </li>
                         </ul>
-                     </div>
-                  </div><!--/col-md-3-->
-                  <!-- End Latest -->
-
-                  <!-- Link List -->
-                  <div class="col-md-3 md-margin-bottom-40">
-                     <div class="headline"><h2>유용한 링크</h2></div>
-                     <ul class="list-unstyled link-list">
-                        <li><a href="#">회사 소개</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="#">포트폴리오</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="#">최신 채용 정보</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="#">커뮤니티</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="#">문의하기</a><i class="fa fa-angle-right"></i></li>
-                     </ul>
-                  </div><!--/col-md-3-->
-                  <!-- End Link List -->
-
-                  <!-- Address -->
-                  <div class="col-md-3 map-img md-margin-bottom-40">
-                     <div class="headline"><h2>Contact Us</h2></div>
-                     <address class="md-margin-bottom-40">
-                        대구광역시 북구 복현동 <br />
-                        에이타운505호 <br />
-                        Phone: 010 9554 6737 <br />
-                        Fax: 053 561 6737 <br />
-                        Email: <a href="mailto:info@anybiz.com" class="">tjdwo564@naver.com</a>
-                     </address>
-                  </div><!--/col-md-3-->
-                  <!-- End Address -->
-               </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Group <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="groupList">Group List</a>
+                            </li>
+                            <li>
+                                <a href="racePoint">Race Point</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="groupRank">Rank</a>
+                    </li>
+                    <li>
+                        <a href="sharing">Sharing</a>
+                    </li>
+                    <li>
+                        <a href="hotPlaceMap">Hot Place</a>
+                    </li>
+                    
+                </ul>
             </div>
-         </div><!--/footer-->
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-         <div class="copyright">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-6">
-                     <p>
-                        2017 &copy; 모든 권리 보유.
-                        <a href="#">개인 정보 보호 정책</a> | <a href="#">서비스 약관</a>
-                     </p>
-                  </div>
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide" style="height: 100%">
 
-                  <!-- Social Links -->
-                  <div class="col-md-6">
-                     <ul class="footer-socials list-inline">
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
-                              <i class="fa fa-facebook"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype">
-                              <i class="fa fa-skype"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus">
-                              <i class="fa fa-google-plus"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Linkedin">
-                              <i class="fa fa-linkedin"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest">
-                              <i class="fa fa-pinterest"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
-                              <i class="fa fa-twitter"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Dribbble">
-                              <i class="fa fa-dribbble"></i>
-                           </a>
-                        </li>
-                     </ul>
-                  </div>
-                  <!-- End Social Links -->
-               </div>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill">
+                    <video src="./resources/main.mp4" controls="controls" autoplay="autoplay" loop="loop"></video>
+                </div>
+                <div class="carousel-caption" style="bottom:35%;margin-left:18%;  border: 4px solid rgba( 256, 256, 256, 0.5 );width: 30%;">
+                    <h1>W&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;E</h1>
+                    <h1 style="font-size: 53px;"><strong>GROUP RIDING</strong></h1></br>
+                    <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal" style="width: 95%;height: 50PX;"><strong>START GROUP RIDING</strong></button>
+                </div>
+                <div>
+                </div>
             </div>
-         </div><!--/copyright-->
-      </div>
-      <!--=== End Footer Version 1 ===-->
-   </div><!--/wrapper-->
-<!-- JS Global Compulsory -->
-<script type="text/javascript" src="./resources/assets/plugins/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="./resources/assets/plugins/jquery/jquery-migrate.min.js"></script>
-<script type="text/javascript" src="./resources/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<!-- JS Implementing Plugins -->
-<script type="text/javascript" src="./resources/assets/plugins/back-to-top.js"></script>
-<script type="text/javascript" src="./resources/assets/plugins/smoothScroll.js"></script>
-<script type="text/javascript" src="./resources/assets/plugins/jquery.parallax.js"></script>
-<script type="text/javascript" src="./resources/assets/plugins/counter/waypoints.min.js"></script>
-<script type="text/javascript" src="./resources/assets/plugins/counter/jquery.counterup.min.js"></script>
-<script type="text/javascript" src="./resources/assets/plugins/wow-animations/js/wow.min.js"></script>
-<script src="./resources/assets/plugins/animated-headline/js/modernizr.js"></script>
-<script src="./resources/assets/plugins/animated-headline/js/animated-headline.js"></script>
-<script type="text/javascript" src="./resources/assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
-<!-- JS Customization -->
-<script type="text/javascript" src="./resources/assets/js/custom.js"></script>
-<!-- JS Page Level -->
-<script type="text/javascript" src="./resources/assets/js/app.js"></script>
-<script type="text/javascript" src="./resources/assets/js/plugins/style-switcher.js"></script>
-<script type="text/javascript" src="./resources/assets/js/plugins/cube-portfolio/cube-portfolio-lightbox.js"></script>
-   <!-- JS Global Compulsory -->
-   <script src="./resources/assets/plugins/jquery/jquery.min.js"></script>
-   <script src="./resources/assets/plugins/jquery/jquery-migrate.min.js"></script>
-   <script src="./resources/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-   <!-- JS Implementing Plugins -->
-   <script src="./resources/assets/plugins/back-to-top.js"></script>
-   <script src="./resources/assets/plugins/smoothScroll.js"></script>
-   <script src="./resources/assets/plugins/backstretch/backstretch-ini.js"></script>
-   <script src="./resources/assets/plugins/wow-animations/js/wow.min.js"></script>
-   <script src="./resources/assets/plugins/animated-headline/js/modernizr.js"></script>
-   <script src="./resources/assets/plugins/animated-headline/js/animated-headline.js"></script>
-   <script src="./resources/assets/plugins/jquery.parallax.js"></script>
-   <script src="./resources/assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
-   <script src="./resources/assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
-   <!-- JS Customization -->
-   <script src="./resources/assets/js/custom.js"></script>
-   <!-- JS Page Level -->
-   <script src="./resources/assets/js/app.js"></script>
-   <script src="./resources/assets/js/plugins/fancy-box.js"></script>
-   <script src="./resources/assets/js/plugins/owl-carousel.js"></script>
-   <script src="./resources/assets/js/plugins/style-switcher.js"></script>
-   <script type="text/javascript">
-      jQuery(document).ready(function() {
-         App.init();
-         new WOW().init();
-         App.initParallaxBg();
-         FancyBox.initFancybox();
-         OwlCarousel.initOwlCarousel();
-         StyleSwitcher.initStyleSwitcher();
-      });
+        </div>
+    </header>
+    <aside class="callout">
+        <div class="text-vertical-center">
+            <h1>GROUP</h1><br>
+             <h2>여러명의 팀원을 모아서 자전거 라이딩을 즐겨보세요! <br>자전거 전용 도로만을
+                  안내하는 놀라운 경험을 하여 보세요.</h2>
+        </div>
+    </aside>
+    <aside class="callout2">
+        <div class="text-vertical-center">
+            <h1>SHARING</h1><br>
+             <h2>속도, 거리, 시간 빈틈없이 관리 하여 체계적인 시스템을 확인 하세요. <br>또한
+                  여러분의 데이터는 그룹성장에 큰도움이 된답니다!</h2>
+        </div>
+    </aside>
+    <aside class="callout3">
+        <div class="text-vertical-center">
+            <h1>SHARING</h1><br>
+             <h2>자전거 라이딩을 하다가 배가 고프거나, 쉴수 있는 곳을 찾아 본적이 있습니까?<br>
+                  저희는 라이더들의 입장에서 가장 많이 간곳을 지도에 표시하여 드립니다.</h2>
+        </div>
+    </aside>
+    <!-- Page Content -->
+
+        <!-- Portfolio Section -->
+        <div class="row" style="background-color: #222; margin-left: 20px;margin-right: 20px;" >
+            <div class="col-lg-12" style="border-color:  #222;">
+                <h1 class="page-header" style="color: white; text-align: center;border-color:  #222;"><br>
+                Group Riding Picture</h1><br>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Features Section -->
+        <!-- 로그인 모달 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<div class="container">
+  <div class="modal fade" id="myModal" role="dialog" >
+    <div class="modal-dialog"  style="width: 500px; height: 350px;">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <div class="modal-title" style="text-align: center;"><h3>Login</h3></div>
+        </div>
+        <div class="modal-body">
+       <form class="form-horizontal" action="signInPost" method="POST">
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">ID:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control"id="uid11" name="uid" placeholder="ID">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Password:</label>
+    <div class="col-sm-10"> 
+      <input type="password" class="form-control" id="upw11" name="upw" placeholder="password">
+    </div>
+  </div>
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10" style="margin-left: 310px;">
+      <button type="submit" class="btn btn-default" >Submit</button>&nbsp;&nbsp;&nbsp;
       
-      $(".dropdown-menu li").on("click", function() {
-          event.preventDefault();
-          alert('로그인해주세요');
-          location.href = "signIn";
-       });
-   </script>
-<!--[if lt IE 9]>
-   <script src="assets/plugins/respond.js"></script>
-   <script src="assets/plugins/html5shiv.js"></script>
-   <script src="assets/plugins/placeholder-IE-fixes.js"></script>
-   <![endif]-->
+    </div>
+  </div>
+</form>
+<button type="submit" class="btn btn-default"  data-toggle="modal" data-target="#myModa2" style="margin-left: 395px; position:absolute; top: 113px;">Sign up</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+    <div class="modal fade" id="myModa2" role="dialog" >
+    <div class="modal-dialog"  style="width: 1000px; height: 700px;">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <div class="modal-title" style="text-align: center;"><h3>Register</h3></div>
+        </div>
+        <div class="modal-body">
+       <form class="form-horizontal">
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">ID:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="uid" name="uid" placeholder="ID">
+    </div>
+    <div class="input-group margin-bottom-20">
+<input type="button" class="btn-u btn-block rounded" style="background-color: black; width:120px; height:35px; text-align: center; " id="check" value="중복체크">
+	</div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Password:</label>
+    <div class="col-sm-10"> 
+      <input type="password" class="form-control" id="upw" name="upw" placeholder="password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">RE Password:</label>
+    <div class="col-sm-10"> 
+      <input type="password" class="form-control" id="upw1" name="upw1" placeholder="re password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Name:</label>
+    <div class="col-sm-10"> 
+      <input type="text" class="form-control" id="uname" name="uname" placeholder="Name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Birth:</label>
+    <div class="col-sm-10"> 
+      <input  type="date" class="form-control" id="uage" name="uage" placeholder="YYDDNN">
+    </div>
+  </div>
+   <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Image:</label>
+    <div class="col-sm-10"> 
+      <div class="fileDrop" style="width: 300px; height: 100px; border: 1px dotted blue;">
+          	 
+      </div>
+    </div>
+    		
+  </div>
+  
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Profile:</label>
+    <div class="col-sm-10 uploadedList"> 
+     	
+      </div>
+    </div>	
+  </div>
+  
+  
+ 
+      <button type="submit" id="save" class="btn btn-default" style="margin-left: 900px;margin-bottom:10px;" >Register</button>
+    
+ 
+</form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+<!-- 로그인 모달 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+        <!-- Footer -->
+        <footer >
+            <div class="row" style="" >
+                <div class="col-lg-12" style="color: white; margin-left: 40px;" >
+                    <p>Copyright &copy; Your Website 2017</p>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="./resources/js2/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./resources/js2/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+    
+    <script type="text/javascript" src="./resources/js/upload.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
+
+<script id="template" type="text/x-handlebars-template">
+
+ <img src="{{imgsrc}}" alt="Attachment">
+
+               
+</script>  
+
+
+<script>
+$("#save").on("click", function(){
+	if($("#uid").val() == "") { alert("아이디를 입력하세요"); return false;}
+	if($("#uname").val() == "") { alert("이름을 입력하세요"); return false;}
+	if($("#upw").val() == "") { alert("비밀번호를 입력하세요"); return false;}
+	if($("#upw1").val() == "") { alert("비밀번호 확인을 입력하세요"); return false;}
+	if($("#uage").val() == "") { alert("생년월일 입력하세요"); return false;}
+	if($("#upw").val() != $("#upw1").val()) { alert("비밀번호 일치 ㄴㄴ"); return false; }
+	window.alert("가입 됨");
+});
+
+$("#sign").on("click", function(){
+	if($("#uid11").val() == "") { alert("아이디를 입력하세요"); return false;}
+	if($("#upw11").val() == "") { alert("비밀번호를 입력하세요"); return false;}
+});
+</script>
+
+<script>
+	///////////////
+	////	프로필
+	///////////////
+var template = Handlebars.compile($("#template").html());
+
+$(".fileDrop").on("dragenter dragover", function(event){
+	event.preventDefault();
+});
+
+
+$(".fileDrop").on("drop", function(event){
+	event.preventDefault();
+	
+	var files = event.originalEvent.dataTransfer.files;
+	
+	var file = files[0];
+
+	var formData = new FormData();
+	
+	formData.append("file", file);	
+	
+	
+	$.ajax({
+		  url: 'uploadAjax',
+		  data: formData,
+		  dataType:'text',
+		  processData: false,
+		  contentType: false,
+		  type: 'POST',
+		  success: function(data){
+			  
+			  var fileInfo = getFileInfo(data);
+			  
+			  var html = template(fileInfo);
+			  
+			  $(".uploadedList").append(html);
+		  }
+		});	
+});
+
+$("#registerForm").submit(function(event){
+	event.preventDefault();
+	
+	var that = $(this);
+	
+	var str ="";
+	$(".uploadedList .delbtn").each(function(index){
+		 str = "<input type='hidden' name='files' value='"+$(this).attr("href") +"'> ";
+		 // 	 str = "<input type='hidden' name='files' value='"+$(this).attr("href") +"'> ";
+	});
+	
+	that.append(str);
+
+	that.get(0).submit();
+});
+	
+</script>
+
+<!-- 아이디 중복체크 -->
+<script>
+	$("#check").on("click", function(){
+		
+		$.ajax({
+			url:"id_check",
+			type:"post",
+			data: {
+				uid: $("#uid").val()
+			},
+			dataType:"json",
+			success:function(data) {
+				if(data.result == "success"){
+					window.alert("아이디 : " + $("#uid").val() + " 가능가능");
+				} else {
+					window.alert("아이디 : " +  $("#uid").val() + " 불가불가");
+				}
+				
+			}
+		})
+	});
+</script>
+			
 
 </body>
+
 </html>

@@ -1,6 +1,8 @@
 package yjc.wdb.gr;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
@@ -10,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import group.riding.bean.NoticeBean;
 import group.riding.bean.RidingInfoBean;
@@ -58,14 +61,16 @@ public class NoticeController {
 		model.addAttribute("memberjoininfo", memberjoininfo);
 	}
 	
-	@RequestMapping(value="calendar", method=RequestMethod.GET)	// ���� Ķ���� GET
-	public void  userNotice(@RequestParam(value="uid") String uid, Model model) throws Exception{
+	@RequestMapping(value="calendar", method=RequestMethod.GET)	
+	
+	public void userNotice(@RequestParam(value="uid") String uid, Model model) throws Exception{
 		List<NoticeBean> list = service.userNotice(uid);
-		List<NoticeBean> llll = service.noticeCheck(uid);	// â���ִԤ�����
+		List<NoticeBean> llll = service.noticeCheck(uid);	
 		List<RidingInfoBean> iiii =service.ridingDate(uid);
-		model.addAttribute("llll", llll);	// â���ִԤ�����
+		model.addAttribute("llll", llll);	
 		model.addAttribute("list", list);
-		model.addAttribute("iiii", iiii);	// ���̵� ����
+		model.addAttribute("iiii", iiii);	
+	
 		
 		
 	}
