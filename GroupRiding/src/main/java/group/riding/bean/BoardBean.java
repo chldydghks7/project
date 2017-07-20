@@ -8,15 +8,13 @@ public class BoardBean {
 	private String member_Id;
 	private String bbs_Id;
 	private String writing_title;
-	private Date Wregist_Date;
+	private Date regist_Date;
 	private int view_Number;
 	private String writing_content;
 	
 	private String bbs_FilePath;
 	
 	private String kml_name;
-	
-	private String picture_location;
 	
 	public String getBbs_FilePath() {
 		return bbs_FilePath;
@@ -68,12 +66,12 @@ public class BoardBean {
 		this.writing_title = writing_title;
 	}
 	
-	public Date getWregist_Date() {
-		return Wregist_Date;
+	public Date getRegist_Date() {
+		return regist_Date;
 	}
 	
-	public void setWregist_Date(Date wregist_Date) {
-		Wregist_Date = wregist_Date;
+	public void setRegist_Date(Date regist_Date) {
+		this.regist_Date = regist_Date;
 	}
 	
 	public int getView_Number() {
@@ -98,14 +96,6 @@ public class BoardBean {
 
 	public void setKml_name(String kml_name) {
 		this.kml_name = kml_name;
-	}
-
-	public String getPicture_location() {
-		return picture_location;
-	}
-
-	public void setPicture_location(String picture_location) {
-		this.picture_location = picture_location;
 	}
 	
 	

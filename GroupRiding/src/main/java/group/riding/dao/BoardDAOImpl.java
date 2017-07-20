@@ -66,17 +66,27 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	@Override
+	public void sharEdit(BoardBean vo) throws Exception {
+		// TODO Auto-generated method stub
+		session.update(namespace + ".sharEdit", vo);
+	}
+
+	@Override
 	public void sharDel(int writing_Id) throws Exception {
 		// TODO Auto-generated method stub
-		 session.delete(namespace + ".sharDel", writing_Id);
+		session.delete(namespace + ".sharDel", writing_Id);
+	}
 
+	@Override
+	public void editFile(BoardBean vo) throws Exception {
+		// TODO Auto-generated method stub
+		session.update(namespace + ".editFile", vo);
 	}
 
 	@Override
 	public void delFile(int writing_Id) throws Exception {
 		// TODO Auto-generated method stub
-		 session.delete(namespace + ".delFile", writing_Id);
-
+		session.delete(namespace + ".delFile", writing_Id);
 	}
 
 }

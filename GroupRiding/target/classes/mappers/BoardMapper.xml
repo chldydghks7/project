@@ -10,17 +10,28 @@
     </insert>
     
     <select id="sharList" resultType="BoardBean">
-      select a.writing_title, a.writing_content, a.writing_Id, a.view_Number,a.member_Id ,b.bbs_FilePath
+      select a.writing_title, a.writing_content, a.writing_Id, a.view_Number ,b.bbs_FilePath, a.member_Id
       from bbs_writing a, bbs_File b
       where a.writing_Id = b.writing_Id
       order by writing_Id desc
     </select>
     
     <select id="sharRead" resultType="BoardBean">
-    select a.writing_title, a.writing_content, a.writing_Id, a.member_Id,b.bbs_FilePath,b.kml_name,b.picture_location
+    select a.writing_title, a.writing_content, a.writing_Id, a.member_Id,b.bbs_FilePath,b.kml_name
       from bbs_writing a, bbs_File b
       where a.writing_Id = b.writing_Id and a.writing_Id = #{writing_Id}
     </select>
+    
+    <update id = "sharEdit">
+    	update bbs_writing set writing_title = #{writing_title},
+    	writing_content = #{writing_content}, regist_Date = now()
+    	where writing_Id = #{writing_Id}
+    </update>
+    
+    <delete id = "sharDel">
+    	delete from bbs_writing
+    	where writing_Id = #{writing_Id}
+    </delete>
     
     <update id = "likeUpdate">
     	update bbs_writing set view_Number = #{view_Number}
@@ -28,9 +39,19 @@
     </update>
     
     <insert id="addFile">
-       insert into bbs_File(writing_Id, bbs_FilePath,kml_name,picture_location)
-       values(LAST_INSERT_ID(), #{bbs_FilePath},#{kml_name},#{picture_location})
+       insert into bbs_File(writing_Id, bbs_FilePath,kml_name)
+       values(LAST_INSERT_ID(), #{bbs_FilePath},#{kml_name})
     </insert>
+    
+    <update id = "editFile">
+    	update bbs_file set bbs_FilePath = #{bbs_FilePath}, kml_name = #{kml_name}
+    	where writing_Id = #{writing_Id} 
+    </update>
+    
+    <delete id = "delFile">
+    	delete from bbs_file
+    	where writing_Id = #{writing_Id}
+    </delete>
     
     <select id="getFile" resultType="String">
        select a.bbs_FilePath, b.writing_id
@@ -44,20 +65,7 @@
     </select>
     
     <insert id="insertImgFile">
-    	insert into bbs_File(bbs_FilePath) values(#{imgName})
-    
+    	insert into bbs_File(bbs_FilePath) values(#{imgName}) 
     </insert>
-    
-     <delete id = "sharDel">
-       delete from bbs_writing
-       where writing_Id = #{writing_Id}
-    </delete>
-    
-    
-     <delete id = "delFile">
-       delete from bbs_file
-       where writing_Id = #{writing_Id}
-    </delete>
-    
     
  </mapper>

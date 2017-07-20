@@ -69,4 +69,35 @@ public class BoardReplyController {
 		
 		return entity;
 	}
+	
+	@RequestMapping(value = "/{rno}", method = RequestMethod.DELETE)
+	public ResponseEntity<String> remove(@PathVariable("rno") Integer rno) {
+		ResponseEntity<String> entity = null;
+		
+		try {
+			service.delReply(rno);
+			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK); 
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+		
+		return entity;
+	}
+	
+	@RequestMapping(value = "/{rno}", method = {RequestMethod.PUT, RequestMethod.PATCH})
+	public ResponseEntity<String> updateReply(@PathVariable("rno") Integer rno, @RequestBody BoardReplyBean reply) {
+		ResponseEntity<String> entity = null;
+		
+		try {
+			reply.setRno(rno);
+			service.editReply(reply);
+			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+		
+		return entity;
+	}
 }
