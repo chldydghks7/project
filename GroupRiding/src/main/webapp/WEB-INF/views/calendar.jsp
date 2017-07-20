@@ -120,7 +120,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">Group Riding</a>
             </div>
-<<<<<<< HEAD
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -176,7 +176,7 @@
         </div>
     </header>
       
-=======
+
             <!-- End Topbar -->
 
             <!-- Toggle get grouped for better mobile display -->
@@ -296,7 +296,7 @@
       </div><!--/breadcrumbs-->
       <!--=== End Breadcrumbs ===-->
 
->>>>>>> 6d508135575f3e45e200609a9eefa36994ce5cc5
+
       <!--=== Content Part ===-->
       <div class="container">
         <div class="row">
