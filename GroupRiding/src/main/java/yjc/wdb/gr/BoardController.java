@@ -60,6 +60,24 @@ public class BoardController {
       return "redirect:sharing";
    }
    
+   @RequestMapping(value = "sharDel")
+   public String sharDel(@RequestParam(value = "writing_Id", defaultValue = "-1") int writing_Id) throws Exception {
+	   System.out.println(writing_Id);
+	   
+	   service.sharDel(writing_Id);
+	   
+	   return "redirect:sharing";
+   }
+   
+   @RequestMapping(value = "sharEdit", method = RequestMethod.POST)
+   public String sharEdit(BoardBean vo) throws Exception {
+	   System.out.println("넘어왔당");
+	   System.out.println(vo);
+	   service.sharEdit(vo);
+	   
+	   return "redirect:sharing";
+   }
+   
    @RequestMapping(value = "likeShar", method = RequestMethod.POST)
    public String likeShar(BoardBean bb, RedirectAttributes rttr) throws Exception {
 	   service.likeUpdate(bb);
@@ -78,14 +96,4 @@ public class BoardController {
    public List<BoardBean> getFile2() throws Exception {
       return service.getFile2();
    }
-   
-   @RequestMapping(value = "sharDel")
-   public String sharDel(@RequestParam(value = "writing_Id", defaultValue = "-1") int writing_Id) throws Exception {
-      System.out.println(writing_Id);
-      
-      service.sharDel(writing_Id);
-      
-      return "redirect:sharing";
-   }
-
 }

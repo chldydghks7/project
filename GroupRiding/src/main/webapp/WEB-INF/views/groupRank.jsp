@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset = UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
@@ -37,8 +37,7 @@
 </style>
 
 <body>
-<<<<<<< HEAD
-	 <!-- Navigation -->
+
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -93,22 +92,22 @@
         </div>
         <!-- /.container -->
     </nav>
-	    
-	     <header id="myCarousel" class="carousel slide" style="background-color: #282828; height: 30%">
+       
+        <header id="myCarousel" class="carousel slide" style="background-color: #282828; height: 30%">
 
-	        <div class="carousel-inner">
-	            <div class="item active">
-	                <div class="carousel-caption" style="bottom:60px;">
-	                    <h1 style="font-size: 40px;position: absolute;margin-left: 450px;top: 20px">RANK</h1></br>
-	                    <marquee><h3 style="margin-top: 60px;">랭킹순위권에 들게 되면 해택이 지급됩니다. :)</h3></marquee>
-	                </div>
-	            </div>
-	        </div>
-	        
-    	</header>
-		
-		
-		<div style="background:url('./resources/img/bikeMain3.jpg') no-repeat; width: 100%; height:125%; ">
+           <div class="carousel-inner">
+               <div class="item active">
+                   <div class="carousel-caption" style="bottom:60px;">
+                       <h1 style="font-size: 40px;position: absolute;margin-left: 450px;top: 20px">RANK</h1></br>
+                       <marquee><h3 style="margin-top: 60px;">랭킹순위권에 들게 되면 해택이 지급됩니다. :)</h3></marquee>
+                   </div>
+               </div>
+           </div>
+           
+       </header>
+      
+      
+      <div style="background:url('./resources/img/bikeMain3.jpg') no-repeat; width: 100%; height:125%; ">
         <div  class="text-vertical-center">
             <div class="container">
                  <div class="row">
@@ -228,195 +227,80 @@
             </div> 
         </div>
     </div>
+
+      
+   
+      <!------------------------------------------------------------ code ------------------------------------------------------------------------------->
+   <%-- 
+      <table class="table table-bordered" id="read">
+         <tr>
+            <td colspan="3"><h2>라이딩 횟수</h2></td>
+         </tr>
+         <tr>
+            <th>순위</th>
+            <th>그룹이름</th>
+            <th>라이딩횟수</th>
+            
+         </tr>
+         
+         <c:forEach items="${list1}" var="grouprank" varStatus="status">
+            <tr>
+               <td class="active">${status.count}</td>
+               <td class="active">${grouprank.gr_name}</td>
+               <td class="active">${grouprank.gr_number}</td>
+            </tr>
+
+         </c:forEach>
+
+      </table>
+            <table class="table table-bordered" id="read">
+         <tr>
+            <td colspan="3"><h2>거점 점령 횟수</h2></td>
+         </tr>
+         <tr>
+            <th>순위</th>
+            <th>그룹이름</th>
+            <th>거점 점령 횟수</th>
+         </tr>
+         <c:forEach items="${list2}" var="grouprank" varStatus="status">
+            <tr>
+               <td class="success">${status.count}</td>
+               <td class="success">${grouprank.gr_name}</td>
+               <td class="success">${grouprank.gr_catch}</td>
+            </tr>
+
+         </c:forEach>
+
+      </table>
+            <table class="table table-bordered" id="read">
+         <tr>
+            <td colspan="3"><h2>평균 속도</h2></td>
+         </tr>
+         <tr>
+            <th>순위</th>
+            <th>그룹이름</th>
+            <th>평균속도</th>
+         </tr>
+         <c:forEach items="${list3}" var="grouprank" varStatus="status">
+            <tr>
+               <td class="warning">${status.count}</td>
+               <td class="warning">${grouprank.gr_name}</td>
+               <td class="warning">${grouprank.gr_avspeed}</td>
+            </tr>
+
+         </c:forEach>
+
+      </table> --%>
+
 		
-		
-		
-		
-		
-=======
-	<div class="wrapper">
-		<!--=== Header ===-->
-		<div class="header">
-			<div class="container">
-				<!-- Logo -->
-				<a class="logo" href="mainlogin"> <img
-					src="./resources/img/logo(b).png" alt="Logo">
-				</a>
-				<!-- End Logo -->
-
-				<!-- Topbar -->
-				<div class="topbar">
-					<ul class="loginbar pull-right">
-						<li class="topbar-devider"></li>
-						<li><a href="logout">Logout</a></li>
-					</ul>
-				</div>
-				<!-- End Topbar -->
-
-				<!-- Toggle get grouped for better mobile display -->
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-responsive-collapse">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="fa fa-bars"></span>
-				</button>
-				<!-- End Toggle -->
-			</div>
-			<!--/end container-->
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div
-				class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
-				<div class="container">
-					<ul class="nav navbar-nav">
-						<!-- Home -->
-						<li class="dropdown "><a href="javascript:void(0);"
-							class="dropdown-toggle" data-toggle="dropdown"> Home </a> <!-- End Home -->
-
-							<!-- Pages -->
-						<li class="dropdown active"><a href="javascript:void(0);"
-							class="dropdown-toggle" data-toggle="dropdown"> Group </a>
-							<ul class="dropdown-menu">
-								<!-- About Pages -->
-								<li class="dropdown-submenu"><a href="groupList">GroupList</a>
-								</li>
-								<!-- End About Pages -->
-
-								<!-- Service Pages -->
-								<li class="dropdown-submenu"><a href="groupRank">Ranking</a>
-								</li>
-								
-								<li class="dropdown-submenu">
-                          	<a href="racePoint">RacePoint</a>
-                       	</li>
-								<!-- End Service Pages -->
-							</ul></li>
-						<!-- End Pages -->
-
-						<!-- Blog -->
-						<li class="dropdown"><a href="javascript:void(0);"
-							class="dropdown-toggle" data-toggle="dropdown"> Info </a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="calendar?uid=${uid}">Calendar</a>
-								</li>
-								
-							</ul></li>
-						<!-- End Blog -->
-
-						<!-- Portfolio -->
-						<li class="dropdown"><a href="javascript:void(0);"
-							class="dropdown-toggle" data-toggle="dropdown"> Sharing </a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="sharing">Sharing</a>
-								</li>
-							</ul></li>
-						<!-- End Portfolio -->
-
-						<!-- Features -->
-						<li class="dropdown"><a href="javascript:void(0);"
-							class="dropdown-toggle" data-toggle="dropdown"> Hot Place </a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-submenu"><a href="hotPlaceMap">Hot Place</a>
-								</li>
-								<!-- <li class="dropdown-submenu"><a href="restaurantList">Restaurant</a>
-								</li>
-								<li><a href="hotelList">Hotel</a></li> -->
-							</ul></li>
-						<!-- End Features -->
-
-						<!-- Search Block -->
-						<li><i class="search fa fa-search search-btn"></i>
-							<div class="search-open">
-								<div class="input-group animated fadeInDown">
-									<input type="text" class="form-control" placeholder="Search">
-									<span class="input-group-btn">
-										<button class="btn-u" type="button">Go</button>
-									</span>
-								</div>
-							</div></li>
-						<!-- End Search Block -->
-					</ul>
-				</div>
-				<!--/end container-->
-			</div>
-			<!--/navbar-collapse-->
-		</div>
-		<div class="breadcrumbs">
-			<div class="container">
-				<h1 class="pull-left">그룹 랭킹</h1>
-
-			</div>
-			<!--/container-->
-		</div>
-		<!--/breadcrumbs-->
->>>>>>> 6d508135575f3e45e200609a9eefa36994ce5cc5
-		<!------------------------------------------------------------ code ------------------------------------------------------------------------------->
-	<%-- 
-		<table class="table table-bordered" id="read">
-			<tr>
-				<td colspan="3"><h2>라이딩 횟수</h2></td>
-			</tr>
-			<tr>
-				<th>순위</th>
-				<th>그룹이름</th>
-				<th>라이딩횟수</th>
-				
-			</tr>
-			
-			<c:forEach items="${list1}" var="grouprank" varStatus="status">
-				<tr>
-					<td class="active">${status.count}</td>
-					<td class="active">${grouprank.gr_name}</td>
-					<td class="active">${grouprank.gr_number}</td>
-				</tr>
-
-			</c:forEach>
-
-		</table>
-				<table class="table table-bordered" id="read">
-			<tr>
-				<td colspan="3"><h2>거점 점령 횟수</h2></td>
-			</tr>
-			<tr>
-				<th>순위</th>
-				<th>그룹이름</th>
-				<th>거점 점령 횟수</th>
-			</tr>
-			<c:forEach items="${list2}" var="grouprank" varStatus="status">
-				<tr>
-					<td class="success">${status.count}</td>
-					<td class="success">${grouprank.gr_name}</td>
-					<td class="success">${grouprank.gr_catch}</td>
-				</tr>
-
-			</c:forEach>
-
-		</table>
-				<table class="table table-bordered" id="read">
-			<tr>
-				<td colspan="3"><h2>평균 속도</h2></td>
-			</tr>
-			<tr>
-				<th>순위</th>
-				<th>그룹이름</th>
-				<th>평균속도</th>
-			</tr>
-			<c:forEach items="${list3}" var="grouprank" varStatus="status">
-				<tr>
-					<td class="warning">${status.count}</td>
-					<td class="warning">${grouprank.gr_name}</td>
-					<td class="warning">${grouprank.gr_avspeed}</td>
-				</tr>
-
-			</c:forEach>
-
-		</table> --%>
-		<!------------------------------------------------------------ code ------------------------------------------------------------------------------->
+	
+	
   <!-- jQuery -->
     <script src="./resources/js2/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="./resources/js2/bootstrap.min.js"></script>
 
-	
+   
 </body>
 </html>
