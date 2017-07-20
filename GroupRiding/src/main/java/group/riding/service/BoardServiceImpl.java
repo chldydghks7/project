@@ -61,11 +61,17 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
+	public void sharEdit(BoardBean vo) throws Exception {
+		// TODO Auto-generated method stub
+		dao.editFile(vo);
+		dao.sharEdit(vo);
+	}
+
+	@Override
 	public void sharDel(int writing_Id) throws Exception {
 		// TODO Auto-generated method stub
 		dao.delFile(writing_Id);
-	     dao.sharDel(writing_Id);
-
+		dao.sharDel(writing_Id);
 	}
 
 }
