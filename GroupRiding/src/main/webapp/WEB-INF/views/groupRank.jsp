@@ -37,7 +37,7 @@
 </style>
 
 <body>
-    <!-- Navigation -->
+
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -227,6 +227,7 @@
             </div> 
         </div>
     </div>
+
       
    
       <!------------------------------------------------------------ code ------------------------------------------------------------------------------->
@@ -290,7 +291,10 @@
          </c:forEach>
 
       </table> --%>
-      <!------------------------------------------------------------ code ------------------------------------------------------------------------------->
+
+		
+	
+	
   <!-- jQuery -->
     <script src="./resources/js2/jquery.js"></script>
 
