@@ -118,14 +118,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Group Riding</a>
+                <a class="navbar-brand" href="main">Group Riding</a>
             </div>
-<<<<<<< HEAD
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="main">Home</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Page <b class="caret"></b></a>
@@ -175,128 +174,10 @@
             </div>
         </div>
     </header>
-      
-=======
             <!-- End Topbar -->
 
-            <!-- Toggle get grouped for better mobile display -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-               <span class="sr-only">Toggle navigation</span>
-               <span class="fa fa-bars"></span>
-            </button>
-            <!-- End Toggle -->
-         </div><!--/end container-->
-
-         <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
-            <div class="container">
-               <ul class="nav navbar-nav">
-                  <!-- Home -->
-                  <li class="dropdown ">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Home
-                     </a>
-                  <!-- End Home -->
-
-                  <!-- Pages -->
-                  <li class="dropdown">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Group
-                     </a>
-                     <ul class="dropdown-menu">
-                        <!-- About Pages -->
-                        <li class="dropdown-submenu">
-                           <a href="groupList">GroupList</a>
-                        </li>
-                        <!-- End About Pages -->
-
-                        <!-- Service Pages -->
-                        <li class="dropdown-submenu">
-                           <a href="groupRank">Ranking</a>
-                        </li>
-                        
-                        <li class="dropdown-submenu">
-                           <a href="racePoint">RacePoint</a>
-                        </li>
-                        <!-- End Service Pages -->
-                     </ul>
-                  </li>
-                  <!-- End Pages -->
-
-                  <!-- Blog -->
-                  <li class="dropdown active">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Info
-                     </a>
-                     <ul class="dropdown-menu">
-                        <li class="dropdown-submenu">
-                           <a href="calendar?uid=${uid}">Calendar</a>
-                        </li>
-                       
-                     </ul>
-                  </li>
-                  <!-- End Blog -->
-
-                  <!-- Portfolio -->
-                  <li class="dropdown">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Sharing
-                     </a>
-                     <ul class="dropdown-menu">
-                        <li><a href="sharing">Sharing</a></li>
-                     </ul>
-                  </li>
-                  <!-- End Portfolio -->
-
-                  <!-- Features -->
-                  <li class="dropdown">
-                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                        Hot Place
-                     </a>
-                     <ul class="dropdown-menu">
-                        <li class="dropdown-submenu">
-                           <a href="hotPlaceMap">Hot Place</a>
-                        </li>
-                        <!-- <li class="dropdown-submenu">
-                           <a href="restaurantList">Restaurant</a>
-                        </li>
-                        <li><a href="hotelList">Hotel</a></li> -->
-                     </ul>
-                  </li>
-                  <!-- End Features -->
-
-                  <!-- Search Block -->
-                  <li>
-                     <i class="search fa fa-search search-btn"></i>
-                     <div class="search-open">
-                        <div class="input-group animated fadeInDown">
-                           <input type="text" class="form-control" placeholder="Search">
-                           <span class="input-group-btn">
-                              <button class="btn-u" type="button">Go</button>
-                           </span>
-                        </div>
-                     </div>
-                  </li>
-                  <!-- End Search Block -->
-               </ul>
-            </div><!--/end container-->
-         </div><!--/navbar-collapse-->
-      </div>
-      <!--=== End Header ===-->
-
-      <!--=== Breadcrumbs ===-->
-      <div class="breadcrumbs">
-         <div class="container">
-            <h1 class="pull-left">My calendar</h1>
-            <ul class="pull-right breadcrumb">
-               <li><a href="/">Home</a></li>
-               <li class="active">My calendar</li>
-            </ul>
-         </div>
-      </div><!--/breadcrumbs-->
+   
       <!--=== End Breadcrumbs ===-->
-
->>>>>>> 6d508135575f3e45e200609a9eefa36994ce5cc5
       <!--=== Content Part ===-->
       <div class="container">
         <div class="row">
@@ -305,22 +186,17 @@
             </div>
         </div>
         <!-- /.row -->
-
         <!-- Content Row -->
         <ul class="nav nav-tabs">
             <li><a href="MyInfo">내정보</a></li>
             <li class="active"><a href="#">달력</a></li>  <!-- data-toggle="tab" <a href="calendar?uid=${uid}">달력</a> -->
       	</ul>
       
-      
+     	
          <div class="row">
 	<!-- 캘린더 --> <div class="col-lg-12" id="content">
 			<table class="table" style="float: center;">
-                <thead>
-                    <tr>
-                        <td colspan="3" style="text-align: center;"><h3>MY PROFILE</h3></td>
-                    </tr>
-                    </thead>
+  
                     <tbody style="text-align: center;">
                     <tr>
                         <td colspan="3"><div id='calendar'></div></td>
@@ -349,81 +225,6 @@
          </div>
       </div>
       
-      <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-bicycle fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">226km</div>
-                                        <div>총 거리</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-clock-o fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">87hour </div>
-                                        <div>시간</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-group fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">3그룹</div>
-                                        <div>가입 그룹 수</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-flag-checkered fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">13</div>
-                                        <div>완료한 라이딩 수</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        <!-- /.row -->
-       <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-area-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
       
        <hr>
 

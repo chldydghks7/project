@@ -65,19 +65,9 @@ public class NoticeController {
 		
 	}
 	
-<<<<<<< HEAD
-	@RequestMapping(value="calendar", method=RequestMethod.GET)	
-	
-	public void userNotice(@RequestParam(value="uid") String uid, Model model) throws Exception{
-		List<NoticeBean> list = service.userNotice(uid);
-		List<NoticeBean> llll = service.noticeCheck(uid);	
-		List<RidingInfoBean> iiii =service.ridingDate(uid);
-		model.addAttribute("llll", llll);	
-		model.addAttribute("list", list);
-		model.addAttribute("iiii", iiii);	
-	
-		
-=======
+
+
+
 	@RequestMapping(value="calendar", method=RequestMethod.GET)	// 占쏙옙占쏙옙 캘占쏙옙占쏙옙 GET
 	public void  userNotice(@RequestParam(value="uid") String uid, Model model) throws Exception{
 		List<NoticeBean> list = service.userNotice(uid);
@@ -86,7 +76,6 @@ public class NoticeController {
 		model.addAttribute("llll", llll);	// 창占쏙옙占쌍님ㅿ옙占쏙옙占쏙옙
 		model.addAttribute("list", list);
 		model.addAttribute("iiii", iiii);	// 占쏙옙占싱듸옙 占쏙옙占쏙옙
->>>>>>> 6d508135575f3e45e200609a9eefa36994ce5cc5
 		
 	}
 	
