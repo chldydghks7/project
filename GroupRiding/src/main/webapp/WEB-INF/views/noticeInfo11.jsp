@@ -76,12 +76,12 @@
 		function searchRoute(){
 			var startPoint = "${info.start_point}";
 			var endPoint = "${info.end_point}";
-			
-			var startx = new String(startPoint).substr(4, 15);   // 경도 자르기
-			var starty = new String(startPoint).substr(24);   // 경도 자르기
+			// lon=14318318.42280631,lat=4286211.12903949
+			var startx = new String(startPoint).substr(4, 17);   // 경도 자르기
+			var starty = new String(startPoint).substr(26);   // 경도 자르기
               
-			var stopx = new String(endPoint).substr(4, 15);   // 경도 자르기
-            var stopy = new String(endPoint).substr(24);   // 경도 자르기
+			var stopx = new String(endPoint).substr(4, 17);   // 경도 자르기
+            var stopy = new String(endPoint).substr(26);   // 경도 자르기
                 
 
 		    var routeFormat = new Tmap.Format.KML({extractStyles:true, extractAttributes:true});

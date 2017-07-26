@@ -120,6 +120,7 @@
                 </button>
                 <a class="navbar-brand" href="main">Group Riding</a>
             </div>
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -130,7 +131,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Page <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="MyInfo">My Information</a>
+                                <a href="MyInfo?uid=${uid}">My Information</a>
                             </li>
                            
                         </ul>
@@ -174,10 +175,18 @@
             </div>
         </div>
     </header>
+<<<<<<< HEAD
+      
+
+            
+=======
+
             <!-- End Topbar -->
 
    
       <!--=== End Breadcrumbs ===-->
+
+>>>>>>> c060212a5a4fc4767b75268f54dd99c246b70354
       <!--=== Content Part ===-->
       <div class="container">
         <div class="row">
@@ -204,24 +213,7 @@
                    
                     </tbody>
                 </table>
-           			
-           			
-					<table>
-						
-							<tr style="text-allgn: center; color:red;">
-								<th> 공지이름 </th>
-								<th> 참여여부 </th>
-							</tr>
-						
-						<c:forEach items="${llll}" var="i">
-							<tr>
-								<td>${i.notice_title}</td>
-								<td>${i.joing}</td>
-							</tr>
-						</c:forEach>
-						
-					</table>
-            
+           		   
          </div>
       </div>
       

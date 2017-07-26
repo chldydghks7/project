@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">   <!-- 규칙 -->
+  
+ <mapper namespace="group.riding.MyinfoMapper">
+
+	<!-- 마이인포페이지 총거리 --> <!--  총거리 총시간 합치기 -->
+    <select id="myAlldistance" resultType="String">
+     	select sum(alldistance)
+		from gr_ridinginfo
+		where uid=#{uid}
+    </select>
+    
+    <select id="myAlltime" resultType="String">
+     	select sum(alltime)
+		from gr_ridinginfo
+		where uid=#{uid}
+    </select>
+    
+    <select id="myGr_gr" resultType="String">
+     	select count(*)
+		from gr_gr
+		where uid=#{uid}
+    </select>
+    
+    <select id="myRiding" resultType="String">
+     	select count(*)
+		from gr_ridinginfo
+		where uid=#{uid}
+    </select>
+    
+
+ </mapper>

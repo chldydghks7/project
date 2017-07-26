@@ -111,8 +111,15 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
-					<li class="dropdown"><a href="MyInfo"  style="color:black; font-family: sung;">My Page</a></li>
+
+					<li><a href="main">Home</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">My Page <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="MyInfo?uid=${uid}">My Information</a></li>
+
+						</ul></li>
+
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
 						<ul class="dropdown-menu">

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset = UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset = UTF-8"pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
@@ -46,6 +45,7 @@
 </style>
 
 <body>
+
 	 <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
 		<div class="container">
@@ -109,6 +109,79 @@
 		
 		
 		<div style="background:url('./resources/img/bikeMain3.jpg') no-repeat; width: 100%; height:125%; ">
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Group Riding</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Page <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="MyInfo?uid=${uid}">My Information</a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Group <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="groupList">Group List</a>
+                            </li>
+                            <li>
+                                <a href="racePoint">Race Point</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="groupRank">Rank</a>
+                    </li>
+                    <li>
+                        <a href="sharing">Sharing</a>
+                    </li>
+                    <li>
+                        <a href="hotPlaceMap">Hot Place</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+       
+        <header id="myCarousel" class="carousel slide" style="background-color: #282828; height: 30%">
+
+           <div class="carousel-inner">
+               <div class="item active">
+                   <div class="carousel-caption" style="bottom:60px;">
+                       <h1 style="font-size: 40px;position: absolute;margin-left: 450px;top: 20px">RANK</h1></br>
+                       <marquee><h3 style="margin-top: 60px;">랭킹순위권에 들게 되면 해택이 지급됩니다. :)</h3></marquee>
+                   </div>
+               </div>
+           </div>
+           
+       </header>
+      
+      
+      <div style="background:url('./resources/img/bikeMain3.jpg') no-repeat; width: 100%; height:125%; ">
+
         <div  class="text-vertical-center">
             <div class="container">
                  <div class="row">
@@ -228,70 +301,74 @@
             </div> 
         </div>
     </div>
+
+      
+   
+      <!------------------------------------------------------------ code ------------------------------------------------------------------------------->
+   <%-- 
+      <table class="table table-bordered" id="read">
+         <tr>
+            <td colspan="3"><h2>라이딩 횟수</h2></td>
+         </tr>
+         <tr>
+            <th>순위</th>
+            <th>그룹이름</th>
+            <th>라이딩횟수</th>
+            
+         </tr>
+         
+         <c:forEach items="${list1}" var="grouprank" varStatus="status">
+            <tr>
+               <td class="active">${status.count}</td>
+               <td class="active">${grouprank.gr_name}</td>
+               <td class="active">${grouprank.gr_number}</td>
+            </tr>
+
+         </c:forEach>
+
+      </table>
+            <table class="table table-bordered" id="read">
+         <tr>
+            <td colspan="3"><h2>거점 점령 횟수</h2></td>
+         </tr>
+         <tr>
+            <th>순위</th>
+            <th>그룹이름</th>
+            <th>거점 점령 횟수</th>
+         </tr>
+         <c:forEach items="${list2}" var="grouprank" varStatus="status">
+            <tr>
+               <td class="success">${status.count}</td>
+               <td class="success">${grouprank.gr_name}</td>
+               <td class="success">${grouprank.gr_catch}</td>
+            </tr>
+
+         </c:forEach>
+
+      </table>
+            <table class="table table-bordered" id="read">
+         <tr>
+            <td colspan="3"><h2>평균 속도</h2></td>
+         </tr>
+         <tr>
+            <th>순위</th>
+            <th>그룹이름</th>
+            <th>평균속도</th>
+         </tr>
+         <c:forEach items="${list3}" var="grouprank" varStatus="status">
+            <tr>
+               <td class="warning">${status.count}</td>
+               <td class="warning">${grouprank.gr_name}</td>
+               <td class="warning">${grouprank.gr_avspeed}</td>
+            </tr>
+
+         </c:forEach>
+
+      </table> --%>
+
 		
 	
-		<!------------------------------------------------------------ code ------------------------------------------------------------------------------->
-	<%-- 
-		<table class="table table-bordered" id="read">
-			<tr>
-				<td colspan="3"><h2>라이딩 횟수</h2></td>
-			</tr>
-			<tr>
-				<th>순위</th>
-				<th>그룹이름</th>
-				<th>라이딩횟수</th>
-				
-			</tr>
-			
-			<c:forEach items="${list1}" var="grouprank" varStatus="status">
-				<tr>
-					<td class="active">${status.count}</td>
-					<td class="active">${grouprank.gr_name}</td>
-					<td class="active">${grouprank.gr_number}</td>
-				</tr>
-
-			</c:forEach>
-
-		</table>
-				<table class="table table-bordered" id="read">
-			<tr>
-				<td colspan="3"><h2>거점 점령 횟수</h2></td>
-			</tr>
-			<tr>
-				<th>순위</th>
-				<th>그룹이름</th>
-				<th>거점 점령 횟수</th>
-			</tr>
-			<c:forEach items="${list2}" var="grouprank" varStatus="status">
-				<tr>
-					<td class="success">${status.count}</td>
-					<td class="success">${grouprank.gr_name}</td>
-					<td class="success">${grouprank.gr_catch}</td>
-				</tr>
-
-			</c:forEach>
-
-		</table>
-				<table class="table table-bordered" id="read">
-			<tr>
-				<td colspan="3"><h2>평균 속도</h2></td>
-			</tr>
-			<tr>
-				<th>순위</th>
-				<th>그룹이름</th>
-				<th>평균속도</th>
-			</tr>
-			<c:forEach items="${list3}" var="grouprank" varStatus="status">
-				<tr>
-					<td class="warning">${status.count}</td>
-					<td class="warning">${grouprank.gr_name}</td>
-					<td class="warning">${grouprank.gr_avspeed}</td>
-				</tr>
-
-			</c:forEach>
-
-		</table> --%>
-		<!------------------------------------------------------------ code ------------------------------------------------------------------------------->
+	
   <!-- jQuery -->
     <script src="./resources/js2/jquery.js"></script>
 
@@ -322,6 +399,6 @@ $(document).ready(
 		});
 </script>
 
-	
+   
 </body>
 </html>
