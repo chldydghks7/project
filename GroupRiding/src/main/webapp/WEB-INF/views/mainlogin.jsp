@@ -77,12 +77,21 @@
 	vertical-align: middle;
 	background-color: rgba(0, 0, 0, 0.5);
 }
+@font-face {
+	font-family: 'sung';
+	src: url('./resources/fonts/sung.ttf'); 
+	}
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
+	.navbar-inverse .navbar-nav>.open>a:hover {
+	color: #fff;
+	background-color: #929292
+}
 </style>
 
 <body>
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -92,47 +101,36 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">Group Riding</a>
+				<a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
+					<li class="dropdown"><a href="MyInfo"  style="color:black; font-family: sung;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">My Page <b class="caret"></b></a>
+						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="MyInfo">My Information</a></li>
-
+							<li><a href="groupList"  style="color:black; font-family: sung;">Group List</a></li>
+							<li><a href="racePoint"  style="color:black; font-family: sung;">Race Point</a></li>
 						</ul></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">Group <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="groupList">Group List</a></li>
-							<li><a href="racePoint">Race Point</a></li>
-						</ul></li>
-					<li><a href="groupRank">Rank</a></li>
-					<li><a href="sharing">Sharing</a></li>
-					<li><a href="hotPlaceMap">Hot Place</a></li>
-
+					<li><a href="groupRank"  style="color:black; font-family: sung;">Rank</a></li>
+					<li><a href="sharing"  style="color:black; font-family: sung;">Sharing</a></li>
+					<li><a href="hotPlaceMap"  style="color:black; font-family: sung;">Hot Place</a></li>
 					
-					
-					
-					<div style="float: right;width: 180px;">
-					<li id="profile" style="float: left; margin-top:6px;"></li>
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" style="font-size: 25px; color: white;float:left;margin-top: 8px;margin-left:2px;">${uid}님</a>
+					<div style="float: right; width: 180px;">
+						<li id="profile" style="float: left; margin-top: 6px;"></li>
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown"
+							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
 
-						<ul class="dropdown-menu">
-							<li><a id="logout">LogOut</a></li>
+							<ul class="dropdown-menu">
+								<li><a id="logout">LogOut</a></li>
 
-						</ul></li>
+							</ul></li>
 
-</div>
-
-
-
-
+					</div>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -154,15 +152,15 @@
 						autoplay="autoplay" loop="loop"></video>
 				</div>
 				<div class="carousel-caption"
-					style="bottom: 35%; margin-left: 18%; border: 4px solid rgba(256, 256, 256, 0.5); width: 30%;">
+					style="bottom: 35%; margin-left: 18%; border: 4px solid rgba(256, 256, 256, 0.5); width: 30%; font-family: sung;">
 					<h1>W&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;E</h1>
-					<h1 style="font-size: 53px;">
+					<h1 style="font-size: 53px;color: red;">
 						<strong>GROUP RIDING</strong>
 					</h1>
 					</br>
 					<button type="button" class="btn btn-default btn-lg"
 						data-toggle="modal" data-target="#myModal"
-						style="width: 95%; height: 50PX;">
+						style="width: 95%; height: 50PX; ">
 						<strong>START GROUP RIDING</strong>
 					</button>
 				</div>
@@ -171,7 +169,7 @@
 		</div>
 	</header>
 	<aside class="callout">
-		<div class="text-vertical-center">
+		<div class="text-vertical-center"style="font-family: sung;">
 			<h1>GROUP</h1>
 			<br>
 			<h2>
@@ -181,7 +179,7 @@
 		</div>
 	</aside>
 	<aside class="callout2">
-		<div class="text-vertical-center">
+		<div class="text-vertical-center"style="font-family: sung;">
 			<h1>SHARING</h1>
 			<br>
 			<h2>
@@ -191,7 +189,7 @@
 		</div>
 	</aside>
 	<aside class="callout3">
-		<div class="text-vertical-center">
+		<div class="text-vertical-center"style="font-family: sung;">
 			<h1>SHARING</h1>
 			<br>
 			<h2>
@@ -205,7 +203,7 @@
 	<!-- Portfolio Section -->
 	<div class="row"
 		style="background-color: #222; margin-left: 20px; margin-right: 20px;">
-		<div class="col-lg-12" style="border-color: #222;">
+		<div class="col-lg-12" style="border-color: #222; font-family: sung;">
 			<h1 class="page-header"
 				style="color: white; text-align: center; border-color: #222;">
 				<br> Group Riding Picture
@@ -390,8 +388,8 @@
 	<!-- Footer -->
 	<footer>
 		<div class="row" style="">
-			<div class="col-lg-12" style="color: white; margin-left: 40px;">
-				<p>Copyright &copy; Your Website 2017</p>
+			<div class="col-lg-12" style="color: white; margin-left: 40px; font-family: sung;">
+				<p>Copyright &copy; GROUP RIDING Website 2017</p>
 			</div>
 		</div>
 	</footer>

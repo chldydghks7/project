@@ -77,12 +77,24 @@
 	vertical-align: middle;
 	background-color: rgba(0, 0, 0, 0.5);
 }
+
+@font-face {
+	font-family: 'sung';
+	src: url('./resources/fonts/sung.ttf');
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
+	.navbar-inverse .navbar-nav>.open>a:hover {
+	color: #fff;
+	background-color: #929292
+}
 </style>
 
 <body>
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
+		style="background-color: white;">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -92,23 +104,32 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main">Group Riding</a>
+				<a class="navbar-brand" href="main"
+					style="color: red; font-family: sung; font-size: 30px;">GROUP
+					RIDING</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main">Home</a></li>
-					<li class="dropdown"><a href="MyInfo">My Page</a></li>
+					<li><a href="main" style="color: black; font-family: sung;">Home</a></li>
+					<li class="dropdown"><a href="MyInfo"
+						style="color: black; font-family: sung;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">Group <b class="caret"></b></a>
+						data-toggle="dropdown" style="color: black; font-family: sung;">Group
+							<b class="caret"></b>
+					</a>
 						<ul class="dropdown-menu">
-							<li><a href="groupList">Group List</a></li>
-							<li><a href="racePoint">Race Point</a></li>
+							<li><a href="groupList"
+								style="color: black; font-family: sung;">Group List</a></li>
+							<li><a href="racePoint"
+								style="color: black; font-family: sung;">Race Point</a></li>
 						</ul></li>
-					<li><a href="groupRank">Rank</a></li>
-					<li><a href="sharing">Sharing</a></li>
-					<li><a href="hotPlaceMap">Hot Place</a></li>
+					<li><a href="groupRank"
+						style="color: black; font-family: sung;">Rank</a></li>
+					<li><a href="sharing" style="color: black; font-family: sung;">Sharing</a></li>
+					<li><a href="hotPlaceMap"
+						style="color: black; font-family: sung;">Hot Place</a></li>
 
 				</ul>
 			</div>
@@ -128,9 +149,9 @@
 						autoplay="autoplay" loop="loop"></video>
 				</div>
 				<div class="carousel-caption"
-					style="bottom: 35%; margin-left: 18%; border: 4px solid rgba(256, 256, 256, 0.5); width: 30%;">
+					style="bottom: 35%; margin-left: 18%; border: 4px solid rgba(256, 256, 256, 0.5); width: 30%; font-family: sung;">
 					<h1>W&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;E</h1>
-					<h1 style="font-size: 53px;">
+					<h1 style="font-size: 53px; color: red;">
 						<strong>GROUP RIDING</strong>
 					</h1>
 					</br>
@@ -145,8 +166,8 @@
 		</div>
 	</header>
 	<aside class="callout">
-		<div class="text-vertical-center">
-			<h1>GROUP</h1>
+		<div class="text-vertical-center" style="font-family: sung; ">
+			<h1 style="color: red;">G&nbsp;R&nbsp;O&nbsp;U&nbsp;P</h1>
 			<br>
 			<h2>
 				여러명의 팀원을 모아서 자전거 라이딩을 즐겨보세요! <br>자전거 전용 도로만을 안내하는 놀라운 경험을 하여
@@ -155,8 +176,8 @@
 		</div>
 	</aside>
 	<aside class="callout2">
-		<div class="text-vertical-center">
-			<h1>SHARING</h1>
+		<div class="text-vertical-center" style="font-family: sung;">
+			<h1 style="color: red;">S&nbsp;H&nbsp;A&nbsp;R&nbsp;I&nbsp;N&nbsp;G</h1>
 			<br>
 			<h2>
 				속도, 거리, 시간 빈틈없이 관리 하여 체계적인 시스템을 확인 하세요. <br>또한 여러분의 데이터는 그룹성장에
@@ -165,8 +186,8 @@
 		</div>
 	</aside>
 	<aside class="callout3">
-		<div class="text-vertical-center">
-			<h1>SHARING</h1>
+		<div class="text-vertical-center" style="font-family: sung;">
+			<h1 style="color: red;">H&nbsp;O&nbsp;T&nbsp; &nbsp;P&nbsp;L&nbsp;A&nbsp;C&nbsp;E</h1>
 			<br>
 			<h2>
 				자전거 라이딩을 하다가 배가 고프거나, 쉴수 있는 곳을 찾아 본적이 있습니까?<br> 저희는 라이더들의 입장에서
@@ -181,8 +202,8 @@
 		style="background-color: #222; margin-left: 20px; margin-right: 20px;">
 		<div class="col-lg-12" style="border-color: #222;">
 			<h1 class="page-header"
-				style="color: white; text-align: center; border-color: #222;">
-				<br> Group Riding Picture
+				style="color: red; text-align: center; border-color: #222; font-family: sung;">
+				<br> G&nbsp;r&nbsp;o&nbsp;u&nbsp;p&nbsp; &nbsp;R&nbsp;i&nbsp;d&nbsp;i&nbsp;n&nbsp;g&nbsp; &nbsp;P&nbsp;i&nbsp;c&nbsp;t&nbsp;u&nbsp;r&nbsp;e
 			</h1>
 			<br>
 		</div>
@@ -235,21 +256,24 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<div class="modal-title" style="text-align: center;">
-							<h3>Login</h3>
+						<div class="modal-title"
+							style="text-align: center; font-family: sung;">
+							<h3>LOGIN</h3>
 						</div>
 					</div>
 					<div class="modal-body">
 						<form class="form-horizontal" action="signInPost" method="POST">
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="email">ID:</label>
+								<label class="control-label col-sm-2" for="email"
+									style="font-family: sung;">ID</label>
 								<div class="col-sm-10">
 									<input type="text" class="form-control" id="uid11" name="uid"
 										placeholder="ID">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="pwd">Password:</label>
+								<label class="control-label col-sm-2" for="pwd"
+									style="font-family: sung;">Pass</label>
 								<div class="col-sm-10">
 									<input type="password" class="form-control" id="upw11"
 										name="upw" placeholder="password">
@@ -258,7 +282,8 @@
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10"
 									style="margin-left: 310px;">
-									<button type="submit" class="btn btn-default">Submit</button>
+									<button type="submit" class="btn btn-default"
+										style="font-family: sung;">Submit</button>
 									&nbsp;&nbsp;&nbsp;
 
 								</div>
@@ -266,7 +291,7 @@
 						</form>
 						<button type="submit" class="btn btn-default" data-toggle="modal"
 							data-target="#myModa2"
-							style="margin-left: 395px; position: absolute; top: 113px;">Sign
+							style="margin-left: 395px; position: absolute; top: 113px; font-family: sung;">Sign
 							up</button>
 					</div>
 				</div>
@@ -281,14 +306,14 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<div class="modal-title" style="text-align: center;">
+						<div class="modal-title" style="text-align: center; font-family: sung;">
 							<h3>Register</h3>
 						</div>
 					</div>
 					<div class="modal-body">
 						<form class="form-horizontal">
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="email">ID:</label>
+								<label class="control-label col-sm-2" for="email" style="font-family: sung;">ID</label>
 								<div class="col-sm-10">
 									<input type="text" class="form-control" id="uid" name="uid"
 										placeholder="ID">
@@ -300,36 +325,36 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="pwd">Password:</label>
+								<label class="control-label col-sm-2" for="pwd" style="font-family: sung;">Pass</label>
 								<div class="col-sm-10">
 									<input type="password" class="form-control" id="upw" name="upw"
 										placeholder="password">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="pwd">RE
-									Password:</label>
+								<label class="control-label col-sm-2" for="pwd" style="font-family: sung;">RE
+									Pass</label>
 								<div class="col-sm-10">
 									<input type="password" class="form-control" id="upw1"
 										name="upw1" placeholder="re password">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="pwd">Name:</label>
+								<label class="control-label col-sm-2" for="pwd" style="font-family: sung;">Name</label>
 								<div class="col-sm-10">
 									<input type="text" class="form-control" id="uname" name="uname"
 										placeholder="Name">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="pwd">Birth:</label>
+								<label class="control-label col-sm-2" for="pwd" style="font-family: sung;">Birth</label>
 								<div class="col-sm-10">
 									<input type="date" class="form-control" id="uage" name="uage"
 										placeholder="YYDDNN">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="pwd">Image:</label>
+								<label class="control-label col-sm-2" for="pwd" style="font-family: sung;">Image:</label>
 								<div class="col-sm-10">
 									<div class="fileDrop"
 										style="width: 300px; height: 100px; border: 1px dotted blue;">
@@ -340,7 +365,7 @@
 							</div>
 
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="pwd">Profile:</label>
+								<label class="control-label col-sm-2" for="pwd" style="font-family: sung;">Profile</label>
 								<div class="col-sm-10 uploadedList"></div>
 							</div>
 					</div>
@@ -364,8 +389,9 @@
 	<!-- Footer -->
 	<footer>
 		<div class="row" style="">
-			<div class="col-lg-12" style="color: white; margin-left: 40px;">
-				<p>Copyright &copy; Your Website 2017</p>
+			<div class="col-lg-12"
+				style="color: white; margin-left: 40px; font-family: sung;">
+				<p>Copyright &copy; GROUP RIDING Website 2017</p>
 			</div>
 		</div>
 	</footer>
