@@ -225,7 +225,7 @@
 								<i class="fa fa-bicycle fa-5x"></i>
 							</div>
 							<div class="col-xs-9 text-right">
-								<div class="huge">226km</div>
+								<div class="huge">${myAlldistance}</div>
 								<div>총 거리</div>
 							</div>
 						</div>
@@ -240,7 +240,7 @@
 								<i class="fa fa-clock-o fa-5x"></i>
 							</div>
 							<div class="col-xs-9 text-right">
-								<div class="huge">87hour</div>
+								<div class="huge">${myAlltime}</div>
 								<div>시간</div>
 							</div>
 						</div>
@@ -255,7 +255,7 @@
 								<i class="fa fa-group fa-5x"></i>
 							</div>
 							<div class="col-xs-9 text-right">
-								<div class="huge">3그룹</div>
+								<div class="huge">${myGr_gr}</div>
 								<div>가입 그룹 수</div>
 							</div>
 						</div>
@@ -270,7 +270,7 @@
 								<i class="fa fa-flag-checkered fa-5x"></i>
 							</div>
 							<div class="col-xs-9 text-right">
-								<div class="huge">13</div>
+								<div class="huge">${myRiding}</div>
 								<div>완료한 라이딩 수</div>
 							</div>
 						</div>

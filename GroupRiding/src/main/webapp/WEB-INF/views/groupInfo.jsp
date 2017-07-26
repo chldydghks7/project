@@ -103,7 +103,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Page <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="MyInfo">My Information</a>
+                                <a href="MyInfo?uid=${uid}">My Information</a>
                             </li>
                             
                         </ul>
@@ -218,7 +218,7 @@
 									<td><form action="createNotice" method="get">
 											<input type="hidden" name="gr_id" value="${group.gr_id}" /> <input
 												type="hidden" name="gr_name" value="${gr_name1}" />
-											<button type="submit" id="notice11">일정등록</button>
+											<button type="button" id="notice11" data-toggle="modal" data-target="#myModal">일정등록</button>
 										</form></td>
 	
 								</tr>
@@ -374,7 +374,7 @@
 	
 								<!-- Blog Posts -->
 								<div class="news-v3 bg-color-white margin-bottom-60">
-									<a href="groupNotice?gr_name=${gr_name1}">그룹공지 확인</a>
+									<a href="groupNotice?gr_name=${gr_name1}" >그룹 캘린더</a>
 								</div>
 								<!-- End Blog Posts -->
 	
@@ -491,6 +491,9 @@
 				</div>
 	
 			</div>
+		
+		
+		<!-- 모달 -->
 		
 		
 		</div><!--/container-->
@@ -922,5 +925,268 @@ var ridingDate=[];
 
 
 
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">일정 등록</h4>
+      </div>
+      
+     <form action="createNotice" method="post">
+      <div class="modal-body">
+      	<div id="map_div1"></div>
+		공지제목 : <input type="text" name="notice_title"> <br>
+		라이딩 날짜 : <input type="date" name="ridingDate" id="ridingDate">	<br>
+		라이딩 시간 : <input type="time" name="ridingTime">	<br>
+		준비물 : <input type="text" name="material">	<br>
+		출발지 : <input type="text" id="starting"> <input type="button" id="start" value="검색">	<br>
+		도착지 : <input type="text" id="ending">	<input type="button" id="stop" value="검색">	<br>
+		<input type="button" id="gogo" value="경유 검색">
+		<input type="button" onClick="window.location.reload()" value="취소">
+		
+		<div>
+			<ul id="ul">
+				<li id="li"></li>
+			</ul>
+		</div>
+	
+		<div>
+			<ul id="ul1">
+				<li id="li1"></li>
+			</ul>
+		</div>
+		
+		<input type="hidden" name="gr_id" value="${gr_id}"/>
+		<input type="hidden" name="uid" value="${uid}"/>
+		<input type="hidden" name="start_point" id="startPoint" value=""> <br>
+		<input type="hidden" name="end_point" id="endPoint" value="">	<br>
+		<input type="hidden" name="gr_name" value="${gr_name1}"><br>
+      </div>
+      
+      <div class="modal-footer">
+      	<button type="submit" class="btn btn-default">등록</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+      </div>
+     </form>
+     
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+
+			var map
+
+			map = new Tmap.Map({div:'map_div1',
+		        width:'50%', 
+		        height:'400px',
+		        transitionEffect:"resize",
+		        animation:true
+		    }); 
+				map.setCenter(new Tmap.LonLat(14315520.90430,4283115.74626), 11);
+				// map.addControl(new Tmap.Control.KeyboardDefaults());
+				map.addControl(new Tmap.Control.MousePosition());
+				// searchRoute();
+					
+					//경로 그리기 후 해당영역으로 줌
+					function onDrawnFeatures(e){
+						map.zoomToExtent(this.getDataExtent());
+					}	// function searchRoute(start, stop){
+
+////////////////
+///// POI //////
+////////////////				                 
+				var markerLayer;
+				var tdata;
+				var name = '';
+	    		
+				addMarkerLayer();
+
+				var clcl;	// 출발지 or 도착지
+	    		$("#start").on("click", function(){
+	    			clcl = true;
+
+	    			$("#ul").empty();	// 태그제거
+	    			$("#ul1").empty();	// 태그제거
+	    			var starting = $("#starting").val();
+
+	    			searchPOI(starting);	// 검색
+	    			
+	    			markerLayer.clearMarkers();	// 마커 초기화
+
+	    			getDataFromLonLat(this.lonlat);	// 주소
+
+	    		});
+
+	    		$("#stop").on("click", function(){
+					clcl = false;
+
+	    			$("#ul").empty();	// 태그제거
+	    			$("#ul1").empty();	// 태그제거
+	    			var ending = $("#ending").val();
+
+	    			searchPOI(ending);	// 검색
+	    			
+	    			markerLayer.clearMarkers();	// 마커 초기화
+
+	    			getDataFromLonLat(this.lonlat);	// 주소
+
+	    		});
+
+	    		
+	    		function addMarkerLayer(){
+				    markerLayer = new Tmap.Layer.Markers("marker");
+				    map.addLayer(markerLayer);
+				};
+
+				function addMarker(options){
+				    var size = new Tmap.Size(12,19);
+				    var offset = new Tmap.Pixel(-(size.w/2), -size.h);
+				    var icon = new Tmap.Icon("https://developers.skplanetx.com/upload/tmap/marker/pin_b_s_simple.png",size,offset);
+				    var marker = new Tmap.Markers(options.lonlat,icon,options.label);
+				    markerLayer.addMarker(marker);
+				    marker.events.register("mouseover", marker, onOverMouse);
+				    marker.events.register("mouseout", marker, onOutMouse);
+				    marker.events.register("click", marker, onClickMouse);
+				}
+				function onOverMouse(e){
+				    this.popup.show();
+				}
+				function onOutMouse(e){
+				    this.popup.hide();
+				}
+				function onClickMouse(e){
+				    console.log(this.lonlat);
+				    getDataFromLonLat(this.lonlat);
+				}
+				function searchPOI(starting){
+				    tdata = new Tmap.TData();
+				    tdata.events.register("onComplete", tdata, onCompleteTData);
+				    var center = map.getCenter();
+				    tdata.getPOIDataFromSearch(encodeURIComponent(starting), {centerLon:center.lon, centerLat:center.lat});
+				}
+				function onCompleteTData(e){
+				    if(jQuery(this.responseXML).find("searchPoiInfo pois poi").text() != ''){
+				        jQuery(this.responseXML).find("searchPoiInfo pois poi").each(function(){
+				            var name = jQuery(this).find("name").text();
+				            var id = jQuery(this).find("id").text();
+				            var lon = jQuery(this).find("frontLon").text();
+				            var lat = jQuery(this).find("frontLat").text();
+				            var options = {
+				                label:new Tmap.Label(name),
+				                lonlat:new Tmap.LonLat(lon, lat)
+				            };
+				            addMarker(options);
+				        });
+				    }else {
+				        alert('검색결과가 없습니다.');
+				    }
+				    map.zoomToExtent(markerLayer.getDataExtent());
+				    tdata.events.unregister("onComplete", tdata, onCompleteTData);
+				}
+				function getDataFromLonLat(lonlat){
+				    tdata = new Tmap.TData();
+				    tdata.events.register("onComplete", tdata, onCompleteTDataLonLat);
+				    tdata.getPOIDataFromLonLat(lonlat, encodeURIComponent("편의점"), {bizAppId:"701a4eaf1326", radius:1});
+				}
+				function onCompleteTDataLonLat(e){
+				    if(jQuery(this.responseXML).find("searchPoiInfo pois poi").text() != ''){
+				        jQuery(this.responseXML).find("searchPoiInfo pois poi").each(function(){
+				            var name = jQuery(this).find("name").text();
+				            var lon = jQuery(this).find("frontLon").text();
+				            var lat = jQuery(this).find("frontLat").text();
+				            var options = {
+				                label:new Tmap.Label(name),
+				                lonlat:new Tmap.LonLat(lon, lat)
+				            };
+				            console.log(name, lon, lat);
+ 							
+ 							if(clcl == true) {
+					            $("#ul").append("<li>" + name + "</li>" 
+					            				+ "<input type='hidden' value='" + lon + "'>"
+					            				+ "<input type='hidden' value='" + lat + "'>");
+ 							} else if (clcl == false) {
+ 								$("#ul1").append("<li>" + name + "</li>" 
+					            				+ "<input type='hidden' value='" + lon + "'>"
+					            				+ "<input type='hidden' value='" + lat + "'>");
+ 							}
+
+				            addMarker(options); // all 마커
+				        });
+				    }else {
+				        alert('검색결과가 없습니다.');
+				    }
+				    map.zoomToExtent(markerLayer.getDataExtent());
+				    tdata.events.unregister("onComplete", tdata, onCompleteTDataLonLat);
+				}
+
+
+				$("#ul").on("click", "li", function() {
+
+					alert($(this).next().val() + ", " +  $(this).next().next().val());
+
+					$("#startCoordX").val($(this).next().val());
+					$("#startCoordY").val($(this).next().next().val());
+					
+					$("#startPoint").val("lon=" + $(this).next().val() + ",lat=" +  $(this).next().next().val());			
+				});
+
+				$("#ul1").on("click", "li", function() {
+
+					alert($(this).next().val() + ", " +  $(this).next().next().val());
+
+					$("#endCoordX").val($(this).next().val());
+					$("#endCoordY").val($(this).next().next().val());
+
+					$("#endPoint").val("lon=" + $(this).next().val() + ",lat=" +  $(this).next().next().val());
+				});
+
+
+			    $("#gogo").on("click", function(){
+						poiRoute();
+			    });
+
+				//경로 정보 로드
+				function poiRoute(){
+
+					var startx = $("#startCoordX").val();   // 경도 자르기
+					var starty = $("#startCoordY").val();   // 경도 자르기
+					
+					var stopx = $("#endCoordX").val();   // 경도 자르기
+					var stopy = $("#endCoordY").val();   // 경도 자르기
+					
+					var routeFormat = new Tmap.Format.KML({extractStyles:true, extractAttributes:true});
+					var startX = new Object(startx);
+					var startY = new Object(starty);
+					var endX = new Object(stopx)// 14136027.789587;
+					var endY = new Object(stopy)// 4517572.4745242;
+					var urlStr = "https://apis.skplanetx.com/tmap/routes?version=1&format=xml";	
+								 
+					urlStr += "&startX="+startX;
+					urlStr += "&startY="+startY;
+					urlStr += "&endX="+endX;
+					urlStr += "&endY="+endY;
+					urlStr += "&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b";
+					var prtcl = new Tmap.Protocol.HTTP({
+					                        url: urlStr,
+					                        format:routeFormat
+					                        });
+					var routeLayer = new Tmap.Layer.Vector("route", {protocol:prtcl, strategies:[new Tmap.Strategy.Fixed()]});
+					routeLayer.events.register("featuresadded", routeLayer, onDrawnFeatures);
+					map.addLayer(routeLayer);
+				}
+
+
+
+	</script>
+
+	
 </body>
 </html>

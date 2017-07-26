@@ -76,8 +76,4 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping(value = "MyInfo", method = RequestMethod.GET)
-	public void MyInfo()throws Exception{
-	
-	}
 }

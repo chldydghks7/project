@@ -1,35 +1,24 @@
 package yjc.wdb.gr;
 
-import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
-
-import de.micromata.opengis.kml.v_2_2_0.Coordinate;
-import de.micromata.opengis.kml.v_2_2_0.Kml;
-import group.riding.bean.GroupBean;
 import group.riding.bean.KmlBean;
 import group.riding.bean.MyPicture;
 import group.riding.bean.RidingInfo;
@@ -37,7 +26,7 @@ import group.riding.bean.UserBean;
 import group.riding.bean.UserData;
 import group.riding.bean.UserData2;
 import group.riding.dto.LoginDTO;
-import group.riding.service.GroupService;
+import group.riding.service.MyinfoService;
 import group.riding.service.UserService;
 
 
@@ -47,6 +36,8 @@ public class UserController {
 	@Inject
 	private UserService service;
 	
+	@Inject
+	private MyinfoService Myinfoservice;
 
 	
 	@RequestMapping(value="register", method=RequestMethod.GET)	
@@ -344,16 +335,42 @@ public class UserController {
 			 
 			 json.put("result", "success");
 			 
-	
-			
-			 
-		
-			 
-			 
+
 			 return callback+"("+json+")";
 			 
 		 }
 		 
+		 
+		////////////
+		// myInfoPage
+		 //////
+		@RequestMapping(value="MyInfo", method=RequestMethod.GET)	
+		public String MyInfo(@RequestParam(value ="uid") String uid, HttpSession session, Model model) throws Exception {
+			
+			String id1 = (String) session.getAttribute("uid");
+			
+			String myAlldistance = Myinfoservice.myAlldistance(id1);
+			String myAlltime = Myinfoservice.myAlltime(id1);
+			String myGr_gr = Myinfoservice.myGr_gr(id1);
+			String myRiding = Myinfoservice.myRiding(id1);
+			
+			System.out.print("asdasd" + myAlltime);
+//			String myAlltime = aaa.substring(0, 8);
+// 10101
+			if(myAlltime.length() == 5) {
+				String alltime = myAlltime.substring(0,1);
+				model.addAttribute("myAlltime", alltime);
+			} else if (myAlltime.length() == 6) {
+				String alltime = myAlltime.substring(0,2);
+				model.addAttribute("myAlltime", alltime);
+			} 
+					
+			model.addAttribute("myAlldistance", myAlldistance);
+			model.addAttribute("myGr_gr", myGr_gr);
+			model.addAttribute("myRiding", myRiding);
+				
+			return "MyInfo";
+		}
 		 
 
 }

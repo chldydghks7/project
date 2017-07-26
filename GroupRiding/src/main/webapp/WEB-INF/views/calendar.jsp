@@ -118,20 +118,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Group Riding</a>
+                <a class="navbar-brand" href="main">Group Riding</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="main">Home</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Page <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="MyInfo">My Information</a>
+                                <a href="MyInfo?uid=${uid}">My Information</a>
                             </li>
                            
                         </ul>
@@ -175,9 +175,18 @@
             </div>
         </div>
     </header>
+<<<<<<< HEAD
       
 
             
+=======
+
+            <!-- End Topbar -->
+
+   
+      <!--=== End Breadcrumbs ===-->
+
+>>>>>>> c060212a5a4fc4767b75268f54dd99c246b70354
       <!--=== Content Part ===-->
       <div class="container">
         <div class="row">
@@ -186,22 +195,17 @@
             </div>
         </div>
         <!-- /.row -->
-
         <!-- Content Row -->
         <ul class="nav nav-tabs">
             <li><a href="MyInfo">내정보</a></li>
             <li class="active"><a href="#">달력</a></li>  <!-- data-toggle="tab" <a href="calendar?uid=${uid}">달력</a> -->
       	</ul>
       
-      
+     	
          <div class="row">
 	<!-- 캘린더 --> <div class="col-lg-12" id="content">
 			<table class="table" style="float: center;">
-                <thead>
-                    <tr>
-                        <td colspan="3" style="text-align: center;"><h3>MY PROFILE</h3></td>
-                    </tr>
-                    </thead>
+  
                     <tbody style="text-align: center;">
                     <tr>
                         <td colspan="3"><div id='calendar'></div></td>
@@ -213,81 +217,6 @@
          </div>
       </div>
       
-      <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-bicycle fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">226km</div>
-                                        <div>총 거리</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-clock-o fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">87hour </div>
-                                        <div>시간</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-group fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">3그룹</div>
-                                        <div>가입 그룹 수</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-flag-checkered fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">13</div>
-                                        <div>완료한 라이딩 수</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        <!-- /.row -->
-       <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-area-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
       
        <hr>
 

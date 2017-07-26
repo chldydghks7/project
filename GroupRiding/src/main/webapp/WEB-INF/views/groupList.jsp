@@ -107,7 +107,7 @@
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">My Page <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="MyInfo">My Information</a></li>
+							<li><a href="MyInfo?uid=${uid}">My Information</a></li>
 
 						</ul></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
