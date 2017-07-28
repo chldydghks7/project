@@ -982,22 +982,22 @@ var ridingDate=[];
 
 <script>
 
-			var map
+			var map1
 
-			map = new Tmap.Map({div:'map_div1',
+			map1 = new Tmap.Map({div:'map_div1',
 		        width:'50%', 
 		        height:'400px',
 		        transitionEffect:"resize",
 		        animation:true
 		    }); 
-				map.setCenter(new Tmap.LonLat(14315520.90430,4283115.74626), 11);
+				map1.setCenter(new Tmap.LonLat(14315520.90430,4283115.74626), 11);
 				// map.addControl(new Tmap.Control.KeyboardDefaults());
-				map.addControl(new Tmap.Control.MousePosition());
+				map1.addControl(new Tmap.Control.MousePosition());
 				// searchRoute();
 					
 					//경로 그리기 후 해당영역으로 줌
 					function onDrawnFeatures(e){
-						map.zoomToExtent(this.getDataExtent());
+						map1.zoomToExtent(this.getDataExtent());
 					}	// function searchRoute(start, stop){
 
 ////////////////
@@ -1019,7 +1019,7 @@ var ridingDate=[];
 
 	    			searchPOI(starting);	// 검색
 	    			
-	    			markerLayer.clearMarkers();	// 마커 초기화
+	    			markerLayer1.clearMarkers();	// 마커 초기화
 
 	    			getDataFromLonLat(this.lonlat);	// 주소
 
@@ -1043,7 +1043,7 @@ var ridingDate=[];
 	    		
 	    		function addMarkerLayer(){
 				    markerLayer = new Tmap.Layer.Markers("marker");
-				    map.addLayer(markerLayer);
+				    map1.addLayer(markerLayer);
 				};
 
 				function addMarker(options){
@@ -1088,7 +1088,7 @@ var ridingDate=[];
 				    }else {
 				        alert('검색결과가 없습니다.');
 				    }
-				    map.zoomToExtent(markerLayer.getDataExtent());
+				    map1.zoomToExtent(markerLayer.getDataExtent());
 				    tdata.events.unregister("onComplete", tdata, onCompleteTData);
 				}
 				function getDataFromLonLat(lonlat){
@@ -1123,7 +1123,7 @@ var ridingDate=[];
 				    }else {
 				        alert('검색결과가 없습니다.');
 				    }
-				    map.zoomToExtent(markerLayer.getDataExtent());
+				    map1.zoomToExtent(markerLayer.getDataExtent());
 				    tdata.events.unregister("onComplete", tdata, onCompleteTDataLonLat);
 				}
 
@@ -1180,7 +1180,7 @@ var ridingDate=[];
 					                        });
 					var routeLayer = new Tmap.Layer.Vector("route", {protocol:prtcl, strategies:[new Tmap.Strategy.Fixed()]});
 					routeLayer.events.register("featuresadded", routeLayer, onDrawnFeatures);
-					map.addLayer(routeLayer);
+					map1.addLayer(routeLayer);
 				}
 
 
