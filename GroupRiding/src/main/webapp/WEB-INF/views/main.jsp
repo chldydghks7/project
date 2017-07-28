@@ -93,8 +93,7 @@
 <body>
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
-		style="background-color: white;">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -104,33 +103,36 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main"
-					style="color: red; font-family: sung; font-size: 30px;">GROUP
-					RIDING</a>
+				<a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main" style="color: black; font-family: sung;">Home</a></li>
-					<li class="dropdown"><a href="MyInfo"
-						style="color: black; font-family: sung;">My Page</a></li>
+					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
+					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" style="color: black; font-family: sung;">Group
-							<b class="caret"></b>
-					</a>
+						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="groupList"
-								style="color: black; font-family: sung;">Group List</a></li>
-							<li><a href="racePoint"
-								style="color: black; font-family: sung;">Race Point</a></li>
+							<li><a href="groupList"  style="color:black; font-family: sung;">Group List</a></li>
+							<li><a href="racePoint"  style="color:black; font-family: sung;">Race Point</a></li>
 						</ul></li>
-					<li><a href="groupRank"
-						style="color: black; font-family: sung;">Rank</a></li>
-					<li><a href="sharing" style="color: black; font-family: sung;">Sharing</a></li>
-					<li><a href="hotPlaceMap"
-						style="color: black; font-family: sung;">Hot Place</a></li>
+					<li><a href="groupRank"  style="color:black; font-family: sung;">Rank</a></li>
+					<li><a href="sharing"  style="color:black; font-family: sung;">Sharing</a></li>
+					<li><a href="hotPlaceMap"  style="color:black; font-family: sung;">Hot Place</a></li>
+					
+					<div style="float: right; width: 180px;">
+						<li id="profile" style="float: left; margin-top: 6px;"></li>
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown"
+							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
 
+							<ul class="dropdown-menu">
+								<li><a id="logout">LogOut</a></li>
+
+							</ul></li>
+
+					</div>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -425,7 +427,30 @@
 
                
 </script>
+		<script>
+$(document).ready(
+		function() {
+			var uid = "${uid}";
+			$.getJSON("getAttach/" + uid, function(list) {
 
+				var img = $("<img/>").attr('src',
+						"/displayFile?fileName=" + list[0]);
+				img.css("width", "35px");
+				img.css("height", "35px");
+
+				$("#profile").prepend(img);
+
+				var logoutform = $("form[data-role='out']");
+
+				$("#logout").click(function() {
+
+					logoutform.submit();
+				});
+
+			});
+
+		});
+</script>
 
 	<script>
 		$("#save").on("click", function() {

@@ -160,7 +160,7 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
-					<li class="dropdown"><a href="MyInfo"  style="color:black; font-family: sung;">My Page</a></li>
+					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -270,9 +270,9 @@
 							</div>
 
 							<div class="col-xs-9 text-right">
-								<div class="huge">${myAlldistance}</div>
+								<div class="huge" style="font-family: nexon;">${myAlldistance}</div>
 
-								<div>총 거리</div>
+								<div style="font-family: nexon;">총 거리</div>
 							</div>
 						</div>
 					</div>
@@ -287,9 +287,9 @@
 							</div>
 
 							<div class="col-xs-9 text-right">
-								<div class="huge">${myAlltime}</div>
+								<div class="huge" style="font-family: nexon;">${myAlltime}</div>
 
-								<div>시간</div>
+								<div style="font-family: nexon;">시간</div>
 							</div>
 						</div>
 					</div>
@@ -304,9 +304,9 @@
 							</div>
 
 							<div class="col-xs-9 text-right">
-								<div class="huge">${myGr_gr}</div>
+								<div class="huge" style="font-family: nexon;">${myGr_gr}</div>
 
-								<div>가입 그룹 수</div>
+								<div style="font-family: nexon;">가입 그룹 수</div>
 							</div>
 						</div>
 					</div>
@@ -321,9 +321,9 @@
 							</div>
 
 							<div class="col-xs-9 text-right">
-								<div class="huge">${myRiding}</div>
+								<div class="huge" style="font-family: nexon;">${myRiding}</div>
 
-								<div>완료한 라이딩 수</div>
+								<div style="font-family: nexon;">완료한 라이딩 수</div>
 							</div>
 						</div>
 					</div>
