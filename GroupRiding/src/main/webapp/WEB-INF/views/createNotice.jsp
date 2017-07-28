@@ -433,7 +433,7 @@
                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-               <%-- <p style="float: left">제목: ${read.writing_title}</p>
+                <p style="float: left">제목: ${read.writing_title}</p>
                <br>
                <hr>
                <div>
@@ -443,7 +443,7 @@
                <div id="s-content">
                   <p>내용 : ${read.writing_content}</p>
                   <p>글번호 : ${read.writing_Id}</p>
-               </div> --%>
+               </div> 
             </div>
             <div class="modal-footer">
                <!-- <img src="./resources/img/hearts.png" id="like"> -->
