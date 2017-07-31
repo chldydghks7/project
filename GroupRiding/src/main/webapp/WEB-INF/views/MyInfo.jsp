@@ -230,9 +230,9 @@
 
 				<!-- Preview Image -->
 				<div class="w3-card-4 w3-round-large"style="height: 600px; border: solid 1px; border-color: #ddd; background-color: white;">
-					<span style="font-family: nexon; position: absolute; font-size: 40px;margin-top: 37px;margin-left: 100px;">No : 001</span>
+					<span style="font-family: nexon; position: absolute; font-size: 40px;margin-top: 37px;margin-left: 100px;">No : 00${userInfo.uno}</span>
 					<span style="font-size: 80px;font-family: nexon;margin-left: 340px; ">Member Card</span>
-					<span style="font-family: nexon; position: absolute; font-size: 40px;margin-top: 37px;float: right; margin-left: 50px;">2017-07-20</span>
+					<span id="udate" style="font-family: nexon; position: absolute; font-size: 40px;margin-top: 37px;float: right; margin-left: 50px;"></span>
 					<div style="position: absolute; width: 400px; height: 400px; background-color: black;margin-left: 60px;"></div>
 					<table style="position:absolute; width: 600px; height: 300px;margin-left: 550px; font-family: nexon;font-size: 40px; ">
 						<tr> 
@@ -270,7 +270,7 @@
 							</div>
 
 							<div class="col-xs-9 text-right">
-								<div class="huge" style="font-family: nexon;">${myAlldistance}</div>
+								<div class="huge" style="font-family: nexon;">${myAlldistance} km</div>
 
 								<div style="font-family: nexon;">총 거리</div>
 							</div>
@@ -287,7 +287,7 @@
 							</div>
 
 							<div class="col-xs-9 text-right">
-								<div class="huge" style="font-family: nexon;">${myAlltime}</div>
+								<div class="huge" style="font-family: nexon;">${myAlltime} h</div>
 
 								<div style="font-family: nexon;">시간</div>
 							</div>
@@ -422,6 +422,10 @@ $(document).ready(
 			});
 
 		});
+		
+		var udate = "${userInfo.udate}";
+		
+		$("#udate").append(udate.substr(0, 10));
 </script>
 
 </body>

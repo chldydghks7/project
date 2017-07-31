@@ -349,26 +349,34 @@ public class UserController {
 			
 			String id1 = (String) session.getAttribute("uid");
 			
-			String myAlldistance = Myinfoservice.myAlldistance(id1);
-			String myAlltime = Myinfoservice.myAlltime(id1);
-			String myGr_gr = Myinfoservice.myGr_gr(id1);
-			String myRiding = Myinfoservice.myRiding(id1);
+			String myAlldistance = Myinfoservice.myAlldistance(id1);	// 총거리
+			String myAlltime = Myinfoservice.myAlltime(id1);			// 총사간
+			String myGr_gr = Myinfoservice.myGr_gr(id1);				// 가입 그룹수 
+			String myRiding = Myinfoservice.myRiding(id1);				// 라이딩 수
+			UserBean userInfo = service.user(id1);						// 회원 정보
+			
+			
 			
 			System.out.print("asdasd" + myAlltime);
 //			String myAlltime = aaa.substring(0, 8);
 // 10101
-			if(myAlltime.length() == 5) {
-				String alltime = myAlltime.substring(0,1);
-				model.addAttribute("myAlltime", alltime);
-			} else if (myAlltime.length() == 6) {
-				String alltime = myAlltime.substring(0,2);
-				model.addAttribute("myAlltime", alltime);
-			} 
+			if(myAlltime != null) {
+			
+				if(myAlltime.length() == 5) {
+					String alltime = myAlltime.substring(0,1);
+					model.addAttribute("myAlltime", alltime);
+				} else if (myAlltime.length() == 6) {
+					String alltime = myAlltime.substring(0,2);
+					model.addAttribute("myAlltime", alltime);
+				} 
+				
+			}
 					
 			model.addAttribute("myAlldistance", myAlldistance);
 			model.addAttribute("myGr_gr", myGr_gr);
 			model.addAttribute("myRiding", myRiding);
-				
+			model.addAttribute("userInfo", userInfo);
+			
 			return "MyInfo";
 		}
 		 

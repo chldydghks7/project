@@ -32,6 +32,16 @@ public class MyinfoServiceImpl implements MyinfoService {
 		return dao.myRiding(uid);
 	}
 
+	@Override
+	public String avgspeed(String uid) throws Exception {
+		return dao.avgspeed(uid);
+	}
+
+	@Override
+	public String avgdistance(String uid) throws Exception {
+		return dao.avgdistance(uid);
+	}
+
 	
 
 }

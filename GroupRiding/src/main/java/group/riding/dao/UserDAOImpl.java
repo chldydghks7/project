@@ -37,7 +37,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public UserBean login(LoginDTO dto) throws Exception {	// ������� ������ ��ȸ
+	public UserBean login(LoginDTO dto) throws Exception {	// 占쏙옙占쏙옙占쏙옙占� 占쏙옙占쏙옙占쏙옙 占쏙옙회
 		return session.selectOne(namespace + ".login", dto);
 	}
 
@@ -47,8 +47,8 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public UserBean user(int uno) throws Exception {
-		return session.selectOne(namespace + ".user", uno);
+	public UserBean user(String uid) throws Exception {
+		return session.selectOne(namespace + ".user", uid);
 	}
 
 	@Override

@@ -10,4 +10,8 @@ public interface MyinfoService {
 	
 	public String myRiding(String uid) throws Exception;
 	
+	public String avgspeed(String uid) throws Exception;
+	
+	public String avgdistance(String uid) throws Exception;
+	
 }

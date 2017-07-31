@@ -33,6 +33,16 @@ public class MyinfoDAOImpl implements MyinfoDAO {
 		return session.selectOne(namespace + ".myRiding", uid);
 	}
 
+	@Override
+	public String avgspeed(String uid) throws Exception {
+		return session.selectOne(namespace + ".avgspeed", uid);
+	}
+
+	@Override
+	public String avgdistance(String uid) throws Exception {
+		return session.selectOne(namespace + ".avgdistance", uid);
+	}
+
 	
 
 }

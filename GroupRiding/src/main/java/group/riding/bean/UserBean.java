@@ -1,13 +1,15 @@
 package group.riding.bean;
 
 public class UserBean {
-	private Integer uno;
+	private int uno;
 	private String uid;
 	private String upw;
 	private String upw1;
 	private String uname;
 	private int uage;
 	private int upoint;
+	
+	private String udate;
 	
 	private String files;
 	
@@ -21,10 +23,16 @@ public class UserBean {
 	
 	
 
-	public Integer getUno() {
+	public String getUdate() {
+		return udate;
+	}
+	public void setUdate(String udate) {
+		this.udate = udate;
+	}
+	public int getUno() {
 		return uno;
 	}
-	public void setUno(Integer uno) {
+	public void setUno(int uno) {
 		this.uno = uno;
 	}
 	public String getUid() {
