@@ -33,6 +33,7 @@
 
 		<typeAlias alias="RidingInfo" type="group.riding.bean.RidingInfo"/>
 
+		<typeAlias alias="HotplaceBean" type="group.riding.bean.HotplaceBean"/>
 
 	</typeAliases>
 </configuration>
