@@ -57,6 +57,8 @@
       
       #myPic>img{
       margin-right:10px;
+      width:210px;
+      height: 150px;
       }
       
       .logo, .footer-logo {
@@ -264,9 +266,11 @@
                         </label>
                      </section>
                   </fieldset>
-                  <input type='hidden' class='file' name='bbs_FilePath' value=''>
+                  <!-- <input type='hidden' class='file' name='bbs_FilePath' value=''> -->
                   <input type='hidden' class='kml' name='kml_name' value=''>
-                  <input type='hidden' class='picLocation' name='picture_location' value=''>
+                 <!--  <input type='hidden' class='picLocation' name='picture_location' value=''> -->
+                   <input type='hidden' class='kmlcenter' name='kml_center' value=''>
+                   <input type='hidden' class='thumbnail' name='thumbnail'>
                   
                   <footer>
                      <button type="submit" class="btn-u">등록</button>
@@ -462,18 +466,42 @@
       
       
       $("#myPic").on("click","img",function(){
-         
+    	  /* <!-- <input type='hidden' class='file' name='bbs_FilePath' value=''> -->
+    	  <!--  <input type='hidden' class='picLocation' name='picture_location' value=''> --> */
          console.log($(this));
+    	  var form = $("#sharForm");
+          var filepath=$(this).attr('src');
+          var pictureLocation=$(this).attr('class');
+    	  
+    	  alert($(this).css('border'));
+    	  if($(this).css('border')=='1.99219px solid rgb(0, 128, 0)')
+    		  {
+    		  $(this).css('width','300px');
+    		  $(this).css('height','200px');
+    		  
+    		   $(this).siblings().css('width','210px');
+    		   $(this).siblings().css('height','150px');
+     		  
+    		  
+    		  $('.thumbnail').val(filepath);
+    		  return;
+    		  }
          $(this).css('border','2px solid green');
-         $(this).siblings().css('border','');
+       
          
-          var form = $("#sharForm");
-         var filepath=$(this).attr('src');
-         var pictureLocation=$(this).attr('class');
          
-           
+         
+         var picFile=$("<input type='hidden' name='bbs_FilePath'>");
+         picFile.val(filepath);
+         var picLocation=$("<input type='hidden' name='picture_location'>");
+         picLocation.val(pictureLocation);
+         
+         form.append(picFile);
+         form.append(picLocation);
+         
+          /*  
            $('.file').val(filepath);
-           $('.picLocation').val(pictureLocation);
+           $('.picLocation').val(pictureLocation); */
          
       });
       
@@ -485,8 +513,10 @@
          
            var form = $("#sharForm");
            var kmlname=$(this).attr("class");
+           var kmlcenter=$(this).attr("id");
            
-           $(".kml").val(kmlname);
+           $(".kmlcenter").val(kmlcenter);
+          
          
           var map = new google.maps.Map(document.getElementById('RouteMap'));
           
@@ -548,7 +578,7 @@
                    var alltime;
                    time=time.split("/");
                    
-                   str+="<tr class='"+list[i].kml_name+"'><td>"+list[i].startDate+"</td>"+
+                   str+="<tr id='"+list[i].kml_center+"'  class='"+list[i].kml_name+"'><td>"+list[i].startDate+"</td>"+
                    "<td>"+list[i].avgspeed+"</td>"+
                    "<td>"+time[0]+"시간"+time[1]+"분"+time[2]+"초"+"</td>"+
                    "<td>"+list[i].kcal+"</td></tr>";

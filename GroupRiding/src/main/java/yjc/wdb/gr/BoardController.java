@@ -1,5 +1,6 @@
 package yjc.wdb.gr;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import group.riding.bean.BoardBean;
+import group.riding.bean.SharReadFile;
 import group.riding.service.BoardService;
 
 @Controller
@@ -24,38 +26,56 @@ public class BoardController {
    private BoardService service;
    
    @RequestMapping(value = "sharing", method = RequestMethod.GET)
-   public void sharing(Model model, @RequestParam(value = "writing_Id", defaultValue = "-1") int writing_Id) throws Exception {
+   public void sharing(Model model) throws Exception {
       // String writing_Id = (String)session.getAttribute("writing_Id");
       List<BoardBean> list = service.sharList();
       model.addAttribute("board", list);
       
-      System.out.println(writing_Id);
+     /* System.out.println(writing_Id);
       BoardBean bb = service.sharRead(writing_Id);
       model.addAttribute("read", bb);
-      System.out.println(bb);
+      System.out.println(bb);*/
    }
    
    @ResponseBody
    @RequestMapping(value = "readShar", method = RequestMethod.GET)
-   public BoardBean readShar(Model model, @RequestParam(value = "writing_Id", defaultValue = "-1") int writing_Id) throws Exception {
-      System.out.println(writing_Id);
+   public  HashMap<String, Object> readShar(Model model, @RequestParam(value = "writing_Id", defaultValue = "-1") int writing_Id) throws Exception {
+      HashMap<String, Object>map= new HashMap<>();
+      
+      
       
       BoardBean bb = service.sharRead(writing_Id);
+      List<SharReadFile> cc=service.sharfileRead(writing_Id);
       
-      System.out.println(bb.getKml_name());
-      model.addAttribute("read", bb);
       
-      return bb;
+      
+      map.put("read", bb);
+      map.put("readfile", cc);
+     
+      
+      
+      
+   
+   
+      
+      return map;
    }
    
    @RequestMapping(value = "sharingForm", method = RequestMethod.GET)
-   public void sharingForm(@ModelAttribute BoardBean bb) throws Exception {
+   public void sharingForm( BoardBean bb) throws Exception {
    
    }
    
    @RequestMapping(value = "sharingForm", method = RequestMethod.POST)
-   public String newShar(@ModelAttribute BoardBean bb, String bbs_Id, RedirectAttributes rttr) throws Exception {
+   public String newShar( BoardBean bb, String bbs_Id, RedirectAttributes rttr) throws Exception {
       service.newShar(bb);
+      
+      String[] filepath=bb.getBbs_FilePath();
+      
+      for(int i=0;i<filepath.length;i++)
+      {
+    	  System.out.println("filepath"+filepath[i]);
+      }
       
       return "redirect:sharing";
    }
@@ -71,7 +91,7 @@ public class BoardController {
    
    @RequestMapping(value = "sharEdit", method = RequestMethod.POST)
    public String sharEdit(BoardBean vo) throws Exception {
-	   System.out.println("³Ñ¾î¿Ô´ç");
+	   System.out.println("ï¿½Ñ¾ï¿½Ô´ï¿½");
 	   System.out.println(vo);
 	   service.sharEdit(vo);
 	   

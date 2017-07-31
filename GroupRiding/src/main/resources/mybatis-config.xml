@@ -33,6 +33,6 @@
 
 		<typeAlias alias="RidingInfo" type="group.riding.bean.RidingInfo"/>
 
-
+		<typeAlias alias="SharReadFile" type="group.riding.bean.SharReadFile"/>
 	</typeAliases>
 </configuration>

@@ -1,6 +1,9 @@
 package group.riding.bean;
 
 import java.sql.Date;
+import java.util.Arrays;
+
+import com.sun.xml.bind.v2.runtime.RuntimeUtil.ToStringAdapter;
 
 public class BoardBean {
 	private int writing_Id;
@@ -11,20 +14,54 @@ public class BoardBean {
 	private Date regist_Date;
 	private int view_Number;
 	private String writing_content;
+	private String[] picture_location;
 	
-	private String bbs_FilePath;
+	private String[] bbs_FilePath;
 	
 	private String kml_name;
+	private String kml_center;
 	
-	public String getBbs_FilePath() {
+	private String thumbnail;
+	
+	
+	
+	
+	
+	
+	public String getThumbnail() {
+		return thumbnail;
+	}
+
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
+
+	public String getKml_center() {
+		return kml_center;
+	}
+
+	public void setKml_center(String kml_center) {
+		this.kml_center = kml_center;
+	}
+
+	
+	
+
+	public String[] getPicture_location() {
+		return picture_location;
+	}
+
+	public void setPicture_location(String[] picture_location) {
+		this.picture_location = picture_location;
+	}
+
+	public String[] getBbs_FilePath() {
 		return bbs_FilePath;
 	}
 
-	public void setBbs_FilePath(String bbs_FilePath) {
+	public void setBbs_FilePath(String[] bbs_FilePath) {
 		this.bbs_FilePath = bbs_FilePath;
 	}
-	
-	
 
 	public int getWriting_Id() {
 		return writing_Id;
@@ -96,6 +133,12 @@ public class BoardBean {
 
 	public void setKml_name(String kml_name) {
 		this.kml_name = kml_name;
+	}
+
+	@Override
+	public String toString() {
+		return "BoardBean [picture_location=" + Arrays.toString(picture_location) + ", bbs_FilePath="
+				+ Arrays.toString(bbs_FilePath) + "]";
 	}
 	
 	

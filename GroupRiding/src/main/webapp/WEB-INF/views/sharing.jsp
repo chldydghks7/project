@@ -43,7 +43,7 @@
 }
 
 #s-reply {
-	width: 450px;
+	width: 700px;
 	margin-left: 0;
 	margin-right: 20px;
 }
@@ -54,7 +54,8 @@
 
 .s-content {
 	width: 560px;
-	height: 25px;
+	font-size: 30px;
+	text-align: left;
 }
 
 .likeCnt {
@@ -106,8 +107,9 @@
 
 #sharmap {
 	margin-top: 7px;
-	width: 250px;
-	height: 250px;
+	margin-right:10px;
+	width: 400px;
+	height: 350px;
 	float: left;
 }
 
@@ -118,11 +120,23 @@
 	float: left;
 }
 
-#imgDiv {
+/* #imgDiv {
 	display: inline-block;
 	margin-left: 10px;
 	width: 300px;
 	height: 250px;
+} */
+
+#picSlide{
+	width: 400px;
+	height: 350px;
+	float: left;
+
+}
+
+#picSlide  img{
+	width: 400px;
+	height: 350px;
 }
 
 .file {
@@ -157,6 +171,9 @@
 	height: 25px;
 	margin-right: 10px;
 }
+
+
+
 </style>
 </head>
 
@@ -219,11 +236,7 @@
 				   			</li>
 						
 						</ul>
-									
-								
-										
-										
-									
+												
 				    </li>
 				    
 				    <li id="profile"></li>
@@ -284,7 +297,7 @@
 									<p class="cnt" style="display: none;">${board.view_Number}</p>
 									
 										
-											<img class="img-responsive img-hover" src="${board.bbs_FilePath}"/>
+											<img class="img-responsive img-hover" src="${board.thumbnail}"/>
 										
 										<a class="test btn btn-primary"
 											href="${board.writing_Id}" data-toggle="modal"
@@ -323,7 +336,7 @@
 
 	<!-- Read Modal Start -->
 	<div id="myModal" class="modal fade" role="dialog">
-		<div class="modal-dialog">
+		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 
 				<div class="modal-header">
@@ -334,6 +347,7 @@
 
 					<h3 style='float: left' class='title'></h3>
 					<p style='display: none;' id='w_id' class='bbs_id'></p>
+					<p style='display: none;' class='kmlcenter'></p>
 					<p style='float: right;' class='writer'>작성자 :</p>
 					<br>
 					<hr>
@@ -358,25 +372,64 @@
 						target="_blank" alt="Share on kakaostory"><img src="./resources/img/kakaoStory.png" class="snsIcon"></a>
 					</div>
 					<div id="sharmap"></div>
-					<div id="imgDiv">
-						<img class='file' id='s-img' src=''>
+					
+						<!-- <img class='file' id='s-img' src=''> -->
+						<div id="picSlide" class="carousel slide" data-ride="carousel">
+		  								<!-- Indicators -->
+									  <ol class="carousel-indicators">
+									   
+						         <!--  <li data-target="#myCarousel" data-slide-to="1"></li>
+									    <li data-target="#myCarousel" data-slide-to="2"></li> -->
+									  </ol>
+		
+								  <!-- Wrapper for slides -->
+								  <div class="carousel-inner">
+								   <!--  <div class="item active">
+								      <img src="la.jpg" alt="Los Angeles">
+								    </div>
+								
+								    <div class="item">
+								      <img src="chicago.jpg" alt="Chicago">
+								    </div>
+								
+								    <div class="item">
+								      <img src="ny.jpg" alt="New York">
+								    </div> -->
+								  </div>
+		
+								  <!-- Left and right controls -->
+								  <a class="left carousel-control" href="#picSlide" data-slide="prev">
+								    <span class="glyphicon glyphicon-chevron-left"></span>
+								    <span class="sr-only">Previous</span>
+								  </a>
+								  <a class="right carousel-control" href="#picSlide" data-slide="next">
+								    <span class="glyphicon glyphicon-chevron-right"></span>
+								    <span class="sr-only">Next</span>
+								  </a>
+						</div>
+						
+								<hr>
+							<div class='s-content'></div>
+							<hr>
 					</div>
-					<hr>
-					<div class='s-content'></div>
-					<hr>
+					
 					<div>
 						<ul class='timeline'></ul>
 					</div>
-				</div>
-				<div class="modal-footer">
+						<div class="modal-footer">
 					<!-- <img src="./resources/img/hearts.png" id="like"> -->
 					<input type="text" id="s-reply" /> <input type="text" id="uid"
 						style="display: none;" value="${uid}" />
 					<button id="addReply" class="btn btn-default">댓글등록</button>
 				</div>
+				
+					
+					
+				</div>
+				
 			</div>
 		</div>
-	</div>
+	
 	<!-- Read Modal End -->
 
 	<!-- Edit Modal Start -->
@@ -546,33 +599,69 @@
                writing_Id: title
             },
             success: function(data) {
-              
-                  console.log(data);
+            	console.log(data);
+              var BoardContent=data.read;
+              var BoardFile=data.readfile; 
+               $(".title").text("제목: "+BoardContent.writing_title);
+               $(".bbs_id").text( BoardContent.writing_Id);
+               $(".writer").text("작성자"+  BoardContent.member_Id);
+               $(".s-content").text("라이딩후기: "+BoardContent.writing_content);
+               $(".kmlcenter").text(BoardFile[0].kml_center);
                
-               $(".title").text(data.writing_title);
-               $(".bbs_id").text(data.writing_Id);
-               $(".writer").text("작성자"+ data.member_Id);
-               $(".file").attr('src',data.bbs_FilePath);
-               $(".s-content").text(data.writing_content);
+            
+               
                
                map = new google.maps.Map(document.getElementById('sharmap'));
             
             var ctaLayer = new google.maps.KmlLayer({
-                  url: 'http://39.121.239.182:8080/can/resources/'+data.kml_name,
+                  url: 'http://39.121.239.182:8080/can/resources/'+BoardFile[0].kml_name,
                   map: map
                 });
            
-             var refresh = function() {
-                   var center = detailmap.getCenter();
-                       google.maps.event.trigger(detailmap, "resize");
-                       detailmap.setCenter(center);
-                      detailmap.setZoom(16);
-                   }
-                   setTimeout(refresh, 100);
+            
+           for(var i=0;i< BoardFile.length;i++)
+       	 {
+           var piclocation= BoardFile[i].picture_location.split(",");
+           var picMarkerLocation= {lat:parseFloat(piclocation[0]),lng:parseFloat(piclocation[1])};
+            
+            var picIcon=new google.maps.MarkerImage(BoardFile[i].bbs_FilePath,null,null,null,new google.maps.Size(70,70));
+           
+           
+           
+            var picMarker= new google.maps.Marker({
+         	   position:picMarkerLocation,  
+         	   map:map,
+         	   icon:picIcon
+            });
+            
+            /*  shar 상세에 있는 이미지 슬라이드
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            */
+           /*   <div class="item active">
+		      <img src="la.jpg" alt="Los Angeles">
+		    </div>
+		
+		    <div class="item">
+		      <img src="chicago.jpg" alt="Chicago">
+		    </div>
+		
+		    <div class="item">
+		      <img src="ny.jpg" alt="New York">
+		    </div>  */
+		    
+		    if(i==0)
+		    {
+		    	   $("#picSlide > ol").append($("<li data-target='#myCarousel' class='active'  data-slide-to='"+i+"' ></li>"));
+		            
+		            $("#picSlide > .carousel-inner ").append($(" <div class='item active'><img src='"+BoardFile[i].bbs_FilePath+"'></div>"));  
+		    }else{
+            
+            $("#picSlide > ol").append($("<li data-target='#myCarousel' data-slide-to='"+i+"' ></li>"));
+            
+            $("#picSlide > .carousel-inner ").append($(" <div class='item'><img src='"+BoardFile[i].bbs_FilePath+"'></div>"));
+		    }
                
-               
-               
-               
+       	 }     
                getAllReplies();
                
                function getAllReplies() {
@@ -596,7 +685,7 @@
                                 + "<span class = 'reply replyText'>" + this.replyText + "</span>";
                             }
                         });
-                        $('.timeline').append(str); 
+                         $('.timeline').append(str); 
                         
                         $(".rEditBtn").on("click", function() {
                         	var li = $(this).parent();
@@ -755,6 +844,7 @@
                 $(".writer").text("작성자"+ data.member_Id);
                 $(".file").attr('src',data.bbs_FilePath);
                 $(".s-content").text(data.writing_content);
+           
                 
                 map = new google.maps.Map(document.getElementById('editmap'));
              
@@ -763,13 +853,7 @@
                    map: map
                  });
             
-              var refresh = function() {
-                    var center = detailmap.getCenter();
-                        google.maps.event.trigger(detailmap, "resize");
-                        detailmap.setCenter(center);
-                       detailmap.setZoom(16);
-              }
-              setTimeout(refresh, 100);
+           
              },
              error: function() {
                 alert('에러');
@@ -843,22 +927,23 @@
          google.maps.event.trigger(map, 'resize'); 
          var refresh = function() {
               //var center = map.getCenter();
-                  map.setCenter(new google.maps.LatLng(35.896553, 128.622051));
+             var center= $(".kmlcenter").text().split(",");
+                  map.setCenter(new google.maps.LatLng(parseFloat(center[0]),parseFloat(center[1])));
                  map.setZoom(17);
               }
               setTimeout(refresh, 500); 
 
-       });
+       }); 
       
       $('#editModal').on('shown.bs.modal', function () {
-          google.maps.event.trigger(map, 'resize'); 
+    	  google.maps.event.trigger(map, 'resize'); 
           var refresh = function() {
                //var center = map.getCenter();
-                   map.setCenter(new google.maps.LatLng(35.896553, 128.622051));
+              var center= $(".kmlcenter").text().split(",");
+                   map.setCenter(new google.maps.LatLng(parseFloat(center[0]),parseFloat(center[1])));
                   map.setZoom(17);
                }
                setTimeout(refresh, 500); 
-
         });
 
    </script>
