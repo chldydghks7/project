@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset = UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
@@ -33,254 +33,243 @@
 
 <style>
 #like {
-	margin-right: 20px;
-	width: 30px;
+   margin-right: 20px;
+   width: 30px;
 }
 
 #s-img {
-	width: 250px;
-	height: 250px;
+   width: 250px;
+   height: 250px;
 }
 
 #s-reply {
-	width: 700px;
-	margin-left: 0;
-	margin-right: 20px;
+   width: 450px;
+   margin-left: 0;
+   margin-right: 20px;
 }
 
 .modal-body {
-	height: 780px;
+   height: 780px;
 }
 
 .s-content {
-	width: 560px;
-	font-size: 30px;
-	text-align: left;
+   width: 560px;
+   height: 25px;
 }
 
 .likeCnt {
-	width: 20px;
-	height: 20px;
-	cursor: pointer;
+   width: 20px;
+   height: 20px;
+   cursor: pointer;
 }
 
 #myPic>img {
-	margin-right: 10px;
-	margin-bottom: 5px;
-	width: 50px;
-	height: 50px;
+   margin-right: 10px;
+   margin-bottom: 5px;
+   width: 50px;
+   height: 50px;
 }
 
 /* #replyContainer {
       position: relative;
    } */
 .reply {
-	display: inline-block;
-	float: left;
+   display: inline-block;
+   float: left;
 }
 
 .replyer {
-	font-weight: bold;
+   font-weight: bold;
 }
 
 .replyText {
-	width: 30em;
-	height: 3em;
-	overflow: auto;
-	margin-left: 10px;
+   width: 30em;
+   height: 3em;
+   overflow: auto;
+   margin-left: 10px;
 }
 
 .replyLI {
-	margin-bottom: 1em;
-	list-style-type: none;
-	clear: both;
+   margin-bottom: 1em;
+   list-style-type: none;
+   clear: both;
 }
 
 .rList {
-	list-style-type: none;
+   list-style-type: none;
 }
 
 .logo, .footer-logo {
-	width: 200px;
-	heigth: 100px;
+   width: 200px;
+   heigth: 100px;
 }
 
 #sharmap {
-	margin-top: 7px;
-	margin-right:10px;
-	width: 400px;
-	height: 350px;
-	float: left;
+   margin-top: 7px;
+   width: 250px;
+   height: 250px;
+   float: left;
 }
 
 #editmap {
-	margin-top: 7px;
-	width: 250px;
-	height: 250px;
-	float: left;
+   margin-top: 7px;
+   width: 250px;
+   height: 250px;
+   float: left;
 }
 
-/* #imgDiv {
-	display: inline-block;
-	margin-left: 10px;
-	width: 300px;
-	height: 250px;
-} */
-
-#picSlide{
-	width: 400px;
-	height: 350px;
-	float: left;
-
-}
-
-#picSlide  img{
-	width: 400px;
-	height: 350px;
+#imgDiv {
+   display: inline-block;
+   margin-left: 10px;
+   width: 300px;
+   height: 250px;
 }
 
 .file {
-	width: 300px !important;
-	height: 250px !important;
+   width: 300px !important;
+   height: 250px !important;
 }
 
 .replyImg {
-	width: 20px;
-	height: 20px;
-	margin-right: 10px;
+   width: 20px;
+   height: 20px;
+   margin-right: 10px;
 }
 
 .del {
-	margin-bottom: 30px;
-	margin-right: 20px;
+   margin-bottom: 30px;
+   margin-right: 20px;
 }
 
 .snsIcon {
-	width: 30px;
-	height: 30px;
+   width: 30px;
+   height: 30px;
 }
 
 .rEditBtn, .rDelBtn, .replyEdit, .cancel {
-	background-color: white;
-	border-radius: 5px;
-	border: 0.5px solid #BDBDBD;
+   background-color: white;
+   border-radius: 5px;
+   border: 0.5px solid #BDBDBD;
 }
 
 .editReplyTxt {
-	width: 380px;
-	height: 25px;
-	margin-right: 10px;
+   width: 380px;
+   height: 25px;
+   margin-right: 10px;
+}
+@font-face {
+   font-family: 'sung';
+   src: url('./resources/fonts/sung.ttf'); 
+   }
+   .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
+   .navbar-inverse .navbar-nav>.open>a:hover {
+   color: #fff;
+   background-color: #929292
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: black;
+}
+.a{
+   color:black;
+}
+@font-face {
+   font-family: 'sung';
+   src: url('./resources/fonts/sung.ttf');
 }
 
-
-
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
+   .navbar-inverse .navbar-nav>.open>a:hover {
+   color: #fff;
+   background-color: #929292
+}
+@font-face { 
+   font-family: 'nexon'; 
+   src: url('./resources/fonts/NEXON FOOTBALL GOTHIC B.OTF'); 
+   }
+@font-face {
+   font-family: 'nexon2'; 
+   src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF'); 
+   }
 </style>
 </head>
 
 <body>
-	 <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Group Riding</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Page <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="MyInfo">My Information</a>
-                            </li>
-                            
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Group <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="groupList">Group List</a>
-                            </li>
-                            <li>
-                                <a href="racePoint">Race Point</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="groupRank">Rank</a>
-                    </li>
-                    <li>
-                        <a href="sharing">Sharing</a>
-                    </li>
-                    <li>
-                        <a href="hotPlaceMap">Hot Place</a>
-                    </li>
-                    
-                    <li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" style="font-size: 20px;">${uid}</a>
-						
-						<ul class="dropdown-menu">
-							<li>	
-						        <a id="logout" >LogOut</a>
-				   			</li>
-						
-						</ul>
-												
-				    </li>
-				    
-				    <li id="profile"></li>
-				    
-				    
-                    
-                    
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
+      <div class="container">
+         <!-- Brand and toggle get grouped for better mobile display -->
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+               data-target="#bs-example-navbar-collapse-1">
+               <span class="sr-only">Toggle navigation</span> <span
+                  class="icon-bar"></span> <span class="icon-bar"></span> <span
+                  class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
+         </div>
+         <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse"
+            id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+               <li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
+               <li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
+               <li class="dropdown"><a href="#" class="dropdown-toggle"
+                  data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="groupList"  style="color:black; font-family: sung;">Group List</a></li>
+                     <li><a href="racePoint"  style="color:black; font-family: sung;">Race Point</a></li>
+                  </ul></li>
+               <li><a href="groupRank"  style="color:black; font-family: sung;">Rank</a></li>
+               <li><a href="sharing"  style="color:black; font-family: sung;">Sharing</a></li>
+               <li><a href="hotPlaceMap"  style="color:black; font-family: sung;">Hot Place</a></li>
+               
+               <div style="float: right; width: 180px;">
+                  <li id="profile" style="float: left; margin-top: 6px;"></li>
+                  <li class="dropdown"><a class="dropdown-toggle"
+                     data-toggle="dropdown"
+                     style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
 
-		 <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing.jpg') no-repeat center center scroll;">
+                     <ul class="dropdown-menu">
+                        <li><a id="logout">LogOut</a></li>
 
+                     </ul></li>
+
+               </div>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+   </nav>
+
+       <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing2.jpeg') no-repeat center center scroll;">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
                 <div class="carousel-caption" style="bottom:60px;">
-                    <h1 style="font-size: 40px;">SHARING</h1></br>
+                    <h1 style="font-size: 40px; font-family: sung;">SHARING</h1></br>
                 </div>
             </div>
         </div>
     </header>
-		
+      
 
-		<!--=== Content Part ===-->
-		<div class="container">
-			<div class="row">
+      <!--=== Content Part ===-->
+      <div class="container">
+         <div class="row">
 
-				<!-- Begin Content -->
-				<form id="form">
-					<button id="newBtn" class="btn btn-default rounded"
-						style="margin-left: 96%;">글쓰기</button>
-				</form>
-			</div>
-				<br />
-				<br />
-				<div>
-					<!-- Thumbnails v1 -->
-					<div class="row">
-						<c:forEach items="${board}" var="board">
-						<!--  <div class="col-md-4 img-portfolio">
+            <!-- Begin Content -->
+            <form id="form">
+               <button id="newBtn" class="btn btn-default rounded"
+                  style="margin-left: 96%;">글쓰기</button>
+            </form>
+         </div>
+            <br />
+            <br />
+            <div>
+               <!-- Thumbnails v1 -->
+               <div class="row">
+                  <c:forEach items="${board}" var="board">
+                  <!--  <div class="col-md-4 img-portfolio">
                
                     <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
                
@@ -289,208 +278,168 @@
                 </h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div> -->
-							<div class="col-md-4 img-portfolio">
-								<div >
-									<p class="w_id" style="display: none;">${board.writing_Id}</p>
-									<img src="./resources/img/hearts.png" class="likeCnt">&nbsp;&nbsp;&nbsp;
-									${board.view_Number}
-									<p class="cnt" style="display: none;">${board.view_Number}</p>
-									
-										
-											<img class="img-responsive img-hover" src="${board.thumbnail}"/>
-										
-										<a class="test btn btn-primary"
-											href="${board.writing_Id}" data-toggle="modal"
-											data-target="#myModal" data-backdrop="static"
-											data-keyboard="false">read</a>
-									
-									<div class="caption">
-										<h3>제목: ${board.writing_title}</h3>
-										<c:set var="user" value="${uid}" />
-										<c:set var="writer" value="${board.member_Id}" />
-										<c:if test="${user eq writer}">
-											<a class="edit btn btn-warning"
-												href="${board.writing_Id}"
-												style="margin-bottom: 30px;"
-												data-toggle="modal" data-target="#editModal"
-												data-backdrop="static" data-keyboard="false">수정</a>
-											<a class="del btn btn-danger"
-												href="${board.writing_Id}">삭제</a>
-										</c:if>
-									</div>
-								</div>
-							</div>
-						</c:forEach>
-					</div>
+                     <div class="col-md-4 img-portfolio">
+                        <div >
+                           <p class="w_id" style="display: none;">${board.writing_Id}</p>
+                           <img src="./resources/img/hearts.png" class="likeCnt">&nbsp;&nbsp;&nbsp;
+                           ${board.view_Number}
+                           <p class="cnt" style="display: none;">${board.view_Number}</p>
+                           
+                              
+                                 <img class="img-responsive img-hover" src="${board.bbs_FilePath}"/>
+                              
+                              <a class="test btn btn-primary"
+                                 href="${board.writing_Id}" data-toggle="modal"
+                                 data-target="#myModal" data-backdrop="static"
+                                 data-keyboard="false">read</a>
+                           
+                           <div class="caption">
+                              <h3>제목: ${board.writing_title}</h3>
+                              <c:set var="user" value="${uid}" />
+                              <c:set var="writer" value="${board.member_Id}" />
+                              <c:if test="${user eq writer}">
+                                 <a class="edit btn btn-warning"
+                                    href="${board.writing_Id}"
+                                    style="margin-bottom: 30px;"
+                                    data-toggle="modal" data-target="#editModal"
+                                    data-backdrop="static" data-keyboard="false">수정</a>
+                                 <a class="del btn btn-danger"
+                                    href="${board.writing_Id}">삭제</a>
+                              </c:if>
+                           </div>
+                        </div>
+                     </div>
+                  </c:forEach>
+               </div>
 
-					<!-- End Thumbnails v1 -->
-				</div>
-				<!-- End Content -->
-			</div>
-		</div>
-		<!--/container-->
-		<!--=== End Content Part ===-->
+               <!-- End Thumbnails v1 -->
+            </div>
+            <!-- End Content -->
+         </div>
+      </div>
+      <!--/container-->
+      <!--=== End Content Part ===-->
 
-		<!--=== Footer Version 1 ===-->
-		
+      <!--=== Footer Version 1 ===-->
+      
 
-	<!-- Read Modal Start -->
-	<div id="myModal" class="modal fade" role="dialog">
-		<div class="modal-dialog modal-lg">
-			<div class="modal-content">
+   <!-- Read Modal Start -->
+   <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <div class="modal-content">
 
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-				</div>
-				<div class="modal-body">
+            </div>
+            <div class="modal-body">
 
-					<h3 style='float: left' class='title'></h3>
-					<p style='display: none;' id='w_id' class='bbs_id'></p>
-					<p style='display: none;' class='kmlcenter'></p>
-					<p style='float: right;' class='writer'>작성자 :</p>
-					<br>
-					<hr>
-					<div id="sns"
-						style="float: right; margin-top: -25px; margin-bottom: 5px;">
-						<a href="#" onclick="javascript:window.open('https://twitter.com/intent/tweet?text=[%EA%B3%B5%EC%9C%A0]%20'
-						+encodeURIComponent(document.URL)+'%20-%20'+encodeURIComponent(document.title), 'twittersharedialog',
-	 					'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
-						target="_blank" alt="Share on Twitter"><img src="./resources/img/twitter.png" class="snsIcon"></a>
-						
-						<a href="#" onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u='
-						+encodeURIComponent(document.URL)+'&t='+encodeURIComponent(document.title), 'facebooksharedialog',
-					 	'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
-						target="_blank" alt="Share on Facebook"><img src="./resources/img/facebook.png" class="snsIcon"></a>
-						
-						<a href="#" onclick="javascript:window.open('http://share.naver.com/web/shareView.nhn?url='+encodeURIComponent(document.URL)+'&title='+encodeURIComponent(document.title),
-					 	'naversharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=600');return false;"
-						target="_blank" alt="Share on Naver"> <img src="./resources/img/naver.png" class="snsIcon"></a>
-						
-						<a href="#" onclick="javascript:window.open('https://story.kakao.com/s/share?url='+encodeURIComponent(document.URL),
-						'kakaostorysharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=600');return false;"
-						target="_blank" alt="Share on kakaostory"><img src="./resources/img/kakaoStory.png" class="snsIcon"></a>
-					</div>
-					<div id="sharmap"></div>
-					
-						<!-- <img class='file' id='s-img' src=''> -->
-						<div id="picSlide" class="carousel slide" data-ride="carousel">
-		  								<!-- Indicators -->
-									  <ol class="carousel-indicators">
-									   
-						         <!--  <li data-target="#myCarousel" data-slide-to="1"></li>
-									    <li data-target="#myCarousel" data-slide-to="2"></li> -->
-									  </ol>
-		
-								  <!-- Wrapper for slides -->
-								  <div class="carousel-inner">
-								   <!--  <div class="item active">
-								      <img src="la.jpg" alt="Los Angeles">
-								    </div>
-								
-								    <div class="item">
-								      <img src="chicago.jpg" alt="Chicago">
-								    </div>
-								
-								    <div class="item">
-								      <img src="ny.jpg" alt="New York">
-								    </div> -->
-								  </div>
-		
-								  <!-- Left and right controls -->
-								  <a class="left carousel-control" href="#picSlide" data-slide="prev">
-								    <span class="glyphicon glyphicon-chevron-left"></span>
-								    <span class="sr-only">Previous</span>
-								  </a>
-								  <a class="right carousel-control" href="#picSlide" data-slide="next">
-								    <span class="glyphicon glyphicon-chevron-right"></span>
-								    <span class="sr-only">Next</span>
-								  </a>
-						</div>
-						
-								<hr>
-							<div class='s-content'></div>
-							<hr>
-					</div>
-					
-					<div>
-						<ul class='timeline'></ul>
-					</div>
-						<div class="modal-footer">
-					<!-- <img src="./resources/img/hearts.png" id="like"> -->
-					<input type="text" id="s-reply" /> <input type="text" id="uid"
-						style="display: none;" value="${uid}" />
-					<button id="addReply" class="btn btn-default">댓글등록</button>
-				</div>
-				
-					
-					
-				</div>
-				
-			</div>
-		</div>
-	
-	<!-- Read Modal End -->
+               <h3 style='float: left' class='title'></h3>
+               <p style='display: none;' id='w_id' class='bbs_id'></p>
+               <p style='float: right;' class='writer'>작성자 :</p>
+               <br>
+               <hr>
+               <div id="sns"
+                  style="float: right; margin-top: -25px; margin-bottom: 5px;">
+                  <a href="#" onclick="javascript:window.open('https://twitter.com/intent/tweet?text=[%EA%B3%B5%EC%9C%A0]%20'
+                  +encodeURIComponent(document.URL)+'%20-%20'+encodeURIComponent(document.title), 'twittersharedialog',
+                   'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                  target="_blank" alt="Share on Twitter"><img src="./resources/img/twitter.png" class="snsIcon"></a>
+                  
+                  <a href="#" onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u='
+                  +encodeURIComponent(document.URL)+'&t='+encodeURIComponent(document.title), 'facebooksharedialog',
+                   'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                  target="_blank" alt="Share on Facebook"><img src="./resources/img/facebook.png" class="snsIcon"></a>
+                  
+                  <a href="#" onclick="javascript:window.open('http://share.naver.com/web/shareView.nhn?url='+encodeURIComponent(document.URL)+'&title='+encodeURIComponent(document.title),
+                   'naversharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=600');return false;"
+                  target="_blank" alt="Share on Naver"> <img src="./resources/img/naver.png" class="snsIcon"></a>
+                  
+                  <a href="#" onclick="javascript:window.open('https://story.kakao.com/s/share?url='+encodeURIComponent(document.URL),
+                  'kakaostorysharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=600');return false;"
+                  target="_blank" alt="Share on kakaostory"><img src="./resources/img/kakaoStory.png" class="snsIcon"></a>
+               </div>
+               <div id="sharmap"></div>
+               <div id="imgDiv">
+                  <img class='file' id='s-img' src=''>
+               </div>
+               <hr>
+               <div class='s-content'></div>
+               <hr>
+               <div>
+                  <ul class='timeline'></ul>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <!-- <img src="./resources/img/hearts.png" id="like"> -->
+               <input type="text" id="s-reply" /> <input type="text" id="uid"
+                  style="display: none;" value="${uid}" />
+               <button id="addReply" class="btn btn-default">댓글등록</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Read Modal End -->
 
-	<!-- Edit Modal Start -->
-	<div id="editModal" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
+   <!-- Edit Modal Start -->
+   <div id="editModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <div class="modal-content">
 
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
 
-				<div class="modal-body">
-					<h3>
-						<input type="text" value="" class="title" name="writing_title"
-							style="width: 560px;" id="title">
-					</h3>
-					<input type="text" name="writing_Id" style='display: none;'
-						id='w_id' class='bbs_id' value=''>
-					<div id="editmap"></div>
-					<div id="imgDiv">
-						<img class='file' id='s-img' src=''>
-					</div>
-					<section>
-						<label class="label">내 사진</label>
-						<div id="myPic"></div>
-					</section>
-					<section>
-						<table id="myRoute" class="table table-hover">
-							<tr>
-								<td>라이딩날짜</td>
-								<td>평균속도</td>
-								<td>총시간</td>
-								<td>칼로리</td>
-							</tr>
-						</table>
-					</section>
-					<input type='hidden' class='file' name='bbs_FilePath' id="file"
-						value=''> <input type='hidden' class='kml' name='kml_name'
-						id="kml" value=''>
-					<textarea class="s-content" style="height: 80px;" id = "cont"
-						name="writing_content"></textarea>
-				</div>
-				<div class="modal-footer">
-					<%--  <input type = "text" id = "uid" style = "display: none;" value = "${uid}"/> --%>
-					<button id="editBtn" class="btn btn-default">수정</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Edit Modal End -->
+            <div class="modal-body">
+               <h3>
+                  <input type="text" value="" class="title" name="writing_title"
+                     style="width: 560px;" id="title">
+               </h3>
+               <input type="text" name="writing_Id" style='display: none;'
+                  id='w_id' class='bbs_id' value=''>
+               <div id="editmap"></div>
+               <div id="imgDiv">
+                  <img class='file' id='s-img' src=''>
+               </div>
+               <section>
+                  <label class="label">내 사진</label>
+                  <div id="myPic"></div>
+               </section>
+               <section>
+                  <table id="myRoute" class="table table-hover">
+                     <tr>
+                        <td>라이딩날짜</td>
+                        <td>평균속도</td>
+                        <td>총시간</td>
+                        <td>칼로리</td>
+                     </tr>
+                  </table>
+               </section>
+               <input type='hidden' class='file' name='bbs_FilePath' id="file"
+                  value=''> <input type='hidden' class='kml' name='kml_name'
+                  id="kml" value=''>
+               <textarea class="s-content" style="height: 80px;" id = "cont"
+                  name="writing_content"></textarea>
+            </div>
+            <div class="modal-footer">
+               <%--  <input type = "text" id = "uid" style = "display: none;" value = "${uid}"/> --%>
+               <button id="editBtn" class="btn btn-default">수정</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Edit Modal End -->
 
-	 <!-- jQuery -->
+    <!-- jQuery -->
     <script src="./resources/js2/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="./resources/js2/bootstrap.min.js"></script>
-	<script type="text/javascript" src="./resources/js/upload.js"></script>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyQjki7axvtCvqFULjxcicQimSUtg0tvk">
+   <script type="text/javascript" src="./resources/js/upload.js"></script>
+   <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyQjki7axvtCvqFULjxcicQimSUtg0tvk">
     </script>
-	<script type="text/javascript">
+   <script type="text/javascript">
      
       
       var map;
@@ -498,36 +447,36 @@
          
       $('#editBtn').on("click", function() {  
            
-		var t = $('#title').val();
-       	var cont = $('#cont').val();
-       	var filePath = $('#file').val();
-       	var kml = $('#kml').val();
-       	var id = $('#w_id').val();
-       	
-       	
-       	
-       	alert(t + ", " + cont + ", " + filePath + ", " + kml + ", " + id);
-       	
-       	$.ajax ({
-       		url: 'sharEdit',
-       		type: 'post',
-       		data: {
-       			writing_title: t,
-       			writing_content: cont,
-       			writing_Id: id,
-       			bbs_FilePath: filePath,
-       			kml_name: kml
-       		},
-       		success: function(data) {
-       			if(data) {
-       				alert('성공');
-       				location.reload();
-       			}
-       		},
-       		error: function() {
-       			alert('실패');
-       		}
-       	});
+      var t = $('#title').val();
+          var cont = $('#cont').val();
+          var filePath = $('#file').val();
+          var kml = $('#kml').val();
+          var id = $('#w_id').val();
+          
+          
+          
+          alert(t + ", " + cont + ", " + filePath + ", " + kml + ", " + id);
+          
+          $.ajax ({
+             url: 'sharEdit',
+             type: 'post',
+             data: {
+                writing_title: t,
+                writing_content: cont,
+                writing_Id: id,
+                bbs_FilePath: filePath,
+                kml_name: kml
+             },
+             success: function(data) {
+                if(data) {
+                   alert('성공');
+                   location.reload();
+                }
+             },
+             error: function() {
+                alert('실패');
+             }
+          });
        });
 
       $(".likeCnt").on("click", function() {
@@ -546,7 +495,7 @@
             },
             success: function(data) {
                if(data) {
-            	   location.reload();
+                  location.reload();
                }
             },
             error: function() {
@@ -562,30 +511,30 @@
       });
       
       $(".del").on("click", function() {
-    	  event.preventDefault();
-    	  
-    	  var id = $(this).attr("href");
-    	  var a = confirm("삭제하시겠습니까?");
-    	  
-    	  if(a) {
-    		  $.ajax({
-    	    		 url: 'sharDel',
-    	    		 data: {
-    	    			 writing_Id: id
-    	    		 },
-    	    		 success: function(data) {
-    	    			 alert('삭제되었습니다.');
-    	    			 location.reload();
-    	    		 },
-    	    		 error: function() {
-    	    			 alert('에러');
-    	    		 }
-    	    	  });
-    	  }
-    	  else {
-    		  location.reload();
-    	  }
-    	  
+         event.preventDefault();
+         
+         var id = $(this).attr("href");
+         var a = confirm("삭제하시겠습니까?");
+         
+         if(a) {
+            $.ajax({
+                  url: 'sharDel',
+                  data: {
+                     writing_Id: id
+                  },
+                  success: function(data) {
+                     alert('삭제되었습니다.');
+                     location.reload();
+                  },
+                  error: function() {
+                     alert('에러');
+                  }
+                });
+         }
+         else {
+            location.reload();
+         }
+         
       });
       
       $(".test").on("click", function () {
@@ -599,69 +548,33 @@
                writing_Id: title
             },
             success: function(data) {
-            	console.log(data);
-              var BoardContent=data.read;
-              var BoardFile=data.readfile; 
-               $(".title").text("제목: "+BoardContent.writing_title);
-               $(".bbs_id").text( BoardContent.writing_Id);
-               $(".writer").text("작성자"+  BoardContent.member_Id);
-               $(".s-content").text("라이딩후기: "+BoardContent.writing_content);
-               $(".kmlcenter").text(BoardFile[0].kml_center);
+              
+                  console.log(data);
                
-            
-               
+               $(".title").text(data.writing_title);
+               $(".bbs_id").text(data.writing_Id);
+               $(".writer").text("작성자"+ data.member_Id);
+               $(".file").attr('src',data.bbs_FilePath);
+               $(".s-content").text(data.writing_content);
                
                map = new google.maps.Map(document.getElementById('sharmap'));
             
             var ctaLayer = new google.maps.KmlLayer({
-                  url: 'http://39.121.239.182:8080/can/resources/'+BoardFile[0].kml_name,
+                  url: 'http://39.121.239.182:8080/can/resources/'+data.kml_name,
                   map: map
                 });
            
-            
-           for(var i=0;i< BoardFile.length;i++)
-       	 {
-           var piclocation= BoardFile[i].picture_location.split(",");
-           var picMarkerLocation= {lat:parseFloat(piclocation[0]),lng:parseFloat(piclocation[1])};
-            
-            var picIcon=new google.maps.MarkerImage(BoardFile[i].bbs_FilePath,null,null,null,new google.maps.Size(70,70));
-           
-           
-           
-            var picMarker= new google.maps.Marker({
-         	   position:picMarkerLocation,  
-         	   map:map,
-         	   icon:picIcon
-            });
-            
-            /*  shar 상세에 있는 이미지 슬라이드
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            */
-           /*   <div class="item active">
-		      <img src="la.jpg" alt="Los Angeles">
-		    </div>
-		
-		    <div class="item">
-		      <img src="chicago.jpg" alt="Chicago">
-		    </div>
-		
-		    <div class="item">
-		      <img src="ny.jpg" alt="New York">
-		    </div>  */
-		    
-		    if(i==0)
-		    {
-		    	   $("#picSlide > ol").append($("<li data-target='#myCarousel' class='active'  data-slide-to='"+i+"' ></li>"));
-		            
-		            $("#picSlide > .carousel-inner ").append($(" <div class='item active'><img src='"+BoardFile[i].bbs_FilePath+"'></div>"));  
-		    }else{
-            
-            $("#picSlide > ol").append($("<li data-target='#myCarousel' data-slide-to='"+i+"' ></li>"));
-            
-            $("#picSlide > .carousel-inner ").append($(" <div class='item'><img src='"+BoardFile[i].bbs_FilePath+"'></div>"));
-		    }
+             var refresh = function() {
+                   var center = detailmap.getCenter();
+                       google.maps.event.trigger(detailmap, "resize");
+                       detailmap.setCenter(center);
+                      detailmap.setZoom(16);
+                   }
+                   setTimeout(refresh, 100);
                
-       	 }     
+               
+               
+               
                getAllReplies();
                
                function getAllReplies() {
@@ -672,87 +585,87 @@
                         console.log(data);
                         $(data.list).each(function() {
                             if(login == this.uid) {
-                            	str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
+                               str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
                                 + "<img src = '/displayFile?fileName=" + this.fullName + "' class = 'reply replyImg'/>"
                                 + "<span class = 'replyer reply replyNum'>" + this.uid + " : </span>"
                                 + "<span class = 'reply replyText'>" + this.replyText + "</span>"
                                 + "<button class = 'rEditBtn'>수정</button>&nbsp;<button class = 'rDelBtn'>삭제</button>";
                             }
                             else {
-                            	str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
+                               str += "<li data-rno = '" + this.rno + "' class = 'replyLI'>"
                                 + "<img src = '/displayFile?fileName=" + this.fullName + "' class = 'reply replyImg'/>"
                                 + "<span class = 'replyer reply replyNum'>" + this.uid + " : </span>"
                                 + "<span class = 'reply replyText'>" + this.replyText + "</span>";
                             }
                         });
-                         $('.timeline').append(str); 
+                        $('.timeline').append(str); 
                         
                         $(".rEditBtn").on("click", function() {
-                        	var li = $(this).parent();
-                      	   	var rno = li.attr('data-rno');
-                        	var replyText = $(this).prev().text();
-                        	var txt = "<input type = 'text' class = 'editReplyTxt' name = 'replyText' value = '" + replyText + "'>"
-									+ "<button class = 'replyEdit'>수정</button>&nbsp;<button class = 'cancel'>취소</button>";
+                           var li = $(this).parent();
+                               var rno = li.attr('data-rno');
+                           var replyText = $(this).prev().text();
+                           var txt = "<input type = 'text' class = 'editReplyTxt' name = 'replyText' value = '" + replyText + "'>"
+                           + "<button class = 'replyEdit'>수정</button>&nbsp;<button class = 'cancel'>취소</button>";
 
-                        	$(this).prev().prev().append(txt);
-                        	
-                        	$(this).prev().remove();
-                        	$(this).next().remove();
-                        	$(this).remove();
-                        	
-                        	$('.cancel').on("click", function() {
-                        		$(".timeline").html("");
-                				getAllReplies();
-                        	});
-                        	
-                        	$('.replyEdit').on("click", function() {  
+                           $(this).prev().prev().append(txt);
+                           
+                           $(this).prev().remove();
+                           $(this).next().remove();
+                           $(this).remove();
+                           
+                           $('.cancel').on("click", function() {
+                              $(".timeline").html("");
+                            getAllReplies();
+                           });
+                           
+                           $('.replyEdit').on("click", function() {  
                                 event.preventDefault();
-								
+                        
                                 replyText = $(".editReplyTxt").val();
-	
-                            	$.ajax ({
-                            		url: 'replies/'+rno,
-                            		type: 'put',
-                            		headers: {
-                    					"Content-Type" : "application/json",
-                    					"X-HTTP-Method-Override" : "PUT"
-                    				},
-                    				dataType: "text",
-                    				data: JSON.stringify({
-                    					"replyText":replyText
-                    				}),
-                            		success: function(data) {
-                            			if(data) {
-                            				$(".timeline").html("");
-                            				getAllReplies();
-                            			}
-                            		},
-                            		error: function() {
-                            			alert('실패');
-                            		}
-                            	});
+   
+                               $.ajax ({
+                                  url: 'replies/'+rno,
+                                  type: 'put',
+                                  headers: {
+                                   "Content-Type" : "application/json",
+                                   "X-HTTP-Method-Override" : "PUT"
+                                },
+                                dataType: "text",
+                                data: JSON.stringify({
+                                   "replyText":replyText
+                                }),
+                                  success: function(data) {
+                                     if(data) {
+                                        $(".timeline").html("");
+                                        getAllReplies();
+                                     }
+                                  },
+                                  error: function() {
+                                     alert('실패');
+                                  }
+                               });
                             });
                         });
                         
                         $(".rDelBtn").on("click", function() {
                            var li = $(this).parent();
-                     	   var rno = li.attr('data-rno');
-                     	   
-                     	   var a = confirm('삭제하시겠습니까?');
+                           var rno = li.attr('data-rno');
+                           
+                           var a = confirm('삭제하시겠습니까?');
 
-                     	   if(a) {
-                     		   $.ajax ({
-                          		  type: "delete",
-                          		  url: "replies/"+rno,
-                          		  success: function(result) {
-                          			  if(result == "SUCCESS") {
-                          				  alert('삭제되었습니다.');
-                          				  $(".timeline").html("");
-                          				  getAllReplies();
-                          			  }
-                          		  }
-                          	  }); 
-                     	   }
+                           if(a) {
+                              $.ajax ({
+                                  type: "delete",
+                                  url: "replies/"+rno,
+                                  success: function(result) {
+                                     if(result == "SUCCESS") {
+                                        alert('삭제되었습니다.');
+                                        $(".timeline").html("");
+                                        getAllReplies();
+                                     }
+                                  }
+                               }); 
+                           }
                         });
                       });
                }
@@ -815,7 +728,7 @@
                        var filepath=$(this).attr('src');
                        
                        $(".file").attr('src', filepath);
-					   $('.file').val(filepath);
+                  $('.file').val(filepath);
                        
                     });
                     
@@ -844,7 +757,6 @@
                 $(".writer").text("작성자"+ data.member_Id);
                 $(".file").attr('src',data.bbs_FilePath);
                 $(".s-content").text(data.writing_content);
-           
                 
                 map = new google.maps.Map(document.getElementById('editmap'));
              
@@ -853,7 +765,13 @@
                    map: map
                  });
             
-           
+              var refresh = function() {
+                    var center = detailmap.getCenter();
+                        google.maps.event.trigger(detailmap, "resize");
+                        detailmap.setCenter(center);
+                       detailmap.setZoom(16);
+              }
+              setTimeout(refresh, 100);
              },
              error: function() {
                 alert('에러');
@@ -927,27 +845,26 @@
          google.maps.event.trigger(map, 'resize'); 
          var refresh = function() {
               //var center = map.getCenter();
-             var center= $(".kmlcenter").text().split(",");
-                  map.setCenter(new google.maps.LatLng(parseFloat(center[0]),parseFloat(center[1])));
+                  map.setCenter(new google.maps.LatLng(35.896553, 128.622051));
                  map.setZoom(17);
               }
               setTimeout(refresh, 500); 
 
-       }); 
+       });
       
       $('#editModal').on('shown.bs.modal', function () {
-    	  google.maps.event.trigger(map, 'resize'); 
+          google.maps.event.trigger(map, 'resize'); 
           var refresh = function() {
                //var center = map.getCenter();
-              var center= $(".kmlcenter").text().split(",");
-                   map.setCenter(new google.maps.LatLng(parseFloat(center[0]),parseFloat(center[1])));
+                   map.setCenter(new google.maps.LatLng(35.896553, 128.622051));
                   map.setZoom(17);
                }
                setTimeout(refresh, 500); 
+
         });
 
    </script>
-	<!--[if lt IE 9]>
+   <!--[if lt IE 9]>
    <script src="assets/plugins/respond.js"></script>
    <script src="assets/plugins/html5shiv.js"></script>
    <script src="assets/plugins/placeholder-IE-fixes.js"></script>
