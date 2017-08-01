@@ -203,31 +203,29 @@ ul#replies{
                          </c:forEach>                    
                             </ul>
                         </div>  
-              <div class="col">                
-               <table   style="border:1px solid black; ">
-                    <tr>
-                       
-						<td rowspan="2" style="border:1px solid black; ">
+              <div class="col-sm-6">                
+              
 							 <div id="map_div" ></div>
-						</td>
-                       
-                    </tr>
-                    <tr>
-                    
-                    	<td rowspan="2" style="border:1px solid black; ">
-                    			<ul id="replies" style="position:absolute; bottom:140px;"></ul>
+			   </div>
+			   
+			   <div class="col-sm-3">			
                     	
-                    		 <div id="replyreg" style="position:relative; top:185px;" >
-                                  <input class="input-xxlarge"  type="text" style="width:230px;">
-                                  <button class="btn" type="button">댓글등록</button>
-                                </div>
-                    	</td>
-                    </tr>
-
-                
-                  
-               </table>
-              </div> 
+                    	
+                    		<span class="rpid" style="display: none;"></span>
+                    		
+                    			<div style="overflow-y:scroll; ">	
+                    			<ul id="replies" style="position:relative; "></ul>
+                    			</div>
+                    			
+                    		
+                    		 <div style="position:absolute;top:400px;">
+                                  <input class="input-xxlarge"  type="text" style="width:170px;" >
+                                  <button id="raceReply" class="btn" type="button">댓글등록</button>
+                            </div>
+                    	
+                </div> 
+              
+              </div>
       </div>
                     
                
@@ -376,6 +374,8 @@ ul#replies{
         	  
         	  var rpid=$(this).attr("data-start");
         	  
+        	  $(".rpid").text(rpid);
+        	  
           		$.ajax({
 						url:"getRacePosition",
 						type:"get",
@@ -405,9 +405,9 @@ ul#replies{
    
       $("#raceReply").on("click", function(){      // 댓글 등록 버튼
          
-         var uid = $("#uid").val();
-         var racepoint_id = $("#racepoint_id").val();
-         var ra_reply_comment = $("#ra_reply_comment").val();
+         var uid = "${uid}";
+         var racepoint_id = $(".rpid").text();
+         var ra_reply_comment = $(this).prev().val();
          
          $.ajax({
             type:"post",
@@ -424,7 +424,7 @@ ul#replies{
             }),
             success : function(result) {
                if(result == "SUCCESS") {
-                  getAllList();
+                  getAllList(racepoint_id);
                }
             }
          });
@@ -470,7 +470,7 @@ ul#replies{
             dataType: "text",
             success: function(result) {
                if(result == "SUCCESS") {
-                  getAllList();
+                  getAllList($(".rpid").text());
                }
                
             }   //   success: function(result) {
