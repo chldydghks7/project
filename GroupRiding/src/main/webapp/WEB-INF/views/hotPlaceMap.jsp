@@ -103,65 +103,72 @@
    #like {
          cursor: pointer;
       }
+      
+      .text-vertical-center {
+
+    background-color: rgba( 0, 0, 0, 0.7 );
+     width: 100%; height:100%; 
+}
+@font-face {
+	font-family: 'sung';
+	src: url('./resources/fonts/sung.ttf'); 
+	}
+	.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
+	.navbar-inverse .navbar-nav>.open>a:hover {
+	color: #fff;
+	background-color: #929292
+}
    </style>
 </head>
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Group Riding</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Page <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="MyInfo?uid=${uid}">My Information</a>
-                            </li>
-                           
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Group <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="groupList">Group List</a>
-                            </li>
-                            <li>
-                                <a href="racePoint">Race Point</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="groupRank">Rank</a>
-                    </li>
-                    <li>
-                        <a href="sharing">Sharing</a>
-                    </li>
-                    <li>
-                        <a href="hotPlaceMap">Hot Place</a>
-                    </li>
-                    
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
+					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="groupList"  style="color:black; font-family: sung;">Group List</a></li>
+							<li><a href="racePoint"  style="color:black; font-family: sung;">Race Point</a></li>
+						</ul></li>
+					<li><a href="groupRank"  style="color:black; font-family: sung;">Rank</a></li>
+					<li><a href="sharing"  style="color:black; font-family: sung;">Sharing</a></li>
+					<li><a href="hotPlaceMap"  style="color:black; font-family: sung;">Hot Place</a></li>
+					
+					<div style="float: right; width: 180px;">
+						<li id="profile" style="float: left; margin-top: 6px;"></li>
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown"
+							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
+
+							<ul class="dropdown-menu">
+								<li><a id="logout">LogOut</a></li>
+
+							</ul></li>
+
+					</div>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
      <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/hotplace.jpg') no-repeat center center scroll;">
 
         <!-- Wrapper for slides -->
@@ -214,13 +221,13 @@
       </div>
            
             <!-- End Content -->
-        
+         
          
           
           <footer style="margin-top: 550px;">
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2017</p>
+                    <p style="font-family: sung;">Copyright &copy; Your Website 2017</p>
                 </div>
             </div>
         </footer>
