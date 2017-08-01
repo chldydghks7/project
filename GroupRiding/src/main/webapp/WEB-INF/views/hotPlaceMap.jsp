@@ -103,16 +103,31 @@
    #like {
          cursor: pointer;
       }
+<<<<<<< HEAD
       @font-face {
 	font-family: 'sung';
 	src: url('./resources/fonts/sung.ttf');
 }
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
+=======
+      
+      .text-vertical-center {
+
+    background-color: rgba( 0, 0, 0, 0.7 );
+     width: 100%; height:100%; 
+}
+@font-face {
+	font-family: 'sung';
+	src: url('./resources/fonts/sung.ttf'); 
+	}
+	.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
+>>>>>>> ac33e350c542429db56fb2291873112cb8466835
 	.navbar-inverse .navbar-nav>.open>a:hover {
 	color: #fff;
 	background-color: #929292
 }
+<<<<<<< HEAD
 @font-face { 
 	font-family: 'nexon'; 
 	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC B.OTF'); 
@@ -121,12 +136,18 @@
 	font-family: 'nexon2'; 
 	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF'); 
 	}
+=======
+>>>>>>> ac33e350c542429db56fb2291873112cb8466835
    </style>
 </head>
 
 <body>
     <!-- Navigation -->
+<<<<<<< HEAD
     	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
+=======
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
+>>>>>>> ac33e350c542429db56fb2291873112cb8466835
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -172,6 +193,10 @@
 		</div>
 		<!-- /.container -->
 	</nav>
+<<<<<<< HEAD
+=======
+     <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/hotplace.jpg') no-repeat center center scroll;">
+>>>>>>> ac33e350c542429db56fb2291873112cb8466835
 
 		 <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/youface.jpg') no-repeat center center scroll;">
         <!-- Wrapper for slides -->
@@ -224,13 +249,13 @@
       </div>
            
             <!-- End Content -->
-        
+         
          
           
           <footer style="margin-top: 550px;">
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2017</p>
+                    <p style="font-family: sung;">Copyright &copy; Your Website 2017</p>
                 </div>
             </div>
         </footer>

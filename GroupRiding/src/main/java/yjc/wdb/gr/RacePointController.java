@@ -24,34 +24,37 @@ public class RacePointController {
 	
 	@RequestMapping(value="racePoint", method=RequestMethod.GET)
 	public void racePoint(Model model) throws Exception {
-		RacePointBean point = service.racePoint();	// ���� �浵, ����
-		model.addAttribute("point", point);
 		
-		List<RacePointBean> race_record = service.race_record(point.getRacepoint_id());
-		model.addAttribute("race_record", race_record);
+		model.addAttribute("rpExplain", service.pointInfo());
+		
 	}
 	
-	/** ���� �� */
-	int click = 1;
-	@RequestMapping(value="pointInfo", method=RequestMethod.GET)
-	 @ResponseBody
-	 public Map<String, Object> pointInfo(@RequestParam(value="racepoint_id") int racepoint_id, Model model) throws Exception {
-		  System.out.println(racepoint_id);
-			if(click==1) {
-				service.ra_viewcnt(racepoint_id);	// �� ī��Ʈ
-				click += 1;
-			} 
+	/*거점 이 여러개일 경우 ajax로 받아오는게 편해서*/
+	@RequestMapping(value="getRacePoint", method=RequestMethod.GET)
+	@ResponseBody
+	public List<RacePointBean> getracePoint() throws Exception {
+		List<RacePointBean> point = service.racePoint();
 		
-		  Map<String, Object> resultMap = new HashMap<String, Object>();
-		  
-		  RacePointBean pointInfo = service.pointInfo(racepoint_id);
-		   	
-		  resultMap.put("pointInfo", pointInfo);
-		 
-		  System.out.println("asd : " + racepoint_id);
-		  
-		  return resultMap;
-		 } 
+		
+		
+		return point;
+		
+	}
 	
+	/*li 클릭 했을때 거기에 해당하는 거점 위치로 지도를 이동 시키기 위해서*/
+	@RequestMapping(value="getRacePosition", method=RequestMethod.GET)
+	@ResponseBody
+	public RacePointBean getRacePosition(String racepoint_id) throws Exception {
+		
+		int id=Integer.parseInt(racepoint_id);
+		
+		 RacePointBean raceposition=service.getRacePosition(id);
+		
+		
+		return raceposition;
+		
+		
+		
+	}
 	
 }

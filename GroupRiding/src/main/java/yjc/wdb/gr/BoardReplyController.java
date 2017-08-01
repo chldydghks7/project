@@ -68,6 +68,9 @@ public class BoardReplyController {
 		}
 		
 		return entity;
+		
+		
+		
 	}
 	
 	@RequestMapping(value = "/{rno}", method = RequestMethod.DELETE)

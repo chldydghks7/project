@@ -67,7 +67,7 @@
 	
 	<!-- kml 파일명 삽입-->
 	<insert id="insert_kml">
-	 insert into gr_kml(kml_name,kml_center) values(#{kml_name},#{kml_center)	
+	 insert into gr_kml(kml_name,kml_center) values(#{kml_name},#{kml_center})	
 	
 	</insert>
 	
@@ -92,7 +92,7 @@
 	
 	<!-- 앱 화면중 운동내역을 보기위해서써야함-->
 	<select id="showhistory" resultType="RidingInfo">
-	select a.kml_name,b.riding_id,b.alltime,b.startDate,b.alldistance,b.avgspeed,b.Kcal
+	select a.kml_name,a.kml_center,b.riding_id,b.alltime,b.startDate,b.alldistance,b.avgspeed,b.Kcal
  		from gr_kml a, gr_ridinginfo b
 		where a.kml_id=b.kml_id
 		and b.uid=#{uid}
