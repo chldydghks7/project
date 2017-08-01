@@ -133,6 +133,14 @@
 	font-family: 'sung';
 	src: url('./resources/fonts/sung.ttf'); 
 	}
+@font-face{
+	font-family: 'jae';
+	src: url('./resources/fonts/DXSPDM-KSCPC-EUC-H.TTF')
+}
+@font-face{
+	font-family: 'jae2';
+	src: url('./resources/fonts/a타임머신.ttf')
+}
 	.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
 	.navbar-inverse .navbar-nav>.open>a:hover {
 	color: #fff;
@@ -153,29 +161,29 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
+				<a class="navbar-brand" href="main" style="color: red; font-family: jae2; font-size: 30px;">GROUP RIDING</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
-					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
+					<li><a href="main"  style="color:black; font-family: jae2;">Home</a></li>
+					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: jae2;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
+						data-toggle="dropdown"  style="color:black; font-family: jae2;">Group <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="groupList"  style="color:black; font-family: sung;">Group List</a></li>
-							<li><a href="racePoint"  style="color:black; font-family: sung;">Race Point</a></li>
+							<li><a href="groupList"  style="color:black; font-family: jae2;">Group List</a></li>
+							<li><a href="racePoint"  style="color:black; font-family: jae2;">Race Point</a></li>
 						</ul></li>
-					<li><a href="groupRank"  style="color:black; font-family: sung;">Rank</a></li>
-					<li><a href="sharing"  style="color:black; font-family: sung;">Sharing</a></li>
-					<li><a href="hotPlaceMap"  style="color:black; font-family: sung;">Hot Place</a></li>
+					<li><a href="groupRank"  style="color:black; font-family: jae2;">Rank</a></li>
+					<li><a href="sharing"  style="color:black; font-family: jae2;">Sharing</a></li>
+					<li><a href="hotPlaceMap"  style="color:black; font-family: jae2;">Hot Place</a></li>
 					
 					<div style="float: right; width: 180px;">
 						<li id="profile" style="float: left; margin-top: 6px;"></li>
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown"
-							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
+							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: jae2;">${uid}</a>
 
 							<ul class="dropdown-menu">
 								<li><a id="logout">LogOut</a></li>
@@ -198,7 +206,7 @@
 	<div class="carousel-inner">
 		<div class="item active">
 			<div class="carousel-caption" style="bottom: 60px;">
-				<h1 style="font-size: 40px; font-family: sung;">MY PAGE</h1>
+				<h1 style="font-size: 50px; font-family: sung;">MY PAGE</h1>
 			</div>
 		</div>
 	</div>
@@ -210,7 +218,7 @@
 		<!-- Page Heading/Breadcrumbs -->
 		<div class="row" style="font-family: sung;">
 			<div class="col-lg-12">
-				<h1 class="page-header" style="font-family: nexon;">${uid}님&nbsp;&nbsp;안녕하세요</h1>
+				<h1 class="page-header" style="font-family: jae2;">${uid}님&nbsp;&nbsp;안녕하세요</h1>
 			</div>
 		</div>
 		<!-- /.row -->

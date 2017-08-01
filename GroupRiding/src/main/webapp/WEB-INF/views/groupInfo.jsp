@@ -54,6 +54,15 @@ a{
 	margin-top: 10px;
 }
 
+#popLogoRead {
+	z-index: 99;
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	right: 10px;
+	margin-top: 10px;
+}
+
 .logo, .footer-logo {
 	width: 200px;
 	heigth: 100px;
@@ -253,8 +262,7 @@ b_container {
 		
 	</script>
 	<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
-		style="background-color: white;">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -264,38 +272,29 @@ b_container {
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main"
-					style="color: red; font-family: sung; font-size: 30px;">GROUP
-					RIDING</a>
+				<a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main" style="color: black; font-family: sung;">Home</a></li>
-					<li class="dropdown"><a href="MyInfo"
-						style="color: black; font-family: sung;">My Page</a></li>
+					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
+					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" style="color: black; font-family: sung;">Group
-							<b class="caret"></b>
-					</a>
+						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="groupList"
-								style="color: black; font-family: sung;">Group List</a></li>
-							<li><a href="racePoint"
-								style="color: black; font-family: sung;">Race Point</a></li>
+							<li><a href="groupList"  style="color:black; font-family: sung;">Group List</a></li>
+							<li><a href="racePoint"  style="color:black; font-family: sung;">Race Point</a></li>
 						</ul></li>
-					<li><a href="groupRank"
-						style="color: black; font-family: sung;">Rank</a></li>
-					<li><a href="sharing" style="color: black; font-family: sung;">Sharing</a></li>
-					<li><a href="hotPlaceMap"
-						style="color: black; font-family: sung;">Hot Place</a></li>
-
+					<li><a href="groupRank"  style="color:black; font-family: sung;">Rank</a></li>
+					<li><a href="sharing"  style="color:black; font-family: sung;">Sharing</a></li>
+					<li><a href="hotPlaceMap"  style="color:black; font-family: sung;">Hot Place</a></li>
+					
 					<div style="float: right; width: 180px;">
 						<li id="profile" style="float: left; margin-top: 6px;"></li>
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown"
-							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px; font-family: sung;">${uid}</a>
+							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
 
 							<ul class="dropdown-menu">
 								<li><a id="logout">LogOut</a></li>
@@ -479,8 +478,8 @@ b_container {
 							<div id="Pop_Re"
 								style="position: absolute; left: -27.4px; top: 557px; width: 835px; height: 454px; z-index: 100 !important; display: none; margin: 5% 5%; background: white; color: #fff; border: solid 2px; border-color:black;">
 
-								<a href="javascript:ViewClose2();"> <img id="popLogo"
-									src="./resources/img/cancel.png" / style="color: white;"></a>
+								<a href="javascript:ViewClose2();"> <img id="popLogoRead"
+									src="./resources/img/cancel.png"  style="color: white;"/></a>
 								<div style="margin: 3% 3%; color: white;">
 									<div class="uid" style="display: none; font-family: nexon; font-size: 20px;color:black;">${uid}</div>
 									<span style="font-family: nexon;font-size: 20px;color:black;">작성자 -</span> <label id="re_id" style="font-size: 20px; font-family: nexon;color:black;"></label>
@@ -490,7 +489,7 @@ b_container {
 										style="height: 250px; background-color: #505457; font-family: nexon; font-size: 17px; border: solid 2px; border-color: black;"></div>
 									<br /> <label id="re_date" style="font-family: nexon;font-size: 17px;color:black;">작성일 - </label> <input type="hidden" style="font-family: nexon;font-size: 17px;"
 										value="" id="re_writing_id" />
-									<div id="die"></div>
+									<div id="dieRead"></div>
 									<!-- <input class="btn btn-default" type="submit" value="수정"> -->
 									<!-- <input class="btn btn-default" type="submit" value="수정"
 											style="float: right"> -->
@@ -671,14 +670,11 @@ b_container {
 
 				});
 	</script>
-
-
+	
 
 
 	<script>
-		$(document)
-				.ready(
-						function() {
+		$(document).ready(function() {
 							var uid = $(".uid").text();
 							var ele = "<button class='w3-btn w3-black' id='Pop_Re_mo'  style='float: right; font-family: nexon;font-size:17px;'>수정</button>"
 									+ "<button class='w3-btn w3-black' id='Pop_Re_del' style='float: right;font-family: nexon;font-size:17px;'>삭제</button>";
@@ -736,9 +732,9 @@ b_container {
 												$("#re_writing_id2").val(
 														data.writing_id);
 												if (uid == data.member_id) {
-													$("#die").append(ele);
-												} else {
-
+													
+													$("#dieRead").append(ele);
+													}else {
 												}
 											}
 										});
@@ -780,8 +776,17 @@ b_container {
 											}
 										});
 									});
-
+							
+							
+						$("#popLogoRead").click( function(){
+								$("#dieRead").html("");
+							}); 
+						
+						
+						
 						});
+		
+	
 	</script>
 
 	<!--=== Footer Version 1 ===-->

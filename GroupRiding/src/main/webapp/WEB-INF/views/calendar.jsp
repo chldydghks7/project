@@ -224,7 +224,7 @@
 	<footer>
 		<div class="row">
 			<div class="col-lg-12" style="font-family: sung;">
-				<p>Copyright &copy; GROUP RIDING Website 2014</p>
+				<p>Copyright &copy; GROUP RIDING 2017</p>
 			</div>
 		</div>
 		</footer>

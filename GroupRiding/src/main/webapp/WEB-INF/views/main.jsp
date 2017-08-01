@@ -88,6 +88,14 @@
 	color: #fff;
 	background-color: #929292
 }
+@font-face { 
+	font-family: 'nexon'; 
+	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC B.OTF'); 
+	}
+@font-face {
+	font-family: 'nexon2'; 
+	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF'); 
+	}
 </style>
 
 <body>
@@ -168,7 +176,7 @@
 		</div>
 	</header>
 	<aside class="callout">
-		<div class="text-vertical-center" style="font-family: sung; ">
+		<div class="text-vertical-center" style="font-family: nexon; ">
 			<h1 style="color: red;">G&nbsp;R&nbsp;O&nbsp;U&nbsp;P</h1>
 			<br>
 			<h2>
@@ -178,7 +186,7 @@
 		</div>
 	</aside>
 	<aside class="callout2">
-		<div class="text-vertical-center" style="font-family: sung;">
+		<div class="text-vertical-center" style="font-family: nexon;">
 			<h1 style="color: red;">S&nbsp;H&nbsp;A&nbsp;R&nbsp;I&nbsp;N&nbsp;G</h1>
 			<br>
 			<h2>
@@ -188,7 +196,7 @@
 		</div>
 	</aside>
 	<aside class="callout3">
-		<div class="text-vertical-center" style="font-family: sung;">
+		<div class="text-vertical-center" style="font-family: nexon;">
 			<h1 style="color: red;">H&nbsp;O&nbsp;T&nbsp; &nbsp;P&nbsp;L&nbsp;A&nbsp;C&nbsp;E</h1>
 			<br>
 			<h2>
@@ -204,7 +212,7 @@
 		style="background-color: #222; margin-left: 20px; margin-right: 20px;">
 		<div class="col-lg-12" style="border-color: #222;">
 			<h1 class="page-header"
-				style="color: red; text-align: center; border-color: #222; font-family: sung;">
+				style="color: red; text-align: center; border-color: #222; font-family: nexon;">
 				<br> G&nbsp;r&nbsp;o&nbsp;u&nbsp;p&nbsp; &nbsp;R&nbsp;i&nbsp;d&nbsp;i&nbsp;n&nbsp;g&nbsp; &nbsp;P&nbsp;i&nbsp;c&nbsp;t&nbsp;u&nbsp;r&nbsp;e
 			</h1>
 			<br>
@@ -392,8 +400,8 @@
 	<footer>
 		<div class="row" style="">
 			<div class="col-lg-12"
-				style="color: white; margin-left: 40px; font-family: sung;">
-				<p>Copyright &copy; GROUP RIDING Website 2017</p>
+				style="color: white; margin-left: 40px; font-family: nexon;">
+				<p>Copyright &copy; GROUP RIDING 2017</p>
 			</div>
 		</div>
 	</footer>

@@ -172,6 +172,24 @@
 .a{
 	color:black;
 }
+@font-face {
+	font-family: 'sung';
+	src: url('./resources/fonts/sung.ttf');
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
+	.navbar-inverse .navbar-nav>.open>a:hover {
+	color: #fff;
+	background-color: #929292
+}
+@font-face { 
+	font-family: 'nexon'; 
+	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC B.OTF'); 
+	}
+@font-face {
+	font-family: 'nexon2'; 
+	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF'); 
+	}
 </style>
 </head>
 
@@ -223,12 +241,12 @@
 		<!-- /.container -->
 	</nav>
 
-		 <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing.jpeg') no-repeat center center scroll;">
+		 <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing2.jpeg') no-repeat center center scroll;">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
                 <div class="carousel-caption" style="bottom:60px;">
-                    <h1 style="font-size: 40px;">SHARING</h1></br>
+                    <h1 style="font-size: 40px; font-family: sung;">SHARING</h1></br>
                 </div>
             </div>
         </div>
