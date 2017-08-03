@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset = UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
@@ -26,210 +26,254 @@
 
 <!-- Custom Fonts -->
 <link href="./resources/font-awesome/css/font-awesome.min.css"
-   rel="stylesheet" type="text/css">
+	rel="stylesheet" type="text/css">
 
 <link rel="stylesheet"
-   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
-   src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
-   src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style>
 .callout {
-   display: table;
-   width: 100%;
-   height: 400px;
-   color: #fff;
-   background: url('./resources/img/bike.jpg') no-repeat center center
-      scroll;
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   background-size: cover;
-   -o-background-size: cover;
+	display: table;
+	width: 100%;
+	height: 400px;
+	color: #fff;
+	background: url('./resources/img/bike.jpg') no-repeat center center
+		scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
 }
 
 .callout2 {
-   display: table;
-   width: 100%;
-   height: 400px;
-   color: #fff;
-   background: url('./resources/img/bike3.jpg') no-repeat center center
-      scroll;
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   background-size: cover;
-   -o-background-size: cover;
+	display: table;
+	width: 100%;
+	height: 400px;
+	color: #fff;
+	background: url('./resources/img/bike3.jpg') no-repeat center center
+		scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
 }
 
 .callout3 {
-   display: table;
-   width: 100%;
-   height: 400px;
-   color: #fff;
-   background: url('./resources/img/bike5.jpg') no-repeat center center
-      scroll;
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   background-size: cover;
-   -o-background-size: cover;
+	display: table;
+	width: 100%;
+	height: 400px;
+	color: #fff;
+	background: url('./resources/img/bike5.jpg') no-repeat center center
+		scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
 }
 
 .text-vertical-center {
-   display: table-cell;
-   text-align: center;
-   vertical-align: middle;
-   background-color: rgba(0, 0, 0, 0.5);
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	background-color: rgba(0, 0, 0, 0.5);
 }
+
 @font-face {
-   font-family: 'sung';
-   src: url('./resources/fonts/sung.ttf'); 
-   }
-   .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
-   .navbar-inverse .navbar-nav>.open>a:hover {
-   color: #fff;
-   background-color: #929292
+	font-family: 'sung';
+	src: url('./resources/fonts/sung.ttf');
 }
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
+	.navbar-inverse .navbar-nav>.open>a:hover {
+	color: #fff;
+	background-color: #929292
+}
+
 .navbar-inverse .navbar-nav>li>a {
-    color: black;
-}
-.a{
-   color:black;
+	color: black;
 }
 
+.a {
+	color: black;
+}
 
-ul#replies{
- list-style-type: none;
+ul#replies {
+	list-style-type: none;
+}
+
+@font-face {
+	font-family: 'nexon';
+	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC B.OTF');
+}
+
+@font-face {
+	font-family: 'nexon2';
+	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF');
 }
 </style>
 
 </head>
 
 <body>
-   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
-      <div class="container">
-         <!-- Brand and toggle get grouped for better mobile display -->
-         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-               data-target="#bs-example-navbar-collapse-1">
-               <span class="sr-only">Toggle navigation</span> <span
-                  class="icon-bar"></span> <span class="icon-bar"></span> <span
-                  class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
-         </div>
-         <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse"
-            id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-               <li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
-               <li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
-               <li class="dropdown"><a href="#" class="dropdown-toggle"
-                  data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                     <li><a href="groupList"  style="color:black; font-family: sung;">Group List</a></li>
-                     <li><a href="racePoint"  style="color:black; font-family: sung;">Race Point</a></li>
-                  </ul></li>
-               <li><a href="groupRank"  style="color:black; font-family: sung;">Rank</a></li>
-               <li><a href="sharing"  style="color:black; font-family: sung;">Sharing</a></li>
-               <li><a href="hotPlaceMap"  style="color:black; font-family: sung;">Hot Place</a></li>
-               
-               <div style="float: right; width: 180px;">
-                  <li id="profile" style="float: left; margin-top: 6px;"></li>
-                  <li class="dropdown"><a class="dropdown-toggle"
-                     data-toggle="dropdown"
-                     style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
+		style="background-color: white;">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="main"
+					style="color: red; font-family: sung; font-size: 30px;">GROUP
+					RIDING</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="main" style="color: black; font-family: sung;">Home</a></li>
+					<li class="dropdown"><a href="MyInfo?uid=${uid}"
+						style="color: black; font-family: sung;">My Page</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" style="color: black; font-family: sung;">Group
+							<b class="caret"></b>
+					</a>
+						<ul class="dropdown-menu">
+							<li><a href="groupList"
+								style="color: black; font-family: sung;">Group List</a></li>
+							<li><a href="racePoint"
+								style="color: black; font-family: sung;">Race Point</a></li>
+						</ul></li>
+					<li><a href="groupRank"
+						style="color: black; font-family: sung;">Rank</a></li>
+					<li><a href="sharing" style="color: black; font-family: sung;">Sharing</a></li>
+					<li><a href="hotPlaceMap"
+						style="color: black; font-family: sung;">Hot Place</a></li>
 
-                     <ul class="dropdown-menu">
-                        <li><a id="logout">LogOut</a></li>
+					<div style="float: right; width: 180px;">
+						<li id="profile" style="float: left; margin-top: 6px;"></li>
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown"
+							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px; font-family: sung;">${uid}</a>
 
-                     </ul></li>
+							<ul class="dropdown-menu">
+								<li><a id="logout">LogOut</a></li>
 
-               </div>
-            </ul>
-         </div>
-         <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container -->
-   </nav>
-   <header id="myCarousel" class="carousel slide w3-grayscale-max"
-      style="height: 35%; background: url('./resources/img/bike2323.PNG') no-repeat center center scroll;">
+							</ul></li>
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-         <div class="item active">
-            <div class="carousel-caption" style="bottom: 60px;">
-               <h1 style="font-size: 40px;font-family: sung;">RACE POINT</h1>
-               </br>
-            </div>
-         </div>
-      </div>
-   </header>
+					</div>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
+	<header id="myCarousel" class="carousel slide w3-grayscale-max"
+		style="height: 35%; background: url('./resources/img/bike2323.PNG') no-repeat center center scroll;">
 
-   <!--=== End Header ===-->
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<div class="carousel-caption" style="bottom: 60px;">
+					<h1 style="font-size: 40px; font-family: sung;">RACE POINT</h1>
+					</br>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!--=== End Header ===-->
 
 
 
 
-   <div class="container">
+	<div class="container">
 
-     
-    
-         <div style="font-family: sung; margin-top: 40px;">
-            <h1>기록 경쟁을 통하여 거점을 빼앗아 보세요!</h1>
-                  <!--=== Content Part ===-->
-        </div>          
-   
-        
-   <!-- 레이스 -->
-                   
-                    
-       <div class="row" style="margin-top:30px;">             
-         
-         <h1 class="rptitle" >영진전문대학 거점</h1>  
-         <br>
-         <h4 class="rpcontent">직선거리 50m 사람이 자주 다니는 루트</h4>
-         </div>
-		<div class="row" style="margin-top:30px;">
-                       <div class="col-sm-3">
-                         <ul class="list-group racepoint" >
-                      <!--    <li id="yg" class="list-group-item list-group-item-success">영진전문대학 거점</li>
+
+
+		<div style="font-family: sung; margin-top: 40px;">
+			<h1>기록 경쟁을 통하여 거점을 빼앗아 보세요!</h1>
+			<!--=== Content Part ===-->
+		</div>
+
+
+		<!-- 레이스 -->
+		<br>
+
+
+
+		<table
+			style="width: 100%; height: 500px;">
+			<tr>
+				<td>
+					<h1 style="font-family: nexon; color: red;">거점명 -</h1>
+				</td>
+				<td colspan="2">
+					<h1 class="rptitle" style="font-family: nexon;">영진전문대학 거점</h1>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4 style="font-family: nexon;"></h4>
+				</td>
+				<td colspan="2">
+					<h4 class="rpcontent" style="font-family: nexon;">직선거리 50m 사람이
+						자주 다니는 루트</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<ul class="list-group racepoint">
+						<!--    <li id="yg" class="list-group-item list-group-item-success">영진전문대학 거점</li>
                                 <li id="bok" class="list-group-item">복현오거리 거점</li> -->
-                         <c:forEach items="${rpExplain}" var="point">
-                              
-                                <li data-start="${point.racepoint_id}"  class="list-group-item">${point.ra_title}</li>
-                                <p style="display: none;">${point.ra_content}</p>
-                                
-                         </c:forEach>                    
-                            </ul>
-                        </div>  
-              <div class="col-sm-6">                
-              
-							 <div id="map_div" ></div>
-			   </div>
-			   
-			   <div class="col-sm-3">			
-                    	
-                    	
-                    		<span class="rpid" style="display: none;"></span>
-                    		
-                    			<div style="overflow-y:scroll; ">	
-                    			<ul id="replies" style="position:relative; "></ul>
-                    			</div>
-                    			
-                    		
-                    		 <div style="position:absolute;top:400px;">
-                                  <input class="input-xxlarge"  type="text" style="width:170px;" >
-                                  <button id="raceReply" class="btn" type="button">댓글등록</button>
-                            </div>
-                    	
-                </div> 
-              
-              </div>
-      </div>
-                    
-               
-               <%-- <div style=" left: 800px;">   
+						<c:forEach items="${rpExplain}" var="point">
+
+							<li data-start="${point.racepoint_id}" class="list-group-item w3-btn w3-black w3-padding-large w3-hover-red" style="font-family: nexon; font-size: 20px;">${point.ra_title}</li>
+							<p style="display: none; font-family: nexon;">${point.ra_content}</p>
+
+						</c:forEach>
+					</ul>
+				</td>
+				<td>
+					<div id="map_div"></div>
+				</td>
+				<td style="height: 500px;">
+				<span class="rpid" style="display: none;font-family: nexon;"></span>
+
+					<div style="overflow-y: scroll; height: 500px; width: 400px; font-family: nexon;">
+						<ul id="replies"></ul>
+					</div>
+
+
+					<div>
+						<input class="input-xxlarge" type="text" style="width: 280px;">
+						<button id="raceReply" class="btn w3-btn w3-ripple w3-black" type="button" style="font-family: nexon; width: 115px; font-size: 15px;">댓&nbsp;글&nbsp;등&nbsp;록</button>
+					</div></td>
+			</tr>
+		</table>
+
+		<div class="container">
+			<footer>
+				<div class="row" style="margin-top: 100px;">
+					<div class="col-lg-12" style="font-family: sung;">
+						<p>Copyright &copy; GROUP RIDING Website 2017</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<br>
+		<br>
+		<br>
+	</div>
+
+	<%-- <div style=" left: 800px;">   
                   <table style="border: 1px solid #444444; width:200px;">
                      <thead>
                         <tr style="border: 1px solid #444444; text-align: center;">
@@ -250,8 +294,8 @@ ul#replies{
                      </c:forEach>
                   </table>
             </div> --%>
-               
-             <%--   <div id="board" style=" top:400px;">
+
+	<%--   <div id="board" style=" top:400px;">
                      제목    :    <label id="ra_title"></label>   <br>
                      내용   :    <label id="ra_content"></label>   <br>
                 <!--   ra_viewcnt      :    <label id="ra_viewcnt" style="display:none;"></label>   <br> -->
@@ -268,32 +312,24 @@ ul#replies{
                      <button id="raceReply">등록</button>
                   </div>
                </div> --%>
-               
-            
-            
-            
-             <footer>
-         <div class="row" style="margin-top: 100px;">
-            <div class="col-lg-12" style="font-family: sung;">
-               <p>Copyright &copy; GROUP RIDING Website 2017</p>
-            </div>
-         </div>
-      </footer>
-            
-        
-      </div><!--/container-->
-      <!--=== End Content Part ===-->
-
-   <!-- jQuery -->
-    <script src="./resources/js2/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="./resources/js2/bootstrap.min.js"></script>
 
 
-<script type="text/javascript" src="https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b"></script>
 
-<script>
+
+	<!--/container-->
+	<!--=== End Content Part ===-->
+
+	<!-- jQuery -->
+	<script src="./resources/js2/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="./resources/js2/bootstrap.min.js"></script>
+
+
+	<script type="text/javascript"
+		src="https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b"></script>
+
+	<script>
    $(document).ready(function() {
         
 
@@ -305,8 +341,8 @@ ul#replies{
             }
          
               var map = new Tmap.Map({div:'map_div',
-                                       width:'500px', 
-                                       height:'440px',
+                                       width:'602px', 
+                                       height:'536px',
                                        transitionEffect:"resize",
                                        animation:true
                                    }); 
@@ -485,14 +521,14 @@ ul#replies{
          
    });   /// $(document).ready(function() {
    </script>
-   
 
 
 
 
 
 
-      <script>
+
+	<script>
 $(document).ready(
       function() {
          var uid = "${uid}";
@@ -516,7 +552,7 @@ $(document).ready(
 
       });
 </script>
-     
+
 
 
 

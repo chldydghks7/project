@@ -212,46 +212,46 @@
 		style="background-color: #222; margin-left: 20px; margin-right: 20px;">
 		<div class="col-lg-12" style="border-color: #222;">
 			<h1 class="page-header"
-				style="color: red; text-align: center; border-color: #222; font-family: nexon;">
-				<br> G&nbsp;r&nbsp;o&nbsp;u&nbsp;p&nbsp; &nbsp;R&nbsp;i&nbsp;d&nbsp;i&nbsp;n&nbsp;g&nbsp; &nbsp;P&nbsp;i&nbsp;c&nbsp;t&nbsp;u&nbsp;r&nbsp;e
+				style=" text-align: center; color:white;border-color: #222; font-family: sung;">
+				<br> GroupRiding Picture
 			</h1>
 			<br>
 		</div>
 		<div class="col-md-4 col-sm-6">
-			<a href="portfolio-item.html"> <img
+			<img style="height: 333px; width: 700px;"
 				class="img-responsive img-portfolio img-hover"
-				src="http://placehold.it/700x450" alt="">
-			</a>
+				src="./resources/img/bike5.jpg" alt="">
+
 		</div>
 		<div class="col-md-4 col-sm-6">
-			<a href="portfolio-item.html"> <img
+			<img style="height: 333px; width: 700px;"
 				class="img-responsive img-portfolio img-hover"
-				src="http://placehold.it/700x450" alt="">
-			</a>
+				src="./resources/img/bike3.jpg" alt="">
+			
 		</div>
 		<div class="col-md-4 col-sm-6">
-			<a href="portfolio-item.html"> <img
+			<img style="height: 333px; width: 700px;"
 				class="img-responsive img-portfolio img-hover"
-				src="http://placehold.it/700x450" alt="">
-			</a>
+				src="./resources/img/bike.jpg" alt="">
+			
 		</div>
 		<div class="col-md-4 col-sm-6">
-			<a href="portfolio-item.html"> <img
+			 <img style="height: 333px; width: 700px;"
 				class="img-responsive img-portfolio img-hover"
-				src="http://placehold.it/700x450" alt="">
-			</a>
+				src="./resources/img/bike33.jpeg" alt="">
+			
 		</div>
 		<div class="col-md-4 col-sm-6">
-			<a href="portfolio-item.html"> <img
+		     	<img style="height: 333px; width: 700px;"
 				class="img-responsive img-portfolio img-hover"
-				src="http://placehold.it/700x450" alt="">
-			</a>
+				src="./resources/img/bike22.jpeg" alt="">
+		
 		</div>
 		<div class="col-md-4 col-sm-6">
-			<a href="portfolio-item.html"> <img
+		 <img style="height: 333px; width: 700px;"
 				class="img-responsive img-portfolio img-hover"
-				src="http://placehold.it/700x450" alt="">
-			</a>
+				src="./resources/img/bike2323.PNG" alt="">
+		
 		</div>
 	</div>
 	<!-- /.row -->

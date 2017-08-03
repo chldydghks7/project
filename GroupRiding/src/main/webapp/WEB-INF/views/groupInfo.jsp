@@ -24,7 +24,7 @@
 <script type="text/javascript" src="./resources/js/upload.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
 
@@ -42,19 +42,11 @@
 
 </head>
 <style>
-a{
-	black;
-}
-#popLogo {
-	z-index: 99;
-	position: absolute;
-	height: 30px;
-	width: 30px;
-	right: 10px;
-	margin-top: 10px;
+a {black;
+	
 }
 
-#popLogoRead {
+#popLogo {
 	z-index: 99;
 	position: absolute;
 	height: 30px;
@@ -151,31 +143,36 @@ b_container {
 	color: #fff;
 	background-color: #929292
 }
-@font-face { 
-	font-family: 'nexon'; 
-	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC B.OTF'); 
-	}
+
 @font-face {
-	font-family: 'nexon2'; 
-	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF'); 
-	}
-	
-	#mm{
+	font-family: 'nexon';
+	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC B.OTF');
+}
+
+@font-face {
+	font-family: 'nexon2';
+	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF');
+}
+
+#mm {
 	font-size: 20px;
 	font-family: nexon;
 	color: red;
-	}
-.profile{
+}
+
+.profile {
 	font-family: sung;
 	font-size: 17px;
 	color: black;
 }
+
 .table {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 0px;
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 0px;
 }
-.table_cen{
+
+.table_cen {
 	text-align: center;
 	color: white;
 }
@@ -262,7 +259,8 @@ b_container {
 		
 	</script>
 	<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
+		style="background-color: white;">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -272,29 +270,38 @@ b_container {
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
+				<a class="navbar-brand" href="main"
+					style="color: red; font-family: sung; font-size: 30px;">GROUP
+					RIDING</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
-					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
+					<li><a href="main" style="color: black; font-family: sung;">Home</a></li>
+					<li class="dropdown"><a href="MyInfo"
+						style="color: black; font-family: sung;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
+						data-toggle="dropdown" style="color: black; font-family: sung;">Group
+							<b class="caret"></b>
+					</a>
 						<ul class="dropdown-menu">
-							<li><a href="groupList"  style="color:black; font-family: sung;">Group List</a></li>
-							<li><a href="racePoint"  style="color:black; font-family: sung;">Race Point</a></li>
+							<li><a href="groupList"
+								style="color: black; font-family: sung;">Group List</a></li>
+							<li><a href="racePoint"
+								style="color: black; font-family: sung;">Race Point</a></li>
 						</ul></li>
-					<li><a href="groupRank"  style="color:black; font-family: sung;">Rank</a></li>
-					<li><a href="sharing"  style="color:black; font-family: sung;">Sharing</a></li>
-					<li><a href="hotPlaceMap"  style="color:black; font-family: sung;">Hot Place</a></li>
-					
+					<li><a href="groupRank"
+						style="color: black; font-family: sung;">Rank</a></li>
+					<li><a href="sharing" style="color: black; font-family: sung;">Sharing</a></li>
+					<li><a href="hotPlaceMap"
+						style="color: black; font-family: sung;">Hot Place</a></li>
+
 					<div style="float: right; width: 180px;">
 						<li id="profile" style="float: left; margin-top: 6px;"></li>
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown"
-							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
+							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px; font-family: sung;">${uid}</a>
 
 							<ul class="dropdown-menu">
 								<li><a id="logout">LogOut</a></li>
@@ -311,8 +318,8 @@ b_container {
 
 	<header id="myCarousel" class="carousel slide"
 		style="height: 330px; background-color: black;">
-		<%-- 	<img src="/displayFile?fileName=${group.gr_icon}"
-							style="width: 100%; height: 330px; border: solid 2px; border-color: black;position: absolute;" /> --%>
+		<%--    <img src="/displayFile?fileName=${group.gr_icon}"
+                     style="width: 100%; height: 330px; border: solid 2px; border-color: black;position: absolute;" /> --%>
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner">
 			<div class="item active">
@@ -333,7 +340,8 @@ b_container {
 								type="hidden" name="gr_name" value="${group.gr_name}">
 							<c:if test="${mygroupJudge==null}">
 								<div>
-									<button id="joinBtn" class="w3-btn w3-red"style="text-shadow:1px 1px 0 #444;font-family: nexon; font-size: 25px;position: absolute; left: 1220px;top: 20px;" >그룹가입</button>
+									<button id="joinBtn" class="w3-btn w3-red"
+										style="text-shadow: 1px 1px 0 #444; font-family: nexon; font-size: 25px; position: absolute; left: 1220px; top: 20px;">그룹가입</button>
 								</div>
 							</c:if>
 
@@ -341,15 +349,18 @@ b_container {
 					</div>
 					<div style="position: absolute; z-index: 100;">
 						<form action="createNotice" method="get">
-									<input type="hidden" name="gr_id" value="${group.gr_id}" /> <input
-										type="hidden" name="gr_name" value="${gr_name1}" />
-									<button type="submit" id="notice11"class="w3-btn w3-red"style="text-shadow:1px 1px 0 #444;font-family: nexon; font-size: 25px;position: absolute; left: 1220px;top: 20px;">일정등록</button>
-								</form>
+							<input type="hidden" name="gr_id" value="${group.gr_id}" /> <input
+								type="hidden" name="gr_name" value="${gr_name1}" />
+							<button type="submit" id="notice11" class="w3-btn w3-red"
+								style="text-shadow: 1px 1px 0 #444; font-family: nexon; font-size: 25px; position: absolute; left: 1220px; top: 20px;">일정등록</button>
+						</form>
 
+						
 					</div>
 				</div>
 			</div>
 		</div>
+		
 	</header>
 
 	<br>
@@ -364,7 +375,7 @@ b_container {
 	<div class="container">
 		<!----------------------------------------------------------------------------------------- 그룹상세 -->
 
-		
+
 		<!--=== Blog Posts ===-->
 		<div class="">
 			<div class="container"
@@ -373,16 +384,22 @@ b_container {
 					<!-- Blog All Posts -->
 					<div class="col-md-9">
 						<!----- 그룹 캘린더 --------------------------------------------------------------------------->
-						<div id="map11" class="col-md-13" style="z-index: 1; border: solied 2px; border-color: black;">
+						<div id="map11" class="col-md-13"
+							style="z-index: 1; border: solied 2px; border-color: black;">
 							<div class="news-v3 bg-color-white margin-bottom-60">
 								<h2 style="font-family: sung;">#${group.gr_name}의 최근 라이딩</h2>
 								<!-- 슬라이드 -->
 								<a id="mm" href="#"><div id="map_div"></div></a>
-								<button class="w3-btn w3-red" id="click1" style="font-family: sung;">1</button>
-								<button class="w3-btn w3-red"id="click2" style="font-family: sung;">2</button>
-								<button class="w3-btn w3-red"id="click3" style="font-family: sung;">3</button>
-								<button class="w3-btn w3-red"id="click4" style="font-family: sung;">4</button>
-								<button class="w3-btn w3-red"id="click5" style="font-family: sung;">5</button>
+								<button class="w3-btn w3-red" id="click1"
+									style="font-family: sung;">1</button>
+								<button class="w3-btn w3-red" id="click2"
+									style="font-family: sung;">2</button>
+								<button class="w3-btn w3-red" id="click3"
+									style="font-family: sung;">3</button>
+								<button class="w3-btn w3-red" id="click4"
+									style="font-family: sung;">4</button>
+								<button class="w3-btn w3-red" id="click5"
+									style="font-family: sung;">5</button>
 								<!-- 슬라이드 -->
 							</div>
 
@@ -393,7 +410,8 @@ b_container {
 						<!-- Blog Posts -->
 						<div class="news-v3 bg-color-white margin-bottom-60">
 							<table class="table table-bordered" id="read">
-								<tr style="font-family: nexon; font-size: 20px; background-color: black;">
+								<tr
+									style="font-family: nexon; font-size: 20px; background-color: black;">
 									<th class="table_cen">제목</th>
 									<th class="table_cen">작성자</th>
 									<th class="table_cen">날짜</th>
@@ -406,44 +424,48 @@ b_container {
 									<tr>
 
 										<td class="success" style="background-color: white;"><h4>
-												<strong><a style="color: red; font-family: sung;text-align: center;"
+												<strong><a
+													style="color: red; font-family: sung; text-align: center;"
 													href="javascript:ViewLayer2();" id="a"
-													class="${GroupMaster.writing_id}">공지 - ${GroupMaster.writing_title}</a></strong>
+													class="${GroupMaster.writing_id}">공지 -
+														${GroupMaster.writing_title}</a></strong>
 											</h4></td>
 
-										<td class="success" style="background-color: white;"><h4 style="color: red;font-family: sung;text-align: center;">
+										<td class="success" style="background-color: white;"><h4
+												style="color: red; font-family: sung; text-align: center;">
 												<strong>${GroupMaster.member_id}
-											</h4>
-											</strong></td>
+											</h4> </strong></td>
 
-										<td class="success" style="background-color: white;"><h4 style="color: red;font-family: sung;text-align: center;">
+										<td class="success" style="background-color: white;"><h4
+												style="color: red; font-family: sung; text-align: center;">
 												<strong>${GroupMaster.regist_date}
-											</h4>
-											</strong></td>
-										<td class="success" style="background-color: white;"><h4 style="color: red;font-family: sung;text-align: center;">
+											</h4> </strong></td>
+										<td class="success" style="background-color: white;"><h4
+												style="color: red; font-family: sung; text-align: center;">
 												<strong>${GroupMaster.view_Number}
-											</h4>
-											</strong></td>
+											</h4> </strong></td>
 									</tr>
 
 								</c:forEach>
 								<c:forEach items="${listAll}" var="GroupInfoBo">
 									<tr>
 
-										<td class=""><a href="javascript:ViewLayer2();" id="a"  style="color:black;font-family: sung;text-align: center;"
+										<td class=""><a href="javascript:ViewLayer2();" id="a"
+											style="color: black; font-family: sung; text-align: center;"
 											class="${GroupInfoBo.writing_id}">${GroupInfoBo.writing_title}</a></td>
 
-										<td class=""  style="font-family: sung;text-align: center;">${GroupInfoBo.member_id}</td>
+										<td class="" style="font-family: sung; text-align: center;">${GroupInfoBo.member_id}</td>
 
-										<td class=""  style="font-family: sung;text-align: center;">${GroupInfoBo.regist_date}</td>
-										<td class=""  style="font-family: sung;text-align: center;">${GroupInfoBo.view_Number}</td>
+										<td class="" style="font-family: sung; text-align: center;">${GroupInfoBo.regist_date}</td>
+										<td class="" style="font-family: sung; text-align: center;">${GroupInfoBo.view_Number}</td>
 									</tr>
 
 								</c:forEach>
 							</table>
 							<c:if test="${memList!=null}">
-							<br>
-								<a href="javascript:ViewLayer();" class="w3-btn w3-black" style="float: right; font-family: nexon;" >등록</a>
+								<br>
+								<a href="javascript:ViewLayer();" class="w3-btn w3-black"
+									style="float: right; font-family: nexon;">등록</a>
 							</c:if>
 
 							<div id="Pop"
@@ -454,14 +476,17 @@ b_container {
 								<form method="post"
 									action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}"
 									style="margin: 3% 3%;">
-									<p style="color: white; font-family: nexon; font-size: 20px;">작성자 - ${uid}</p>
+									<p style="color: white; font-family: nexon; font-size: 20px;">작성자
+										- ${uid}</p>
 
 									<div class="form-group">
-										<label style="color: white; font-family: nexon; font-size: 17px">제목</label> <input
-											class="form-control" type="text" name="writing_title">
+										<label
+											style="color: white; font-family: nexon; font-size: 17px">제목</label>
+										<input class="form-control" type="text" name="writing_title">
 									</div>
 									<div class="form-group">
-										<label style="color: white; font-family: nexon; font-size: 17px">내용</label>
+										<label
+											style="color: white; font-family: nexon; font-size: 17px">내용</label>
 										<textarea class="form-control" rows="11" cols="132"
 											style="color: black; resize: none;" name="writing_content"></textarea>
 									</div>
@@ -470,31 +495,43 @@ b_container {
 
 									<!-- 인풋 타입 히든으로 안보이게 처리 -->
 
-									<input class="w3-btn w3-white" type="submit" value="등록" style="float: right;font-family: nexon; font-size: 17px;">
+									<input class="w3-btn w3-white" type="submit" value="등록"
+										style="float: right; font-family: nexon; font-size: 17px;">
 								</form>
 							</div>
 
 
 							<div id="Pop_Re"
-								style="position: absolute; left: -27.4px; top: 557px; width: 835px; height: 454px; z-index: 100 !important; display: none; margin: 5% 5%; background: white; color: #fff; border: solid 2px; border-color:black;">
+								style="position: absolute; left: -27.4px; top: 557px; width: 835px; height: 454px; z-index: 100 !important; display: none; margin: 5% 5%; background: white; color: #fff; border: solid 2px; border-color: black;">
 
-								<a href="javascript:ViewClose2();"> <img id="popLogoRead"
-									src="./resources/img/cancel.png"  style="color: white;"/></a>
+								<a href="javascript:ViewClose2();"> <img id="popLogo"
+									src="./resources/img/cancel.png" / style="color: white;"></a>
 								<div style="margin: 3% 3%; color: white;">
-									<div class="uid" style="display: none; font-family: nexon; font-size: 20px;color:black;">${uid}</div>
-									<span style="font-family: nexon;font-size: 20px;color:black;">작성자 -</span> <label id="re_id" style="font-size: 20px; font-family: nexon;color:black;"></label>
-									<br /> <span style="font-family: nexon; font-size: 17px;color:black;">제목 -</span> <label
-										id="re_title" style="color: white; font-family: nexon; font-size: 17px"></label><br /> <span style="font-family: nexon; font-size: 17px;color:black;">내용</span>
+									<div class="uid"
+										style="display: none; font-family: nexon; font-size: 20px; color: black;">${uid}</div>
+									<span
+										style="font-family: nexon; font-size: 20px; color: black;">작성자
+										-</span> <label id="re_id"
+										style="font-size: 20px; font-family: nexon; color: black;"></label>
+									<br /> <span
+										style="font-family: nexon; font-size: 17px; color: black;">제목
+										-</span> <label id="re_title"
+										style="color: white; font-family: nexon; font-size: 17px"></label><br />
+									<span
+										style="font-family: nexon; font-size: 17px; color: black;">내용</span>
 									<div id="re_content"
 										style="height: 250px; background-color: #505457; font-family: nexon; font-size: 17px; border: solid 2px; border-color: black;"></div>
-									<br /> <label id="re_date" style="font-family: nexon;font-size: 17px;color:black;">작성일 - </label> <input type="hidden" style="font-family: nexon;font-size: 17px;"
-										value="" id="re_writing_id" />
-									<div id="dieRead"></div>
+									<br /> <label id="re_date"
+										style="font-family: nexon; font-size: 17px; color: black;">작성일
+										- </label> <input type="hidden"
+										style="font-family: nexon; font-size: 17px;" value=""
+										id="re_writing_id" />
+									<div id="die"></div>
 									<!-- <input class="btn btn-default" type="submit" value="수정"> -->
 									<!-- <input class="btn btn-default" type="submit" value="수정"
-											style="float: right"> -->
+                                 style="float: right"> -->
 									<!-- <button class="btn btn-default" id="Pop_Re_del"
-											style="float: right">삭제</button> -->
+                                 style="float: right">삭제</button> -->
 								</div>
 							</div>
 
@@ -551,11 +588,11 @@ b_container {
 						<!-- Contacts -->
 						<div class="headline">
 							<h2 style="font-family: sung;">#Profile</h2>
-							<!-- 							private String fullName; //프로필 사진경로
-								private String uid; //아이디
-								private int riding_no; //라이딩한 횟수
-								private double alldistance; //총거리
-								private double avspeed; //평균속도  -->
+							<!--                      private String fullName; //프로필 사진경로
+                        private String uid; //아이디
+                        private int riding_no; //라이딩한 횟수
+                        private double alldistance; //총거리
+                        private double avspeed; //평균속도  -->
 						</div>
 
 						<ul class="list-unstyled who margin-bottom-30">
@@ -566,32 +603,36 @@ b_container {
 
 							<c:if test="${listAll_li.riding_no !=null }">
 								<li><a href="#"><i class=""></i> <br /> <img
-										style="width: 258px; height: 250px; "
+										style="width: 258px; height: 250px;"
 										src="/displayFile?fileName=${listAll_li.fullName}" /></a></li>
-								<li class="profile"><a href="#" style="color: black;"><i class=""></i> 아이디 - ${listAll_li.uid}</a></li>
-								<li class="profile"><a href="#" style="color: black;"><i class=""></i> <strong>참여횟수
-											- ${listAll_li.riding_no}</strong> </a></li>
-								<li class="profile"><a href="#" style="color: black;"><i class=""></i> <strong>총거리 -
-											${listAll_li.alldistance}</strong> </a></li>
-								<li class="profile"><a href="#" style="color: black;"><i class=""></i> <strong>평균 속도
-											- ${listAll_li.avgspeed}</strong> </a></li>
+								<li class="profile"><a href="#" style="color: black;"><i
+										class=""></i> 아이디 - ${listAll_li.uid}</a></li>
+								<li class="profile"><a href="#" style="color: black;"><i
+										class=""></i> <strong>참여횟수 - ${listAll_li.riding_no}</strong>
+								</a></li>
+								<li class="profile"><a href="#" style="color: black;"><i
+										class=""></i> <strong>총거리 - ${listAll_li.alldistance}</strong>
+								</a></li>
+								<li class="profile"><a href="#" style="color: black;"><i
+										class=""></i> <strong>평균 속도 - ${listAll_li.avgspeed}</strong>
+								</a></li>
 							</c:if>
 							<c:if test="${listAll_li.riding_no ==null }">
-								<li class="profile"><a href="#" style="color: black;"><i class=""></i> <br /> <img
+								<li class="profile"><a href="#" style="color: black;"><i
+										class=""></i> <br /> <img
 										style="width: 200px; height: 200px; margin-left: 30px;"
 										src="/displayFile?fileName=${mem_li}" /></a></li>
-								<li class="profile"><a href="#" style="color: black;"><i class=""></i> 아이디 -
-											${uid}</a></li>
-								<li class="profile"><a href="#" style="color: black;"><i class=""></i> 참여횟수
-											- 0 </a></li>
-								<li class="profile"><a href="#" style="color: black;"><i class=""></i> 총거리 -
-											0 </a></li>
-								<li class="profile"><a href="#" style="color: black;"><i class=""></i> 평균 속도
-											- 0 </a></li>
+								<li class="profile"><a href="#" style="color: black;"><i
+										class=""></i> 아이디 - ${uid}</a></li>
+								<li class="profile"><a href="#" style="color: black;"><i
+										class=""></i> 참여횟수 - 0 </a></li>
+								<li class="profile"><a href="#" style="color: black;"><i
+										class=""></i> 총거리 - 0 </a></li>
+								<li class="profile"><a href="#" style="color: black;"><i
+										class=""></i> 평균 속도 - 0 </a></li>
 							</c:if>
 						</ul>
-						<br>
-						<br>
+						<br> <br>
 						<!-- Business Hours -->
 						<div class="headline" style="font-family: sung;">
 							<h2>#Member List</h2>
@@ -603,7 +644,8 @@ b_container {
 										<td style="width: 30px"><img
 											style="width: 40px; height: 40px;"
 											src="/displayFile?fileName=${mem.fullname}" /></td>
-										<td style="font-family: sung; font-size: 17px;margin-top: 7px;">${mem.uid}</td>
+										<td
+											style="font-family: sung; font-size: 17px; margin-top: 7px;">${mem.uid}</td>
 										<!-- 강퇴아이콘 -------------------------------------------->
 
 										<c:if test="${uid == group.gr_leader}">
@@ -641,8 +683,7 @@ b_container {
 				</div>
 			</div>
 		</footer>
-		<br>
-		<br>
+		<br> <br>
 
 
 	</div>
@@ -670,11 +711,14 @@ b_container {
 
 				});
 	</script>
-	
+
+
 
 
 	<script>
-		$(document).ready(function() {
+		$(document)
+				.ready(
+						function() {
 							var uid = $(".uid").text();
 							var ele = "<button class='w3-btn w3-black' id='Pop_Re_mo'  style='float: right; font-family: nexon;font-size:17px;'>수정</button>"
 									+ "<button class='w3-btn w3-black' id='Pop_Re_del' style='float: right;font-family: nexon;font-size:17px;'>삭제</button>";
@@ -732,9 +776,9 @@ b_container {
 												$("#re_writing_id2").val(
 														data.writing_id);
 												if (uid == data.member_id) {
-													
-													$("#dieRead").append(ele);
-													}else {
+													$("#die").append(ele);
+												} else {
+
 												}
 											}
 										});
@@ -776,17 +820,8 @@ b_container {
 											}
 										});
 									});
-							
-							
-						$("#popLogoRead").click( function(){
-								$("#dieRead").html("");
-							}); 
-						
-						
-						
+
 						});
-		
-	
 	</script>
 
 	<!--=== Footer Version 1 ===-->
@@ -856,10 +891,10 @@ b_container {
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 	<!--[if lt IE 9]>
-	<script src="assets/plugins/respond.js"></script>
-	<script src="assets/plugins/html5shiv.js"></script>
-	<script src="assets/plugins/placeholder-IE-fixes.js"></script>
-	<![endif]-->
+   <script src="assets/plugins/respond.js"></script>
+   <script src="assets/plugins/html5shiv.js"></script>
+   <script src="assets/plugins/placeholder-IE-fixes.js"></script>
+   <![endif]-->
 
 
 	<!-- 최근 라이딩 -->

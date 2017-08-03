@@ -103,14 +103,6 @@
    #like {
          cursor: pointer;
       }
-<<<<<<< HEAD
-      @font-face {
-	font-family: 'sung';
-	src: url('./resources/fonts/sung.ttf');
-}
-
-.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
-=======
       
       .text-vertical-center {
 
@@ -118,92 +110,72 @@
      width: 100%; height:100%; 
 }
 @font-face {
-	font-family: 'sung';
-	src: url('./resources/fonts/sung.ttf'); 
-	}
-	.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
->>>>>>> ac33e350c542429db56fb2291873112cb8466835
-	.navbar-inverse .navbar-nav>.open>a:hover {
-	color: #fff;
-	background-color: #929292
+   font-family: 'sung';
+   src: url('./resources/fonts/sung.ttf'); 
+   }
+   .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
+   .navbar-inverse .navbar-nav>.open>a:hover {
+   color: #fff;
+   background-color: #929292
 }
-<<<<<<< HEAD
-@font-face { 
-	font-family: 'nexon'; 
-	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC B.OTF'); 
-	}
-@font-face {
-	font-family: 'nexon2'; 
-	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF'); 
-	}
-=======
->>>>>>> ac33e350c542429db56fb2291873112cb8466835
    </style>
 </head>
 
 <body>
     <!-- Navigation -->
-<<<<<<< HEAD
-    	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
-=======
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
->>>>>>> ac33e350c542429db56fb2291873112cb8466835
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
-			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
-					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="groupList"  style="color:black; font-family: sung;">Group List</a></li>
-							<li><a href="racePoint"  style="color:black; font-family: sung;">Race Point</a></li>
-						</ul></li>
-					<li><a href="groupRank"  style="color:black; font-family: sung;">Rank</a></li>
-					<li><a href="sharing"  style="color:black; font-family: sung;">Sharing</a></li>
-					<li><a href="hotPlaceMap"  style="color:black; font-family: sung;">Hot Place</a></li>
-					
-					<div style="float: right; width: 180px;">
-						<li id="profile" style="float: left; margin-top: 6px;"></li>
-						<li class="dropdown"><a class="dropdown-toggle"
-							data-toggle="dropdown"
-							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
+      <div class="container">
+         <!-- Brand and toggle get grouped for better mobile display -->
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+               data-target="#bs-example-navbar-collapse-1">
+               <span class="sr-only">Toggle navigation</span> <span
+                  class="icon-bar"></span> <span class="icon-bar"></span> <span
+                  class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
+         </div>
+         <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse"
+            id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+               <li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
+               <li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
+               <li class="dropdown"><a href="#" class="dropdown-toggle"
+                  data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="groupList"  style="color:black; font-family: sung;">Group List</a></li>
+                     <li><a href="racePoint"  style="color:black; font-family: sung;">Race Point</a></li>
+                  </ul></li>
+               <li><a href="groupRank"  style="color:black; font-family: sung;">Rank</a></li>
+               <li><a href="sharing"  style="color:black; font-family: sung;">Sharing</a></li>
+               <li><a href="hotPlaceMap"  style="color:black; font-family: sung;">Hot Place</a></li>
+               
+               <div style="float: right; width: 180px;">
+                  <li id="profile" style="float: left; margin-top: 6px;"></li>
+                  <li class="dropdown"><a class="dropdown-toggle"
+                     data-toggle="dropdown"
+                     style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
 
-							<ul class="dropdown-menu">
-								<li><a id="logout">LogOut</a></li>
+                     <ul class="dropdown-menu">
+                        <li><a id="logout">LogOut</a></li>
 
-							</ul></li>
+                     </ul></li>
 
-					</div>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-		<!-- /.container -->
-	</nav>
-<<<<<<< HEAD
-=======
-     <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/hotplace.jpg') no-repeat center center scroll;">
->>>>>>> ac33e350c542429db56fb2291873112cb8466835
+               </div>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+   </nav>
+     <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/youface.jpg') no-repeat center center scroll;">
 
-		 <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/youface.jpg') no-repeat center center scroll;">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
                 <div class="carousel-caption" style="bottom:60px;">
-                    <h1 style="font-size: 40px; font-family: sung;">HOT PLACE</h1></br>
+                    <h1 style="font-size: 40px;">HOT PLACE</h1></br>
                 </div>
             </div>
         </div>
@@ -252,7 +224,7 @@
          
          
           
-          <footer style="margin-top: 550px;">
+          <footer>
             <div class="row">
                 <div class="col-lg-12">
                     <p style="font-family: sung;">Copyright &copy; Your Website 2017</p>
@@ -271,9 +243,30 @@
     <script src="./resources/js2/bootstrap.min.js"></script>
       
    
-  	<!-- 구글맵 -->
+     <!-- 구글맵 -->
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN--zcfp4teCptRjts9sB0EDpa98Kyiu0&callback=initMap" async defer></script>
    <script type="text/javascript">
+   $(document).ready(
+         function() {
+            var uid = "${uid}";
+            $.getJSON("getAttach/" + uid, function(list) {
+
+               var img = $("<img/>").attr('src',
+                     "/displayFile?fileName=" + list[0]);
+               img.css("width", "35px");
+               img.css("height", "35px");
+
+               $("#profile").prepend(img);
+
+               var logoutform = $("form[data-role='out']");
+
+               $("#logout").click(function() {
+
+                  logoutform.submit();
+               });
+
+            });
+   
    
    
    function initMap() {
@@ -478,6 +471,9 @@
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
    }
+   
+   
+         });
    </script>
 <!--[if lt IE 9]>
    <script src="assets/plugins/respond.js"></script>
