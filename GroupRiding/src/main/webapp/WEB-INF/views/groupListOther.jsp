@@ -81,10 +81,16 @@
 	vertical-align: middle;
 	background-color: rgba(0, 0, 0, 0.5);
 }
+
+
 @font-face {
 	font-family: 'sung';
 	src: url('./resources/fonts/sung.ttf'); 
 	}
+	
+	
+	
+	
 	.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
 	.navbar-inverse .navbar-nav>.open>a:hover {
 	color: #fff;
@@ -193,7 +199,7 @@
 			
 				
 						<div class="col-md-3 col-sm-6 hero-feature" >
-							<div class="thumbnail">
+							<div class="thumbnail w3-card-2">
 							<img src="/displayFile?fileName=${group.gr_icon}"
 							style="width: 250px; height: 100px; border: solid 2px; border-color: black;" />
 							<div class="caption">

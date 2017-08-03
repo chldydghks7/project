@@ -116,7 +116,7 @@
                  <div>
                     &nbsp;
                     </div>
-                    <h1 style="color: white; font-family: sung; color: red;"><strong>Daily Ranking</strong></h1>
+                    <h1 style="color: white; font-family: sung; color: red; "><strong>Daily Ranking</strong></h1>
 
                     <div class="col-lg-12" style="font-family: sung;">
                         <table style="width: 100%;border:1px;border:1px solid white; color: white; text-align: center;" >

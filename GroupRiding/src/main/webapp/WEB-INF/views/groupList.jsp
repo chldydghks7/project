@@ -191,8 +191,8 @@
 			<c:forEach items="${list}" var="group">
 
 
-				<div class="col-md-3 col-sm-6 hero-feature">
-					<div class="thumbnail">
+				<div class="col-md-3 col-sm-6 hero-feature ">
+					<div class="thumbnail w3-card-2">
 						<img src="/displayFile?fileName=${group.gr_icon}"
 							style="width: 250px; height: 100px; border: solid 2px; border-color: black;" />
 						<div class="caption">

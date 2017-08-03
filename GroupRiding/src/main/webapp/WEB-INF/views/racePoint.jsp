@@ -198,7 +198,7 @@ ul#replies {
 
 
 
-		<div style="font-family: sung; margin-top: 40px;">
+		<div style="font-family: sung; margin-top: 40px;" >
 			<h1>기록 경쟁을 통하여 거점을 빼앗아 보세요!</h1>
 			<!--=== Content Part ===-->
 		</div>
@@ -210,10 +210,10 @@ ul#replies {
 
 
 		<table
-			style="width: 100%; height: 500px;">
+			class="w3-card-4 w3-round-large"style="width: 100%; height: 500px; border: solid 1px; border-color: #ddd; background-color: white;">
 			<tr>
 				<td>
-					<h1 style="font-family: nexon; color: red;">거점명 -</h1>
+					<h1 style="font-family: nexon; color: red; padding: 3%; " >거점명 -</h1>
 				</td>
 				<td colspan="2">
 					<h1 class="rptitle" style="font-family: nexon;">영진전문대학 거점</h1>

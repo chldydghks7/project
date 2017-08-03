@@ -161,29 +161,29 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main" style="color: red; font-family: jae2; font-size: 30px;">GROUP RIDING</a>
+				<a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main"  style="color:black; font-family: jae2;">Home</a></li>
-					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: jae2;">My Page</a></li>
+					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
+					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown"  style="color:black; font-family: jae2;">Group <b class="caret"></b></a>
+						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="groupList"  style="color:black; font-family: jae2;">Group List</a></li>
-							<li><a href="racePoint"  style="color:black; font-family: jae2;">Race Point</a></li>
+							<li><a href="groupList"  style="color:black; font-family: sung;">Group List</a></li>
+							<li><a href="racePoint"  style="color:black; font-family: sung;">Race Point</a></li>
 						</ul></li>
-					<li><a href="groupRank"  style="color:black; font-family: jae2;">Rank</a></li>
-					<li><a href="sharing"  style="color:black; font-family: jae2;">Sharing</a></li>
-					<li><a href="hotPlaceMap"  style="color:black; font-family: jae2;">Hot Place</a></li>
+					<li><a href="groupRank"  style="color:black; font-family: sung;">Rank</a></li>
+					<li><a href="sharing"  style="color:black; font-family: sung;">Sharing</a></li>
+					<li><a href="hotPlaceMap"  style="color:black; font-family: sung;">Hot Place</a></li>
 					
 					<div style="float: right; width: 180px;">
 						<li id="profile" style="float: left; margin-top: 6px;"></li>
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown"
-							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: jae2;">${uid}</a>
+							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
 
 							<ul class="dropdown-menu">
 								<li><a id="logout">LogOut</a></li>
@@ -209,16 +209,22 @@
 				<h1 style="font-size: 50px; font-family: sung;">MY PAGE</h1>
 			</div>
 		</div>
+		
 	</div>
 	</header>
 
 	<!-- /.row -->
 	<div class="container">
-
+<div class="w3-panel w3-red w3-display-container w3-card-4">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-red w3-large w3-display-topright ">x</span>
+  <p style="font-family: nexon; font-size: 20px; margin-top: 5px;"># My Info에서는 자기 자신의 라이딩 누적 정보를 확인할수 있습니다! 누적 기록에 따라 골드, 실버, 브론즈로 나뉘게 됩니다!</p>
+  <p style="font-family: nexon; font-size: 20px;">또한 일정 관리를 통하여 라이딩 참여 불참 여부를 선택하세요!</p>
+</div>
 		<!-- Page Heading/Breadcrumbs -->
 		<div class="row" style="font-family: sung;">
 			<div class="col-lg-12">
-				<h1 class="page-header" style="font-family: jae2;">${uid}님&nbsp;&nbsp;안녕하세요</h1>
+				<h1 class="page-header" style="font-family: nexon;">${uid}님&nbsp;&nbsp;안녕하세요</h1>
 			</div>
 		</div>
 		<!-- /.row -->
@@ -237,12 +243,14 @@
 			<div class="col-lg-12" id="content">
 
 				<!-- Preview Image -->
-				<div class="w3-card-4 w3-round-large"style="height: 600px; border: solid 1px; border-color: #ddd; background-color: white;">
+				<div class="w3-card-4 w3-round-xxlarge"style="height: 600px; border: solid 1px; border-color: #ddd;background: url('./resources/img/bg_gold.png') no-repeat center center
+		scroll;">
 					<span style="font-family: nexon; position: absolute; font-size: 40px;margin-top: 37px;margin-left: 100px;">No : 001</span>
 					<span style="font-size: 80px;font-family: nexon;margin-left: 340px; ">Member Card</span>
 					<span style="font-family: nexon; position: absolute; font-size: 40px;margin-top: 37px;float: right; margin-left: 50px;">2017-07-20</span>
 					<div style="position: absolute; width: 400px; height: 400px; background-color: black;margin-left: 60px;"></div>
 					<table style="position:absolute; width: 600px; height: 300px;margin-left: 550px; font-family: nexon;font-size: 40px; ">
+					
 						<tr> 
 							<td>ID - ${uid}</td>
 						</tr>
@@ -256,6 +264,7 @@
 							<td>소속그룹 - 비앙키, 스페셜라이즈드</td>
 						</tr>
 					</table>
+					<img style="position: absolute; width: 400px; height: 400px; right: 694px; top: 121px;"  src='./resources/img/yonggold.png'/>
 					<img style="position: absolute; width: 180px; height: 180px;margin-top: 412px;left: 970px;z-index: 100;"  src='./resources/img/yong.png'/>
 					<span style="position: absolute;font-family: nexon;left:500px; margin-top: 450px;font-size: 100px; width: 800px; height: 200px;">GROUP RIDING</span>
 				</div>
@@ -270,7 +279,7 @@
 
 		<div class="row">
 			<div class="col-lg-3 col-md-6">
-				<div class="panel panel-default">
+				<div class="panel w3-card-4">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-3">
@@ -287,7 +296,7 @@
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<div class="panel panel-default">
+				<div class="panel w3-card-4">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-3">
@@ -295,7 +304,7 @@
 							</div>
 
 							<div class="col-xs-9 text-right">
-								<div class="huge" style="font-family: nexon;">${myAlltime}</div>
+								<div class="huge" style="font-family: nexon;">${myAlltime} h</div>
 
 								<div style="font-family: nexon;">시간</div>
 							</div>
@@ -304,7 +313,7 @@
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<div class="panel panel-default">
+				<div class="panel w3-card-4">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-3">
@@ -321,7 +330,7 @@
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<div class="panel panel-default">
+				<div class="panel w3-card-4">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-3">
@@ -360,7 +369,7 @@
 		<footer>
 		<div class="row">
 			<div class="col-lg-12" style="font-family: sung;">
-				<p>Copyright &copy; GROUP RIDING Website 2014</p>
+				<p>Copyright &copy; GROUP RIDING 2017</p>
 			</div>
 		</div>
 		</footer>
