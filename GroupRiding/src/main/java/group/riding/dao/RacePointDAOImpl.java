@@ -20,13 +20,13 @@ public class RacePointDAOImpl implements RacePointDAO {
 	private static String namespace = "group.riding.RacePointMapper";
 	
 	@Override
-	public RacePointBean racePoint() throws Exception {
-		return session.selectOne(namespace + ".racePoint");
+	public List<RacePointBean> racePoint() throws Exception {
+		return session.selectList(namespace + ".racePoint");
 	}
 
 	@Override
-	public RacePointBean pointInfo(int racepoint_id) throws Exception {
-		return session.selectOne(namespace + ".pointInfo", racepoint_id);
+	public List<RacePointBean> pointInfo() throws Exception {
+		return session.selectList(namespace + ".pointInfo");
 	}
 
 	@Override
@@ -52,6 +52,12 @@ public class RacePointDAOImpl implements RacePointDAO {
 	@Override
 	public List<RacePointBean> race_record(int racepoint_id) throws Exception {
 		return session.selectList(namespace + ".race_record", racepoint_id);
+	}
+
+	@Override
+	public RacePointBean getRacePosition(int racepoint_id) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace + ".getRacePosition", racepoint_id);
 	}
 
 }

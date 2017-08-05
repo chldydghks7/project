@@ -176,8 +176,9 @@
 			<div class="col-lg-12">
 				<h1></h1>
 				<ol class="breadcrumb" style="float: right;">
-					<li class="active"><a href="#" style="font-size: 20px; font-family: sung; color: black;">My
+					<li class="active"><a href="groupList" style="font-size: 20px; font-family: sung; color: black;">My
 							Group</a></li>
+					
 					<li><a href="groupListOther" style="font-size: 20px; font-family: sung;color: black;">Other
 							Group</a></li>
 				</ol>
@@ -190,8 +191,8 @@
 			<c:forEach items="${list}" var="group">
 
 
-				<div class="col-md-3 col-sm-6 hero-feature">
-					<div class="thumbnail">
+				<div class="col-md-3 col-sm-6 hero-feature ">
+					<div class="thumbnail w3-card-2">
 						<img src="/displayFile?fileName=${group.gr_icon}"
 							style="width: 250px; height: 100px; border: solid 2px; border-color: black;" />
 						<div class="caption">

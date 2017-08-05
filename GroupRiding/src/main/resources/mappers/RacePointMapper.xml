@@ -10,10 +10,15 @@
     	select * from gr_racepoint
     </select>
     
+    
+    <select id="getRacePosition" resultType="RacePointBean" >
+    	select * from gr_racepoint where racepoint_id=#{racepoint_id}
+    </select>
+    
     <!-- 거점 상세 -->
     <select id="pointInfo" resultType="RacePointBean">
     	select * from gr_racepoint_board
-    	where racepoint_id=#{racepoint_id}
+  
     </select>
     
     <!-- 뷰 카운터 -->

@@ -81,27 +81,46 @@
 	vertical-align: middle;
 	background-color: rgba(0, 0, 0, 0.5);
 }
+
 @font-face {
 	font-family: 'sung';
-	src: url('./resources/fonts/sung.ttf'); 
-	}
-	.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
+	src: url('./resources/fonts/sung.ttf');
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
 	.navbar-inverse .navbar-nav>.open>a:hover {
 	color: #fff;
 	background-color: #929292
 }
+
 .navbar-inverse .navbar-nav>li>a {
-    color: black;
+	color: black;
 }
-.a{
-	color:black;
+
+.a {
+	color: black;
+}
+
+ul#replies {
+	list-style-type: none;
+}
+
+@font-face {
+	font-family: 'nexon';
+	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC B.OTF');
+}
+
+@font-face {
+	font-family: 'nexon2';
+	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF');
 }
 </style>
 
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
+		style="background-color: white;">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -111,29 +130,38 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
+				<a class="navbar-brand" href="main"
+					style="color: red; font-family: sung; font-size: 30px;">GROUP
+					RIDING</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
-					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
+					<li><a href="main" style="color: black; font-family: sung;">Home</a></li>
+					<li class="dropdown"><a href="MyInfo?uid=${uid}"
+						style="color: black; font-family: sung;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
+						data-toggle="dropdown" style="color: black; font-family: sung;">Group
+							<b class="caret"></b>
+					</a>
 						<ul class="dropdown-menu">
-							<li><a href="groupList"  style="color:black; font-family: sung;">Group List</a></li>
-							<li><a href="racePoint"  style="color:black; font-family: sung;">Race Point</a></li>
+							<li><a href="groupList"
+								style="color: black; font-family: sung;">Group List</a></li>
+							<li><a href="racePoint"
+								style="color: black; font-family: sung;">Race Point</a></li>
 						</ul></li>
-					<li><a href="groupRank"  style="color:black; font-family: sung;">Rank</a></li>
-					<li><a href="sharing"  style="color:black; font-family: sung;">Sharing</a></li>
-					<li><a href="hotPlaceMap"  style="color:black; font-family: sung;">Hot Place</a></li>
-					
+					<li><a href="groupRank"
+						style="color: black; font-family: sung;">Rank</a></li>
+					<li><a href="sharing" style="color: black; font-family: sung;">Sharing</a></li>
+					<li><a href="hotPlaceMap"
+						style="color: black; font-family: sung;">Hot Place</a></li>
+
 					<div style="float: right; width: 180px;">
 						<li id="profile" style="float: left; margin-top: 6px;"></li>
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown"
-							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
+							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px; font-family: sung;">${uid}</a>
 
 							<ul class="dropdown-menu">
 								<li><a href="logout" id="logout">LogOut</a></li>
@@ -154,7 +182,7 @@
 		<div class="carousel-inner">
 			<div class="item active">
 				<div class="carousel-caption" style="bottom: 60px;">
-					<h1 style="font-size: 40px;font-family: sung;">RACE POINT</h1>
+					<h1 style="font-size: 40px; font-family: sung;">RACE POINT</h1>
 					</br>
 				</div>
 			</div>
@@ -168,41 +196,108 @@
 
 	<div class="container">
 
-		<div class="row">
+
+
+		<div style="font-family: sung; margin-top: 40px;" >
+			<h1>기록 경쟁을 통하여 거점을 빼앗아 보세요!</h1>
+			<!--=== Content Part ===-->
+		</div>
+
+
+		<!-- 레이스 -->
 		<br>
-			<div class="col-lg-12" style="font-family: sung;">
-				<h1>기록 경쟁을 통하여 거점을 빼앗아 보세요!</h1>
-				      <!--=== Content Part ===-->
-      <div class="container content">
-         <div class="row">
-   <!-- 레이스 -->
-                    <div id="map_div" ></div>
-               
-               <div style=" left: 800px;">	
-						<table style="border: 1px solid #444444; width:200px;">
-							<thead>
-								<tr style="border: 1px solid #444444; text-align: center;">
-									<td style="border: 1px solid #444444;">순위</td>
-									<td style="border: 1px solid #444444;">기록(초)</td>
-									<td style="border: 1px solid #444444;">그룹명 </td>
-								</tr>
-							</thead>
-							
-							<c:forEach items="${race_record}" var="race" varStatus="s">
-								<tbody>
-									<tr style="border: 1px solid #444444; text-align: center;">
-										<td style="border: 1px solid #444444;">${s.count}</td>
-									    <td style="border: 1px solid #444444;">${race.racepoint_time}</td>
-									    <td style="border: 1px solid #444444;">${race.gr_name}</td>
-									</tr>
-								</tbody>
-							</c:forEach>
-						</table>
+
+
+
+		<table
+			class="w3-card-4 w3-round-large"style="width: 100%; height: 500px; border: solid 1px; border-color: #ddd; background-color: white;">
+			<tr>
+				<td>
+					<h1 style="font-family: nexon; color: red; padding: 3%; " >거점명 -</h1>
+				</td>
+				<td colspan="2">
+					<h1 class="rptitle" style="font-family: nexon;">영진전문대학 거점</h1>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4 style="font-family: nexon;"></h4>
+				</td>
+				<td colspan="2">
+					<h4 class="rpcontent" style="font-family: nexon;">직선거리 50m 사람이
+						자주 다니는 루트</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<ul class="list-group racepoint">
+						<!--    <li id="yg" class="list-group-item list-group-item-success">영진전문대학 거점</li>
+                                <li id="bok" class="list-group-item">복현오거리 거점</li> -->
+						<c:forEach items="${rpExplain}" var="point">
+
+							<li data-start="${point.racepoint_id}" class="list-group-item w3-btn w3-black w3-padding-large w3-hover-red" style="font-family: nexon; font-size: 20px;">${point.ra_title}</li>
+							<p style="display: none; font-family: nexon;">${point.ra_content}</p>
+
+						</c:forEach>
+					</ul>
+				</td>
+				<td>
+					<div id="map_div"></div>
+				</td>
+				<td style="height: 500px;">
+				<span class="rpid" style="display: none;font-family: nexon;"></span>
+
+					<div style="overflow-y: scroll; height: 500px; width: 400px; font-family: nexon;">
+						<ul id="replies"></ul>
+					</div>
+
+
+					<div>
+						<input class="input-xxlarge" type="text" style="width: 280px;">
+						<button id="raceReply" class="btn w3-btn w3-ripple w3-black" type="button" style="font-family: nexon; width: 115px; font-size: 15px;">댓&nbsp;글&nbsp;등&nbsp;록</button>
+					</div></td>
+			</tr>
+		</table>
+
+		<div class="container">
+			<footer>
+				<div class="row" style="margin-top: 100px;">
+					<div class="col-lg-12" style="font-family: sung;">
+						<p>Copyright &copy; GROUP RIDING Website 2017</p>
+					</div>
 				</div>
-               
-               <div id="board" style=" top:400px;">
-                  	제목    :    <label id="ra_title"></label>   <br>
-                  	내용   :    <label id="ra_content"></label>   <br>
+			</footer>
+		</div>
+		<br>
+		<br>
+		<br>
+	</div>
+
+	<%-- <div style=" left: 800px;">   
+                  <table style="border: 1px solid #444444; width:200px;">
+                     <thead>
+                        <tr style="border: 1px solid #444444; text-align: center;">
+                           <td style="border: 1px solid #444444;">순위</td>
+                           <td style="border: 1px solid #444444;">기록(초)</td>
+                           <td style="border: 1px solid #444444;">그룹명 </td>
+                        </tr>
+                     </thead>
+                     
+                     <c:forEach items="${race_record}" var="race" varStatus="s">
+                        <tbody>
+                           <tr style="border: 1px solid #444444; text-align: center;">
+                              <td style="border: 1px solid #444444;">${s.count}</td>
+                               <td style="border: 1px solid #444444;">${race.racepoint_time}</td>
+                               <td style="border: 1px solid #444444;">${race.gr_name}</td>
+                           </tr>
+                        </tbody>
+                     </c:forEach>
+                  </table>
+            </div> --%>
+
+	<%--   <div id="board" style=" top:400px;">
+                     제목    :    <label id="ra_title"></label>   <br>
+                     내용   :    <label id="ra_content"></label>   <br>
                 <!--   ra_viewcnt      :    <label id="ra_viewcnt" style="display:none;"></label>   <br> -->
                   
                   <br><br>
@@ -216,25 +311,27 @@
                      <input type="hidden" name="racepoint_id" id="racepoint_id" value="${point.racepoint_id}" />
                      <button id="raceReply">등록</button>
                   </div>
-               </div>
-            	
-            
-         </div><!-- End Content -->
-      </div><!--/container-->
-      <!--=== End Content Part ===-->
-
-   <!-- jQuery -->
-    <script src="./resources/js2/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="./resources/js2/bootstrap.min.js"></script>
+               </div> --%>
 
 
-<script type="text/javascript" src="https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b"></script>
 
-<script>
+
+	<!--/container-->
+	<!--=== End Content Part ===-->
+
+	<!-- jQuery -->
+	<script src="./resources/js2/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="./resources/js2/bootstrap.min.js"></script>
+
+
+	<script type="text/javascript"
+		src="https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b"></script>
+
+	<script>
    $(document).ready(function() {
-         $("#board").hide();
+        
 
          var pr_3857 = new Tmap.Projection("EPSG:3857");//tmap 좌표체계
          var pr_4326 = new Tmap.Projection("EPSG:4326");//geolocation 좌표체계
@@ -243,9 +340,9 @@
                 return new Tmap.LonLat(coordX, coordY).transform(pr_4326, pr_3857);
             }
          
-               map = new Tmap.Map({div:'map_div',
-                                       width:'50%', 
-                                       height:'400px',
+              var map = new Tmap.Map({div:'map_div',
+                                       width:'602px', 
+                                       height:'536px',
                                        transitionEffect:"resize",
                                        animation:true
                                    }); 
@@ -253,52 +350,100 @@
                 map.addControl(new Tmap.Control.KeyboardDefaults());
                  map.addControl(new Tmap.Control.MousePosition());
                 
+                 var markerLayer = new Tmap.Layer.Markers("MarkerLayer");
+                 map.addLayer(markerLayer);
 
-               // 마커 생성
-               var racepoint = [[${point.start_location}], [${point.stop_location}]];   // 1
+                 
+			
+                 $.ajax({
+                	 url:"getRacePoint",
+                	 type:"get",
+                	 success:function(data){
+                		 console.log(data);
+                	 var racepoint=[];
+                	 
+                	 for(var i=0;i<data.length;i++)
+                		 {
+                		   racepoint.push(data[i].start_location);
+                		   racepoint.push(data[i].stop_location);
+                		 }
+                	 
+                	 
+                	 for(var i=0;i<racepoint.length;i++)
+                		 {
+                		 
+                		 var size = new Tmap.Size(24,38);
+                         var offset = new Tmap.Pixel(-(size.w/2), -(size.h/2));
+                         var icon = new Tmap.Icon('./resources/img/racepoint.png', size, offset);
+                		 
+                		   var location=racepoint[i].split(",");
+                		   
+                		   
+                		   
+                		   var tlocation=get3857LonLat(parseFloat(location[0]), parseFloat(location[1]));
+                		  
+                		 
+                           
+                           var marker = new Tmap.Markers(tlocation, icon);
+                           
+                         
+                           
+                           markerLayer.addMarker(marker);
+                         
 
-                var markerLayer = new Tmap.Layer.Markers("MarkerLayer");
-               map.addLayer(markerLayer);
-
-               for(var i=0; i<racepoint.length; i++) {
-                  var location = get3857LonLat(racepoint[i][0],racepoint[i][1]);
-                  var size = new Tmap.Size(24,38);
-                  var offset = new Tmap.Pixel(-(size.w/2), -(size.h/2));
-                  var icon = new Tmap.Icon('./resources/img/racepoint.png', size, offset);
-                  
-                  var marker = new Tmap.Markers(location, icon);
-                  markerLayer.addMarker(marker);
-
-                  marker.events.register("click", marker, onMaker);   // 마커 클릭
-                 }      
-      
-         function onMaker(evt) {
-             $.ajax({
-               url:"pointInfo",
-               type:"get",
-               data: {
-                  racepoint_id: ${point.racepoint_id}
-               },
-               dataType:"json",
-               success:function(data) {
-                     var point = data.pointInfo;
-                     $("#ra_title").text(point.ra_title);
-                      $("#ra_content").text(point.ra_content); 
-                   /*   $("#ra_viewcnt").text(point.ra_viewcnt); */
-                     $("#board").show();
-                     getAllList();
-               }
-            });
-         }   // function onMaker(evt) {
-   
+                		   
+                		 }
+                	 
+                	 }
+                	 
+                	 
+                 });
+                 
+             
+          $(".racepoint").on("click","li",function(){
+        	  
+        	  $(this).addClass("list-group-item-success");
+        	  $(this).siblings().removeClass("list-group-item-success");
+        	  
+        	  $(".rptitle").text($(this).text());
+        	  $(".rpcontent").text($(this).next().text());
+        	  
+        	  var rpid=$(this).attr("data-start");
+        	  
+        	  $(".rpid").text(rpid);
+        	  
+          		$.ajax({
+						url:"getRacePosition",
+						type:"get",
+						data:{racepoint_id:rpid},
+						success:function(data){
+							
+						
+						
+						var start=data.start_location.split(",");
+						
+						 map.panTo(get3857LonLat(parseFloat(start[0]),parseFloat(start[1])));
+						
+						
+						}
+						
+          
+          		});
+          		
+          		getAllList(rpid);
+          		
+          
+          });       
+          
+   		
    
    <!-- 댓글 -->
    
       $("#raceReply").on("click", function(){      // 댓글 등록 버튼
          
-         var uid = $("#uid").val();
-         var racepoint_id = $("#racepoint_id").val();
-         var ra_reply_comment = $("#ra_reply_comment").val();
+         var uid = "${uid}";
+         var racepoint_id = $(".rpid").text();
+         var ra_reply_comment = $(this).prev().val();
          
          $.ajax({
             type:"post",
@@ -315,15 +460,15 @@
             }),
             success : function(result) {
                if(result == "SUCCESS") {
-                  getAllList();
+                  getAllList(racepoint_id);
                }
             }
          });
          
       });
       
-      function getAllList() {      // 댓글 리스트
-         $.getJSON("raceReply/re_list/${point.racepoint_id}", function(data){   
+      function getAllList(racepointid){    
+         $.getJSON("raceReply/re_list/"+racepointid, function(data){   
             var str = "";
          
             $(data).each(function(){
@@ -361,7 +506,7 @@
             dataType: "text",
             success: function(result) {
                if(result == "SUCCESS") {
-                  getAllList();
+                  getAllList($(".rpid").text());
                }
                
             }   //   success: function(result) {
@@ -376,62 +521,40 @@
          
    });   /// $(document).ready(function() {
    </script>
-   
-
-<!--[if lt IE 9]>
-   <script src="assets/plugins/respond.js"></script>
-   <script src="assets/plugins/html5shiv.js"></script>
-   <script src="assets/plugins/placeholder-IE-fixes.js"></script>
-   <![endif]-->
-			</div>
-		</div>
-
-
-
-		<!--/row-->
 
 
 
 
-		<script>
+
+
+
+	<script>
 $(document).ready(
-		function() {
-			var uid = "${uid}";
-			$.getJSON("getAttach/" + uid, function(list) {
+      function() {
+         var uid = "${uid}";
+         $.getJSON("getAttach/" + uid, function(list) {
 
-				var img = $("<img/>").attr('src',
-						"/displayFile?fileName=" + list[0]);
-				img.css("width", "35px");
-				img.css("height", "35px");
+            var img = $("<img/>").attr('src',
+                  "/displayFile?fileName=" + list[0]);
+            img.css("width", "35px");
+            img.css("height", "35px");
 
-				$("#profile").prepend(img);
+            $("#profile").prepend(img);
 
-				var logoutform = $("form[data-role='out']");
+            var logoutform = $("form[data-role='out']");
 
-				$("#logout").click(function() {
+            $("#logout").click(function() {
 
-					logoutform.submit();
-				});
+               logoutform.submit();
+            });
 
-			});
+         });
 
-		});
+      });
 </script>
-		<footer>
-			<div class="row">
-				<div class="col-lg-12" style="font-family: sung;">
-					<p>Copyright &copy; GROUP RIDING Website 2017</p>
-				</div>
-			</div>
-		</footer>
 
 
 
-
-
-		<!-- End Pricing -->
-	</div>
-	<!--/container-->
 
 
 

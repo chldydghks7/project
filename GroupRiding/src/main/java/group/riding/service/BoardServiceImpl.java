@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import group.riding.bean.BoardBean;
+import group.riding.bean.SharReadFile;
 import group.riding.dao.BoardDAO;
 
 @Service
@@ -21,7 +22,14 @@ public class BoardServiceImpl implements BoardService {
 	public void newShar(BoardBean vo) throws Exception {
 		// TODO Auto-generated method stub
 		dao.newShar(vo);
-		dao.addFile(vo);
+	String[] filepath=vo.getBbs_FilePath();
+	String[] piclocation=vo.getPicture_location();
+		
+		
+		for(int i=0;i<filepath.length;i++)
+		{
+			dao.addFile(filepath[i], vo.getKml_name(), piclocation[i], vo.getKml_center());
+		}
 	}
 
 	@Override
@@ -72,6 +80,12 @@ public class BoardServiceImpl implements BoardService {
 		// TODO Auto-generated method stub
 		dao.delFile(writing_Id);
 		dao.sharDel(writing_Id);
+	}
+
+	@Override
+	public List<SharReadFile> sharfileRead(int writing_Id) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.sharfileRead(writing_Id);
 	}
 
 }

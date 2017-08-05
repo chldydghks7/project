@@ -132,7 +132,7 @@
 		select group_id,member_id,bbs_id,writing_title,writing_content,view_Number,writing_id,regist_date
 		from bbs_writing 
 		where bbs_id='group' and group_id=#{groupid}
-		order by writing_id desc
+		order by writing_id desc limit 0,9;
 	</select>
 
 	<select id="info_li" resultType="GroupInfoList">

@@ -16,13 +16,13 @@ public class RacePointServiceImpl implements RacePointService {
 	private RacePointDAO dao;
 	
 	@Override
-	public RacePointBean racePoint() throws Exception {
+	public List<RacePointBean> racePoint() throws Exception {
 		return dao.racePoint();
 	}
 	
 	@Override
-	public RacePointBean pointInfo(int racepoint_id) throws Exception {
-		return dao.pointInfo(racepoint_id);
+	public List<RacePointBean> pointInfo() throws Exception {
+		return dao.pointInfo();
 	}
 
 	@Override
@@ -48,6 +48,12 @@ public class RacePointServiceImpl implements RacePointService {
 	@Override
 	public List<RacePointBean> race_record(int racepoint_id) throws Exception {
 		return dao.race_record(racepoint_id);
+	}
+
+	@Override
+	public RacePointBean getRacePosition(int racepoint_id) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.getRacePosition(racepoint_id);
 	}
 
 }
