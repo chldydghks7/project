@@ -178,7 +178,7 @@
 							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
 
 							<ul class="dropdown-menu">
-								<li><a id="logout">LogOut</a></li>
+								<li><a href="logout" id="logout">LogOut</a></li>
 
 							</ul></li>
 
@@ -239,10 +239,10 @@
 							<td>ID - ${uid}</td>
 						</tr>
 						<tr>
-							<td>평균속도 - 40km/h</td>
+							<td>평균속도 - ${avgspeed}km/h</td>
 						</tr>
 						<tr>
-							<td>평균거리 - 86km</td>
+							<td>평균거리 - ${avgdistance}km</td>
 						</tr>
 						<tr>
 							<td>소속그룹 - 비앙키, 스페셜라이즈드</td>

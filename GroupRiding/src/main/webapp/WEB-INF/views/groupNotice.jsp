@@ -143,7 +143,7 @@
 						
 						<ul class="dropdown-menu">
 							<li>	
-						        <a id="logout" >LogOut</a>
+						        <a href="logout" id="logout" >LogOut</a>
 				   			</li>
 						
 						</ul>
@@ -270,9 +270,19 @@ $(document).ready(function(){
 				<c:forEach items="${list}" var="i">
 					
 					{
-						title: "${i.notice_title} 그룹 : ${i.gr_name}",
+						title: "${i.notice_title}",
 						start: "${i.ridingDate}",
 						url: "noticeInfo?noticeId=${i.noticeId}&uid=${uid}"
+					},
+					
+				</c:forEach>
+					
+				<c:forEach items="${list1}" var="i1">
+					
+					{
+						title: "${i1.notice_title}",
+						start: "${i1.ridingDate}",
+						url: "noticeInfo?noticeId=${i1.noticeId}&uid=${uid}"
 					},
 					
 				</c:forEach>
@@ -283,7 +293,7 @@ $(document).ready(function(){
 	});
 	
 	<c:forEach items="${list}" var="i">
-		${i.noticeId}
+		"${i.noticeId}"
 	</c:forEach>
 </script>
 

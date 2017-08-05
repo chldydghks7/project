@@ -304,7 +304,7 @@ b_container {
 							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px; font-family: sung;">${uid}</a>
 
 							<ul class="dropdown-menu">
-								<li><a id="logout">LogOut</a></li>
+								<li><a href="logout" id="logout">LogOut</a></li>
 
 							</ul></li>
 
@@ -351,8 +351,8 @@ b_container {
 						<form action="createNotice" method="get">
 							<input type="hidden" name="gr_id" value="${group.gr_id}" /> <input
 								type="hidden" name="gr_name" value="${gr_name1}" />
-							<button type="submit" id="notice11" class="w3-btn w3-red"
-								style="text-shadow: 1px 1px 0 #444; font-family: nexon; font-size: 25px; position: absolute; left: 1220px; top: 20px;">일정등록</button>
+							<input type="button" id="notice11" class="w3-btn w3-red"
+								style="text-shadow: 1px 1px 0 #444; font-family: nexon; font-size: 25px; position: absolute; left: 1220px; top: 20px;" data-toggle="modal" data-target="#myModal" value="일정등록">
 						</form>
 
 					</div>
@@ -388,8 +388,8 @@ b_container {
 								<h2 style="font-family: sung;">#${group.gr_name}의 최근 라이딩</h2>
 								<!-- 슬라이드 -->
 								<a id="mm" href="#"><div id="map_div"></div></a>
-								<button class="w3-btn w3-red" id="click1"
-									style="font-family: sung;">1</button>
+								<input type="button" class="w3-btn w3-red" id="click1"
+									style="font-family: sung;" value="1" />
 								<button class="w3-btn w3-red" id="click2"
 									style="font-family: sung;">2</button>
 								<button class="w3-btn w3-red" id="click3"
@@ -935,6 +935,44 @@ b_container {
 
 		
 			$(document).ready(function(){
+				$("#click1").val("최근 라이딩이 없음!");
+				$("#click2").hide();
+				$("#click3").hide();
+				$("#click4").hide();
+				$("#click5").hide();
+				
+				if(startPoint[0] != null) {	
+					$("#click1").val("1");
+					searchRoute(startPoint[0],endPoint[0]);
+					$("#mm").prepend(notice_title[0]);
+					$("#mm").prepend(ridingDate[0]);
+					
+					$(".a2").hide();
+					$(".a3").hide();
+					$(".a4").hide();
+					$(".a5").hide();
+					
+					$("#a2").hide();
+					$("#a3").hide();
+					$("#a4").hide();
+					$("#a5").hide();
+				} 
+				
+				if(startPoint[1] != null) {
+					$("#click2").show();
+				} 
+				if(startPoint[2] != null) {
+					$("#click3").show();
+				} 
+				if(startPoint[3] != null) {
+					$("#click4").show();
+				} 
+				if(startPoint[4] != null) {
+					$("#click5").show();
+				}
+			});
+			
+			$("#click1").on("click", function(){
 				if(startPoint[0] != null) {	
 					searchRoute(startPoint[0],endPoint[0]);
 					$("#mm").prepend(notice_title[0]);
@@ -1064,12 +1102,12 @@ b_container {
 		                                        format:routeFormat
 		                                        });
 		    var routeLayer = new Tmap.Layer.Vector("route", {protocol:prtcl, strategies:[new Tmap.Strategy.Fixed()]});
-		    routeLayer.events.register("featuresadded", routeLayer, onDrawnFeatures);
+		    routeLayer.events.register("featuresadded", routeLayer, onDrawnFeatures1);
 		    map.addLayer(routeLayer);
 		}
 		
 		//경로 그리기 후 해당영역으로 줌
-		function onDrawnFeatures(e){
+		function onDrawnFeatures1(e){
 		    map.zoomToExtent(this.getDataExtent());
 		}	
 </script>
@@ -1096,27 +1134,31 @@ b_container {
 		라이딩 시간 : <input type="time" name="ridingTime">	<br>
 		준비물 : <input type="text" name="material">	<br>
 		출발지 : <input type="text" id="starting"> <input type="button" id="start" value="검색">	<br>
-		도착지 : <input type="text" id="ending">	<input type="button" id="stop" value="검색">	<br>
+		도착지 : <input type="text" id="ending">	<input type="button" id="stopp" value="검색">	<br>
 		<input type="button" id="gogo" value="경유 검색">
 		<input type="button" onClick="window.location.reload()" value="취소">
 		
 		<div>
-			<ul id="ul">
+			<ul id="ull">
 				<li id="li"></li>
 			</ul>
 		</div>
 	
 		<div>
-			<ul id="ul1">
+			<ul id="ull1">
 				<li id="li1"></li>
 			</ul>
 		</div>
 		
 		<input type="hidden" name="gr_id" value="${gr_id}"/>
 		<input type="hidden" name="uid" value="${uid}"/>
-		<input type="hidden" name="start_point" id="startPoint" value=""> <br>
-		<input type="hidden" name="end_point" id="endPoint" value="">	<br>
+		<input type="hidden" name="start_point" id="start_point" value=""> <br>
+		<input type="hidden" name="end_point" id="end_point" value="">	<br>
 		<input type="hidden" name="gr_name" value="${gr_name1}"><br>
+		<input type="hidden" id="startCoordX" /> 	<br>
+		<input type="hidden" id="startCoordY" />	<br>
+		<input type="hidden" id="endCoordX" />		<br>
+		<input type="hidden" id="endCoordY" />		<br>
       </div>
       
       <div class="modal-footer">
@@ -1133,7 +1175,7 @@ b_container {
 
 <script>
 
-			var map1
+			var map1;
 
 			map1 = new Tmap.Map({div:'map_div1',
 		        width:'50%', 
@@ -1146,11 +1188,7 @@ b_container {
 				map1.addControl(new Tmap.Control.MousePosition());
 				// searchRoute();
 					
-					//경로 그리기 후 해당영역으로 줌
-					function onDrawnFeatures(e){
-						map1.zoomToExtent(this.getDataExtent());
-					}	// function searchRoute(start, stop){
-
+					
 ////////////////
 ///// POI //////
 ////////////////				                 
@@ -1164,23 +1202,23 @@ b_container {
 	    		$("#start").on("click", function(){
 	    			clcl = true;
 
-	    			$("#ul").empty();	// 태그제거
-	    			$("#ul1").empty();	// 태그제거
+	    			$("#ull").empty();	// 태그제거
+	    			$("#ull1").empty();	// 태그제거
 	    			var starting = $("#starting").val();
 
 	    			searchPOI(starting);	// 검색
 	    			
-	    			markerLayer1.clearMarkers();	// 마커 초기화
+	    			markerLayer.clearMarkers();	// 마커 초기화
 
 	    			getDataFromLonLat(this.lonlat);	// 주소
 
 	    		});
 
-	    		$("#stop").on("click", function(){
+	    		$("#stopp").on("click", function(){
 					clcl = false;
 
-	    			$("#ul").empty();	// 태그제거
-	    			$("#ul1").empty();	// 태그제거
+	    			$("#ull").empty();	// 태그제거
+	    			$("#ull1").empty();	// 태그제거
 	    			var ending = $("#ending").val();
 
 	    			searchPOI(ending);	// 검색
@@ -1220,7 +1258,7 @@ b_container {
 				function searchPOI(starting){
 				    tdata = new Tmap.TData();
 				    tdata.events.register("onComplete", tdata, onCompleteTData);
-				    var center = map.getCenter();
+				    var center = map1.getCenter();
 				    tdata.getPOIDataFromSearch(encodeURIComponent(starting), {centerLon:center.lon, centerLat:center.lat});
 				}
 				function onCompleteTData(e){
@@ -1260,11 +1298,11 @@ b_container {
 				            console.log(name, lon, lat);
  							
  							if(clcl == true) {
-					            $("#ul").append("<li>" + name + "</li>" 
+					            $("#ull").append("<li>" + name + "</li>" 
 					            				+ "<input type='hidden' value='" + lon + "'>"
 					            				+ "<input type='hidden' value='" + lat + "'>");
  							} else if (clcl == false) {
- 								$("#ul1").append("<li>" + name + "</li>" 
+ 								$("#ull1").append("<li>" + name + "</li>" 
 					            				+ "<input type='hidden' value='" + lon + "'>"
 					            				+ "<input type='hidden' value='" + lat + "'>");
  							}
@@ -1279,193 +1317,67 @@ b_container {
 				}
 
 
-				$("#ul").on("click", "li", function() {
+				$("#ull").on("click", "li", function() {
 
 					alert($(this).next().val() + ", " +  $(this).next().next().val());
 
 					$("#startCoordX").val($(this).next().val());
 					$("#startCoordY").val($(this).next().next().val());
 					
-					$("#startPoint").val("lon=" + $(this).next().val() + ",lat=" +  $(this).next().next().val());			
+					$("#start_point").val("lon=" + $(this).next().val() + ",lat=" +  $(this).next().next().val());			
 				});
 
-				$("#ul1").on("click", "li", function() {
-
-		$(document).ready(function() {
-			if (startPoint[0] != null) {
-				searchRoute(startPoint[0], endPoint[0]);
-				$("#mm").prepend(notice_title[0]);
-				$("#mm").prepend(ridingDate[0]);
-
-				$(".a2").hide();
-				$(".a3").hide();
-				$(".a4").hide();
-				$(".a5").hide();
-
-				$("#a2").hide();
-				$("#a3").hide();
-				$("#a4").hide();
-				$("#a5").hide();
-			} else {
-				alert("최근 없음!");
-			}
-		});
-
-		$("#click2").on("click", function() {
-			if (startPoint[1] != null) {
-				searchRoute(startPoint[1], endPoint[1]);
-				$("#mm").prepend(notice_title[1]);
-				$("#mm").prepend(ridingDate[1]);
-
-				$(".a1").hide();
-				$(".a3").hide();
-				$(".a4").hide();
-				$(".a5").hide();
-
-				$("#a1").hide();
-				$("#a3").hide();
-				$("#a4").hide();
-				$("#a5").hide();
-			} else {
-				alert("최근 없음!");
-			}
-		});
-
-		$("#click3").on("click", function() {
-			if (startPoint[2] != null) {
-				searchRoute(startPoint[2], endPoint[2]);
-				$("#mm").prepend(notice_title[2]);
-				$("#mm").prepend(ridingDate[2]);
-
-				$(".a1").hide();
-				$(".a2").hide();
-				$(".a4").hide();
-				$(".a5").hide();
-
-				$("#a1").hide();
-				$("#a2").hide();
-				$("#a4").hide();
-				$("#a5").hide();
-			} else {
-				alert("최근 없음!");
-			}
-		});
-
-		$("#click4").on("click", function() {
-			if (startPoint[3] != null) {
-				searchRoute(startPoint[3], endPoint[3]);
-				$("#mm").prepend(notice_title[3]);
-				$("#mm").prepend(ridingDate[3]);
-
-				$(".a1").hide();
-				$(".a2").hide();
-				$(".a3").hide();
-				$(".a5").hide();
-
-				$("#a1").hide();
-				$("#a2").hide();
-				$("#a3").hide();
-				$("#a5").hide();
-			} else {
-				alert("최근 없음!");
-			}
-		});
-
-		$("#click5").on("click", function() {
-			if (startPoint[4] != null) {
-				searchRoute(startPoint[4], endPoint[4]);
-				$("#mm").prepend(notice_title[4]);
-				$("#mm").prepend(ridingDate[4]);
-
-				$(".a1").hide();
-				$(".a2").hide();
-				$(".a3").hide();
-				$(".a4").hide();
-
-				$("#a1").hide();
-				$("#a2").hide();
-				$("#a3").hide();
-				$("#a4").hide();
-			} else {
-				alert("최근 없음!");
-			}
-		});
-
-		//경로 정보 로드
-		function searchRoute(startPoint, endPoint) {
-
-			var startx = new String(startPoint).substr(4, 15); // 경도 자르기
-			var starty = new String(startPoint).substr(24); // 경도 자르기
-
-			var stopx = new String(endPoint).substr(4, 15); // 경도 자르기
-			var stopy = new String(endPoint).substr(24); // 경도 자르기
-
-
-			    $("#gogo").on("click", function(){
-						poiRoute();
+				$("#ull1").on("click", "li", function() {
+					
+					alert($(this).next().val() + ", " +  $(this).next().next().val());
+					
+					$("#endCoordX").val($(this).next().val());
+					$("#endCoordY").val($(this).next().next().val());
+					
+					$("#end_point").val("lon=" + $(this).next().val() + ",lat=" +  $(this).next().next().val());
+					
+				});
+				
+				 $("#gogo").on("click", function(){
+					 	poiRoute();
 			    });
-
+				 
 				//경로 정보 로드
-				function poiRoute(){
+					function poiRoute(){
 
-					var startx = $("#startCoordX").val();   // 경도 자르기
-					var starty = $("#startCoordY").val();   // 경도 자르기
-					
-					var stopx = $("#endCoordX").val();   // 경도 자르기
-					var stopy = $("#endCoordY").val();   // 경도 자르기
-					
-					var routeFormat = new Tmap.Format.KML({extractStyles:true, extractAttributes:true});
-					var startX = new Object(startx);
-					var startY = new Object(starty);
-					var endX = new Object(stopx)// 14136027.789587;
-					var endY = new Object(stopy)// 4517572.4745242;
-					var urlStr = "https://apis.skplanetx.com/tmap/routes?version=1&format=xml";	
-								 
-					urlStr += "&startX="+startX;
-					urlStr += "&startY="+startY;
-					urlStr += "&endX="+endX;
-					urlStr += "&endY="+endY;
-					urlStr += "&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b";
-					var prtcl = new Tmap.Protocol.HTTP({
-					                        url: urlStr,
-					                        format:routeFormat
-					                        });
-					var routeLayer = new Tmap.Layer.Vector("route", {protocol:prtcl, strategies:[new Tmap.Strategy.Fixed()]});
-					routeLayer.events.register("featuresadded", routeLayer, onDrawnFeatures);
-					map1.addLayer(routeLayer);
-				}
+						var startx = $("#startCoordX").val();   // 경도 자르기
+						var starty = $("#startCoordY").val();   // 경도 자르기
+						
+						var stopx = $("#endCoordX").val();   // 경도 자르기
+						var stopy = $("#endCoordY").val();   // 경도 자르기
+						
+						var routeFormat = new Tmap.Format.KML({extractStyles:true, extractAttributes:true});
+						var startX = new Object(startx);
+						var startY = new Object(starty);
+						var endX = new Object(stopx)// 14136027.789587;
+						var endY = new Object(stopy)// 4517572.4745242;
+						var urlStr = "https://apis.skplanetx.com/tmap/routes?version=1&format=xml";	
+									 
+						urlStr += "&startX="+startX;
+						urlStr += "&startY="+startY;
+						urlStr += "&endX="+endX;
+						urlStr += "&endY="+endY;
+						urlStr += "&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b";
+						var prtcl = new Tmap.Protocol.HTTP({
+						                        url: urlStr,
+						                        format:routeFormat
+						                        });
+						var routeLayer = new Tmap.Layer.Vector("route", {protocol:prtcl, strategies:[new Tmap.Strategy.Fixed()]});
+						routeLayer.events.register("featuresadded", routeLayer, onDrawnFeatures);
+						map1.addLayer(routeLayer);
+					}
 
-			var routeFormat = new Tmap.Format.KML({
-				extractStyles : true,
-				extractAttributes : true
-			});
-			var startX = new Object(startx);
-			var startY = new Object(starty);
-			var endX = new Object(stopx)// 14136027.789587;
-			var endY = new Object(stopy)// 4517572.4745242;
-			var urlStr = "https://apis.skplanetx.com/tmap/routes?version=1&format=xml";
-			urlStr += "&startX=" + startX;
-			urlStr += "&startY=" + startY;
-			urlStr += "&endX=" + endX;
-			urlStr += "&endY=" + endY;
-			urlStr += "&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b";
-			var prtcl = new Tmap.Protocol.HTTP({
-				url : urlStr,
-				format : routeFormat
-			});
-			var routeLayer = new Tmap.Layer.Vector("route", {
-				protocol : prtcl,
-				strategies : [ new Tmap.Strategy.Fixed() ]
-			});
-			routeLayer.events.register("featuresadded", routeLayer,
-					onDrawnFeatures);
-			map.addLayer(routeLayer);
-		}
+					//경로 그리기 후 해당영역으로 줌
+					function onDrawnFeatures(e){
+						map1.zoomToExtent(this.getDataExtent());
+					}	// function searchRoute(start, stop){
 
-		//경로 그리기 후 해당영역으로 줌
-		function onDrawnFeatures(e) {
-			map.zoomToExtent(this.getDataExtent());
-		}
+		
 	</script>
 
 

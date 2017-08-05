@@ -109,17 +109,17 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
-					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
+					<li><a style="color:black; font-family: sung;">Home</a></li>
+					<li class="dropdown"><a   style="color:black; font-family: sung;">My Page</a></li>
+					<li class="dropdown"><a  class="dropdown-toggle"
 						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="groupList"  style="color:black; font-family: sung;">Group List</a></li>
-							<li><a href="racePoint"  style="color:black; font-family: sung;">Race Point</a></li>
+							<li><a   style="color:black; font-family: sung;">Group List</a></li>
+							<li><a   style="color:black; font-family: sung;">Race Point</a></li>
 						</ul></li>
-					<li><a href="groupRank"  style="color:black; font-family: sung;">Rank</a></li>
-					<li><a href="sharing"  style="color:black; font-family: sung;">Sharing</a></li>
-					<li><a href="hotPlaceMap"  style="color:black; font-family: sung;">Hot Place</a></li>
+					<li><a   style="color:black; font-family: sung;">Rank</a></li>
+					<li><a   style="color:black; font-family: sung;">Sharing</a></li>
+					<li><a   style="color:black; font-family: sung;">Hot Place</a></li>
 					
 					<div style="float: right; width: 180px;">
 						<li id="profile" style="float: left; margin-top: 6px;"></li>

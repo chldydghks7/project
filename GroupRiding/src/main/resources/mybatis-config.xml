@@ -20,7 +20,7 @@
 
 		<typeAlias alias="RidingInfoBean" type="group.riding.bean.RidingInfoBean"/>
 
-
+		<typeAlias alias="MyinfoBean" type="group.riding.bean.MyinfoBean"/>
 
 		<typeAlias alias="MyPicture"   type="group.riding.bean.MyPicture"/>
 		<typeAlias alias="GroupBoardAdd" type="yjc.wdb.gr.bean.GroupInfoMemList"/>

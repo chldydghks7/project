@@ -11,6 +11,8 @@ public interface NoticeDAO {
 	
 	public List<NoticeBean> listNotice(String gr_name) throws Exception;	// 占쏙옙占쏙옙 占쏙옙占쏙옙트
 	
+	public List<NoticeBean> listNotice1(String gr_name) throws Exception;	// 占쏙옙占쏙옙 占쏙옙占쏙옙트
+	
 	public NoticeBean infoNotice(int noticeId) throws Exception;	// 占쏙옙占쏙옙 占쏙옙占쏙옙
 	
 	public List<NoticeBean> userNotice(String uid) throws Exception;	// 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙트

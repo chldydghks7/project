@@ -140,7 +140,7 @@
 							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
 
 							<ul class="dropdown-menu">
-								<li><a id="logout">LogOut</a></li>
+								<li><a href="logout" id="logout">LogOut</a></li>
 
 							</ul></li>
 

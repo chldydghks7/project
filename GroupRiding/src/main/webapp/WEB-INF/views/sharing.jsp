@@ -215,7 +215,7 @@
 						
 						<ul class="dropdown-menu">
 							<li>	
-						        <a id="logout" >LogOut</a>
+						        <a href="logout" id="logout" >LogOut</a>
 				   			</li>
 						
 						</ul>
