@@ -128,39 +128,6 @@ b_container {
 	z-index: 99;
 }
 
-=======
-
-ul.tabs li a:hover {
-	background: #ccc;
-}
-
-html ul.tabs li.active, html ul.tabs li.active a:hover {
-	/*--Makes sure that the active tab does not listen to the hover properties--*/
-	background: #fff;
-	border-bottom: 1px solid #fff;
-	/*--Makes the active tab look like it's connected with its content--*/
-}
-
-b_container {
-	border: 1px solid #999;
-	border-top: none;
-	overflow: hidden;
-	clear: both;
-	float: left;
-	width: 100%;
-	background: #fff;
-}
-
-.tab_content {
-	padding: 20px;
-	font-size: 1.2em;
-}
-
-#map11 {
-	z-index: 99;
-}
-
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
 .text-vertical-center {
 	background-color: rgba(0, 0, 0, 0.7);
 	width: 100%;
@@ -313,12 +280,8 @@ b_container {
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="main" style="color: black; font-family: sung;">Home</a></li>
-<<<<<<< HEAD
-					<li class="dropdown"><a href="MyInfo?uid=${uid}"
-=======
-					<li class="dropdown"><a href="MyInfo"
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
-						style="color: black; font-family: sung;">My Page</a></li>
+
+					<li class="dropdown"><a href="MyInfo?uid=${uid}" style="color: black; font-family: sung;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" style="color: black; font-family: sung;">Group
 							<b class="caret"></b>

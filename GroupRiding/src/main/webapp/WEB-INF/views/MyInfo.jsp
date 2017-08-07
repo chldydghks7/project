@@ -133,6 +133,14 @@
 	font-family: 'sung';
 	src: url('./resources/fonts/sung.ttf'); 
 	}
+@font-face{
+	font-family: 'jae';
+	src: url('./resources/fonts/DXSPDM-KSCPC-EUC-H.TTF')
+}
+@font-face{
+	font-family: 'jae2';
+	src: url('./resources/fonts/a타임머신.ttf')
+}
 	.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
 	.navbar-inverse .navbar-nav>.open>a:hover {
 	color: #fff;
@@ -198,15 +206,21 @@
 	<div class="carousel-inner">
 		<div class="item active">
 			<div class="carousel-caption" style="bottom: 60px;">
-				<h1 style="font-size: 40px; font-family: sung;">MY PAGE</h1>
+				<h1 style="font-size: 50px; font-family: sung;">MY PAGE</h1>
 			</div>
 		</div>
+		
 	</div>
 	</header>
 
 	<!-- /.row -->
 	<div class="container">
-
+<div class="w3-panel w3-red w3-display-container w3-card-4">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-red w3-large w3-display-topright ">x</span>
+  <p style="font-family: nexon; font-size: 20px; margin-top: 5px;"># My Info에서는 자기 자신의 라이딩 누적 정보를 확인할수 있습니다! 누적 기록에 따라 골드, 실버, 브론즈로 나뉘게 됩니다!</p>
+  <p style="font-family: nexon; font-size: 20px;">또한 일정 관리를 통하여 라이딩 참여 불참 여부를 선택하세요!</p>
+</div>
 		<!-- Page Heading/Breadcrumbs -->
 		<div class="row" style="font-family: sung;">
 			<div class="col-lg-12">
@@ -229,12 +243,19 @@
 			<div class="col-lg-12" id="content">
 
 				<!-- Preview Image -->
+<<<<<<< HEAD
 				<div class="w3-card-4 w3-round-large"style="height: 600px; border: solid 1px; border-color: #ddd; background-color: white;">
 					<span style="font-family: nexon; position: absolute; font-size: 40px;margin-top: 37px;margin-left: 100px;">No : 00${userInfo.uno}</span>
+=======
+				<div class="w3-card-4 w3-round-xxlarge"style="height: 600px; border: solid 1px; border-color: #ddd;background: url('./resources/img/bg_gold.png') no-repeat center center
+		scroll;">
+					<span style="font-family: nexon; position: absolute; font-size: 40px;margin-top: 37px;margin-left: 100px;">No : 001</span>
+>>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
 					<span style="font-size: 80px;font-family: nexon;margin-left: 340px; ">Member Card</span>
 					<span id="udate" style="font-family: nexon; position: absolute; font-size: 40px;margin-top: 37px;float: right; margin-left: 50px;"></span>
 					<div style="position: absolute; width: 400px; height: 400px; background-color: black;margin-left: 60px;"></div>
 					<table style="position:absolute; width: 600px; height: 300px;margin-left: 550px; font-family: nexon;font-size: 40px; ">
+					
 						<tr> 
 							<td>ID - ${uid}</td>
 						</tr>
@@ -248,6 +269,7 @@
 							<td>소속그룹 - 비앙키, 스페셜라이즈드</td>
 						</tr>
 					</table>
+					<img style="position: absolute; width: 400px; height: 400px; right: 694px; top: 121px;"  src='./resources/img/yonggold.png'/>
 					<img style="position: absolute; width: 180px; height: 180px;margin-top: 412px;left: 970px;z-index: 100;"  src='./resources/img/yong.png'/>
 					<span style="position: absolute;font-family: nexon;left:500px; margin-top: 450px;font-size: 100px; width: 800px; height: 200px;">GROUP RIDING</span>
 				</div>
@@ -262,7 +284,7 @@
 
 		<div class="row">
 			<div class="col-lg-3 col-md-6">
-				<div class="panel panel-default">
+				<div class="panel w3-card-4">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-3">
@@ -279,7 +301,7 @@
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<div class="panel panel-default">
+				<div class="panel w3-card-4">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-3">
@@ -296,7 +318,7 @@
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<div class="panel panel-default">
+				<div class="panel w3-card-4">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-3">
@@ -313,7 +335,7 @@
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<div class="panel panel-default">
+				<div class="panel w3-card-4">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-3">
@@ -352,7 +374,7 @@
 		<footer>
 		<div class="row">
 			<div class="col-lg-12" style="font-family: sung;">
-				<p>Copyright &copy; GROUP RIDING Website 2014</p>
+				<p>Copyright &copy; GROUP RIDING 2017</p>
 			</div>
 		</div>
 		</footer>
