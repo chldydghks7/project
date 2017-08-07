@@ -243,12 +243,12 @@
 			<div class="col-lg-12" id="content">
 
 				<!-- Preview Image -->
-				<div class="w3-card-4 w3-round-xxlarge"style="height: 600px; border: solid 1px; border-color: #ddd;background: url('./resources/img/bg_gold.png') no-repeat center center
+				<div class="w3-card-4 w3-round-xxlarge"style="height: 600px;  border-color: #ddd;background: url('./resources/img/bg_gold.png') no-repeat center center
 		scroll;">
 					<span style="font-family: nexon; position: absolute; font-size: 40px;margin-top: 37px;margin-left: 100px;">No : 001</span>
 					<span style="font-size: 80px;font-family: nexon;margin-left: 340px; ">Member Card</span>
 					<span style="font-family: nexon; position: absolute; font-size: 40px;margin-top: 37px;float: right; margin-left: 50px;">2017-07-20</span>
-					<div style="position: absolute; width: 400px; height: 400px; background-color: black;margin-left: 60px;"></div>
+					<div style="position: absolute; width: 395px; height: 395px; background-color: black;margin-left: 60px;"></div>
 					<table style="position:absolute; width: 600px; height: 300px;margin-left: 550px; font-family: nexon;font-size: 40px; ">
 					
 						<tr> 
@@ -264,7 +264,7 @@
 							<td>소속그룹 - 비앙키, 스페셜라이즈드</td>
 						</tr>
 					</table>
-					<img style="position: absolute; width: 400px; height: 400px; right: 694px; top: 121px;"  src='./resources/img/yonggold.png'/>
+					<img style="position: absolute; width: 400px; height: 400px; right: 695px; top: 117px;"  src='./resources/img/yonggold.png'/>
 					<img style="position: absolute; width: 180px; height: 180px;margin-top: 412px;left: 970px;z-index: 100;"  src='./resources/img/yong.png'/>
 					<span style="position: absolute;font-family: nexon;left:500px; margin-top: 450px;font-size: 100px; width: 800px; height: 200px;">GROUP RIDING</span>
 				</div>

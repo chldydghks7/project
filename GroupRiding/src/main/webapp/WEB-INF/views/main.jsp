@@ -173,8 +173,8 @@
 				</div>
 				<div class="carousel-caption"
 					style="bottom: 35%; margin-left: 18%; border: 4px solid rgba(256, 256, 256, 0.5); width: 30%; font-family: sung;">
-					<h1>W&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;E</h1>
-					<h1 style="font-size: 53px; color: red;">
+					<h1 style="font-family: sung;">W&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;E</h1>
+					<h1 style="font-size: 53px; color: red; font-family: sung;">
 						<strong>GROUP RIDING</strong>
 					</h1>
 					</br>
@@ -190,9 +190,9 @@
 	</header>
 	<aside class="callout">
 		<div class="text-vertical-center" style="font-family: sung;">
-			<h1>GROUP</h1>
+			<h1 style="font-family: nexon;">GROUP</h1>
 			<br>
-			<h2>
+			<h2 style="font-family: nexon;">
 				여러명의 팀원을 모아서 자전거 라이딩을 즐겨보세요! <br>자전거 전용 도로만을 안내하는 놀라운 경험을 하여
 				보세요.
 			</h2>
@@ -200,9 +200,9 @@
 	</aside>
 	<aside class="callout2">
 		<div class="text-vertical-center" style="font-family: sung;">
-			<h1>SHARING</h1>
+			<h1 style="font-family: nexon;">SHARING</h1>
 			<br>
-			<h2>
+			<h2 style="font-family: nexon;">
 				속도, 거리, 시간 빈틈없이 관리 하여 체계적인 시스템을 확인 하세요. <br>또한 여러분의 데이터는 그룹성장에
 				큰도움이 된답니다!
 			</h2>
@@ -210,9 +210,9 @@
 	</aside>
 	<aside class="callout3">
 		<div class="text-vertical-center" style="font-family: sung;">
-			<h1>SHARING</h1>
+			<h1 style="font-family: nexon;">SHARING</h1>
 			<br>
-			<h2>
+			<h2 style="font-family: nexon;">
 				자전거 라이딩을 하다가 배가 고프거나, 쉴수 있는 곳을 찾아 본적이 있습니까?<br> 저희는 라이더들의 입장에서
 				가장 많이 간곳을 지도에 표시하여 드립니다.
 			</h2>
@@ -281,7 +281,7 @@
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 						<div class="modal-title"
 							style="text-align: center; font-family: sung;">
-							<h3>LOGIN</h3>
+							<h3 style="font-family: nexon;">LOGIN</h3>
 						</div>
 					</div>
 					<div class="modal-body">
@@ -331,7 +331,7 @@
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 						<div class="modal-title"
 							style="text-align: center; font-family: sung;">
-							<h3>Register</h3>
+							<h3 style="font-family: nexon;">Register</h3>
 						</div>
 					</div>
 					<div class="modal-body">
@@ -345,7 +345,7 @@
 								</div>
 								<div class="input-group margin-bottom-20">
 									<input type="button" class="btn-u btn-block rounded"
-										style="background-color: black; width: 120px; height: 35px; text-align: center;"
+										style="background-color: white; width: 120px; height: 35px; text-align: center; font-family: nexon; margin-left: 182px; margin-top: 5px;"
 										id="check" value="중복체크">
 								</div>
 							</div>
@@ -403,7 +403,7 @@
 
 
 					<button type="submit" id="save" class="btn btn-default"
-						style="margin-left: 900px; margin-bottom: 10px;">Register</button>
+						style="margin-left: 900px; margin-bottom: 10px; font-family: sung;">Register</button>
 
 
 					</form>
@@ -425,48 +425,52 @@
 	<div class="w3-row">
 		<div class="w3-half w3-light-grey w3-center" style="height: 600px">
 			<div class="w3-padding-64">
-				<h2>LIM JAE HWAN</h2>
-				<p>Some of my latest projects.</p>
+				<h2 style="font-family: sung;">LIM JAE HWAN</h2>
+				<p>This is Hwan Jae "Go to the Home"</p>
 			</div>
 			<div class="w3-row">
 				<div class="w3-half">
-					<img src="img_coffee.jpg" style="width: 100%">
+					<img src="./resources/img/hwan.jpg"
+						style="width: 100%; height: 100%; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); border: solid 2px; border-color: black;">
 				</div>
-				<div class="w3-half">
-					<img src="img_workbench.jpg" style="width: 100%">
-				</div>
-			</div>
-			<div class="w3-row">
-				<div class="w3-half">
-					<img src="img_workbench.jpg" style="width: 100%">
-				</div>
-				<div class="w3-half">
-					<img src="img_coffee.jpg" style="width: 100%">
-				</div>
-			</div>
-			<div class="w3-row">
-				<div class="w3-half">
-					<img src="img_sound.jpg" style="width: 100%">
-				</div>
-				<div class="w3-half">
-					<img src="img_workbench.jpg" style="width: 100%">
+				<div style="font-family: nexon; font-size: 20px;">
+					<p>Name - LIM JAE HWAN</p>
+					<br>
+					<p>AGE - 25</p>
+					<br>
+					<P>Tel - 010 - 2313 - 1573</P>
+					<br>
+					<p>Specialty - 먹는것을 매우 좋아함!</p>
+					<br>
+					<p>Hobby - 배틀그라운드 4랩 가방
 				</div>
 			</div>
-			<br>
-			<p>Just call me awesome.</p>
 		</div>
-		
-		
+
+
 		<div class="w3-half w3-blue-grey w3-container" style="height: 600px">
 			<div class="w3-padding-64 w3-center">
-				<h1>KANG MIN</h1>
-				<img src="img_avatar3.png" class="w3-margin w3-circle" alt="Person"
-					style="width: 50%">
-				<div class="w3-left-align w3-padding-large">
-					<p>Lorem ipusm sed vitae justo condimentum, porta lectus vitae,
-						ultricies congue gravida diam non fringilla.</p>
+				<h1 style="font-family: sung;">KANG MIN</h1>
+				<p>"집가서 코딩 할께요^^"</p>
+			</div>
+			<div class="w3-row">
+				<div class="w3-half">
+					<img src="./resources/img/kang.jpg"
+						style="width: 100%; height: 100%; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); border: solid 2px; border-color: black;">
+				</div>
+				<div style="font-family: nexon; font-size: 20px; text-align: center;">
+					<p>Name - KANG MIN</p>
+					<br>
+					<p>AGE - 23</p>
+					<br>
+					<P>Tel - 010 - 2313 - 1573</P>
+					<br>
+					<p>Specialty - 현실 군복무중</p>
+					<br>
+					<p>Hobby - 코딩은 집!</p>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 
@@ -475,36 +479,51 @@
 		<div class="w3-half w3-dark-grey w3-container w3-center"
 			style="height: 600px">
 			<div class="w3-padding-64">
-				<h1>JUNG SUNG JAE</h1>
+				<h1 style="font-family: sung;">JUNG SUNG JAE</h1>
+				<p>This is Good</p>
 			</div>
-			<div class="w3-padding-64">
-				<p>..for a cup of coffee, or whatever.</p>
-				<p>Chicago, US</p>
-				<p>+00 1515151515</p>
-				<p>test@test.com</p>
+			<div class="w3-row">
+				<div class="w3-half">
+					<img src="./resources/img/sungjae.jpg"
+						style="width: 100%; height: 100%; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); border: solid 2px; border-color: black;">
+				</div>
+				<div style="font-family: nexon; font-size: 20px;">
+					<p>Name - JUNG SUNG JAE</p>
+					<br>
+					<p>AGE - 26</p>
+					<br>
+					<P>Tel - 010 - 9554 - 6737</P>
+					<br>
+					<p>Specialty - 운동을 생활화 하고 있음!</p>
+					<br>
+					<p>Hobby - 독서, 다과, 운동</p>
+				</div>
 			</div>
 		</div>
-		
-		
-		<div class="w3-half w3-teal w3-container" style="height: 600px">
-			<div class="w3-padding-64 w3-padding-large w3-center">
-				<h1>CHUI YONG HWAN</h1>
-				<p class="w3-opacity">GET IN TOUCH</p>
-				<form class="w3-container w3-card-2 w3-padding-32 w3-white">
-					<div class="w3-section">
-						<label>Name</label> <input class="w3-input" style="width: 100%;"
-							type="text" required>
-					</div>
-					<div class="w3-section">
-						<label>Name</label> <input class="w3-input" style="width: 100%;"
-							type="text" required>
-					</div>
-					<div class="w3-section">
-						<label>Subject</label> <input class="w3-input"
-							style="width: 100%;" type="text" required>
-					</div>
-					<button type="button" class="w3-btn">Send</button>
-				</form>
+
+
+		<div class="w3-half w3-teal w3-container w3-center"
+			style="height: 600px">
+			<div class="w3-padding-64">
+				<h1 style="font-family: sung;">CHIO YONG HWAN</h1>
+				<p>"예수 시X 새X 끼야"</p>
+			</div>
+			<div class="w3-row">
+				<div class="w3-half">
+					<img src="./resources/img/sungjae.jpg"
+						style="width: 100%; height: 100%; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); border: solid 2px; border-color: black;">
+				</div>
+				<div style="font-family: nexon; font-size: 20px;">
+					<p>Name - CHIO YONG HWAN</p>
+					<br>
+					<p>AGE - 24</p>
+					<br>
+					<P>Tel - 010 - 2313 - 1573</P>
+					<br>
+					<p>Specialty - 예수충</p>
+					<br>
+					<p>Hobby - 예수충
+				</div>
 			</div>
 		</div>
 	</div>

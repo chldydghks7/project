@@ -384,7 +384,111 @@
 
 	</div>
 	<!-- 로그인 모달 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+	<div class="w3-row">
+		<div class="w3-half w3-light-grey w3-center" style="height: 600px">
+			<div class="w3-padding-64">
+				<h2 style="font-family: sung;">LIM JAE HWAN</h2>
+				<p>This is Hwan Jae "Go to the Home"</p>
+			</div>
+			<div class="w3-row">
+				<div class="w3-half">
+					<img src="./resources/img/hwan.jpg"
+						style="width: 100%; height: 100%; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); border: solid 2px; border-color: black;">
+				</div>
+				<div style="font-family: nexon; font-size: 20px;">
+					<p>Name - LIM JAE HWAN</p>
+					<br>
+					<p>AGE - 25</p>
+					<br>
+					<P>Tel - 010 - 2313 - 1573</P>
+					<br>
+					<p>Specialty - 먹는것을 매우 좋아함!</p>
+					<br>
+					<p>Hobby - 배틀그라운드 4랩 가방
+				</div>
+			</div>
+		</div>
 
+
+		<div class="w3-half w3-blue-grey w3-container" style="height: 600px">
+			<div class="w3-padding-64 w3-center">
+				<h1 style="font-family: sung;">KANG MIN</h1>
+				<p>"집가서 코딩 할께요^^"</p>
+			</div>
+			<div class="w3-row">
+				<div class="w3-half">
+					<img src="./resources/img/kang.jpg"
+						style="width: 100%; height: 100%; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); border: solid 2px; border-color: black;">
+				</div>
+				<div style="font-family: nexon; font-size: 20px; text-align: center;">
+					<p>Name - KANG MIN</p>
+					<br>
+					<p>AGE - 23</p>
+					<br>
+					<P>Tel - 010 - 2313 - 1573</P>
+					<br>
+					<p>Specialty - 현실 군복무중</p>
+					<br>
+					<p>Hobby - 코딩은 집!</p>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<!-- Second Grid: Swing By & Contact -->
+	<div class="w3-row">
+		<div class="w3-half w3-dark-grey w3-container w3-center"
+			style="height: 600px">
+			<div class="w3-padding-64">
+				<h1 style="font-family: sung;">JUNG SUNG JAE</h1>
+				<p>This is Good</p>
+			</div>
+			<div class="w3-row">
+				<div class="w3-half">
+					<img src="./resources/img/sungjae.jpg"
+						style="width: 100%; height: 100%; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); border: solid 2px; border-color: black;">
+				</div>
+				<div style="font-family: nexon; font-size: 20px;">
+					<p>Name - JUNG SUNG JAE</p>
+					<br>
+					<p>AGE - 26</p>
+					<br>
+					<P>Tel - 010 - 9554 - 6737</P>
+					<br>
+					<p>Specialty - 운동을 생활화 하고 있음!</p>
+					<br>
+					<p>Hobby - 독서, 다과, 운동</p>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="w3-half w3-teal w3-container w3-center"
+			style="height: 600px">
+			<div class="w3-padding-64">
+				<h1 style="font-family: sung;">CHIO YONG HWAN</h1>
+				<p>"예수 시X 새X 끼야"</p>
+			</div>
+			<div class="w3-row">
+				<div class="w3-half">
+					<img src="./resources/img/sungjae.jpg"
+						style="width: 100%; height: 100%; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); border: solid 2px; border-color: black;">
+				</div>
+				<div style="font-family: nexon; font-size: 20px;">
+					<p>Name - CHIO YONG HWAN</p>
+					<br>
+					<p>AGE - 24</p>
+					<br>
+					<P>Tel - 010 - 2313 - 1573</P>
+					<br>
+					<p>Specialty - 예수충</p>
+					<br>
+					<p>Hobby - 예수충
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Footer -->
 	<footer>
 		<div class="row" style="">
