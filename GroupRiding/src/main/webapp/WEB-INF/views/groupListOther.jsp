@@ -106,6 +106,14 @@
     color: #fff!important;
     background-color: black !important;
 }
+@font-face { 
+	font-family: 'nexon'; 
+	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC B.OTF'); 
+	}
+@font-face {
+	font-family: 'nexon2'; 
+	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF'); 
+	}
 </style>
 
 </head>
@@ -236,10 +244,10 @@
 				<div class="modal-dialog">
 
 					<!-- Modal content-->
-					<div class="modal-content">
+										<div class="modal-content">
 						<div class="modal-header" style="text-align: center;">
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h3 class="modal-title">Group Create</h3>
+							<h3 class="modal-title" style="font-family: sung;font-size: 30px;">Group Create</h3>
 						</div>
 						<div class="modal-body">
 
@@ -251,19 +259,19 @@
 									name="uid" value="${uid}"> <input type="hidden"
 									name="introduce" value="그룹장">
 								<div class="form-group">
-									<label>그룹이름 </label> <input type="text" class="form-control"
+									<label style="font-family: nexon;font-size: 20px;">그룹이름 </label> <input type="text" class="form-control"
 										id="gr_name" name="gr_name"> <input
 										class="btn btn-default" type="button" id="n_check"
-										value="중복체크" style="float: right; margin-top: 5px;"> <br>
+										value="중복체크" style="float: right; margin-top: 5px; font-family: nexon;"> <br>
 								</div>
 								<div class="form-group">
-									<label>그룹소개 </label>
+									<label style="font-family: nexon;font-size: 20px;">그룹소개 </label>
 									<textarea id="gr_content" class="form-control"
 										name="gr_content"></textarea>
 								</div>
 								<!-- 파일 업로드 -->
 								<div>
-									<label>프로필 이미지 등록 [ File DROP Here ]</label>
+									<label style="font-family: nexon;font-size: 20px;">프로필 이미지 등록 [ File DROP Here ]</label>
 
 									<div>
 										<div class="fileDrop"
@@ -284,9 +292,9 @@
 									</div>
 								</div>
 								<div class="modal-footer">
-									<button class="btn btn-default" type="submit">생성</button>
+									<button class="btn btn-default" type="submit"style="font-family: nexon;">생성</button>
 									<button type="button" class="btn btn-default"
-										data-dismiss="modal">Close</button>
+										data-dismiss="modal" style="font-family: nexon;">Close</button>
 								</div>
 
 							</form>
@@ -294,7 +302,6 @@
 						</div>
 
 					</div>
-
 				</div>
 			</div>
 
