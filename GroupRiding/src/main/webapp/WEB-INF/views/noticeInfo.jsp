@@ -192,6 +192,23 @@
 					
 					<h4 id="ooo">참여됨</h4>
 					<h4 id="xxx">불참됨</h4>
+					
+					
+						<table border="1">
+							<tr>
+								<th>맴버</th>
+								<th>참불</th>
+							</tr>
+								
+								<c:forEach items="${memberjoininfo}" var="i">
+									<tr style="text-align: center;">
+										<td>${i.uid}</td>
+										<td>${i.joing}</td>
+									</tr>
+								</c:forEach>
+						</table>
+				
+					
 				</div>
 			</div>
 		</div><!--/container-->

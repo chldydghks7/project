@@ -1,9 +1,13 @@
 package group.riding.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+
+import group.riding.bean.MyinfoBean;
 
 @Repository
 public class MyinfoDAOImpl implements MyinfoDAO {
@@ -31,6 +35,26 @@ public class MyinfoDAOImpl implements MyinfoDAO {
 	@Override
 	public String myRiding(String uid) throws Exception {
 		return session.selectOne(namespace + ".myRiding", uid);
+	}
+
+	@Override
+	public String avgspeed(String uid) throws Exception {
+		return session.selectOne(namespace + ".avgspeed", uid);
+	}
+
+	@Override
+	public String avgdistance(String uid) throws Exception {
+		return session.selectOne(namespace + ".avgdistance", uid);
+	}
+
+	/*@Override
+	public List<MyinfoBean> myGroup1(String uid) throws Exception {
+		return session.selectList(namespace + ".myGroup1", uid);
+	}*/
+	
+	@Override
+	public String myGroup1(String uid) throws Exception {
+		return session.selectOne(namespace + ".myGroup1", uid);
 	}
 
 	

@@ -46,9 +46,10 @@ public class NoticeController {
 	@RequestMapping(value="groupNotice", method=RequestMethod.GET)
 	public void groupNotice(@RequestParam(value="gr_name") String gr_name, NoticeBean nb, Model model) throws Exception {
 		List<NoticeBean> list = service.listNotice(gr_name);
+		List<NoticeBean> list1 = service.listNotice1(gr_name);
+		
 		model.addAttribute("list", list);
-		
-		
+		model.addAttribute("list1", list1);
 	}
 	
 	@RequestMapping(value="noticeInfo", method=RequestMethod.GET)	// 洹몃９ ?占쏙옙?占쏙옙

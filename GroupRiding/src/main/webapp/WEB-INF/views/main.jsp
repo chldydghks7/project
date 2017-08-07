@@ -22,7 +22,6 @@
 <!-- Custom Fonts -->
 <link href="./resources/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -89,23 +88,12 @@
 	color: #fff;
 	background-color: #929292
 }
-
-@font-face {
-	font-family: 'nexon';
-	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC B.OTF');
-}
-
-@font-face {
-	font-family: 'nexon2';
-	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF');
-}
 </style>
 
 <body>
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
-		style="background-color: white;">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -115,38 +103,29 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main"
-					style="color: red; font-family: sung; font-size: 30px;">GROUP
-					RIDING</a>
+				<a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main" style="color: black; font-family: sung;">Home</a></li>
-					<li class="dropdown"><a href="MyInfo?uid=${uid}"
-						style="color: black; font-family: sung;">My Page</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" style="color: black; font-family: sung;">Group
-							<b class="caret"></b>
-					</a>
+					<li><a style="color:black; font-family: sung;">Home</a></li>
+					<li class="dropdown"><a   style="color:black; font-family: sung;">My Page</a></li>
+					<li class="dropdown"><a  class="dropdown-toggle"
+						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="groupList"
-								style="color: black; font-family: sung;">Group List</a></li>
-							<li><a href="racePoint"
-								style="color: black; font-family: sung;">Race Point</a></li>
+							<li><a   style="color:black; font-family: sung;">Group List</a></li>
+							<li><a   style="color:black; font-family: sung;">Race Point</a></li>
 						</ul></li>
-					<li><a href="groupRank"
-						style="color: black; font-family: sung;">Rank</a></li>
-					<li><a href="sharing" style="color: black; font-family: sung;">Sharing</a></li>
-					<li><a href="hotPlaceMap"
-						style="color: black; font-family: sung;">Hot Place</a></li>
-
+					<li><a   style="color:black; font-family: sung;">Rank</a></li>
+					<li><a   style="color:black; font-family: sung;">Sharing</a></li>
+					<li><a   style="color:black; font-family: sung;">Hot Place</a></li>
+					
 					<div style="float: right; width: 180px;">
 						<li id="profile" style="float: left; margin-top: 6px;"></li>
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown"
-							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px; font-family: sung;">${uid}</a>
+							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
 
 							<ul class="dropdown-menu">
 								<li><a id="logout">LogOut</a></li>
@@ -189,8 +168,13 @@
 		</div>
 	</header>
 	<aside class="callout">
+<<<<<<< HEAD
 		<div class="text-vertical-center" style="font-family: sung;">
 			<h1 style="font-family: nexon;">GROUP</h1>
+=======
+		<div class="text-vertical-center" style="font-family: sung; ">
+			<h1 style="color: red;">G&nbsp;R&nbsp;O&nbsp;U&nbsp;P</h1>
+>>>>>>> 226912e9bc0767b02105d5e2734af3c0f41b557e
 			<br>
 			<h2 style="font-family: nexon;">
 				여러명의 팀원을 모아서 자전거 라이딩을 즐겨보세요! <br>자전거 전용 도로만을 안내하는 놀라운 경험을 하여
@@ -200,7 +184,11 @@
 	</aside>
 	<aside class="callout2">
 		<div class="text-vertical-center" style="font-family: sung;">
+<<<<<<< HEAD
 			<h1 style="font-family: nexon;">SHARING</h1>
+=======
+			<h1 style="color: red;">S&nbsp;H&nbsp;A&nbsp;R&nbsp;I&nbsp;N&nbsp;G</h1>
+>>>>>>> 226912e9bc0767b02105d5e2734af3c0f41b557e
 			<br>
 			<h2 style="font-family: nexon;">
 				속도, 거리, 시간 빈틈없이 관리 하여 체계적인 시스템을 확인 하세요. <br>또한 여러분의 데이터는 그룹성장에
@@ -210,7 +198,11 @@
 	</aside>
 	<aside class="callout3">
 		<div class="text-vertical-center" style="font-family: sung;">
+<<<<<<< HEAD
 			<h1 style="font-family: nexon;">SHARING</h1>
+=======
+			<h1 style="color: red;">H&nbsp;O&nbsp;T&nbsp; &nbsp;P&nbsp;L&nbsp;A&nbsp;C&nbsp;E</h1>
+>>>>>>> 226912e9bc0767b02105d5e2734af3c0f41b557e
 			<br>
 			<h2 style="font-family: nexon;">
 				자전거 라이딩을 하다가 배가 고프거나, 쉴수 있는 곳을 찾아 본적이 있습니까?<br> 저희는 라이더들의 입장에서
@@ -225,46 +217,46 @@
 		style="background-color: #222; margin-left: 20px; margin-right: 20px;">
 		<div class="col-lg-12" style="border-color: #222;">
 			<h1 class="page-header"
-				style="text-align: center; color: white; border-color: #222; font-family: sung;">
-				<br> GroupRiding Picture
+				style="color: red; text-align: center; border-color: #222; font-family: sung;">
+				<br> G&nbsp;r&nbsp;o&nbsp;u&nbsp;p&nbsp; &nbsp;R&nbsp;i&nbsp;d&nbsp;i&nbsp;n&nbsp;g&nbsp; &nbsp;P&nbsp;i&nbsp;c&nbsp;t&nbsp;u&nbsp;r&nbsp;e
 			</h1>
 			<br>
 		</div>
 		<div class="col-md-4 col-sm-6">
-			<img style="height: 333px; width: 700px;"
+			<a href="portfolio-item.html"> <img
 				class="img-responsive img-portfolio img-hover"
-				src="./resources/img/bike5.jpg" alt="">
-
+				src="http://placehold.it/700x450" alt="">
+			</a>
 		</div>
 		<div class="col-md-4 col-sm-6">
-			<img style="height: 333px; width: 700px;"
+			<a href="portfolio-item.html"> <img
 				class="img-responsive img-portfolio img-hover"
-				src="./resources/img/bike3.jpg" alt="">
-
+				src="http://placehold.it/700x450" alt="">
+			</a>
 		</div>
 		<div class="col-md-4 col-sm-6">
-			<img style="height: 333px; width: 700px;"
+			<a href="portfolio-item.html"> <img
 				class="img-responsive img-portfolio img-hover"
-				src="./resources/img/bike.jpg" alt="">
-
+				src="http://placehold.it/700x450" alt="">
+			</a>
 		</div>
 		<div class="col-md-4 col-sm-6">
-			<img style="height: 333px; width: 700px;"
+			<a href="portfolio-item.html"> <img
 				class="img-responsive img-portfolio img-hover"
-				src="./resources/img/bike33.jpeg" alt="">
-
+				src="http://placehold.it/700x450" alt="">
+			</a>
 		</div>
 		<div class="col-md-4 col-sm-6">
-			<img style="height: 333px; width: 700px;"
+			<a href="portfolio-item.html"> <img
 				class="img-responsive img-portfolio img-hover"
-				src="./resources/img/bike22.jpeg" alt="">
-
+				src="http://placehold.it/700x450" alt="">
+			</a>
 		</div>
 		<div class="col-md-4 col-sm-6">
-			<img style="height: 333px; width: 700px;"
+			<a href="portfolio-item.html"> <img
 				class="img-responsive img-portfolio img-hover"
-				src="./resources/img/bike2323.PNG" alt="">
-
+				src="http://placehold.it/700x450" alt="">
+			</a>
 		</div>
 	</div>
 	<!-- /.row -->
@@ -329,16 +321,20 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
+<<<<<<< HEAD
 						<div class="modal-title"
 							style="text-align: center; font-family: sung;">
 							<h3 style="font-family: nexon;">Register</h3>
+=======
+						<div class="modal-title" style="text-align: center; font-family: sung;">
+							<h3>Register</h3>
+>>>>>>> 226912e9bc0767b02105d5e2734af3c0f41b557e
 						</div>
 					</div>
 					<div class="modal-body">
-						<form class="form-horizontal">
+						<form class="form-horizontal" action="register" method="post">
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="email"
-									style="font-family: sung;">ID</label>
+								<label class="control-label col-sm-2" for="email" style="font-family: sung;">ID</label>
 								<div class="col-sm-10">
 									<input type="text" class="form-control" id="uid" name="uid"
 										placeholder="ID">
@@ -350,40 +346,36 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="pwd"
-									style="font-family: sung;">Pass</label>
+								<label class="control-label col-sm-2" for="pwd" style="font-family: sung;">Pass</label>
 								<div class="col-sm-10">
 									<input type="password" class="form-control" id="upw" name="upw"
 										placeholder="password">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="pwd"
-									style="font-family: sung;">RE Pass</label>
+								<label class="control-label col-sm-2" for="pwd" style="font-family: sung;">RE
+									Pass</label>
 								<div class="col-sm-10">
 									<input type="password" class="form-control" id="upw1"
 										name="upw1" placeholder="re password">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="pwd"
-									style="font-family: sung;">Name</label>
+								<label class="control-label col-sm-2" for="pwd" style="font-family: sung;">Name</label>
 								<div class="col-sm-10">
 									<input type="text" class="form-control" id="uname" name="uname"
 										placeholder="Name">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="pwd"
-									style="font-family: sung;">Birth</label>
+								<label class="control-label col-sm-2" for="pwd" style="font-family: sung;">Birth</label>
 								<div class="col-sm-10">
 									<input type="date" class="form-control" id="uage" name="uage"
 										placeholder="YYDDNN">
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="pwd"
-									style="font-family: sung;">Image:</label>
+								<label class="control-label col-sm-2" for="pwd" style="font-family: sung;">Image:</label>
 								<div class="col-sm-10">
 									<div class="fileDrop"
 										style="width: 300px; height: 100px; border: 1px dotted blue;">
@@ -394,8 +386,7 @@
 							</div>
 
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="pwd"
-									style="font-family: sung;">Profile</label>
+								<label class="control-label col-sm-2" for="pwd" style="font-family: sung;">Profile</label>
 								<div class="col-sm-10 uploadedList"></div>
 							</div>
 					</div>
@@ -414,14 +405,8 @@
 	</div>
 
 	</div>
-	<div class="col-lg-12" style="border-color: #222;">
-		<h1 class="page-header"
-			style="text-align: center; color: white; border-color: #222; font-family: sung;">
-			<br> About us
-		</h1>
-		<br>
-	</div>
 	<!-- 로그인 모달 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<<<<<<< HEAD
 	<div class="w3-row">
 		<div class="w3-half w3-light-grey w3-center" style="height: 600px">
 			<div class="w3-padding-64">
@@ -527,12 +512,15 @@
 			</div>
 		</div>
 	</div>
+=======
+
+>>>>>>> 226912e9bc0767b02105d5e2734af3c0f41b557e
 	<!-- Footer -->
 	<footer>
 		<div class="row" style="">
 			<div class="col-lg-12"
-				style="color: white; margin-left: 40px; font-family: nexon;">
-				<p>Copyright &copy; GROUP RIDING 2017</p>
+				style="color: white; margin-left: 40px; font-family: sung;">
+				<p>Copyright &copy; GROUP RIDING Website 2017</p>
 			</div>
 		</div>
 	</footer>
@@ -566,30 +554,30 @@
 
                
 </script>
-	<script>
-		$(document).ready(
-				function() {
-					var uid = "${uid}";
-					$.getJSON("getAttach/" + uid, function(list) {
+		<script>
+$(document).ready(
+		function() {
+			var uid = "${uid}";
+			$.getJSON("getAttach/" + uid, function(list) {
 
-						var img = $("<img/>").attr('src',
-								"/displayFile?fileName=" + list[0]);
-						img.css("width", "35px");
-						img.css("height", "35px");
+				var img = $("<img/>").attr('src',
+						"/displayFile?fileName=" + list[0]);
+				img.css("width", "35px");
+				img.css("height", "35px");
 
-						$("#profile").prepend(img);
+				$("#profile").prepend(img);
 
-						var logoutform = $("form[data-role='out']");
+				var logoutform = $("form[data-role='out']");
 
-						$("#logout").click(function() {
+				$("#logout").click(function() {
 
-							logoutform.submit();
-						});
-
-					});
-
+					logoutform.submit();
 				});
-	</script>
+
+			});
+
+		});
+</script>
 
 	<script>
 		$("#save").on("click", function() {
