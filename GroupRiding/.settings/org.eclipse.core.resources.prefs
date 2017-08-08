@@ -1,8 +1,11 @@
 eclipse.preferences.version=1
 encoding//src/main/java/group/riding/dao/NoticeDAO.java=UTF-8
 encoding//src/main/java/group/riding/dao/RacePointDAO.java=UTF-8
+encoding//src/main/java/group/riding/dao/UserDAO.java=UTF-8
+encoding//src/main/java/group/riding/dao/UserDAOImpl.java=UTF-8
 encoding//src/main/java/group/riding/service/NoticeService.java=UTF-8
 encoding//src/main/java/group/riding/service/RacePointService.java=UTF-8
+encoding//src/main/java/group/riding/service/UserService.java=UTF-8
 encoding//src/main/java/yjc/wdb/gr/GroupController.java=UTF-8
 encoding//src/main/java/yjc/wdb/gr/NoticeController.java=UTF-8
 encoding//src/main/java/yjc/wdb/gr/UserController.java=UTF-8

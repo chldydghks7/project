@@ -30,5 +30,23 @@
 		where uid=#{uid}
     </select>
     
-
+    <select id="avgspeed" resultType="String">
+    	select avg(avgspeed)
+		from gr_ridinginfo
+		where uid=#{uid}
+    </select>
+    
+    <select id="avgdistance" resultType="String">
+    	select avg(alldistance)
+		from gr_ridinginfo
+		where uid=#{uid}
+    </select>
+    
+    <select id="myGroup1" resultType="String">
+    	select * 
+		from gr_gr 
+		where uid = #{uid}
+    </select>
+    
+    
  </mapper>

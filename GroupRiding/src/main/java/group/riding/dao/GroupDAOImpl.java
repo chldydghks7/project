@@ -94,6 +94,11 @@ public class GroupDAOImpl implements GroupDAO {
 		
 		return session.selectOne(namespace + ".leaderNotice", paramMap);
 	}
+
+	@Override
+	public String joingNo(String uid) throws Exception {
+		return session.selectOne(namespace + ".joingNo", uid);
+	}
 	
 	
 

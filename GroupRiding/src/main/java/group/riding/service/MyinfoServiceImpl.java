@@ -1,9 +1,12 @@
 package group.riding.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import group.riding.bean.MyinfoBean;
 import group.riding.dao.MyinfoDAO;
 
 @Service
@@ -30,6 +33,26 @@ public class MyinfoServiceImpl implements MyinfoService {
 	@Override
 	public String myRiding(String uid) throws Exception {
 		return dao.myRiding(uid);
+	}
+
+	@Override
+	public String avgspeed(String uid) throws Exception {
+		return dao.avgspeed(uid);
+	}
+
+	@Override
+	public String avgdistance(String uid) throws Exception {
+		return dao.avgdistance(uid);
+	}
+
+	/*@Override
+	public List<MyinfoBean> myGroup1(String uid) throws Exception {
+		return dao.myGroup1(uid);
+	}*/
+	
+	@Override
+	public String myGroup1(String uid) throws Exception {
+		return dao.myGroup1(uid);
 	}
 
 	

@@ -94,5 +94,10 @@ public class GroupServiceImpl implements GroupService {
 		return dao.leaderNotice(uid, gr_name);
 	}
 
+	@Override
+	public String joingNo(String uid) throws Exception {
+		return dao.joingNo(uid);
+	}
+
 
 }

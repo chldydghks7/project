@@ -28,4 +28,5 @@ public interface GroupService {
 	
 	public String leaderNotice(String uid, String gr_name) throws Exception;	// 그룹장만 공지생성
 
+	public String joingNo(String uid) throws Exception;	// 참여횟수
 }

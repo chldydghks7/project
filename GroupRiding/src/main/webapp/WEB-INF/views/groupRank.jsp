@@ -57,13 +57,13 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
+				<a class="navbar-brand" href="mainlogin" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
+					<li><a href="mainlogin"  style="color:black; font-family: sung;">Home</a></li>
 					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
@@ -82,7 +82,7 @@
 							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
 
 							<ul class="dropdown-menu">
-								<li><a id="logout">LogOut</a></li>
+								<li><a href="logout" id="logout">LogOut</a></li>
 
 							</ul></li>
 
@@ -99,7 +99,8 @@
 	        <div class="carousel-inner">
 	            <div class="item active">
 	                <div class="carousel-caption" style="bottom:60px;">
-	                    <h1 style="font-size: 40px;position: absolute;margin-left: 450px;top: 20px;font-family: sung;">R&nbsp;A&nbsp;N&nbsp;K</h1></br>
+	                    <h1 style="font-size: 40px;position: absolute;margin-left: 450px;top: 20px;font-family: sung;">RANK</h1></br>
+	                    <h1 style="font-size: 30px;position: absolute;margin-left: 450px;top: 60px;font-family: sung;">랭&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;크</h1>
 	                    <marquee><h3 style="margin-top: 60px;font-family: sung;">랭킹순위권에 들게 되면 해택이 지급됩니다. :)</h3></marquee>
 	                </div>
 	            </div>
@@ -115,7 +116,7 @@
                  <div>
                     &nbsp;
                     </div>
-                    <h1 style="color: white; font-family: sung; color: red;"><strong>Daily Ranking</strong></h1>
+                    <h1 style="color: white; font-family: sung; color: red; "><strong>Daily Ranking</strong></h1>
 
                     <div class="col-lg-12" style="font-family: sung;">
                         <table style="width: 100%;border:1px;border:1px solid white; color: white; text-align: center;" >

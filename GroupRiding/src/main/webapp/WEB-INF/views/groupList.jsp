@@ -100,6 +100,14 @@
     color: #fff!important;
     background-color: black !important;
 }
+@font-face { 
+	font-family: 'nexon'; 
+	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC B.OTF'); 
+	}
+@font-face {
+	font-family: 'nexon2'; 
+	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF'); 
+	}
 </style>
 
 </head>
@@ -115,13 +123,13 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
+				<a class="navbar-brand" href="mainlogin" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
+					<li><a href="mainlogin"  style="color:black; font-family: sung;">Home</a></li>
 					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
@@ -140,7 +148,7 @@
 							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
 
 							<ul class="dropdown-menu">
-								<li><a id="logout">LogOut</a></li>
+								<li><a href="logout" id="logout">LogOut</a></li>
 
 							</ul></li>
 
@@ -176,8 +184,9 @@
 			<div class="col-lg-12">
 				<h1></h1>
 				<ol class="breadcrumb" style="float: right;">
-					<li class="active"><a href="#" style="font-size: 20px; font-family: sung; color: black;">My
+					<li class="active"><a href="groupList" style="font-size: 20px; font-family: sung; color: black;">My
 							Group</a></li>
+					
 					<li><a href="groupListOther" style="font-size: 20px; font-family: sung;color: black;">Other
 							Group</a></li>
 				</ol>
@@ -190,8 +199,8 @@
 			<c:forEach items="${list}" var="group">
 
 
-				<div class="col-md-3 col-sm-6 hero-feature">
-					<div class="thumbnail">
+				<div class="col-md-3 col-sm-6 hero-feature ">
+					<div class="thumbnail w3-card-2">
 						<img src="/displayFile?fileName=${group.gr_icon}"
 							style="width: 250px; height: 100px; border: solid 2px; border-color: black;" />
 						<div class="caption">
@@ -231,7 +240,7 @@
 					<div class="modal-content">
 						<div class="modal-header" style="text-align: center;">
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h3 class="modal-title">Group Create</h3>
+							<h3 class="modal-title" style="font-family: sung;font-size: 30px;">Group Create</h3>
 						</div>
 						<div class="modal-body">
 
@@ -243,19 +252,19 @@
 									name="uid" value="${uid}"> <input type="hidden"
 									name="introduce" value="그룹장">
 								<div class="form-group">
-									<label>그룹이름 </label> <input type="text" class="form-control"
+									<label style="font-family: nexon;font-size: 20px;">그룹이름 </label> <input type="text" class="form-control"
 										id="gr_name" name="gr_name"> <input
 										class="btn btn-default" type="button" id="n_check"
-										value="중복체크" style="float: right; margin-top: 5px;"> <br>
+										value="중복체크" style="float: right; margin-top: 5px; font-family: nexon;"> <br>
 								</div>
 								<div class="form-group">
-									<label>그룹소개 </label>
+									<label style="font-family: nexon;font-size: 20px;">그룹소개 </label>
 									<textarea id="gr_content" class="form-control"
 										name="gr_content"></textarea>
 								</div>
 								<!-- 파일 업로드 -->
 								<div>
-									<label>프로필 이미지 등록 [ File DROP Here ]</label>
+									<label style="font-family: nexon;font-size: 20px;">프로필 이미지 등록 [ File DROP Here ]</label>
 
 									<div>
 										<div class="fileDrop"
@@ -276,9 +285,9 @@
 									</div>
 								</div>
 								<div class="modal-footer">
-									<button class="btn btn-default" type="submit">생성</button>
+									<button class="btn btn-default" type="submit"style="font-family: nexon;">생성</button>
 									<button type="button" class="btn btn-default"
-										data-dismiss="modal">Close</button>
+										data-dismiss="modal" style="font-family: nexon;">Close</button>
 								</div>
 
 							</form>
