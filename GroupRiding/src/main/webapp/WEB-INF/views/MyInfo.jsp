@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
+   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Insert title hereasd</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
@@ -248,7 +250,7 @@
                <span style="font-family: nexon; position: absolute; font-size: 40px;margin-top: 37px;margin-left: 100px;">No : 001</span>
                <span style="font-size: 80px;font-family: nexon;margin-left: 340px; ">Member Card</span>
                <span style="font-family: nexon; position: absolute; font-size: 40px;margin-top: 37px;float: right; margin-left: 50px;">2017-07-20</span>
-               <div style="position: absolute; width: 395px; height: 395px; background-color: black;margin-left: 60px;"></div>
+               <div id="pngg" style="position: absolute; width: 395px; height: 395px; background-color: black;margin-left: 60px;"></div>
                <table style="position:absolute; width: 600px; height: 300px;margin-left: 520px; font-family: nexon;font-size: 40px;">
                
                   <tr> 
@@ -260,9 +262,14 @@
                   <tr>
                      <td>평균거리 - 86km</td>
                   </tr>
+        <!-- 성재형 hi bro-->   	
+           	<c:forEach items="${myGroup1}" var="i">
                   <tr>
-                     <td>소속그룹 - 비앙키, 스페셜라이즈드</td>
+                     <td id="td1">${i.gr_name}</td>
                   </tr>
+            </c:forEach>
+         <!-- 성재형 hi bro--> 
+          
                </table>
                <img style="position: absolute; width: 400px; height: 400px; right: 695px; top: 117px;"  src='./resources/img/yonggold.png'/>
                <img style="position: absolute; width: 180px; height: 180px;margin-top: 412px;left: 970px;z-index: 100;"  src='./resources/img/yong.png'/>
@@ -426,7 +433,14 @@ $(document).ready(
                   "/displayFile?fileName=" + list[0]);
             img.css("width", "35px");
             img.css("height", "35px");
+            
+            var pngg = $("<img/>").attr('src',
+                    "/displayFile?fileName=" + list[0]);
+            pngg.css("width", "395px");
+            pngg.css("height", "395px");	
 
+            $("#pngg").prepend(pngg);
+            
             $("#profile").prepend(img);
 
             var logoutform = $("form[data-role='out']");
@@ -440,6 +454,8 @@ $(document).ready(
 
       });
 </script>
+
+
 
 </body>
 

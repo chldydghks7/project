@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import group.riding.bean.GroupBean;
 import group.riding.bean.MyinfoBean;
 
 @Repository
@@ -47,16 +48,12 @@ public class MyinfoDAOImpl implements MyinfoDAO {
 		return session.selectOne(namespace + ".avgdistance", uid);
 	}
 
-	/*@Override
-	public List<MyinfoBean> myGroup1(String uid) throws Exception {
-		return session.selectList(namespace + ".myGroup1", uid);
-	}*/
-	
 	@Override
-	public String myGroup1(String uid) throws Exception {
-		return session.selectOne(namespace + ".myGroup1", uid);
+	public List<GroupBean> myGroup1(String uid) throws Exception {
+		return session.selectList(namespace + ".myGroup1", uid);
 	}
-
 	
+
+
 
 }

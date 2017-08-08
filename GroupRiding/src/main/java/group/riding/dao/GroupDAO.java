@@ -33,4 +33,7 @@ public interface GroupDAO {
 	public String leaderNotice(String uid, String gr_name) throws Exception;	// 그룹장만 공지생성
 	
 	public String joingNo(String uid) throws Exception;	// 참여횟수
+	
+	public String groupPng(String gr_name) throws Exception;	// 그룹 프로필
+	
 }

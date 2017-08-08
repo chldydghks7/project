@@ -223,6 +223,12 @@
 		and joing="참여"
     </select>
     
+    <!-- 그룹 프로필 -->
+    <select id="groupPng" resultType="String">
+    	select gr_icon
+		from gr_group
+		where gr_name=#{gr_name}
+    </select>
    
 
 </mapper>

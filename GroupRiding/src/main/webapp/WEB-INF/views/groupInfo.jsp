@@ -319,9 +319,9 @@ b_container {
 	</nav>
 
 	<header id="myCarousel" class="carousel slide"
-		style="height: 330px; background-color: black;">
+		style="height: 330px; background: url('/displayFile?fileName=${groupPng}') no-repeat center center scroll;background-size: 100% 330px;'">
 
-		<%-- 	<img src="/displayFile?fileName=${group.gr_icon}"
+		<%-- <img src="/displayFile?fileName=${group.gr_icon}"
 							style="width: 100%; height: 330px; border: solid 2px; border-color: black;position: absolute;" /> --%>
 
 		<!-- Wrapper for slides -->

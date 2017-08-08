@@ -99,5 +99,10 @@ public class GroupServiceImpl implements GroupService {
 		return dao.joingNo(uid);
 	}
 
+	@Override
+	public String groupPng(String gr_name) throws Exception {
+		return dao.groupPng(gr_name);
+	}
+
 
 }

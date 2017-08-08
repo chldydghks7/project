@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import group.riding.bean.GroupBean;
 import group.riding.bean.KmlBean;
 import group.riding.bean.MyPicture;
 import group.riding.bean.MyinfoBean;
@@ -356,7 +357,7 @@ public class UserController {
 			String avgspeed = Myinfoservice.avgdistance(id1);			// 평균속도
 			String avgdistance = Myinfoservice.avgdistance(id1);		// 평균거리
 			
-//			String grouplist = Myinfoservice.myGroup1(id1);
+			List<GroupBean> myGroup1 = Myinfoservice.myGroup1(id1);
 			
 			System.out.print("asdasd" + myAlltime);
 //			String myAlltime = aaa.substring(0, 8);
@@ -379,7 +380,7 @@ public class UserController {
 			model.addAttribute("userInfo", userInfo);
 			model.addAttribute("avgspeed", avgspeed);
 			model.addAttribute("avgdistance", avgdistance);
-//			model.addAttribute("grouplist", grouplist);
+			model.addAttribute("myGroup1", myGroup1);
 			
 			return "MyInfo";
 		}

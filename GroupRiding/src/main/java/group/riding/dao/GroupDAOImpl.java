@@ -99,6 +99,11 @@ public class GroupDAOImpl implements GroupDAO {
 	public String joingNo(String uid) throws Exception {
 		return session.selectOne(namespace + ".joingNo", uid);
 	}
+
+	@Override
+	public String groupPng(String gr_name) throws Exception {
+		return session.selectOne(namespace + ".groupPng", gr_name);
+	}
 	
 	
 
