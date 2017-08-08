@@ -96,7 +96,7 @@ ul.tabs li a {
 	/*--Gives the bevel look with a 1px white border inside the list item--*/
 	outline: none;
 }
-<<<<<<< HEAD
+
 
 ul.tabs li a:hover {
 	background: #ccc;
@@ -271,7 +271,7 @@ b_container {
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main"
+				<a class="navbar-brand" href="mainlogin"
 					style="color: red; font-family: sung; font-size: 30px;">GROUP
 					RIDING</a>
 			</div>
@@ -279,7 +279,7 @@ b_container {
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main" style="color: black; font-family: sung;">Home</a></li>
+					<li><a href="mainlogin" style="color: black; font-family: sung;">Home</a></li>
 
 					<li class="dropdown"><a href="MyInfo?uid=${uid}" style="color: black; font-family: sung;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -305,11 +305,8 @@ b_container {
 							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px; font-family: sung;">${uid}</a>
 
 							<ul class="dropdown-menu">
-<<<<<<< HEAD
+
 								<li><a href="logout" id="logout">LogOut</a></li>
-=======
-								<li><a id="logout">LogOut</a></li>
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
 
 							</ul></li>
 
@@ -323,13 +320,10 @@ b_container {
 
 	<header id="myCarousel" class="carousel slide"
 		style="height: 330px; background-color: black;">
-<<<<<<< HEAD
+
 		<%-- 	<img src="/displayFile?fileName=${group.gr_icon}"
 							style="width: 100%; height: 330px; border: solid 2px; border-color: black;position: absolute;" /> --%>
-=======
-		<%--    <img src="/displayFile?fileName=${group.gr_icon}"
-                     style="width: 100%; height: 330px; border: solid 2px; border-color: black;position: absolute;" /> --%>
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
+
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner">
 			<div class="item active">
@@ -361,26 +355,17 @@ b_container {
 						<form action="createNotice" method="get">
 							<input type="hidden" name="gr_id" value="${group.gr_id}" /> <input
 								type="hidden" name="gr_name" value="${gr_name1}" />
-<<<<<<< HEAD
+
 							<input type="button" id="notice11" class="w3-btn w3-red"
 								style="text-shadow: 1px 1px 0 #444; font-family: nexon; font-size: 25px; position: absolute; left: 1220px; top: 20px;" data-toggle="modal" data-target="#myModal" value="일정등록">
 						</form>
 
-=======
-							<button type="submit" id="notice11" class="w3-btn w3-red"
-								style="text-shadow: 1px 1px 0 #444; font-family: nexon; font-size: 25px; position: absolute; left: 1220px; top: 20px;">일정등록</button>
-						</form>
 
-						
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
 					</div>
 				</div>
 			</div>
 		</div>
-<<<<<<< HEAD
-=======
-		
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
+
 	</header>
 
 	<br>
@@ -410,13 +395,10 @@ b_container {
 								<h2 style="font-family: sung;">#${group.gr_name}의 최근 라이딩</h2>
 								<!-- 슬라이드 -->
 								<a id="mm" href="#"><div id="map_div"></div></a>
-<<<<<<< HEAD
+
 								<input type="button" class="w3-btn w3-red" id="click1"
 									style="font-family: sung;" value="1" />
-=======
-								<button class="w3-btn w3-red" id="click1"
-									style="font-family: sung;">1</button>
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
+
 								<button class="w3-btn w3-red" id="click2"
 									style="font-family: sung;">2</button>
 								<button class="w3-btn w3-red" id="click3"
@@ -492,7 +474,7 @@ b_container {
 								<a href="javascript:ViewLayer();" class="w3-btn w3-black"
 									style="float: right; font-family: nexon;">등록</a>
 							</c:if>
-<<<<<<< HEAD
+
 <!-- 							<div class="w3-bar w3-xlarge" style="position: absolute; left: 300px;">
 								<a href="#" class="w3-button">&laquo;</a> 
 								<a href="#" class="w3-button">1</a> 
@@ -501,8 +483,7 @@ b_container {
 								<a href="#" class="w3-button">4</a>
 								<a href="#" class="w3-button">&raquo;</a>
 							</div> -->
-=======
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
+
 
 							<div id="Pop"
 								style="position: absolute; left: 15.5px; top: 600px; width: 835px; height: 454px; z-index: 2; display: none; background: black; color: #fff;">
@@ -565,15 +546,11 @@ b_container {
 									<div id="die"></div>
 									<!-- <input class="btn btn-default" type="submit" value="수정"> -->
 									<!-- <input class="btn btn-default" type="submit" value="수정"
-<<<<<<< HEAD
+
 											style="float: right"> -->
 									<!-- <button class="btn btn-default" id="Pop_Re_del"
 											style="float: right">삭제</button> -->
-=======
-                                 style="float: right"> -->
-									<!-- <button class="btn btn-default" id="Pop_Re_del"
-                                 style="float: right">삭제</button> -->
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
+
 								</div>
 							</div>
 
@@ -606,7 +583,7 @@ b_container {
 										style="float: right">
 								</form>
 							</div>
-<<<<<<< HEAD
+
 						</div>
 						<!-- End Blog Posts -->
 
@@ -637,38 +614,6 @@ b_container {
 								private double alldistance; //총거리
 								private double avspeed; //평균속도  -->
 						</div>
-=======
-						</div>
-						<!-- End Blog Posts -->
-
-						<!-- Blog Posts -->
-						<div class="news-v3 bg-color-white margin-bottom-60">
-							<a href="groupNotice?gr_name=${gr_name1}">그룹공지 확인</a>
-						</div>
-						<!-- End Blog Posts -->
-
-						<!-- Blog Posts -->
-						<div class="news-v3 bg-color-white margin-bottom-60"></div>
-						<!-- End Blog Posts -->
-
-						<!-- Blog Posts -->
-						<div class="news-v3 bg-color-white margin-bottom-60"></div>
-
-					</div>
-					<!-- End Blog All Posts -->
-
-					<!-- Blog Sidebar -->
-					<div class="col-md-3">
-						<!-- Contacts -->
-						<div class="headline">
-							<h2 style="font-family: sung;">#Profile</h2>
-							<!--                      private String fullName; //프로필 사진경로
-                        private String uid; //아이디
-                        private int riding_no; //라이딩한 횟수
-                        private double alldistance; //총거리
-                        private double avspeed; //평균속도  -->
-						</div>
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
 
 						<ul class="list-unstyled who margin-bottom-30">
 
@@ -683,7 +628,7 @@ b_container {
 								<li class="profile"><a href="#" style="color: black;"><i
 										class=""></i> 아이디 - ${listAll_li.uid}</a></li>
 								<li class="profile"><a href="#" style="color: black;"><i
-										class=""></i> <strong>참여횟수 - ${listAll_li.riding_no}</strong>
+										class=""></i> <strong>참여횟수 - ${joinNo}</strong>
 								</a></li>
 								<li class="profile"><a href="#" style="color: black;"><i
 										class=""></i> <strong>총거리 - ${listAll_li.alldistance}</strong>
@@ -750,7 +695,7 @@ b_container {
 				</div>
 			</div>
 		</div>
-<<<<<<< HEAD
+
 
 		<footer>
 			<div class="row">
@@ -902,51 +847,12 @@ b_container {
 
 	<!--=== Footer Version 1 ===-->
 
-=======
 
-		<footer>
-			<div class="row">
-				<div class="col-lg-12" style="font-family: sung;">
-					<p>Copyright &copy; GROUP RIDING Website 2017</p>
-				</div>
-			</div>
-		</footer>
-		<br> <br>
-
-
-	</div>
-	<script>
-		$(document).ready(
-				function() {
-					var uid = "${uid}";
-					$.getJSON("getAttach/" + uid, function(list) {
-
-						var img = $("<img/>").attr('src',
-								"/displayFile?fileName=" + list[0]);
-						img.css("width", "35px");
-						img.css("height", "35px");
-
-						$("#profile").prepend(img);
-
-						var logoutform = $("form[data-role='out']");
-
-						$("#logout").click(function() {
-
-							logoutform.submit();
-						});
-
-					});
-
-				});
-	</script>
-
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
 
 	<!--/wrapper-->
 
 
-<<<<<<< HEAD
-=======
+
 	<script>
 		$(document)
 				.ready(
@@ -1062,7 +968,7 @@ b_container {
 	<!--/wrapper-->
 
 
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
+
 	<script type="text/javascript">
 		function initMap() {
 			var map = new google.maps.Map(document.getElementById('map'), {
@@ -1124,17 +1030,12 @@ b_container {
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 	<!--[if lt IE 9]>
-<<<<<<< HEAD
+
 	<script src="assets/plugins/respond.js"></script>
 	<script src="assets/plugins/html5shiv.js"></script>
 	<script src="assets/plugins/placeholder-IE-fixes.js"></script>
 	<![endif]-->
-=======
-   <script src="assets/plugins/respond.js"></script>
-   <script src="assets/plugins/html5shiv.js"></script>
-   <script src="assets/plugins/placeholder-IE-fixes.js"></script>
-   <![endif]-->
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
+
 
 
 	<!-- 최근 라이딩 -->
@@ -1167,7 +1068,7 @@ b_container {
 				.push("<span id='a${count.count}'>${i.ridingDate}&nbsp;&nbsp;</span>");
 		</c:forEach>
 
-<<<<<<< HEAD
+
 		
 			$(document).ready(function(){
 				$("#click1").val("최근 라이딩이 없음!");
@@ -1606,163 +1507,62 @@ b_container {
 						routeLayer.events.register("featuresadded", routeLayer, onDrawnFeatures);
 						map1.addLayer(routeLayer);
 					}
-=======
-		$(document).ready(function() {
-			if (startPoint[0] != null) {
-				searchRoute(startPoint[0], endPoint[0]);
-				$("#mm").prepend(notice_title[0]);
-				$("#mm").prepend(ridingDate[0]);
-
-				$(".a2").hide();
-				$(".a3").hide();
-				$(".a4").hide();
-				$(".a5").hide();
-
-				$("#a2").hide();
-				$("#a3").hide();
-				$("#a4").hide();
-				$("#a5").hide();
-			} else {
-				alert("최근 없음!");
-			}
-		});
-
-		$("#click2").on("click", function() {
-			if (startPoint[1] != null) {
-				searchRoute(startPoint[1], endPoint[1]);
-				$("#mm").prepend(notice_title[1]);
-				$("#mm").prepend(ridingDate[1]);
-
-				$(".a1").hide();
-				$(".a3").hide();
-				$(".a4").hide();
-				$(".a5").hide();
-
-				$("#a1").hide();
-				$("#a3").hide();
-				$("#a4").hide();
-				$("#a5").hide();
-			} else {
-				alert("최근 없음!");
-			}
-		});
-
-		$("#click3").on("click", function() {
-			if (startPoint[2] != null) {
-				searchRoute(startPoint[2], endPoint[2]);
-				$("#mm").prepend(notice_title[2]);
-				$("#mm").prepend(ridingDate[2]);
-
-				$(".a1").hide();
-				$(".a2").hide();
-				$(".a4").hide();
-				$(".a5").hide();
-
-				$("#a1").hide();
-				$("#a2").hide();
-				$("#a4").hide();
-				$("#a5").hide();
-			} else {
-				alert("최근 없음!");
-			}
-		});
-
-		$("#click4").on("click", function() {
-			if (startPoint[3] != null) {
-				searchRoute(startPoint[3], endPoint[3]);
-				$("#mm").prepend(notice_title[3]);
-				$("#mm").prepend(ridingDate[3]);
-
-				$(".a1").hide();
-				$(".a2").hide();
-				$(".a3").hide();
-				$(".a5").hide();
-
-				$("#a1").hide();
-				$("#a2").hide();
-				$("#a3").hide();
-				$("#a5").hide();
-			} else {
-				alert("최근 없음!");
-			}
-		});
-
-		$("#click5").on("click", function() {
-			if (startPoint[4] != null) {
-				searchRoute(startPoint[4], endPoint[4]);
-				$("#mm").prepend(notice_title[4]);
-				$("#mm").prepend(ridingDate[4]);
-
-				$(".a1").hide();
-				$(".a2").hide();
-				$(".a3").hide();
-				$(".a4").hide();
-
-				$("#a1").hide();
-				$("#a2").hide();
-				$("#a3").hide();
-				$("#a4").hide();
-			} else {
-				alert("최근 없음!");
-			}
-		});
-
-		//경로 정보 로드
-		function searchRoute(startPoint, endPoint) {
-
-			var startx = new String(startPoint).substr(4, 15); // 경도 자르기
-			var starty = new String(startPoint).substr(24); // 경도 자르기
-
-			var stopx = new String(endPoint).substr(4, 15); // 경도 자르기
-			var stopy = new String(endPoint).substr(24); // 경도 자르기
-
-			var routeFormat = new Tmap.Format.KML({
-				extractStyles : true,
-				extractAttributes : true
-			});
-			var startX = new Object(startx);
-			var startY = new Object(starty);
-			var endX = new Object(stopx)// 14136027.789587;
-			var endY = new Object(stopy)// 4517572.4745242;
-			var urlStr = "https://apis.skplanetx.com/tmap/routes?version=1&format=xml";
-			urlStr += "&startX=" + startX;
-			urlStr += "&startY=" + startY;
-			urlStr += "&endX=" + endX;
-			urlStr += "&endY=" + endY;
-			urlStr += "&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b";
-			var prtcl = new Tmap.Protocol.HTTP({
-				url : urlStr,
-				format : routeFormat
-			});
-			var routeLayer = new Tmap.Layer.Vector("route", {
-				protocol : prtcl,
-				strategies : [ new Tmap.Strategy.Fixed() ]
-			});
-			routeLayer.events.register("featuresadded", routeLayer,
-					onDrawnFeatures);
-			map.addLayer(routeLayer);
-		}
-
-		//경로 그리기 후 해당영역으로 줌
-		function onDrawnFeatures(e) {
-			map.zoomToExtent(this.getDataExtent());
-		}
-	</script>
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
-
+				
 					//경로 그리기 후 해당영역으로 줌
 					function onDrawnFeatures(e){
-						map1.zoomToExtent(this.getDataExtent());
-					}	// function searchRoute(start, stop){
+					    map1.zoomToExtent(this.getDataExtent());
+					}	
+				/////////////////////////
+				// racePoint
+				/////////////////////////
+					var pr_3857 = new Tmap.Projection("EPSG:3857");//tmap 좌표체계
+	         		var pr_4326 = new Tmap.Projection("EPSG:4326");//geolocation 좌표체계
 
-<<<<<<< HEAD
+	         		function get3857LonLat(coordX, coordY) {
+	               		return new Tmap.LonLat(coordX, coordY).transform(pr_4326, pr_3857);
+	           		}
+
+	           		var markerLayer11 = new Tmap.Layer.Markers("MarkerLayer");
+	           		map1.addLayer(markerLayer11);
+	           		
+	           	 $.ajax({
+                	 url:"getRacePoint",
+                	 type:"get",
+                	 success:function(data){
+                		 console.log(data);
+                	 var racepoint=[];
+                	 
+                	 for(var i=0;i<data.length;i++)
+                		 {
+                		   racepoint.push(data[i].start_location);
+                		   racepoint.push(data[i].stop_location);
+                		 }
+                	 
+                	 
+                	 for(var i=0;i<racepoint.length;i++)
+                		 {
+                		 
+                		 var size = new Tmap.Size(24,38);
+                         var offset = new Tmap.Pixel(-(size.w/2), -(size.h/2));
+                         var icon = new Tmap.Icon('./resources/img/racepoint.png', size, offset);
+                		 
+                		   var location=racepoint[i].split(",");
+                		           		   
+                		   var tlocation=get3857LonLat(parseFloat(location[0]), parseFloat(location[1]));
+                		                     
+                           var marker11 = new Tmap.Markers(tlocation, icon);
+                            
+                           markerLayer11.addMarker(marker11);
+       		   
+                		 }
+                	 
+                	 }	// success:function(data){
+           	 
+                 });	// ajax
+				
 		
 	</script>
 
 
-
-=======
-
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
 </body>
 </html>

@@ -1,7 +1,10 @@
 package yjc.wdb.gr;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -63,6 +66,12 @@ public class NoticeController {
 		
 		model.addAttribute("info", info);
 		model.addAttribute("memberjoininfo", memberjoininfo);
+		
+		SimpleDateFormat mSimpleDateFormat = new SimpleDateFormat ( "yyyy-MM-dd", Locale.KOREA );
+		Date currentTime = new Date ();
+		String mTime = mSimpleDateFormat.format ( currentTime );
+		System.out.println ("현재 : " + mTime );
+		model.addAttribute("now1", mTime);
 		
 	}
 	

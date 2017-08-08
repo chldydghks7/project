@@ -180,7 +180,9 @@ public class GroupController {
 		model.addAttribute("mem_li", pic.getFullname());
 		model.addAttribute("memList", memList);
 		System.out.println("사진은?? ??"+pic.getFullname());
-
+		
+		String joinNo = service.joingNo(uid);
+		model.addAttribute("joinNo", joinNo);
 
 		return "groupInfo";
 	

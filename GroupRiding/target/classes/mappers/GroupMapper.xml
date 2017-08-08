@@ -215,6 +215,14 @@
        update bbs_writing set view_number = view_number + 1 where writing_id =#{writing_id}
     </update>
     
+    <!-- 참여횟수 -->
+    <select id="joingNo" resultType="String">
+    	select count(joing)
+		from gr_usernotijoin
+		where uid=#{uid}
+		and joing="참여"
+    </select>
+    
    
 
 </mapper>

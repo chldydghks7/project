@@ -41,16 +41,17 @@ public class UserController {
 	private MyinfoService Myinfoservice;
 
 	
-	@RequestMapping(value="register", method=RequestMethod.GET)	
-	public void getForm(@ModelAttribute UserBean user) {
-		
-	}
+//	@RequestMapping(value="register", method=RequestMethod.GET)	
+//	public void getForm(@ModelAttribute UserBean user) {
+//		
+//	}
 	
 	@RequestMapping(value="register", method=RequestMethod.POST)
 	public String create(UserBean user, RedirectAttributes rttr) throws Exception {
 		System.out.println("a :" + user.getFiles());
 		service.register(user);
-		return "signIn";
+		
+		return "mainlogin";
 	}
 	
 	@RequestMapping(value= "login", method=RequestMethod.GET)
@@ -65,7 +66,7 @@ public class UserController {
 		UserBean bean = service.login(dto);
 		
 		if(bean == null) {
-			return "login";
+			return "main";
 		}
 		
 		System.out.println("ID : " + bean.getUid());
@@ -74,9 +75,6 @@ public class UserController {
 		session.setAttribute("uname", bean.getUname());
 		session.setAttribute("icon", service.getAttach(bean.getUid()));
 
-		
-		
-		
 		
 		model.addAttribute("userBean", bean);
 		
