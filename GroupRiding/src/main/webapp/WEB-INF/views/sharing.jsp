@@ -241,7 +241,7 @@
       <!-- /.container -->
    </nav>
 
-       <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing2.jpeg') no-repeat center center scroll;">
+       <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing.jpg') no-repeat center center scroll;">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
@@ -440,6 +440,28 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyQjki7axvtCvqFULjxcicQimSUtg0tvk">
     </script>
    <script type="text/javascript">
+   $(document).ready(
+			function() {
+				var uid = "${uid}";
+				$.getJSON("getAttach/" + uid, function(list) {
+
+					var img = $("<img/>").attr('src',
+							"/displayFile?fileName=" + list[0]);
+					img.css("width", "35px");
+					img.css("height", "35px");
+
+					$("#profile").prepend(img);
+
+					var logoutform = $("form[data-role='out']");
+
+					$("#logout").click(function() {
+
+						logoutform.submit();
+					});
+
+				});
+
+			
      
       
       var map;
@@ -862,6 +884,8 @@
                setTimeout(refresh, 500); 
 
         });
+      
+			});
 
    </script>
    <!--[if lt IE 9]>

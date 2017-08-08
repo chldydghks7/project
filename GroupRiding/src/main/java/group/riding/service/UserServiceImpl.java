@@ -110,6 +110,12 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		dao.updateGrData(startDate, stopDate, kmlid,uid);
 	}
+
+	@Override
+	public void insertRidingInfoNotice(RidingInfo info) throws Exception {
+		// TODO Auto-generated method stub
+		dao.insertRidingInfoNotice(info);
+	}
 	
 
 }

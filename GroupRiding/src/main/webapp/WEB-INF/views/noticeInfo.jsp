@@ -284,18 +284,22 @@ $(document).ready(function(){
             map.addControl(new Tmap.Control.MousePosition());
 		    searchRoute();
 
-
+		   
 		//경로 정보 로드
 		function searchRoute(){
 			var startPoint = "${info.start_point}";
+			
 			var endPoint = "${info.end_point}";
 			// lon=14318318.42280631,lat=4286211.12903949
-			var startx = new String(startPoint).substr(4, 17);   // 경도 자르기
-			var starty = new String(startPoint).substr(26);   // 경도 자르기
-              
-			var stopx = new String(endPoint).substr(4, 17);   // 경도 자르기
-            var stopy = new String(endPoint).substr(26);   // 경도 자르기
-                
+			startPoint=startPoint.split(",");
+			
+			endPoint=endPoint.split(",");
+			
+			 var startx = startPoint[0];   // 경도 자르기
+			var starty =  startPoint[1];   // 경도 자르기
+			
+			var stopx = endPoint[0];   // 경도 자르기
+			var stopy = endPoint[1];   // 경도 자르기
 
 		    var routeFormat = new Tmap.Format.KML({extractStyles:true, extractAttributes:true});
 		    var startX = new Object(startx);

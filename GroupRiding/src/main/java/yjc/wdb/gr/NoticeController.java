@@ -7,6 +7,8 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -76,6 +78,68 @@ public class NoticeController {
 		model.addAttribute("list", list);
 		model.addAttribute("iiii", iiii);	// 占쏙옙占싱듸옙 占쏙옙占쏙옙
 
+	}
+	
+	//앱에 나의 일정을 보여주기위해서
+	@RequestMapping(value="MyScheduleApp", method=RequestMethod.GET, produces="text/plain;charset=UTF-8")	
+	@ResponseBody
+	public  String calendarApp(String uid,String callback) throws Exception{
+		List<NoticeBean> listNotice = service.userNotice(uid);
+		List<RidingInfoBean> listRidingInfo =service.ridingDate(uid);
+		
+		net.sf.json.JSONArray array= new net.sf.json.JSONArray();
+		JSONObject result= new JSONObject();
+		
+		 result.put("noticeArray", array.fromObject(listNotice));
+		 result.put("RidingInfoArray", array.fromObject(listRidingInfo));
+		 
+		 return callback+"("+result+")";
+
+		
+	}
+	
+	@RequestMapping(value="NoticeInfoApp", method=RequestMethod.GET, produces="text/plain;charset=UTF-8")	
+	@ResponseBody
+	public  String NotieInfoApp(int noticeId,String callback) throws Exception{
+		
+		NoticeBean NoticeApp=service.infoNotice(noticeId);
+		
+		net.sf.json.JSONObject result=new net.sf.json.JSONObject();
+		
+		
+		
+		result.put("NoticeApp", result.fromObject(NoticeApp));
+		
+		
+		 
+		 return callback+"("+result+")";
+
+		
+	}
+	
+	
+		/*	앱에서 공지에 참여한 멤버 가져올려고함*/
+	@RequestMapping(value="JoinMemberGet", method=RequestMethod.GET, produces="text/plain;charset=UTF-8")	
+	@ResponseBody
+	public  String JoinMemberGet(int noticeId,String callback) throws Exception{
+		
+		
+		List<String> memlist=service.JoinMemberGet(noticeId);
+		
+		
+		JSONObject result= new JSONObject();
+		
+		result.put("memlist", memlist);
+		
+		
+		
+	
+		
+		
+		 
+		 return callback+"("+result+")";
+
+		
 	}
 	
 

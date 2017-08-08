@@ -77,6 +77,12 @@
 	
 	</insert>
 	
+	<!-- 라이딩 인포 테이블  noticeID 삽입-->
+	<insert id="insert_riding_info_Notice">
+	insert into gr_ridinginfo(uid,alltime,startDate,alldistance,avgspeed,kml_id,Kcal,noticeId) values(#{uid},#{alltime},#{startDate},#{alldistance},#{avgspeed},#{kml_id},#{Kcal},#{noticeId})
+	
+	</insert>
+	
 	<!-- 라이딩 중 찍은사진 보여주기-->
 	<select id="showMyPic" resultType="MyPicture">
 	select picture_id,picture_path,picture_location from gr_picture where uid=#{uid}

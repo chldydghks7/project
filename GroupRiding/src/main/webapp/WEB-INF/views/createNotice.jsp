@@ -702,7 +702,7 @@
 					$("#startCoordX").val($(this).next().val());
 					$("#startCoordY").val($(this).next().next().val());
 					
-					$("#startPoint").val("lon=" + $(this).next().val() + ",lat=" +  $(this).next().next().val());
+					$("#startPoint").val( $(this).next().val() + "," +  $(this).next().next().val());
 
 				});
 
@@ -714,7 +714,7 @@
 					$("#endCoordY").val($(this).next().next().val());
 					
 					
-					$("#endPoint").val("lon=" + $(this).next().val() + ",lat=" +  $(this).next().next().val());
+					$("#endPoint").val( $(this).next().val() + "," +  $(this).next().next().val());
 						
 				});
 
@@ -757,11 +757,7 @@
 
 	</script>
 
-<!--[if lt IE 9]>
-   <script src="assets/plugins/respond.js"></script>
-   <script src="assets/plugins/html5shiv.js"></script>
-   <script src="assets/plugins/placeholder-IE-fixes.js"></script>
-   <![endif]-->
+
 
 </body>
 </html>

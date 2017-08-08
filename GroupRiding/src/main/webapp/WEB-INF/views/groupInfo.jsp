@@ -990,20 +990,21 @@ b_container {
 		//경로 정보 로드
 		function searchRoute(startPoint, endPoint) {
 
-			var startx = new String(startPoint).substr(4, 15); // 경도 자르기
-			var starty = new String(startPoint).substr(24); // 경도 자르기
-
-			var stopx = new String(endPoint).substr(4, 15); // 경도 자르기
-			var stopy = new String(endPoint).substr(24); // 경도 자르기
+			
+			
+			var start = startPoint.split(","); 
+		
+			var stop = endPoint.split(","); // 경도 자르기
+			
 
 			var routeFormat = new Tmap.Format.KML({
 				extractStyles : true,
 				extractAttributes : true
 			});
-			var startX = new Object(startx);
-			var startY = new Object(starty);
-			var endX = new Object(stopx)// 14136027.789587;
-			var endY = new Object(stopy)// 4517572.4745242;
+			var startX = new Object(start[0]);
+			var startY = new Object(start[1]);
+			var endX = new Object(stop[0])// 14136027.789587;
+			var endY = new Object(stop[1])// 4517572.4745242;
 			var urlStr = "https://apis.skplanetx.com/tmap/routes?version=1&format=xml";
 			urlStr += "&startX=" + startX;
 			urlStr += "&startY=" + startY;

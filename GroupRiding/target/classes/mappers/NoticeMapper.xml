@@ -26,6 +26,7 @@
 		from gr_notice n, gr_usernotijoin u
 		where n.noticeId = u.noticeId
 		and u.uid=#{uid}
+		order by ridingDate;
 		
 		<!-- select * from gr_notice, gr_gr
 		where gr_notice.gr_name = gr_gr.gr_name 
@@ -108,6 +109,16 @@
 		values (#{uid}, #{noticeId}, "불참")
 	</insert>
 	
+  <!--  공지에 참여한 멤버리스트 가져오기 -->
+	<select id="getJoinMember" resultType="String">
+		select b.uid from 
+			gr_notice a , gr_usernotijoin b
+			where a.noticeId=b.noticeId
+			and a.noticeId=#{noticeId}
+			and b.joing='참여';
+	
+	
+	</select>
 
 	
 </mapper>

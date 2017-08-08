@@ -29,5 +29,7 @@ public interface NoticeService {
 	
 	public List<NoticeBean> getjoininfo(int noticeId,String gr_name)throws Exception;
 	
+	public List<String> JoinMemberGet(int noticeId)throws Exception;//공지에 참여한 멤버 앱에 전달
+	
 	
 }

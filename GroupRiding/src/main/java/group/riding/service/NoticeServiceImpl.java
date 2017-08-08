@@ -86,6 +86,12 @@ public class NoticeServiceImpl implements NoticeService {
 		// TODO Auto-generated method stub
 		return dao.getjoininfo(noticeId, gr_name);
 	}
+
+	@Override
+	public List<String> JoinMemberGet(int noticeId) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.JoinMemberGet(noticeId);
+	}
 	
 
 }

@@ -38,4 +38,6 @@ public interface NoticeDAO {
 	public List<String> joinMem2(String uid) throws Exception;
 	
 	public void joinjoin1(String uid, String noticeId) throws Exception;
+	
+	public List<String> JoinMemberGet(int noticeId)throws Exception; //공지에 참여한 멤버 앱에 전달
 }
