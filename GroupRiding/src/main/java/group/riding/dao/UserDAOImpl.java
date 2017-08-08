@@ -125,5 +125,11 @@ public class UserDAOImpl implements UserDAO {
 		session.update(namespace+".update_gr_data", input);
 	}
 
+	@Override
+	public void insertRidingInfoNotice(RidingInfo info) throws Exception {
+		// TODO Auto-generated method stub
+		session.insert(namespace+".insert_riding_info_Notice", info);
+	}
+
 
 }

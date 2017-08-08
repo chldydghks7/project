@@ -1068,6 +1068,135 @@ b_container {
 				.push("<span id='a${count.count}'>${i.ridingDate}&nbsp;&nbsp;</span>");
 		</c:forEach>
 
+<<<<<<< HEAD
+		$(document).ready(function() {
+			if (startPoint[0] != null) {
+				searchRoute(startPoint[0], endPoint[0]);
+				$("#mm").prepend(notice_title[0]);
+				$("#mm").prepend(ridingDate[0]);
+
+				$(".a2").hide();
+				$(".a3").hide();
+				$(".a4").hide();
+				$(".a5").hide();
+
+				$("#a2").hide();
+				$("#a3").hide();
+				$("#a4").hide();
+				$("#a5").hide();
+			} else {
+				alert("최근 없음!");
+			}
+		});
+
+		$("#click2").on("click", function() {
+			if (startPoint[1] != null) {
+				searchRoute(startPoint[1], endPoint[1]);
+				$("#mm").prepend(notice_title[1]);
+				$("#mm").prepend(ridingDate[1]);
+
+				$(".a1").hide();
+				$(".a3").hide();
+				$(".a4").hide();
+				$(".a5").hide();
+
+				$("#a1").hide();
+				$("#a3").hide();
+				$("#a4").hide();
+				$("#a5").hide();
+			} else {
+				alert("최근 없음!");
+			}
+		});
+
+		$("#click3").on("click", function() {
+			if (startPoint[2] != null) {
+				searchRoute(startPoint[2], endPoint[2]);
+				$("#mm").prepend(notice_title[2]);
+				$("#mm").prepend(ridingDate[2]);
+
+				$(".a1").hide();
+				$(".a2").hide();
+				$(".a4").hide();
+				$(".a5").hide();
+
+				$("#a1").hide();
+				$("#a2").hide();
+				$("#a4").hide();
+				$("#a5").hide();
+			} else {
+				alert("최근 없음!");
+			}
+		});
+
+		$("#click4").on("click", function() {
+			if (startPoint[3] != null) {
+				searchRoute(startPoint[3], endPoint[3]);
+				$("#mm").prepend(notice_title[3]);
+				$("#mm").prepend(ridingDate[3]);
+
+				$(".a1").hide();
+				$(".a2").hide();
+				$(".a3").hide();
+				$(".a5").hide();
+
+				$("#a1").hide();
+				$("#a2").hide();
+				$("#a3").hide();
+				$("#a5").hide();
+			} else {
+				alert("최근 없음!");
+			}
+		});
+
+		$("#click5").on("click", function() {
+			if (startPoint[4] != null) {
+				searchRoute(startPoint[4], endPoint[4]);
+				$("#mm").prepend(notice_title[4]);
+				$("#mm").prepend(ridingDate[4]);
+
+				$(".a1").hide();
+				$(".a2").hide();
+				$(".a3").hide();
+				$(".a4").hide();
+
+				$("#a1").hide();
+				$("#a2").hide();
+				$("#a3").hide();
+				$("#a4").hide();
+			} else {
+				alert("최근 없음!");
+			}
+		});
+
+		//경로 정보 로드
+		function searchRoute(startPoint, endPoint) {
+
+			
+			
+			var start = startPoint.split(","); 
+		
+			var stop = endPoint.split(","); // 경도 자르기
+			
+
+			var routeFormat = new Tmap.Format.KML({
+				extractStyles : true,
+				extractAttributes : true
+			});
+			var startX = new Object(start[0]);
+			var startY = new Object(start[1]);
+			var endX = new Object(stop[0])// 14136027.789587;
+			var endY = new Object(stop[1])// 4517572.4745242;
+			var urlStr = "https://apis.skplanetx.com/tmap/routes?version=1&format=xml";
+			urlStr += "&startX=" + startX;
+			urlStr += "&startY=" + startY;
+			urlStr += "&endX=" + endX;
+			urlStr += "&endY=" + endY;
+			urlStr += "&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b";
+			var prtcl = new Tmap.Protocol.HTTP({
+				url : urlStr,
+				format : routeFormat
+=======
 
 		
 			$(document).ready(function(){
@@ -1146,6 +1275,7 @@ b_container {
 				} else {
 					alert("최근 없음!");
 				}
+>>>>>>> 817e0a157d25c2e6cb9ce2de1861c66141fb3118
 			});
 			
 			$("#click3").on("click", function(){

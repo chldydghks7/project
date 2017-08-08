@@ -227,6 +227,26 @@ public class UserController {
 			 
 		 }
 		 
+		 //라이딩 인포 테이블에 총거리,총시간 삽입,noticeID삽입
+		 @RequestMapping(value="insert_riding_info_Notice", method=RequestMethod.GET)
+		 @ResponseBody
+		 public String insertRidinginfoNotice(RidingInfo info,String callback)throws Exception{
+			 System.out.println("라이딩인포노티스 삽입");
+			 
+			 
+			 service.insertRidingInfoNotice(info);
+
+			 JSONObject json= new JSONObject();
+			 
+			 json.put("result", "success");
+			 
+			
+			 
+		
+			 
+			 return callback+"("+json+")";
+			 
+		 }
 		 //라이딩중 찍은사진 보기 sharingform 에 내사진 에 띄우기위해
 		 @RequestMapping(value="showMyPicture", method=RequestMethod.GET)
 		 @ResponseBody

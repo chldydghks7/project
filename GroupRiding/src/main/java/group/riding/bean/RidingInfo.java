@@ -11,6 +11,7 @@ public class RidingInfo {
 	private int riding_id;
 	private int Kcal;
 	private String kml_center;
+	private int noticeId;
 	
 	
 	
@@ -77,7 +78,14 @@ public class RidingInfo {
 	public void setKcal(int kcal) {
 		Kcal = kcal;
 	}
+	public int getNoticeId() {
+		return noticeId;
+	}
+	public void setNoticeId(int noticeId) {
+		this.noticeId = noticeId;
+	}
 
+	
 	
 	
 	

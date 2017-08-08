@@ -5,11 +5,17 @@
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html > <!--<![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-   <title>Group Riding</title>
+   <title>Hot place</title>
 
    <!-- Meta -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="">
+   <meta name="author" content="">
+
+  <!-- Meta -->
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="description" content="">
@@ -23,7 +29,7 @@
 
     <!-- Custom Fonts -->
     <link href="./resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-   
+
    <style>
          .logo, .footer-logo {
          width: 200px;
@@ -122,7 +128,7 @@
 </head>
 
 <body>
-    <!-- Navigation -->
+   <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
       <div class="container">
          <!-- Brand and toggle get grouped for better mobile display -->
@@ -133,13 +139,13 @@
                   class="icon-bar"></span> <span class="icon-bar"></span> <span
                   class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="mainlogin" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
+            <a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
          </div>
          <!-- Collect the nav links, forms, and other content for toggling -->
          <div class="collapse navbar-collapse"
             id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-               <li><a href="mainlogin"  style="color:black; font-family: sung;">Home</a></li>
+               <li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
                <li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
                <li class="dropdown"><a href="#" class="dropdown-toggle"
                   data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
@@ -182,16 +188,15 @@
     </header>
 
       <!--=== Content Part ===-->
-      <div class="container">
+      <div class="container content">
          <div class="row">
 
             <!-- Begin Content -->
-          
-               <!-- Basic Map -->
-               <div class="headline"><h3>Basic Map</h3></div>
-               <div id="map" class="map margin-bottom-50" ></div>
+            <div>
+              
+               <div id="map" class="map margin-bottom-50" style="margin-top: 60px;"></div>
                <!-- End Basic Map -->
-                </div>
+               
                <!-- Modal -->
       <div class = "modal-dialog">
          <div class = "modal-content">
@@ -219,24 +224,29 @@
             </div>
          </div>
       </div>
-           
+            </div>
             <!-- End Content -->
+         </div>
          
-         
-          
-          <footer>
-            <div class="row">
+           <footer>
+            <div class="row" style="margin-top: 70%;">
                 <div class="col-lg-12">
                     <p style="font-family: sung;">Copyright &copy; Your Website 2017</p>
                 </div>
             </div>
         </footer>
          
+         
+         
+         
+         
       </div><!--/container-->
       <!--=== End Content Part ===-->
+
+      <!--=== Footer Version 1 ===-->
+    
    
-   
-    <!-- jQuery -->
+  <!-- jQuery -->
     <script src="./resources/js2/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -245,28 +255,8 @@
    
      <!-- 구글맵 -->
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN--zcfp4teCptRjts9sB0EDpa98Kyiu0&callback=initMap" async defer></script>
+
    <script type="text/javascript">
-   $(document).ready(
-         function() {
-            var uid = "${uid}";
-            $.getJSON("getAttach/" + uid, function(list) {
-
-               var img = $("<img/>").attr('src',
-                     "/displayFile?fileName=" + list[0]);
-               img.css("width", "35px");
-               img.css("height", "35px");
-
-               $("#profile").prepend(img);
-
-               var logoutform = $("form[data-role='out']");
-
-               $("#logout").click(function() {
-
-                  logoutform.submit();
-               });
-
-            });
-   
    
    
    function initMap() {
@@ -471,9 +461,6 @@
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
    }
-   
-   
-         });
    </script>
 <!--[if lt IE 9]>
    <script src="assets/plugins/respond.js"></script>

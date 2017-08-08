@@ -38,6 +38,8 @@ public interface UserDAO {
 	
 	public void insertRidingInfo(RidingInfo info)throws Exception; //riding info �뀒�씠釉� 珥앷굅由�,珥앹떆媛� 諛뤿뜲�씠�꽣 �궫�엯
 	
+	public void insertRidingInfoNotice(RidingInfo info)throws Exception;//riding info 테이블 총거리,총시간 및데이터 삽입 noticeID 역시 삽입
+	
 	public List<MyPicture> showMyPic(String uid)throws Exception;
 	
 	public int selectkmlid()throws Exception;

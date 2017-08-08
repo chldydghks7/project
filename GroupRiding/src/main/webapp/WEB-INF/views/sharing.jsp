@@ -194,87 +194,10 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-	 <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Group Riding</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Page <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="MyInfo?uid=${uid}">My Information</a>
-                            </li>
-                            
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Group <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="groupList">Group List</a>
-                            </li>
-                            <li>
-                                <a href="racePoint">Race Point</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="groupRank">Rank</a>
-                    </li>
-                    <li>
-                        <a href="sharing">Sharing</a>
-                    </li>
-                    <li>
-                        <a href="hotPlaceMap">Hot Place</a>
-                    </li>
-                    
-                    <li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" style="font-size: 20px;">${uid}</a>
-						
-						<ul class="dropdown-menu">
-							<li>	
-						        <a href="logout" id="logout" >LogOut</a>
-				   			</li>
-						
-						</ul>
-									
-								
-										
-										
-									
-				    </li>
-				    
-				    <li id="profile"></li>
-				    
-				    
-                    
-                    
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
 
-		 <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing.jpg') no-repeat center center scroll;">
+		
 
-=======
+
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
       <div class="container">
          <!-- Brand and toggle get grouped for better mobile display -->
@@ -322,8 +245,10 @@
       <!-- /.container -->
    </nav>
 
+
+
        <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing2.jpeg') no-repeat center center scroll;">
->>>>>>> 266503f2666c16c6270f9f68c1fa220cac19f307
+
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
@@ -523,27 +448,29 @@
     </script>
    <script type="text/javascript">
    $(document).ready(
-         function() {
-            var uid = "${uid}";
-            $.getJSON("getAttach/" + uid, function(list) {
 
-               var img = $("<img/>").attr('src',
-                     "/displayFile?fileName=" + list[0]);
-               img.css("width", "35px");
-               img.css("height", "35px");
+			function() {
+				var uid = "${uid}";
+				$.getJSON("getAttach/" + uid, function(list) {
 
-               $("#profile").prepend(img);
+					var img = $("<img/>").attr('src',
+							"/displayFile?fileName=" + list[0]);
+					img.css("width", "35px");
+					img.css("height", "35px");
 
-               var logoutform = $("form[data-role='out']");
+					$("#profile").prepend(img);
 
-               $("#logout").click(function() {
+					var logoutform = $("form[data-role='out']");
 
-                  logoutform.submit();
-               });
+					$("#logout").click(function() {
 
-            });
+						logoutform.submit();
+					});
 
-         
+				});
+
+			
+
      
       
       var map;
@@ -967,7 +894,8 @@
 
         });
       
-         });
+
+			});
 
    </script>
    <!--[if lt IE 9]>
