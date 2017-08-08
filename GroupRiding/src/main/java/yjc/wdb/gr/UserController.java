@@ -21,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import group.riding.bean.KmlBean;
 import group.riding.bean.MyPicture;
+import group.riding.bean.MyinfoBean;
 import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
 import group.riding.bean.UserData;
@@ -40,16 +41,17 @@ public class UserController {
 	private MyinfoService Myinfoservice;
 
 	
-	@RequestMapping(value="register", method=RequestMethod.GET)	
-	public void getForm(@ModelAttribute UserBean user) {
-		
-	}
+//	@RequestMapping(value="register", method=RequestMethod.GET)	
+//	public void getForm(@ModelAttribute UserBean user) {
+//		
+//	}
 	
 	@RequestMapping(value="register", method=RequestMethod.POST)
 	public String create(UserBean user, RedirectAttributes rttr) throws Exception {
 		System.out.println("a :" + user.getFiles());
 		service.register(user);
-		return "signIn";
+		
+		return "mainlogin";
 	}
 	
 	@RequestMapping(value= "login", method=RequestMethod.GET)
@@ -64,7 +66,7 @@ public class UserController {
 		UserBean bean = service.login(dto);
 		
 		if(bean == null) {
-			return "login";
+			return "main";
 		}
 		
 		System.out.println("ID : " + bean.getUid());
@@ -73,9 +75,6 @@ public class UserController {
 		session.setAttribute("uname", bean.getUname());
 		session.setAttribute("icon", service.getAttach(bean.getUid()));
 
-		
-		
-		
 		
 		model.addAttribute("userBean", bean);
 		
@@ -369,26 +368,39 @@ public class UserController {
 			
 			String id1 = (String) session.getAttribute("uid");
 			
-			String myAlldistance = Myinfoservice.myAlldistance(id1);
-			String myAlltime = Myinfoservice.myAlltime(id1);
-			String myGr_gr = Myinfoservice.myGr_gr(id1);
-			String myRiding = Myinfoservice.myRiding(id1);
+			String myAlldistance = Myinfoservice.myAlldistance(id1);	// 총거리
+			String myAlltime = Myinfoservice.myAlltime(id1);			// 총사간
+			String myGr_gr = Myinfoservice.myGr_gr(id1);				// 가입 그룹수 
+			String myRiding = Myinfoservice.myRiding(id1);				// 라이딩 수
+			UserBean userInfo = service.user(id1);						// 회원 정보
+			String avgspeed = Myinfoservice.avgdistance(id1);			// 평균속도
+			String avgdistance = Myinfoservice.avgdistance(id1);		// 평균거리
+			
+//			String grouplist = Myinfoservice.myGroup1(id1);
 			
 			System.out.print("asdasd" + myAlltime);
 //			String myAlltime = aaa.substring(0, 8);
 // 10101
-			if(myAlltime.length() == 5) {
-				String alltime = myAlltime.substring(0,1);
-				model.addAttribute("myAlltime", alltime);
-			} else if (myAlltime.length() == 6) {
-				String alltime = myAlltime.substring(0,2);
-				model.addAttribute("myAlltime", alltime);
-			} 
+			if(myAlltime != null) {
+			
+				if(myAlltime.length() == 5) {
+					String alltime = myAlltime.substring(0,1);
+					model.addAttribute("myAlltime", alltime);
+				} else if (myAlltime.length() == 6) {
+					String alltime = myAlltime.substring(0,2);
+					model.addAttribute("myAlltime", alltime);
+				} 
+				
+			}
 					
 			model.addAttribute("myAlldistance", myAlldistance);
 			model.addAttribute("myGr_gr", myGr_gr);
 			model.addAttribute("myRiding", myRiding);
-				
+			model.addAttribute("userInfo", userInfo);
+			model.addAttribute("avgspeed", avgspeed);
+			model.addAttribute("avgdistance", avgdistance);
+//			model.addAttribute("grouplist", grouplist);
+			
 			return "MyInfo";
 		}
 		 

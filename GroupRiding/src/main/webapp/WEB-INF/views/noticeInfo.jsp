@@ -96,13 +96,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Group Riding</a>
+                <a class="navbar-brand" href="mainlogin">Group Riding</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="mainlogin">Home</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Page <b class="caret"></b></a>
@@ -167,7 +167,7 @@
 					<%-- 출발지점 : ${info.start_point} <br><br>
 					도착지점 : ${info.end_point} <br><br> --%>
 					
-					그룹명 : ${info.gr_name}	<br><br>	
+					그룹명 : ${info.gr_name}		<br><br>	
 					공지제목 : ${info.notice_title} <br><br>
 					출발날짜 : ${info.ridingDate} <br><br>
 					출발시간 : ${info.ridingTime} <br><br>
@@ -192,6 +192,23 @@
 					
 					<h4 id="ooo">참여됨</h4>
 					<h4 id="xxx">불참됨</h4>
+					
+					
+						<table border="1">
+							<tr>
+								<th>맴버</th>
+								<th>참불</th>
+							</tr>
+								
+								<c:forEach items="${memberjoininfo}" var="i">
+									<tr style="text-align: center;">
+										<td>${i.uid}</td>
+										<td>${i.joing}</td>
+									</tr>
+								</c:forEach>
+						</table>
+				
+					
 				</div>
 			</div>
 		</div><!--/container-->
@@ -254,6 +271,13 @@ $(document).ready(function(){
 
 <!-- 지도 -->
 <script>
+	var now = "${now1}".split("-");
+	var ridingDate = "${info.ridingDate}".split("-");
+	
+	var nowN = Number(now[0]) + Number(now[1]) + Number(now[2]);
+	var ridingDateN = Number(ridingDate[0]) + Number(ridingDate[1]) + Number(ridingDate[2]);
+	
+	
 	$("#oo").hide();
 	$("#xx").hide();
 	$("#ooo").hide();
@@ -264,10 +288,22 @@ $(document).ready(function(){
 		$("#ox").hide();
 		$("#xx").show();
 		$("#ooo").show();
+		if(nowN > ridingDateN) {
+			$("#oo").hide();
+			$("#xx").hide();
+			$("#ooo").hide();
+			$("#xxx").hide();
+		}
 	} else if(joinCheck=="불참"){
 		$("#ox").hide();
 		$("#oo").show();
 		$("#xxx").show();
+		if(nowN > ridingDateN) {
+			$("#oo").hide();
+			$("#xx").hide();
+			$("#ooo").hide();
+			$("#xxx").hide();
+		}
 	}
 	
 </script>

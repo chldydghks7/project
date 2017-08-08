@@ -11,9 +11,20 @@
   		values (#{gr_name}, #{notice_title}, #{start_point}, #{end_point}, #{ridingDate}, #{ridingTime}, #{material})
 	</insert>
 	
+	<!-- 날짜 이전 -->
 	<select id="listNotice" resultType="NoticeBean">
 		select * from gr_notice
-		where gr_name = #{gr_name}
+		where ridingDate <![CDATA[ < ]]> (NOW() - INTERVAL 1 DAY)
+		and gr_name = #{gr_name}
+		order by ridingDate desc
+	</select>
+	
+	<!-- 날짜 이후 -->
+	<select id="listNotice1" resultType="NoticeBean">
+		select * from gr_notice
+		where ridingDate <![CDATA[ > ]]> (NOW() - INTERVAL 1 DAY)
+		and gr_name = #{gr_name}
+		order by ridingDate desc
 	</select>
 	
 	<select id="infoNotice" resultType="NoticeBean">

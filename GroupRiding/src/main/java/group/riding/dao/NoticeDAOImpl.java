@@ -31,6 +31,11 @@ public class NoticeDAOImpl implements NoticeDAO {
 	public List<NoticeBean> listNotice(String gr_name) throws Exception {
 		return session.selectList(namespace + ".listNotice", gr_name);
 	}
+	
+	@Override
+	public List<NoticeBean> listNotice1(String gr_name) throws Exception {
+		return session.selectList(namespace + ".listNotice1", gr_name);
+	}
 
 	@Override
 	public NoticeBean infoNotice(int noticeId) throws Exception {

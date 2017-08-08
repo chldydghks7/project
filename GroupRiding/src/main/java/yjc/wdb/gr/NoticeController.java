@@ -1,7 +1,10 @@
 package yjc.wdb.gr;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -48,9 +51,10 @@ public class NoticeController {
 	@RequestMapping(value="groupNotice", method=RequestMethod.GET)
 	public void groupNotice(@RequestParam(value="gr_name") String gr_name, NoticeBean nb, Model model) throws Exception {
 		List<NoticeBean> list = service.listNotice(gr_name);
+		List<NoticeBean> list1 = service.listNotice1(gr_name);
+		
 		model.addAttribute("list", list);
-		
-		
+		model.addAttribute("list1", list1);
 	}
 	
 	@RequestMapping(value="noticeInfo", method=RequestMethod.GET)	// 洹몃９ ?占쏙옙?占쏙옙
@@ -64,6 +68,12 @@ public class NoticeController {
 		
 		model.addAttribute("info", info);
 		model.addAttribute("memberjoininfo", memberjoininfo);
+		
+		SimpleDateFormat mSimpleDateFormat = new SimpleDateFormat ( "yyyy-MM-dd", Locale.KOREA );
+		Date currentTime = new Date ();
+		String mTime = mSimpleDateFormat.format ( currentTime );
+		System.out.println ("현재 : " + mTime );
+		model.addAttribute("now1", mTime);
 		
 	}
 	

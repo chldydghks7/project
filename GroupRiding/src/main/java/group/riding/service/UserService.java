@@ -19,21 +19,21 @@ public interface UserService {
 	
 	public UserBean login(LoginDTO dto) throws Exception;
 	
-	public UserBean user(int uno) throws Exception;
+	public UserBean user(String uid) throws Exception;
 	
-	public List<String> getAttach(String uid) throws Exception;	// ������
+	public List<String> getAttach(String uid) throws Exception;	// 占쏙옙占쏙옙占쏙옙
 	
-	public List<UserData> userData(String uid,String startDate,String stopDate) throws Exception;   // 유저라이딩데이터
+	public List<UserData> userData(String uid,String startDate,String stopDate) throws Exception;   // �쑀���씪�씠�뵫�뜲�씠�꽣
 	   
-	public List<UserData2> userData2(String uid) throws Exception; // 유저라이딩데이터2
+	public List<UserData2> userData2(String uid) throws Exception; // �쑀���씪�씠�뵫�뜲�씠�꽣2
 	   
-	public int Ridingdata3(String uid) throws Exception; // 유저라이딩 데이터3
+	public int Ridingdata3(String uid) throws Exception; // �쑀���씪�씠�뵫 �뜲�씠�꽣3
 	
-	public int id_check(String uid) throws Exception;	// ���̵� �ߺ�üũ
+	public int id_check(String uid) throws Exception;	// 占쏙옙占싱듸옙 占쌩븝옙체크
 	
-	public void insertkml(KmlBean kml)throws Exception;  //kml �����̸� ����
+	public void insertkml(KmlBean kml)throws Exception;  //kml 占쏙옙占쏙옙占싱몌옙 占쏙옙占쏙옙
 	
-	public void insertRidingInfo(RidingInfo info)throws Exception; //riding info 테이블 총거리,총시간 및데이터 삽입
+	public void insertRidingInfo(RidingInfo info)throws Exception; //riding info �뀒�씠釉� 珥앷굅由�,珥앹떆媛� 諛뤿뜲�씠�꽣 �궫�엯
 	
 	public void insertRidingInfoNotice(RidingInfo info)throws Exception;//riding info 테이블 총거리,총시간 및데이터 삽입 noticeID 역시 삽입
 	

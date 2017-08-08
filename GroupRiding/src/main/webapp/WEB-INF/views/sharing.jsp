@@ -194,6 +194,10 @@
 </head>
 
 <body>
+
+		
+
+
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
       <div class="container">
          <!-- Brand and toggle get grouped for better mobile display -->
@@ -204,13 +208,13 @@
                   class="icon-bar"></span> <span class="icon-bar"></span> <span
                   class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
+            <a class="navbar-brand" href="mainlogin" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
          </div>
          <!-- Collect the nav links, forms, and other content for toggling -->
          <div class="collapse navbar-collapse"
             id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-               <li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
+               <li><a href="mainlogin"  style="color:black; font-family: sung;">Home</a></li>
                <li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
                <li class="dropdown"><a href="#" class="dropdown-toggle"
                   data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
@@ -241,7 +245,10 @@
       <!-- /.container -->
    </nav>
 
-       <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing.jpg') no-repeat center center scroll;">
+
+
+       <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing2.jpeg') no-repeat center center scroll;">
+
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
@@ -441,6 +448,7 @@
     </script>
    <script type="text/javascript">
    $(document).ready(
+
 			function() {
 				var uid = "${uid}";
 				$.getJSON("getAttach/" + uid, function(list) {
@@ -462,6 +470,7 @@
 				});
 
 			
+
      
       
       var map;
@@ -885,6 +894,7 @@
 
         });
       
+
 			});
 
    </script>

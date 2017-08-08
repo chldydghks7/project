@@ -43,8 +43,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserBean user(int uno) throws Exception {
-		return dao.user(uno);
+	public UserBean user(String uid) throws Exception {
+		return dao.user(uid);
 	}
 
 	@Override
