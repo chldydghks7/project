@@ -130,7 +130,7 @@ ul#replies {
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main"
+				<a class="navbar-brand" href="mainlogin"
 					style="color: red; font-family: sung; font-size: 30px;">GROUP
 					RIDING</a>
 			</div>
@@ -138,7 +138,7 @@ ul#replies {
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main" style="color: black; font-family: sung;">Home</a></li>
+					<li><a href="mainlogin" style="color: black; font-family: sung;">Home</a></li>
 					<li class="dropdown"><a href="MyInfo?uid=${uid}"
 						style="color: black; font-family: sung;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -353,8 +353,7 @@ ul#replies {
                  var markerLayer = new Tmap.Layer.Markers("MarkerLayer");
                  map.addLayer(markerLayer);
 
-                 
-			
+                
                  $.ajax({
                 	 url:"getRacePoint",
                 	 type:"get",
@@ -377,26 +376,17 @@ ul#replies {
                          var icon = new Tmap.Icon('./resources/img/racepoint.png', size, offset);
                 		 
                 		   var location=racepoint[i].split(",");
-                		   
-                		   
-                		   
+                		           		   
                 		   var tlocation=get3857LonLat(parseFloat(location[0]), parseFloat(location[1]));
-                		  
-                		 
-                           
+                		                     
                            var marker = new Tmap.Markers(tlocation, icon);
-                           
-                         
-                           
+                            
                            markerLayer.addMarker(marker);
-                         
-
-                		   
+       		   
                 		 }
                 	 
                 	 }
-                	 
-                	 
+           	 
                  });
                  
              

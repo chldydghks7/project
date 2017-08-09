@@ -24,14 +24,14 @@
 
     <!-- Custom Fonts -->
     <link href="./resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 
 </head>
 <style>
 .text-vertical-center {
 
-    background-color: rgba( 0, 0, 0, 0.7 );
+    background: linear-gradient(rgba(1, 0, 31, 0.8),rgba(153, 156, 1, 0.68));
      width: 100%; height:100%; 
 }
 @font-face {
@@ -43,6 +43,30 @@
 	color: #fff;
 	background-color: #929292
 }
+@font-face { 
+   font-family: 'nexon'; 
+   src: url('./resources/fonts/NEXON FOOTBALL GOTHIC B.OTF'); 
+   }
+@font-face {
+   font-family: 'nexon2'; 
+   src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF'); 
+   }
+   
+
+.gradtext {
+/* rgb(115, 106, 255), #e4ff00); */
+    background: yellow;
+    background: -webkit-linear-gradient(left, rgb(115, 106, 255), #e4ff00);
+    background:    -moz-linear-gradient(right,rgb(115, 106, 255), #e4ff00);
+    background:      -o-linear-gradient(right, rgb(115, 106, 255), #e4ff00);
+    background:         linear-gradient(to right, rgb(115, 106, 255), #e4ff00);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    font-size: 48px;
+    font-weight: bold;
+}
+
 </style>
 
 <body>
@@ -57,13 +81,13 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
+				<a class="navbar-brand" href="mainlogin" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
+					<li><a href="mainlogin"  style="color:black; font-family: sung;">Home</a></li>
 					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
@@ -94,14 +118,17 @@
 		<!-- /.container -->
 	</nav>
 	    
-	     <header id="myCarousel" class="carousel slide" style="background-color: #282828; height: 30%">
+	     <header id="myCarousel" class="carousel slide" style="background-color:#0b0131; height: 30%">
 
 	        <div class="carousel-inner">
 	            <div class="item active">
 	                <div class="carousel-caption" style="bottom:60px;">
-	                    <h1 style="font-size: 40px;position: absolute;margin-left: 450px;top: 20px;font-family: sung;">RANK</h1></br>
-	                    <h1 style="font-size: 30px;position: absolute;margin-left: 450px;top: 60px;font-family: sung;">랭&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;크</h1>
-	                    <marquee><h3 style="margin-top: 60px;font-family: sung;">랭킹순위권에 들게 되면 해택이 지급됩니다. :)</h3></marquee>
+	                    <h1 style="font-size: 30px;position: absolute;margin-left: 320px;top: -130px;font-family: sung;color: #ffd700;">GROUP RIDING's BICYCLE</h1>
+	                    <h1 style="font-size: 45px;position: absolute;margin-left: 435px;top: -90px;font-family: sung;color: white;" ><span class="gradtext">WORLD</span></h1>
+	                    <h1 style="font-size: 45px;position: absolute;margin-left: 390px;top: -45px;font-family: sung;color: white;"><span class="gradtext">RANKINGS</span></h1>
+	                    <h1 style="font-size: 30px;position: absolute;margin-left: 290px;top: 5px;font-family: sung;color: white;">CURRENT RANKINGS IN 2017</h1>
+	                    <h1 style="font-size: 25px;position: absolute;margin-left: -350px;top: 70px;font-family: sung;color: white; width: 1690px;color: #ff3434;"><marquee>랭킹은 일간, 주간, 월간 으로 나뉘어 지게 되며 1등 할경우 "골드" 2등 "실버" 3등 "브론즈"로 나뉘게 됩니다. 매주, 매달 마지막날 자정에 보상이 자동으로 수령 됩니다.</marquee></h1>
+	                    <!-- <marquee><h3 style="margin-top: 80px;font-family: sung;">랭킹순위권에 들게 되면 해택이 지급됩니다. :)</h3></marquee> -->
 	                </div>
 	            </div>
 	        </div>
@@ -116,99 +143,97 @@
                  <div>
                     &nbsp;
                     </div>
-                    <h1 style="color: white; font-family: sung; color: red; "><strong>Daily Ranking</strong></h1>
+                    <h1 style="font-family: nexon; color: #ffd700; "><strong>Daily Ranking</strong></h1>
 
                     <div class="col-lg-12" style="font-family: sung;">
-                        <table style="width: 100%;border:1px;border:1px solid white; color: white; text-align: center;" >
-                            <tr style="height: 50px;">
-                                <td style="width: 25%;border:1px solid white;"></td>
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>속도</strong></h3></td>
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>거리</strong></h3></td>
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>거점전</strong></h3></td>
+                        <table style="width: 100%;color: white; text-align: center; border: solid 1px; border-color:#d70000;" >
+                            <tr style="height: 50px; background-color: rgba(255, 60, 15, 0.45);" class="w3-ul">
+                                <td style="width: 25%;"></td>
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;font-style: italic;">속도 km/h</h3></td>
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;font-style: italic;">거리 km</h3></td>
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;font-style: italic;">거점전 Num</h3></td>
                             </tr>
-                            <tr style="height: 50px;">
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>1</strong></h3></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>비앙키</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>자이언트</em><h4></td>
+                            <tr style="height: 50px; background-color: rgba( 80, 80, 80, 0.5 );">
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;"><strong style="font-size: 30px; ">1st</strong></h3></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">스페셜라이즈드<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">비앙키<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">자이언트<h4></td>
                             </tr>
-                            <tr style="height: 50px;">
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>2</strong></h3></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>비앙키</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                            <tr style="height: 50px; background-color: rgba( 80, 80, 80, 0.5 );" class="w3-ul"">
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;"><strong style="font-size: 30px; ">2nd</strong></h3></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">스페셜라이즈드<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">비앙키<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">자이언트<h4></td>
                             </tr>
-                            <tr style="height: 50px;">
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>3</strong></h3></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>자이언트</em><h4></td>
+                            <tr style="height: 50px;  background-color: rgba( 80, 80, 80, 0.5 );">
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;"><strong style="font-size: 30px; ">3rd</strong></h3></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">스페셜라이즈드<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">비앙키<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">자이언트<h4></td>
                             </tr>
                         </table>
                     </div>
                     <div>
                     &nbsp;
                     </div>
-                    <h1 style="color: white; font-family: sung; color: red;"><strong>Weekly Ranking</strong></h1>
-                    <div class="col-lg-12" style="font-family: sung;">
-
-                        <table style="width: 100%;border:1px;border:1px solid white; color: white; text-align: center;" >
-                            <tr style="height: 50px;">
-                                <td style="width: 25%;border:1px solid white;"></td>
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>속도</strong></h3></td>
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>거리</strong></h3></td>
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>거점전</strong></h3></td>
+                    <h1 style="font-family: nexon; color: #ffd700; "><strong>Weekly Ranking</strong></h1>
+                      <div class="col-lg-12" style="font-family: sung;">
+                      <table style="width: 100%;color: white; text-align: center; border: solid 1px; border-color:#d70000;" >
+                            <tr style="height: 50px; background-color: rgba( 255, 60, 15, 0.45);" class="w3-ul">
+                                <td style="width: 25%;"></td>
+                               <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;font-style: italic;">속도 km/h</h3></td>
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;font-style: italic;">거리 km</h3></td>
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;font-style: italic;">거점전 Num</h3></td>
                             </tr>
-                            <tr style="height: 50px;">
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>1</strong></h3></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>비앙키</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                            <tr style="height: 50px; background-color: rgba( 80, 80, 80, 0.5 );">
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;"><strong style="font-size: 30px; ">1st</strong></h3></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">스페셜라이즈드<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">비앙키<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">자이언트<h4></td>
                             </tr>
-                            <tr style="height: 50px;">
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>2</strong></h3></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                            <tr style="height: 50px; background-color: rgba( 80, 80, 80, 0.5 );" class="w3-ul"">
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;"><strong style="font-size: 30px; ">2nd</strong></h3></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">스페셜라이즈드<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">비앙키<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">자이언트<h4></td>
                             </tr>
-                            <tr style="height: 50px;">
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>3</strong></h3></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                            <tr style="height: 50px;  background-color: rgba( 80, 80, 80, 0.5 );">
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;"><strong style="font-size: 30px; ">3rd</strong></h3></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">스페셜라이즈드<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">비앙키<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">자이언트<h4></td>
                             </tr>
                         </table>
                     </div>
                     <div>
                     &nbsp;
                     </div>
-                    <h1 style="color: white;font-family: sung; color: red;"><strong>Monthly Ranking</strong></h1>
-                    <div class="col-lg-12" style="font-family: sung;">
-
-                        <table style="width: 100%;border:1px;border:1px solid white; color: white; text-align: center;" >
-                            <tr style="height: 50px;">
-                               <td style="width: 25%;border:1px solid white;"></td>
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>속도</strong></h3></td>
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>거리</strong></h3></td>
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>거점전</strong></h3></td>
+                    <h1 style="font-family: nexon; color: #ffd700; "><strong>Monthly Ranking</strong></h1>
+                      <div class="col-lg-12" style="font-family: sung;">
+                        <table style="width: 100%;color: white; text-align: center; border: solid 1px; border-color:#d70000;" >
+                            <tr style="height: 50px; background-color: rgba(255, 60, 15, 0.45);" class="w3-ul">
+                                <td style="width: 25%;"></td>
+                              <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;font-style: italic;">속도 km/h</h3></td>
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;font-style: italic;">거리 km</h3></td>
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;font-style: italic;">거점전 Num</h3></td>
                             </tr>
-                            <tr style="height: 50px;">
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>1</strong></h3></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                            <tr style="height: 50px; background-color: rgba( 80, 80, 80, 0.5 );">
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;"><strong style="font-size: 30px;color: #ffd700;  ">1st</strong></h3></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">스페셜라이즈드<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">비앙키<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">자이언트<h4></td>
                             </tr>
-                            <tr style="height: 50px;">
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>2</strong></h3></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                            <tr style="height: 50px; background-color: rgba( 80, 80, 80, 0.5 );" class="w3-ul"">
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;"><strong style="font-size: 30px;color: #ffd700;  ">2nd</strong></h3></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">스페셜라이즈드<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">비앙키<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">자이언트<h4></td>
                             </tr>
-                            <tr style="height: 50px;">
-                                <td style="width: 25%;border:1px solid white;"><h3><strong>3</strong></h3></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
-                                <td style="width: 25%;border:1px solid white;"><h4><em>스페셜라이즈드</em><h4></td>
+                            <tr style="height: 50px;  background-color: rgba( 80, 80, 80, 0.5 );">
+                                <td style="width: 25%;"><h3 style="font-family: nexon;font-size: 30px;"><strong style="font-size: 30px; color: #ffd700; ">3rd</strong></h3></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">스페셜라이즈드<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">비앙키<h4></td>
+                                <td style="width: 25%;"><h4 style="font-family: nexon;font-size: 20px;">자이언트<h4></td>
                             </tr>
                         </table>
                     </div>

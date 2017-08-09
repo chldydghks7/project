@@ -2,6 +2,7 @@ package group.riding.dao;
 
 import java.util.List;
 
+import group.riding.bean.GroupBean;
 import group.riding.bean.MyinfoBean;
 
 public interface MyinfoDAO {
@@ -18,8 +19,7 @@ public interface MyinfoDAO {
 	
 	public String avgdistance(String uid) throws Exception;
 	
-	// public List<MyinfoBean> myGroup1(String uid) throws Exception;
+	public List<GroupBean> myGroup1(String uid) throws Exception;
 
-	public String myGroup1(String uid) throws Exception;
 	
 }

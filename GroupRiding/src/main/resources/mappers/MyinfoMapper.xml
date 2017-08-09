@@ -42,7 +42,7 @@
 		where uid=#{uid}
     </select>
     
-    <select id="myGroup1" resultType="String">
+    <select id="myGroup1" resultType="GroupBean">
     	select * 
 		from gr_gr 
 		where uid = #{uid}

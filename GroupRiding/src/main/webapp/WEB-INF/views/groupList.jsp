@@ -123,13 +123,13 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
+				<a class="navbar-brand" href="mainlogin" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main"  style="color:black; font-family: sung;">Home</a></li>
+					<li><a href="mainlogin"  style="color:black; font-family: sung;">Home</a></li>
 					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
@@ -187,7 +187,7 @@
 					<li class="active"><a href="groupList" style="font-size: 20px; font-family: sung; color: black;">My
 							Group</a></li>
 					
-					<li><a href="groupListOther" style="font-size: 20px; font-family: sung;color: black;">Other
+					<li><a href="groupListOther" style="font-size: 20px; font-family: sung;color: #a3a3a3;">Other
 							Group</a></li>
 				</ol>
 			</div>
@@ -211,7 +211,7 @@
 							<p>
 								<a class="w3-btn w3-ripple w3-red"
 									href="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}"
-									style="width: 230px; font-size: 20px;"><strong>I&nbsp;N&nbsp;F&nbsp;O</strong></a>
+									style="width:230px; font-size: 20px;"><strong>I&nbsp;N&nbsp;F&nbsp;O</strong></a>
 							</p>
 
 						</div>

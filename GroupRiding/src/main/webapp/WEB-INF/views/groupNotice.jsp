@@ -292,9 +292,7 @@ $(document).ready(function(){
 		
 	});
 	
-	<c:forEach items="${list}" var="i">
-		"${i.noticeId}"
-	</c:forEach>
+
 </script>
 
 </body>

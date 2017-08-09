@@ -19,9 +19,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+<<<<<<< HEAD
+import group.riding.bean.GoldenWeek;
+=======
+import group.riding.bean.GroupBean;
+>>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
 import group.riding.bean.KmlBean;
 import group.riding.bean.MyPicture;
-import group.riding.bean.MyinfoBean;
 import group.riding.bean.RidingInfo;
 import group.riding.bean.UserBean;
 import group.riding.bean.UserData;
@@ -41,16 +45,17 @@ public class UserController {
 	private MyinfoService Myinfoservice;
 
 	
-	@RequestMapping(value="register", method=RequestMethod.GET)	
-	public void getForm(@ModelAttribute UserBean user) {
-		
-	}
+//	@RequestMapping(value="register", method=RequestMethod.GET)	
+//	public void getForm(@ModelAttribute UserBean user) {
+//		
+//	}
 	
 	@RequestMapping(value="register", method=RequestMethod.POST)
 	public String create(UserBean user, RedirectAttributes rttr) throws Exception {
 		System.out.println("a :" + user.getFiles());
 		service.register(user);
-		return "signIn";
+		
+		return "mainlogin";
 	}
 	
 	@RequestMapping(value= "login", method=RequestMethod.GET)
@@ -65,7 +70,7 @@ public class UserController {
 		UserBean bean = service.login(dto);
 		
 		if(bean == null) {
-			return "login";
+			return "main";
 		}
 		
 		System.out.println("ID : " + bean.getUid());
@@ -74,9 +79,6 @@ public class UserController {
 		session.setAttribute("uname", bean.getUname());
 		session.setAttribute("icon", service.getAttach(bean.getUid()));
 
-		
-		
-		
 		
 		model.addAttribute("userBean", bean);
 		
@@ -88,6 +90,8 @@ public class UserController {
 	public List<String> getAttach(@PathVariable("uid")String uid) throws Exception {
 		return service.getAttach(uid);
 	}
+	
+	
 	
 	@RequestMapping(value="signIn", method=RequestMethod.GET)	
 	public void signInGET(@ModelAttribute("dto") LoginDTO dto) {
@@ -228,6 +232,26 @@ public class UserController {
 			 
 		 }
 		 
+		 //라이딩 인포 테이블에 총거리,총시간 삽입,noticeID삽입
+		 @RequestMapping(value="insert_riding_info_Notice", method=RequestMethod.GET)
+		 @ResponseBody
+		 public String insertRidinginfoNotice(RidingInfo info,String callback)throws Exception{
+			 System.out.println("라이딩인포노티스 삽입");
+			 
+			 
+			 service.insertRidingInfoNotice(info);
+
+			 JSONObject json= new JSONObject();
+			 
+			 json.put("result", "success");
+			 
+			
+			 
+		
+			 
+			 return callback+"("+json+")";
+			 
+		 }
 		 //라이딩중 찍은사진 보기 sharingform 에 내사진 에 띄우기위해
 		 @RequestMapping(value="showMyPicture", method=RequestMethod.GET)
 		 @ResponseBody
@@ -345,6 +369,16 @@ public class UserController {
 		////////////
 		// myInfoPage
 		 //////
+		 @RequestMapping(value="WeekData")
+		    @ResponseBody
+		    public List<GoldenWeek> WeekData(HttpSession session, Model model, GoldenWeek gw)throws Exception {
+		        String uid=(String)session.getAttribute("uid");
+		          List<GoldenWeek>WeekData=service. WeekData(uid);
+		      
+		          System.out.println(WeekData);
+		          
+		          return WeekData;
+		    }
 		@RequestMapping(value="MyInfo", method=RequestMethod.GET)	
 		public String MyInfo(@RequestParam(value ="uid") String uid, HttpSession session, Model model) throws Exception {
 			
@@ -358,11 +392,10 @@ public class UserController {
 			String avgspeed = Myinfoservice.avgdistance(id1);			// 평균속도
 			String avgdistance = Myinfoservice.avgdistance(id1);		// 평균거리
 			
-//			String grouplist = Myinfoservice.myGroup1(id1);
+			List<GroupBean> myGroup1 = Myinfoservice.myGroup1(id1);
 			
 			System.out.print("asdasd" + myAlltime);
 //			String myAlltime = aaa.substring(0, 8);
-// 10101
 			if(myAlltime != null) {
 			
 				if(myAlltime.length() == 5) {
@@ -381,8 +414,15 @@ public class UserController {
 			model.addAttribute("userInfo", userInfo);
 			model.addAttribute("avgspeed", avgspeed);
 			model.addAttribute("avgdistance", avgdistance);
+<<<<<<< HEAD
 //			model.addAttribute("grouplist", grouplist);
+			  List<GoldenWeek>WeekData=service. WeekData(uid);
+	          System.out.println(WeekData);
+	          model.addAttribute("WeekData", WeekData);
+=======
+			model.addAttribute("myGroup1", myGroup1);
 			
+>>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
 			return "MyInfo";
 		}
 		 

@@ -122,5 +122,11 @@ public class NoticeDAOImpl implements NoticeDAO {
 		session.insert(namespace + ".joinjoin1", paramMap);
 	}
 
+	@Override
+	public List<String> JoinMemberGet(int noticeId) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace+".getJoinMember", noticeId);
+	}
+
 
 }

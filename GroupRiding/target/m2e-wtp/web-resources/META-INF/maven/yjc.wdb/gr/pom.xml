@@ -238,6 +238,15 @@
     <version>1.1.1</version>
 </dependency>
 
+<!-- list  json 으로 쉽게 바꿔줌--> 
+<dependency>
+<groupId>net.sf.json-lib</groupId>
+<artifactId>json-lib</artifactId>
+<version>2.4</version>
+<classifier>jdk15</classifier>
+</dependency>
+
+
 
 		<dependency>
 			<groupId>xerces</groupId>

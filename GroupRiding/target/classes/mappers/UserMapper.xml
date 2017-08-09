@@ -35,6 +35,14 @@
 		from gr_attach 
 		where uid=#{uid}
 	</select>
+	<!-- 월화수목금토일 -->
+   <select id="WeekData" resultType="GoldenWeek">
+      select *
+      from gr_ridinginfo
+      where uid=#{uid}
+      order by startDate desc
+      limit 7;
+   </select>
 	
 <select id="Ridingdata" resultType="UserData">
 <![CDATA[
@@ -74,6 +82,12 @@
 	<!-- 라이딩 인포 테이블 삽입-->
 	<insert id="insert_riding_info">
 	insert into gr_ridinginfo(uid,alltime,startDate,alldistance,avgspeed,kml_id,Kcal) values(#{uid},#{alltime},#{startDate},#{alldistance},#{avgspeed},#{kml_id},#{Kcal})
+	
+	</insert>
+	
+	<!-- 라이딩 인포 테이블  noticeID 삽입-->
+	<insert id="insert_riding_info_Notice">
+	insert into gr_ridinginfo(uid,alltime,startDate,alldistance,avgspeed,kml_id,Kcal,noticeId) values(#{uid},#{alltime},#{startDate},#{alldistance},#{avgspeed},#{kml_id},#{Kcal},#{noticeId})
 	
 	</insert>
 	

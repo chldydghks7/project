@@ -27,7 +27,7 @@
 		<typeAlias alias="GroupMemPic" type="yjc.wdb.gr.bean.GroupMemPic"/>
 		<typeAlias type="yjc.wdb.gr.bean.GroupInfoBoard" alias="GroupInfoListMaster"/>
 
-		
+		<typeAlias alias="GoldenWeek" type="group.riding.bean.GoldenWeek"/>
 		<typeAlias alias="RacePointBean" type="group.riding.bean.RacePointBean"/>
 
 
