@@ -1068,135 +1068,8 @@ b_container {
 				.push("<span id='a${count.count}'>${i.ridingDate}&nbsp;&nbsp;</span>");
 		</c:forEach>
 
-<<<<<<< HEAD
-		$(document).ready(function() {
-			if (startPoint[0] != null) {
-				searchRoute(startPoint[0], endPoint[0]);
-				$("#mm").prepend(notice_title[0]);
-				$("#mm").prepend(ridingDate[0]);
 
-				$(".a2").hide();
-				$(".a3").hide();
-				$(".a4").hide();
-				$(".a5").hide();
-
-				$("#a2").hide();
-				$("#a3").hide();
-				$("#a4").hide();
-				$("#a5").hide();
-			} else {
-				alert("최근 없음!");
-			}
-		});
-
-		$("#click2").on("click", function() {
-			if (startPoint[1] != null) {
-				searchRoute(startPoint[1], endPoint[1]);
-				$("#mm").prepend(notice_title[1]);
-				$("#mm").prepend(ridingDate[1]);
-
-				$(".a1").hide();
-				$(".a3").hide();
-				$(".a4").hide();
-				$(".a5").hide();
-
-				$("#a1").hide();
-				$("#a3").hide();
-				$("#a4").hide();
-				$("#a5").hide();
-			} else {
-				alert("최근 없음!");
-			}
-		});
-
-		$("#click3").on("click", function() {
-			if (startPoint[2] != null) {
-				searchRoute(startPoint[2], endPoint[2]);
-				$("#mm").prepend(notice_title[2]);
-				$("#mm").prepend(ridingDate[2]);
-
-				$(".a1").hide();
-				$(".a2").hide();
-				$(".a4").hide();
-				$(".a5").hide();
-
-				$("#a1").hide();
-				$("#a2").hide();
-				$("#a4").hide();
-				$("#a5").hide();
-			} else {
-				alert("최근 없음!");
-			}
-		});
-
-		$("#click4").on("click", function() {
-			if (startPoint[3] != null) {
-				searchRoute(startPoint[3], endPoint[3]);
-				$("#mm").prepend(notice_title[3]);
-				$("#mm").prepend(ridingDate[3]);
-
-				$(".a1").hide();
-				$(".a2").hide();
-				$(".a3").hide();
-				$(".a5").hide();
-
-				$("#a1").hide();
-				$("#a2").hide();
-				$("#a3").hide();
-				$("#a5").hide();
-			} else {
-				alert("최근 없음!");
-			}
-		});
-
-		$("#click5").on("click", function() {
-			if (startPoint[4] != null) {
-				searchRoute(startPoint[4], endPoint[4]);
-				$("#mm").prepend(notice_title[4]);
-				$("#mm").prepend(ridingDate[4]);
-
-				$(".a1").hide();
-				$(".a2").hide();
-				$(".a3").hide();
-				$(".a4").hide();
-
-				$("#a1").hide();
-				$("#a2").hide();
-				$("#a3").hide();
-				$("#a4").hide();
-			} else {
-				alert("최근 없음!");
-			}
-		});
-
-		//경로 정보 로드
-		function searchRoute(startPoint, endPoint) {
-
-			
-			
-			var start = startPoint.split(","); 
 		
-			var stop = endPoint.split(","); // 경도 자르기
-			
-
-			var routeFormat = new Tmap.Format.KML({
-				extractStyles : true,
-				extractAttributes : true
-			});
-			var startX = new Object(start[0]);
-			var startY = new Object(start[1]);
-			var endX = new Object(stop[0])// 14136027.789587;
-			var endY = new Object(stop[1])// 4517572.4745242;
-			var urlStr = "https://apis.skplanetx.com/tmap/routes?version=1&format=xml";
-			urlStr += "&startX=" + startX;
-			urlStr += "&startY=" + startY;
-			urlStr += "&endX=" + endX;
-			urlStr += "&endY=" + endY;
-			urlStr += "&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b";
-			var prtcl = new Tmap.Protocol.HTTP({
-				url : urlStr,
-				format : routeFormat
-=======
 
 		
 			$(document).ready(function(){
@@ -1275,7 +1148,7 @@ b_container {
 				} else {
 					alert("최근 없음!");
 				}
->>>>>>> 817e0a157d25c2e6cb9ce2de1861c66141fb3118
+
 			});
 			
 			$("#click3").on("click", function(){
@@ -1642,12 +1515,17 @@ b_container {
 					function onDrawnFeatures(e){
 					    map1.zoomToExtent(this.getDataExtent());
 					}	
+				
+					
 				/////////////////////////
 				// racePoint
 				/////////////////////////
+
 					var pr_3857 = new Tmap.Projection("EPSG:3857");//tmap 좌표체계
 	         		var pr_4326 = new Tmap.Projection("EPSG:4326");//geolocation 좌표체계
 
+	         		var racepoint=[];	// 레이스
+	         		
 	         		function get3857LonLat(coordX, coordY) {
 	               		return new Tmap.LonLat(coordX, coordY).transform(pr_4326, pr_3857);
 	           		}
@@ -1660,7 +1538,7 @@ b_container {
                 	 type:"get",
                 	 success:function(data){
                 		 console.log(data);
-                	 var racepoint=[];
+                	
                 	 
                 	 for(var i=0;i<data.length;i++)
                 		 {
@@ -1675,21 +1553,107 @@ b_container {
                 		 var size = new Tmap.Size(24,38);
                          var offset = new Tmap.Pixel(-(size.w/2), -(size.h/2));
                          var icon = new Tmap.Icon('./resources/img/racepoint.png', size, offset);
-                		 
+                         var label = new Tmap.Label('<div>Race Point</div>');
+                         
                 		   var location=racepoint[i].split(",");
                 		           		   
                 		   var tlocation=get3857LonLat(parseFloat(location[0]), parseFloat(location[1]));
                 		                     
-                           var marker11 = new Tmap.Markers(tlocation, icon);
+                           var marker11 = new Tmap.Markers(tlocation, icon, label);
                             
                            markerLayer11.addMarker(marker11);
-       		   
-                		 }
+                           
+                           marker11.events.register("mouseover", marker11, onMouseover);
+              				marker11.events.register("mouseout", marker11, onMouseout);
+                		 }	// for
+                		
+                        function onMouseover (evt){
+                        	this.popup.show();
+        				}
+
+        				function onMouseout (evt){
+        					this.popup.hide();
+        				}
                 	 
-                	 }	// success:function(data){
+                	 }	// success:function(data){ 
            	 
                  });	// ajax
-				
+                 
+				/////////////////////////
+ 				// racePoint END
+ 				/////////////////////////
+ 				
+ 				
+ 				/////////////////////////
+ 				// HotPlace  		   //
+ 				/////////////////////////
+ 				
+ 				var hotPlace = [];	// 레이스
+ 				var hotName = []; // 핫플 이름
+ 				
+				var markerLayer12 = new Tmap.Layer.Markers("MarkerLayer");
+           		map1.addLayer(markerLayer12);
+ 				
+           		
+           		$.ajax({
+               	 url:"getHotPlace",
+               	 type:"get",
+               	 success:function(data){
+               		 console.log(data);
+               	
+               	 
+               	 for(var i=0;i<data.length;i++)
+               		 {
+               			hotPlace.push(data[i].latitude);
+               			hotName.push(data[i].place_name);
+               		 }
+               	 
+               	 
+               	 for(var i=0;i<hotPlace.length;i++)
+               		 {
+               		 
+               		 	var size = new Tmap.Size(50,50);
+                        var offset = new Tmap.Pixel(-(size.w/2), -(size.h/2));
+                        var icon = new Tmap.Icon('./resources/img/hotMaker-11.png', size, offset);
+               		 
+               		  	 var hotLo = hotPlace[i].split(",");
+               		           		   
+               		  	 var hotLocation=get3857LonLat(parseFloat(hotLo[0]), parseFloat(hotLo[1]));
+               		                     
+                          var marker12 = new Tmap.Markers(hotLocation, icon);
+                           
+                          markerLayer12.addMarker(marker12);
+                          
+                       // popup
+           				var popup2;
+          				popup2 = new Tmap.Popup("p1",
+          				                        new Tmap.LonLat(get3857LonLat(128.619801-1, 35.894131-1)),
+          				                        new Tmap.Size(200, 50),
+          				                        "<div style='width:50%; height:100px; text-align:center; color:red;'>" + hotName[i] + "</div>"
+          				                        ); 
+          				map1.addPopup(popup2);
+          				popup2.hide();
+          				
+          				marker12.events.register("mouseover", popup2, onMouseover2);	// racePoint over
+                        marker12.events.register("mouseout", popup2, onMouseout2);	// racePoint out
+           				// popup
+                       
+               		 }	// for
+               		
+		               	function onMouseover2 (evt){
+						    this.show();
+						}
+		
+						function onMouseout2 (evt){
+						    this.hide();
+						}
+
+               	 
+               	 }	// success:function(data){ 
+          	 
+                });	// ajax
+ 				
+	           
 		
 	</script>
 

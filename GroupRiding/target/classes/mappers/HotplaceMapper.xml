@@ -11,4 +11,10 @@
     	where 1 > speed
     </select>
     
+    <!-- 일정등록 핫플 마커 -->
+    <select id="getHotPlace" resultType="HotplaceBean">
+    	select * 
+		from hotplace
+    </select>
+    
  </mapper>

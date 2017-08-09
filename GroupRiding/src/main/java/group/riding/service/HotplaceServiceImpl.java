@@ -20,4 +20,9 @@ public class HotplaceServiceImpl implements HotplaceService {
 		return dao.lonlat();
 	}
 
+	@Override
+	public List<HotplaceBean> getHotPlace() throws Exception {
+		return dao.getHotPlace();
+	}
+
 }

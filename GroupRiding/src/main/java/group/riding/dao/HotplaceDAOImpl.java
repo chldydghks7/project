@@ -22,4 +22,9 @@ public class HotplaceDAOImpl implements HotplaceDAO {
 		return session.selectList(namespace + ".lonlat");
 	}
 
+	@Override
+	public List<HotplaceBean> getHotPlace() throws Exception {
+		return session.selectList(namespace + ".getHotPlace");
+	}
+
 }
