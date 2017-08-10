@@ -2,6 +2,7 @@ package group.riding.dao;
 
 import java.util.List;
 
+import group.riding.bean.GoldenWeek;
 import group.riding.bean.GroupBean;
 import group.riding.bean.KmlBean;
 import group.riding.bean.MyPicture;
@@ -47,4 +48,6 @@ public interface UserDAO {
 	public List<RidingInfo> showhistory(String uid)throws Exception;
 	
 	public void updateGrData(String startDate,String stopDate,int kmlid,String uid)throws Exception;
+
+	public List<GoldenWeek> WeekData(String uid) throws Exception; //월~금 데이터
 }

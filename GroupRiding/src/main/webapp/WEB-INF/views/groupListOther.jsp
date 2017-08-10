@@ -190,7 +190,7 @@
 			<div class="col-lg-12">
 				<h1></h1>
 				<ol class="breadcrumb" style="float: right;">
-					<li class="active"><a href="groupList" style="font-size: 20px; font-family: sung; color: black;">My
+					<li class="active"><a href="groupList" style="font-size: 20px; font-family: sung; color: #a3a3a3;">My
 							Group</a></li>
 					
 					<li><a href="groupListOther" style="font-size: 20px; font-family: sung;color: black;">Other

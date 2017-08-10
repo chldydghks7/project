@@ -35,6 +35,14 @@
 		from gr_attach 
 		where uid=#{uid}
 	</select>
+	<!-- 월화수목금토일 -->
+   <select id="WeekData" resultType="GoldenWeek">
+      select *
+      from gr_ridinginfo
+      where uid=#{uid}
+      order by startDate desc
+      limit 7;
+   </select>
 	
 <select id="Ridingdata" resultType="UserData">
 <![CDATA[

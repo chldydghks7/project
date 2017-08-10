@@ -195,6 +195,16 @@
 </head>
 
 <body>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+		
+
+
+>>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+>>>>>>> 06fc3c08986877bc66eaa7c96b0eea617d16a9b0
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
       <div class="container">
          <!-- Brand and toggle get grouped for better mobile display -->
@@ -242,7 +252,18 @@
       <!-- /.container -->
    </nav>
 
+<<<<<<< HEAD
        <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing2.jpeg') no-repeat center center scroll;">
+=======
+<<<<<<< HEAD
+       <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing2.jpeg') no-repeat center center scroll;">
+=======
+
+
+       <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing2.jpeg') no-repeat center center scroll;">
+
+>>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+>>>>>>> 06fc3c08986877bc66eaa7c96b0eea617d16a9b0
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
@@ -467,6 +488,12 @@
     </script>
    <script type="text/javascript">
    $(document).ready(
+<<<<<<< HEAD
+         function() {
+            var uid = "${uid}";
+            $.getJSON("getAttach/" + uid, function(list) {
+=======
+<<<<<<< HEAD
          function() {
             var uid = "${uid}";
             $.getJSON("getAttach/" + uid, function(list) {
@@ -488,6 +515,30 @@
             });
 
          
+=======
+>>>>>>> 06fc3c08986877bc66eaa7c96b0eea617d16a9b0
+
+               var img = $("<img/>").attr('src',
+                     "/displayFile?fileName=" + list[0]);
+               img.css("width", "35px");
+               img.css("height", "35px");
+
+               $("#profile").prepend(img);
+
+               var logoutform = $("form[data-role='out']");
+
+               $("#logout").click(function() {
+
+                  logoutform.submit();
+               });
+
+            });
+
+<<<<<<< HEAD
+         
+=======
+>>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+>>>>>>> 06fc3c08986877bc66eaa7c96b0eea617d16a9b0
      
       
       var map;
@@ -973,7 +1024,16 @@
 
         });
       
+<<<<<<< HEAD
          });
+=======
+<<<<<<< HEAD
+         });
+=======
+
+			});
+>>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+>>>>>>> 06fc3c08986877bc66eaa7c96b0eea617d16a9b0
 
    </script>
    <!--[if lt IE 9]>

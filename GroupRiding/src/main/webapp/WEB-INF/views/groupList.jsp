@@ -187,7 +187,7 @@
 					<li class="active"><a href="groupList" style="font-size: 20px; font-family: sung; color: black;">My
 							Group</a></li>
 					
-					<li><a href="groupListOther" style="font-size: 20px; font-family: sung;color: black;">Other
+					<li><a href="groupListOther" style="font-size: 20px; font-family: sung;color: #a3a3a3;">Other
 							Group</a></li>
 				</ol>
 			</div>
@@ -211,7 +211,7 @@
 							<p>
 								<a class="w3-btn w3-ripple w3-red"
 									href="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}"
-									style="width: 230px; font-size: 20px;"><strong>I&nbsp;N&nbsp;F&nbsp;O</strong></a>
+									style="width:230px; font-size: 20px;"><strong>I&nbsp;N&nbsp;F&nbsp;O</strong></a>
 							</p>
 
 						</div>
