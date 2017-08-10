@@ -497,7 +497,7 @@
          </div>
          <div class="w3-row">
             <div class="w3-half">
-               <img src="./resources/img/sungjae.jpg"
+               <img src="./resources/img/yongyong.jpg"
                   style="width: 100%; height: 100%; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); border: solid 2px; border-color: black;">
             </div>
             <div style="font-family: nexon; font-size: 20px;">

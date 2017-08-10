@@ -18,6 +18,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import group.riding.bean.BoardBean;
 import group.riding.bean.SharReadFile;
 import group.riding.service.BoardService;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 @Controller
 public class BoardController {
@@ -36,6 +38,26 @@ public class BoardController {
       model.addAttribute("read", bb);
       System.out.println(bb);*/
    }
+   
+   @RequestMapping(value = "sharingApp", method = RequestMethod.GET)
+   @ResponseBody
+   public String sharingApp(String callback) throws Exception {
+      
+	   net.sf.json.JSONArray jarray= new net.sf.json.JSONArray();
+	   
+	 
+      List<BoardBean> list = service.sharList();
+    
+      JSONObject json= new JSONObject();
+      
+      json.put("sharlist", jarray.fromObject(list));
+      
+    return  callback+"("+json+")";
+     
+   }
+   
+   
+   
    
    @ResponseBody
    @RequestMapping(value = "readShar", method = RequestMethod.GET)
@@ -68,6 +90,8 @@ public class BoardController {
    
    @RequestMapping(value = "sharingForm", method = RequestMethod.POST)
    public String newShar( BoardBean bb, String bbs_Id, RedirectAttributes rttr) throws Exception {
+	   
+	 
       service.newShar(bb);
       
       String[] filepath=bb.getBbs_FilePath();

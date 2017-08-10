@@ -459,7 +459,7 @@
          style="height: 600px">
          <div class="w3-padding-64">
             <h1 style="font-family: sung;">JUNG SUNG JAE</h1>
-            <p>This is Good</p>
+            <p>I'm angry</p>
          </div>
          <div class="w3-row">
             <div class="w3-half">
