@@ -39,7 +39,7 @@ public class BoardController {
       System.out.println(bb);*/
    }
    
-   @RequestMapping(value = "sharingApp", method = RequestMethod.GET)
+   @RequestMapping(value = "sharingApp", method = RequestMethod.GET, produces="text/plain;charset=UTF-8")
    @ResponseBody
    public String sharingApp(String callback) throws Exception {
       
