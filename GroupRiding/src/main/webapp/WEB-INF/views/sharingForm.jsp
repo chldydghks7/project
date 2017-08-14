@@ -267,7 +267,7 @@
                      </section>
                   </fieldset>
                   <!-- <input type='hidden' class='file' name='bbs_FilePath' value=''> -->
-                  <input type='hidden' class='kml' name='kml_name' value=''>
+                
                  <!--  <input type='hidden' class='picLocation' name='picture_location' value=''> -->
                    <input type='hidden' class='kmlcenter' name='kml_center' value=''>
                    <input type='hidden' class='thumbnail' name='thumbnail'>
@@ -513,6 +513,14 @@
          
            var form = $("#sharForm");
            var kmlname=$(this).attr("class");
+           console.log(kmlname);
+           
+           var kml=$("<input type='hidden' name='kml_name'>");
+           
+           kml.val(kmlname);
+           
+           form.append(kml);
+           
            var kmlcenter=$(this).attr("id");
            
            $(".kmlcenter").val(kmlcenter);

@@ -95,6 +95,11 @@ public class GroupServiceImpl implements GroupService {
 	}
 
 	@Override
+<<<<<<< HEAD
+	   public String groupPng(String gr_name) throws Exception {
+	      return dao.groupPng(gr_name);
+	   }
+=======
 	public String joingNo(String uid) throws Exception {
 		return dao.joingNo(uid);
 	}
@@ -105,4 +110,5 @@ public class GroupServiceImpl implements GroupService {
 	}
 
 
+>>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
 }

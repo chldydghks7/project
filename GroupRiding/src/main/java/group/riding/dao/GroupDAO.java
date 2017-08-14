@@ -6,34 +6,40 @@ import group.riding.bean.GroupBean;
 
 public interface GroupDAO {
 	
-	public void create_gr(GroupBean gr) throws Exception;	// ±×·ì »ý¼º
+	public void create_gr(GroupBean gr) throws Exception;	// ï¿½×·ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
-	public void gr_gr(GroupBean gr)	throws Exception; // ±×·ì °ü°è
+	public void gr_gr(GroupBean gr)	throws Exception; // ï¿½×·ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
-	public void icon(GroupBean fullName) throws Exception; // ¾ÆÀÌÄÜ µî·Ï
+	public void icon(GroupBean fullName) throws Exception; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	
-	public GroupBean gr_info(String gr_name) throws Exception;	// ±×·ì ÀÎÆ÷
+	public GroupBean gr_info(String gr_name) throws Exception;	// ï¿½×·ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
-	public List<GroupBean> gr_list(String uid) throws Exception;	// ±×·ì ¸®½ºÆ®
+	public List<GroupBean> gr_list(String uid) throws Exception;	// ï¿½×·ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 	
-	public List<GroupBean> gr_list_other(String uid) throws Exception;	// ±×·ì ¸®½ºÆ® ³»±×·ì Á¦¿Ü
+	public List<GroupBean> gr_list_other(String uid) throws Exception;	// ï¿½×·ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½×·ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
-	public List<String> gr_icon(String gr_name) throws Exception;	// ¾ÆÀÌÄÜ ¸®½ºÆ®
+	public List<String> gr_icon(String gr_name) throws Exception;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 	
-	public List<GroupBean> gr_iconl() throws Exception;	// ¾ÆÀÌÄÜ ¸®½ºÆ®
+	public List<GroupBean> gr_iconl() throws Exception;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 	
-	public int gr_people(String gr_name) throws Exception;	// ±×·ìÀÎ¿ø
+	public int gr_people(String gr_name) throws Exception;	// ï¿½×·ï¿½ï¿½Î¿ï¿½
 	
-	public void gr_join(GroupBean gr) throws Exception;	// ±×·ì °¡ÀÔ
+	public void gr_join(GroupBean gr) throws Exception;	// ï¿½×·ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
-	public String gr_check(String uid, String gr_name) throws Exception; 	// ±×·ì °¡ÀÔ Ã¼Å©
+	public String gr_check(String uid, String gr_name) throws Exception; 	// ï¿½×·ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 	
-	public int n_check(String gr_name) throws Exception;	// ±×·ì¸í Áßº¹Ã¼Å©
+	public int n_check(String gr_name) throws Exception;	// ï¿½×·ï¿½ï¿½ ï¿½ßºï¿½Ã¼Å©
 
+<<<<<<< HEAD
+	public String leaderNotice(String uid, String gr_name) throws Exception;	// ï¿½×·ï¿½ï¿½å¸¸ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	
+	public String groupPng(String gr_name) throws Exception;   // ê·¸ë£¹ í”„ë¡œí•„
+=======
 	public String leaderNotice(String uid, String gr_name) throws Exception;	// ±×·ìÀå¸¸ °øÁö»ý¼º
 	
 	public String joingNo(String uid) throws Exception;	// Âü¿©È½¼ö
 	
 	public String groupPng(String gr_name) throws Exception;	// ±×·ì ÇÁ·ÎÇÊ
 	
+>>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
 }

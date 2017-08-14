@@ -214,6 +214,13 @@
 	 <update id="info_view">
        update bbs_writing set view_number = view_number + 1 where writing_id =#{writing_id}
     </update>
+<<<<<<< HEAD
+    <!-- 그룹 프로필 -->
+    <select id="groupPng" resultType="String">
+       select gr_icon
+      from gr_group
+      where gr_name=#{gr_name}
+=======
     
     <!-- 참여횟수 -->
     <select id="joingNo" resultType="String">
@@ -228,6 +235,7 @@
     	select gr_icon
 		from gr_group
 		where gr_name=#{gr_name}
+>>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
     </select>
    
 

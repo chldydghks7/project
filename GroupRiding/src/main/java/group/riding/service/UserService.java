@@ -2,6 +2,7 @@ package group.riding.service;
 
 import java.util.List;
 
+import group.riding.bean.GoldenWeek;
 import group.riding.bean.KmlBean;
 import group.riding.bean.MyPicture;
 import group.riding.bean.RidingInfo;
@@ -45,6 +46,6 @@ public interface UserService {
 	
 	public void updateGrData(String startDate,String stopDate,int kmlid,String uid)throws Exception;
 	
-	
+	public List<GoldenWeek> WeekData(String uid) throws Exception; //월~금 데이터
 	
 }

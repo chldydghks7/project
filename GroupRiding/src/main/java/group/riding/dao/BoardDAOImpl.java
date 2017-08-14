@@ -39,6 +39,8 @@ public class BoardDAOImpl implements BoardDAO {
 		map.put("bbs_FilePath", bbs_FilePath);
 		map.put("kml_center", kml_center);
 		map.put("kml_name", kml_name);
+		
+	
 		map.put("picture_location", picture_location);
 		session.insert(namespace + ".addFile", map);
 	}

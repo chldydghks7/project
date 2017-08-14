@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import group.riding.bean.GoldenWeek;
 import group.riding.bean.KmlBean;
 import group.riding.bean.MyPicture;
 import group.riding.bean.RidingInfo;
@@ -110,6 +111,13 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		dao.updateGrData(startDate, stopDate, kmlid,uid);
 	}
+<<<<<<< HEAD
+	@Override
+	   public List<GoldenWeek> WeekData(String uid) throws Exception {
+	      // TODO Auto-generated method stub
+	      return dao.WeekData(uid);
+	}
+=======
 
 	@Override
 	public void insertRidingInfoNotice(RidingInfo info) throws Exception {
@@ -117,5 +125,6 @@ public class UserServiceImpl implements UserService {
 		dao.insertRidingInfoNotice(info);
 	}
 	
+>>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
 
 }
