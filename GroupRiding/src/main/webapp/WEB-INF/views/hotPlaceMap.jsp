@@ -298,8 +298,15 @@
                   var makers = [];
                   var label;
                   
+                  var latlon;
+                  var lat;
+                  var lon;
+                  
                   for(i = 0; ; i++) {
-                     location[i] = new google.maps.LatLng(data.map[i].latitude, data.map[i].longitude);
+                	 latlon = new String(data.map[i].latitude).split(",");
+                	 
+                     // location[i] = new google.maps.LatLng(data.map[i].latitude, data.map[i].longitude);
+                     location[i] = new google.maps.LatLng(parseFloat(latlon[1]), parseFloat(latlon[0]));
                      
                      if(data.map[i].place_kind = "hotel") {
                            label = "H";

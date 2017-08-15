@@ -331,7 +331,7 @@ $(document).ready(function(){
 			
 			endPoint=endPoint.split(",");
 			
-			 var startx = startPoint[0];   // 경도 자르기
+			var startx = startPoint[0];   // 경도 자르기
 			var starty =  startPoint[1];   // 경도 자르기
 			
 			var stopx = endPoint[0];   // 경도 자르기

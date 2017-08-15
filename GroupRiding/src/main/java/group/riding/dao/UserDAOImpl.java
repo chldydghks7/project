@@ -124,13 +124,13 @@ public class UserDAOImpl implements UserDAO {
 		
 		session.update(namespace+".update_gr_data", input);
 	}
-<<<<<<< HEAD
+
 	@Override
 	   public List<GoldenWeek> WeekData(String uid) throws Exception {
 	      // TODO Auto-generated method stub
 	      return session.selectList(namespace + ".WeekData", uid);
 	   }
-=======
+
 
 	@Override
 	public void insertRidingInfoNotice(RidingInfo info) throws Exception {
@@ -138,6 +138,6 @@ public class UserDAOImpl implements UserDAO {
 		session.insert(namespace+".insert_riding_info_Notice", info);
 	}
 
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+
 
 }

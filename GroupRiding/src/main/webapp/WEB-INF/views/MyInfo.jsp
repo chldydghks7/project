@@ -1,13 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-<<<<<<< HEAD
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-=======
-   pageEncoding="UTF-8"%>
-   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -138,23 +133,6 @@
    src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF'); 
    }
 @font-face {
-<<<<<<< HEAD
-	font-family: 'sung';
-	src: url('./resources/fonts/sung.ttf'); 
-	}
-@font-face{
-	font-family: 'jae';
-	src: url('./resources/fonts/DXSPDM-KSCPC-EUC-H.TTF')
-}
-@font-face{
-	font-family: 'jae2';
-	src: url('./resources/fonts/a타임머신.ttf')
-}
-	.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
-	.navbar-inverse .navbar-nav>.open>a:hover {
-	color: #fff;
-	background-color: #929292
-=======
    font-family: 'sung';
    src: url('./resources/fonts/sung.ttf'); 
    }
@@ -170,79 +148,11 @@
    .navbar-inverse .navbar-nav>.open>a:hover {
    color: #fff;
    background-color: #929292
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
 }
 </style>
 
 
 <body>
-<<<<<<< HEAD
-	<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="mainlogin" style="color: red; font-family: sung; font-size: 30px;">GROUP RIDING</a>
-			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="mainlogin"  style="color:black; font-family: sung;">Home</a></li>
-					<li class="dropdown"><a href="MyInfo?uid=${uid}"  style="color:black; font-family: sung;">My Page</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown"  style="color:black; font-family: sung;">Group <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="groupList"  style="color:black; font-family: sung;">Group List</a></li>
-							<li><a href="racePoint"  style="color:black; font-family: sung;">Race Point</a></li>
-						</ul></li>
-					<li><a href="groupRank"  style="color:black; font-family: sung;">Rank</a></li>
-					<li><a href="sharing"  style="color:black; font-family: sung;">Sharing</a></li>
-					<li><a href="hotPlaceMap"  style="color:black; font-family: sung;">Hot Place</a></li>
-					
-					<div style="float: right; width: 180px;">
-						<li id="profile" style="float: left; margin-top: 6px;"></li>
-						<li class="dropdown"><a class="dropdown-toggle"
-							data-toggle="dropdown"
-							style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px;font-family: sung;">${uid}</a>
-
-							<ul class="dropdown-menu">
-								<li><a id="logout">LogOut</a></li>
-
-							</ul></li>
-
-					</div>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-		<!-- /.container -->
-	</nav>
-
-	<!-- Header Carousel -->
-	<header id="myCarousel" class="carousel slide"
-		style="height: 30%;background: url('./resources/img/infor.jpeg') no-repeat center center scroll;">
-
-	<!-- Wrapper for slides -->
-	<div class="carousel-inner">
-		<div class="item active">
-			<div class="carousel-caption" style="bottom: 60px;">
-				<h1 style="font-size: 40px; font-family: sung;">MY PAGE</h1>
-			</div>
-		</div>
-		
-	</div>
-	</header>
-
-	<!-- /.row -->
-	<div class="container">
-=======
    <!-- Navigation -->
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
       <div class="container">
@@ -308,14 +218,14 @@
 
    <!-- /.row -->
    <div class="container">
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+
 <div class="w3-panel w3-red w3-display-container w3-card-4">
   <span onclick="this.parentElement.style.display='none'"
   class="w3-button w3-red w3-large w3-display-topright ">x</span>
   <p style="font-family: nexon; font-size: 20px; margin-top: 5px;"># My Info에서는 자기 자신의 라이딩 누적 정보를 확인할수 있습니다! 누적 기록에 따라 골드, 실버, 브론즈로 나뉘게 됩니다!</p>
   <p style="font-family: nexon; font-size: 20px;">또한 일정 관리를 통하여 라이딩 참여 불참 여부를 선택하세요!</p>
 </div>
-<<<<<<< HEAD
+
 		<!-- Page Heading/Breadcrumbs -->
 		<div class="row" style="font-family: sung;">
 			<div class="col-lg-12">
@@ -756,7 +666,7 @@
 			
 		});
 	});
-=======
+
       <!-- Page Heading/Breadcrumbs -->
       <div class="row" style="font-family: sung;">
          <div class="col-lg-12">
@@ -956,7 +866,7 @@
          
       });
    });
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+
 </script>
 <script>
 $(document).ready(
@@ -964,22 +874,6 @@ $(document).ready(
          var uid = "${uid}";
          $.getJSON("getAttach/" + uid, function(list) {
 
-<<<<<<< HEAD
-				var img = $("<img/>").attr('src',
-						"/displayFile?fileName=" + list[0]);
-				img.css("width", "35px");
-				img.css("height", "35px");
-				
-				 var pngg = $("<img/>").attr('src',
-		                    "/displayFile?fileName=" + list[0]);
-		            pngg.css("width", "395px");
-		            pngg.css("height", "395px");   
-
-		            $("#pngg").prepend(pngg);
-		            
-				$("#profile").prepend(img);
-				
-=======
             var img = $("<img/>").attr('src',
                   "/displayFile?fileName=" + list[0]);
             img.css("width", "35px");
@@ -993,7 +887,7 @@ $(document).ready(
             $("#pngg").prepend(pngg);
             
             $("#profile").prepend(img);
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+
 
             var logoutform = $("form[data-role='out']");
 
@@ -1004,11 +898,9 @@ $(document).ready(
 
          });
 
-<<<<<<< HEAD
-		});
-=======
+
       });
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+
 </script>
 
 

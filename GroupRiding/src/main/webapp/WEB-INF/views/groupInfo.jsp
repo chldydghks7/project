@@ -1,8 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
+<%@ page language = "java" contentType = "text/html; charset = UTF-8" pageEncoding = "UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
@@ -95,40 +93,6 @@ ul.tabs li a {
    /*--Gives the bevel look with a 1px white border inside the list item--*/
    outline: none;
 }
-<<<<<<< HEAD
-
-ul.tabs li a:hover {
-   background: #ccc;
-}
-
-html ul.tabs li.active, html ul.tabs li.active a:hover {
-   /*--Makes sure that the active tab does not listen to the hover properties--*/
-   background: #fff;
-   border-bottom: 1px solid #fff;
-   /*--Makes the active tab look like it's connected with its content--*/
-}
-
-b_container {
-   border: 1px solid #999;
-   border-top: none;
-   overflow: hidden;
-   clear: both;
-   float: left;
-   width: 100%;
-   background: #fff;
-}
-
-.tab_content {
-   padding: 20px;
-   font-size: 1.2em;
-}
-
-#map11 {
-   z-index: 99;
-}
-
-=======
-
 
 ul.tabs li a:hover {
 	background: #ccc;
@@ -160,7 +124,6 @@ b_container {
 	z-index: 99;
 }
 
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
 .text-vertical-center {
    background-color: rgba(0, 0, 0, 0.7);
    width: 100%;
@@ -210,872 +173,13 @@ b_container {
    width: 100%;
    height: 100%;
 }
+li:hover {
+	color:red;
+}
 </style>
 <body>
-<<<<<<< HEAD
-   <script>
-      function ViewLayer() {
-         //만일 Pop라는 녀석이 닫혀있다면??
-         if (document.getElementById("Pop").style.display == "none") {
-            //열어주어라
-            document.getElementById("Pop").style.display = 'inline'
-            //그렇지 않은 모든 경우라면??
-         }
-      }
-      function ViewClose() {
-         if (document.getElementById("Pop").style.display == "inline") {
-            //열어주어라
-            document.getElementById("Pop").style.display = 'none'
-            //그렇지 않은 모든 경우라면??
-         }
-      }
-   </script>
 
-   <script>
-      function ViewLayer2() {
-         //만일 Pop라는 녀석이 닫혀있다면??
-         if (document.getElementById("Pop_Re").style.display == "none") {
-            //열어주어라
-            document.getElementById("Pop_Re").style.display = 'inline'
-            //그렇지 않은 모든 경우라면??
-         }
-      }
-      function ViewClose2() {
-         $(".vbtn").remove();
-         if (document.getElementById("Pop_Re").style.display == "inline") {
-            //열어주어라
-            document.getElementById("Pop_Re").style.display = 'none'
-            //그렇지 않은 모든 경우라면??
-         }
-      }
-   </script>
-   <script>
-      function ViewLayer3() {
-         ViewClose2();
-         //만일 Pop라는 녀석이 닫혀있다면??
-         if (document.getElementById("Pop_Re_Modify").style.display == "none") {
-            //열어주어라
-            document.getElementById("Pop_Re_Modify").style.display = 'inline'
-            //그렇지 않은 모든 경우라면??
-         }
-      }
-      function ViewClose3() {
-         $(".vbtn").remove();
-         if (document.getElementById("Pop_Re_Modify").style.display == "inline") {
-            //열어주어라
-            document.getElementById("Pop_Re_Modify").style.display = 'none'
-            //그렇지 않은 모든 경우라면??
-         }
-      }
-   </script>
-   <script>
-      $(document).ready(function() {
 
-         //When page loads...
-         $(".tab_content").hide(); //Hide all content
-         $("ul.tabs li:first").addClass("active").show(); //Activate first tab
-         $(".tab_content:first").show(); //Show first tab content
-
-         //On Click Event
-         $("ul.tabs li").click(function() {
-
-            $("ul.tabs li").removeClass("active"); //Remove any "active" class
-            $(this).addClass("active"); //Add "active" class to selected tab
-            $(".tab_content").hide(); //Hide all tab content
-
-            var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
-            $(activeTab).fadeIn(); //Fade in the active ID content
-            return false;
-         });
-
-      });
-   </script>
-   <script>
-      
-   </script>
-   <!-- Navigation -->
-   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
-      style="background-color: white;">
-      <div class="container">
-         <!-- Brand and toggle get grouped for better mobile display -->
-         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-               data-target="#bs-example-navbar-collapse-1">
-               <span class="sr-only">Toggle navigation</span> <span
-                  class="icon-bar"></span> <span class="icon-bar"></span> <span
-                  class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="mainlogin"
-               style="color: red; font-family: sung; font-size: 30px;">GROUP
-               RIDING</a>
-         </div>
-         <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse"
-            id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-               <li><a href="mainlogin" style="color: black; font-family: sung;">Home</a></li>
-               <li class="dropdown"><a href="MyInfo?uid=${uid}"
-                  style="color: black; font-family: sung;">My Page</a></li>
-               <li class="dropdown"><a href="#" class="dropdown-toggle"
-                  data-toggle="dropdown" style="color: black; font-family: sung;">Group
-                     <b class="caret"></b>
-               </a>
-                  <ul class="dropdown-menu">
-                     <li><a href="groupList"
-                        style="color: black; font-family: sung;">Group List</a></li>
-                     <li><a href="racePoint"
-                        style="color: black; font-family: sung;">Race Point</a></li>
-                  </ul></li>
-               <li><a href="groupRank"
-                  style="color: black; font-family: sung;">Rank</a></li>
-               <li><a href="sharing" style="color: black; font-family: sung;">Sharing</a></li>
-               <li><a href="hotPlaceMap"
-                  style="color: black; font-family: sung;">Hot Place</a></li>
-
-               <div style="float: right; width: 180px;">
-                  <li id="profile" style="float: left; margin-top: 6px;"></li>
-                  <li class="dropdown"><a class="dropdown-toggle"
-                     data-toggle="dropdown"
-                     style="font-size: 25px; color: black; float: left; margin-top: 8px; margin-left: 2px; font-family: sung;">${uid}</a>
-
-                     <ul class="dropdown-menu">
-                        <li><a id="logout">LogOut</a></li>
-
-                     </ul></li>
-
-               </div>
-            </ul>
-         </div>
-         <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container -->
-   </nav>
-
-  <header id="myCarousel" class="carousel slide"
-      style="height: 330px; background: url('/displayFile?fileName=${groupPng}') no-repeat center center scroll;background-size: 100% 330px;'">
-      <!-- Wrapper for slides -->
-      <div class="sungsung">
-      <div class="carousel-inner">
-         <div class="item active">
-            <div class="carousel-caption" style="bottom: 60px;">
-               <h1 style="font-size: 40px; font-family: sung;">${group.gr_name}</h1>
-               </br>
-               <img style="position:absolute; z-index:100;top:-100px;left:-40px; height: 140px; width:100px;"src= "./resources/img/gold_medal.png"/>
-               <div
-                  style="font-family: sung; position: absolute; left: 1050px; top: -90px; width: 300px; font-size: 20px;">SINCE
-                  - ${group.gr_date}</div>
-               <div
-                  style="font-family: sung; position: absolute; left: 800px; top: -90px; width: 300px; font-size: 20px; color: white;">그룹장
-                  - ${group.gr_leader}</div>
-               <marquee
-                  style="font-family: sung; position: absolute; left: 260px; margin-top: 10px; width: 500px; font-size: 20px; color: yellow;">${group.gr_content}</marquee>
-               <div style="position: absolute; z-index: 100;">
-                  <form action="gr_join" method="post">
-                     <input type="hidden" name="uid" value="${uid}"> <input
-                        type="hidden" name="gr_name" value="${group.gr_name}">
-                     <c:if test="${mygroupJudge==null}">
-                        <div>
-                           <button id="joinBtn" class="w3-btn w3-red"style="text-shadow:1px 1px 0 #444;font-family: nexon; font-size: 25px;position: absolute; left: 1220px;top: 20px;" >그룹가입</button>
-                        </div>
-                     </c:if>
-
-                  </form>
-               </div>
-               <div style="position: absolute; z-index: 100;">
-                  <form action="createNotice" method="get">
-                           <input type="hidden" name="gr_id" value="${group.gr_id}" /> <input
-                              type="hidden" name="gr_name" value="${gr_name1}" />
-                           <button type="submit" id="notice11"class="w3-btn w3-red"style="text-shadow:1px 1px 0 #444;font-family: nexon; font-size: 25px;position: absolute; left: 1220px;top: 20px;">일정등록</button>
-                        </form>
-
-               </div>
-            </div>
-         </div>
-      </div>
-      </div>
-   </header>
-	
-	
-	
-	
-   <br>
-   <!--=== Breadcrumbs ===-->
-   <!--/breadcrumbs-->
-   <!--=== End Breadcrumbs ===-->
-
-   <!--=== Content Part ===-->
-
-
-
-   <div class="container">
-      <!----------------------------------------------------------------------------------------- 그룹상세 -->
-
-      
-      <!--=== Blog Posts ===-->
-      <div class="">
-         <div class="container"
-            style="padding-top: 30px; padding-bottom: 60px; padding-left: 0px;">
-            <div>
-               <!-- Blog All Posts -->
-               <div class="col-md-9">
-                  <!----- 그룹 캘린더 --------------------------------------------------------------------------->
-                  <div id="map11" class="col-md-13" style="z-index: 1; border: solied 2px; border-color: black;">
-                     <div class="news-v3 bg-color-white margin-bottom-60">
-                        <h2 style="font-family: sung;">#${group.gr_name}의 최근 라이딩</h2>
-                        <!-- 슬라이드 -->
-                        <a id="mm" href="#"><div id="map_div" style="border: solid 2px;border-color: black;"></div></a>
-                        <button class="w3-btn w3-red" id="click1" style="font-family: sung;">1</button>
-                        <button class="w3-btn w3-red"id="click2" style="font-family: sung;">2</button>
-                        <button class="w3-btn w3-red"id="click3" style="font-family: sung;">3</button>
-                        <button class="w3-btn w3-red"id="click4" style="font-family: sung;">4</button>
-                        <button class="w3-btn w3-red"id="click5" style="font-family: sung;">5</button>
-                        <!-- 슬라이드 -->
-                     </div>
-
-                  </div>
-                  <!----- 그룹 캘린더 --------------------------------------------------------------------------->
-                  <br>
-                  <h2 style="font-family: sung;">#게시판</h2>
-                  <!-- Blog Posts -->
-                  <div class="news-v3 bg-color-white margin-bottom-60">
-                     <table class="table table-bordered" id="read">
-                        <tr style="font-family: nexon; font-size: 20px; background-color: black;">
-                           <th class="table_cen">제목</th>
-                           <th class="table_cen">작성자</th>
-                           <th class="table_cen">날짜</th>
-                           <th class="table_cen">조회수</th>
-                           <!-- list_master -->
-                        </tr>
-
-
-                        <c:forEach items="${list_master}" var="GroupMaster">
-                           <tr>
-
-                              <td class="success" style="background-color: white;"><h4>
-                                    <strong><a style="color: red; font-family: sung;text-align: center;"
-                                       href="javascript:ViewLayer2();" id="a"
-                                       class="${GroupMaster.writing_id}">공지 - ${GroupMaster.writing_title}</a></strong>
-                                 </h4></td>
-
-                              <td class="success" style="background-color: white;"><h4 style="color: red;font-family: sung;text-align: center;">
-                                    <strong>${GroupMaster.member_id}
-                                 </h4>
-                                 </strong></td>
-
-                              <td class="success" style="background-color: white;"><h4 style="color: red;font-family: sung;text-align: center;">
-                                    <strong>${GroupMaster.regist_date}
-                                 </h4>
-                                 </strong></td>
-                              <td class="success" style="background-color: white;"><h4 style="color: red;font-family: sung;text-align: center;">
-                                    <strong>${GroupMaster.view_Number}
-                                 </h4>
-                                 </strong></td>
-                           </tr>
-
-                        </c:forEach>
-                        <c:forEach items="${listAll}" var="GroupInfoBo">
-                           <tr>
-
-                              <td class=""><a href="javascript:ViewLayer2();" id="a"  style="color:black;font-family: sung;text-align: center;"
-                                 class="${GroupInfoBo.writing_id}">${GroupInfoBo.writing_title}</a></td>
-
-                              <td class=""  style="font-family: sung;text-align: center;">${GroupInfoBo.member_id}</td>
-
-                              <td class=""  style="font-family: sung;text-align: center;">${GroupInfoBo.regist_date}</td>
-                              <td class=""  style="font-family: sung;text-align: center;">${GroupInfoBo.view_Number}</td>
-                           </tr>
-
-                        </c:forEach>
-                     </table>
-                     <c:if test="${memList!=null}">
-                     <br>
-                        <a href="javascript:ViewLayer();" class="w3-btn w3-black" style="float: right; font-family: nexon;" >등록</a>
-                     </c:if>
-
-                     <div id="Pop"
-                        style="position: absolute; left: 15.5px; top: 600px; width: 835px; height: 454px; z-index: 2; display: none; background: black; color: #fff;">
-
-                        <a href="javascript:ViewClose();"> <img id="popLogo"
-                           src="./resources/img/cancelcel.png" /></a>
-                        <form method="post"
-                           action="groupInfo?gr_name=${group.gr_name}&gr_id=${group.gr_id}&uid=${uid}"
-                           style="margin: 3% 3%;">
-                           <p style="color: white; font-family: nexon; font-size: 20px;">작성자 - ${uid}</p>
-
-                           <div class="form-group">
-                              <label style="color: white; font-family: nexon; font-size: 17px">제목</label> <input
-                                 class="form-control" type="text" name="writing_title">
-                           </div>
-                           <div class="form-group">
-                              <label style="color: white; font-family: nexon; font-size: 17px">내용</label>
-                              <textarea class="form-control" rows="11" cols="132"
-                                 style="color: black; resize: none;" name="writing_content"></textarea>
-                           </div>
-
-                           <input type="hidden" value="${uid}" name="member_id" />
-
-                           <!-- 인풋 타입 히든으로 안보이게 처리 -->
-
-                           <input class="w3-btn w3-white" type="submit" value="등록" style="float: right;font-family: nexon; font-size: 17px;">
-                        </form>
-                     </div>
-
-
-                     <div id="Pop_Re"
-                        style="position: absolute; left: -27.4px; top: 557px; width: 835px; height: 454px; z-index: 100 !important; display: none; margin: 5% 5%; background: white; color: #fff; border: solid 2px; border-color:black;">
-
-                        <a href="javascript:ViewClose2();"> <img id="popLogo"
-                           src="./resources/img/cancel.png" / style="color: white;"></a>
-                        <div style="margin: 3% 3%; color: white;">
-                           <div class="uid" style="display: none; font-family: nexon; font-size: 20px;color:black;">${uid}</div>
-                           <span style="font-family: nexon;font-size: 20px;color:black;">작성자 -</span> <label id="re_id" style="font-size: 20px; font-family: nexon;color:black;"></label>
-                           <br /> <span style="font-family: nexon; font-size: 17px;color:black;">제목 -</span> <label
-                              id="re_title" style="color: white; font-family: nexon; font-size: 17px"></label><br /> <span style="font-family: nexon; font-size: 17px;color:black;">내용</span>
-                           <div id="re_content"
-                              style="height: 250px; background-color: #505457; font-family: nexon; font-size: 17px; border: solid 2px; border-color: black;"></div>
-                           <br /> <label id="re_date" style="font-family: nexon;font-size: 17px;color:black;">작성일 - </label> <input type="hidden" style="font-family: nexon;font-size: 17px;"
-                              value="" id="re_writing_id" />
-                           <div id="die"></div>
-                           <!-- <input class="btn btn-default" type="submit" value="수정"> -->
-                           <!-- <input class="btn btn-default" type="submit" value="수정"
-                                 style="float: right"> -->
-                           <!-- <button class="btn btn-default" id="Pop_Re_del"
-                                 style="float: right">삭제</button> -->
-                        </div>
-                     </div>
-
-                     <div id="Pop_Re_Modify"
-                        style="position: absolute; left: 100px; top: 100px; width: 1000px; height: 600px; z-index: 100 !important; display: none; background: red; color: #fff;">
-                        <a href="javascript:ViewClose3();"> <img id="popLogo"
-                           src="./resources/img/cancelcel.png" /></a>
-                        <form method="post" action="groupInfo2" style="margin: 5% 5%;">
-                           <p style="color: white;">작성자 - ${uid}</p>
-
-                           <div class="form-group">
-                              <p style="color: white;">제목</p>
-                              <input class="form-control" type="text" name="writing_title"
-                                 id="mo_title" value="">
-                           </div>
-
-                           <div class="form-group">
-                              <p style="color: white;">내용</p>
-                              <textarea class="form-control" rows="13" cols="132"
-                                 style="color: black; resize: none;" name="writing_content"
-                                 id="mo_content" value=""></textarea>
-                           </div>
-                           <input type="hidden" value="${group.gr_name}" name="gr_name" />
-                           <input type="hidden" value="${group.gr_id}" name="gr_id" /> <input
-                              type="hidden" value="${uid}" name="uid" /> <input
-                              type="hidden" id="re_writing_id2" value="" name="writing_id" />
-                           <!-- 인풋 타입 히든으로 안보이게 처리 -->
-
-                           <input class="btn btn-default" type="submit" value="수정"
-                              style="float: right">
-                        </form>
-                     </div>
-                  </div>
-                  <!-- End Blog Posts -->
-
-                  <!-- Blog Posts -->
-                  <div class="news-v3 bg-color-white margin-bottom-60">
-                     <a href="groupNotice?gr_name=${gr_name1}">그룹공지 확인</a>
-                  </div>
-                  <!-- End Blog Posts -->
-
-                  <!-- Blog Posts -->
-                  <div class="news-v3 bg-color-white margin-bottom-60"></div>
-                  <!-- End Blog Posts -->
-
-                  <!-- Blog Posts -->
-                  <div class="news-v3 bg-color-white margin-bottom-60"></div>
-
-               </div>
-               <!-- End Blog All Posts -->
-
-               <!-- Blog Sidebar -->
-               <div class="col-md-3">
-                  <!-- Contacts -->
-                  <div class="headline">
-                     <h2 style="font-family: sung;">#Profile</h2>
-                     <!--                      private String fullName; //프로필 사진경로
-                        private String uid; //아이디
-                        private int riding_no; //라이딩한 횟수
-                        private double alldistance; //총거리
-                        private double avspeed; //평균속도  -->
-                  </div>
-
-                  <ul class="list-unstyled who margin-bottom-30">
-
-
-
-
-
-                     <c:if test="${listAll_li.riding_no !=null }">
-                        <li><a href="#"><i class=""></i> <br /> <img
-                              style="width: 258px; height: 250px;     margin-top: 9px;"
-                              src="/displayFile?fileName=${listAll_li.fullName}" /></a></li>
-                        <li class="profile"><a href="#" style="color: black;"><i class=""></i> 아이디 - ${listAll_li.uid}</a></li>
-                        <li class="profile"><a href="#" style="color: black;"><i class=""></i> <strong>참여횟수
-                                 - ${listAll_li.riding_no}</strong> </a></li>
-                        <li class="profile"><a href="#" style="color: black;"><i class=""></i> <strong>총거리 -
-                                 ${listAll_li.alldistance}</strong> </a></li>
-                        <li class="profile"><a href="#" style="color: black;"><i class=""></i> <strong>평균 속도
-                                 - ${listAll_li.avgspeed}</strong> </a></li>
-                     </c:if>
-                     <c:if test="${listAll_li.riding_no ==null }">
-                        <li class="profile"><a href="#" style="color: black;"><i class=""></i> <br /> <img
-                              style="width: 200px; height: 200px; margin-left: 30px;"
-                              src="/displayFile?fileName=${mem_li}" /></a></li>
-                        <li class="profile"><a href="#" style="color: black;"><i class=""></i> 아이디 -
-                                 ${uid}</a></li>
-                        <li class="profile"><a href="#" style="color: black;"><i class=""></i> 참여횟수
-                                 - 0 </a></li>
-                        <li class="profile"><a href="#" style="color: black;"><i class=""></i> 총거리 -
-                                 0 </a></li>
-                        <li class="profile"><a href="#" style="color: black;"><i class=""></i> 평균 속도
-                                 - 0 </a></li>
-                     </c:if>
-                  </ul>
-                  <br>
-                  <br>
-                  <!-- Business Hours -->
-                  <div class="headline" style="font-family: sung;">
-                     <h2>#Member List</h2>
-                  </div>
-                  <ul class="list-unstyled margin-bottom-30">
-                     <table class="table table-bordered">
-                        <c:forEach items="${listAll_mem}" var="mem">
-                           <tr>
-                              <td style="width: 30px"><img
-                                 style="width: 40px; height: 40px;"
-                                 src="/displayFile?fileName=${mem.fullname}" /></td>
-                              <td style="font-family: sung; font-size: 17px;margin-top: 7px;">${mem.uid}</td>
-                              <!-- 강퇴아이콘 -------------------------------------------->
-
-                              <c:if test="${uid == group.gr_leader}">
-                                 <!-- 세션의 uid가 그룹장이 아니라면 아래 문구 추가 -->
-                                 <td><c:choose>
-                                       <c:when test="${mem.uid!=group.gr_leader}">
-                                          <a href="#"> <img class="imgg" id="${mem.uid}"
-                                             style="width: 25px; height: 25px;"
-                                             src="./resources/img/cancel.png" />
-                                          </a>
-                                       </c:when>
-                                    </c:choose></td>
-                              </c:if>
-                              <input type="hidden" id="gname" value="${group.gr_name}" />
-                              <!-- 삭제하기 위해서 그룹의 이름을 받아 gname에 저장함 -->
-                              <!-- 강퇴아이콘 -------------------------------------------->
-                           </tr>
-                        </c:forEach>
-                     </table>
-                  </ul>
-
-                  <!-- Why we are? -->
-
-               </div>
-               <!--/col-md-3-->
-               <!-- End Blog Sidebar -->
-            </div>
-         </div>
-      </div>
-
-      <footer>
-         <div class="row">
-            <div class="col-lg-12" style="font-family: sung;">
-               <p>Copyright &copy; GROUP RIDING Website 2017</p>
-            </div>
-         </div>
-      </footer>
-      <br>
-      <br>
-
-
-   </div>
-   <script>
-      $(document).ready(
-            function() {
-               var uid = "${uid}";
-               $.getJSON("getAttach/" + uid, function(list) {
-
-                  var img = $("<img/>").attr('src',
-                        "/displayFile?fileName=" + list[0]);
-                  img.css("width", "35px");
-                  img.css("height", "35px");
-
-                  $("#profile").prepend(img);
-
-                  var logoutform = $("form[data-role='out']");
-
-                  $("#logout").click(function() {
-
-                     logoutform.submit();
-                  });
-
-               });
-
-            });
-   </script>
-
-
-
-
-   <script>
-      $(document)
-            .ready(
-                  function() {
-                     var uid = $(".uid").text();
-                     var ele = "<button class='w3-btn w3-black' id='Pop_Re_mo'  style='float: right; font-family: nexon;font-size:17px;'>수정</button>"
-                           + "<button class='w3-btn w3-black' id='Pop_Re_del' style='float: right;font-family: nexon;font-size:17px;'>삭제</button>";
-
-                     var formObj = $("form[role='form']");
-
-                     $("#gr_list").on("click", function() {
-                        formObj.attr("action", "groupList");
-                        formObj.attr("method", "get");
-                        formObj.submit();
-                     });
-                     /* ----------------------------------삭제버튼---------------------------------------- */
-                     $(".imgg").on("click", function() {
-                        var uid = $(this).attr("id");
-                        var gname = $("#gname").val();
-                        console.log(uid);
-                        console.log(gname);
-                        $.ajax({
-                           url : 'groupInfoMem_del',
-                           data : {
-                              uid : uid,
-                              gname : gname
-                           },
-                           type : 'post',
-                           success : function(data) {
-                              console.log(data);
-                              location.reload();
-                           }
-                        });
-                     });
-                     /* ----------------------------------삭제버튼---------------------------------------- */
-
-                     $("#read a").on(
-                           "click",
-                           function() {
-                              var writing_id = $(this).attr("class");
-                              $.ajax({
-                                 url : 'groupInfo_re',
-                                 data : {
-                                    id : writing_id
-                                 },
-                                 type : 'post',
-                                 success : function(data) {
-                                    console.log(data);
-                                    $("#re_id")
-                                          .text(data.member_id);
-                                    $("#re_title").text(
-                                          data.writing_title);
-                                    $("#re_content").text(
-                                          data.writing_content);
-                                    $("#re_date").text(
-                                          data.regist_date);
-                                    $("#re_writing_id").text(
-                                          data.writing_id);
-                                    $("#re_writing_id2").val(
-                                          data.writing_id);
-                                    if (uid == data.member_id) {
-                                       $("#die").append(ele);
-                                    } else {
-
-                                    }
-                                 }
-                              });
-                           });
-                     $("#Pop_Re").on("click", "#Pop_Re_del", function() {
-                        var writing_id = $("#re_writing_id").text();
-                        console.log(writing_id);
-                        $.ajax({
-                           url : 'groupInfo_del',
-                           data : {
-                              id : writing_id
-                           },
-                           type : 'post',
-                           success : function(data) {
-                              location.reload();
-                           }
-                        });
-
-                     });
-                     $("#Pop_Re").on(
-                           "click",
-                           "#Pop_Re_mo",
-                           function() {
-                              ViewLayer3();
-                              var writing_id = $("#re_writing_id")
-                                    .text();
-                              $.ajax({
-                                 url : 'groupInfo_re',
-                                 data : {
-                                    id : writing_id
-                                 },
-                                 type : 'post',
-                                 success : function(data) {
-                                    console.log(data);
-                                    $("#mo_title").val(
-                                          data.writing_title);
-                                    $("#mo_content").val(
-                                          data.writing_content);
-                                 }
-                              });
-                           });
-
-                  });
-   </script>
-
-   <!--=== Footer Version 1 ===-->
-
-
-   <!--/wrapper-->
-
-
-   <script type="text/javascript">
-      function initMap() {
-         var map = new google.maps.Map(document.getElementById('map'), {
-            center : {
-               lat : -34.397,
-               lng : 150.644
-            },
-            zoom : 15
-         });
-         var infoWindow = new google.maps.InfoWindow({
-            map : map
-         });
-
-         // Try HTML5 geolocation.
-         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-               var pos = {
-                  lat : position.coords.latitude,
-                  lng : position.coords.longitude
-               };
-
-               infoWindow.setPosition(pos);
-               infoWindow.setContent('Location found.');
-               map.setCenter(pos);
-            }, function() {
-               handleLocationError(true, infoWindow, map.getCenter());
-            });
-         } else {
-            // Browser doesn't support Geolocation
-            handleLocationError(false, infoWindow, map.getCenter());
-         }
-      }
-
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-         infoWindow.setPosition(pos);
-         infoWindow
-               .setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.'
-                     : 'Error: Your browser doesn\'t support geolocation.');
-      }
-   </script>
-   <script>
-   <!-- 그룹장 체크2 -->
-      var leader = "${leader}";
-
-      if (leader == "") {
-         $("#notice11").hide();
-      } else {
-         $("#notice11").show();
-      }
-   </script>
-
-   <!-- jQuery -->
-   <script src="./resources/js2/jquery.js"></script>
-
-   <!-- Bootstrap Core JavaScript -->
-   <script src="./resources/js2/bootstrap.min.js"></script>
-
-   <script type="text/javascript" src="./resources/js/upload.js"></script>
-   <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
-   <!--[if lt IE 9]>
-   <script src="assets/plugins/respond.js"></script>
-   <script src="assets/plugins/html5shiv.js"></script>
-   <script src="assets/plugins/placeholder-IE-fixes.js"></script>
-   <![endif]-->
-
-
-   <!-- 최근 라이딩 -->
-   <script type="text/javascript"
-      src="https://apis.skplanetx.com/tmap/js?version=1&format=javascript&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b"></script>
-
-   <script>
-      var startPoint = [];
-      var endPoint = [];
-      var notice_title = [];
-      var ridingDate = [];
-
-      map = new Tmap.Map({
-         div : 'map_div',
-         width : '836px',
-         height : '450px',
-         transitionEffect : "resize",
-         animation : true
-      });
-      map.setCenter(new Tmap.LonLat(14315520.90430, 4283115.74626), 11);
-      map.addControl(new Tmap.Control.KeyboardDefaults());
-      map.addControl(new Tmap.Control.MousePosition());
-
-      <c:forEach items="${noticelist}" var="i" varStatus="count">
-      startPoint.push("${i.start_point}");
-      endPoint.push("${i.end_point}");
-      notice_title
-            .push("<span class='a${count.count}'>&nbsp;&nbsp;${i.notice_title}</span>");
-      ridingDate
-            .push("<span id='a${count.count}'>${i.ridingDate}&nbsp;&nbsp;</span>");
-      </c:forEach>
-
-      $(document).ready(function() {
-         if (startPoint[0] != null) {
-            searchRoute(startPoint[0], endPoint[0]);
-            $("#mm").prepend(notice_title[0]);
-            $("#mm").prepend(ridingDate[0]);
-
-            $(".a2").hide();
-            $(".a3").hide();
-            $(".a4").hide();
-            $(".a5").hide();
-
-            $("#a2").hide();
-            $("#a3").hide();
-            $("#a4").hide();
-            $("#a5").hide();
-         } else {
-            alert("최근 없음!");
-         }
-      });
-
-      $("#click2").on("click", function() {
-         if (startPoint[1] != null) {
-            searchRoute(startPoint[1], endPoint[1]);
-            $("#mm").prepend(notice_title[1]);
-            $("#mm").prepend(ridingDate[1]);
-
-            $(".a1").hide();
-            $(".a3").hide();
-            $(".a4").hide();
-            $(".a5").hide();
-
-            $("#a1").hide();
-            $("#a3").hide();
-            $("#a4").hide();
-            $("#a5").hide();
-         } else {
-            alert("최근 없음!");
-         }
-      });
-
-      $("#click3").on("click", function() {
-         if (startPoint[2] != null) {
-            searchRoute(startPoint[2], endPoint[2]);
-            $("#mm").prepend(notice_title[2]);
-            $("#mm").prepend(ridingDate[2]);
-
-            $(".a1").hide();
-            $(".a2").hide();
-            $(".a4").hide();
-            $(".a5").hide();
-
-            $("#a1").hide();
-            $("#a2").hide();
-            $("#a4").hide();
-            $("#a5").hide();
-         } else {
-            alert("최근 없음!");
-         }
-      });
-
-      $("#click4").on("click", function() {
-         if (startPoint[3] != null) {
-            searchRoute(startPoint[3], endPoint[3]);
-            $("#mm").prepend(notice_title[3]);
-            $("#mm").prepend(ridingDate[3]);
-
-            $(".a1").hide();
-            $(".a2").hide();
-            $(".a3").hide();
-            $(".a5").hide();
-
-            $("#a1").hide();
-            $("#a2").hide();
-            $("#a3").hide();
-            $("#a5").hide();
-         } else {
-            alert("최근 없음!");
-         }
-      });
-
-      $("#click5").on("click", function() {
-         if (startPoint[4] != null) {
-            searchRoute(startPoint[4], endPoint[4]);
-            $("#mm").prepend(notice_title[4]);
-            $("#mm").prepend(ridingDate[4]);
-
-            $(".a1").hide();
-            $(".a2").hide();
-            $(".a3").hide();
-            $(".a4").hide();
-
-            $("#a1").hide();
-            $("#a2").hide();
-            $("#a3").hide();
-            $("#a4").hide();
-         } else {
-            alert("최근 없음!");
-         }
-      });
-
-      //경로 정보 로드
-      function searchRoute(startPoint, endPoint) {
-
-         
-         
-         var start = startPoint.split(","); 
-      
-         var stop = endPoint.split(","); // 경도 자르기
-         
-
-         var routeFormat = new Tmap.Format.KML({
-            extractStyles : true,
-            extractAttributes : true
-         });
-         var startX = new Object(start[0]);
-         var startY = new Object(start[1]);
-         var endX = new Object(stop[0])// 14136027.789587;
-         var endY = new Object(stop[1])// 4517572.4745242;
-         var urlStr = "https://apis.skplanetx.com/tmap/routes?version=1&format=xml";
-         urlStr += "&startX=" + startX;
-         urlStr += "&startY=" + startY;
-         urlStr += "&endX=" + endX;
-         urlStr += "&endY=" + endY;
-         urlStr += "&appKey=4bdccae9-d798-3ca4-b110-27795b43b78b";
-         var prtcl = new Tmap.Protocol.HTTP({
-            url : urlStr,
-            format : routeFormat
-         });
-         var routeLayer = new Tmap.Layer.Vector("route", {
-            protocol : prtcl,
-            strategies : [ new Tmap.Strategy.Fixed() ]
-         });
-         routeLayer.events.register("featuresadded", routeLayer,
-               onDrawnFeatures);
-         map.addLayer(routeLayer);
-      }
-
-      //경로 그리기 후 해당영역으로 줌
-      function onDrawnFeatures(e) {
-         map.zoomToExtent(this.getDataExtent());
-      }
-   </script>
-
-=======
 	<script>
 		function ViewLayer() {
 			//만일 Pop라는 녀석이 닫혀있다면??
@@ -1750,122 +854,6 @@ b_container {
 
 
 
-	<script>
-		$(document)
-				.ready(
-						function() {
-							var uid = $(".uid").text();
-							var ele = "<button class='w3-btn w3-black' id='Pop_Re_mo'  style='float: right; font-family: nexon;font-size:17px;'>수정</button>"
-									+ "<button class='w3-btn w3-black' id='Pop_Re_del' style='float: right;font-family: nexon;font-size:17px;'>삭제</button>";
-
-							var formObj = $("form[role='form']");
-
-							$("#gr_list").on("click", function() {
-								formObj.attr("action", "groupList");
-								formObj.attr("method", "get");
-								formObj.submit();
-							});
-							/* ----------------------------------삭제버튼---------------------------------------- */
-							$(".imgg").on("click", function() {
-								var uid = $(this).attr("id");
-								var gname = $("#gname").val();
-								console.log(uid);
-								console.log(gname);
-								$.ajax({
-									url : 'groupInfoMem_del',
-									data : {
-										uid : uid,
-										gname : gname
-									},
-									type : 'post',
-									success : function(data) {
-										console.log(data);
-										location.reload();
-									}
-								});
-							});
-							/* ----------------------------------삭제버튼---------------------------------------- */
-
-							$("#read a").on(
-									"click",
-									function() {
-										var writing_id = $(this).attr("class");
-										$.ajax({
-											url : 'groupInfo_re',
-											data : {
-												id : writing_id
-											},
-											type : 'post',
-											success : function(data) {
-												console.log(data);
-												$("#re_id")
-														.text(data.member_id);
-												$("#re_title").text(
-														data.writing_title);
-												$("#re_content").text(
-														data.writing_content);
-												$("#re_date").text(
-														data.regist_date);
-												$("#re_writing_id").text(
-														data.writing_id);
-												$("#re_writing_id2").val(
-														data.writing_id);
-												if (uid == data.member_id) {
-													$("#die").append(ele);
-												} else {
-
-												}
-											}
-										});
-									});
-							$("#Pop_Re").on("click", "#Pop_Re_del", function() {
-								var writing_id = $("#re_writing_id").text();
-								console.log(writing_id);
-								$.ajax({
-									url : 'groupInfo_del',
-									data : {
-										id : writing_id
-									},
-									type : 'post',
-									success : function(data) {
-										location.reload();
-									}
-								});
-
-							});
-							$("#Pop_Re").on(
-									"click",
-									"#Pop_Re_mo",
-									function() {
-										ViewLayer3();
-										var writing_id = $("#re_writing_id")
-												.text();
-										$.ajax({
-											url : 'groupInfo_re',
-											data : {
-												id : writing_id
-											},
-											type : 'post',
-											success : function(data) {
-												console.log(data);
-												$("#mo_title").val(
-														data.writing_title);
-												$("#mo_content").val(
-														data.writing_content);
-											}
-										});
-									});
-
-						});
-	</script>
-
-	<!--=== Footer Version 1 ===-->
-
-
-	<!--/wrapper-->
-
-
-
 	<script type="text/javascript">
 		function initMap() {
 			var map = new google.maps.Map(document.getElementById('map'), {
@@ -1956,19 +944,15 @@ b_container {
 		map.addControl(new Tmap.Control.KeyboardDefaults());
 		map.addControl(new Tmap.Control.MousePosition());
 
+		
 		<c:forEach items="${noticelist}" var="i" varStatus="count">
-		startPoint.push("${i.start_point}");
-		endPoint.push("${i.end_point}");
-		notice_title
-				.push("<span class='a${count.count}'>&nbsp;&nbsp;${i.notice_title}</span>");
-		ridingDate
-				.push("<span id='a${count.count}'>${i.ridingDate}&nbsp;&nbsp;</span>");
+			startPoint.push("${i.start_point}");
+			endPoint.push("${i.end_point}");
+			notice_title.push("<span class='a${count.count}'>&nbsp;&nbsp;${i.notice_title}</span>");
+			ridingDate.push("<span id='a${count.count}'>${i.ridingDate}&nbsp;&nbsp;</span>");
 		</c:forEach>
 
 
-		
-
-		
 			$(document).ready(function(){
 				$("#click1").val("최근 라이딩이 없음!");
 				$("#click2").hide();
@@ -2115,11 +1099,17 @@ b_container {
 		//경로 정보 로드
 		function searchRoute(startPoint,endPoint){
 			
-			var startx = new String(startPoint).substr(4, 17);   // 경도 자르기
-			var starty = new String(startPoint).substr(26);   // 경도 자르기
+			var sP = startPoint.split(",");
+			var eP = endPoint.split(",");
+			
+			var spp = "lon=" + sP[0] + ",lat=" + sP[1];
+			var epp = "lon=" + eP[0] + ",lat=" + eP[1];
+			
+			var startx = new String(spp).substr(4, 17);   // 경도 자르기
+			var starty = new String(spp).substr(26);   // 경도 자르기
               
-			var stopx = new String(endPoint).substr(4, 17);   // 경도 자르기
-            var stopy = new String(endPoint).substr(26);   // 경도 자르기
+			var stopx = new String(epp).substr(4, 17);   // 경도 자르기
+            var stopy = new String(epp).substr(26);   // 경도 자르기
                 
 
 		    var routeFormat = new Tmap.Format.KML({extractStyles:true, extractAttributes:true});
@@ -2165,26 +1155,40 @@ b_container {
      <form action="createNotice" method="post">
       <div class="modal-body">
       	<div id="map_div1"></div>
-		공지제목 : <input type="text" name="notice_title"> <br>
-		라이딩 날짜 : <input type="date" name="ridingDate" id="ridingDate">	<br>
-		라이딩 시간 : <input type="time" name="ridingTime">	<br>
-		준비물 : <input type="text" name="material">	<br>
-		출발지 : <input type="text" id="starting"> <input type="button" id="start" value="검색">	<br>
-		도착지 : <input type="text" id="ending">	<input type="button" id="stopp" value="검색">	<br>
-		<input type="button" id="gogo" value="경유 검색">
-		<input type="button" onClick="window.location.reload()" value="취소">
+			
+		<div style="margin-top: 10px">
+			공지제목 : &nbsp&nbsp&nbsp&nbsp<input type="text" name="notice_title" style="width:200px;" onMouseOver="this.style.color='red';" onMouseOut="this.style.color='black';"> <br>
+			라이딩 날짜 : <input type="date" name="ridingDate" id="ridingDate" style="width:200px;">	<br>
+			라이딩 시간 : <input type="time" name="ridingTime" style="width:200px;">	<br>
+			준비물 : &nbsp&nbsp&nbsp&nbsp<input type="text" name="material" style="width:200px;">	<br>
+			출발지 : &nbsp&nbsp&nbsp&nbsp<input type="text" id="starting" style="width:200px; z-index:1;"> <input type="button" id="start" value="검색">	<br>
+			도착지 : &nbsp&nbsp&nbsp&nbsp<input type="text" id="ending" style="width:200px;">	<input type="button" id="stopp" value="검색">	<br>
+			<input type="button" id="gogo" value="경유 검색">
+		</div>
+		<!-- <div style='overflow:scroll; height:200px; background-color:green;'> -->
+		<div id="ull" style='position: absolute; top:550px; left: 85px; 
+							overflow-x:hidden; 
+							width:200px; height:200px; 
+							background-color:white;
+							border: 1px solid black;'>
+			<!-- <ul id="ull"> -->
+				<!-- <li id="li"></li> -->
+			<!-- </ul> -->
+		</div>
 		
-		<div>
-			<ul id="ull">
-				<li id="li"></li>
-			</ul>
-		</div>
+		<input type="button" id="ullBtn" style="position: relative; top:115px; left:270px;" value="X" />
 	
-		<div>
-			<ul id="ull1">
-				<li id="li1"></li>
-			</ul>
+		<div id="ull1" style='position: absolute; top:575px; left: 85px; 
+							overflow-x:hidden; 
+							width:200px; height:200px; 
+							background-color:white; 
+							border: 1px solid black;'>
+			<!-- <ul id="ull1"> -->
+				<!-- <li id="li1"></li> -->
+			<!-- </ul> -->
 		</div>
+		
+		<input type="button" id="ull1Btn" style="position: relative; top:135px; left:270px;" value="X" />
 		
 		<input type="hidden" name="gr_id" value="${gr_id}"/>
 		<input type="hidden" name="uid" value="${uid}"/>
@@ -2199,7 +1203,7 @@ b_container {
       
       <div class="modal-footer">
       	<button type="submit" class="btn btn-default">등록</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" onClick="window.location.reload()">닫기</button>
       </div>
      </form>
      
@@ -2210,11 +1214,15 @@ b_container {
 
 
 <script>
+$("#ull").hide();
+$("#ullBtn").hide();
+$("#ull1").hide();
+$("#ull1Btn").hide();
 
 			var map1;
 
 			map1 = new Tmap.Map({div:'map_div1',
-		        width:'50%', 
+		        width:'100%', 
 		        height:'400px',
 		        transitionEffect:"resize",
 		        animation:true
@@ -2227,7 +1235,16 @@ b_container {
 					
 ////////////////
 ///// POI //////
-////////////////				                 
+////////////////		
+$("#ullBtn").on("click", function(){
+	$("#ull").hide();
+	$("#ullBtn").hide();
+});
+$("#ull1Btn").on("click", function(){
+	$("#ull1").hide();
+	$("#ull1Btn").hide();
+});
+
 				var markerLayer;
 				var tdata;
 				var name = '';
@@ -2235,7 +1252,12 @@ b_container {
 				addMarkerLayer();
 
 				var clcl;	// 출발지 or 도착지
-	    		$("#start").on("click", function(){
+				$("#start").on("click", function(){
+					$("#ull").show();
+					$("#ullBtn").show();
+					$("#ull1").hide();
+					$("#ull1Btn").hide();
+					
 	    			clcl = true;
 
 	    			$("#ull").empty();	// 태그제거
@@ -2249,8 +1271,14 @@ b_container {
 	    			getDataFromLonLat(this.lonlat);	// 주소
 
 	    		});
+	    		
 
 	    		$("#stopp").on("click", function(){
+	    			$("#ull").hide();
+	    			$("#ullBtn").hide();
+					$("#ull1").show();
+					$("#ull1Btn").show();
+					
 					clcl = false;
 
 	    			$("#ull").empty();	// 태그제거
@@ -2332,13 +1360,15 @@ b_container {
 				                lonlat:new Tmap.LonLat(lon, lat)
 				            };
 				            console.log(name, lon, lat);
+ 							var red = "red";
+ 							var black= "black";
  							
  							if(clcl == true) {
-					            $("#ull").append("<li>" + name + "</li>" 
+					            $("#ull").append("<li onMouseOver='this.style.color='red';' style='list-style-type : none'>" + name + "</li>" 
 					            				+ "<input type='hidden' value='" + lon + "'>"
 					            				+ "<input type='hidden' value='" + lat + "'>");
  							} else if (clcl == false) {
- 								$("#ull1").append("<li>" + name + "</li>" 
+ 								$("#ull1").append("<li style='list-style-type : none'>" + name + "</li>" 
 					            				+ "<input type='hidden' value='" + lon + "'>"
 					            				+ "<input type='hidden' value='" + lat + "'>");
  							}
@@ -2360,7 +1390,7 @@ b_container {
 					$("#startCoordX").val($(this).next().val());
 					$("#startCoordY").val($(this).next().next().val());
 					
-					$("#start_point").val("lon=" + $(this).next().val() + ",lat=" +  $(this).next().next().val());			
+					$("#start_point").val($(this).next().val() + ", " +  $(this).next().next().val());			
 				});
 
 				$("#ull1").on("click", "li", function() {
@@ -2370,7 +1400,7 @@ b_container {
 					$("#endCoordX").val($(this).next().val());
 					$("#endCoordY").val($(this).next().next().val());
 					
-					$("#end_point").val("lon=" + $(this).next().val() + ",lat=" +  $(this).next().next().val());
+					$("#end_point").val($(this).next().val() + ", " +  $(this).next().next().val());
 					
 				});
 				
@@ -2450,7 +1480,7 @@ b_container {
                 		 var size = new Tmap.Size(24,38);
                          var offset = new Tmap.Pixel(-(size.w/2), -(size.h/2));
                          var icon = new Tmap.Icon('./resources/img/racepoint.png', size, offset);
-                         var label = new Tmap.Label('<div>Race Point</div>');
+                         var label = new Tmap.Label("<div'>Race Point</div>");
                          
                 		   var location=racepoint[i].split(",");
                 		           		   
@@ -2512,37 +1542,28 @@ b_container {
                		 	var size = new Tmap.Size(50,50);
                         var offset = new Tmap.Pixel(-(size.w/2), -(size.h/2));
                         var icon = new Tmap.Icon('./resources/img/hotMaker-11.png', size, offset);
-               		 
+                        var label = new Tmap.Label("<div>" + data[i].place_name + "</div>");
+                        
                		  	 var hotLo = hotPlace[i].split(",");
                		           		   
                		  	 var hotLocation=get3857LonLat(parseFloat(hotLo[0]), parseFloat(hotLo[1]));
                		                     
-                          var marker12 = new Tmap.Markers(hotLocation, icon);
+                          var marker12 = new Tmap.Markers(hotLocation, icon, label);
                            
                           markerLayer12.addMarker(marker12);
-                          
-                       // popup
-           				var popup2;
-          				popup2 = new Tmap.Popup("p1",
-          				                        new Tmap.LonLat(get3857LonLat(128.619801-1, 35.894131-1)),
-          				                        new Tmap.Size(200, 50),
-          				                        "<div style='width:50%; height:100px; text-align:center; color:red;'>" + hotName[i] + "</div>"
-          				                        ); 
-          				map1.addPopup(popup2);
-          				popup2.hide();
-          				
-          				marker12.events.register("mouseover", popup2, onMouseover2);	// racePoint over
-                        marker12.events.register("mouseout", popup2, onMouseout2);	// racePoint out
+                       
+          				marker12.events.register("mouseover", marker12, onMouseover2);	// racePoint over
+                        marker12.events.register("mouseout", marker12, onMouseout2);	// racePoint out
            				// popup
                        
                		 }	// for
                		
 		               	function onMouseover2 (evt){
-						    this.show();
+		               		this.popup.show();
 						}
 		
 						function onMouseout2 (evt){
-						    this.hide();
+							this.popup.hide();
 						}
 
                	 
@@ -2553,7 +1574,7 @@ b_container {
 	           
 		
 	</script>
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+
 
 
 </body>

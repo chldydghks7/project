@@ -19,11 +19,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-<<<<<<< HEAD
+
 import group.riding.bean.GoldenWeek;
-=======
+
 import group.riding.bean.GroupBean;
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+
 import group.riding.bean.KmlBean;
 import group.riding.bean.MyPicture;
 import group.riding.bean.RidingInfo;
@@ -414,15 +414,14 @@ public class UserController {
 			model.addAttribute("userInfo", userInfo);
 			model.addAttribute("avgspeed", avgspeed);
 			model.addAttribute("avgdistance", avgdistance);
-<<<<<<< HEAD
+
 //			model.addAttribute("grouplist", grouplist);
 			  List<GoldenWeek>WeekData=service. WeekData(uid);
 	          System.out.println(WeekData);
 	          model.addAttribute("WeekData", WeekData);
-=======
+
 			model.addAttribute("myGroup1", myGroup1);
-			
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+
 			return "MyInfo";
 		}
 		 
