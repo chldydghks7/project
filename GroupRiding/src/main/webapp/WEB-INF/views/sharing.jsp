@@ -195,6 +195,19 @@
 </head>
 
 <body>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+		
+
+
+>>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+>>>>>>> 06fc3c08986877bc66eaa7c96b0eea617d16a9b0
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
       <div class="container">
          <!-- Brand and toggle get grouped for better mobile display -->
@@ -243,6 +256,19 @@
    </nav>
 
        <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing2.jpeg') no-repeat center center scroll;">
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+       <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing2.jpeg') no-repeat center center scroll;">
+=======
+
+
+       <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing2.jpeg') no-repeat center center scroll;">
+
+>>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+>>>>>>> 06fc3c08986877bc66eaa7c96b0eea617d16a9b0
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
@@ -261,7 +287,11 @@
             <!-- Begin Content -->
             <form id="form">
                <button id="newBtn" class="w3-btn w3-red"
+<<<<<<< HEAD
                         style="text-shadow: 1px 1px 0 #444; font-family: nexon; font-size: 25px;position: absolute; left: 1600px; top: 220px;">글쓰기</button>
+=======
+								style="text-shadow: 1px 1px 0 #444; font-family: nexon; font-size: 25px;position: absolute; left: 1600px; top: 220px;">글쓰기</button>
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
             </form>
          </div>
             <br />
@@ -368,6 +398,7 @@
                <div id="sharmap"></div>
                
                <div id="picCarousel" class="carousel slide" data-ride="carousel" style="width: 300px;height: 250px;position: absolute;left:280px;top:380px;display:none;">
+<<<<<<< HEAD
              
              
             
@@ -389,6 +420,29 @@
          </div>
          
          
+=======
+				 
+				 
+				
+			
+				  <div class="carousel-inner">
+				  
+				  
+				  </div>
+				
+				  <!-- Left and right controls -->
+				  <a class="left carousel-control" href="#picCarousel" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#picCarousel" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+			</div>
+			
+			
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
                <hr>
                <div class='s-content' style="position:relative;top:300px;"></div>
                <hr>
@@ -470,6 +524,11 @@
          function() {
             var uid = "${uid}";
             $.getJSON("getAttach/" + uid, function(list) {
+=======
+<<<<<<< HEAD
+         function() {
+            var uid = "${uid}";
+            $.getJSON("getAttach/" + uid, function(list) {
 
                var img = $("<img/>").attr('src',
                      "/displayFile?fileName=" + list[0]);
@@ -488,6 +547,33 @@
             });
 
          
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 06fc3c08986877bc66eaa7c96b0eea617d16a9b0
+
+               var img = $("<img/>").attr('src',
+                     "/displayFile?fileName=" + list[0]);
+               img.css("width", "35px");
+               img.css("height", "35px");
+
+               $("#profile").prepend(img);
+
+               var logoutform = $("form[data-role='out']");
+
+               $("#logout").click(function() {
+
+                  logoutform.submit();
+               });
+
+            });
+
+<<<<<<< HEAD
+         
+=======
+>>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+>>>>>>> 06fc3c08986877bc66eaa7c96b0eea617d16a9b0
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
      
       
       var map;
@@ -619,6 +705,7 @@
                 });
             
     
+<<<<<<< HEAD
            
            /* 이미지 여러개 띄우기    */
            
@@ -676,6 +763,65 @@
         }
            
            
+=======
+           
+     		/* 이미지 여러개 띄우기    */
+     		
+     	
+     		$("#picCarousel .carousel-inner").text("");
+     		
+     		
+     		for(var i=0;i<file.length;i++)
+     	{
+     			
+     			/*이미지 찍은 위치에 맞춰서 보여주기*/
+     			var piclocation= file[i].picture_location.split(",");
+ 
+     		    var picMarkerLocation= {lat:parseFloat(piclocation[0]),lng:parseFloat(piclocation[1])};
+     			  
+     		    var picIcon=new google.maps.MarkerImage(file[i].bbs_FilePath,null,null,null,new google.maps.Size(70,70));
+     		    
+	     		   var picMarker= new google.maps.Marker({
+	             	   position:picMarkerLocation,  
+	             	   map:map,
+	             	   icon:picIcon
+	                });
+	     		   
+	     		  picMarker.addListener('click', function() {
+	     			  
+	     			   $("#picCarousel").show();
+	     			  
+	     			  
+	     			  });
+     			  
+			     	 if(i==0)
+			     	{	 
+			     		
+			     		var div=$("<div class='item active'></div>");
+			     	}else{
+			     	
+			     		var div=$("<div class='item'></div>");
+			     	}	
+			     	
+     		
+     		
+     		
+     		var img=$("<img style='width:300px;height:250px;' />");
+     		
+     		img.attr("src",file[i].bbs_FilePath);
+     		
+     		
+     		
+     		div.append(img);
+     		
+     		$("#picCarousel .carousel-inner").append(div);
+     		
+     			
+     			
+     	}
+     		
+     		
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
                
                
                
@@ -946,4 +1092,54 @@
         location.reload();
       });
       
+<<<<<<< HEAD
       
+=======
+      $('#myModal').on('shown.bs.modal', function () {
+         google.maps.event.trigger(map, 'resize'); 
+         var refresh = function() {
+              //var center = map.getCenter();
+              
+              var kmlcenter=$(".kmlcenter").text();
+              
+              kmlcenter=kmlcenter.split(",");
+              
+                 map.setCenter(new google.maps.LatLng(parseFloat(kmlcenter[0]), parseFloat(kmlcenter[1])));
+                 map.setZoom(17);
+              }
+              setTimeout(refresh, 500); 
+
+       });
+      
+      $('#editModal').on('shown.bs.modal', function () {
+          google.maps.event.trigger(map, 'resize'); 
+          var refresh = function() {
+               //var center = map.getCenter();
+                   map.setCenter(new google.maps.LatLng(35.896553, 128.622051));
+                  map.setZoom(17);
+               }
+               setTimeout(refresh, 500); 
+
+        });
+      
+<<<<<<< HEAD
+         });
+=======
+<<<<<<< HEAD
+         });
+=======
+
+			});
+>>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+>>>>>>> 06fc3c08986877bc66eaa7c96b0eea617d16a9b0
+
+   </script>
+   <!--[if lt IE 9]>
+   <script src="assets/plugins/respond.js"></script>
+   <script src="assets/plugins/html5shiv.js"></script>
+   <script src="assets/plugins/placeholder-IE-fixes.js"></script>
+   <![endif]-->
+
+</body>
+</html>
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6

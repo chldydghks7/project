@@ -95,16 +95,27 @@ public class GroupDAOImpl implements GroupDAO {
 		return session.selectOne(namespace + ".leaderNotice", paramMap);
 	}
 
+<<<<<<< HEAD
 	@Override
 	   public String groupPng(String gr_name) throws Exception {
 	      return session.selectOne(namespace + ".groupPng", gr_name);
 	   }
+=======
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
 
 	@Override
 	public String joingNo(String uid) throws Exception {
 		return session.selectOne(namespace + ".joingNo", uid);
 	}
 
+<<<<<<< HEAD
+=======
+	@Override
+	public String groupPng(String gr_name) throws Exception {
+		return session.selectOne(namespace + ".groupPng", gr_name);
+	}
+	
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
 
 	
 

@@ -130,6 +130,10 @@ public class UserDAOImpl implements UserDAO {
 	      // TODO Auto-generated method stub
 	      return session.selectList(namespace + ".WeekData", uid);
 	   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
 
 	@Override
 	public void insertRidingInfoNotice(RidingInfo info) throws Exception {

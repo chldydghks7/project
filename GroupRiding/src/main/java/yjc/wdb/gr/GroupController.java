@@ -190,6 +190,7 @@ public class GroupController {
 		model.addAttribute("mem_li", pic.getFullname());
 		model.addAttribute("memList", memList);
 		System.out.println("사진은?? ??"+pic.getFullname());
+<<<<<<< HEAD
 
 		// 그룹 프로필
 	      //   /2017/07/28/s_b61ef20a-43da-4aa6-9da6-ebcc1e8b428c_Hydrangeas.jpg
@@ -203,6 +204,25 @@ public class GroupController {
 
 	      model.addAttribute("groupPng", groupPng);
 
+=======
+
+		
+		String joinNo = service.joingNo(uid);
+		model.addAttribute("joinNo", joinNo);
+		
+		// 그룹 프로필
+		//	/2017/07/28/s_b61ef20a-43da-4aa6-9da6-ebcc1e8b428c_Hydrangeas.jpg
+		//	/2017/07/28/b61ef20a-43da-4aa6-9da6-ebcc1e8b428c_Hydrangeas.jpg
+
+		String png1 = service.groupPng(gr_name).substring(0, 12);
+		String png2 = service.groupPng(gr_name).substring(14);
+		String groupPng = png1 + png2;
+				
+		System.out.println("groupPng : " + groupPng);
+
+		model.addAttribute("groupPng", groupPng);
+
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
 
 		return "groupInfo";
 	

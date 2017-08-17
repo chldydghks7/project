@@ -94,15 +94,27 @@ public class GroupServiceImpl implements GroupService {
 		return dao.leaderNotice(uid, gr_name);
 	}
 
+<<<<<<< HEAD
 	@Override
 
 	   public String groupPng(String gr_name) throws Exception {
 	      return dao.groupPng(gr_name);
 	   }
+=======
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
 
 	public String joingNo(String uid) throws Exception {
 		return dao.joingNo(uid);
 	}
 
+<<<<<<< HEAD
 	
+=======
+	@Override
+	public String groupPng(String gr_name) throws Exception {
+		return dao.groupPng(gr_name);
+	}
+
+
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
 }

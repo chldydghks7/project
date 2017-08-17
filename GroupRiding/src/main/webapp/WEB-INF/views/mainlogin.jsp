@@ -22,7 +22,7 @@
 <!-- Custom Fonts -->
 <link href="./resources/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -81,22 +81,10 @@
 	font-family: 'sung';
 	src: url('./resources/fonts/sung.ttf'); 
 	}
-	
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus,
 	.navbar-inverse .navbar-nav>.open>a:hover {
 	color: #fff;
 	background-color: #929292
-}
-
-
-@font-face {
-	font-family: 'nexon';
-	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC B.OTF');
-}
-
-@font-face {
-	font-family: 'nexon2';
-	src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF');
 }
 </style>
 
@@ -165,12 +153,17 @@
 				</div>
 				<div class="carousel-caption"
 					style="bottom: 35%; margin-left: 18%; border: 4px solid rgba(256, 256, 256, 0.5); width: 30%; font-family: sung;">
-					<h1 style="font-family: sung;">W&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;E</h1>
-					<h1 style="font-size: 53px;color: red;font-family: sung;">
+					<h1>W&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;E</h1>
+					<h1 style="font-size: 53px;color: red;">
 						<strong>GROUP RIDING</strong>
 					</h1>
 					</br>
+<<<<<<< HEAD
 					<button type="button" class="btn btn-default btn-lg" style="width: 95%; height: 50PX; ">
+=======
+					<button type="button" class="btn btn-default btn-lg"
+						style="width: 95%; height: 50PX; ">
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
 						<strong>START GROUP RIDING</strong>
 					</button>
 				</div>
@@ -179,6 +172,7 @@
 		</div>
 	</header>
 	<aside class="callout">
+<<<<<<< HEAD
 
 		<div class="text-vertical-center" style="font-family: sung;">
 			<h1 style="font-family: nexon;">GROUP</h1>
@@ -553,6 +547,8 @@
 
 	<script id="template" type="text/x-handlebars-template">
 =======
+=======
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
       <div class="text-vertical-center" style="font-family: sung;">
          <h1 style="font-family: nexon;">GROUP</h1>
          <br>
@@ -925,164 +921,11 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 
    <script id="template" type="text/x-handlebars-template">
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
 
  <img src="{{imgsrc}}" alt="Attachment">
 
                
 </script>
-<<<<<<< HEAD
-	<script>
-		$(document).ready(
-				function() {
-					var uid = "${uid}";
-					$.getJSON("getAttach/" + uid, function(list) {
-
-						var img = $("<img/>").attr('src',
-								"/displayFile?fileName=" + list[0]);
-						img.css("width", "35px");
-						img.css("height", "35px");
-
-						$("#profile").prepend(img);
-
-						var logoutform = $("form[data-role='out']");
-
-						$("#logout").click(function() {
-
-							logoutform.submit();
-						});
-
-					});
-
-				});
-	</script>
-
-	<script>
-		$("#save").on("click", function() {
-			if ($("#uid").val() == "") {
-				alert("아이디를 입력하세요");
-				return false;
-			}
-			if ($("#uname").val() == "") {
-				alert("이름을 입력하세요");
-				return false;
-			}
-			if ($("#upw").val() == "") {
-				alert("비밀번호를 입력하세요");
-				return false;
-			}
-			if ($("#upw1").val() == "") {
-				alert("비밀번호 확인을 입력하세요");
-				return false;
-			}
-			if ($("#uage").val() == "") {
-				alert("생년월일 입력하세요");
-				return false;
-			}
-			if ($("#upw").val() != $("#upw1").val()) {
-				alert("비밀번호 일치 ㄴㄴ");
-				return false;
-			}
-			window.alert("가입 됨");
-		});
-
-		$("#sign").on("click", function() {
-			if ($("#uid11").val() == "") {
-				alert("아이디를 입력하세요");
-				return false;
-			}
-			if ($("#upw11").val() == "") {
-				alert("비밀번호를 입력하세요");
-				return false;
-			}
-		});
-	</script>
-
-	<script>
-		///////////////
-		////	프로필
-		///////////////
-		var template = Handlebars.compile($("#template").html());
-
-		$(".fileDrop").on("dragenter dragover", function(event) {
-			event.preventDefault();
-		});
-
-		$(".fileDrop").on("drop", function(event) {
-			event.preventDefault();
-
-			var files = event.originalEvent.dataTransfer.files;
-
-			var file = files[0];
-
-			var formData = new FormData();
-
-			formData.append("file", file);
-
-			$.ajax({
-				url : 'uploadAjax',
-				data : formData,
-				dataType : 'text',
-				processData : false,
-				contentType : false,
-				type : 'POST',
-				success : function(data) {
-
-					var fileInfo = getFileInfo(data);
-
-					var html = template(fileInfo);
-
-					$(".uploadedList").append(html);
-				}
-			});
-		});
-
-		$("#registerForm")
-				.submit(
-						function(event) {
-							event.preventDefault();
-
-							var that = $(this);
-
-							var str = "";
-							$(".uploadedList .delbtn")
-									.each(
-											function(index) {
-												str = "<input type='hidden' name='files' value='"
-														+ $(this).attr("href")
-														+ "'> ";
-												// 	 str = "<input type='hidden' name='files' value='"+$(this).attr("href") +"'> ";
-											});
-
-							that.append(str);
-
-							that.get(0).submit();
-						});
-	</script>
-
-	<!-- 아이디 중복체크 -->
-	<script>
-		$("#check").on("click", function() {
-
-			$.ajax({
-				url : "id_check",
-				type : "post",
-				data : {
-					uid : $("#uid").val()
-				},
-				dataType : "json",
-				success : function(data) {
-					if (data.result == "success") {
-						window.alert("아이디 : " + $("#uid").val() + " 가능가능");
-					} else {
-						window.alert("아이디 : " + $("#uid").val() + " 불가불가");
-					}
-
-				}
-			})
-		});
-	</script>
-=======
    <script>
       $(document).ready(
             function() {
@@ -1233,7 +1076,6 @@
          })
       });
    </script>
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
 
 
 </body>

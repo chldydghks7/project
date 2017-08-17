@@ -2,7 +2,7 @@ package group.riding.bean;
 
 public class MapBean {
 	private int hp_id;
-	private double latitude;
+	private String latitude;
 	private double longitude;
 	private String place_kind;
 	private String place_name;
@@ -16,11 +16,11 @@ public class MapBean {
 		this.hp_id = hp_id;
 	}
 
-	public double getLatitude() {
+	public String getLatitude() {
 		return latitude;
 	}
 	
-	public void setLatitude(double latitude) {
+	public void setLatitude(String latitude) {
 		this.latitude = latitude;
 	}
 	

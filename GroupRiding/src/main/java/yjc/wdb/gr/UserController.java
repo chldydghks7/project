@@ -19,8 +19,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+<<<<<<< HEAD
 import group.riding.bean.GoldenWeek;
 import group.riding.bean.GroupBean;
+=======
+
+import group.riding.bean.GoldenWeek;
+
+import group.riding.bean.GroupBean;
+
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
 import group.riding.bean.KmlBean;
 import group.riding.bean.MyPicture;
 import group.riding.bean.RidingInfo;
@@ -405,6 +413,7 @@ public class UserController {
 						model.addAttribute("myAlltime", alltime);
 					} 
 					
+<<<<<<< HEAD
 				}
 						
 				model.addAttribute("myAlldistance", myAlldistance);
@@ -437,6 +446,24 @@ public class UserController {
 				model.addAttribute("groupTh",groupTh);
 				return "MyInfo";
 			}
+=======
+			model.addAttribute("myAlldistance", myAlldistance);
+			model.addAttribute("myGr_gr", myGr_gr);
+			model.addAttribute("myRiding", myRiding);
+			model.addAttribute("userInfo", userInfo);
+			model.addAttribute("avgspeed", avgspeed);
+			model.addAttribute("avgdistance", avgdistance);
+
+//			model.addAttribute("grouplist", grouplist);
+			  List<GoldenWeek>WeekData=service. WeekData(uid);
+	          System.out.println(WeekData);
+	          model.addAttribute("WeekData", WeekData);
+
+			model.addAttribute("myGroup1", myGroup1);
+
+			return "MyInfo";
+		}
+>>>>>>> c14b608c5d8f67ef612ea3d470080c4880d58cb6
 		 
 
 }

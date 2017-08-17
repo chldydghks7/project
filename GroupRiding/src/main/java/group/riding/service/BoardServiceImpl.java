@@ -28,6 +28,8 @@ public class BoardServiceImpl implements BoardService {
 		
 		for(int i=0;i<filepath.length;i++)
 		{
+			System.out.println("파일이름 "+filepath[i]);
+			System.out.println("사진위치 "+piclocation[i]);
 			dao.addFile(filepath[i], vo.getKml_name(), piclocation[i], vo.getKml_center());
 		}
 	}

@@ -8,8 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import group.riding.bean.HotplaceBean;
+import group.riding.bean.RacePointBean;
 import group.riding.service.HotplaceService;
 
 @Controller
@@ -24,6 +26,16 @@ public class HotplaceController {
 		 
 		 model.addAttribute("lonlatlist", lonlatlist);
 	   }
+	
+	// 일정 등록 map에 HotPlacePoint list
+	@RequestMapping(value="getHotPlace", method=RequestMethod.GET)
+	@ResponseBody
+	public List<HotplaceBean> getHotPlace() throws Exception {
+		
+		List<HotplaceBean> hotplace = service.getHotPlace();
+		
+		return hotplace;	
+	}
 	
 	
 }
