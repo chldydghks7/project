@@ -3,7 +3,6 @@ package group.riding.service;
 import java.util.List;
 
 import group.riding.bean.GroupBean;
-import group.riding.bean.MyinfoBean;
 
 public interface MyinfoService {
 	
@@ -21,5 +20,11 @@ public interface MyinfoService {
 	
 	public List<GroupBean> myGroup1(String uid) throws Exception;
 	
+	public String first1(String uid) throws Exception;	// 1
 	
+	public String groupFrist() throws Exception;	// 1
+	
+	public String groupSecon() throws Exception;
+	
+	public String groupTh() throws Exception;
 }

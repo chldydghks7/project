@@ -21,5 +21,12 @@ public interface MyinfoDAO {
 	
 	public List<GroupBean> myGroup1(String uid) throws Exception;
 
+	public String first1(String uid) throws Exception;	// 1
+	
+	public String groupFrist() throws Exception;	// 1
+	
+	public String groupSecon() throws Exception;
+	
+	public String groupTh() throws Exception;
 	
 }

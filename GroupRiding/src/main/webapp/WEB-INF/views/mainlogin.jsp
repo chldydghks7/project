@@ -170,12 +170,7 @@
 						<strong>GROUP RIDING</strong>
 					</h1>
 					</br>
-					<button type="button" class="btn btn-default btn-lg"
-<<<<<<< HEAD
-						
-=======
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
-						style="width: 95%; height: 50PX; ">
+					<button type="button" class="btn btn-default btn-lg" style="width: 95%; height: 50PX; ">
 						<strong>START GROUP RIDING</strong>
 					</button>
 				</div>
@@ -184,7 +179,7 @@
 		</div>
 	</header>
 	<aside class="callout">
-<<<<<<< HEAD
+
 		<div class="text-vertical-center" style="font-family: sung;">
 			<h1 style="font-family: nexon;">GROUP</h1>
 			<br>

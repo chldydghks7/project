@@ -19,11 +19,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-<<<<<<< HEAD
 import group.riding.bean.GoldenWeek;
-=======
 import group.riding.bean.GroupBean;
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
 import group.riding.bean.KmlBean;
 import group.riding.bean.MyPicture;
 import group.riding.bean.RidingInfo;
@@ -379,52 +376,67 @@ public class UserController {
 		          
 		          return WeekData;
 		    }
+		 
+		 
 		@RequestMapping(value="MyInfo", method=RequestMethod.GET)	
-		public String MyInfo(@RequestParam(value ="uid") String uid, HttpSession session, Model model) throws Exception {
-			
-			String id1 = (String) session.getAttribute("uid");
-			
-			String myAlldistance = Myinfoservice.myAlldistance(id1);	// 총거리
-			String myAlltime = Myinfoservice.myAlltime(id1);			// 총사간
-			String myGr_gr = Myinfoservice.myGr_gr(id1);				// 가입 그룹수 
-			String myRiding = Myinfoservice.myRiding(id1);				// 라이딩 수
-			UserBean userInfo = service.user(id1);						// 회원 정보
-			String avgspeed = Myinfoservice.avgdistance(id1);			// 평균속도
-			String avgdistance = Myinfoservice.avgdistance(id1);		// 평균거리
-			
-			List<GroupBean> myGroup1 = Myinfoservice.myGroup1(id1);
-			
-			System.out.print("asdasd" + myAlltime);
-//			String myAlltime = aaa.substring(0, 8);
-			if(myAlltime != null) {
-			
-				if(myAlltime.length() == 5) {
-					String alltime = myAlltime.substring(0,1);
-					model.addAttribute("myAlltime", alltime);
-				} else if (myAlltime.length() == 6) {
-					String alltime = myAlltime.substring(0,2);
-					model.addAttribute("myAlltime", alltime);
-				} 
+			public String MyInfo(@RequestParam(value ="uid") String uid, HttpSession session, Model model) throws Exception {
 				
-			}
+				String id1 = (String) session.getAttribute("uid");
+				
+				String myAlldistance = Myinfoservice.myAlldistance(id1);	// 총거리
+				String myAlltime = Myinfoservice.myAlltime(id1);			// 총사간
+				String myGr_gr = Myinfoservice.myGr_gr(id1);				// 가입 그룹수 
+				String myRiding = Myinfoservice.myRiding(id1);				// 라이딩 수
+				UserBean userInfo = service.user(id1);						// 회원 정보
+				String avgspeed = Myinfoservice.avgdistance(id1);			// 평균속도
+				String avgdistance = Myinfoservice.avgdistance(id1);		// 평균거리
+				
+				List<GroupBean> myGroup1 = Myinfoservice.myGroup1(id1);
+				
+				System.out.print("asdasd" + myAlltime);
+//				String myAlltime = aaa.substring(0, 8);
+				if(myAlltime != null) {
+				
+					if(myAlltime.length() == 5) {
+						String alltime = myAlltime.substring(0,1);
+						model.addAttribute("myAlltime", alltime);
+					} else if (myAlltime.length() == 6) {
+						String alltime = myAlltime.substring(0,2);
+						model.addAttribute("myAlltime", alltime);
+					} 
 					
-			model.addAttribute("myAlldistance", myAlldistance);
-			model.addAttribute("myGr_gr", myGr_gr);
-			model.addAttribute("myRiding", myRiding);
-			model.addAttribute("userInfo", userInfo);
-			model.addAttribute("avgspeed", avgspeed);
-			model.addAttribute("avgdistance", avgdistance);
-<<<<<<< HEAD
-//			model.addAttribute("grouplist", grouplist);
-			  List<GoldenWeek>WeekData=service. WeekData(uid);
-	          System.out.println(WeekData);
-	          model.addAttribute("WeekData", WeekData);
-=======
-			model.addAttribute("myGroup1", myGroup1);
-			
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
-			return "MyInfo";
-		}
+				}
+						
+				model.addAttribute("myAlldistance", myAlldistance);
+				model.addAttribute("myGr_gr", myGr_gr);
+				model.addAttribute("myRiding", myRiding);
+				model.addAttribute("userInfo", userInfo);
+				model.addAttribute("avgspeed", avgspeed);
+				model.addAttribute("avgdistance", avgdistance);
+
+//				model.addAttribute("grouplist", grouplist);
+				  List<GoldenWeek>WeekData=service. WeekData(uid);
+		          System.out.println(WeekData);
+		          model.addAttribute("WeekData", WeekData);
+
+				model.addAttribute("myGroup1", myGroup1);
+				
+				//////////////
+				/////////////
+				String first1 = Myinfoservice.first1(id1);
+				model.addAttribute("first1", first1);
+				
+	
+				String groupFrist = Myinfoservice.groupFrist();
+				model.addAttribute("groupFrist", groupFrist);
+
+				String groupSecon= Myinfoservice.groupSecon();
+				model.addAttribute("groupSecon",groupSecon);
+				
+				String groupTh=Myinfoservice.groupTh();
+				model.addAttribute("groupTh",groupTh);
+				return "MyInfo";
+			}
 		 
 
 }

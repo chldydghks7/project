@@ -196,11 +196,12 @@
 
 		<div class="row text-center">
 			<!-- Pricing -->
-			<c:forEach items="${list}" var="group">
+			<c:forEach items="${list}" var="group" varStatus="v">
 
 
 				<div class="col-md-3 col-sm-6 hero-feature ">
 					<div class="thumbnail w3-card-2">
+					<img id = "${v.count}" style="position:absolute; z-index:100;top:0px;left:15px; height: 90px; width:90px;"src= ""/>
 						<img src="/displayFile?fileName=${group.gr_icon}"
 							style="width: 250px; height: 100px; border: solid 2px; border-color: black;" />
 						<div class="caption">
@@ -300,7 +301,48 @@
 			</div>
 
 		</div>
+			<script src="./resources/js2/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="./resources/js2/bootstrap.min.js"></script>
 		<!-- 그룹명 중복체크 -->
+		<script>
+	  	/* var groupFrist = "${groupFrist}"; //그룹전체에서 1등 출력 단건조회
+	   	var groupSecon = "${groupSecon}"; //그룹전체에서 2등 출력 단건조회
+	   	var groupTh = "${groupTh}"; */ //그룹전체에서 3등 출력 단건조회
+	   	/* var listGrounp = "${group.gr_name}"; //현재 그룹 단건조회
+		if(listGrounp == groupFrist){    	
+	        $("#rank").attr("src","./resources/img/gr_gold.png");
+	   	};
+	   	if(listGrounp==groupSecon){
+	   		$("#rank").attr("src","./resources/img/gr_silver.png");
+	   	};
+	   	if(listGrounp==groupTh){
+	   		$("#rank").attr("src","./resources/img/gr_bronze.png");
+	   	}; */
+	   	var list1 = [];
+	   	
+	   	<c:forEach items="${list}" var="group" varStatus="s">
+		   	list1.push("${group.gr_name}");
+	   	</c:forEach>
+	   	
+		for(var i=2; i<list1.length; i++) {
+	   	<c:forEach items="${list}" var="group" varStatus="s">
+	   
+		   		if(list1[i] == "${groupFrist}"){    	
+			        $("#${s.count}").attr("src","./resources/img/gr_gold.png")
+			   	}
+			   	else if(list1[i]=="${groupSecon}"){
+			   		$("#${s.count}").attr("src","./resources/img/gr_silver.png")
+			   	}
+			   	else if(list1[i]=="${groupTh}"){
+			   		$("#${s.count}").attr("src","./resources/img/gr_bronze.png")
+			   	};
+	   	
+		</c:forEach>
+		}
+	   	
+		</script>
 		<script>
 			$("#n_check").on(
 					"click",

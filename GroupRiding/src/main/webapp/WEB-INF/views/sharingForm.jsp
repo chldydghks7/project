@@ -267,7 +267,7 @@
                      </section>
                   </fieldset>
                   <!-- <input type='hidden' class='file' name='bbs_FilePath' value=''> -->
-                  <input type='hidden' class='kml' name='kml_name' value=''>
+                
                  <!--  <input type='hidden' class='picLocation' name='picture_location' value=''> -->
                    <input type='hidden' class='kmlcenter' name='kml_center' value=''>
                    <input type='hidden' class='thumbnail' name='thumbnail'>
@@ -466,26 +466,26 @@
       
       
       $("#myPic").on("click","img",function(){
-    	  /* <!-- <input type='hidden' class='file' name='bbs_FilePath' value=''> -->
-    	  <!--  <input type='hidden' class='picLocation' name='picture_location' value=''> --> */
+         /* <!-- <input type='hidden' class='file' name='bbs_FilePath' value=''> -->
+         <!--  <input type='hidden' class='picLocation' name='picture_location' value=''> --> */
          console.log($(this));
-    	  var form = $("#sharForm");
+         var form = $("#sharForm");
           var filepath=$(this).attr('src');
           var pictureLocation=$(this).attr('class');
-    	  
-    	  alert($(this).css('border'));
-    	  if($(this).css('border')=='1.99219px solid rgb(0, 128, 0)')
-    		  {
-    		  $(this).css('width','300px');
-    		  $(this).css('height','200px');
-    		  
-    		   $(this).siblings().css('width','210px');
-    		   $(this).siblings().css('height','150px');
-     		  
-    		  
-    		  $('.thumbnail').val(filepath);
-    		  return;
-    		  }
+         
+         alert($(this).css('border'));
+         if($(this).css('border')=='1.99219px solid rgb(0, 128, 0)')
+            {
+            $(this).css('width','300px');
+            $(this).css('height','200px');
+            
+             $(this).siblings().css('width','210px');
+             $(this).siblings().css('height','150px');
+             
+            
+            $('.thumbnail').val(filepath);
+            return;
+            }
          $(this).css('border','2px solid green');
        
          
@@ -513,6 +513,14 @@
          
            var form = $("#sharForm");
            var kmlname=$(this).attr("class");
+           console.log(kmlname);
+           
+           var kml=$("<input type='hidden' name='kml_name'>");
+           
+           kml.val(kmlname);
+           
+           form.append(kml);
+           
            var kmlcenter=$(this).attr("id");
            
            $(".kmlcenter").val(kmlcenter);

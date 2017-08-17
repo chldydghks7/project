@@ -14,8 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import yjc.wdb.gr.bean.GroupRank;
-import yjc.wdb.gr.service.GroupRankService;
+import yjc.wdb.gr.bean.GroupRankVer2;
+import yjc.wdb.gr.service.GroupRankVer2Service;
 
 /**
  * Handles requests for the application home page.
@@ -24,7 +24,7 @@ import yjc.wdb.gr.service.GroupRankService;
 public class HomeController {
 	
 	@Inject
-	private GroupRankService rankservice;
+	private GroupRankVer2Service rankservice;
 	
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -65,14 +65,8 @@ public class HomeController {
 	
 	@RequestMapping(value = "groupRank", method = RequestMethod.GET)
 	public void groupRank(Model model)throws Exception{
-		List<GroupRank> list1=rankservice.select1();
+		List<GroupRankVer2> list1=rankservice.select11();
 		model.addAttribute("list1", list1);
-		
-		List<GroupRank> list2=rankservice.select2();
-		model.addAttribute("list2", list2);
-		
-		List<GroupRank> list3=rankservice.select3();
-		model.addAttribute("list3", list3);
 	}
 	
 	

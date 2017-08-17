@@ -22,6 +22,7 @@
 <link rel="shortcut icon" href="./resources/favicon.ico">
 <!-- Bootstrap Core CSS -->
     <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <!-- Custom CSS -->
     <link href="./resources/css/modern-business.css" rel="stylesheet">
@@ -105,15 +106,15 @@
 }
 
 #sharmap {
-   margin-top: 7px;
-   width: 250px;
+   margin-top: 20px;
+   width: 550px;
    height: 250px;
    float: left;
 }
 
 #editmap {
-   margin-top: 7px;
-   width: 250px;
+    margin-top: 20px;
+   width: 550px;
    height: 250px;
    float: left;
 }
@@ -125,10 +126,7 @@
    height: 250px;
 }
 
-.file {
-   width: 300px !important;
-   height: 250px !important;
-}
+
 
 .replyImg {
    width: 20px;
@@ -190,17 +188,13 @@
    font-family: 'nexon2'; 
    src: url('./resources/fonts/NEXON FOOTBALL GOTHIC L.OTF'); 
    }
+   
+   
+
 </style>
 </head>
 
 <body>
-<<<<<<< HEAD
-=======
-
-		
-
-
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: white;">
       <div class="container">
          <!-- Brand and toggle get grouped for better mobile display -->
@@ -248,14 +242,7 @@
       <!-- /.container -->
    </nav>
 
-<<<<<<< HEAD
        <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing2.jpeg') no-repeat center center scroll;">
-=======
-
-
-       <header id="myCarousel" class="carousel slide" style="height: 30%;width:100%;background: url('./resources/img/sharing2.jpeg') no-repeat center center scroll;">
-
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
@@ -273,8 +260,8 @@
 
             <!-- Begin Content -->
             <form id="form">
-               <button id="newBtn" class="btn btn-default rounded"
-                  style="margin-left: 96%;">글쓰기</button>
+               <button id="newBtn" class="w3-btn w3-red"
+                        style="text-shadow: 1px 1px 0 #444; font-family: nexon; font-size: 25px;position: absolute; left: 1600px; top: 220px;">글쓰기</button>
             </form>
          </div>
             <br />
@@ -300,12 +287,13 @@
                            <p class="cnt" style="display: none;">${board.view_Number}</p>
                            
                               
-                                 <img class="img-responsive img-hover" src="${board.bbs_FilePath}"/>
+                                 <img data-writingId="${board.writing_Id}" data-toggle="modal"
+                                 data-target="#myModal"  class="test img-responsive img-hover" src="${board.thumbnail}"/>
                               
-                              <a class="test btn btn-primary"
+                              <%-- <a class="test btn btn-primary"
                                  href="${board.writing_Id}" data-toggle="modal"
                                  data-target="#myModal" data-backdrop="static"
-                                 data-keyboard="false">read</a>
+                                 data-keyboard="false">read</a> --%>
                            
                            <div class="caption">
                               <h3>제목: ${board.writing_title}</h3>
@@ -339,6 +327,10 @@
 
    <!-- Read Modal Start -->
    <div id="myModal" class="modal fade" role="dialog">
+   
+   <!-- kml center좌표를 위해서 -->
+   <span class="kmlcenter" style="display: none;"></span>
+   
       <div class="modal-dialog">
          <div class="modal-content">
 
@@ -374,11 +366,31 @@
                   target="_blank" alt="Share on kakaostory"><img src="./resources/img/kakaoStory.png" class="snsIcon"></a>
                </div>
                <div id="sharmap"></div>
-               <div id="imgDiv">
-                  <img class='file' id='s-img' src=''>
-               </div>
+               
+               <div id="picCarousel" class="carousel slide" data-ride="carousel" style="width: 300px;height: 250px;position: absolute;left:280px;top:380px;display:none;">
+             
+             
+            
+         
+              <div class="carousel-inner">
+              
+              
+              </div>
+            
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#picCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#picCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+         </div>
+         
+         
                <hr>
-               <div class='s-content'></div>
+               <div class='s-content' style="position:relative;top:300px;"></div>
                <hr>
                <div>
                   <ul class='timeline'></ul>
@@ -412,9 +424,9 @@
                <input type="text" name="writing_Id" style='display: none;'
                   id='w_id' class='bbs_id' value=''>
                <div id="editmap"></div>
-               <div id="imgDiv">
+             <!--   <div id="imgDiv">
                   <img class='file' id='s-img' src=''>
-               </div>
+               </div> -->
                <section>
                   <label class="label">내 사진</label>
                   <div id="myPic"></div>
@@ -455,7 +467,6 @@
     </script>
    <script type="text/javascript">
    $(document).ready(
-<<<<<<< HEAD
          function() {
             var uid = "${uid}";
             $.getJSON("getAttach/" + uid, function(list) {
@@ -477,31 +488,6 @@
             });
 
          
-=======
-
-			function() {
-				var uid = "${uid}";
-				$.getJSON("getAttach/" + uid, function(list) {
-
-					var img = $("<img/>").attr('src',
-							"/displayFile?fileName=" + list[0]);
-					img.css("width", "35px");
-					img.css("height", "35px");
-
-					$("#profile").prepend(img);
-
-					var logoutform = $("form[data-role='out']");
-
-					$("#logout").click(function() {
-
-						logoutform.submit();
-					});
-
-				});
-
-			
-
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
      
       
       var map;
@@ -601,7 +587,7 @@
       
       $(".test").on("click", function () {
          event.preventDefault();
-         var   title = $(this).attr("href");
+         var   title = $(this).attr("data-writingId");
          
          $.ajax({
             url: 'readShar',
@@ -612,27 +598,84 @@
             success: function(data) {
               
                   console.log(data);
+                  
+                  var file=data.readfile;
                
-               $(".title").text(data.writing_title);
-               $(".bbs_id").text(data.writing_Id);
-               $(".writer").text("작성자"+ data.member_Id);
+               $(".title").text(data.read.writing_title);
+               $(".bbs_id").text(data.read.writing_Id);
+               $(".writer").text("작성자"+ data.read.member_Id);
                $(".file").attr('src',data.bbs_FilePath);
-               $(".s-content").text(data.writing_content);
+               $(".s-content").text(data.read.writing_content);
                
                map = new google.maps.Map(document.getElementById('sharmap'));
+               
+               var kmlcenter=data.readfile[0].kml_center;
+               
+               $(".kmlcenter").text(kmlcenter);
             
             var ctaLayer = new google.maps.KmlLayer({
-                  url: 'http://39.121.239.182:8080/can/resources/'+data.kml_name,
+                  url: 'http://39.121.239.182:8080/can/resources/'+data.readfile[0].kml_name,
                   map: map
                 });
+            
+    
            
-             var refresh = function() {
-                   var center = detailmap.getCenter();
-                       google.maps.event.trigger(detailmap, "resize");
-                       detailmap.setCenter(center);
-                      detailmap.setZoom(16);
-                   }
-                   setTimeout(refresh, 100);
+           /* 이미지 여러개 띄우기    */
+           
+        
+           $("#picCarousel .carousel-inner").text("");
+           
+           
+           for(var i=0;i<file.length;i++)
+        {
+              
+              /*이미지 찍은 위치에 맞춰서 보여주기*/
+              var piclocation= file[i].picture_location.split(",");
+ 
+               var picMarkerLocation= {lat:parseFloat(piclocation[0]),lng:parseFloat(piclocation[1])};
+                
+               var picIcon=new google.maps.MarkerImage(file[i].bbs_FilePath,null,null,null,new google.maps.Size(70,70));
+               
+                 var picMarker= new google.maps.Marker({
+                      position:picMarkerLocation,  
+                      map:map,
+                      icon:picIcon
+                   });
+                 
+                picMarker.addListener('click', function() {
+                   
+                    $("#picCarousel").show();
+                   
+                   
+                   });
+                
+                  if(i==0)
+                 {    
+                    
+                    var div=$("<div class='item active'></div>");
+                 }else{
+                 
+                    var div=$("<div class='item'></div>");
+                 }   
+                 
+           
+           
+           
+           var img=$("<img style='width:300px;height:250px;' />");
+           
+           img.attr("src",file[i].bbs_FilePath);
+           
+           
+           
+           div.append(img);
+           
+           $("#picCarousel .carousel-inner").append(div);
+           
+              
+              
+        }
+           
+           
                
                
                
@@ -903,41 +946,4 @@
         location.reload();
       });
       
-      $('#myModal').on('shown.bs.modal', function () {
-         google.maps.event.trigger(map, 'resize'); 
-         var refresh = function() {
-              //var center = map.getCenter();
-                  map.setCenter(new google.maps.LatLng(35.896553, 128.622051));
-                 map.setZoom(17);
-              }
-              setTimeout(refresh, 500); 
-
-       });
       
-      $('#editModal').on('shown.bs.modal', function () {
-          google.maps.event.trigger(map, 'resize'); 
-          var refresh = function() {
-               //var center = map.getCenter();
-                   map.setCenter(new google.maps.LatLng(35.896553, 128.622051));
-                  map.setZoom(17);
-               }
-               setTimeout(refresh, 500); 
-
-        });
-      
-<<<<<<< HEAD
-         });
-=======
-
-			});
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
-
-   </script>
-   <!--[if lt IE 9]>
-   <script src="assets/plugins/respond.js"></script>
-   <script src="assets/plugins/html5shiv.js"></script>
-   <script src="assets/plugins/placeholder-IE-fixes.js"></script>
-   <![endif]-->
-
-</body>
-</html>

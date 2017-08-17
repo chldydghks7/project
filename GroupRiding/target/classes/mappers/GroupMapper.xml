@@ -5,6 +5,31 @@
 
 <mapper namespace="group.riding.GroupMapper">
 
+	<resultMap type="GroupRankVer2" id="boardMap">
+		<id column="gr_icon" property="gr_icon" />
+		<id column="gr_name" property="gr_name" />
+		<id column="gr_all" property="gr_all" />
+		<id column="gr_hot_cnt" property="gr_hot_cnt" />
+		<id column="gr_no" property="gr_no" />
+		<id column="gr_point" property="gr_point" />
+	</resultMap>
+
+ 	<!-- 그룹 랭크 -->
+   	<select id="groupRankVer2" resultMap="boardMap">
+   		select c.gr_icon,b.gr_name, sum(a.alldistance) as gr_all, d.Hot_cnt as gr_hot_cnt, count(b.gr_name) as gr_no, sum(a.alldistance)+count(b.gr_name)+d.Hot_cnt as gr_point
+
+from gr_ridinginfo a, gr_notice b, gr_group c , (select a.racepoint_id,a.racepoint_time, b.gr_name ,count(b.gr_name) as Hot_cnt
+                                                 from gr_race_record a, gr_group b
+                                                 where a.gr_id=b.gr_id
+                                                 group by(b.gr_name)) d
+where a.noticeId = b.noticeId 
+and b.gr_name = c.gr_name
+and d.gr_name = b.gr_name
+group by(b.gr_name)
+order by gr_point desc LIMIT 10;
+   	</select>
+
+
 	<!-- 그룹 생성 -->
 	<insert id="create_gr">
 		insert into gr_group(gr_name, gr_leader,
@@ -214,14 +239,7 @@
 	 <update id="info_view">
        update bbs_writing set view_number = view_number + 1 where writing_id =#{writing_id}
     </update>
-<<<<<<< HEAD
-    <!-- 그룹 프로필 -->
-    <select id="groupPng" resultType="String">
-       select gr_icon
-      from gr_group
-      where gr_name=#{gr_name}
-=======
-    
+
     <!-- 참여횟수 -->
     <select id="joingNo" resultType="String">
     	select count(joing)
@@ -235,8 +253,7 @@
     	select gr_icon
 		from gr_group
 		where gr_name=#{gr_name}
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
     </select>
-   
+  
 
 </mapper>

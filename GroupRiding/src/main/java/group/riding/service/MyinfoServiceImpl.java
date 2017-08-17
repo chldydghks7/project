@@ -7,7 +7,6 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import group.riding.bean.GroupBean;
-import group.riding.bean.MyinfoBean;
 import group.riding.dao.MyinfoDAO;
 
 @Service
@@ -49,6 +48,29 @@ public class MyinfoServiceImpl implements MyinfoService {
 	@Override
 	public List<GroupBean> myGroup1(String uid) throws Exception {
 		return dao.myGroup1(uid);
+	}
+
+	@Override
+	public String first1(String uid) throws Exception {
+		return dao.first1(uid);
+	}
+
+	@Override
+	public String groupFrist() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.groupFrist();
+	}
+
+	@Override
+	public String groupSecon() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.groupSecon();
+	}
+
+	@Override
+	public String groupTh() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.groupTh();
 	}
 	
 

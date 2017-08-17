@@ -23,6 +23,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import group.riding.bean.GroupBean;
 import group.riding.bean.NoticeBean;
 import group.riding.service.GroupService;
+import group.riding.service.MyinfoService;
 import group.riding.service.NoticeService;
 import yjc.wdb.gr.bean.GroupInfoBoard;
 import yjc.wdb.gr.bean.GroupInfoList;
@@ -54,7 +55,8 @@ public class GroupController {
 	@Inject 
 	private GroupMemPicService mempicservice;
 
-
+	@Inject
+	private MyinfoService Myinfoservice;
 	
 	@RequestMapping(value="create_gr", method=RequestMethod.GET)
 	public void create_gr() {
@@ -69,11 +71,20 @@ public class GroupController {
 	}
 	
 	@RequestMapping(value="groupList", method=RequestMethod.GET)	
-	public void ListAll(Model model,HttpSession session)throws Exception{
+	public String ListAll(Model model,HttpSession session)throws Exception{
 		String uid=(String) session.getAttribute("uid");
 		List<GroupBean> list =service.gr_list(uid);
 		model.addAttribute("list", list);
 		
+		String groupFrist = Myinfoservice.groupFrist();
+		model.addAttribute("groupFrist", groupFrist);
+
+		String groupSecon= Myinfoservice.groupSecon();
+		model.addAttribute("groupSecon",groupSecon);
+		
+		String groupTh=Myinfoservice.groupTh();
+		model.addAttribute("groupTh",groupTh);
+		return "groupList";
 		
 	}
 	
@@ -179,7 +190,7 @@ public class GroupController {
 		model.addAttribute("mem_li", pic.getFullname());
 		model.addAttribute("memList", memList);
 		System.out.println("사진은?? ??"+pic.getFullname());
-<<<<<<< HEAD
+
 		// 그룹 프로필
 	      //   /2017/07/28/s_b61ef20a-43da-4aa6-9da6-ebcc1e8b428c_Hydrangeas.jpg
 	      //   /2017/07/28/b61ef20a-43da-4aa6-9da6-ebcc1e8b428c_Hydrangeas.jpg
@@ -191,23 +202,7 @@ public class GroupController {
 	      System.out.println("groupPng : " + groupPng);
 
 	      model.addAttribute("groupPng", groupPng);
-=======
-		
-		String joinNo = service.joingNo(uid);
-		model.addAttribute("joinNo", joinNo);
-		
-		// 그룹 프로필
-		//	/2017/07/28/s_b61ef20a-43da-4aa6-9da6-ebcc1e8b428c_Hydrangeas.jpg
-		//	/2017/07/28/b61ef20a-43da-4aa6-9da6-ebcc1e8b428c_Hydrangeas.jpg
 
-		String png1 = service.groupPng(gr_name).substring(0, 12);
-		String png2 = service.groupPng(gr_name).substring(14);
-		String groupPng = png1 + png2;
-				
-		System.out.println("groupPng : " + groupPng);
-
-		model.addAttribute("groupPng", groupPng);
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
 
 		return "groupInfo";
 	

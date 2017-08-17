@@ -57,25 +57,25 @@ public class NoticeController {
 		model.addAttribute("list1", list1);
 	}
 	
-	@RequestMapping(value="noticeInfo", method=RequestMethod.GET)	// 洹몃９ ?占쏙옙?占쏙옙
-	public void noticeInfo(@RequestParam(value="noticeId") int noticeId, @RequestParam(value="uid") String uid, Model model, HttpSession session) throws Exception {
-		NoticeBean info = service.infoNotice(noticeId);
-		
-		List<NoticeBean> memberjoininfo=service.getjoininfo(noticeId, info.getGr_name());
-		
-		String joinCheck = service.joinCheck(noticeId, uid);
-		session.setAttribute("joinCheck", joinCheck);
-		
-		model.addAttribute("info", info);
-		model.addAttribute("memberjoininfo", memberjoininfo);
-		
-		SimpleDateFormat mSimpleDateFormat = new SimpleDateFormat ( "yyyy-MM-dd", Locale.KOREA );
-		Date currentTime = new Date ();
-		String mTime = mSimpleDateFormat.format ( currentTime );
-		System.out.println ("현재 : " + mTime );
-		model.addAttribute("now1", mTime);
-		
-	}
+	@RequestMapping(value="noticeInfo", method=RequestMethod.GET)   // 洹몃９ ?占쏙옙?占쏙옙
+	   public void noticeInfo(@RequestParam(value="noticeId") int noticeId, @RequestParam(value="uid") String uid, Model model, HttpSession session) throws Exception {
+	      NoticeBean info = service.infoNotice(noticeId);
+	      
+	      List<NoticeBean> memberjoininfo=service.getjoininfo(noticeId, info.getGr_name());
+	      
+	      String joinCheck = service.joinCheck(noticeId, uid);
+	      session.setAttribute("joinCheck", joinCheck);
+	      
+	      model.addAttribute("info", info);
+	      model.addAttribute("memberjoininfo", memberjoininfo);
+	      
+	      SimpleDateFormat mSimpleDateFormat = new SimpleDateFormat ( "yyyy-MM-dd", Locale.KOREA );
+	      Date currentTime = new Date ();
+	      String mTime = mSimpleDateFormat.format ( currentTime );
+	      System.out.println ("현재 : " + mTime );
+	      model.addAttribute("now1", mTime);
+	      
+	   }
 	
 
 

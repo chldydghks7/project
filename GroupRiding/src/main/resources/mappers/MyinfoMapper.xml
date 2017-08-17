@@ -2,51 +2,146 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">   <!-- 규칙 -->
-  
- <mapper namespace="group.riding.MyinfoMapper">
 
-	<!-- 마이인포페이지 총거리 --> <!--  총거리 총시간 합치기 -->
-    <select id="myAlldistance" resultType="String">
-     	select sum(alldistance)
+<mapper namespace="group.riding.MyinfoMapper">
+
+	<!-- 마이인포페이지 총거리 --> <!-- 총거리 총시간 합치기 -->
+	<select id="myAlldistance" resultType="String">
+		select sum(alldistance)
 		from gr_ridinginfo
 		where uid=#{uid}
-    </select>
-    
-    <select id="myAlltime" resultType="String">
-     	select sum(alltime)
-		from gr_ridinginfo
+	</select>
+
+	<select id="myAlltime" resultType="String">
+		select sum(alltime)
+		from
+		gr_ridinginfo
 		where uid=#{uid}
-    </select>
-    
-    <select id="myGr_gr" resultType="String">
-     	select count(*)
+	</select>
+
+	<select id="myGr_gr" resultType="String">
+		select count(*)
 		from gr_gr
+		where
+		uid=#{uid}
+	</select>
+
+	<select id="myRiding" resultType="String">
+		select count(*)
+		from
+		gr_ridinginfo
 		where uid=#{uid}
-    </select>
-    
-    <select id="myRiding" resultType="String">
-     	select count(*)
+	</select>
+
+	<select id="avgspeed" resultType="String">
+		select avg(avgspeed)
+		from
+		gr_ridinginfo
+		where uid=#{uid}
+	</select>
+
+	<select id="avgdistance" resultType="String">
+		select avg(alldistance)
+		from
+		gr_ridinginfo
+		where uid=#{uid}
+	</select>
+
+	<select id="myGroup1" resultType="GroupBean">
+		select *
+		from gr_gr
+		where uid =
+		#{uid}
+	</select>
+
+	<select id="first1" resultType="String">
+		select b.gr_name
+		from (select
+		c.gr_icon,b.gr_name, sum(a.alldistance) as "총거리", d.Hot_cnt,
+		count(b.gr_name) as "라이딩횟수",
+		sum(a.alldistance)+count(b.gr_name)+d.Hot_cnt as 점수
 		from gr_ridinginfo
-		where uid=#{uid}
-    </select>
-    
-    <select id="avgspeed" resultType="String">
-    	select avg(avgspeed)
+		a, gr_notice b, gr_group c , (select a.racepoint_id,a.racepoint_time,
+		b.gr_name ,count(b.gr_name) as Hot_cnt
+		from gr_race_record a, gr_group
+		b
+		where a.gr_id=b.gr_id
+		group by(b.gr_name)) d,(select a.uid, b.gr_name
+		from gr_user a, gr_gr b
+		where a.uid = b.uid
+		and a.uid = #{uid}) e
+		where
+		a.noticeId = b.noticeId
+		and b.gr_name = c.gr_name
+		and d.gr_name =
+		b.gr_name
+		and b.gr_name=
+		e.gr_name
+		group by(b.gr_name)
+		order by 점수 desc
+		LIMIT 0,1) b
+	</select>
+	<select id="groupFrist" resultType="String">
+		select b.gr_name
+		from (select
+		c.gr_icon,b.gr_name, sum(a.alldistance) as "총거리", d.Hot_cnt,
+		count(b.gr_name) as "라이딩횟수",
+		sum(a.alldistance)+count(b.gr_name)+d.Hot_cnt as 점수
 		from gr_ridinginfo
-		where uid=#{uid}
-    </select>
-    
-    <select id="avgdistance" resultType="String">
-    	select avg(alldistance)
+		a, gr_notice b, gr_group c , (select
+		a.racepoint_id,a.racepoint_time,
+		b.gr_name ,count(b.gr_name) as
+		Hot_cnt
+		from gr_race_record a, gr_group b
+		where a.gr_id=b.gr_id
+		group by(b.gr_name)) d
+		where a.noticeId =
+		b.noticeId
+		and b.gr_name = c.gr_name
+		and d.gr_name = b.gr_name
+		group
+		by(b.gr_name)
+		order by 점수 desc LIMIT 0,1) b
+
+	</select>
+	<select id="groupSecon" resultType="String">
+		select b.gr_name
+		from (select
+		c.gr_icon,b.gr_name, sum(a.alldistance) as "총거리", d.Hot_cnt,
+		count(b.gr_name) as "라이딩횟수",
+		sum(a.alldistance)+count(b.gr_name)+d.Hot_cnt as 점수
 		from gr_ridinginfo
-		where uid=#{uid}
-    </select>
-    
-    <select id="myGroup1" resultType="GroupBean">
-    	select * 
-		from gr_gr 
-		where uid = #{uid}
-    </select>
-    
-    
- </mapper>
+		a, gr_notice b, gr_group c , (select
+		a.racepoint_id,a.racepoint_time,
+		b.gr_name ,count(b.gr_name) as
+		Hot_cnt
+		from gr_race_record a, gr_group b
+		where a.gr_id=b.gr_id
+		group by(b.gr_name)) d
+		where a.noticeId =
+		b.noticeId
+		and b.gr_name = c.gr_name
+		and d.gr_name = b.gr_name
+		group
+		by(b.gr_name)
+		order by 점수 desc LIMIT 1,2) b
+	</select>
+	<select id="groupTh" resultType="String">
+		select b.gr_name
+		from (select c.gr_icon,b.gr_name, sum(a.alldistance) as "총거리", d.Hot_cnt,
+		count(b.gr_name) as "라이딩횟수",
+		sum(a.alldistance)+count(b.gr_name)+d.Hot_cnt as 점수
+		from gr_ridinginfo a, gr_notice b, gr_group c , (select
+		a.racepoint_id,a.racepoint_time, b.gr_name ,count(b.gr_name) as
+		Hot_cnt
+		from gr_race_record a, gr_group b
+		where a.gr_id=b.gr_id
+		group by(b.gr_name)) d
+		where a.noticeId = b.noticeId
+		and b.gr_name = c.gr_name
+		and d.gr_name = b.gr_name
+		group by(b.gr_name)
+		order by 점수 desc LIMIT 2,3) b
+	</select>
+
+</mapper>

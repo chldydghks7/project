@@ -30,16 +30,15 @@ public interface GroupDAO {
 	
 	public int n_check(String gr_name) throws Exception;	// ï¿½×·ï¿½ï¿½ ï¿½ßºï¿½Ã¼Å©
 
-<<<<<<< HEAD
+
 	public String leaderNotice(String uid, String gr_name) throws Exception;	// ï¿½×·ï¿½ï¿½å¸¸ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	public String groupPng(String gr_name) throws Exception;   // ê·¸ë£¹ í”„ë¡œí•„
-=======
-	public String leaderNotice(String uid, String gr_name) throws Exception;	// ±×·ìÀå¸¸ °øÁö»ý¼º
+
+
 	
-	public String joingNo(String uid) throws Exception;	// Âü¿©È½¼ö
+	public String joingNo(String uid) throws Exception;	// ï¿½ï¿½ï¿½ï¿½È½ï¿½ï¿½
 	
-	public String groupPng(String gr_name) throws Exception;	// ±×·ì ÇÁ·ÎÇÊ
-	
->>>>>>> e1591ff61afa1bda8434a28de54edcf57258b9e9
+
+
 }
